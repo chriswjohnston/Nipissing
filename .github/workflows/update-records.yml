@@ -33,6 +33,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python scripts/update_meetings.py
+          python scripts/generate_summaries.py
           python scripts/update_bylaws.py
           python scripts/update_boards.py
           python scripts/validate_data.py
@@ -53,8 +54,9 @@ jobs:
           print("meetings:", len(meetings.get("meetings", [])))
           print("bylaws:", len(bylaws.get("bylaws", [])))
           print("resolutions:", len(resolutions.get("resolutions", [])))
-          print("boards:", sum(len(b.get("meetings", [])) for b in boards.get("boards", [])))
+          print("board meetings:", sum(len(b.get("meetings", [])) for b in boards.get("boards", [])))
           PY
+
       - name: Commit canonical data changes
         run: |
           git config user.name "github-actions[bot]"
