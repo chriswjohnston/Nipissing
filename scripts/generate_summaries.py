@@ -109,6 +109,15 @@ def should_summarize(meeting: dict[str, Any], summaries: dict[str, str]) -> tupl
 
 
 def fetch_pdf_text(url: str) -> str:
+    if not url.lower().endswith(".pdf"):
+        raise RuntimeError("Not a PDF URL")
+
+    r = requests.get(url, headers=HEADERS, timeout=120)
+    r.raise_for_status()
+
+    pdf_bytes = io.BytesIO(r.content)
+    text = extract_text(pdf_bytes) or ""
+    return text.strip()
     r = requests.get(url, headers=HEADERS, timeout=120)
     r.raise_for_status()
 
@@ -194,19 +203,30 @@ def call_anthropic(prompt: str) -> str:
     }
 
     payload = {
-        "model": ANTHROPIC_MODEL,
+        "model": "claude-3-5-sonnet-latest",
         "max_tokens": 1200,
         "temperature": 0.2,
         "messages": [
             {
                 "role": "user",
-                "content": prompt,
+                "content": [
+                    {"type": "text", "text": prompt}
+                ]
             }
         ],
     }
 
-    r = requests.post(ANTHROPIC_API_URL, headers=headers, json=payload, timeout=180)
-    r.raise_for_status()
+    r = requests.post(
+        "https://api.anthropic.com/v1/messages",
+        headers=headers,
+        json=payload,
+        timeout=180,
+    )
+
+    if r.status_code != 200:
+        print("Anthropic error:", r.status_code, r.text)
+        r.raise_for_status()
+
     data = r.json()
 
     parts = data.get("content", [])
