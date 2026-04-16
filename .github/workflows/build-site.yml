@@ -1,37 +1,156 @@
-name: Build site
+#!/usr/bin/env python3
+"""
+build_site.py
+=============
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+Builds the public site from canonical data.
 
-permissions:
-  contents: write
+Source of truth:
+  - data/canonical/meetings.json
+  - data/canonical/bylaws.json
+  - data/canonical/resolutions.json
+  - data/canonical/boards.json
+  - data/canonical/summaries.json
 
-jobs:
-  build-site:
-    runs-on: ubuntu-latest
+Output:
+  - docs/
+    - copied static site files
+    - council-data.json
+    - bylaws-data.json
+    - resolutions-data.json
+    - boards-data.json
+    - summaries.json
 
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+This keeps the frontend compatible with the existing templates and shared.js,
+while moving the real source-of-truth out of docs/.
+"""
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+from __future__ import annotations
 
-      - name: Build site
-        run: |
-          python scripts/build_site.py
+import json
+import shutil
+from pathlib import Path
+from typing import Any
 
-      - name: Commit built site
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs
-          git diff --cached --quiet || git commit -m "Build public site"
-          git push
+
+ROOT = Path(".")
+DATA = ROOT / "data" / "canonical"
+SITE = ROOT / "site"
+DOCS = ROOT / "docs"
+
+
+def load_json(path: Path, default: Any) -> Any:
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
+def ensure_docs_dir() -> None:
+    DOCS.mkdir(parents=True, exist_ok=True)
+
+
+def copy_site_files() -> None:
+    """
+    Copy static templates/assets from site/ to docs/.
+    """
+    if not SITE.exists():
+        raise FileNotFoundError("site/ directory not found")
+
+    copied = []
+    for file in SITE.iterdir():
+        if file.is_file():
+            shutil.copy2(file, DOCS / file.name)
+            copied.append(file.name)
+
+    print(f"Copied {len(copied)} site file(s) to docs/: {', '.join(sorted(copied))}")
+
+
+def build_compatibility_data() -> None:
+    """
+    Emit the JSON filenames expected by the current frontend.
+    """
+
+    meetings = load_json(DATA / "meetings.json", {"meetings": []})
+    bylaws = load_json(DATA / "bylaws.json", {"bylaws": []})
+    resolutions = load_json(DATA / "resolutions.json", {"resolutions": []})
+    boards = load_json(DATA / "boards.json", {"boards": []})
+    summaries = load_json(DATA / "summaries.json", {})
+
+    # Normalize top-level shapes
+    if isinstance(meetings, list):
+        meetings = {"meetings": meetings}
+    if isinstance(bylaws, list):
+        bylaws = {"bylaws": bylaws}
+    if isinstance(resolutions, list):
+        resolutions = {"resolutions": resolutions}
+    if isinstance(boards, list):
+        boards = {"boards": boards}
+
+    write_json(DOCS / "council-data.json", meetings)
+    write_json(DOCS / "bylaws-data.json", bylaws)
+    write_json(DOCS / "resolutions-data.json", resolutions)
+    write_json(DOCS / "boards-data.json", boards)
+    write_json(DOCS / "summaries.json", summaries)
+
+    # Optional convenience copies for debugging/future use
+    write_json(DOCS / "data" / "meetings.json", meetings)
+    write_json(DOCS / "data" / "bylaws.json", bylaws)
+    write_json(DOCS / "data" / "resolutions.json", resolutions)
+    write_json(DOCS / "data" / "boards.json", boards)
+    write_json(DOCS / "data" / "summaries.json", summaries)
+
+    meeting_count = len(meetings.get("meetings", []))
+    bylaw_count = len(bylaws.get("bylaws", []))
+    resolution_count = len(resolutions.get("resolutions", []))
+    board_count = sum(len(b.get("meetings", [])) for b in boards.get("boards", []))
+
+    print("Wrote frontend JSON:")
+    print(f"  council-data.json      ({meeting_count} meetings)")
+    print(f"  bylaws-data.json       ({bylaw_count} bylaws)")
+    print(f"  resolutions-data.json  ({resolution_count} resolutions)")
+    print(f"  boards-data.json       ({board_count} board meetings)")
+    print("  summaries.json")
+
+
+def verify_required_outputs() -> None:
+    required = [
+        DOCS / "index.html",
+        DOCS / "shared.css",
+        DOCS / "shared.js",
+        DOCS / "council-data.json",
+        DOCS / "bylaws-data.json",
+        DOCS / "resolutions-data.json",
+        DOCS / "boards-data.json",
+    ]
+
+    missing = [str(p) for p in required if not p.exists()]
+    if missing:
+        raise RuntimeError(
+            "Build finished but required output files are missing:\n- "
+            + "\n- ".join(missing)
+        )
+
+
+def main() -> None:
+    print("=" * 60)
+    print("Building Nipissing Public Records site")
+    print("=" * 60)
+
+    ensure_docs_dir()
+    copy_site_files()
+    build_compatibility_data()
+    verify_required_outputs()
+
+    print("\n✓ docs/ built successfully")
+
+
+if __name__ == "__main__":
+    main()
