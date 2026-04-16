@@ -12,26 +12,27 @@
 <style>
 .header-split{
   display:grid;
-  grid-template-columns:minmax(340px, 1.1fr) minmax(320px, .95fr);
+  grid-template-columns:minmax(340px,1.1fr) minmax(320px,.9fr);
   gap:2rem;
   align-items:start;
 }
 .header-copy p{max-width:38rem}
-.header-calendar{
+
+.header-upcoming{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   border-radius:18px;
   padding:1rem;
   backdrop-filter:blur(6px);
 }
-.calendar-top{
+.upcoming-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:.8rem;
   gap:.75rem;
+  margin-bottom:.8rem;
 }
-.calendar-title{
+.upcoming-title{
   font-family:'Source Serif 4',serif;
   font-size:1.2rem;
   font-weight:700;
@@ -50,69 +51,68 @@
   justify-content:center;
   cursor:pointer;
   transition:all .15s;
+  flex-shrink:0;
 }
 .calendar-arrow:hover{
   background:rgba(255,255,255,.16);
   border-color:rgba(255,255,255,.28);
 }
-.calendar-weekdays,
-.calendar-grid{
-  display:grid;
-  grid-template-columns:repeat(7, 1fr);
-}
-.calendar-weekdays{
-  margin-bottom:.35rem;
-}
-.calendar-weekday{
-  text-align:center;
-  font-size:.67rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.65);
-  padding:.35rem 0;
-}
-.calendar-day{
-  min-height:88px;
-  border:1px solid rgba(255,255,255,.09);
-  background:rgba(255,255,255,.04);
-  padding:.42rem;
-  position:relative;
-}
-.calendar-day.other-month{
-  opacity:.32;
-}
-.calendar-day.today{
-  outline:2px solid rgba(255,214,102,.65);
-  outline-offset:-2px;
-}
-.day-num{
-  font-size:.82rem;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:.25rem;
-}
-.day-events{
+.upcoming-list{
   display:flex;
   flex-direction:column;
-  gap:.22rem;
+  gap:.55rem;
 }
-.day-event{
-  display:block;
-  padding:.18rem .35rem;
-  border-radius:999px;
-  font-size:.58rem;
+.upcoming-item{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  padding:.6rem .7rem;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);
+  border-radius:10px;
+}
+.upcoming-date{
+  min-width:2.2rem;
+  font-family:'Source Serif 4',serif;
+  font-size:1.1rem;
   font-weight:700;
-  letter-spacing:.03em;
-  line-height:1.25;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  color:#fff;
+  text-align:center;
 }
-.de-council{background:var(--gold-lt); color:var(--gold)}
-.de-recreation{background:var(--teal-lt); color:var(--teal)}
-.de-museum{background:var(--blue-lt); color:var(--blue)}
-.de-cemetery{background:#efe7fb; color:#6840b5}
+.upcoming-name{
+  color:#fff;
+  font-size:.88rem;
+  font-weight:500;
+  line-height:1.35;
+}
+.upcoming-links{
+  margin-left:auto;
+  display:flex;
+  gap:.35rem;
+  flex-wrap:wrap;
+}
+.upcoming-link{
+  display:inline-flex;
+  align-items:center;
+  padding:.2rem .5rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  text-decoration:none;
+  font-size:.68rem;
+  font-weight:600;
+  background:rgba(255,255,255,.07);
+}
+.upcoming-link:hover{
+  background:rgba(255,255,255,.14);
+}
+.upcoming-empty{
+  padding:.85rem .9rem;
+  border:1px dashed rgba(255,255,255,.16);
+  border-radius:10px;
+  color:rgba(255,255,255,.72);
+  font-size:.85rem;
+}
 
 .filters-wrap{
   border-bottom:1px solid var(--rule);
@@ -216,22 +216,35 @@
 .legend-recreation{background:var(--teal)}
 .legend-museum{background:var(--blue)}
 .legend-cemetery{background:#6840b5}
+
+.month-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:.16rem .48rem;
+  border-radius:999px;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.mb-council{background:var(--gold-lt);color:var(--gold)}
+.mb-recreation{background:var(--teal-lt);color:var(--teal)}
+.mb-museum{background:var(--blue-lt);color:var(--blue)}
+.mb-cemetery{background:#efe7fb;color:#6840b5}
+
 @media (max-width: 980px){
-  .header-split{
-    grid-template-columns:1fr;
-  }
+  .header-split{grid-template-columns:1fr}
 }
 @media (max-width: 700px){
-  .filters-inner{
-    padding:1rem 1.25rem .9rem;
+  .filters-inner{padding:1rem 1.25rem .9rem}
+  .upcoming-item{
+    flex-wrap:wrap;
+    align-items:flex-start;
   }
-  .calendar-day{
-    min-height:74px;
-    padding:.3rem;
-  }
-  .day-event{
-    font-size:.53rem;
-    padding:.15rem .28rem;
+  .upcoming-links{
+    margin-left:0;
+    width:100%;
   }
 }
 </style>
@@ -253,7 +266,7 @@
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html">By-Laws & Resolutions</a></li>
+      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
       <li><a href="council.html" class="active">Meetings</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
@@ -278,24 +291,13 @@
       </div>
     </div>
 
-    <div class="header-calendar">
-      <div class="calendar-top">
+    <div class="header-upcoming">
+      <div class="upcoming-top">
         <button class="calendar-arrow" id="cal-prev" aria-label="Previous month">‹</button>
-        <div class="calendar-title" id="calendar-title">Month YYYY</div>
+        <div class="upcoming-title" id="calendar-title">Month YYYY</div>
         <button class="calendar-arrow" id="cal-next" aria-label="Next month">›</button>
       </div>
-
-      <div class="calendar-weekdays">
-        <div class="calendar-weekday">Sun</div>
-        <div class="calendar-weekday">Mon</div>
-        <div class="calendar-weekday">Tue</div>
-        <div class="calendar-weekday">Wed</div>
-        <div class="calendar-weekday">Thu</div>
-        <div class="calendar-weekday">Fri</div>
-        <div class="calendar-weekday">Sat</div>
-      </div>
-
-      <div class="calendar-grid" id="calendar-grid"></div>
+      <div class="upcoming-list" id="upcoming-list"></div>
     </div>
   </div>
 </div>
@@ -397,11 +399,11 @@ let calendarYear = now.getFullYear();
 let calendarMonth = now.getMonth();
 
 function bodyBadgeClass(bodyId) {
-  if (bodyId === 'council') return 'de-council';
-  if (bodyId === 'recreation') return 'de-recreation';
-  if (bodyId === 'museum') return 'de-museum';
-  if (bodyId === 'cemetery') return 'de-cemetery';
-  return 'de-council';
+  if (bodyId === 'council') return 'mb-council';
+  if (bodyId === 'recreation') return 'mb-recreation';
+  if (bodyId === 'museum') return 'mb-museum';
+  if (bodyId === 'cemetery') return 'mb-cemetery';
+  return 'mb-council';
 }
 
 function meetingDateObj(meeting) {
@@ -423,7 +425,7 @@ function meetingsForMonth(year, monthIndex) {
     const d = meetingDateObj(m);
     if (!d) return false;
     return d.getFullYear() === year && d.getMonth() === monthIndex;
-  });
+  }).sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
 }
 
 function renderYearPills() {
@@ -446,78 +448,30 @@ function renderYearPills() {
   });
 }
 
-function renderCalendar() {
+function renderUpcomingList() {
   const title = document.getElementById('calendar-title');
-  const grid = document.getElementById('calendar-grid');
+  const list = document.getElementById('upcoming-list');
 
   const firstOfMonth = new Date(calendarYear, calendarMonth, 1);
-  const startDay = firstOfMonth.getDay();
-  const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
-
-  const prevMonthDays = new Date(calendarYear, calendarMonth, 0).getDate();
-  const monthMeetings = meetingsForMonth(calendarYear, calendarMonth);
-
   title.textContent = firstOfMonth.toLocaleDateString('en-CA', {
     month: 'long',
     year: 'numeric'
   });
 
-  const cells = [];
+  const monthMeetings = meetingsForMonth(calendarYear, calendarMonth);
 
-  for (let i = startDay - 1; i >= 0; i--) {
-    const dayNum = prevMonthDays - i;
-    cells.push({
-      day: dayNum,
-      current: false,
-      dateKey: null,
-      meetings: []
-    });
-  }
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dateKey = `${calendarYear}-${String(calendarMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    cells.push({
-      day,
-      current: true,
-      dateKey,
-      meetings: monthMeetings.filter(m => m.date === dateKey)
-    });
-  }
-
-  while (cells.length % 7 !== 0) {
-    const nextDay = cells.length - (startDay + daysInMonth) + 1;
-    cells.push({
-      day: nextDay,
-      current: false,
-      dateKey: null,
-      meetings: []
-    });
-  }
-
-  grid.innerHTML = cells.map(cell => {
-    const isToday = cell.current &&
-      calendarYear === today.getFullYear() &&
-      calendarMonth === today.getMonth() &&
-      cell.day === today.getDate();
-
-    return `
-      <div class="calendar-day ${cell.current ? '' : 'other-month'} ${isToday ? 'today' : ''}">
-        <div class="day-num">${cell.day}</div>
-        <div class="day-events">
-          ${cell.meetings.slice(0, 3).map(m => `
-            <a
-              href="${escHtml(primaryMeetingUrl(m))}"
-              class="day-event ${bodyBadgeClass(m.body_id)}"
-              title="${escHtml((m.body || 'Meeting') + ' — ' + (m.display_date || m.date || ''))}"
-            >
-              ${escHtml(m.body || 'Meeting')}
-            </a>
-          `).join('')}
-          ${cell.meetings.length > 3 ? `<span class="day-event" style="background:rgba(255,255,255,.14);color:#fff">+${cell.meetings.length - 3} more</span>` : ''}
-        </div>
+  list.innerHTML = monthMeetings.length ? monthMeetings.map(m => `
+    <div class="upcoming-item">
+      <div class="upcoming-date">${escHtml(String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2, '0'))}</div>
+      <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
+      <div class="upcoming-name">${escHtml(m.source_kind === 'council' ? `${m.meeting_type || 'Meeting'} Meeting` : (m.meeting_type || m.body || 'Meeting'))}</div>
+      <div class="upcoming-links">
+        ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="upcoming-link">Agenda</a>` : ''}
+        ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="upcoming-link">Minutes</a>` : ''}
+        ${m.package_url ? `<a href="${escHtml(m.package_url)}" target="_blank" rel="noopener" class="upcoming-link">Package</a>` : ''}
       </div>
-    `;
-  }).join('');
+    </div>
+  `).join('') : `<div class="upcoming-empty">No scheduled meetings in this month.</div>`;
 }
 
 function filteredPastMeetings() {
@@ -582,7 +536,7 @@ async function init() {
   document.getElementById('loading').style.display = 'none';
 
   renderYearPills();
-  renderCalendar();
+  renderUpcomingList();
   renderBodyResults();
 
   document.getElementById('search').addEventListener('input', e => {
@@ -605,7 +559,7 @@ async function init() {
       calendarMonth = 11;
       calendarYear -= 1;
     }
-    renderCalendar();
+    renderUpcomingList();
   });
 
   document.getElementById('cal-next').addEventListener('click', () => {
@@ -614,7 +568,7 @@ async function init() {
       calendarMonth = 0;
       calendarYear += 1;
     }
-    renderCalendar();
+    renderUpcomingList();
   });
 }
 
