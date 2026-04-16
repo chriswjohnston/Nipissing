@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nipissing Township — Public Records</title>
-<meta name="description" content="Search every by-law, resolution, and council meeting record for Nipissing Township — automatically updated and permanently preserved.">
+<meta name="description" content="Search every by-law, resolution, and meeting record for Nipissing Township — automatically updated and permanently preserved.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Council Meetings</a></li>
+      <li><a href="council.html">Meetings</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -87,7 +87,7 @@
       Public Record Archive
     </div>
     <h1>Nipissing Township<br><em>Governance Records</em></h1>
-    <p class="hero-sub">Every by-law, resolution, and council meeting — scraped directly from nipissingtownship.com, organized, and permanently preserved.</p>
+    <p class="hero-sub">Every by-law, resolution, and meeting — scraped directly from nipissingtownship.com, organized, and permanently preserved.</p>
     <div class="hero-stats">
       <div class="hero-stat"><strong id="stat-bylaws">—</strong><span>By-Laws</span></div>
       <div class="hero-stat"><strong id="stat-resolutions">—</strong><span>Resolutions</span></div>
@@ -101,7 +101,7 @@
   <div class="search-bar-inner">
     <div class="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="global-search" type="search" placeholder="Search by-laws, resolutions, council meetings…" autocomplete="off" aria-label="Search all records">
+      <input id="global-search" type="search" placeholder="Search by-laws, resolutions, meetings…" autocomplete="off" aria-label="Search all records">
     </div>
     <div class="filter-pills">
       <button class="filter-pill active" data-filter="all">All</button>
@@ -123,16 +123,18 @@
         <p>Every by-law passed by Nipissing Township Council — searchable by number, title, year, and category.</p>
         <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-bylaws">Browse archive</span></div>
       </a>
+
       <a href="bylaws.html#resolutions" class="quick-card q-teal">
         <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
         <h3>Resolutions</h3>
         <p>Motions carried and defeated at council — with mover, seconder, and outcome recorded for each.</p>
         <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-resolutions">Browse resolutions</span></div>
       </a>
+
       <a href="council.html" class="quick-card q-gold">
         <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></div>
-        <h3>Council Meetings</h3>
-        <p>Agendas, minutes, agenda packages, and video recordings for every regular and special meeting.</p>
+        <h3>Meetings</h3>
+        <p>Council, board, and committee meetings — agendas, minutes, packages, recordings, and related files in one archive.</p>
         <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-meetings">Browse meetings</span></div>
       </a>
     </div>
@@ -177,7 +179,7 @@
         <li><a href="index.html">Home &amp; Search</a></li>
         <li><a href="bylaws.html">By-Laws</a></li>
         <li><a href="bylaws.html#resolutions">Resolutions</a></li>
-        <li><a href="council.html">Council Meetings</a></li>
+        <li><a href="council.html">Meetings</a></li>
       </ul>
     </div>
     <div>
@@ -205,12 +207,12 @@ async function init() {
 
   document.getElementById('stat-bylaws').textContent = BYLAWS.length;
   document.getElementById('stat-resolutions').textContent = RESOLUTIONS.length;
-  document.getElementById('stat-meetings').textContent = MEETINGS.length;
+  document.getElementById('stat-meetings').textContent = ALL_MEETINGS.length;
   document.getElementById('stat-updated').textContent = LAST_UPDATED || '—';
 
   document.getElementById('qc-bylaws').textContent = `${BYLAWS.length} by-laws`;
   document.getElementById('qc-resolutions').textContent = `${RESOLUTIONS.length} resolutions`;
-  document.getElementById('qc-meetings').textContent = `${MEETINGS.length} meetings`;
+  document.getElementById('qc-meetings').textContent = `${ALL_MEETINGS.length} meetings`;
 
   renderRecentMeetings();
   renderRecentBylaws();
@@ -267,7 +269,7 @@ function runSearch(q) {
   let pool = ALL_DATA;
   if (activeFilter === 'bylaw') pool = BYLAWS;
   else if (activeFilter === 'resolution') pool = RESOLUTIONS;
-  else if (activeFilter === 'meeting') pool = MEETINGS;
+  else if (activeFilter === 'meeting') pool = ALL_MEETINGS;
 
   const scored = pool
     .map(item => ({ item, s: scoreItem(item, q) }))
