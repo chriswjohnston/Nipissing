@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>By-Laws &amp; Resolutions — Nipissing Township Public Records</title>
+<meta name="description" content="Browse every by-law and resolution passed by Nipissing Township Council — searchable and automatically updated.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bylaws.html" class="active">By-Laws &amp; Resolutions</a></li>
+      <li><a href="council.html">Council Meetings</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Nipissing Township · Public Records</p>
+    <h1>By-Laws &amp; <em>Resolutions</em></h1>
+    <p>Every by-law and resolution on record — sourced from nipissingtownship.com and updated automatically.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <div class="filter-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search" type="search" placeholder="Search by number, title, category…" autocomplete="off">
+    </div>
+    <div class="tab-group" id="type-tabs">
+      <button class="tab-btn active" data-type="bylaw">By-Laws <span class="cnt" id="bl-cnt"></span></button>
+      <button class="tab-btn" data-type="resolution">Resolutions <span class="cnt" id="res-cnt"></span></button>
+    </div>
+    <select class="year-select" id="year-filter">
+      <option value="">All Years</option>
+    </select>
+    <span class="result-count" id="result-count"></span>
+  </div>
+</div>
+
+<main id="main">
+  <div class="results-grid" id="results"></div>
+  <div class="state-msg" id="empty" style="display:none">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <strong>No results found</strong>
+    <p>Try different keywords or clear the year filter.</p>
+  </div>
+  <div class="state-msg" id="loading">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <strong>Loading records…</strong>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Nipissing Township<br>Public Records</div>
+      <p class="footer-desc">An independent public archive of Nipissing Township governance documents.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Sections</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home &amp; Search</a></li>
+        <li><a href="bylaws.html">By-Laws</a></li>
+        <li><a href="bylaws.html#resolutions">Resolutions</a></li>
+        <li><a href="council.html">Council Meetings</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Source</div>
+      <ul class="footer-links">
+        <li><a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">Township By-Laws</a></li>
+        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Meetings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Data sourced from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> · Updated automatically</p>
+    <p>Not an official Township resource</p>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+let activeType = 'bylaw';
+let activeYear = '';
+let searchQ = '';
+
+// Check hash for direct link to resolutions tab
+if (location.hash === '#resolutions') {
+  activeType = 'resolution';
+}
+
+async function init() {
+  await loadAllData();
+  document.getElementById('loading').style.display = 'none';
+
+  // Counts
+  document.getElementById('bl-cnt').textContent = BYLAWS.length;
+  document.getElementById('res-cnt').textContent = RESOLUTIONS.length;
+
+  // Populate year filters
+  const blYears = [...new Set(BYLAWS.map(b => b.year).filter(Boolean))].sort((a,b)=>b-a);
+  const resYears = [...new Set(RESOLUTIONS.map(r => r.year).filter(Boolean))].sort((a,b)=>b-a);
+  window._blYears = blYears;
+  window._resYears = resYears;
+
+  // Set initial tab
+  if (activeType === 'resolution') {
+    document.querySelector('[data-type="bylaw"]').classList.remove('active');
+    document.querySelector('[data-type="resolution"]').classList.add('active');
+    populateYears(resYears);
+  } else {
+    populateYears(blYears);
+  }
+
+  render();
+}
+
+function populateYears(years) {
+  const sel = document.getElementById('year-filter');
+  sel.innerHTML = '<option value="">All Years</option>';
+  years.forEach(y => {
+    const o = document.createElement('option');
+    o.value = y;
+    o.textContent = y;
+    if (String(y) === activeYear) o.selected = true;
+    sel.appendChild(o);
+  });
+}
+
+function render() {
+  const pool = activeType === 'bylaw' ? BYLAWS : RESOLUTIONS;
+  let items = pool;
+
+  if (activeYear) {
+    items = items.filter(i => String(i.year) === activeYear);
+  }
+
+  if (searchQ.trim()) {
+    const scored = items.map(i => ({i, s: scoreItem(i, searchQ)})).filter(x => x.s > 0);
+    scored.sort((a,b) => b.s - a.s);
+    items = scored.map(x => x.i);
+  }
+
+  const container = document.getElementById('results');
+  const empty = document.getElementById('empty');
+  const count = document.getElementById('result-count');
+
+  count.textContent = items.length ? `${items.length.toLocaleString()} record${items.length===1?'':'s'}` : '';
+  empty.style.display = items.length ? 'none' : '';
+
+  container.innerHTML = items.slice(0, 200).map(item =>
+    activeType === 'bylaw' ? bylawCard(item, searchQ) : resolutionCard(item, searchQ)
+  ).join('');
+}
+
+document.getElementById('search').addEventListener('input', e => { searchQ = e.target.value; render(); });
+document.querySelectorAll('[data-type]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeType = btn.dataset.type;
+    activeYear = '';
+    document.getElementById('year-filter').value = '';
+    populateYears(activeType === 'bylaw' ? window._blYears : window._resYears);
+    render();
+  });
+});
+document.getElementById('year-filter').addEventListener('change', e => { activeYear = e.target.value; render(); });
+
+init();
+</script>
+</body>
+</html>
