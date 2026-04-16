@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Council Meeting — Nipissing Township Public Records</title>
+<title>Meeting — Nipissing Township Public Records</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
 .meeting-badge:hover{background:rgba(255,255,255,.14);color:white;border-color:rgba(255,255,255,.3)}
 .meeting-badge.has-video{background:rgba(220,50,50,.2);border-color:rgba(220,50,50,.4);color:#ffa0a0}
 .meeting-badge.has-video:hover{background:rgba(220,50,50,.28);color:#ffd2d2}
+.meeting-badge.has-extra{background:rgba(154,109,0,.18);border-color:rgba(154,109,0,.35);color:#f1d899}
 .summary-content{font-size:.92rem;line-height:1.75;color:var(--ink-2);margin-top:.5rem}
 .summary-content h1,.summary-content h2,.summary-content h3,.summary-content h4{margin:0 0 .75rem 0;font-family:'Source Serif 4',serif;color:var(--ink)}
 .summary-content p{margin:.6rem 0}
@@ -39,6 +40,7 @@
 .meeting-nav-link{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:.5rem .9rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--white);transition:all .15s}
 .meeting-nav-link:hover{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-lt)}
 .meeting-nav-link svg{width:15px;height:15px;flex-shrink:0}
+.extra-docs-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
 </style>
 </head>
 <body>
@@ -54,7 +56,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html" class="active">Council Meetings</a></li>
+      <li><a href="council.html" class="active">Meetings</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -64,7 +66,7 @@
 
 <div class="meeting-hero" id="hero">
   <div class="meeting-hero-inner">
-    <div class="meeting-type-label" id="m-type-label">Council Meeting</div>
+    <div class="meeting-type-label" id="m-type-label">Meeting</div>
     <h1 class="meeting-date-title" id="m-date-title">Loading…</h1>
     <div class="meeting-doc-badges" id="m-badges"></div>
   </div>
@@ -73,7 +75,7 @@
 <main id="main" style="padding-top:2rem">
   <a href="council.html" class="back-link">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    Back to Council Meetings
+    Back to Meetings
   </a>
 
   <div id="detail-layout" style="display:none">
@@ -94,7 +96,6 @@
         </div>
       </div>
     </div>
-
     <div class="meeting-nav" id="meeting-nav"></div>
   </div>
 
@@ -116,7 +117,7 @@
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-        <li><a href="council.html">Council Meetings</a></li>
+        <li><a href="council.html">Meetings</a></li>
       </ul>
     </div>
     <div></div>
@@ -143,10 +144,7 @@ function summaryMarkdownToHtml(text) {
 
   for (const raw of lines) {
     const line = raw.trim();
-    if (!line) {
-      closeList();
-      continue;
-    }
+    if (!line) { closeList(); continue; }
     if (line.startsWith('### ')) { closeList(); html += `<h4>${escHtml(line.slice(4))}</h4>`; continue; }
     if (line.startsWith('## ')) { closeList(); html += `<h3>${escHtml(line.slice(3))}</h3>`; continue; }
     if (line.startsWith('# ')) { closeList(); html += `<h2>${escHtml(line.slice(2))}</h2>`; continue; }
@@ -167,32 +165,43 @@ function summaryMarkdownToHtml(text) {
 async function init() {
   const params = new URLSearchParams(location.search);
   const dateParam = params.get('date');
+  const bodyParam = params.get('body') || 'council';
 
   await loadAllData();
 
-  const m = MEETINGS.find(x => x.date === dateParam);
+  const meetingPool = bodyParam === 'council'
+    ? MEETINGS
+    : ALL_MEETINGS.filter(x => (x.body_id || '') === bodyParam);
+
+  const m = meetingPool.find(x => x.date === dateParam && (x.body_id || 'council') === bodyParam);
+
   if (!m) {
     document.getElementById('not-found').style.display = '';
     document.getElementById('m-date-title').textContent = 'Meeting Not Found';
     return;
   }
 
-  document.title = `${m.display_date||m.date} Council Meeting — Nipissing Township Public Records`;
+  document.title = `${m.display_date || m.date} Meeting — Nipissing Township Public Records`;
 
-  document.getElementById('m-type-label').textContent = `${m.meeting_type||'Regular'} Meeting · Nipissing Township Council`;
+  const bodyLabel = m.body || 'Meeting';
+  document.getElementById('m-type-label').textContent = `${m.meeting_type || 'Meeting'} · ${bodyLabel}`;
   document.getElementById('m-date-title').textContent = m.display_date || m.date;
+
+  const extraDocs = Array.isArray(m.extra_docs) ? m.extra_docs : [];
 
   const badges = [];
   if (m.agenda_url) badges.push(`<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda</a>`);
   if (m.minutes_url) badges.push(`<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="meeting-badge">Minutes</a>`);
   if (m.package_url) badges.push(`<a href="${escHtml(m.package_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda Package</a>`);
-  if (m.video_url) badges.push(`<a href="${escHtml(m.video_url)}" target="_blank" rel="noopener" class="meeting-badge has-video">☞ Video Recording</a>`);
-  if (m.cancelled) badges.push('<span class="meeting-badge" style="background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.4);color:#f5a0a0">CANCELLED</span>');
+  if (m.video_url) badges.push(`<a href="${escHtml(m.video_url)}" target="_blank" rel="noopener" class="meeting-badge has-video">Video Recording</a>`);
+  if (extraDocs.length) badges.push(`<span class="meeting-badge has-extra">Additional Files (${extraDocs.length})</span>`);
+  if (m.cancelled) badges.push('<span class="meeting-badge" style="background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.4);color:#f5a0a0">Cancelled</span>');
   document.getElementById('m-badges').innerHTML = badges.join('');
 
   const metaRows = [
     ['Date', m.display_date || m.date],
-    ['Type', m.meeting_type || 'Regular'],
+    ['Type', m.meeting_type || 'Meeting'],
+    ['Body', m.body || 'Council'],
     ['Year', m.year],
   ].filter(x => x[1]);
 
@@ -201,22 +210,46 @@ async function init() {
   ).join('');
 
   const docItems = [
-    m.agenda_url && ['Agenda', m.agenda_url],
-    m.minutes_url && ['Minutes', m.minutes_url],
-    m.package_url && ['Agenda Package', m.package_url],
+    m.agenda_url && ['Agenda', m.agenda_url, false],
+    m.minutes_url && ['Minutes', m.minutes_url, false],
+    m.package_url && ['Agenda Package', m.package_url, false],
     m.video_url && ['Video Recording', m.video_url, true],
   ].filter(Boolean);
 
+  let docsHtml = '';
   if (docItems.length) {
-    document.getElementById('docs-links').innerHTML = docItems.map(([label, url]) =>
+    docsHtml += docItems.map(([label, url, isVideo]) =>
       `<a href="${escHtml(url)}" target="_blank" rel="noopener" class="doc-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        <span>${escHtml(label)}</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          ${isVideo
+            ? '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>'
+            : '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>'}
+        </svg>
+        ${escHtml(label)}
       </a>`
     ).join('');
-  } else {
-    document.getElementById('docs-links').innerHTML = '<p class="empty-note">No document links available.</p>';
   }
+
+  if (extraDocs.length) {
+    docsHtml += `
+      <div style="margin-top:1rem">
+        <h4 style="font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-bottom:.6rem">Additional Files</h4>
+        <div class="extra-docs-list">
+          ${extraDocs.map(d => `
+            <a href="${escHtml(d.url || '')}" target="_blank" rel="noopener" class="doc-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              ${escHtml(d.label || 'Additional file')}
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById('docs-links').innerHTML = docsHtml || '<p class="empty-note">No document links available.</p>';
 
   if (m.summary) {
     document.getElementById('summary-section').innerHTML = `
@@ -226,49 +259,53 @@ async function init() {
       </div>`;
   }
 
-  const resAtMeeting = RESOLUTIONS.filter(r => (r.meeting_date || r.date) === m.date);
-  if (resAtMeeting.length) {
-    document.getElementById('resolutions-section').innerHTML = `
-      <div class="detail-card">
-        <h3>Resolutions (${resAtMeeting.length})</h3>
-        <div class="res-table-wrap">
-          <table class="res-table">
-            <thead>
-              <tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr>
-            </thead>
-            <tbody>
-              ${resAtMeeting.map(r => `
-                <tr>
-                  <td><a class="res-link" href="resolution-detail.html?id=${encodeURIComponent(r.number)}">${escHtml(r.number || '')}</a></td>
-                  <td>${escHtml(r.title || r.motion_text || '')}</td>
-                  <td>${escHtml(r.mover || '')}</td>
-                  <td><span class="outcome-pill outcome-${escHtml((r.outcome || r.status || 'carried').toLowerCase())}">${escHtml((r.outcome || r.status || 'carried').toUpperCase())}</span></td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      </div>`;
+  if (bodyParam === 'council') {
+    const resAtMeeting = RESOLUTIONS.filter(r => (r.meeting_date || r.date) === m.date);
+    if (resAtMeeting.length) {
+      document.getElementById('resolutions-section').innerHTML = `
+        <div class="detail-card" style="margin-top:1rem">
+          <h3>Resolutions (${resAtMeeting.length})</h3>
+          <div class="res-table-wrap">
+            <table class="res-table">
+              <thead>
+                <tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr>
+              </thead>
+              <tbody>
+                ${resAtMeeting.map(r => {
+                  const outcome = (r.outcome || r.status || '').toLowerCase();
+                  const motionText = (r.motion_text || r.title || '').substring(0, 120);
+                  return `
+                    <tr>
+                      <td><a href="resolution-detail.html?id=${encodeURIComponent(r.number)}" class="res-link">${escHtml(r.number || '')}</a></td>
+                      <td>${escHtml(motionText)}${motionText.length >= 120 ? '…' : ''}</td>
+                      <td>${escHtml(r.mover || '—')}</td>
+                      <td>${outcome ? `<span class="outcome-pill outcome-${escHtml(outcome)}">${escHtml(outcome.toUpperCase())}</span>` : '—'}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>`;
+    }
+
+    const bylawsAtMeeting = BYLAWS.filter(b => (b.meeting_date || b.date_passed) === m.date);
+    if (bylawsAtMeeting.length) {
+      document.getElementById('bylaws-section').innerHTML = `
+        <div class="detail-card" style="margin-top:1rem">
+          <h3>By-Laws (${bylawsAtMeeting.length})</h3>
+          <div class="results-grid" style="margin-top:.75rem">${bylawsAtMeeting.map(b => bylawCard(b, '')).join('')}</div>
+        </div>`;
+    }
   }
 
-  const bylawsAtMeeting = BYLAWS.filter(b => (b.meeting_date || b.date_passed) === m.date);
-  if (bylawsAtMeeting.length) {
-    document.getElementById('bylaws-section').innerHTML = `
-      <div class="detail-card">
-        <h3>By-Laws (${bylawsAtMeeting.length})</h3>
-        <div class="results-grid">
-          ${bylawsAtMeeting.map(b => bylawCard(b, '')).join('')}
-        </div>
-      </div>`;
-  }
-
-  const idx = MEETINGS.findIndex(x => x.date === dateParam);
-  const prevM = MEETINGS[idx - 1];
-  const nextM = MEETINGS[idx + 1];
+  const idx = meetingPool.findIndex(x => x.date === dateParam && (x.body_id || 'council') === bodyParam);
+  const prevM = meetingPool[idx - 1];
+  const nextM = meetingPool[idx + 1];
   let navHtml = '';
-  if (nextM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(nextM.date)}" class="meeting-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${escHtml(nextM.display_date||nextM.date)}</a>`;
+  if (nextM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(nextM.date)}&body=${encodeURIComponent(nextM.body_id || 'council')}" class="meeting-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${escHtml(nextM.display_date || nextM.date)}</a>`;
   else navHtml += '<span></span>';
-  if (prevM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(prevM.date)}" class="meeting-nav-link">${escHtml(prevM.display_date||prevM.date)} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
+  if (prevM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(prevM.date)}&body=${encodeURIComponent(prevM.body_id || 'council')}" class="meeting-nav-link">${escHtml(prevM.display_date || prevM.date)} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
   document.getElementById('meeting-nav').innerHTML = navHtml;
 
   document.getElementById('detail-layout').style.display = '';
