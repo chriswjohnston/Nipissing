@@ -28,6 +28,7 @@ HEADERS = {
 }
 
 TODAY = date.today().isoformat()
+MAX_PER_RUN = 5
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -45,9 +46,6 @@ def save_json(path: Path, data: Any) -> None:
 
 
 def slug_from_display_date(display_date: str) -> str:
-    """
-    'Mar 17, 2026' -> 'march-17-2026'
-    """
     m = re.match(r"^([A-Za-z]{3,9})\s+(\d{1,2}),\s+(\d{4})$", (display_date or "").strip())
     if not m:
         return ""
@@ -87,10 +85,10 @@ def summary_key_for_meeting(meeting: dict[str, Any]) -> str | None:
 
 
 def should_summarize(meeting: dict[str, Any], summaries: dict[str, str]) -> tuple[bool, str]:
-        # ✅ Only summarize 2026+ meetings
     year = str(meeting.get("year") or meeting.get("date", "")[:4])
     if not year.isdigit() or int(year) < 2026:
         return False, "older than 2026"
+
     if meeting.get("cancelled"):
         return False, "cancelled"
 
@@ -116,12 +114,6 @@ def fetch_pdf_text(url: str) -> str:
     if not url.lower().endswith(".pdf"):
         raise RuntimeError("Not a PDF URL")
 
-    r = requests.get(url, headers=HEADERS, timeout=120)
-    r.raise_for_status()
-
-    pdf_bytes = io.BytesIO(r.content)
-    text = extract_text(pdf_bytes) or ""
-    return text.strip()
     r = requests.get(url, headers=HEADERS, timeout=120)
     r.raise_for_status()
 
@@ -207,7 +199,7 @@ def call_anthropic(prompt: str) -> str:
     }
 
     payload = {
-        "model": "claude-3-5-sonnet-latest",
+        "model": ANTHROPIC_MODEL,
         "max_tokens": 1200,
         "temperature": 0.2,
         "messages": [
@@ -221,7 +213,7 @@ def call_anthropic(prompt: str) -> str:
     }
 
     r = requests.post(
-        "https://api.anthropic.com/v1/messages",
+        ANTHROPIC_API_URL,
         headers=headers,
         json=payload,
         timeout=180,
@@ -232,7 +224,6 @@ def call_anthropic(prompt: str) -> str:
         r.raise_for_status()
 
     data = r.json()
-
     parts = data.get("content", [])
     text_parts = [p.get("text", "") for p in parts if p.get("type") == "text"]
     out = "\n".join(text_parts).strip()
@@ -257,6 +248,9 @@ def main() -> None:
         ok, detail = should_summarize(meeting, summaries)
         if ok:
             candidates.append((meeting, detail))
+
+    candidates.sort(key=lambda item: item[0].get("date", ""), reverse=True)
+    candidates = candidates[:MAX_PER_RUN]
 
     print(f"Meetings loaded: {len(meetings.get('meetings', []))}")
     print(f"Existing summaries: {len(summaries)}")
@@ -295,7 +289,6 @@ def main() -> None:
             save_json(SUMMARIES_FILE, summaries)
             print("Saved summary")
 
-            # be polite to rate limits
             time.sleep(1.5)
 
         except Exception as e:
