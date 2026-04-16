@@ -41,6 +41,7 @@
 .meeting-nav-link:hover{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-lt)}
 .meeting-nav-link svg{width:15px;height:15px;flex-shrink:0}
 .extra-docs-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.empty-note{font-size:.84rem;color:var(--ink-4)}
 </style>
 </head>
 <body>
@@ -50,7 +51,12 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
       <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
     </a>
     <ul class="nav-links" id="nav-links">
@@ -59,14 +65,16 @@
       <li><a href="council.html" class="active">Meetings</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
     </button>
   </div>
 </nav>
 
 <div class="meeting-hero" id="hero">
   <div class="meeting-hero-inner">
-    <div class="meeting-type-label" id="m-type-label">Meeting</div>
+    <div class="meeting-type-label" id="m-type-label">Council Meeting</div>
     <h1 class="meeting-date-title" id="m-date-title">Loading…</h1>
     <div class="meeting-doc-badges" id="m-badges"></div>
   </div>
@@ -74,7 +82,9 @@
 
 <main id="main" style="padding-top:2rem">
   <a href="council.html" class="back-link">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
     Back to Meetings
   </a>
 
@@ -96,11 +106,14 @@
         </div>
       </div>
     </div>
+
     <div class="meeting-nav" id="meeting-nav"></div>
   </div>
 
   <div class="state-msg" id="not-found" style="display:none">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+    </svg>
     <strong>Meeting not found</strong>
     <p><a href="council.html">Browse all meetings →</a></p>
   </div>
@@ -144,16 +157,23 @@ function summaryMarkdownToHtml(text) {
 
   for (const raw of lines) {
     const line = raw.trim();
-    if (!line) { closeList(); continue; }
+    if (!line) {
+      closeList();
+      continue;
+    }
     if (line.startsWith('### ')) { closeList(); html += `<h4>${escHtml(line.slice(4))}</h4>`; continue; }
-    if (line.startsWith('## ')) { closeList(); html += `<h3>${escHtml(line.slice(3))}</h3>`; continue; }
-    if (line.startsWith('# ')) { closeList(); html += `<h2>${escHtml(line.slice(2))}</h2>`; continue; }
+    if (line.startsWith('## '))  { closeList(); html += `<h3>${escHtml(line.slice(3))}</h3>`; continue; }
+    if (line.startsWith('# '))   { closeList(); html += `<h2>${escHtml(line.slice(2))}</h2>`; continue; }
     if (/^[-*]\s+/.test(line)) {
       if (!inList) { html += '<ul>'; inList = true; }
       html += `<li>${escHtml(line.replace(/^[-*]\s+/, ''))}</li>`;
       continue;
     }
-    if (line === '---') { closeList(); html += '<hr>'; continue; }
+    if (line === '---') {
+      closeList();
+      html += '<hr>';
+      continue;
+    }
     closeList();
     html += `<p>${escHtml(line)}</p>`;
   }
@@ -165,16 +185,10 @@ function summaryMarkdownToHtml(text) {
 async function init() {
   const params = new URLSearchParams(location.search);
   const dateParam = params.get('date');
-  const bodyParam = params.get('body') || 'council';
 
   await loadAllData();
 
-  const meetingPool = bodyParam === 'council'
-    ? MEETINGS
-    : ALL_MEETINGS.filter(x => (x.body_id || '') === bodyParam);
-
-  const m = meetingPool.find(x => x.date === dateParam && (x.body_id || 'council') === bodyParam);
-
+  const m = MEETINGS.find(x => x.date === dateParam);
   if (!m) {
     document.getElementById('not-found').style.display = '';
     document.getElementById('m-date-title').textContent = 'Meeting Not Found';
@@ -183,31 +197,32 @@ async function init() {
 
   document.title = `${m.display_date || m.date} Meeting — Nipissing Township Public Records`;
 
-  const bodyLabel = m.body || 'Meeting';
-  document.getElementById('m-type-label').textContent = `${m.meeting_type || 'Meeting'} · ${bodyLabel}`;
+  document.getElementById('m-type-label').textContent = `${m.meeting_type || 'Regular'} Meeting · Nipissing Township Council`;
   document.getElementById('m-date-title').textContent = m.display_date || m.date;
 
   const extraDocs = Array.isArray(m.extra_docs) ? m.extra_docs : [];
 
   const badges = [];
-  if (m.agenda_url) badges.push(`<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda</a>`);
+  if (m.agenda_url)  badges.push(`<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda</a>`);
   if (m.minutes_url) badges.push(`<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="meeting-badge">Minutes</a>`);
   if (m.package_url) badges.push(`<a href="${escHtml(m.package_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda Package</a>`);
-  if (m.video_url) badges.push(`<a href="${escHtml(m.video_url)}" target="_blank" rel="noopener" class="meeting-badge has-video">Video Recording</a>`);
+  if (m.video_url)   badges.push(`<a href="${escHtml(m.video_url)}" target="_blank" rel="noopener" class="meeting-badge has-video">Video Recording</a>`);
   if (extraDocs.length) badges.push(`<span class="meeting-badge has-extra">Additional Files (${extraDocs.length})</span>`);
-  if (m.cancelled) badges.push('<span class="meeting-badge" style="background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.4);color:#f5a0a0">Cancelled</span>');
+  if (m.cancelled) badges.push(`<span class="meeting-badge" style="background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.4);color:#f5a0a0">Cancelled</span>`);
   document.getElementById('m-badges').innerHTML = badges.join('');
 
   const metaRows = [
     ['Date', m.display_date || m.date],
-    ['Type', m.meeting_type || 'Meeting'],
-    ['Body', m.body || 'Council'],
+    ['Type', m.meeting_type || 'Regular'],
     ['Year', m.year],
   ].filter(x => x[1]);
 
-  document.getElementById('meta-rows').innerHTML = metaRows.map(([l, v]) =>
-    `<div class="detail-row"><span class="detail-label">${escHtml(l)}</span><span class="detail-value">${escHtml(String(v))}</span></div>`
-  ).join('');
+  document.getElementById('meta-rows').innerHTML = metaRows.map(([label, value]) => `
+    <div class="detail-row">
+      <span class="detail-label">${escHtml(label)}</span>
+      <span class="detail-value">${escHtml(String(value))}</span>
+    </div>
+  `).join('');
 
   const docItems = [
     m.agenda_url && ['Agenda', m.agenda_url, false],
@@ -216,98 +231,123 @@ async function init() {
     m.video_url && ['Video Recording', m.video_url, true],
   ].filter(Boolean);
 
-  let docsHtml = '';
-  if (docItems.length) {
-    docsHtml += docItems.map(([label, url, isVideo]) =>
+  if (docItems.length || extraDocs.length) {
+    let html = docItems.map(([label, url, isVideo]) =>
       `<a href="${escHtml(url)}" target="_blank" rel="noopener" class="doc-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           ${isVideo
             ? '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>'
             : '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>'}
         </svg>
-        ${escHtml(label)}
+        <span>${escHtml(label)}</span>
       </a>`
     ).join('');
-  }
 
-  if (extraDocs.length) {
-    docsHtml += `
-      <div style="margin-top:1rem">
-        <h4 style="font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-bottom:.6rem">Additional Files</h4>
-        <div class="extra-docs-list">
-          ${extraDocs.map(d => `
-            <a href="${escHtml(d.url || '')}" target="_blank" rel="noopener" class="doc-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-              </svg>
-              ${escHtml(d.label || 'Additional file')}
-            </a>
-          `).join('')}
+    if (extraDocs.length) {
+      html += `
+        <div style="margin-top:1rem">
+          <h4 style="font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-bottom:.6rem">Additional Files</h4>
+          <div class="extra-docs-list">
+            ${extraDocs.map(d => `
+              <a href="${escHtml(d.url || '')}" target="_blank" rel="noopener" class="doc-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                <span>${escHtml(d.label || 'Additional file')}</span>
+              </a>
+            `).join('')}
+          </div>
         </div>
-      </div>
-    `;
-  }
+      `;
+    }
 
-  document.getElementById('docs-links').innerHTML = docsHtml || '<p class="empty-note">No document links available.</p>';
+    document.getElementById('docs-links').innerHTML = html;
+  } else {
+    document.getElementById('docs-links').innerHTML = '<p class="empty-note">No document links available.</p>';
+  }
 
   if (m.summary) {
     document.getElementById('summary-section').innerHTML = `
       <div class="detail-card">
         <h3>Summary</h3>
         <div class="summary-content">${summaryMarkdownToHtml(m.summary)}</div>
-      </div>`;
+      </div>
+    `;
   }
 
-  if (bodyParam === 'council') {
-    const resAtMeeting = RESOLUTIONS.filter(r => (r.meeting_date || r.date) === m.date);
-    if (resAtMeeting.length) {
-      document.getElementById('resolutions-section').innerHTML = `
-        <div class="detail-card" style="margin-top:1rem">
-          <h3>Resolutions (${resAtMeeting.length})</h3>
-          <div class="res-table-wrap">
-            <table class="res-table">
-              <thead>
-                <tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr>
-              </thead>
-              <tbody>
-                ${resAtMeeting.map(r => {
-                  const outcome = (r.outcome || r.status || '').toLowerCase();
-                  const motionText = (r.motion_text || r.title || '').substring(0, 120);
-                  return `
-                    <tr>
-                      <td><a href="resolution-detail.html?id=${encodeURIComponent(r.number)}" class="res-link">${escHtml(r.number || '')}</a></td>
-                      <td>${escHtml(motionText)}${motionText.length >= 120 ? '…' : ''}</td>
-                      <td>${escHtml(r.mover || '—')}</td>
-                      <td>${outcome ? `<span class="outcome-pill outcome-${escHtml(outcome)}">${escHtml(outcome.toUpperCase())}</span>` : '—'}</td>
-                    </tr>
-                  `;
-                }).join('')}
-              </tbody>
-            </table>
-          </div>
-        </div>`;
-    }
-
-    const bylawsAtMeeting = BYLAWS.filter(b => (b.meeting_date || b.date_passed) === m.date);
-    if (bylawsAtMeeting.length) {
-      document.getElementById('bylaws-section').innerHTML = `
-        <div class="detail-card" style="margin-top:1rem">
-          <h3>By-Laws (${bylawsAtMeeting.length})</h3>
-          <div class="results-grid" style="margin-top:.75rem">${bylawsAtMeeting.map(b => bylawCard(b, '')).join('')}</div>
-        </div>`;
-    }
+  const resAtMeeting = RESOLUTIONS.filter(r => (r.meeting_date || r.date) === m.date);
+  if (resAtMeeting.length) {
+    document.getElementById('resolutions-section').innerHTML = `
+      <div class="detail-card" style="margin-top:1rem">
+        <h3>Resolutions (${resAtMeeting.length})</h3>
+        <div class="res-table-wrap">
+          <table class="res-table">
+            <thead>
+              <tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr>
+            </thead>
+            <tbody>
+              ${resAtMeeting.map(r => {
+                const outcome = (r.outcome || r.status || '').toLowerCase();
+                const motionText = (r.motion_text || r.title || '').substring(0, 120);
+                return `
+                  <tr>
+                    <td><a href="resolution-detail.html?id=${encodeURIComponent(r.number)}" class="res-link">${escHtml(r.number || '')}</a></td>
+                    <td>${escHtml(motionText)}${motionText.length >= 120 ? '…' : ''}</td>
+                    <td>${escHtml(r.mover || '—')}</td>
+                    <td>${outcome ? `<span class="outcome-pill outcome-${escHtml(outcome)}">${escHtml(outcome.toUpperCase())}</span>` : '—'}</td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
   }
 
-  const idx = meetingPool.findIndex(x => x.date === dateParam && (x.body_id || 'council') === bodyParam);
-  const prevM = meetingPool[idx - 1];
-  const nextM = meetingPool[idx + 1];
+  const bylawsAtMeeting = BYLAWS.filter(b => (b.meeting_date || b.date_passed) === m.date);
+  if (bylawsAtMeeting.length) {
+    document.getElementById('bylaws-section').innerHTML = `
+      <div class="detail-card" style="margin-top:1rem">
+        <h3>By-Laws (${bylawsAtMeeting.length})</h3>
+        <div class="results-grid" style="margin-top:.75rem">
+          ${bylawsAtMeeting.map(b => bylawCard(b, '')).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  const idx = MEETINGS.findIndex(x => x.date === dateParam);
+  const prevM = MEETINGS[idx - 1];
+  const nextM = MEETINGS[idx + 1];
+
   let navHtml = '';
-  if (nextM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(nextM.date)}&body=${encodeURIComponent(nextM.body_id || 'council')}" class="meeting-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> ${escHtml(nextM.display_date || nextM.date)}</a>`;
-  else navHtml += '<span></span>';
-  if (prevM) navHtml += `<a href="meeting-detail.html?date=${encodeURIComponent(prevM.date)}&body=${encodeURIComponent(prevM.body_id || 'council')}" class="meeting-nav-link">${escHtml(prevM.display_date || prevM.date)} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`;
-  document.getElementById('meeting-nav').innerHTML = navHtml;
+  if (nextM) {
+    navHtml += `
+      <a href="meeting-detail.html?date=${encodeURIComponent(nextM.date)}" class="meeting-nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        ${escHtml(nextM.display_date || nextM.date)}
+      </a>
+    `;
+  } else {
+    navHtml += '<span></span>';
+  }
 
+  if (prevM) {
+    navHtml += `
+      <a href="meeting-detail.html?date=${encodeURIComponent(prevM.date)}" class="meeting-nav-link">
+        ${escHtml(prevM.display_date || prevM.date)}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    `;
+  }
+
+  document.getElementById('meeting-nav').innerHTML = navHtml;
   document.getElementById('detail-layout').style.display = '';
 }
 
