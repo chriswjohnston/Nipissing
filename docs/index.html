@@ -1,4 +1,307 @@
-function bodyBadgeClass(bodyId) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nipissing Township — Public Records</title>
+<meta name="description" content="Search every by-law, resolution, and council meeting record for Nipissing Township — automatically updated and permanently preserved.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero{background:var(--blue);padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 100% 0%,rgba(43,108,163,.6) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 80% at 0% 100%,rgba(27,107,107,.4) 0%,transparent 50%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,rgba(184,134,11,.3) 100%)}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.3rem .9rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:1.5rem}
+.hero h1{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:white;line-height:1.15;margin-bottom:.85rem;max-width:720px}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.68);max-width:540px;line-height:1.75;margin-bottom:2.5rem}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.hero-stat{color:white}
+.hero-stat strong{display:block;font-family:'Source Serif 4',serif;font-size:2rem;font-weight:600;line-height:1;margin-bottom:.15rem}
+.hero-stat span{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em}
+
+.search-bar{background:var(--white);border-bottom:1px solid var(--rule);padding:1.1rem 2rem;position:sticky;top:60px;z-index:150;box-shadow:var(--shadow-sm)}
+.search-bar-inner{max-width:1200px;margin:0 auto;display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.search-box{position:relative;flex:1;min-width:240px;max-width:560px}
+.search-box svg{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-4);pointer-events:none}
+#global-search{width:100%;padding:.65rem 1rem .65rem 2.6rem;border:1.5px solid var(--rule);border-radius:var(--radius-lg);background:var(--page);font-size:.92rem;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+#global-search:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(43,108,163,.12);background:white}
+#global-search::placeholder{color:var(--ink-4)}
+.filter-pills{display:flex;gap:.4rem;flex-wrap:wrap}
+.filter-pill{padding:.42rem .9rem;border:1.5px solid var(--rule);border-radius:20px;background:white;font-size:.78rem;font-weight:500;color:var(--ink-3);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif}
+.filter-pill:hover{border-color:var(--blue-mid);color:var(--blue)}
+.filter-pill.active{border-color:var(--blue);background:var(--blue);color:white}
+.search-result-count{margin-left:auto;font-size:.8rem;color:var(--ink-4);white-space:nowrap;flex-shrink:0}
+
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem}
+.quick-card{background:var(--white);border:1px solid var(--rule);border-radius:var(--radius-lg);padding:1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.6rem;transition:border-color .15s,box-shadow .15s,transform .12s;position:relative;overflow:hidden}
+.quick-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.quick-card.q-blue::before{background:var(--blue)}
+.quick-card.q-teal::before{background:var(--teal)}
+.quick-card.q-gold::before{background:var(--gold)}
+.quick-card:hover{border-color:rgba(43,108,163,.3);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.quick-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center}
+.quick-icon svg{width:20px;height:20px}
+.q-blue .quick-icon{background:var(--blue-lt);color:var(--blue)}
+.q-teal .quick-icon{background:var(--teal-lt);color:var(--teal)}
+.q-gold .quick-icon{background:var(--gold-lt);color:var(--gold)}
+.quick-card h3{font-family:'Source Serif 4',serif;font-size:1rem;font-weight:600;color:var(--ink)}
+.quick-card p{font-size:.8rem;color:var(--ink-3);line-height:1.6;flex:1}
+.quick-cta{font-size:.75rem;font-weight:600;color:var(--ink-4);display:flex;align-items:center;gap:.4rem;margin-top:.5rem;padding-top:.6rem;border-top:1px solid var(--rule)}
+.quick-cta svg{width:12px;height:12px}
+
+@media(max-width:900px){.quick-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.quick-grid{grid-template-columns:1fr}.hero{padding:4rem 1.25rem 3rem}.hero-stats{gap:1.75rem}.search-bar{padding:1rem 1.25rem;top:60px}}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
+      <li><a href="council.html">Council Meetings</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Public Record Archive
+    </div>
+    <h1>Nipissing Township<br><em>Governance Records</em></h1>
+    <p class="hero-sub">Every by-law, resolution, and council meeting — scraped directly from nipissingtownship.com, organized, and permanently preserved.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong id="stat-bylaws">—</strong><span>By-Laws</span></div>
+      <div class="hero-stat"><strong id="stat-resolutions">—</strong><span>Resolutions</span></div>
+      <div class="hero-stat"><strong id="stat-meetings">—</strong><span>Meetings</span></div>
+      <div class="hero-stat"><strong id="stat-updated">—</strong><span>Last Updated</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="search-bar">
+  <div class="search-bar-inner">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="global-search" type="search" placeholder="Search by-laws, resolutions, council meetings…" autocomplete="off" aria-label="Search all records">
+    </div>
+    <div class="filter-pills">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="bylaw">By-Laws</button>
+      <button class="filter-pill" data-filter="resolution">Resolutions</button>
+      <button class="filter-pill" data-filter="meeting">Meetings</button>
+    </div>
+    <span class="search-result-count" id="search-count"></span>
+  </div>
+</div>
+
+<main id="main">
+
+  <div id="quick-access">
+    <div class="quick-grid">
+      <a href="bylaws.html" class="quick-card q-blue">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h3>By-Laws</h3>
+        <p>Every by-law passed by Nipissing Township Council — searchable by number, title, year, and category.</p>
+        <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-bylaws">Browse archive</span></div>
+      </a>
+      <a href="bylaws.html#resolutions" class="quick-card q-teal">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+        <h3>Resolutions</h3>
+        <p>Motions carried and defeated at council — with mover, seconder, and outcome recorded for each.</p>
+        <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-resolutions">Browse resolutions</span></div>
+      </a>
+      <a href="council.html" class="quick-card q-gold">
+        <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></div>
+        <h3>Council Meetings</h3>
+        <p>Agendas, minutes, agenda packages, and video recordings for every regular and special meeting.</p>
+        <div class="quick-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span id="qc-meetings">Browse meetings</span></div>
+      </a>
+    </div>
+
+    <div class="section-gap">
+      <div class="section-header">
+        <h2>Recent Council Meetings</h2>
+        <a href="council.html">View all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="results-grid" id="recent-meetings"></div>
+    </div>
+
+    <div class="section-gap">
+      <div class="section-header">
+        <h2>Recent By-Laws</h2>
+        <a href="bylaws.html">View all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="results-grid" id="recent-bylaws"></div>
+    </div>
+  </div>
+
+  <div id="search-results" style="display:none">
+    <div class="results-grid" id="results-list"></div>
+    <div class="state-msg" id="no-results" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <strong>No results found</strong>
+      <p>Try different keywords or browse by section above.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Nipissing Township<br>Public Records</div>
+      <p class="footer-desc">An independent public archive of Nipissing Township governance documents — automatically updated from nipissingtownship.com.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Sections</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home &amp; Search</a></li>
+        <li><a href="bylaws.html">By-Laws</a></li>
+        <li><a href="bylaws.html#resolutions">Resolutions</a></li>
+        <li><a href="council.html">Council Meetings</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Source</div>
+      <ul class="footer-links">
+        <li><a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a></li>
+        <li><a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">Township By-Laws</a></li>
+        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Meetings</a></li>
+        <li><a href="https://www.youtube.com/@townshipofnipissing505/streams" target="_blank">YouTube Recordings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Data sourced from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> · Updated automatically every two weeks</p>
+    <p>Not an official Township resource</p>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+let activeFilter = 'all';
+
+async function init() {
+  await loadAllData();
+
+  document.getElementById('stat-bylaws').textContent = BYLAWS.length;
+  document.getElementById('stat-resolutions').textContent = RESOLUTIONS.length;
+  document.getElementById('stat-meetings').textContent = MEETINGS.length;
+  document.getElementById('stat-updated').textContent = LAST_UPDATED || '—';
+
+  document.getElementById('qc-bylaws').textContent = `${BYLAWS.length} by-laws`;
+  document.getElementById('qc-resolutions').textContent = `${RESOLUTIONS.length} resolutions`;
+  document.getElementById('qc-meetings').textContent = `${MEETINGS.length} meetings`;
+
+  renderRecentMeetings();
+  renderRecentBylaws();
+}
+
+function renderRecentMeetings() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const recent = [...MEETINGS]
+    .filter(m => {
+      if (m.cancelled) return false;
+      if (!m.date) return false;
+      const d = new Date(`${m.date}T00:00:00`);
+      return !Number.isNaN(d.getTime()) && d <= today;
+    })
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+    .slice(0, 5);
+
+  document.getElementById('recent-meetings').innerHTML =
+    recent.map(m => meetingCard(m, '')).join('');
+}
+
+function renderRecentBylaws() {
+  const recent = [...BYLAWS]
+    .sort((a, b) => {
+      const da = a.date_passed || a.meeting_date || '';
+      const db = b.date_passed || b.meeting_date || '';
+      return db.localeCompare(da);
+    })
+    .slice(0, 5);
+
+  document.getElementById('recent-bylaws').innerHTML =
+    recent.map(b => bylawCard(b, '')).join('');
+}
+
+function runSearch(q) {
+  const qa = document.getElementById('quick-access');
+  const sr = document.getElementById('search-results');
+  const list = document.getElementById('results-list');
+  const none = document.getElementById('no-results');
+  const count = document.getElementById('search-count');
+
+  if (!q.trim()) {
+    qa.style.display = '';
+    sr.style.display = 'none';
+    count.textContent = '';
+    return;
+  }
+
+  qa.style.display = 'none';
+  sr.style.display = '';
+
+  let pool = ALL_DATA;
+  if (activeFilter === 'bylaw') pool = BYLAWS;
+  else if (activeFilter === 'resolution') pool = RESOLUTIONS;
+  else if (activeFilter === 'meeting') pool = MEETINGS;
+
+  const scored = pool
+    .map(item => ({ item, s: scoreItem(item, q) }))
+    .filter(x => x.s > 0)
+    .sort((a, b) => b.s - a.s);
+
+  const results = scored.slice(0, 50).map(x => x.item);
+
+  count.textContent = results.length ? `${results.length} result${results.length === 1 ? '' : 's'}` : '';
+  none.style.display = results.length ? 'none' : '';
+  list.innerHTML = results.map(item => {
+    if (item._type === 'bylaw') return bylawCard(item, q);
+    if (item._type === 'resolution') return resolutionCard(item, q);
+    return meetingCard(item, q);
+  }).join('');
+}
+
+document.getElementById('global-search').addEventListener('input', e => {
+  runSearch(e.target.value);
+});
+
+document.querySelectorAll('.filter-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    runSearch(document.getElementById('global-search').value);
+  });
+});
+
+init();
+</script>
+</body>
+</html>function bodyBadgeClass(bodyId) {
   if (bodyId === 'council') return 'mb-council';
   if (bodyId === 'recreation') return 'mb-recreation';
   if (bodyId === 'museum') return 'mb-museum';
