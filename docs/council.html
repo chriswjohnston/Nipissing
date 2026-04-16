@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Council Meetings — Nipissing Township Public Records</title>
-<meta name="description" content="Browse every Nipissing Township Council meeting — agendas, minutes, packages and video recordings.">
+<title>Meetings — Nipissing Township Public Records</title>
+<meta name="description" content="Browse Nipissing Township Council, board, and committee meetings — agendas, minutes, packages, and available recordings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-/* Year group headings */
 .year-group{margin-bottom:2.5rem}
 .year-heading{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--rule);display:flex;align-items:baseline;gap:.75rem}
 .year-heading .year-count{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;color:var(--ink-4);border:1px solid var(--rule);padding:.15rem .55rem;border-radius:10px}
+.filter-groups{display:flex;gap:.6rem;flex-wrap:wrap}
+.filter-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4)}
+@media(max-width:700px){.filter-groups{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -29,7 +31,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html" class="active">Council Meetings</a></li>
+      <li><a href="council.html" class="active">Meetings</a></li>
     </ul>
     <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -40,8 +42,8 @@
 <div class="page-header">
   <div class="page-header-inner">
     <p class="page-eyebrow">Nipissing Township · Public Records</p>
-    <h1>Council <em>Meetings</em></h1>
-    <p>Agendas, minutes, agenda packages, and video recordings — automatically preserved from nipissingtownship.com.</p>
+    <h1>Meetings <em>Archive</em></h1>
+    <p>Council, board, and committee meetings — agendas, minutes, agenda packages, and available recordings.</p>
   </div>
 </div>
 
@@ -49,16 +51,37 @@
   <div class="filter-bar-inner">
     <div class="filter-search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="search" type="search" placeholder="Search by date, type…" autocomplete="off">
+      <input id="search" type="search" placeholder="Search by date, body, type…" autocomplete="off">
     </div>
-    <div class="tab-group">
-      <button class="tab-btn active" data-mtype="all">All Meetings</button>
-      <button class="tab-btn" data-mtype="Regular">Regular</button>
-      <button class="tab-btn" data-mtype="Special">Special</button>
+
+    <div class="filter-groups">
+      <div>
+        <div class="filter-label">Body</div>
+        <div class="tab-group">
+          <button class="tab-btn active" data-body="all">All</button>
+          <button class="tab-btn" data-body="council">Council</button>
+          <button class="tab-btn" data-body="recreation">Recreation</button>
+          <button class="tab-btn" data-body="museum">Museum</button>
+          <button class="tab-btn" data-body="cemetery">Cemetery</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="filter-label">Type</div>
+        <div class="tab-group">
+          <button class="tab-btn active" data-mtype="all">All</button>
+          <button class="tab-btn" data-mtype="Regular">Regular</button>
+          <button class="tab-btn" data-mtype="Special">Special</button>
+          <button class="tab-btn" data-mtype="Board">Board</button>
+          <button class="tab-btn" data-mtype="Committee">Committee</button>
+        </div>
+      </div>
     </div>
+
     <select class="year-select" id="year-filter">
       <option value="">All Years</option>
     </select>
+
     <span class="result-count" id="result-count"></span>
   </div>
 </div>
@@ -68,7 +91,7 @@
   <div class="state-msg" id="empty" style="display:none">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/></svg>
     <strong>No meetings found</strong>
-    <p>Try different search terms or clear the year filter.</p>
+    <p>Try different search terms or clear a filter.</p>
   </div>
   <div class="state-msg" id="loading">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -88,14 +111,16 @@
         <li><a href="index.html">Home &amp; Search</a></li>
         <li><a href="bylaws.html">By-Laws</a></li>
         <li><a href="bylaws.html#resolutions">Resolutions</a></li>
-        <li><a href="council.html">Council Meetings</a></li>
+        <li><a href="council.html">Meetings</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-heading">Source</div>
+      <div class="footer-heading">Sources</div>
       <ul class="footer-links">
-        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Meeting Archive</a></li>
-        <li><a href="https://www.youtube.com/@townshipofnipissing505/streams" target="_blank">YouTube Recordings</a></li>
+        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Archive</a></li>
+        <li><a href="https://nipissingtownship.com/services/recreation/" target="_blank">Recreation Committee</a></li>
+        <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
+        <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
       </ul>
     </div>
   </div>
@@ -107,6 +132,7 @@
 
 <script src="shared.js"></script>
 <script>
+let activeBody = 'all';
 let activeMtype = 'all';
 let activeYear = '';
 let searchQ = '';
@@ -115,12 +141,12 @@ async function init() {
   await loadAllData();
   document.getElementById('loading').style.display = 'none';
 
-  // Year options
-  const years = [...new Set(MEETINGS.map(m => m.year).filter(Boolean))].sort((a,b)=>b-a);
+  const years = [...new Set(ALL_MEETINGS.map(m => m.year).filter(Boolean))].sort((a,b)=>b-a);
   const sel = document.getElementById('year-filter');
   years.forEach(y => {
     const o = document.createElement('option');
-    o.value = y; o.textContent = y;
+    o.value = y;
+    o.textContent = y;
     sel.appendChild(o);
   });
 
@@ -128,27 +154,32 @@ async function init() {
 }
 
 function render() {
-  let items = MEETINGS;
+  let items = [...ALL_MEETINGS];
+
+  if (activeBody !== 'all') {
+    items = items.filter(m => (m.body_id || '').toLowerCase() === activeBody);
+  }
 
   if (activeMtype !== 'all') {
-    items = items.filter(m => (m.meeting_type||'Regular') === activeMtype);
+    items = items.filter(m => (m.meeting_type || '') === activeMtype);
   }
+
   if (activeYear) {
     items = items.filter(m => String(m.year) === activeYear);
   }
+
   if (searchQ.trim()) {
-    const scored = items.map(m => ({m, s: scoreItem(m, searchQ)})).filter(x => x.s > 0);
-    scored.sort((a,b) => b.s - a.s);
+    const scored = items.map(m => ({ m, s: scoreItem(m, searchQ) })).filter(x => x.s > 0);
+    scored.sort((a, b) => b.s - a.s);
     items = scored.map(x => x.m);
-    // flat list for search
-    document.getElementById('result-count').textContent = `${items.length} result${items.length===1?'':'s'}`;
+
+    document.getElementById('result-count').textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
     document.getElementById('empty').style.display = items.length ? 'none' : '';
     document.getElementById('results-container').innerHTML = items.map(m => meetingCard(m, searchQ)).join('');
     return;
   }
 
-  // Group by year
-  document.getElementById('result-count').textContent = `${items.length} meeting${items.length===1?'':'s'}`;
+  document.getElementById('result-count').textContent = `${items.length} meeting${items.length === 1 ? '' : 's'}`;
   document.getElementById('empty').style.display = items.length ? 'none' : '';
 
   const byYear = {};
@@ -158,19 +189,36 @@ function render() {
     byYear[y].push(m);
   });
 
-  const yearsSorted = Object.keys(byYear).sort((a,b) => b - a);
-  document.getElementById('results-container').innerHTML = yearsSorted.map(y => `
-    <div class="year-group">
+  const years = Object.keys(byYear).sort((a,b) => Number(b) - Number(a));
+  const html = years.map(y => `
+    <section class="year-group">
       <div class="year-heading">
-        ${y}
-        <span class="year-count">${byYear[y].length} meeting${byYear[y].length===1?'':'s'}</span>
+        <span>${y}</span>
+        <span class="year-count">${byYear[y].length} meeting${byYear[y].length === 1 ? '' : 's'}</span>
       </div>
-      <div class="results-grid">${byYear[y].map(m => meetingCard(m, '')).join('')}</div>
-    </div>
+      <div class="results-grid">
+        ${byYear[y].map(m => meetingCard(m, '')).join('')}
+      </div>
+    </section>
   `).join('');
+
+  document.getElementById('results-container').innerHTML = html;
 }
 
-document.getElementById('search').addEventListener('input', e => { searchQ = e.target.value; render(); });
+document.getElementById('search').addEventListener('input', e => {
+  searchQ = e.target.value;
+  render();
+});
+
+document.querySelectorAll('[data-body]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-body]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeBody = btn.dataset.body;
+    render();
+  });
+});
+
 document.querySelectorAll('[data-mtype]').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('[data-mtype]').forEach(b => b.classList.remove('active'));
@@ -179,7 +227,11 @@ document.querySelectorAll('[data-mtype]').forEach(btn => {
     render();
   });
 });
-document.getElementById('year-filter').addEventListener('change', e => { activeYear = e.target.value; render(); });
+
+document.getElementById('year-filter').addEventListener('change', e => {
+  activeYear = e.target.value;
+  render();
+});
 
 init();
 </script>
