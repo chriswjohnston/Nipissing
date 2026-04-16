@@ -37,6 +37,24 @@ jobs:
           python scripts/update_boards.py
           python scripts/validate_data.py
 
+      - name: Show canonical data counts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          base = Path("data/canonical")
+
+          meetings = json.loads((base / "meetings.json").read_text(encoding="utf-8"))
+          bylaws = json.loads((base / "bylaws.json").read_text(encoding="utf-8"))
+          resolutions = json.loads((base / "resolutions.json").read_text(encoding="utf-8"))
+          boards = json.loads((base / "boards.json").read_text(encoding="utf-8"))
+
+          print("meetings:", len(meetings.get("meetings", [])))
+          print("bylaws:", len(bylaws.get("bylaws", [])))
+          print("resolutions:", len(resolutions.get("resolutions", [])))
+          print("boards:", sum(len(b.get("meetings", [])) for b in boards.get("boards", [])))
+          PY
       - name: Commit canonical data changes
         run: |
           git config user.name "github-actions[bot]"
