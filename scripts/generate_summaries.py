@@ -87,6 +87,10 @@ def summary_key_for_meeting(meeting: dict[str, Any]) -> str | None:
 
 
 def should_summarize(meeting: dict[str, Any], summaries: dict[str, str]) -> tuple[bool, str]:
+        # ✅ Only summarize 2026+ meetings
+    year = str(meeting.get("year") or meeting.get("date", "")[:4])
+    if not year.isdigit() or int(year) < 2026:
+        return False, "older than 2026"
     if meeting.get("cancelled"):
         return False, "cancelled"
 
