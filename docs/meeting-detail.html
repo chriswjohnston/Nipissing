@@ -16,10 +16,15 @@
 .meeting-type-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.6rem}
 .meeting-date-title{font-family:'Source Serif 4',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:.75rem}
 .meeting-doc-badges{display:flex;gap:.5rem;flex-wrap:wrap}
-.meeting-badge{font-size:.68rem;font-weight:600;padding:.3rem .75rem;border-radius:4px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.72);background:rgba(255,255,255,.08)}
+.meeting-badge{font-size:.68rem;font-weight:600;padding:.3rem .75rem;border-radius:4px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.72);background:rgba(255,255,255,.08);text-decoration:none;display:inline-flex;align-items:center}
+.meeting-badge:hover{background:rgba(255,255,255,.14);color:white;border-color:rgba(255,255,255,.3)}
 .meeting-badge.has-video{background:rgba(220,50,50,.2);border-color:rgba(220,50,50,.4);color:#ffa0a0}
-
-/* Resolutions table */
+.meeting-badge.has-video:hover{background:rgba(220,50,50,.28);color:#ffd2d2}
+.summary-content{font-size:.92rem;line-height:1.75;color:var(--ink-2);margin-top:.5rem}
+.summary-content h1,.summary-content h2,.summary-content h3,.summary-content h4{margin:0 0 .75rem 0;font-family:'Source Serif 4',serif;color:var(--ink)}
+.summary-content p{margin:.6rem 0}
+.summary-content ul{margin:.6rem 0 .6rem 1.2rem}
+.summary-content li{margin:.3rem 0}
 .res-table-wrap{overflow-x:auto;margin-top:.75rem}
 .res-table{width:100%;border-collapse:collapse;font-size:.84rem}
 .res-table th{text-align:left;padding:.6rem .75rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);border-bottom:2px solid var(--rule);background:var(--page)}
@@ -30,8 +35,6 @@
 .outcome-pill{font-size:.65rem;font-weight:700;padding:.18rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
 .outcome-carried{background:#e5f5ea;color:#1a6b2e}
 .outcome-defeated{background:var(--red-lt);color:var(--red)}
-
-/* Nav between meetings */
 .meeting-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);flex-wrap:wrap}
 .meeting-nav-link{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--blue-mid);text-decoration:none;padding:.5rem .9rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--white);transition:all .15s}
 .meeting-nav-link:hover{border-color:var(--blue-mid);color:var(--blue);background:var(--blue-lt)}
@@ -76,12 +79,9 @@
   <div id="detail-layout" style="display:none">
     <div class="detail-layout">
       <div class="detail-main">
-        <!-- Resolutions at this meeting -->
-        <div id="resolutions-section"></div>
-        <!-- By-laws at this meeting -->
-        <div id="bylaws-section"></div>
-        <!-- Summary -->
         <div id="summary-section"></div>
+        <div id="resolutions-section"></div>
+        <div id="bylaws-section"></div>
       </div>
       <div class="detail-aside">
         <div class="detail-card">
@@ -95,7 +95,6 @@
       </div>
     </div>
 
-    <!-- Prev / Next meeting navigation -->
     <div class="meeting-nav" id="meeting-nav"></div>
   </div>
 
@@ -129,6 +128,42 @@
 
 <script src="shared.js"></script>
 <script>
+function summaryMarkdownToHtml(text) {
+  if (!text) return '';
+  const lines = String(text).split('\n');
+  let html = '';
+  let inList = false;
+
+  function closeList() {
+    if (inList) {
+      html += '</ul>';
+      inList = false;
+    }
+  }
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) {
+      closeList();
+      continue;
+    }
+    if (line.startsWith('### ')) { closeList(); html += `<h4>${escHtml(line.slice(4))}</h4>`; continue; }
+    if (line.startsWith('## ')) { closeList(); html += `<h3>${escHtml(line.slice(3))}</h3>`; continue; }
+    if (line.startsWith('# ')) { closeList(); html += `<h2>${escHtml(line.slice(2))}</h2>`; continue; }
+    if (/^[-*]\s+/.test(line)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${escHtml(line.replace(/^[-*]\s+/, ''))}</li>`;
+      continue;
+    }
+    if (line === '---') { closeList(); html += '<hr>'; continue; }
+    closeList();
+    html += `<p>${escHtml(line)}</p>`;
+  }
+
+  closeList();
+  return html;
+}
+
 async function init() {
   const params = new URLSearchParams(location.search);
   const dateParam = params.get('date');
@@ -144,29 +179,27 @@ async function init() {
 
   document.title = `${m.display_date||m.date} Council Meeting — Nipissing Township Public Records`;
 
-  // Hero
   document.getElementById('m-type-label').textContent = `${m.meeting_type||'Regular'} Meeting · Nipissing Township Council`;
   document.getElementById('m-date-title').textContent = m.display_date || m.date;
 
   const badges = [];
-  if (m.agenda_url) badges.push('<span class="meeting-badge">Agenda</span>');
-  if (m.minutes_url) badges.push('<span class="meeting-badge">Minutes</span>');
-  if (m.package_url) badges.push('<span class="meeting-badge">Agenda Package</span>');
-  if (m.video_url) badges.push('<span class="meeting-badge has-video">📹 Video Recording</span>');
+  if (m.agenda_url) badges.push(`<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda</a>`);
+  if (m.minutes_url) badges.push(`<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="meeting-badge">Minutes</a>`);
+  if (m.package_url) badges.push(`<a href="${escHtml(m.package_url)}" target="_blank" rel="noopener" class="meeting-badge">Agenda Package</a>`);
+  if (m.video_url) badges.push(`<a href="${escHtml(m.video_url)}" target="_blank" rel="noopener" class="meeting-badge has-video">☞ Video Recording</a>`);
   if (m.cancelled) badges.push('<span class="meeting-badge" style="background:rgba(139,26,26,.2);border-color:rgba(139,26,26,.4);color:#f5a0a0">CANCELLED</span>');
   document.getElementById('m-badges').innerHTML = badges.join('');
 
-  // Meta
   const metaRows = [
     ['Date', m.display_date || m.date],
     ['Type', m.meeting_type || 'Regular'],
     ['Year', m.year],
   ].filter(x => x[1]);
+
   document.getElementById('meta-rows').innerHTML = metaRows.map(([l, v]) =>
     `<div class="detail-row"><span class="detail-label">${escHtml(l)}</span><span class="detail-value">${escHtml(String(v))}</span></div>`
   ).join('');
 
-  // Documents
   const docItems = [
     m.agenda_url && ['Agenda', m.agenda_url],
     m.minutes_url && ['Minutes', m.minutes_url],
@@ -175,65 +208,60 @@ async function init() {
   ].filter(Boolean);
 
   if (docItems.length) {
-    document.getElementById('docs-links').innerHTML = docItems.map(([label, url, isVideo]) =>
+    document.getElementById('docs-links').innerHTML = docItems.map(([label, url]) =>
       `<a href="${escHtml(url)}" target="_blank" rel="noopener" class="doc-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          ${isVideo
-            ? '<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>'
-            : '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>'}
-        </svg>
-        ${escHtml(label)}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span>${escHtml(label)}</span>
       </a>`
     ).join('');
   } else {
-    document.getElementById('docs-card').innerHTML = '<h3>Documents</h3><p style="font-size:.82rem;color:var(--ink-4);margin-top:.5rem">No documents on file.</p>';
+    document.getElementById('docs-links').innerHTML = '<p class="empty-note">No document links available.</p>';
   }
 
-  // Resolutions at this meeting
-  const meetingDate = m.date;
-  const meetingResolutions = RESOLUTIONS.filter(r => (r.date || r.meeting_date) === meetingDate);
-  if (meetingResolutions.length) {
+  if (m.summary) {
+    document.getElementById('summary-section').innerHTML = `
+      <div class="detail-card">
+        <h3>Summary</h3>
+        <div class="summary-content">${summaryMarkdownToHtml(m.summary)}</div>
+      </div>`;
+  }
+
+  const resAtMeeting = RESOLUTIONS.filter(r => (r.meeting_date || r.date) === m.date);
+  if (resAtMeeting.length) {
     document.getElementById('resolutions-section').innerHTML = `
-      <div class="detail-card" style="margin-bottom:1rem">
-        <h3>Resolutions (${meetingResolutions.length})</h3>
+      <div class="detail-card">
+        <h3>Resolutions (${resAtMeeting.length})</h3>
         <div class="res-table-wrap">
           <table class="res-table">
-            <thead><tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr></thead>
-            <tbody>${meetingResolutions.map(r => {
-              const outcome = r.outcome || r.status || '';
-              const motionText = (r.motion_text || r.title || '').substring(0, 120);
-              return `<tr>
-                <td><a href="resolution-detail.html?id=${encodeURIComponent(r.number)}" class="res-link">${escHtml(r.number)}</a></td>
-                <td>${escHtml(motionText)}${motionText.length >= 120 ? '…' : ''}</td>
-                <td>${escHtml(r.mover || '—')}</td>
-                <td>${outcome ? `<span class="outcome-pill outcome-${outcome}">${escHtml(outcome.toUpperCase())}</span>` : '—'}</td>
-              </tr>`;
-            }).join('')}</tbody>
+            <thead>
+              <tr><th>Number</th><th>Motion</th><th>Moved By</th><th>Outcome</th></tr>
+            </thead>
+            <tbody>
+              ${resAtMeeting.map(r => `
+                <tr>
+                  <td><a class="res-link" href="resolution-detail.html?id=${encodeURIComponent(r.number)}">${escHtml(r.number || '')}</a></td>
+                  <td>${escHtml(r.title || r.motion_text || '')}</td>
+                  <td>${escHtml(r.mover || '')}</td>
+                  <td><span class="outcome-pill outcome-${escHtml((r.outcome || r.status || 'carried').toLowerCase())}">${escHtml((r.outcome || r.status || 'carried').toUpperCase())}</span></td>
+                </tr>
+              `).join('')}
+            </tbody>
           </table>
         </div>
       </div>`;
   }
 
-  // By-laws at this meeting
-  const meetingBylaws = BYLAWS.filter(b => b.meeting_date === meetingDate);
-  if (meetingBylaws.length) {
+  const bylawsAtMeeting = BYLAWS.filter(b => (b.meeting_date || b.date_passed) === m.date);
+  if (bylawsAtMeeting.length) {
     document.getElementById('bylaws-section').innerHTML = `
-      <div class="detail-card" style="margin-bottom:1rem">
-        <h3>By-Laws (${meetingBylaws.length})</h3>
-        <div class="results-grid" style="margin-top:.75rem">${meetingBylaws.map(b => bylawCard(b, '')).join('')}</div>
-      </div>`;
-  }
-
-  // Summary
-  if (m.summary) {
-    document.getElementById('summary-section').innerHTML = `
       <div class="detail-card">
-        <h3>Summary</h3>
-        <p style="font-size:.92rem;line-height:1.75;color:var(--ink-2);margin-top:.5rem">${escHtml(m.summary)}</p>
+        <h3>By-Laws (${bylawsAtMeeting.length})</h3>
+        <div class="results-grid">
+          ${bylawsAtMeeting.map(b => bylawCard(b, '')).join('')}
+        </div>
       </div>`;
   }
 
-  // Prev / Next navigation
   const idx = MEETINGS.findIndex(x => x.date === dateParam);
   const prevM = MEETINGS[idx - 1];
   const nextM = MEETINGS[idx + 1];
