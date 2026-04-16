@@ -87,11 +87,11 @@ function boardTypeLabel(boardName) {
 function primaryMeetingUrl(m) {
   if (m._type !== 'meeting') return '#';
 
-  if (m.source_kind === 'council') {
-    return `meeting-detail.html?date=${encodeURIComponent(m.date)}`;
-  }
+  const params = new URLSearchParams();
+  params.set('date', m.date || '');
+  params.set('body', m.body_id || 'council');
 
-  return m.minutes_url || m.agenda_url || m.package_url || '#';
+  return `meeting-detail.html?${params.toString()}`;
 }
 
 function flattenBoards(boards) {
