@@ -218,10 +218,25 @@ async function init() {
   renderRecentBylaws();
 }
 
+<script>
 function renderRecentMeetings() {
-  const recent = MEETINGS.filter(m => !m.cancelled).slice(0, 5);
-  document.getElementById('recent-meetings').innerHTML = recent.map(m => meetingCard(m, '')).join('');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const recent = [...MEETINGS]
+    .filter(m => {
+      if (m.cancelled) return false;
+      if (!m.date) return false;
+      const d = new Date(`${m.date}T00:00:00`);
+      return !Number.isNaN(d.getTime()) && d <= today;
+    })
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+    .slice(0, 5);
+
+  document.getElementById('recent-meetings').innerHTML =
+    recent.map(m => meetingCard(m, '')).join('');
 }
+</script>
 
 function renderRecentBylaws() {
   const recent = [...BYLAWS].sort((a,b) => {
