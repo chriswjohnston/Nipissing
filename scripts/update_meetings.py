@@ -222,6 +222,22 @@ def extract_meetings_from_content(content: Tag) -> List[Dict[str, Any]]:
             meetings_raw.append(dict(current))
         current = None
 
+    def extract_meetings_from_content(content: Tag) -> List[Dict[str, Any]]:
+    """
+    DOM-aware parser adapted from the older scraper logic.
+
+    This is better for the Township page because dates and links are often mixed
+    across text nodes, inline anchors, and <br>-style layouts.
+    """
+    meetings_raw = []
+    current = None
+
+    def flush():
+        nonlocal current
+        if current:
+            meetings_raw.append(dict(current))
+        current = None
+
     def start_meeting(month: str, day: str, year_str: str):
         nonlocal current
         flush()
