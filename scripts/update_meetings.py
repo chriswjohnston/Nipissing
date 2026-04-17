@@ -208,38 +208,138 @@ def flags_from_context(context_text: str) -> Tuple[str, bool]:
 
 def extract_meetings_from_content(content: Tag) -> List[Dict[str, Any]]:
     """
-    Parse the visible council page in DOM order.
+    DOM-aware parser adapted from the older scraper logic.
 
-    Handles rows where:
-    - the date and links are in the same element
-    - the date is in one inline chunk and links follow in the same parent
-    - extra docs appear beside agenda/minutes/package
+    This is better for the Township page because dates and links are often mixed
+    across text nodes, inline anchors, and <br>-style layouts.
     """
-    meetings: List[Dict[str, Any]] = []
-    current: Optional[Dict[str, Any]] = None
+    meetings_raw = []
+    current = None
 
-    def flush_current() -> None:
+    def flush():
         nonlocal current
-        if current is None:
-            return
+        if current:
+            meetings_raw.append(dict(current))
+        current = None
 
-        extra_docs = unique_extra_docs(current.pop("extra_docs_raw", []))
+    def start_meeting(month: str, day: str, year_str: str):
+        nonlocal current
+        flush()
+        dt = datetime.strptime(
+            f"{month.capitalize()} {int(day)}, {year_str}",
+            "%B %d, %Y"
+        ).date()
 
-        meetings.append({
-            "date": current["date"],
-            "display_date": current["display_date"],
-            "year": current["year"],
-            "meeting_type": current["meeting_type"],
+        meeting_type, cancelled = flags_from_context(f"{month} {day}, {year_str}")
+
+        current = {
+            "date": dt.isoformat(),
+            "display_date": format_display_date(dt),
+            "year": dt.year,
+            "meeting_type": meeting_type,
+            "agenda_url": None,
+            "minutes_url": None,
+            "package_url": None,
+            "extra_docs_raw": [],
+            "cancelled": cancelled,
+        }
+
+    def walk(node):
+        nonlocal current
+
+        if isinstance(node, NavigableString):
+            text = str(node)
+            last_end = 0
+
+            for dm in DATE_RE.finditer(text):
+                between = text[last_end:dm.start()].lower()
+
+                if current:
+                    if "cancel" in between:
+                        current["cancelled"] = True
+
+                start_meeting(dm.group(1), dm.group(2), dm.group(3))
+                last_end = dm.end()
+
+            tail = text[last_end:].lower()
+            if current and "cancel" in tail:
+                current["cancelled"] = True
+
+        elif isinstance(node, Tag):
+            if node.name == "br":
+                return
+
+            if node.name == "a":
+                href = node.get("href", "").strip()
+                label = clean_label(node.get_text(" ", strip=True))
+
+                if href and current:
+                    full_url = normalize_absolute_url(href)
+                    kind = classify_link(label, full_url)
+
+                    if kind == "agenda" and not current["agenda_url"]:
+                        current["agenda_url"] = full_url
+                    elif kind == "minutes" and not current["minutes_url"]:
+                        current["minutes_url"] = full_url
+                    elif kind == "package" and not current["package_url"]:
+                        current["package_url"] = full_url
+                    else:
+                        current["extra_docs_raw"].append({
+                            "label": label,
+                            "url": full_url,
+                        })
+                return
+
+            for child in node.children:
+                walk(child)
+
+    # Walk each likely content block
+    for elem in content.find_all(["p", "li", "div", "tr"]):
+        text = elem.get_text(" ", strip=True)
+        if not text:
+            continue
+        if DATE_RE.search(text) or elem.find("a", href=True):
+            walk(elem)
+
+    flush()
+
+    # Deduplicate / merge by date + meeting_type
+    merged: Dict[Tuple[str, str], Dict[str, Any]] = {}
+
+    for m in meetings_raw:
+        k = meeting_key(m)
+        if k not in merged:
+            merged[k] = deepcopy(m)
+            continue
+
+        old = merged[k]
+
+        for field in ("agenda_url", "minutes_url", "package_url"):
+            if not old.get(field) and m.get(field):
+                old[field] = m[field]
+
+        old["extra_docs_raw"] = (old.get("extra_docs_raw") or []) + (m.get("extra_docs_raw") or [])
+        old["cancelled"] = old.get("cancelled", False) or m.get("cancelled", False)
+
+    out = []
+    for m in merged.values():
+        out.append({
+            "date": m["date"],
+            "display_date": m["display_date"],
+            "year": m["year"],
+            "meeting_type": m.get("meeting_type", "Regular"),
             "title": "",
-            "agenda_url": current.get("agenda_url"),
-            "minutes_url": current.get("minutes_url"),
-            "package_url": current.get("package_url"),
-            "extra_docs": extra_docs,
+            "agenda_url": m.get("agenda_url"),
+            "minutes_url": m.get("minutes_url"),
+            "package_url": m.get("package_url"),
+            "extra_docs": unique_extra_docs(m.get("extra_docs_raw") or []),
             "video_url": None,
             "summary": None,
-            "cancelled": current.get("cancelled", False),
+            "cancelled": m.get("cancelled", False),
         })
-        current = None
+
+    out.sort(key=lambda x: x["date"], reverse=True)
+    return out
 
     def start_meeting(dt: date, context_text: str) -> None:
         nonlocal current
