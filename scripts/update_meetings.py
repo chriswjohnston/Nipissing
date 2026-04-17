@@ -208,9 +208,12 @@ def flags_from_context(context_text: str) -> Tuple[str, bool]:
 
 def extract_meetings_from_content(content: Tag) -> List[Dict[str, Any]]:
     """
-    DOM-order parser.
-    Captures each dated meeting row and any links that follow it until the next date.
-    Works whether the page uses paragraphs, list items, or <br>-style formatting.
+    Parse the visible council page in DOM order.
+
+    Handles rows where:
+    - the date and links are in the same element
+    - the date is in one inline chunk and links follow in the same parent
+    - extra docs appear beside agenda/minutes/package
     """
     meetings: List[Dict[str, Any]] = []
     current: Optional[Dict[str, Any]] = None
@@ -254,6 +257,76 @@ def extract_meetings_from_content(content: Tag) -> List[Dict[str, Any]]:
             "extra_docs_raw": [],
             "cancelled": cancelled,
         }
+
+    def attach_links_from_element(el: Tag) -> None:
+        nonlocal current
+        if current is None:
+            return
+
+        for a in el.find_all("a", href=True):
+            href = normalize_absolute_url(a["href"])
+            label = clean_label(a.get_text(" ", strip=True))
+            kind = classify_link(label, href)
+
+            if kind == "agenda" and not current["agenda_url"]:
+                current["agenda_url"] = href
+            elif kind == "minutes" and not current["minutes_url"]:
+                current["minutes_url"] = href
+            elif kind == "package" and not current["package_url"]:
+                current["package_url"] = href
+            else:
+                current["extra_docs_raw"].append({
+                    "label": label,
+                    "url": href,
+                })
+
+    # Prefer row-like elements first
+    candidates = content.find_all(["p", "li", "div", "tr"])
+
+    for el in candidates:
+        text = " ".join(el.stripped_strings)
+        if not text:
+            continue
+
+        dm = DATE_RE.search(text)
+
+        if dm:
+            dt = datetime.strptime(
+                f"{dm.group(1).capitalize()} {int(dm.group(2))}, {dm.group(3)}",
+                "%B %d, %Y",
+            ).date()
+            start_meeting(dt, text)
+            attach_links_from_element(el)
+            continue
+
+        # no new date, but if this row still has links and we already have a current meeting,
+        # treat them as belonging to the current row
+        if current is not None and el.find("a", href=True):
+            attach_links_from_element(el)
+
+    flush_current()
+
+    # Merge duplicates by date + meeting_type
+    merged: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    for m in meetings:
+        k = meeting_key(m)
+        if k not in merged:
+            merged[k] = deepcopy(m)
+            continue
+
+        old = merged[k]
+        for field in ("agenda_url", "minutes_url", "package_url"):
+            if not old.get(field) and m.get(field):
+                old[field] = m[field]
+
+        old["extra_docs"] = unique_extra_docs(
+            (old.get("extra_docs") or []) + (m.get("extra_docs") or [])
+        )
+        old["cancelled"] = old.get("cancelled", False) or m.get("cancelled", False)
+
+    out = list(merged.values())
+    out.sort(key=lambda x: x["date"], reverse=True)
+    return out
 
     def process_container(el: Tag) -> None:
         nonlocal current
