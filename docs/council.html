@@ -462,13 +462,15 @@ function renderUpcomingList() {
 
   list.innerHTML = monthMeetings.length ? monthMeetings.map(m => `
     <div class="upcoming-item">
-      <div class="upcoming-date">${escHtml(String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2, '0'))}</div>
-      <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
-      <div class="upcoming-name">
-        <a href="${escHtml(primaryMeetingUrl(m))}" style="color:inherit;text-decoration:none;">
-          ${escHtml(m.source_kind === 'council' ? `${m.meeting_type || 'Meeting'} Meeting` : (m.meeting_type || m.body || 'Meeting'))}
-        </a>
-      </div>
+      <div class="upcoming-left">
+        <div class="upcoming-date">${escHtml(String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2, '0'))}</div>
+        <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
+        <div class="upcoming-name">
+          <a href="${escHtml(primaryMeetingUrl(m))}" style="color:inherit;text-decoration:none;">
+            ${escHtml(m.source_kind === 'council' ? `${m.meeting_type || 'Meeting'} Meeting` : (m.meeting_type || m.body || 'Meeting'))}
+          </a>
+        </div>
+      </div>  
       <div class="upcoming-links">
         ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="upcoming-link">Agenda</a>` : ''}
         ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="upcoming-link">Minutes</a>` : ''}
