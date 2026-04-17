@@ -8,6 +8,69 @@
 <link rel="stylesheet" href="shared.css">
 
 <style>
+.meeting-hero{
+  background:var(--blue);
+  color:#fff;
+  padding:2rem 0 2.2rem;
+  margin-bottom:1.5rem;
+}
+
+.hero-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+.back-link{
+  display:inline-block;
+  margin-bottom:.8rem;
+  color:#dbe7f3;
+  text-decoration:none;
+  font-size:.9rem;
+}
+
+.back-link:hover{
+  text-decoration:underline;
+}
+
+.hero-kicker{
+  font-size:.7rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.75;
+  margin-bottom:.25rem;
+}
+
+.hero-title{
+  font-size:2rem;
+  font-weight:600;
+  line-height:1.2;
+  margin:0;
+  color:#fff;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-top:1rem;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:.45rem .7rem;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:8px;
+  font-size:.8rem;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+}
+
+.hero-btn:hover{
+  background:rgba(255,255,255,.18);
+}
+
 .detail-wrap{
   display:grid;
   grid-template-columns:minmax(0,1fr) 320px;
@@ -47,7 +110,6 @@
 .summary-body h2,
 .summary-body h3,
 .summary-body h4{
-  font-family:var(--font-serif, Georgia, serif);
   color:var(--ink);
   margin:1rem 0 .6rem;
   line-height:1.25;
@@ -189,6 +251,15 @@
   </div>
 </nav>
 
+<section class="meeting-hero">
+  <div class="hero-inner">
+    <a href="council.html" class="back-link">← Back to Meetings</a>
+    <div class="hero-kicker" id="hero-kicker"></div>
+    <h1 class="hero-title" id="hero-title"></h1>
+    <div class="hero-actions" id="hero-actions"></div>
+  </div>
+</section>
+
 <main class="detail-wrap">
 
   <div>
@@ -255,6 +326,17 @@ function icon(){
 
 function buildDoc(label, url){
   return `<a href="${esc(url)}" target="_blank" rel="noopener" class="doc-link">${icon()}<span>${esc(label)}</span></a>`;
+}
+
+function buildHeroBtn(label, url){
+  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="hero-btn">${esc(label)}</a>`;
+}
+
+function inlineMarkdown(text){
+  let out = esc(text);
+  out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  out = out.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  return out;
 }
 
 function renderSummaryMarkdown(md){
@@ -328,15 +410,6 @@ function renderSummaryMarkdown(md){
   return html;
 }
 
-function inlineMarkdown(text){
-  let out = esc(text);
-
-  out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  out = out.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
-  return out;
-}
-
 async function init(){
   await loadAllData();
 
@@ -347,6 +420,22 @@ async function init(){
     document.body.innerHTML = '<p style="padding:2rem">Meeting not found</p>';
     return;
   }
+
+  const bodyLabel = meeting.body || 'Council';
+  const typeLabel = meeting.meeting_type || 'Meeting';
+
+  document.getElementById('hero-kicker').textContent =
+    `${typeLabel.toUpperCase()} · ${bodyLabel.toUpperCase()}`;
+
+  document.getElementById('hero-title').textContent =
+    meeting.display_date || meeting.date;
+
+  const actions = [];
+  if(meeting.agenda_url) actions.push(buildHeroBtn('Agenda', meeting.agenda_url));
+  if(meeting.minutes_url) actions.push(buildHeroBtn('Minutes', meeting.minutes_url));
+  if(meeting.package_url) actions.push(buildHeroBtn('Agenda Package', meeting.package_url));
+  if(meeting.video_url) actions.push(buildHeroBtn('Video Recording', meeting.video_url));
+  document.getElementById('hero-actions').innerHTML = actions.join('');
 
   document.getElementById('summary-content').innerHTML = renderSummaryMarkdown(meeting.summary);
   document.getElementById('meta-date').textContent = meeting.display_date || '';
@@ -363,7 +452,6 @@ async function init(){
     main.length ? main.join('') : '<p class="empty-note">No primary documents available.</p>';
 
   const extra = meeting.extra_docs || [];
-
   if(extra.length){
     document.getElementById('extra-docs-wrap').innerHTML = `
       <div class="docs-section">
