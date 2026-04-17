@@ -63,25 +63,16 @@
   gap:.55rem;
 }
 .upcoming-item{
-  display:flex;
+  display:grid;
+  grid-template-columns:56px 110px minmax(0,1fr) auto;
   align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.upcoming-left{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex:1;
-}
-
-.upcoming-link{
-  min-width:72px;
-  text-align:center;
+  gap:.8rem;
+  padding:.6rem .7rem;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);
+  border-radius:10px;
 }
 .upcoming-date{
-  min-width:2.2rem;
   font-family:'Source Serif 4',serif;
   font-size:1.1rem;
   font-weight:700;
@@ -93,16 +84,19 @@
   font-size:.88rem;
   font-weight:500;
   line-height:1.35;
+  min-width:0;
 }
 .upcoming-links{
-  margin-left:auto;
   display:flex;
+  justify-content:flex-start;
   gap:.35rem;
   flex-wrap:wrap;
 }
 .upcoming-link{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
+  min-width:72px;
   padding:.2rem .5rem;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.16);
@@ -111,6 +105,7 @@
   font-size:.68rem;
   font-weight:600;
   background:rgba(255,255,255,.07);
+  text-align:center;
 }
 .upcoming-link:hover{
   background:rgba(255,255,255,.14);
@@ -229,6 +224,7 @@
 .month-badge{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   padding:.16rem .48rem;
   border-radius:999px;
   font-size:.65rem;
@@ -248,12 +244,15 @@
 @media (max-width: 700px){
   .filters-inner{padding:1rem 1.25rem .9rem}
   .upcoming-item{
-    flex-wrap:wrap;
-    align-items:flex-start;
+    grid-template-columns:48px 1fr;
+    align-items:start;
+  }
+  .upcoming-name{
+    grid-column:2;
   }
   .upcoming-links{
-    margin-left:0;
-    width:100%;
+    grid-column:1 / -1;
+    margin-top:.2rem;
   }
 }
 </style>
@@ -471,15 +470,9 @@ function renderUpcomingList() {
 
   list.innerHTML = monthMeetings.length ? monthMeetings.map(m => `
     <div class="upcoming-item">
-      <div class="upcoming-left">
-        <div class="upcoming-date">${escHtml(String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2, '0'))}</div>
-        <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
-        <div class="upcoming-name">
-          <a href="${escHtml(primaryMeetingUrl(m))}" style="color:inherit;text-decoration:none;">
-            ${escHtml(m.source_kind === 'council' ? `${m.meeting_type || 'Meeting'} Meeting` : (m.meeting_type || m.body || 'Meeting'))}
-          </a>
-        </div>
-      </div>  
+      <div class="upcoming-date">${escHtml(String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2, '0'))}</div>
+      <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
+      <div class="upcoming-name">${escHtml(m.source_kind === 'council' ? `${m.meeting_type || 'Meeting'} Meeting` : (m.meeting_type || m.body || 'Meeting'))}</div>
       <div class="upcoming-links">
         ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" target="_blank" rel="noopener" class="upcoming-link">Agenda</a>` : ''}
         ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" target="_blank" rel="noopener" class="upcoming-link">Minutes</a>` : ''}
