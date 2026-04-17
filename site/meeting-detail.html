@@ -34,12 +34,46 @@
   letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--ink-4);
-  margin-bottom:.75rem;
+  margin-bottom:.9rem;
 }
 
 .summary-body{
   font-size:.95rem;
-  line-height:1.6;
+  line-height:1.75;
+  color:var(--ink);
+}
+
+.summary-body h1,
+.summary-body h2,
+.summary-body h3,
+.summary-body h4{
+  font-family:var(--font-serif, Georgia, serif);
+  color:var(--ink);
+  margin:1rem 0 .6rem;
+  line-height:1.25;
+}
+
+.summary-body h1{font-size:1.65rem}
+.summary-body h2{font-size:1.35rem}
+.summary-body h3{font-size:1.05rem}
+.summary-body h4{font-size:.95rem}
+
+.summary-body p{
+  margin:.65rem 0;
+}
+
+.summary-body ul{
+  margin:.65rem 0 .9rem 1.25rem;
+}
+
+.summary-body li{
+  margin:.3rem 0;
+}
+
+.summary-body hr{
+  border:none;
+  border-top:1px solid var(--rule);
+  margin:1rem 0;
 }
 
 .side-card{
@@ -56,11 +90,19 @@
   letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--ink-4);
-  margin-bottom:.75rem;
+  margin-bottom:.9rem;
 }
 
 .meta-row{
-  margin-bottom:.7rem;
+  margin-bottom:.9rem;
+  padding-bottom:.9rem;
+  border-bottom:1px solid var(--rule);
+}
+
+.meta-row:last-child{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
 }
 
 .meta-label{
@@ -68,14 +110,15 @@
   text-transform:uppercase;
   color:var(--ink-4);
   letter-spacing:.05em;
+  margin-bottom:.25rem;
 }
 
 .meta-value{
-  font-size:.9rem;
+  font-size:.95rem;
   font-weight:600;
+  color:var(--ink);
 }
 
-/* unified doc sections */
 .docs-section{
   margin-top:1rem;
   padding-top:1rem;
@@ -101,12 +144,12 @@
   display:flex;
   align-items:center;
   gap:.6rem;
-  padding:.6rem .7rem;
+  padding:.7rem .8rem;
   border:1px solid var(--rule);
   border-radius:10px;
   text-decoration:none;
   color:var(--ink);
-  font-size:.85rem;
+  font-size:.88rem;
   font-weight:500;
   background:var(--white);
   transition:.15s;
@@ -122,6 +165,12 @@
   height:16px;
   flex-shrink:0;
 }
+
+.empty-note{
+  color:var(--ink-4);
+  font-size:.9rem;
+  font-style:italic;
+}
 </style>
 </head>
 
@@ -134,7 +183,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html">By-Laws & Resolutions</a></li>
+      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
       <li><a href="council.html">Meetings</a></li>
     </ul>
   </div>
@@ -142,20 +191,14 @@
 
 <main class="detail-wrap">
 
-  <!-- LEFT -->
   <div>
-
     <div class="summary-card">
       <div class="summary-title">Summary</div>
       <div class="summary-body" id="summary-content"></div>
     </div>
-
   </div>
 
-  <!-- RIGHT -->
   <div>
-
-    <!-- DETAILS -->
     <div class="side-card">
       <div class="side-title">Meeting Details</div>
 
@@ -175,15 +218,11 @@
       </div>
     </div>
 
-    <!-- DOCUMENTS -->
     <div class="side-card">
-      <div class="side-title">Documents & Links</div>
-
+      <div class="side-title">Documents &amp; Links</div>
       <div class="docs-stack" id="main-docs"></div>
-
       <div id="extra-docs-wrap"></div>
     </div>
-
   </div>
 
 </main>
@@ -198,7 +237,11 @@ function getParam(name){
 
 function esc(str){
   return (str || '').replace(/[&<>"']/g, m => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#039;'
   }[m]));
 }
 
@@ -211,7 +254,87 @@ function icon(){
 }
 
 function buildDoc(label, url){
-  return `<a href="${esc(url)}" target="_blank" class="doc-link">${icon()}<span>${esc(label)}</span></a>`;
+  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="doc-link">${icon()}<span>${esc(label)}</span></a>`;
+}
+
+function renderSummaryMarkdown(md){
+  if(!md || !String(md).trim()){
+    return '<p class="empty-note">No summary available.</p>';
+  }
+
+  const lines = String(md).replace(/\r\n/g, '\n').split('\n');
+  let html = '';
+  let inList = false;
+
+  function closeList(){
+    if(inList){
+      html += '</ul>';
+      inList = false;
+    }
+  }
+
+  for(let raw of lines){
+    const line = raw.trim();
+
+    if(!line){
+      closeList();
+      continue;
+    }
+
+    if(line === '---' || line === '***' || line === '___'){
+      closeList();
+      html += '<hr>';
+      continue;
+    }
+
+    if(line.startsWith('#### ')){
+      closeList();
+      html += `<h4>${inlineMarkdown(line.slice(5))}</h4>`;
+      continue;
+    }
+
+    if(line.startsWith('### ')){
+      closeList();
+      html += `<h3>${inlineMarkdown(line.slice(4))}</h3>`;
+      continue;
+    }
+
+    if(line.startsWith('## ')){
+      closeList();
+      html += `<h2>${inlineMarkdown(line.slice(3))}</h2>`;
+      continue;
+    }
+
+    if(line.startsWith('# ')){
+      closeList();
+      html += `<h1>${inlineMarkdown(line.slice(2))}</h1>`;
+      continue;
+    }
+
+    if(/^[-*•]\s+/.test(line)){
+      if(!inList){
+        html += '<ul>';
+        inList = true;
+      }
+      html += `<li>${inlineMarkdown(line.replace(/^[-*•]\s+/, ''))}</li>`;
+      continue;
+    }
+
+    closeList();
+    html += `<p>${inlineMarkdown(line)}</p>`;
+  }
+
+  closeList();
+  return html;
+}
+
+function inlineMarkdown(text){
+  let out = esc(text);
+
+  out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  out = out.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+  return out;
 }
 
 async function init(){
@@ -225,25 +348,20 @@ async function init(){
     return;
   }
 
-  // summary
-  document.getElementById('summary-content').innerHTML =
-    meeting.summary || '<em>No summary available.</em>';
-
-  // meta
-  document.getElementById('meta-date').textContent = meeting.display_date;
+  document.getElementById('summary-content').innerHTML = renderSummaryMarkdown(meeting.summary);
+  document.getElementById('meta-date').textContent = meeting.display_date || '';
   document.getElementById('meta-type').textContent = meeting.meeting_type || 'Meeting';
-  document.getElementById('meta-year').textContent = meeting.year;
+  document.getElementById('meta-year').textContent = meeting.year || '';
 
-  // main docs
   const main = [];
   if(meeting.agenda_url) main.push(buildDoc('Agenda', meeting.agenda_url));
   if(meeting.minutes_url) main.push(buildDoc('Minutes', meeting.minutes_url));
   if(meeting.package_url) main.push(buildDoc('Agenda Package', meeting.package_url));
   if(meeting.video_url) main.push(buildDoc('Video Recording', meeting.video_url));
 
-  document.getElementById('main-docs').innerHTML = main.join('');
+  document.getElementById('main-docs').innerHTML =
+    main.length ? main.join('') : '<p class="empty-note">No primary documents available.</p>';
 
-  // extra docs
   const extra = meeting.extra_docs || [];
 
   if(extra.length){
