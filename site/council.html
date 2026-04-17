@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Meetings — Nipissing Township Public Records</title>
-
+<meta name="description" content="Browse Nipissing Township Council, board, and committee meetings — agendas, minutes, packages, and available recordings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 
 <style>
@@ -13,6 +16,10 @@
   grid-template-columns:minmax(340px,1.1fr) minmax(320px,.9fr);
   gap:2rem;
   align-items:start;
+}
+
+.header-copy p{
+  max-width:38rem;
 }
 
 .header-upcoming{
@@ -30,7 +37,7 @@
 }
 
 .upcoming-title{
-  font-family:serif;
+  font-family:'Source Serif 4',serif;
   font-size:1.2rem;
   font-weight:700;
   color:#fff;
@@ -44,6 +51,13 @@
   background:rgba(255,255,255,.08);
   color:#fff;
   cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.calendar-arrow:hover{
+  background:rgba(255,255,255,.15);
 }
 
 .upcoming-list{
@@ -67,6 +81,7 @@
   font-weight:700;
   color:#fff;
   text-align:center;
+  font-size:1.05rem;
 }
 
 .upcoming-label{
@@ -80,6 +95,7 @@
   font-size:.65rem;
   font-weight:700;
   text-transform:uppercase;
+  white-space:nowrap;
 }
 
 .mb-council{background:#f5e7c3;color:#a97900}
@@ -90,6 +106,7 @@
 .upcoming-links{
   display:flex;
   gap:.3rem;
+  flex-wrap:wrap;
 }
 
 .upcoming-link{
@@ -108,7 +125,144 @@
   background:rgba(255,255,255,.15);
 }
 
+.upcoming-empty{
+  padding:.75rem .85rem;
+  border:1px dashed rgba(255,255,255,.18);
+  border-radius:10px;
+  color:rgba(255,255,255,.76);
+  font-size:.85rem;
+}
+
+.filters-wrap{
+  border-bottom:1px solid var(--rule);
+  background:var(--white);
+}
+
+.filters-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:1rem 2rem .9rem;
+}
+
+.filters-row{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.search-grow{
+  flex:1 1 420px;
+  min-width:280px;
+}
+
+.inline-filter{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  flex-wrap:wrap;
+}
+
+.inline-label{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-4);
+}
+
+.year-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:.7rem;
+}
+
+.year-pill-wrap{
+  display:flex;
+  gap:.35rem;
+  flex-wrap:wrap;
+}
+
+.year-pill-wrap .tab-btn,
+.type-pill-wrap .tab-btn{
+  padding:.48rem .82rem;
+}
+
+.body-results{
+  padding-top:2rem;
+}
+
+.year-group{
+  margin-bottom:2.5rem;
+}
+
+.year-heading{
+  font-family:'Source Serif 4',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:1rem;
+  padding-bottom:.6rem;
+  border-bottom:2px solid var(--rule);
+  display:flex;
+  align-items:baseline;
+  gap:.75rem;
+}
+
+.year-heading .year-count{
+  font-family:'DM Sans',sans-serif;
+  font-size:.75rem;
+  font-weight:500;
+  color:var(--ink-4);
+  border:1px solid var(--rule);
+  padding:.15rem .55rem;
+  border-radius:10px;
+}
+
+.calendar-legend{
+  display:flex;
+  gap:.45rem;
+  flex-wrap:wrap;
+  margin-top:.8rem;
+}
+
+.legend-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-size:.64rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.8);
+}
+
+.legend-dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  display:inline-block;
+}
+
+.legend-council{background:var(--gold)}
+.legend-recreation{background:var(--teal)}
+.legend-museum{background:var(--blue)}
+.legend-cemetery{background:#6840b5}
+
+@media(max-width:980px){
+  .header-split{
+    grid-template-columns:1fr;
+  }
+}
+
 @media(max-width:700px){
+  .filters-inner{
+    padding:1rem 1.25rem .9rem;
+  }
+
   .upcoming-item{
     grid-template-columns:50px 1fr;
   }
@@ -122,43 +276,157 @@
 
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html">Nipissing Township</a>
-    <ul class="nav-links">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html">By-Laws & Resolutions</a></li>
+      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
       <li><a href="council.html" class="active">Meetings</a></li>
     </ul>
+
+    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
   </div>
 </nav>
 
 <div class="page-header">
   <div class="page-header-inner header-split">
 
-    <div>
-      <h1>Meetings Archive</h1>
+    <div class="header-copy">
+      <p class="page-eyebrow">Nipissing Township · Public Records</p>
+      <h1>Meetings <em>Archive</em></h1>
       <p>Council, board, and committee meetings — agendas, minutes, and packages.</p>
+
+      <div class="calendar-legend">
+        <span class="legend-pill"><span class="legend-dot legend-council"></span>Council</span>
+        <span class="legend-pill"><span class="legend-dot legend-recreation"></span>Recreation</span>
+        <span class="legend-pill"><span class="legend-dot legend-museum"></span>Museum</span>
+        <span class="legend-pill"><span class="legend-dot legend-cemetery"></span>Cemetery</span>
+      </div>
     </div>
 
     <div class="header-upcoming">
       <div class="upcoming-top">
-        <button class="calendar-arrow" id="cal-prev">‹</button>
+        <button class="calendar-arrow" id="cal-prev" aria-label="Previous month">‹</button>
         <div class="upcoming-title" id="calendar-title"></div>
-        <button class="calendar-arrow" id="cal-next">›</button>
+        <button class="calendar-arrow" id="cal-next" aria-label="Next month">›</button>
       </div>
-
       <div class="upcoming-list" id="upcoming-list"></div>
     </div>
 
   </div>
 </div>
 
-<script src="shared.js"></script>
+<div class="filters-wrap">
+  <div class="filters-inner">
+    <div class="filters-row">
+      <div class="filter-search search-grow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input id="search" type="search" placeholder="Search by date, body, type…" autocomplete="off">
+      </div>
 
+      <div class="inline-filter">
+        <div class="inline-label">Type</div>
+        <div class="tab-group type-pill-wrap">
+          <button class="tab-btn active" data-body="all">All</button>
+          <button class="tab-btn" data-body="council">Council</button>
+          <button class="tab-btn" data-body="recreation">Recreation</button>
+          <button class="tab-btn" data-body="museum">Museum</button>
+          <button class="tab-btn" data-body="cemetery">Cemetery</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-row">
+      <div>
+        <div class="inline-label" style="margin-bottom:.35rem;">Year</div>
+        <div class="year-pill-wrap tab-group" id="year-pills">
+          <button class="tab-btn active" data-year="">All Years</button>
+        </div>
+      </div>
+      <span class="result-count" id="result-count"></span>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="body-results">
+  <div id="results-container"></div>
+
+  <div class="state-msg" id="empty" style="display:none">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+    </svg>
+    <strong>No meetings found</strong>
+    <p>Try different search terms or clear a filter.</p>
+  </div>
+
+  <div class="state-msg" id="loading">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    <strong>Loading meetings…</strong>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Nipissing Township<br>Public Records</div>
+      <p class="footer-desc">An independent public archive — data from nipissingtownship.com.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Sections</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home &amp; Search</a></li>
+        <li><a href="bylaws.html">By-Laws</a></li>
+        <li><a href="bylaws.html#resolutions">Resolutions</a></li>
+        <li><a href="council.html">Meetings</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Sources</div>
+      <ul class="footer-links">
+        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Archive</a></li>
+        <li><a href="https://nipissingtownship.com/services/recreation/" target="_blank">Recreation Committee</a></li>
+        <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
+        <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Data from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> · Updated automatically</p>
+    <p>Not an official Township resource</p>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
 <script>
-let calendarYear = new Date().getFullYear();
-let calendarMonth = new Date().getMonth();
+let activeBody = 'all';
+let activeYear = '';
+let searchQ = '';
+
+const now = new Date();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+let calendarYear = now.getFullYear();
+let calendarMonth = now.getMonth();
 
 function bodyBadgeClass(bodyId){
   if(bodyId === 'council') return 'mb-council';
@@ -168,12 +436,27 @@ function bodyBadgeClass(bodyId){
   return 'mb-council';
 }
 
+function meetingDateObj(meeting){
+  if(!meeting.date) return null;
+  const d = new Date(`${meeting.date}T00:00:00`);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function isPastMeeting(meeting){
+  if(meeting.cancelled) return false;
+  const d = meetingDateObj(meeting);
+  if(!d) return false;
+  return d < today;
+}
+
 function meetingsForMonth(year, month){
-  return ALL_MEETINGS.filter(m=>{
+  return ALL_MEETINGS.filter(m => {
+    if(m.cancelled) return false;
     if(!m.date) return false;
-    const d = new Date(m.date);
+    const d = new Date(`${m.date}T00:00:00`);
+    if(Number.isNaN(d.getTime())) return false;
     return d.getFullYear() === year && d.getMonth() === month;
-  });
+  }).sort((a,b) => String(a.date || '').localeCompare(String(b.date || '')));
 }
 
 function renderUpcomingList(){
@@ -181,58 +464,149 @@ function renderUpcomingList(){
   const list = document.getElementById('upcoming-list');
 
   const first = new Date(calendarYear, calendarMonth, 1);
-  title.textContent = first.toLocaleDateString('en-CA',{month:'long',year:'numeric'});
+  title.textContent = first.toLocaleDateString('en-CA', {month:'long', year:'numeric'});
 
   const meetings = meetingsForMonth(calendarYear, calendarMonth);
 
-  list.innerHTML = meetings.map(m=>{
-    const day = String(new Date(m.date).getDate()).padStart(2,'0');
+  list.innerHTML = meetings.length ? meetings.map(m => {
+    const day = String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2,'0');
 
     return `
       <div class="upcoming-item">
-        <div class="upcoming-date">${day}</div>
+        <div class="upcoming-date">${escHtml(day)}</div>
 
         <div class="upcoming-label">
-          <span class="month-badge ${bodyBadgeClass(m.body_id)}">
-            ${m.body || 'Meeting'}
-          </span>
+          <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
         </div>
 
         <div class="upcoming-links">
-          ${m.agenda_url ? `<a href="${m.agenda_url}" class="upcoming-link" target="_blank">Agenda</a>`:''}
-          ${m.minutes_url ? `<a href="${m.minutes_url}" class="upcoming-link" target="_blank">Minutes</a>`:''}
-          ${m.package_url ? `<a href="${m.package_url}" class="upcoming-link" target="_blank">Package</a>`:''}
+          ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
+          ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
+          ${m.package_url ? `<a href="${escHtml(m.package_url)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
         </div>
       </div>
     `;
-  }).join('');
+  }).join('') : `<div class="upcoming-empty">No scheduled meetings in this month.</div>`;
 }
 
-document.getElementById('cal-prev').onclick = ()=>{
-  calendarMonth--;
-  if(calendarMonth < 0){
-    calendarMonth = 11;
-    calendarYear--;
-  }
-  renderUpcomingList();
-};
+function renderYearPills(){
+  const years = [...new Set(ALL_MEETINGS.map(m => m.year).filter(Boolean))].sort((a,b) => b - a);
+  const wrap = document.getElementById('year-pills');
 
-document.getElementById('cal-next').onclick = ()=>{
-  calendarMonth++;
-  if(calendarMonth > 11){
-    calendarMonth = 0;
-    calendarYear++;
+  wrap.innerHTML = `
+    <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All Years</button>
+    ${years.map(y => `
+      <button class="tab-btn ${String(activeYear) === String(y) ? 'active' : ''}" data-year="${escHtml(y)}">${escHtml(y)}</button>
+    `).join('')}
+  `;
+
+  wrap.querySelectorAll('[data-year]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeYear = btn.dataset.year;
+      renderYearPills();
+      renderBodyResults();
+    });
+  });
+}
+
+function filteredPastMeetings(){
+  let items = ALL_MEETINGS.filter(isPastMeeting);
+
+  if(activeBody !== 'all'){
+    items = items.filter(m => (m.body_id || '').toLowerCase() === activeBody);
   }
-  renderUpcomingList();
-};
+
+  if(activeYear){
+    items = items.filter(m => String(m.year) === activeYear);
+  }
+
+  return items;
+}
+
+function renderBodyResults(){
+  let items = filteredPastMeetings();
+
+  if(searchQ.trim()){
+    const scored = items
+      .map(m => ({ m, s: scoreItem(m, searchQ) }))
+      .filter(x => x.s > 0)
+      .sort((a,b) => b.s - a.s);
+
+    items = scored.map(x => x.m);
+
+    document.getElementById('result-count').textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
+    document.getElementById('empty').style.display = items.length ? 'none' : '';
+    document.getElementById('results-container').innerHTML = items.map(m => meetingCard(m, searchQ)).join('');
+    return;
+  }
+
+  document.getElementById('result-count').textContent = `${items.length} meeting${items.length === 1 ? '' : 's'}`;
+  document.getElementById('empty').style.display = items.length ? 'none' : '';
+
+  const byYear = {};
+  items.forEach(m => {
+    const y = m.year || 'Unknown';
+    if(!byYear[y]) byYear[y] = [];
+    byYear[y].push(m);
+  });
+
+  const years = Object.keys(byYear).sort((a,b) => Number(b) - Number(a));
+
+  document.getElementById('results-container').innerHTML = years.map(y => `
+    <section class="year-group">
+      <div class="year-heading">
+        <span>${y}</span>
+        <span class="year-count">${byYear[y].length} meeting${byYear[y].length === 1 ? '' : 's'}</span>
+      </div>
+      <div class="results-grid">
+        ${byYear[y].map(m => meetingCard(m, '')).join('')}
+      </div>
+    </section>
+  `).join('');
+}
 
 async function init(){
   await loadAllData();
+  document.getElementById('loading').style.display = 'none';
+
   renderUpcomingList();
+  renderYearPills();
+  renderBodyResults();
+
+  document.getElementById('search').addEventListener('input', e => {
+    searchQ = e.target.value;
+    renderBodyResults();
+  });
+
+  document.querySelectorAll('[data-body]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-body]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeBody = btn.dataset.body;
+      renderBodyResults();
+    });
+  });
+
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    calendarMonth--;
+    if(calendarMonth < 0){
+      calendarMonth = 11;
+      calendarYear--;
+    }
+    renderUpcomingList();
+  });
+
+  document.getElementById('cal-next').addEventListener('click', () => {
+    calendarMonth++;
+    if(calendarMonth > 11){
+      calendarMonth = 0;
+      calendarYear++;
+    }
+    renderUpcomingList();
+  });
 }
 
 init();
 </script>
-
 </body>
 </html>
