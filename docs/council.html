@@ -65,11 +65,21 @@
 .upcoming-item{
   display:flex;
   align-items:center;
-  gap:.65rem;
-  padding:.6rem .7rem;
-  border:1px solid rgba(255,255,255,.09);
-  background:rgba(255,255,255,.04);
-  border-radius:10px;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.upcoming-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:1;
+}
+
+.upcoming-links{
+  display:flex;
+  gap:8px;
+  flex-shrink:0;
 }
 .upcoming-date{
   min-width:2.2rem;
