@@ -423,8 +423,8 @@ async function init(){
   const date = getParam('date');
   const body = getParam('body');
   const meeting = ALL_MEETINGS.find(m =>
-    m.date === date && String(m.body_id || '') === String(body || '')
-);
+    m.date === date && String(m.body_id || '') === String(body || 'council')
+  );
 
   if(!meeting){
     document.body.innerHTML = '<p style="padding:2rem">Meeting not found</p>';
