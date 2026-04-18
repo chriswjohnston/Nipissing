@@ -42,7 +42,9 @@
           "board_id": "cemetery",
           "board_name": "Cemetery Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Cemetery Committee",
+          "body_id": "cemetery"
         },
         {
           "date": "2024-05-24",
@@ -203,7 +205,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-10-07",
@@ -219,7 +223,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-09-02",
@@ -235,7 +241,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-08-05",
@@ -251,7 +259,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-07-08",
@@ -267,7 +277,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-07-02",
@@ -318,7 +330,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-05-13",
@@ -334,7 +348,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-05-06",
@@ -350,7 +366,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-04-01",
@@ -366,7 +384,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": "I appreciate you reaching out, but I'm unable to read or summarize the content of this PDF file. The document you've shared appears to be in a compressed/encoded format that renders as garbled text when I try to access it.\n\nTo help you, could you either:\n\n1. **Copy and paste the readable text** from the PDF directly into our conversation, or\n2. **Share a clearer image or different file format** of the meeting minutes, or\n3. **Describe the key items** you'd like summarized\n\nOnce I can see the actual content, I'd be happy to write those 2-3 plain-language sentences summarizing the budgets, programs, facilities, and votes discussed.",
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2026-03-04",
@@ -381,7 +401,7 @@
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Museum-Package-March-4-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
-          "summary": null,
+          "summary": "# Museum Board Meeting Summary\n\n**Mar 4, 2026**\n\n## Key Decisions\n- Jane Aultman appointed as Chairperson for 2026\n- November 5, 2025 meeting minutes approved\n- Board adjourned at 6:18 p.m.\n\n## Main Topics\n- **Building inspection**: An engineer will inspect the Museum before it opens for the season.\n- **Event planning and volunteers**: Board members are being asked to volunteer for scheduled events. Summer students will help support events. The band \"Country Re-Runs and Friends\" was suggested as live entertainment for Heritage Day.\n- **Exhibit development**: Staff have been developing \"The Waterway Journey to Nipissing\" as the theme for Heritage Day and a Remembrance Interactive exhibit program. The Board discussed applying for grants to create a traveling Remembrance Day exhibit that could visit the Powassan Library after being installed at the Museum.\n- **Cataloguing**: Artifact cataloguing and data entry will resume during the Museum season.\n- **Community feedback**: The Board is gathering feedback on a museum-designed game used during the 2025 Christmas event through Facebook and community discussion to guide future projects.\n\n## Notable Items\n- Engineer inspection of the Museum is scheduled before opening\n- Heritage Day will feature \"The Waterway Journey to Nipissing\" theme\n- Remembrance Interactive exhibit will be installed at the Museum this year to test it before potential grant-funded traveling exhibit\n- Summer students will support seasonal events\n\n---\n*Next regular meeting: Wednesday, April 1, 2026 at 6:00 p.m.*",
           "events": [],
           "meeting_type": "Board",
           "title": "Museum Board",
@@ -404,7 +424,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-10-01",
@@ -420,7 +442,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-09-03",
@@ -436,7 +460,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-08-06",
@@ -452,7 +478,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": "I appreciate your request, but I'm unable to read the content of this PDF document. The file appears to be heavily compressed/encoded in PDF format, and the text is not extractable in a readable way on my end.\n\nTo help you get a plain-language summary, you could:\n\n1. **Copy and paste the readable text** from the PDF directly into our conversation\n2. **Upload a different file format** if available (like a Word document or plain text file)\n3. **Share the key points** you'd like summarized\n\nOnce I can see the actual meeting content, I'd be happy to write 2-3 clear sentences about budget decisions, programs, facilities, and votes for a general resident audience.",
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-07-02",
@@ -468,7 +496,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-06-04",
@@ -484,7 +514,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-05-07",
@@ -500,7 +532,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-04-02",
@@ -516,7 +550,9 @@
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Museum Board",
+          "body_id": "museum"
         },
         {
           "date": "2025-03-05",
@@ -567,7 +603,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-10-05",
@@ -583,7 +621,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-09-14",
@@ -599,7 +639,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-06-01",
@@ -615,7 +657,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-05-04",
@@ -631,7 +675,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-03-02",
@@ -647,7 +693,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I apologize, but I'm unable to read the content of this PDF document. The file appears to be encoded or compressed in a way that makes the text inaccessible to me. The raw data shown is the PDF's internal structure rather than readable text.\n\nTo help you, I would need:\n- A plain text version of the meeting minutes, or\n- A properly formatted PDF that displays readable text, or\n- A document in another format (Word, Google Docs, etc.)\n\nIf you can copy and paste the text content of the minutes, I'd be happy to write a 2-3 sentence summary focused on budgets, programs, facilities, and votes.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-02-02",
@@ -663,7 +711,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "# Recreation Committee Meeting Summary\n**Nipissing Township, Ontario – February 2, 2026**\n\nI apologize, but the PDF file you've provided appears to be corrupted or improperly encoded. The content stream is compressed and unreadable, so I cannot access the actual meeting minutes to summarize the discussions, decisions, budgets, programs, or facilities that were addressed.\n\nTo help you, I would need either:\n- A properly formatted and readable PDF file\n- The meeting minutes in text or Word document format\n- A scanned image of the document that can be read\n\nIf you can provide a readable version of the minutes, I'd be happy to create a 2-3 sentence plain-language summary for residents.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2026-01-19",
@@ -701,7 +751,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-11-17",
@@ -717,7 +769,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I apologize, but I'm unable to read the content of this PDF document. The file appears to be corrupted or heavily compressed in a way that makes the text unreadable to me. The raw data shows encoded streams rather than plain text.\n\nTo help you, I would need either:\n- A properly extracted text version of the meeting minutes\n- A clearer/uncorrupted PDF file\n- The minutes in another format (Word document, plain text, etc.)\n\nIf you can provide the meeting minutes in a readable format, I'd be happy to summarize the key decisions and budget items for you.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-10-06",
@@ -733,7 +787,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I appreciate your request, but I'm unable to read the content of this PDF document. The file appears to be a corrupted or improperly encoded PDF—the text content shows as garbled characters rather than readable text.\n\nTo help you, I would need either:\n- A properly formatted PDF that can be read\n- The minutes in another format (Word, text file, etc.)\n- The text content copied and pasted directly\n\nOnce you provide a readable version, I'd be happy to summarize the Recreation Committee's decisions about budgets, programs, and facilities in plain language for residents.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-09-15",
@@ -749,7 +805,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I appreciate your request, but I'm unable to read the content of this PDF file. The document you've provided appears to be a compressed/encoded PDF stream that I cannot decompress or parse.\n\nTo help you, could you please:\n\n1. **Copy and paste the text** directly from the PDF into a plain text format, or\n2. **Provide a text version** of the meeting minutes, or\n3. **Share the key points** you'd like summarized\n\nOnce you provide the readable content, I'll be happy to write 2-3 clear plain-language sentences summarizing the budget, programs, facilities, and voting decisions from the September 15, 2025 Nipissing Township Recreation Committee meeting.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-08-11",
@@ -765,7 +823,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-07-14",
@@ -781,7 +841,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-06-09",
@@ -797,7 +859,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I appreciate your request, but I'm unable to read the content of this PDF file. The document appears to be corrupted or heavily compressed in a way that makes the text unreadable to me—I can only see the underlying PDF code structure, not the actual meeting minutes.\n\nTo help you, could you either:\n1. Provide the minutes in plain text format, or\n2. Re-save the PDF and share it again, or\n3. Copy and paste the text content directly?\n\nOnce I can read the actual content, I'll be happy to summarize the key decisions about budgets, programs, and facilities in plain language for you.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-05-12",
@@ -813,7 +877,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": "I appreciate your request, but I'm unable to read the content of this PDF file. The document appears to be compressed/encoded in a way that doesn't allow me to extract the readable text about what was discussed at the Recreation Committee meeting.\n\nTo help you, I would need:\n- A text version of the minutes, or\n- An image or plain text file of the document content\n\nIf you can share the minutes in a different format, I'd be happy to write a 2-3 sentence plain-language summary focusing on budgets, programs, facilities, and decisions.",
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-04-07",
@@ -829,7 +895,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-03-03",
@@ -845,7 +913,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-02-03",
@@ -861,7 +931,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2025-01-06",
@@ -899,7 +971,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-11-04",
@@ -915,7 +989,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-10-07",
@@ -931,7 +1007,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-09-16",
@@ -947,7 +1025,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-08-12",
@@ -963,7 +1043,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-07-15",
@@ -979,7 +1061,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-06-03",
@@ -995,7 +1079,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-05-13",
@@ -1011,7 +1097,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-04-15",
@@ -1027,7 +1115,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-03-04",
@@ -1043,7 +1133,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-02-05",
@@ -1059,7 +1151,9 @@
           "board_id": "recreation",
           "board_name": "Recreation Committee",
           "summary": null,
-          "events": []
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation"
         },
         {
           "date": "2024-01-15",
