@@ -474,6 +474,8 @@ function meetingDateObj(meeting){
 
 function isPastMeeting(meeting){
   if(meeting.cancelled) return false;
+  if(meeting.rescheduled) return false;
+  if(meeting.postponed) return false;
   const d = meetingDateObj(meeting);
   if(!d) return false;
   return d < today;
@@ -482,13 +484,15 @@ function isPastMeeting(meeting){
 function meetingsForMonth(year, month){
   return ALL_MEETINGS.filter(m => {
     if(m.cancelled) return false;
+    if(m.rescheduled) return false;
+    if(m.postponed) return false;
     if(!m.date) return false;
     const d = new Date(`${m.date}T00:00:00`);
     if(Number.isNaN(d.getTime())) return false;
     return d.getFullYear() === year && d.getMonth() === month;
   }).sort((a,b) => String(a.date || '').localeCompare(String(b.date || '')));
 }
-
+  
 function renderUpcomingList(){
   const title = document.getElementById('calendar-title');
   const list = document.getElementById('upcoming-list');
