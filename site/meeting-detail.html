@@ -239,8 +239,15 @@
 <body>
 
 <nav>
+  <nav>
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
+      <div class="nav-brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
       <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
     </a>
     <ul class="nav-links">
@@ -414,7 +421,10 @@ async function init(){
   await loadAllData();
 
   const date = getParam('date');
-  const meeting = ALL_MEETINGS.find(m => m.date === date);
+  const body = getParam('body');
+  const meeting = ALL_MEETINGS.find(m =>
+    m.date === date && String(m.body_id || '') === String(body || '')
+);
 
   if(!meeting){
     document.body.innerHTML = '<p style="padding:2rem">Meeting not found</p>';
