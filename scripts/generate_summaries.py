@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+"""
+generate_summaries.py
+
+Generate AI summaries for:
+- council meetings in data/canonical/meetings.json
+- board / committee meetings in data/canonical/boards.json
+
+Rules:
+- only summarize meetings from 2026 onward
+- only summarize meetings that have minutes_url
+- skip meetings that already have a summary
+- write summaries directly back into canonical JSON
+"""
+
 from __future__ import annotations
 
 import io
@@ -6,38 +20,33 @@ import json
 import os
 import re
 import time
-from datetime import date
+from copy import deepcopy
 from pathlib import Path
-from typing import Any
+from typing import Any, Dict, List, Tuple
 
 import requests
-from pdfminer.high_level import extract_text
+from pdfminer.high_level import extract_text_to_fp
+from pdfminer.layout import LAParams
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data" / "canonical"
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
-MEETINGS_FILE = DATA / "meetings.json"
-SUMMARIES_FILE = DATA / "summaries.json"
+ROOT = Path(__file__).resolve().parents[1]
+CANONICAL_DIR = ROOT / "data" / "canonical"
 
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
-ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
-ANTHROPIC_MODEL = "claude-sonnet-4-6"
+MEETINGS_FILE = CANONICAL_DIR / "meetings.json"
+BOARDS_FILE = CANONICAL_DIR / "boards.json"
 
-HEADERS = {
-    "User-Agent": "NipissingPublicRecords/1.0"
-}
+MIN_YEAR = 2026
 
-TODAY = date.today().isoformat()
-MAX_PER_RUN = 5
 
+# ---------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------
 
 def load_json(path: Path, default: Any) -> Any:
     if not path.exists():
-        return default
-    text = path.read_text(encoding="utf-8").strip()
-    if not text:
-        return default
-    return json.loads(text)
+        return deepcopy(default)
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def save_json(path: Path, data: Any) -> None:
@@ -45,143 +54,100 @@ def save_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def slug_from_display_date(display_date: str) -> str:
-    m = re.match(r"^([A-Za-z]{3,9})\s+(\d{1,2}),\s+(\d{4})$", (display_date or "").strip())
-    if not m:
-        return ""
+def fetch_pdf_text(url: str, max_chars: int = 120000) -> str:
+    if not url or not url.lower().endswith(".pdf"):
+        raise ValueError("Not a PDF URL")
 
-    month_map = {
-        "jan": "january",
-        "feb": "february",
-        "mar": "march",
-        "apr": "april",
-        "may": "may",
-        "jun": "june",
-        "jul": "july",
-        "aug": "august",
-        "sep": "september",
-        "oct": "october",
-        "nov": "november",
-        "dec": "december",
-    }
-    month = month_map.get(m.group(1).lower()[:3], m.group(1).lower())
-    day = str(int(m.group(2)))
-    year = m.group(3)
-    return f"{month}-{day}-{year}"
-
-
-def summary_key_for_meeting(meeting: dict[str, Any]) -> str | None:
-    year = str(meeting.get("year") or str(meeting.get("date", ""))[:4]).strip()
-    display_date = (meeting.get("display_date") or "").strip()
-
-    if not year or not display_date:
-        return None
-
-    slug = slug_from_display_date(display_date)
-    if not slug:
-        return None
-
-    return f"{year}/{slug}"
-
-
-def should_summarize(meeting: dict[str, Any], summaries: dict[str, str]) -> tuple[bool, str]:
-    year = str(meeting.get("year") or meeting.get("date", "")[:4])
-    if not year.isdigit() or int(year) < 2026:
-        return False, "older than 2026"
-
-    if meeting.get("cancelled"):
-        return False, "cancelled"
-
-    meeting_date = str(meeting.get("date", ""))
-    if meeting_date and meeting_date > TODAY:
-        return False, "future"
-
-    if not meeting.get("minutes_url"):
-        return False, "no minutes"
-
-    key = summary_key_for_meeting(meeting)
-    if not key:
-        return False, "no summary key"
-
-    existing = summaries.get(key)
-    if existing and str(existing).strip():
-        return False, "already summarized"
-
-    return True, key
-
-
-def fetch_pdf_text(url: str) -> str:
-    if not url.lower().endswith(".pdf"):
-        raise RuntimeError("Not a PDF URL")
-
-    r = requests.get(url, headers=HEADERS, timeout=120)
+    r = requests.get(url, timeout=120)
     r.raise_for_status()
 
-    pdf_bytes = io.BytesIO(r.content)
-    text = extract_text(pdf_bytes) or ""
-    return text.strip()
+    buf = io.BytesIO(r.content)
+    out = io.StringIO()
+    extract_text_to_fp(
+        buf,
+        out,
+        laparams=LAParams(),
+        output_type="text",
+        codec="utf-8"
+    )
+    return out.getvalue()[:max_chars]
 
 
 def clean_source_text(text: str) -> str:
-    text = re.sub(r"\r\n?", "\n", text)
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
 
 def looks_unusable(text: str) -> bool:
-    if not text or len(text) < 1200:
+    if not text:
         return True
-
-    lower = text.lower()
+    if len(text.strip()) < 800:
+        return True
     bad_markers = [
-        "obj",
-        "endobj",
-        "stream",
-        "endstream",
-        "xref",
-        "/type /page",
+        "No /Root object",
+        "not really a pdf",
+        "unable to extract",
+        "corrupt",
     ]
-    score = sum(1 for marker in bad_markers if marker in lower)
-    return score >= 3
+    tl = text.lower()
+    return any(marker.lower() in tl for marker in bad_markers)
 
 
-def build_prompt(meeting: dict[str, Any], source_text: str) -> str:
-    meeting_label = meeting.get("display_date") or meeting.get("date") or "Unknown date"
-    meeting_type = meeting.get("meeting_type") or "Regular"
+def meeting_label(meeting: Dict[str, Any]) -> str:
+    return meeting.get("display_date") or meeting.get("date") or "Unknown meeting"
+
+
+def board_label(board_id: str) -> str:
+    mapping = {
+        "recreation": "Recreation Committee",
+        "museum": "Museum Board",
+        "cemetery": "Cemetery Committee",
+    }
+    return mapping.get(board_id, board_id.title())
+
+
+def build_prompt(meeting: Dict[str, Any], source_text: str) -> str:
+    body = meeting.get("body") or meeting.get("board_name") or "Council"
+    date_text = meeting.get("display_date") or meeting.get("date") or ""
 
     return f"""
-You are writing a public-facing plain-language summary of a Township council meeting.
+Summarize this Township of Nipissing {body} meeting in plain language for a public archive.
 
-Meeting:
-- Date: {meeting_label}
-- Type: {meeting_type}
-- Municipality: Township of Nipissing, Ontario
+Meeting date: {date_text}
+Meeting body: {body}
 
-Instructions:
-- Write in clear plain language for residents
-- Focus on decisions, votes, spending, by-laws, major projects, and public-interest items
-- Do not invent facts
-- Do not mention uncertainty unless the minutes truly are unclear
-- Use markdown
-- Keep it concise but useful
-- Use this exact structure:
+Return markdown using exactly this structure:
 
-# Nipissing Township Council Meeting Summary
-**{meeting_label}**
+# {body} Meeting Summary
+
+**{date_text}**
 
 ## Key Decisions
-- 3 to 6 bullet points
+- 3 to 8 bullets
+- include motions passed or defeated
+- include major approvals, by-laws, spending, staffing, procurement, grants, public-service changes, project decisions
 
 ## Main Topics
-- 2 to 5 bullet points or short paragraphs
+- 2 to 6 bullets or short paragraphs
+- what was discussed in practical plain language
 
 ## Notable Items
-- short plain-language notes if there are any important amounts, deadlines, project approvals, staffing, procurement, taxation, or public service impacts
+- 1 to 5 bullets
+- include important deadlines, cost figures, implementation dates, next-step impacts, policy implications, or resident-facing changes
 
-If there is a clear next regular meeting date in the minutes, add:
+If there is a clear next regular meeting date in the minutes, add this at the end:
 ---
-*Next regular Council meeting: ...*
+*Next regular meeting: ...*
+
+Rules:
+- plain language
+- factual and neutral
+- do not invent details
+- keep it concise but useful
+- if something was defeated, say so clearly
+- prefer specific numbers and dates when present
 
 Source minutes text:
 {source_text[:120000]}
@@ -199,21 +165,19 @@ def call_anthropic(prompt: str) -> str:
     }
 
     payload = {
-        "model": ANTHROPIC_MODEL,
-        "max_tokens": 1200,
+        "model": "claude-haiku-4-5",
+        "max_tokens": 1400,
         "temperature": 0.2,
         "messages": [
             {
                 "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt}
-                ]
+                "content": prompt
             }
         ],
     }
 
     r = requests.post(
-        ANTHROPIC_API_URL,
+        "https://api.anthropic.com/v1/messages",
         headers=headers,
         json=payload,
         timeout=180,
@@ -234,26 +198,72 @@ def call_anthropic(prompt: str) -> str:
     return out
 
 
+# ---------------------------------------------------------------------
+# Candidate selection
+# ---------------------------------------------------------------------
+
+def should_summarize(meeting: Dict[str, Any]) -> Tuple[bool, str]:
+    year = meeting.get("year")
+    if not isinstance(year, int) or year < MIN_YEAR:
+        return False, "before minimum year"
+
+    if not meeting.get("minutes_url"):
+        return False, "no minutes_url"
+
+    if meeting.get("summary"):
+        return False, "already has summary"
+
+    if meeting.get("cancelled"):
+        return False, "cancelled"
+
+    return True, "ok"
+
+
+# ---------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------
+
 def main() -> None:
-    meetings = load_json(MEETINGS_FILE, {"meetings": []})
-    summaries = load_json(SUMMARIES_FILE, {})
+    meetings_payload = load_json(MEETINGS_FILE, {"meetings": []})
+    boards_payload = load_json(BOARDS_FILE, {"boards": []})
 
-    if isinstance(meetings, list):
-        meetings = {"meetings": meetings}
-    if not isinstance(summaries, dict):
-        summaries = {}
+    if isinstance(meetings_payload, list):
+        meetings_payload = {"meetings": meetings_payload}
+    if not isinstance(meetings_payload, dict):
+        meetings_payload = {"meetings": []}
 
-    candidates: list[tuple[dict[str, Any], str]] = []
-    for meeting in meetings.get("meetings", []):
-        ok, detail = should_summarize(meeting, summaries)
+    if not isinstance(boards_payload, dict):
+        boards_payload = {"boards": []}
+
+    council_meetings = meetings_payload.get("meetings", [])
+    boards = boards_payload.get("boards", [])
+
+    candidates: List[Tuple[str, Dict[str, Any], Tuple[int, ...]]] = []
+
+    # council meetings
+    for idx, meeting in enumerate(council_meetings):
+        ok, _ = should_summarize(meeting)
         if ok:
-            candidates.append((meeting, detail))
+            candidates.append(("council", meeting, (idx,)))
 
-    candidates.sort(key=lambda item: item[0].get("date", ""), reverse=True)
-    candidates = candidates[:MAX_PER_RUN]
+    # board meetings
+    for b_idx, board in enumerate(boards):
+        meetings = board.get("meetings", [])
+        for m_idx, meeting in enumerate(meetings):
+            # normalize body fields for prompt/UI consistency
+            if not meeting.get("body"):
+                meeting["body"] = board.get("name") or board_label(board.get("id", "board"))
+            if not meeting.get("board_name"):
+                meeting["board_name"] = board.get("name") or board_label(board.get("id", "board"))
+            if not meeting.get("body_id"):
+                meeting["body_id"] = board.get("id")
 
-    print(f"Meetings loaded: {len(meetings.get('meetings', []))}")
-    print(f"Existing summaries: {len(summaries)}")
+            ok, _ = should_summarize(meeting)
+            if ok:
+                candidates.append(("board", meeting, (b_idx, m_idx)))
+
+    print(f"Council meetings loaded: {len(council_meetings)}")
+    print(f"Boards loaded: {len(boards)}")
     print(f"Meetings missing summaries with minutes posted: {len(candidates)}")
 
     if not candidates:
@@ -263,12 +273,12 @@ def main() -> None:
     generated = 0
     skipped = 0
 
-    for meeting, key in candidates:
-        label = meeting.get("display_date") or meeting.get("date")
+    for kind, meeting, pointer in candidates:
+        label = meeting_label(meeting)
         minutes_url = meeting.get("minutes_url")
 
         print(f"\n--- Generating summary for {label} ---")
-        print(f"Key: {key}")
+        print(f"Type: {kind}")
         print(f"Minutes: {minutes_url}")
 
         try:
@@ -283,10 +293,15 @@ def main() -> None:
             prompt = build_prompt(meeting, text)
             summary = call_anthropic(prompt)
 
-            summaries[key] = summary
-            generated += 1
+            if kind == "council":
+                meetings_payload["meetings"][pointer[0]]["summary"] = summary
+                save_json(MEETINGS_FILE, meetings_payload)
+            else:
+                b_idx, m_idx = pointer
+                boards_payload["boards"][b_idx]["meetings"][m_idx]["summary"] = summary
+                save_json(BOARDS_FILE, boards_payload)
 
-            save_json(SUMMARIES_FILE, summaries)
+            generated += 1
             print("Saved summary")
 
             time.sleep(1.5)
@@ -298,7 +313,6 @@ def main() -> None:
     print("\nDone.")
     print(f"Generated: {generated}")
     print(f"Skipped/failed: {skipped}")
-    print(f"Summaries total: {len(summaries)}")
 
 
 if __name__ == "__main__":
