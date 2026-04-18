@@ -68,10 +68,10 @@
 
 .upcoming-item{
   display:grid;
-  grid-template-columns:60px 180px auto;
+  grid-template-columns:52px 170px auto;
   align-items:center;
-  gap:.6rem;
-  padding:.55rem .65rem;
+  gap:.55rem;
+  padding:.5rem .65rem;
   border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.04);
   border-radius:10px;
@@ -87,6 +87,13 @@
 .upcoming-label{
   display:flex;
   align-items:center;
+  min-width:0;
+}
+
+.upcoming-meeting-link{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
 }
 
 .month-badge{
@@ -98,15 +105,11 @@
   white-space:nowrap;
 }
 
-.mb-council{background:#f5e7c3;color:#a97900}
-.mb-recreation{background:#d9f3f0;color:#117a72}
-.mb-museum{background:#dbe9ff;color:#1c4fd7}
-.mb-cemetery{background:#efe7fb;color:#6840b5}
-
 .upcoming-links{
   display:flex;
   gap:.3rem;
   flex-wrap:wrap;
+  justify-content:flex-start;
 }
 
 .upcoming-link{
@@ -124,6 +127,33 @@
 .upcoming-link:hover{
   background:rgba(255,255,255,.15);
 }
+
+@media(max-width:700px){
+  .upcoming-item{
+    grid-template-columns:50px 1fr;
+  }
+
+  .upcoming-links{
+    grid-column:1 / -1;
+  }
+}
+
+
+
+
+
+
+
+.mb-council{background:#f5e7c3;color:#a97900}
+.mb-recreation{background:#d9f3f0;color:#117a72}
+.mb-museum{background:#dbe9ff;color:#1c4fd7}
+.mb-cemetery{background:#efe7fb;color:#6840b5}
+
+
+
+
+
+
 
 .upcoming-empty{
   padding:.75rem .85rem;
