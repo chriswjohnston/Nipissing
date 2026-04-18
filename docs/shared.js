@@ -1,335 +1,302 @@
-let LAST_UPDATED = '';
 let BYLAWS = [];
 let RESOLUTIONS = [];
-let MEETINGS = [];       // council only
-let BOARDS = [];         // raw boards structure
-let BOARD_MEETINGS = []; // flattened board/committee meetings
-let ALL_MEETINGS = [];   // council + boards
+let MEETINGS = [];
+let BOARDS = [];
+let ALL_MEETINGS = [];
 let ALL_DATA = [];
+let LAST_UPDATED = '';
 
-const BAD_SUMMARY_PHRASES = [
-  "i'm unable to read",
-  "i apologize, but i'm unable",
-  "corrupted or",
-  "compressed format",
-  "unreadable",
-  "improperly encoded",
-  "cannot decode",
-  "cannot decompress",
-  "not able to read",
-  "unable to extract",
-  "i would need",
-];
-
-function escHtml(value) {
-  return String(value ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+function escHtml(str) {
+  return String(str ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[ch]));
 }
 
-function fmtDate(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(`${dateStr}T00:00:00`);
-  if (Number.isNaN(d.getTime())) return dateStr;
+function normText(str) {
+  return String(str ?? '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function fmtDate(isoDate) {
+  if (!isoDate) return '';
+  const d = new Date(`${isoDate}T00:00:00`);
+  if (Number.isNaN(d.getTime())) return isoDate;
   return d.toLocaleDateString('en-CA', {
-    year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
+    year: 'numeric'
   });
 }
 
-async function fetchJson(url, fallback) {
+function highlight(text, q) {
+  const raw = String(text ?? '');
+  const query = String(q ?? '').trim();
+  if (!query) return escHtml(raw);
+
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   try {
-    const r = await fetch(url, { cache: 'no-store' });
-    if (!r.ok) return fallback;
-    return await r.json();
+    const re = new RegExp(`(${escaped})`, 'ig');
+    return escHtml(raw).replace(re, '<mark>$1</mark>');
   } catch {
-    return fallback;
+    return escHtml(raw);
   }
 }
 
-function normalizeMeetingsPayload(payload) {
-  if (Array.isArray(payload)) return payload;
-  return payload?.meetings || [];
-}
-
-function normalizeBylawsPayload(payload) {
-  if (Array.isArray(payload)) return payload;
-  return payload?.bylaws || [];
-}
-
-function normalizeResolutionsPayload(payload) {
-  if (Array.isArray(payload)) return payload;
-  return payload?.resolutions || [];
-}
-
-function normalizeBoardsPayload(payload) {
-  if (Array.isArray(payload)) return payload;
-  return payload?.boards || [];
-}
-
-function hasBadSummary(text) {
-  const t = String(text || '').toLowerCase();
-  if (!t.trim()) return true;
-  return BAD_SUMMARY_PHRASES.some(p => t.includes(p));
-}
-
-function boardTypeLabel(boardName) {
-  const n = String(boardName || '').toLowerCase();
-  if (n.includes('committee')) return 'Committee';
-  if (n.includes('board')) return 'Board';
-  return 'Board';
-}
-
-function primaryMeetingUrl(meeting){
-  const date = encodeURIComponent(meeting.date || '');
-  const body = encodeURIComponent(meeting.body_id || '');
+function primaryMeetingUrl(meeting) {
+  const date = encodeURIComponent(meeting?.date || '');
+  const body = encodeURIComponent(meeting?.body_id || meeting?.board_id || 'council');
   return `meeting-detail.html?date=${date}&body=${body}`;
 }
-function flattenBoards(boards) {
-  const out = [];
 
-  for (const board of boards) {
-    const boardId = board.id || '';
-    const boardName = board.name || board.board_name || boardId || 'Board';
-
-    for (const m of (board.meetings || [])) {
-      out.push({
-        ...m,
-        _type: 'meeting',
-        source_kind: 'board',
-        body: boardName,
-        body_id: boardId,
-        meeting_type: boardTypeLabel(boardName),
-        title: `${boardName} — ${m.display_date || m.date || ''}`.trim(),
-        summary: hasBadSummary(m.summary) ? null : m.summary,
-        video_url: null,
-      });
-    }
-  }
-
-  return out.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+function meetingBodyLabel(meeting) {
+  if (meeting?.body) return meeting.body;
+  if (meeting?.board_name) return meeting.board_name;
+  if (meeting?.board_id === 'recreation') return 'Recreation';
+  if (meeting?.board_id === 'museum') return 'Museum';
+  if (meeting?.board_id === 'cemetery') return 'Cemetery';
+  return 'Council';
 }
 
-function normalizeCouncilMeetings(meetings) {
-  return meetings.map(m => ({
-    ...m,
-    _type: 'meeting',
-    source_kind: 'council',
-    body: 'Council',
-    body_id: 'council',
-    title: `${m.display_date || m.date || ''} Council Meeting`.trim(),
-  }));
+function meetingTypeLabel(meeting) {
+  if (meeting?.source_kind === 'board') return meetingBodyLabel(meeting);
+  return meeting?.meeting_type || 'Regular';
 }
 
-function computeLastUpdated(...payloads) {
-  const values = payloads
-    .map(p => p?.last_updated)
-    .filter(Boolean)
-    .sort()
-    .reverse();
-  return values[0] || '';
+function meetingStatusPill(meeting) {
+  const bodyId = String(meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
+  const label = meetingBodyLabel(meeting).toUpperCase();
+
+  let cls = 'tag';
+  if (bodyId === 'council') cls += ' tag-gold';
+  else if (bodyId === 'recreation') cls += ' tag-teal';
+  else if (bodyId === 'museum') cls += ' tag-blue';
+  else if (bodyId === 'cemetery') cls += ' tag-purple';
+
+  return `<span class="${cls}">${escHtml(label)}</span>`;
 }
 
-async function loadAllData() {
-  const [meetingsPayload, bylawsPayload, resolutionsPayload, boardsPayload] = await Promise.all([
-    fetchJson('council-data.json', { meetings: [] }),
-    fetchJson('bylaws-data.json', { bylaws: [] }),
-    fetchJson('resolutions-data.json', { resolutions: [] }),
-    fetchJson('boards-data.json', { boards: [] }),
-  ]);
-
-  LAST_UPDATED = computeLastUpdated(meetingsPayload, bylawsPayload, resolutionsPayload, boardsPayload);
-
-  MEETINGS = normalizeCouncilMeetings(normalizeMeetingsPayload(meetingsPayload));
-  BYLAWS = normalizeBylawsPayload(bylawsPayload).map(b => ({ ...b, _type: 'bylaw' }));
-  RESOLUTIONS = normalizeResolutionsPayload(resolutionsPayload).map(r => ({ ...r, _type: 'resolution' }));
-  BOARDS = normalizeBoardsPayload(boardsPayload);
-  BOARD_MEETINGS = flattenBoards(BOARDS);
-
-  ALL_MEETINGS = [...MEETINGS, ...BOARD_MEETINGS].sort((a, b) =>
-    String(b.date || '').localeCompare(String(a.date || ''))
-  );
-
-  ALL_DATA = [
-    ...BYLAWS,
-    ...RESOLUTIONS,
-    ...ALL_MEETINGS,
-  ];
+function meetingDocPills(meeting) {
+  const pills = [];
+  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="mini-link">Agenda</a>`);
+  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="mini-link">Minutes</a>`);
+  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="mini-link">Package</a>`);
+  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="mini-link">Video</a>`);
+  return pills.join('');
 }
 
-function highlightText(text, q) {
-  const source = String(text ?? '');
-  if (!q || !q.trim()) return escHtml(source);
+function meetingCard(meeting, q = '') {
+  const href = primaryMeetingUrl(meeting);
+  const title = meeting?.title && meeting.title.trim()
+    ? meeting.title
+    : meetingTypeLabel(meeting);
 
-  const escaped = q.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(`(${escaped})`, 'ig');
+  return `
+    <article class="result-card meeting-card">
+      <a href="${href}" class="card-link-wrap">
+        <div class="card-topline">
+          ${meetingStatusPill(meeting)}
+          <span class="card-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
+        </div>
+        <h3 class="card-title">${highlight(title, q)}</h3>
+        <div class="card-meta">
+          <span>${escHtml(meetingTypeLabel(meeting))}</span>
+          ${meeting?.cancelled ? '<span class="status-badge status-cancelled">Cancelled</span>' : ''}
+        </div>
+      </a>
+      <div class="card-links">
+        ${meetingDocPills(meeting)}
+      </div>
+    </article>
+  `;
+}
 
-  return escHtml(source).replace(re, '<span class="hl">$1</span>');
+function bylawCard(bylaw, q = '') {
+  const href = `bylaw-detail.html?number=${encodeURIComponent(bylaw?.number || '')}`;
+  const title = bylaw?.title || `By-Law ${bylaw?.number || ''}`;
+  const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.year || '');
+
+  return `
+    <article class="result-card bylaw-card">
+      <a href="${href}" class="card-link-wrap">
+        <div class="card-topline">
+          <span class="tag tag-blue">${escHtml(bylaw?.number || 'By-Law')}</span>
+          <span class="card-date">${escHtml(String(dateText || ''))}</span>
+        </div>
+        <h3 class="card-title">${highlight(title, q)}</h3>
+        <div class="card-meta">
+          <span>${escHtml(bylaw?.status || 'approved')}</span>
+        </div>
+      </a>
+    </article>
+  `;
+}
+
+function resolutionCard(resolution, q = '') {
+  const href = `resolution-detail.html?number=${encodeURIComponent(resolution?.number || '')}`;
+  const title = resolution?.title || resolution?.motion_text || resolution?.number || 'Resolution';
+  const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
+
+  return `
+    <article class="result-card resolution-card">
+      <a href="${href}" class="card-link-wrap">
+        <div class="card-topline">
+          <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
+          <span class="card-date">${escHtml(dateText)}</span>
+        </div>
+        <h3 class="card-title">${highlight(title, q)}</h3>
+        <div class="card-meta">
+          <span>${escHtml(resolution?.status || 'unknown')}</span>
+          ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
+        </div>
+      </a>
+    </article>
+  `;
 }
 
 function scoreItem(item, q) {
-  const needle = q.trim().toLowerCase();
-  if (!needle) return 0;
+  const query = normText(q);
+  if (!query) return 0;
 
-  const fields = [
-    item.number,
-    item.title,
-    item.motion_text,
-    item.category,
-    item.date,
-    item.display_date,
-    item.body,
-    item.body_id,
-    item.meeting_type,
-    item.summary,
-    item.board_name,
-  ].filter(Boolean).map(v => String(v).toLowerCase());
-
-  let score = 0;
-  for (const f of fields) {
-    if (f === needle) score += 100;
-    if (f.includes(needle)) score += 20;
-    if (f.startsWith(needle)) score += 10;
+  const fields = [];
+  if (item?._type === 'meeting') {
+    fields.push(
+      item.display_date,
+      item.date,
+      item.title,
+      item.meeting_type,
+      item.body,
+      item.board_name,
+      item.summary
+    );
+  } else if (item?._type === 'bylaw') {
+    fields.push(
+      item.number,
+      item.title,
+      item.summary,
+      item.ai_summary,
+      item.status,
+      item.date_passed
+    );
+  } else if (item?._type === 'resolution') {
+    fields.push(
+      item.number,
+      item.title,
+      item.motion_text,
+      item.category,
+      item.status,
+      item.meeting_date,
+      item.bylaw_number
+    );
   }
 
-  if (item._type === 'meeting' && item.body && String(item.body).toLowerCase().includes(needle)) score += 10;
-  if (item._type === 'bylaw' && String(item.number || '').toLowerCase() === needle) score += 120;
-  if (item._type === 'resolution' && String(item.number || '').toLowerCase() === needle) score += 120;
+  const haystack = normText(fields.filter(Boolean).join(' | '));
+  if (!haystack) return 0;
+
+  let score = 0;
+  if (haystack.includes(query)) score += 100;
+
+  const words = query.split(/\s+/).filter(Boolean);
+  for (const word of words) {
+    if (haystack.includes(word)) score += 10;
+  }
 
   return score;
 }
 
-function resultTags(tags) {
-  const clean = tags.filter(Boolean);
-  if (!clean.length) return '';
-  return `<div class="result-tags">${clean.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>`;
+async function fetchJsonCandidates(paths) {
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { cache: 'no-store' });
+      if (!res.ok) continue;
+      return await res.json();
+    } catch {}
+  }
+  return null;
 }
 
-function bylawCard(b, q = '') {
-  const date = b.date_passed || b.meeting_date || '';
-  const status = b.status || 'approved';
-  const excerpt = b.ai_summary || b.title || '';
-  const tags = [
-    b.year ? String(b.year) : '',
-    b.source === 'bylaws_page' ? 'Township by-laws' : '',
-    b.pdf_url ? 'PDF' : '',
-    b.page_url ? 'Township page' : '',
-  ];
+function flattenBoards(boardsPayload) {
+  const boards = Array.isArray(boardsPayload?.boards) ? boardsPayload.boards : [];
+  const flat = [];
 
-  return `
-    <a class="result-card" href="bylaw-detail.html?id=${encodeURIComponent(b.number || '')}">
-      <div class="result-icon ri-bylaw">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-        </svg>
-      </div>
-      <div class="result-body">
-        <div class="result-meta">
-          <span class="result-type rt-bylaw">By-Law</span>
-          <span class="result-num">${escHtml(b.number || '')}</span>
-          ${date ? `<span class="result-date">${escHtml(fmtDate(date))}</span>` : ''}
-        </div>
-        <div class="result-title">${highlightText(b.title || '(Untitled)', q)}</div>
-        <div class="result-excerpt">${highlightText(excerpt, q)}</div>
-        ${resultTags([
-          `<span class="status-pill status-${escHtml(status)}">${escHtml(status)}</span>`,
-          ...tags
-        ])}
-      </div>
-    </a>
-  `;
-}
+  for (const board of boards) {
+    const boardId = board?.id || '';
+    const boardName = board?.name || meetingBodyLabel({ board_id: boardId });
 
-function resolutionCard(r, q = '') {
-  const date = r.date || r.meeting_date || '';
-  const outcome = (r.outcome || r.status || '').toLowerCase();
-  const excerpt = r.motion_text || r.title || '';
-  const tags = [
-    r.category || '',
-    r.mover ? `Moved by ${r.mover}` : '',
-    r.seconder ? `Seconded by ${r.seconder}` : '',
-  ];
-
-  return `
-    <a class="result-card" href="resolution-detail.html?id=${encodeURIComponent(r.number || '')}">
-      <div class="result-icon ri-resolution">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
-          <path d="M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2"/>
-          <path d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/>
-        </svg>
-      </div>
-      <div class="result-body">
-        <div class="result-meta">
-          <span class="result-type rt-resolution">Resolution</span>
-          <span class="result-num">${escHtml(r.number || '')}</span>
-          ${date ? `<span class="result-date">${escHtml(fmtDate(date))}</span>` : ''}
-        </div>
-        <div class="result-title">${highlightText(r.title || r.motion_text || '(Untitled)', q)}</div>
-        <div class="result-excerpt">${highlightText(excerpt, q)}</div>
-        ${resultTags([
-          outcome ? `<span class="status-pill status-${escHtml(outcome)}">${escHtml(outcome)}</span>` : '',
-          ...tags
-        ])}
-      </div>
-    </a>
-  `;
-}
-
-function meetingCard(m, q = '') {
-  const href = primaryMeetingUrl(m);
-  const title = m.source_kind === 'council'
-    ? `${m.display_date || m.date || ''} Council Meeting`
-    : `${m.body || 'Board'} — ${m.display_date || m.date || ''}`;
-
-  const excerpt = m.summary || [
-    m.cancelled ? 'Cancelled meeting.' : '',
-    m.agenda_url ? 'Agenda posted.' : '',
-    m.minutes_url ? 'Minutes posted.' : '',
-    m.package_url ? 'Package posted.' : '',
-    m.video_url ? 'Video recording available.' : '',
-  ].filter(Boolean).join(' ');
-
-  const tags = [
-    m.body || '',
-    m.meeting_type || '',
-    m.cancelled ? 'Cancelled' : '',
-    m.postponed ? 'Postponed' : '',
-    m.rescheduled ? 'Rescheduled' : '',
-    m.video_url ? 'Video' : '',
-    m.minutes_url ? 'Minutes' : '',
-    m.package_url ? 'Package' : '',
-  ];
-
-  const inner = `
-      <div class="result-icon ri-meeting">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-          <line x1="16" x2="16" y1="2" y2="6"/>
-          <line x1="8" x2="8" y1="2" y2="6"/>
-          <line x1="3" x2="21" y1="10" y2="10"/>
-        </svg>
-      </div>
-      <div class="result-body">
-        <div class="result-meta">
-          <span class="result-type rt-meeting">${escHtml(m.body || 'Meeting')}</span>
-          <span class="result-num">${escHtml(m.meeting_type || '')}</span>
-          ${m.date ? `<span class="result-date">${escHtml(fmtDate(m.date))}</span>` : ''}
-        </div>
-        <div class="result-title">${highlightText(title, q)}</div>
-        <div class="result-excerpt">${highlightText(excerpt, q)}</div>
-        ${resultTags(tags)}
-      </div>
-  `;
-
-  if (href && href !== '#') {
-    return `<a class="result-card" href="${escHtml(href)}"${m.source_kind === 'board' ? ' target="_blank" rel="noopener"' : ''}>${inner}</a>`;
+    for (const meeting of Array.isArray(board?.meetings) ? board.meetings : []) {
+      flat.push({
+        ...meeting,
+        body: meeting?.body || boardName,
+        body_id: meeting?.body_id || boardId,
+        board_id: boardId,
+        board_name: boardName,
+        source_kind: 'board',
+        _type: 'meeting'
+      });
+    }
   }
 
-  return `<div class="result-card">${inner}</div>`;
+  return { boards, meetings: flat };
+}
+
+async function loadAllData() {
+  const meetingsPayload = await fetchJsonCandidates([
+    'data/meetings.json',
+    'meetings-data.json',
+    'council-data.json'
+  ]) || { meetings: [] };
+
+  const bylawsPayload = await fetchJsonCandidates([
+    'data/bylaws.json',
+    'bylaws-data.json'
+  ]) || { bylaws: [] };
+
+  const resolutionsPayload = await fetchJsonCandidates([
+    'data/resolutions.json',
+    'resolutions-data.json'
+  ]) || { resolutions: [] };
+
+  const boardsPayload = await fetchJsonCandidates([
+    'data/boards.json',
+    'boards-data.json'
+  ]) || { boards: [] };
+
+  MEETINGS = Array.isArray(meetingsPayload?.meetings)
+    ? meetingsPayload.meetings.map(m => ({
+        ...m,
+        body: m?.body || 'Council',
+        body_id: m?.body_id || 'council',
+        source_kind: 'council',
+        _type: 'meeting'
+      }))
+    : [];
+
+  BYLAWS = Array.isArray(bylawsPayload?.bylaws)
+    ? bylawsPayload.bylaws.map(b => ({ ...b, _type: 'bylaw' }))
+    : [];
+
+  RESOLUTIONS = Array.isArray(resolutionsPayload?.resolutions)
+    ? resolutionsPayload.resolutions.map(r => ({ ...r, _type: 'resolution' }))
+    : [];
+
+  const flatBoards = flattenBoards(boardsPayload);
+  BOARDS = flatBoards.boards;
+
+  ALL_MEETINGS = [...MEETINGS, ...flatBoards.meetings].sort((a, b) =>
+    String(b.date || '').localeCompare(String(a.date || ''))
+  );
+
+  ALL_DATA = [...BYLAWS, ...RESOLUTIONS, ...ALL_MEETINGS];
+
+  LAST_UPDATED =
+    meetingsPayload?.last_updated ||
+    bylawsPayload?.last_updated ||
+    resolutionsPayload?.last_updated ||
+    boardsPayload?.last_updated ||
+    '';
 }
