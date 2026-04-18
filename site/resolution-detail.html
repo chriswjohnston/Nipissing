@@ -36,13 +36,13 @@
   margin-bottom:.9rem;
 }
 
-.res-header{
+.resolution-header{
   display:flex;
   align-items:flex-start;
   gap:1rem;
 }
 
-.res-icon{
+.resolution-icon{
   width:48px;
   height:48px;
   border-radius:10px;
@@ -54,16 +54,16 @@
   flex-shrink:0;
 }
 
-.res-icon svg{
+.resolution-icon svg{
   width:22px;
   height:22px;
 }
 
-.res-meta{
+.resolution-meta{
   min-width:0;
 }
 
-.res-number{
+.resolution-number{
   font-size:.74rem;
   font-weight:700;
   letter-spacing:.08em;
@@ -72,18 +72,18 @@
   margin-bottom:.35rem;
 }
 
-.res-title{
+.resolution-name{
   font-family:var(--font-display, Georgia, serif);
-  font-size:1.55rem;
+  font-size:1.65rem;
   line-height:1.25;
   color:var(--ink);
   margin:0 0 .55rem 0;
 }
 
-.res-subtitle{
+.resolution-subtitle{
   color:var(--ink-3);
   font-size:.98rem;
-  line-height:1.65;
+  line-height:1.6;
   margin-bottom:.9rem;
 }
 
@@ -141,7 +141,7 @@
 
 .content-block p{
   margin:.55rem 0;
-  line-height:1.75;
+  line-height:1.7;
   color:var(--ink);
 }
 
@@ -255,8 +255,8 @@
     <div class="detail-card">
       <div class="detail-title">Resolution</div>
 
-      <div class="res-header">
-        <div class="res-icon">
+      <div class="resolution-header">
+        <div class="resolution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
             <rect x="9" y="3" width="6" height="4" rx="1"/>
@@ -264,10 +264,10 @@
           </svg>
         </div>
 
-        <div class="res-meta">
-          <div class="res-number" id="resolution-number"></div>
-          <h1 class="res-title" id="resolution-title"></h1>
-          <div class="res-subtitle" id="resolution-subtitle"></div>
+        <div class="resolution-meta">
+          <div class="resolution-number" id="resolution-number"></div>
+          <h1 class="resolution-name" id="resolution-title"></h1>
+          <div class="resolution-subtitle" id="resolution-subtitle"></div>
 
           <div class="meta-pills" id="resolution-pills"></div>
         </div>
