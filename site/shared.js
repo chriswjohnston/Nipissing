@@ -58,7 +58,7 @@ function meetingBodyLabel(meeting) {
   if (meeting?.body) return meeting.body;
   if (meeting?.board_name) return meeting.board_name;
   if (meeting?.board_id === 'recreation') return 'Recreation';
-  if (meeting?.board_id === 'museum') return 'Museum';
+  if (meeting?.board_id === 'museum') return 'Museum Board';
   if (meeting?.board_id === 'cemetery') return 'Cemetery';
   return 'Council';
 }
@@ -68,17 +68,13 @@ function meetingTypeLabel(meeting) {
   return meeting?.meeting_type || 'Regular';
 }
 
-function meetingStatusPill(meeting) {
+function meetingTagClass(meeting) {
   const bodyId = String(meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
-  const label = meetingBodyLabel(meeting).toUpperCase();
-
-  let cls = 'tag';
-  if (bodyId === 'council') cls += ' tag-gold';
-  else if (bodyId === 'recreation') cls += ' tag-teal';
-  else if (bodyId === 'museum') cls += ' tag-blue';
-  else if (bodyId === 'cemetery') cls += ' tag-purple';
-
-  return `<span class="${cls}">${escHtml(label)}</span>`;
+  if (bodyId === 'council') return 'tag tag-gold';
+  if (bodyId === 'recreation') return 'tag tag-teal';
+  if (bodyId === 'museum') return 'tag tag-blue';
+  if (bodyId === 'cemetery') return 'tag tag-purple';
+  return 'tag';
 }
 
 function meetingDocPills(meeting) {
@@ -98,63 +94,76 @@ function meetingCard(meeting, q = '') {
 
   return `
     <article class="result-card meeting-card">
-      <a href="${href}" class="card-link-wrap">
-        <div class="card-topline">
-          ${meetingStatusPill(meeting)}
-          <span class="card-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
+      <div class="card-topline">
+        <span class="${meetingTagClass(meeting)}">${escHtml(meetingBodyLabel(meeting).toUpperCase())}</span>
+        <a href="${href}" class="card-date-link">${escHtml(meeting.display_date || fmtDate(meeting.date))}</a>
+        <div class="card-actions">
+          ${meetingDocPills(meeting)}
         </div>
-        <h3 class="card-title">${highlight(title, q)}</h3>
-        <div class="card-meta">
-          <span>${escHtml(meetingTypeLabel(meeting))}</span>
-          ${meeting?.cancelled ? '<span class="status-badge status-cancelled">Cancelled</span>' : ''}
-        </div>
-      </a>
-      <div class="card-links">
-        ${meetingDocPills(meeting)}
+      </div>
+
+      <h3 class="card-title">
+        <a href="${href}">${highlight(title, q)}</a>
+      </h3>
+
+      <div class="card-meta">
+        <span>${escHtml(meetingTypeLabel(meeting))}</span>
+        ${meeting?.cancelled ? '<span class="status-badge status-cancelled">Cancelled</span>' : ''}
       </div>
     </article>
   `;
 }
 
+function bylawStatusClass(status) {
+  const s = String(status || '').toLowerCase();
+  if (s === 'approved' || s === 'carried') return 'status-pill status-approved';
+  if (s === 'defeated') return 'status-pill status-defeated';
+  return 'status-pill status-pending';
+}
+
 function bylawCard(bylaw, q = '') {
-  const href = `bylaw-detail.html?number=${encodeURIComponent(bylaw?.number || '')}`;
+  const href = `bylaw-detail.html?id=${encodeURIComponent(bylaw?.number || '')}`;
   const title = bylaw?.title || `By-Law ${bylaw?.number || ''}`;
-  const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.year || '');
+  const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
 
   return `
     <article class="result-card bylaw-card">
-      <a href="${href}" class="card-link-wrap">
-        <div class="card-topline">
-          <span class="tag tag-blue">${escHtml(bylaw?.number || 'By-Law')}</span>
-          <span class="card-date">${escHtml(String(dateText || ''))}</span>
-        </div>
-        <h3 class="card-title">${highlight(title, q)}</h3>
-        <div class="card-meta">
-          <span>${escHtml(bylaw?.status || 'approved')}</span>
-        </div>
-      </a>
+      <div class="card-topline">
+        <span class="tag tag-blue">${escHtml(bylaw?.number || 'By-Law')}</span>
+        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date || '')}&body=council" class="card-date-link">${escHtml(String(dateText))}</a>` : '<span></span>'}
+      </div>
+
+      <h3 class="card-title">
+        <a href="${href}">${highlight(title, q)}</a>
+      </h3>
+
+      <div class="card-meta">
+        <span class="${bylawStatusClass(bylaw?.status)}">${escHtml(bylaw?.status || 'unknown')}</span>
+      </div>
     </article>
   `;
 }
 
 function resolutionCard(resolution, q = '') {
-  const href = `resolution-detail.html?number=${encodeURIComponent(resolution?.number || '')}`;
+  const href = `resolution-detail.html?id=${encodeURIComponent(resolution?.number || '')}`;
   const title = resolution?.title || resolution?.motion_text || resolution?.number || 'Resolution';
   const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
 
   return `
     <article class="result-card resolution-card">
-      <a href="${href}" class="card-link-wrap">
-        <div class="card-topline">
-          <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
-          <span class="card-date">${escHtml(dateText)}</span>
-        </div>
-        <h3 class="card-title">${highlight(title, q)}</h3>
-        <div class="card-meta">
-          <span>${escHtml(resolution?.status || 'unknown')}</span>
-          ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
-        </div>
-      </a>
+      <div class="card-topline">
+        <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
+        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" class="card-date-link">${escHtml(dateText)}</a>` : '<span></span>'}
+      </div>
+
+      <h3 class="card-title">
+        <a href="${href}">${highlight(title, q)}</a>
+      </h3>
+
+      <div class="card-meta">
+        <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
+        ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
+      </div>
     </article>
   `;
 }
@@ -179,9 +188,9 @@ function scoreItem(item, q) {
       item.number,
       item.title,
       item.summary,
-      item.ai_summary,
       item.status,
-      item.date_passed
+      item.date_passed,
+      item.meeting_date
     );
   } else if (item?._type === 'resolution') {
     fields.push(
