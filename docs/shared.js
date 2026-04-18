@@ -79,10 +79,10 @@ function meetingTagClass(meeting) {
 
 function meetingDocPills(meeting) {
   const pills = [];
-  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="mini-link">Agenda</a>`);
-  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="mini-link">Minutes</a>`);
-  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="mini-link">Package</a>`);
-  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="mini-link">Video</a>`);
+  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="tag">Agenda</a>`);
+  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="tag">Minutes</a>`);
+  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="tag">Package</a>`);
+  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="tag">Video</a>`);
   return pills.join('');
 }
 
@@ -93,25 +93,31 @@ function meetingCard(meeting, q = '') {
     : meetingTypeLabel(meeting);
 
   return `
-    <article class="result-card meeting-card">
-      <div class="card-topline">
-        <span class="${meetingTagClass(meeting)}">${escHtml(meetingBodyLabel(meeting).toUpperCase())}</span>
-        <a href="${href}" class="card-date-link">${escHtml(meeting.display_date || fmtDate(meeting.date))}</a>
-        <div class="card-actions">
-          ${meetingDocPills(meeting)}
-        </div>
+  <article class="result-card meeting-card">
+    
+    <div class="result-icon ri-meeting">
+      📅
+    </div>
+
+    <div class="result-body">
+
+      <div class="result-meta">
+        <span class="result-type rt-meeting">${escHtml(meetingBodyLabel(meeting).toUpperCase())}</span>
+        <span class="result-num">${escHtml(meetingTypeLabel(meeting))}</span>
+        <span class="result-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
       </div>
 
-      <h3 class="card-title">
-        <a href="${href}">${highlight(title, q)}</a>
-      </h3>
-
-      <div class="card-meta">
-        <span>${escHtml(meetingTypeLabel(meeting))}</span>
-        ${meeting?.cancelled ? '<span class="status-badge status-cancelled">Cancelled</span>' : ''}
+      <div class="result-title">
+        <a href="${primaryMeetingUrl(meeting)}">${highlight(meetingTypeLabel(meeting), q)}</a>
       </div>
-    </article>
-  `;
+
+      <div class="result-tags">
+        ${meetingDocPills(meeting)}
+      </div>
+
+    </div>
+  </article>
+`;
 }
 
 function bylawStatusClass(status) {
@@ -127,21 +133,29 @@ function bylawCard(bylaw, q = '') {
   const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
 
   return `
-    <article class="result-card bylaw-card">
-      <div class="card-topline">
-        <span class="tag tag-blue">${escHtml(bylaw?.number || 'By-Law')}</span>
-        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date || '')}&body=council" class="card-date-link">${escHtml(String(dateText))}</a>` : '<span></span>'}
+  <article class="result-card bylaw-card">
+    
+    <div class="result-icon ri-bylaw">📄</div>
+
+    <div class="result-body">
+
+      <div class="result-meta">
+        <span class="result-type rt-bylaw">BY-LAW</span>
+        <span class="result-num">${escHtml(bylaw.number)}</span>
+        <span class="result-date">${escHtml(dateText)}</span>
       </div>
 
-      <h3 class="card-title">
+      <div class="result-title">
         <a href="${href}">${highlight(title, q)}</a>
-      </h3>
-
-      <div class="card-meta">
-        <span class="${bylawStatusClass(bylaw?.status)}">${escHtml(bylaw?.status || 'unknown')}</span>
       </div>
-    </article>
-  `;
+
+      <div class="result-tags">
+        <span class="${bylawStatusClass(bylaw.status)}">${escHtml(bylaw.status)}</span>
+      </div>
+
+    </div>
+  </article>
+`;
 }
 
 function resolutionCard(resolution, q = '') {
