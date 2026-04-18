@@ -499,24 +499,26 @@ function renderUpcomingList(){
   const meetings = meetingsForMonth(calendarYear, calendarMonth);
 
   list.innerHTML = meetings.length ? meetings.map(m => {
-    const day = String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2,'0');
+  const day = String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2,'0');
 
-    return `
-      <div class="upcoming-item">
-        <div class="upcoming-date">${escHtml(day)}</div>
+  return `
+    <div class="upcoming-item">
+      <div class="upcoming-date">${escHtml(day)}</div>
 
-        <div class="upcoming-label">
+      <div class="upcoming-label">
+        <a href="${escHtml(primaryMeetingUrl(m))}" class="upcoming-meeting-link">
           <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
-        </div>
-
-        <div class="upcoming-links">
-          ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
-          ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
-          ${m.package_url ? `<a href="${escHtml(m.package_url)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
-        </div>
+        </a>
       </div>
-    `;
-  }).join('') : `<div class="upcoming-empty">No scheduled meetings in this month.</div>`;
+
+      <div class="upcoming-links">
+        ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
+        ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
+        ${m.package_url ? `<a href="${escHtml(m.package_url)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
+      </div>
+    </div>
+  `;
+}).join('') : `<div class="upcoming-empty">No scheduled meetings in this month.</div>`;
 }
 
 function renderYearPills(){
