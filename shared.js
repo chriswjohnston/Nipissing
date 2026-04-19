@@ -269,23 +269,23 @@ function flattenBoards(boardsPayload) {
 
 async function loadAllData() {
   const meetingsPayload = await fetchJsonCandidates([
-    'data/meetings.json',
+    '/docs/data/meetings.json',
     'meetings-data.json',
     'council-data.json'
   ]) || { meetings: [] };
 
   const bylawsPayload = await fetchJsonCandidates([
-    'data/bylaws.json',
+    '/docs/data/bylaws.json',
     'bylaws-data.json'
   ]) || { bylaws: [] };
 
   const resolutionsPayload = await fetchJsonCandidates([
-    'data/resolutions.json',
+    '/docs/data/resolutions.json',
     'resolutions-data.json'
   ]) || { resolutions: [] };
 
   const boardsPayload = await fetchJsonCandidates([
-    'data/boards.json',
+    '/docs/data/boards.json',
     'boards-data.json'
   ]) || { boards: [] };
 
