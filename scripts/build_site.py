@@ -9,7 +9,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "canonical"
-SITE = ROOT / "site"
+SITE = ROOT  # HTML files now served from repo root
 DOCS = ROOT / "docs"
 
 
@@ -29,14 +29,18 @@ def ensure_docs_dir() -> None:
 
 
 def copy_site_files() -> None:
-    if not SITE.exists():
-        raise FileNotFoundError(f"site/ directory not found: {SITE}")
-
+    extensions = {".html", ".css", ".js"}
     copied = []
-    for file in SITE.iterdir():
-        if file.is_file():
+    for file in ROOT.iterdir():
+        if file.is_file() and file.suffix in extensions:
             shutil.copy2(file, DOCS / file.name)
             copied.append(file.name)
+
+    # Also copy CNAME if present
+    cname = ROOT / "CNAME"
+    if cname.exists():
+        shutil.copy2(cname, DOCS / "CNAME")
+        copied.append("CNAME")
 
     print(f"Copied {len(copied)} site file(s) to {DOCS}: {', '.join(sorted(copied))}")
 
