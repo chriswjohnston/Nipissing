@@ -79,22 +79,19 @@ function meetingTagClass(meeting) {
 
 function meetingDocPills(meeting) {
   const pills = [];
-  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="tag">Agenda</a>`);
-  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="tag">Minutes</a>`);
-  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="tag">Package</a>`);
-  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="tag">Video</a>`);
+  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Agenda</a>`);
+  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Minutes</a>`);
+  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Package</a>`);
+  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Video</a>`);
   return pills.join('');
 }
 
 function meetingCard(meeting, q = '') {
   const href = primaryMeetingUrl(meeting);
-  const title = meeting?.title && meeting.title.trim()
-    ? meeting.title
-    : meetingTypeLabel(meeting);
 
   return `
-  <article class="result-card meeting-card">
-    
+  <a href="${escHtml(href)}" class="result-card meeting-card" style="text-decoration:none;color:inherit;display:block;cursor:pointer;">
+
     <div class="result-icon ri-meeting">
       📅
     </div>
@@ -108,7 +105,7 @@ function meetingCard(meeting, q = '') {
       </div>
 
       <div class="result-title">
-        <a href="${primaryMeetingUrl(meeting)}">${highlight(meetingTypeLabel(meeting), q)}</a>
+        ${highlight(meetingTypeLabel(meeting), q)}
       </div>
 
       <div class="result-tags">
@@ -116,7 +113,7 @@ function meetingCard(meeting, q = '') {
       </div>
 
     </div>
-  </article>
+  </a>
 `;
 }
 
@@ -164,21 +161,21 @@ function resolutionCard(resolution, q = '') {
   const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
 
   return `
-    <article class="result-card resolution-card">
+    <a href="${escHtml(href)}" class="result-card resolution-card" style="text-decoration:none;color:inherit;display:block;cursor:pointer;">
       <div class="card-topline">
         <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
-        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" class="card-date-link">${escHtml(dateText)}</a>` : '<span></span>'}
+        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" class="card-date-link" onclick="event.stopPropagation()">${escHtml(dateText)}</a>` : '<span></span>'}
       </div>
 
       <h3 class="card-title">
-        <a href="${href}">${highlight(title, q)}</a>
+        ${highlight(title, q)}
       </h3>
 
       <div class="card-meta">
         <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
         ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
       </div>
-    </article>
+    </a>
   `;
 }
 
@@ -269,23 +266,26 @@ function flattenBoards(boardsPayload) {
 
 async function loadAllData() {
   const meetingsPayload = await fetchJsonCandidates([
-    '/docs/data/meetings.json',
-    'meetings-data.json',
+    'data/canonical/meetings.json',
+    'docs/data/meetings.json',
     'council-data.json'
   ]) || { meetings: [] };
 
   const bylawsPayload = await fetchJsonCandidates([
-    '/docs/data/bylaws.json',
+    'data/canonical/bylaws.json',
+    'docs/data/bylaws.json',
     'bylaws-data.json'
   ]) || { bylaws: [] };
 
   const resolutionsPayload = await fetchJsonCandidates([
-    '/docs/data/resolutions.json',
+    'data/canonical/resolutions.json',
+    'docs/data/resolutions.json',
     'resolutions-data.json'
   ]) || { resolutions: [] };
 
   const boardsPayload = await fetchJsonCandidates([
-    '/docs/data/boards.json',
+    'data/canonical/boards.json',
+    'docs/data/boards.json',
     'boards-data.json'
   ]) || { boards: [] };
 
