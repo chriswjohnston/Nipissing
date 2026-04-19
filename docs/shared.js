@@ -130,7 +130,7 @@ function bylawCard(bylaw, q = '') {
   const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
 
   return `
-  <article class="result-card bylaw-card">
+  <article class="result-card bylaw-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
     
     <div class="result-icon ri-bylaw">📄</div>
 
@@ -143,7 +143,7 @@ function bylawCard(bylaw, q = '') {
       </div>
 
       <div class="result-title">
-        <a href="${href}">${highlight(title, q)}</a>
+        ${highlight(title, q)}
       </div>
 
       <div class="result-tags">
@@ -154,14 +154,13 @@ function bylawCard(bylaw, q = '') {
   </article>
 `;
 }
-
 function resolutionCard(resolution, q = '') {
   const href = `resolution-detail.html?id=${encodeURIComponent(resolution?.number || '')}`;
   const title = resolution?.title || resolution?.motion_text || resolution?.number || 'Resolution';
   const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
 
   return `
-    <a href="${escHtml(href)}" class="result-card resolution-card" style="text-decoration:none;color:inherit;display:block;cursor:pointer;">
+    <article class="result-card resolution-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
       <div class="card-topline">
         <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
         ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" class="card-date-link" onclick="event.stopPropagation()">${escHtml(dateText)}</a>` : '<span></span>'}
@@ -175,7 +174,7 @@ function resolutionCard(resolution, q = '') {
         <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
         ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
       </div>
-    </a>
+    </article>
   `;
 }
 
