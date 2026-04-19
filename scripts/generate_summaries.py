@@ -288,9 +288,20 @@ def clear_bad_summaries(meetings_payload: Dict, boards_payload: Dict) -> Tuple[i
 # ---------------------------------------------------------------------
 
 def should_summarize(meeting: Dict[str, Any]) -> Tuple[bool, str]:
-    year = meeting.get("year")
-    if not isinstance(year, int) or year < MIN_YEAR:
-        return False, "before minimum year"
+    # Accept year as int or string
+    year_raw = meeting.get("year")
+    try:
+        year = int(year_raw)
+    except (TypeError, ValueError):
+        # Try to derive year from date field
+        date_str = meeting.get("date") or meeting.get("meeting_date") or ""
+        try:
+            year = int(str(date_str)[:4])
+        except (TypeError, ValueError):
+            year = 0
+
+    if year < MIN_YEAR:
+        return False, f"before minimum year ({year})"
 
     if not meeting.get("minutes_url"):
         return False, "no minutes_url"
@@ -356,9 +367,11 @@ def main() -> None:
             if not meeting.get("body_id"):
                 meeting["body_id"] = board.get("id")
 
-            ok, _ = should_summarize(meeting)
+            ok, reason = should_summarize(meeting)
             if ok:
                 candidates.append(("board", meeting, (b_idx, m_idx)))
+            else:
+                print(f"  SKIP board {meeting_label(meeting)}: {reason} (year={meeting.get('year')!r}, has_minutes={bool(meeting.get('minutes_url'))}, has_summary={bool(meeting.get('summary'))})")
 
     print(f"\nCouncil meetings loaded: {len(council_meetings)}")
     print(f"Boards loaded: {len(boards)}")
