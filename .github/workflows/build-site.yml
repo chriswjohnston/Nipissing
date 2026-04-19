@@ -1,27 +1,25 @@
 name: Build site
-
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-
+  workflow_run:
+    workflows: ["Update records"]
+    types:
+      - completed
 permissions:
   contents: write
-
 jobs:
   build-site:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Build site
         run: |
           pwd
@@ -30,7 +28,6 @@ jobs:
           echo "---- AFTER BUILD ----"
           ls -la
           find . -maxdepth 3 -type f | sort
-
       - name: Commit built site
         run: |
           git config user.name "github-actions[bot]"
@@ -38,4 +35,5 @@ jobs:
           test -d docs || { echo "docs folder missing"; exit 1; }
           git add docs/
           git diff --cached --quiet || git commit -m "Build public site"
+          git pull --rebase origin main
           git push
