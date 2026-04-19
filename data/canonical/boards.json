@@ -710,8 +710,7 @@
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
-          "summary": "# Recreation Committee Meeting Summary\n**Nipissing Township, Ontario – February 2, 2026**\n\nI apologize, but the PDF file you've provided appears to be corrupted or improperly encoded. The content stream is compressed and unreadable, so I cannot access the actual meeting minutes to summarize the discussions, decisions, budgets, programs, or facilities that were addressed.\n\nTo help you, I would need either:\n- A properly formatted and readable PDF file\n- The meeting minutes in text or Word document format\n- A scanned image of the document that can be read\n\nIf you can provide a readable version of the minutes, I'd be happy to create a 2-3 sentence plain-language summary for residents.",
-          "events": [],
+          "summary": null
           "body": "Recreation Committee",
           "body_id": "recreation"
         },
