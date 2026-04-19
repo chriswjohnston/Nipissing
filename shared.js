@@ -90,7 +90,7 @@ function meetingCard(meeting, q = '') {
   const href = primaryMeetingUrl(meeting);
 
   return `
-  <a href="${escHtml(href)}" class="result-card meeting-card" style="text-decoration:none;color:inherit;display:block;cursor:pointer;">
+  <article class="result-card meeting-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
 
     <div class="result-icon ri-meeting">
       📅
@@ -113,7 +113,7 @@ function meetingCard(meeting, q = '') {
       </div>
 
     </div>
-  </a>
+  </article>
 `;
 }
 
