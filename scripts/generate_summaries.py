@@ -36,7 +36,7 @@ CANONICAL_DIR = ROOT / "data" / "canonical"
 MEETINGS_FILE = CANONICAL_DIR / "meetings.json"
 BOARDS_FILE = CANONICAL_DIR / "boards.json"
 
-MIN_YEAR = 2025
+MIN_YEAR = 2026
 
 # Phrases that indicate a bad/failed summary that should be cleared and retried
 BAD_SUMMARY_MARKERS = [
@@ -56,6 +56,21 @@ BAD_SUMMARY_MARKERS = [
     "unable to access",
     "i'm sorry, but i",
     "i apologize, but i",
+    "i apologize, but the pdf",
+    "appears to be corrupted",
+    "improperly encoded",
+    "cannot access the actual meeting minutes",
+    "properly formatted and readable pdf",
+    "provide a readable version",
+    "content stream is compressed",
+    "unreadable",
+    "corrupted or improperly",
+    "cannot extract",
+    "could not extract",
+    "no text could be extracted",
+    "text is not available",
+    "minutes in text or word document",
+    "scanned image of the document",
 ]
 
 
