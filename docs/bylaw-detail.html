@@ -36,6 +36,81 @@
   margin-bottom:.9rem;
 }
 
+.bylaw-page-header{
+  background:var(--forest);
+  color:white;
+  padding:32px 0 40px;
+  border-bottom:3px solid var(--gold, #c69214);
+}
+
+.bylaw-page-header .header-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+.bylaw-page-header .back-link{
+  display:inline-block;
+  margin-bottom:12px;
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  font-size:14px;
+}
+
+.bylaw-page-header .back-link:hover{
+  text-decoration:underline;
+}
+
+.bylaw-page-header .header-meta{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+  margin-bottom:8px;
+}
+
+.bylaw-page-header .header-title{
+  font-size:36px;
+  line-height:1.1;
+  margin:0 0 8px;
+  color:white;
+}
+
+.bylaw-page-header .header-subtitle{
+  font-size:18px;
+  line-height:1.5;
+  opacity:.92;
+  margin-bottom:16px;
+  color:white;
+  max-width:920px;
+}
+
+.bylaw-page-header .header-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.bylaw-page-header .header-actions a{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,0.45);
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  background:rgba(255,255,255,0.06);
+  transition:.15s;
+}
+
+.bylaw-page-header .header-actions a:hover{
+  background:rgba(255,255,255,0.12);
+}
+
 .bylaw-header{
   display:flex;
   align-items:flex-start;
@@ -113,46 +188,7 @@
   border-color:#cde7d3;
   color:#22743d;
 }
-.bylaw-header {
-  background: var(--forest);
-  color: white;
-  padding: 32px 0 40px;
-}
 
-.back-link {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}
-
-.header-meta {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 8px;
-}
-
-.header-title {
-  font-size: 36px;
-  margin: 0 0 8px;
-}
-
-.header-subtitle {
-  font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 16px;
-}
-
-.header-actions .btn-outline {
-  margin-right: 10px;
-}
 .status-pending{
   background:#fff6e2;
   border-color:#ecdca9;
@@ -287,9 +323,9 @@
     </ul>
   </div>
 </nav>
+
 <section class="bylaw-page-header">
   <div class="header-inner">
-
     <a href="bylaws.html" class="back-link">← Back to By-Laws</a>
 
     <div class="header-meta">
@@ -302,9 +338,9 @@
     <div class="header-subtitle" id="bylaw-header-title"></div>
 
     <div class="header-actions" id="bylaw-header-actions"></div>
-
   </div>
 </section>
+
 <main class="detail-wrap">
 
   <div>
@@ -429,6 +465,36 @@ async function init(){
   }
 
   document.title = `By-Law ${bylaw.number} — Nipissing Township Public Records`;
+
+  document.getElementById('bylaw-header-number').textContent =
+    bylaw?.number ? `By-Law ${bylaw.number}` : 'By-Law';
+
+  document.getElementById('bylaw-header-title').textContent =
+    bylaw?.title || '';
+
+  document.getElementById('bylaw-header-status').textContent =
+    (bylaw?.status || 'unknown').toUpperCase();
+
+  const bylawHeaderActions = [];
+
+  if (bylaw?.pdf_url) {
+    bylawHeaderActions.push(`
+      <a href="${esc(bylaw.pdf_url)}" target="_blank" rel="noopener">
+        View Document
+      </a>
+    `);
+  }
+
+  if (bylaw?.meeting_date) {
+    bylawHeaderActions.push(`
+      <a href="meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date)}&body=council">
+        View Meeting
+      </a>
+    `);
+  }
+
+  document.getElementById('bylaw-header-actions').innerHTML =
+    bylawHeaderActions.join('');
 
   document.getElementById('bylaw-number').textContent = `By-Law ${bylaw.number}`;
   document.getElementById('bylaw-title').textContent = bylaw.title || `By-Law ${bylaw.number}`;
