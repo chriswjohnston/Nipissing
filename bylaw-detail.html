@@ -462,32 +462,7 @@ async function init(){
   document.getElementById('bylaw-header-number').textContent =
     bylaw?.number ? `By-Law ${bylaw.number}` : 'By-Law';
 
-  document.getElementById('bylaw-header-title').textContent =
-    bylaw?.title || '';
-
-  document.getElementById('bylaw-header-status').textContent =
-    (bylaw?.status || 'unknown').toUpperCase();
-
-  const bylawHeaderActions = [];
-
-  if (bylaw?.pdf_url) {
-    bylawHeaderActions.push(`
-      <a href="${esc(bylaw.pdf_url)}" target="_blank" rel="noopener">
-        View Document
-      </a>
-    `);
-  }
-
-  if (bylaw?.meeting_date) {
-    bylawHeaderActions.push(`
-      <a href="meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date)}&body=council">
-        View Meeting
-      </a>
-    `);
-  }
-
-  document.getElementById('bylaw-header-actions').innerHTML =
-    bylawHeaderActions.join('');
+  
 
   document.getElementById('bylaw-number').textContent = `By-Law ${bylaw.number}`;
   document.getElementById('bylaw-title').textContent = bylaw.title || `By-Law ${bylaw.number}`;
