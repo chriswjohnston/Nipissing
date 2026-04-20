@@ -279,6 +279,87 @@
   font-size:.9rem;
   font-style:italic;
 }
+  .bylaw-page-header{
+  background:#1f5682;
+  color:#fff;
+  padding:32px 0 40px;
+  border-bottom:3px solid #c69214;
+}
+
+.bylaw-page-header .header-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+.bylaw-page-header .back-link{
+  display:inline-block;
+  margin-bottom:12px;
+  color:rgba(255,255,255,0.92);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+
+.bylaw-page-header .back-link:hover{
+  text-decoration:underline;
+}
+
+.bylaw-page-header .header-meta{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.88);
+  margin-bottom:8px;
+  opacity:1;
+}
+
+.bylaw-page-header .header-title{
+  font-size:36px;
+  line-height:1.1;
+  margin:0 0 8px;
+  color:#fff;
+  font-weight:700;
+}
+
+.bylaw-page-header .header-subtitle{
+  font-size:18px;
+  line-height:1.5;
+  color:rgba(255,255,255,0.95);
+  margin-bottom:16px;
+  max-width:920px;
+  opacity:1;
+}
+
+.bylaw-page-header .header-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.bylaw-page-header .header-actions a{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,0.45);
+  border-radius:10px;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,0.06);
+  font-weight:500;
+}
+
+.bylaw-page-header .header-actions a:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.bylaw-page-header .header-status{
+  color:rgba(255,255,255,0.92);
+}
 </style>
 </head>
 
@@ -302,21 +383,12 @@
     </ul>
   </div>
 </nav>
-<section class="page-header resolution-page-header">
-  <div class="container">
 
+<section class="resolution-page-header">
+  <div class="header-inner">
     <a href="bylaws.html" class="back-link">← Back to By-Laws & Resolutions</a>
-
-    <div class="header-meta">
-      <span class="header-type">RESOLUTION</span>
-      <span id="header-status" class="header-status"></span>
-    </div>
-
-    <h1 class="header-title" id="header-number"></h1>
-
-    <div class="header-subtitle" id="header-title-text"></div>
-
-    <div class="header-actions" id="header-actions"></div>
+    
+    <h1 class="header-title" id="bylaw-header-number"></h1>
 
   </div>
 </section>
