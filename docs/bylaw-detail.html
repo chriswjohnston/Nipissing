@@ -113,7 +113,46 @@
   border-color:#cde7d3;
   color:#22743d;
 }
+.bylaw-header {
+  background: var(--forest);
+  color: white;
+  padding: 32px 0 40px;
+}
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.header-meta {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.header-title {
+  font-size: 36px;
+  margin: 0 0 8px;
+}
+
+.header-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.header-actions .btn-outline {
+  margin-right: 10px;
+}
 .status-pending{
   background:#fff6e2;
   border-color:#ecdca9;
@@ -248,7 +287,39 @@
     </ul>
   </div>
 </nav>
+<section class="page-header bylaw-header">
 
+  <div class="container">
+
+    <a href="bylaws.html" class="back-link">← Back to By-Laws</a>
+
+    <div class="header-meta">
+      <span class="header-type">BY-LAW</span>
+      <span class="header-status {{statusClass}}">{{status}}</span>
+    </div>
+
+    <h1 class="header-title">
+      By-Law {{number}}
+    </h1>
+
+    <div class="header-subtitle">
+      {{title}}
+    </div>
+
+    <div class="header-actions">
+      {{#if pdf_url}}
+        <a href="{{pdf_url}}" target="_blank" class="btn-outline">View Document</a>
+      {{/if}}
+
+      {{#if meeting_date}}
+        <a href="meeting-detail.html?date={{meeting_date}}&body=council" class="btn-outline">
+          View Meeting
+        </a>
+      {{/if}}
+    </div>
+
+  </div>
+  </section>
 <main class="detail-wrap">
 
   <div>
