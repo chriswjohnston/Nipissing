@@ -127,7 +127,9 @@ function bylawStatusClass(status) {
 function bylawCard(bylaw, q = '') {
   const href = `bylaw-detail.html?id=${encodeURIComponent(bylaw?.number || '')}`;
   const title = bylaw?.title || `By-Law ${bylaw?.number || ''}`;
-  const dateText = bylaw?.date_passed ? fmtDate(bylaw.date_passed) : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
+  const dateText = bylaw?.date_passed
+    ? fmtDate(bylaw.date_passed)
+    : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
 
   return `
   <article class="result-card bylaw-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
@@ -154,6 +156,7 @@ function bylawCard(bylaw, q = '') {
   </article>
 `;
 }
+
 function resolutionCard(resolution, q = '') {
   const href = `resolution-detail.html?id=${encodeURIComponent(resolution?.number || '')}`;
   const title = resolution?.title || resolution?.motion_text || resolution?.number || 'Resolution';
@@ -172,7 +175,7 @@ function resolutionCard(resolution, q = '') {
         <span class="result-date">
           ${
             dateText
-              ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" onclick="event.stopPropagation()">${escHtml(dateText)}</a>`
+              ? `<a class="result-date-link" href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" onclick="event.stopPropagation()">${escHtml(dateText)}</a>`
               : ''
           }
         </span>
