@@ -160,22 +160,36 @@ function resolutionCard(resolution, q = '') {
   const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
 
   return `
-    <article class="result-card resolution-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
-      <div class="card-topline">
-        <span class="tag tag-teal">${escHtml(resolution?.number || 'Resolution')}</span>
-        ${dateText ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" class="card-date-link" onclick="event.stopPropagation()">${escHtml(dateText)}</a>` : '<span></span>'}
+  <article class="result-card resolution-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
+    
+    <div class="result-icon ri-resolution">🧾</div>
+
+    <div class="result-body">
+
+      <div class="result-meta">
+        <span class="result-type rt-resolution">RESOLUTION</span>
+        <span class="result-num">${escHtml(resolution?.number || 'Resolution')}</span>
+        <span class="result-date">
+          ${
+            dateText
+              ? `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" onclick="event.stopPropagation()">${escHtml(dateText)}</a>`
+              : ''
+          }
+        </span>
       </div>
 
-      <h3 class="card-title">
+      <div class="result-title">
         ${highlight(title, q)}
-      </h3>
-
-      <div class="card-meta">
-        <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
-        ${resolution?.bylaw_number ? `<span>By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
       </div>
-    </article>
-  `;
+
+      <div class="result-tags">
+        <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
+        ${resolution?.bylaw_number ? `<span class="result-linkage">By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
+      </div>
+
+    </div>
+  </article>
+`;
 }
 
 function scoreItem(item, q) {
