@@ -1,11 +1,33 @@
 {
-  "last_updated": "2026-04-21",
+  "last_updated": "2026-04-22",
   "source": "board pages",
   "boards": [
     {
       "id": "cemetery",
       "name": "Cemetery Committee",
       "meetings": [
+        {
+          "date": "2026-05-20",
+          "display_date": "May 20, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Cemetery Committee",
+          "board_id": "cemetery",
+          "board_name": "Cemetery Committee",
+          "body": "Cemetery Committee",
+          "body_id": "cemetery",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/CEMETERY-Committee-AGENDA-May-20-2026.pdf",
+          "minutes_url": null,
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/May-20-2026-Cemetery-Comm-Agen.pdf",
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": []
+        },
         {
           "date": "2025-07-25",
           "display_date": "Jul 25, 2025",
