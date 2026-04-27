@@ -1,0 +1,61 @@
+{
+  "last_updated": "2026-04-27",
+  "current": {
+    "id": "2022-2026",
+    "label": "2022–2026 Council",
+    "start": "2022-11-15",
+    "end": null,
+    "first_meeting_of_next_term": null,
+    "total": 911,
+    "carried": 889,
+    "defeated": 2,
+    "deferred": 0,
+    "meetings_counted": 78,
+    "last_meeting": "2026-04-21",
+    "slot": "current"
+  },
+  "last": {
+    "id": "2018-2022",
+    "label": "2018–2022 Council",
+    "start": "2018-11-06",
+    "end": "2022-10-25",
+    "first_meeting_of_next_term": "2022-11-15",
+    "total": 38,
+    "carried": 36,
+    "defeated": 0,
+    "deferred": 0,
+    "meetings_counted": 5,
+    "last_meeting": "2022-10-25",
+    "slot": "last"
+  },
+  "all_terms": [
+    {
+      "id": "2022-2026",
+      "label": "2022–2026 Council",
+      "start": "2022-11-15",
+      "end": null,
+      "first_meeting_of_next_term": null,
+      "total": 911,
+      "carried": 889,
+      "defeated": 2,
+      "deferred": 0,
+      "meetings_counted": 78,
+      "last_meeting": "2026-04-21",
+      "slot": "current"
+    },
+    {
+      "id": "2018-2022",
+      "label": "2018–2022 Council",
+      "start": "2018-11-06",
+      "end": "2022-10-25",
+      "first_meeting_of_next_term": "2022-11-15",
+      "total": 38,
+      "carried": 36,
+      "defeated": 0,
+      "deferred": 0,
+      "meetings_counted": 5,
+      "last_meeting": "2022-10-25",
+      "slot": "last"
+    }
+  ]
+}
