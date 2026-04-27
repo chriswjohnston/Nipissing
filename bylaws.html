@@ -11,36 +11,32 @@
 <link rel="stylesheet" href="shared.css">
 
 <style>
+/* ── existing filters styles ──────────────────────────────────────── */
 .filters-wrap{
   border-bottom:1px solid var(--rule);
   background:var(--white);
 }
-
 .filters-inner{
   max-width:1240px;
   margin:0 auto;
   padding:1rem 2rem .9rem;
 }
-
 .filters-row{
   display:flex;
   align-items:center;
   gap:1rem;
   flex-wrap:wrap;
 }
-
 .search-grow{
   flex:1 1 420px;
   min-width:280px;
 }
-
 .inline-filter{
   display:flex;
   align-items:center;
   gap:.7rem;
   flex-wrap:wrap;
 }
-
 .inline-label{
   font-size:.72rem;
   font-weight:700;
@@ -48,7 +44,6 @@
   text-transform:uppercase;
   color:var(--ink-4);
 }
-
 .year-row{
   display:flex;
   align-items:center;
@@ -57,26 +52,21 @@
   flex-wrap:wrap;
   margin-top:.7rem;
 }
-
 .year-pill-wrap{
   display:flex;
   gap:.35rem;
   flex-wrap:wrap;
 }
-
 .year-pill-wrap .tab-btn,
 .type-pill-wrap .tab-btn{
   padding:.48rem .82rem;
 }
-
 .body-results{
   padding-top:2rem;
 }
-
 .year-group{
   margin-bottom:2.5rem;
 }
-
 .year-heading{
   font-family:'Source Serif 4',serif;
   font-size:1.5rem;
@@ -89,7 +79,6 @@
   align-items:baseline;
   gap:.75rem;
 }
-
 .year-heading .year-count{
   font-family:'DM Sans',sans-serif;
   font-size:.75rem;
@@ -99,15 +88,112 @@
   padding:.15rem .55rem;
   border-radius:10px;
 }
-
 .section-anchor{
   scroll-margin-top:120px;
 }
 
+/* ── term stats bars ──────────────────────────────────────────────── */
+.term-stats-wrap{
+  background:var(--white);
+  border-bottom:1px solid var(--rule);
+}
+.term-bar{
+  border-bottom:1px solid var(--rule);
+}
+.term-bar:last-child{
+  border-bottom:none;
+}
+.term-bar-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:.6rem 2rem;
+  display:flex;
+  align-items:center;
+  gap:1.25rem;
+  flex-wrap:wrap;
+}
+.term-bar--last .term-bar-inner{
+  background:var(--bg-off,#fafaf8);
+}
+.term-bar-label{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--ink-4);
+  white-space:nowrap;
+  min-width:145px;
+  flex-shrink:0;
+}
+.term-dot{
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  flex-shrink:0;
+}
+.term-dot--live{
+  background:#22c55e;
+  box-shadow:0 0 0 0 rgba(34,197,94,.5);
+  animation:tdot-pulse 2.4s ease-in-out infinite;
+}
+.term-dot--past{
+  background:#94a3b8;
+}
+@keyframes tdot-pulse{
+  0%,100%{ box-shadow:0 0 0 0   rgba(34,197,94,.45); }
+  50%    { box-shadow:0 0 0 5px rgba(34,197,94,0);   }
+}
+.term-bar-stats{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.tstat{
+  display:flex;
+  align-items:baseline;
+  gap:.3rem;
+  padding:0 .85rem;
+}
+.tstat:first-child{ padding-left:0; }
+.tstat-val{
+  font-family:'Source Serif 4',serif;
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--ink);
+  line-height:1;
+}
+.tstat-val.carried { color:#16a34a; }
+.tstat-val.defeated{ color:#dc2626; }
+.tstat-val.deferred{ color:#b45309; }
+.tstat-val.neutral { color:var(--ink-4); font-weight:400; font-size:.85rem; }
+.tstat-lbl{
+  font-family:'DM Sans',sans-serif;
+  font-size:.68rem;
+  color:var(--ink-4);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:500;
+  white-space:nowrap;
+}
+.tstat-div{
+  width:1px;
+  height:1rem;
+  background:var(--rule);
+  flex-shrink:0;
+}
+
 @media(max-width:700px){
-  .filters-inner{
-    padding:1rem 1.25rem .9rem;
-  }
+  .filters-inner{ padding:1rem 1.25rem .9rem; }
+  .term-bar-inner{ padding:.55rem 1.25rem; gap:.6rem; }
+  .term-bar-label{ min-width:0; }
+  .tstat{ padding:0 .55rem; }
+  .tstat-val{ font-size:.95rem; }
+  .hide-xs{ display:none !important; }
 }
 </style>
 </head>
@@ -149,6 +235,84 @@
     <p>Search by-laws passed by Council and resolutions recorded in meeting minutes.</p>
   </div>
 </div>
+
+<!-- ── COUNCIL TERM STATS BARS ──────────────────────────────────── -->
+<div class="term-stats-wrap" id="term-stats-wrap" style="display:none">
+
+  <!-- Current term -->
+  <div class="term-bar term-bar--current" id="tbar-current">
+    <div class="term-bar-inner">
+      <div class="term-bar-label">
+        <span class="term-dot term-dot--live"></span>
+        <span id="tbar-current-name">Current Council</span>
+      </div>
+      <div class="term-bar-stats">
+        <div class="tstat">
+          <span class="tstat-val"          id="tc-total">—</span>
+          <span class="tstat-lbl">Resolutions</span>
+        </div>
+        <div class="tstat-div"></div>
+        <div class="tstat">
+          <span class="tstat-val carried"  id="tc-carried">—</span>
+          <span class="tstat-lbl">Carried</span>
+        </div>
+        <div class="tstat-div"></div>
+        <div class="tstat">
+          <span class="tstat-val defeated" id="tc-defeated">—</span>
+          <span class="tstat-lbl">Defeated</span>
+        </div>
+        <div class="tstat-div hide-xs"></div>
+        <div class="tstat hide-xs">
+          <span class="tstat-val deferred" id="tc-deferred">—</span>
+          <span class="tstat-lbl">Deferred</span>
+        </div>
+        <div class="tstat-div hide-xs"></div>
+        <div class="tstat hide-xs">
+          <span class="tstat-val neutral"  id="tc-updated">—</span>
+          <span class="tstat-lbl">As of</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Last term -->
+  <div class="term-bar term-bar--last" id="tbar-last" style="display:none">
+    <div class="term-bar-inner">
+      <div class="term-bar-label">
+        <span class="term-dot term-dot--past"></span>
+        <span id="tbar-last-name">Previous Council</span>
+      </div>
+      <div class="term-bar-stats">
+        <div class="tstat">
+          <span class="tstat-val"          id="tl-total">—</span>
+          <span class="tstat-lbl">Resolutions</span>
+        </div>
+        <div class="tstat-div"></div>
+        <div class="tstat">
+          <span class="tstat-val carried"  id="tl-carried">—</span>
+          <span class="tstat-lbl">Carried</span>
+        </div>
+        <div class="tstat-div"></div>
+        <div class="tstat">
+          <span class="tstat-val defeated" id="tl-defeated">—</span>
+          <span class="tstat-lbl">Defeated</span>
+        </div>
+        <div class="tstat-div hide-xs"></div>
+        <div class="tstat hide-xs">
+          <span class="tstat-val deferred" id="tl-deferred">—</span>
+          <span class="tstat-lbl">Deferred</span>
+        </div>
+        <div class="tstat-div hide-xs"></div>
+        <div class="tstat hide-xs">
+          <span class="tstat-val neutral"  id="tl-dates">—</span>
+          <span class="tstat-lbl">Term</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /term-stats-wrap -->
+<!-- ── END COUNCIL TERM STATS BARS ──────────────────────────────── -->
 
 <div class="filters-wrap">
   <div class="filters-inner">
@@ -234,9 +398,10 @@
 
 <script src="shared.js"></script>
 <script>
+/* ── existing bylaws page logic (unchanged) ──────────────────────── */
 let activeType = 'all';
 let activeYear = '';
-let searchQ = '';
+let searchQ    = '';
 
 function yearForItem(item){
   if(item._type === 'bylaw'){
@@ -250,7 +415,6 @@ function yearForItem(item){
 
 function filteredItems(){
   let items = [];
-
   if(activeType === 'all'){
     items = [...BYLAWS, ...RESOLUTIONS];
   } else if(activeType === 'bylaw'){
@@ -258,18 +422,16 @@ function filteredItems(){
   } else {
     items = [...RESOLUTIONS];
   }
-
   if(activeYear){
     items = items.filter(item => String(yearForItem(item)) === String(activeYear));
   }
-
   return items;
 }
 
 function renderYearPills(){
   const items = [...BYLAWS, ...RESOLUTIONS];
   const years = [...new Set(items.map(yearForItem).filter(Boolean))].sort((a,b) => b - a);
-  const wrap = document.getElementById('year-pills');
+  const wrap  = document.getElementById('year-pills');
 
   wrap.innerHTML = `
     <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All Years</button>
@@ -299,7 +461,7 @@ function renderResults(){
     items = scored.map(x => x.item);
 
     document.getElementById('result-count').textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
-    document.getElementById('empty').style.display = items.length ? 'none' : '';
+    document.getElementById('empty').style.display      = items.length ? 'none' : '';
     document.getElementById('results-container').innerHTML = `
       <div class="results-grid">
         ${items.map(item => item._type === 'bylaw' ? bylawCard(item, searchQ) : resolutionCard(item, searchQ)).join('')}
@@ -308,8 +470,8 @@ function renderResults(){
     return;
   }
 
-  document.getElementById('result-count').textContent = `${items.length} record${items.length === 1 ? '' : 's'}`;
-  document.getElementById('empty').style.display = items.length ? 'none' : '';
+  document.getElementById('result-count').textContent   = `${items.length} record${items.length === 1 ? '' : 's'}`;
+  document.getElementById('empty').style.display        = items.length ? 'none' : '';
 
   const grouped = {};
   items.forEach(item => {
@@ -356,6 +518,74 @@ async function init(){
 }
 
 init();
+
+/* ── council term stats bars ─────────────────────────────────────── */
+(function(){
+
+  function fmt(n){
+    return (n != null) ? Number(n).toLocaleString() : '—';
+  }
+
+  function fmtDate(iso){
+    if(!iso) return '—';
+    return new Date(iso + 'T00:00:00').toLocaleDateString('en-CA', {
+      year:'numeric', month:'short', day:'numeric'
+    });
+  }
+
+  function fmtTermDates(term){
+    const s = fmtDate(term.start);
+    const e = term.end ? fmtDate(term.end) : 'present';
+    return `${s} – ${e}`;
+  }
+
+  async function loadTermStats(){
+    try {
+      const resp = await fetch('data/canonical/council_terms.json');
+      if(!resp.ok) return;
+      const data = await resp.json();
+
+      const wrap = document.getElementById('term-stats-wrap');
+
+      // Current term
+      if(data.current){
+        const c = data.current;
+        document.getElementById('tbar-current-name').textContent = c.label || 'Current Council';
+        document.getElementById('tc-total').textContent    = fmt(c.total);
+        document.getElementById('tc-carried').textContent  = fmt(c.carried);
+        document.getElementById('tc-defeated').textContent = fmt(c.defeated);
+        document.getElementById('tc-deferred').textContent = fmt(c.deferred);
+        document.getElementById('tc-updated').textContent  =
+          c.last_meeting ? fmtDate(c.last_meeting) : (data.last_updated || '—');
+        wrap.style.display = '';
+      }
+
+      // Last term
+      if(data.last){
+        const l   = data.last;
+        const bar = document.getElementById('tbar-last');
+        document.getElementById('tbar-last-name').textContent = l.label || 'Previous Council';
+        document.getElementById('tl-total').textContent    = fmt(l.total);
+        document.getElementById('tl-carried').textContent  = fmt(l.carried);
+        document.getElementById('tl-defeated').textContent = fmt(l.defeated);
+        document.getElementById('tl-deferred').textContent = fmt(l.deferred);
+        document.getElementById('tl-dates').textContent    = fmtTermDates(l);
+        bar.style.display = '';
+      }
+
+      // Hide wrapper entirely if no data loaded
+      if(!data.current && !data.last){
+        wrap.style.display = 'none';
+      }
+
+    } catch(e){
+      // Stats bar is non-critical — fail silently
+    }
+  }
+
+  loadTermStats();
+
+})();
 </script>
 </body>
 </html>
