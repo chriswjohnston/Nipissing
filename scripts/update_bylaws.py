@@ -270,6 +270,16 @@ def write_term_stats(
     terms = build_term_definitions(meetings, today)
     slots = assign_slots(terms, today)
 
+    # Load any existing council_terms.json so we can preserve static entries.
+    # A term marked "static": true has manually verified counts that the
+    # scraper cannot reliably reproduce (e.g. pre-PDF web-based minutes).
+    # Static entries are never overwritten by computed stats.
+    existing_terms_payload = load_json(COUNCIL_TERMS_FILE, {})
+    existing_by_id: Dict[str, Dict[str, Any]] = {}
+    for entry in existing_terms_payload.get("all_terms", []):
+        if isinstance(entry, dict) and entry.get("id"):
+            existing_by_id[entry["id"]] = entry
+
     output: Dict[str, Any] = {
         "last_updated": datetime.now().strftime("%Y-%m-%d"),
         "current": None,
@@ -282,24 +292,37 @@ def write_term_stats(
         if term is None:
             continue
 
-        stats = compute_term_stats(
-            resolutions,
-            term_start=term["start"],
-            term_end=term["end"],
-        )
-        entry = {**term, **stats, "slot": slot_name}
+        term_id  = term.get("id", "")
+        existing = existing_by_id.get(term_id, {})
+
+        if existing.get("static"):
+            # Preserve the manually-set stats exactly; only refresh the slot label
+            entry = {**existing, "slot": slot_name}
+            print(
+                f"  [{slot_name}] {term['label']} — using static values "
+                f"({existing.get('total', '?')} resolutions, "
+                f"{existing.get('meetings_counted', '?')} meetings)"
+            )
+        else:
+            # Compute fresh from resolutions.json
+            stats = compute_term_stats(
+                resolutions,
+                term_start=term["start"],
+                term_end=term["end"],
+            )
+            entry = {**term, **stats, "slot": slot_name}
+            end_label = term["end"] or "present"
+            print(
+                f"  [{slot_name}] {term['label']} "
+                f"({term['start']} – {end_label}): "
+                f"{stats['total']} resolutions | "
+                f"{stats['carried']} carried | "
+                f"{stats['defeated']} defeated | "
+                f"{stats['deferred']} deferred"
+            )
+
         output[slot_name] = entry
         output["all_terms"].append(entry)
-
-        end_label = term["end"] or "present"
-        print(
-            f"  [{slot_name}] {term['label']} "
-            f"({term['start']} – {end_label}): "
-            f"{stats['total']} resolutions | "
-            f"{stats['carried']} carried | "
-            f"{stats['defeated']} defeated | "
-            f"{stats['deferred']} deferred"
-        )
 
     save_json(COUNCIL_TERMS_FILE, output)
     print(f"  Saved → {COUNCIL_TERMS_FILE}")
