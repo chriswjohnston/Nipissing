@@ -597,7 +597,7 @@ def parse_resolutions_from_minutes(
         seconder = mm.group(2).strip() if mm else None
 
         motion_match = re.search(
-            r':\s*(.*?)(?:\bCarried\b|\bDefeated\b|\bLost\b|\bWithdrawn\b)',
+            r':\s*(.*?)(?:\bCarried\b|\bDefeated\b|\bLost\b|\bWithdrawn\b|\bDeferred\b)',
             f"{res_number}{body}", re.IGNORECASE | re.DOTALL,
         )
         motion_text = motion_match.group(1).strip() if motion_match else body.strip()
@@ -609,6 +609,8 @@ def parse_resolutions_from_minutes(
             status = "defeated"
         elif re.search(r'\bWithdrawn\b', body, re.IGNORECASE):
             status = "withdrawn"
+        elif re.search(r'\bDeferred\b', body, re.IGNORECASE):
+            status = "deferred"
         elif re.search(r'\bCarried\b', body, re.IGNORECASE):
             status = "carried"
         else:
@@ -649,10 +651,28 @@ def parse_all_minutes(
     all_bylaws:      List[Dict[str, Any]] = []
     all_resolutions: List[Dict[str, Any]] = []
 
+    # Deduplicate by minutes_url — same-day Regular+Special meetings that
+    # share a URL (e.g. Jan 7 2025, May 9 2024, Jan 2 2024) would otherwise
+    # be parsed twice, producing duplicate resolution records that the merge
+    # step quietly drops, making the carried count appear lower than it is.
+    seen_urls: set = set()
+
     for meeting in meetings:
-        if not meeting.get("minutes_url"):
+        minutes_url = meeting.get("minutes_url")
+        if not minutes_url:
             continue
-        pdf_path = download_pdf(meeting["minutes_url"], DOWNLOAD_CACHE_DIR / "minutes")
+
+        # Skip web page URLs — only process actual PDF files.
+        # Older minutes (pre-2023) are HTML pages that PyMuPDF cannot read.
+        # Those are handled via static entries in council_terms.json.
+        if not minutes_url.lower().endswith(".pdf"):
+            continue
+
+        if minutes_url in seen_urls:
+            continue
+        seen_urls.add(minutes_url)
+
+        pdf_path = download_pdf(minutes_url, DOWNLOAD_CACHE_DIR / "minutes")
         if not pdf_path:
             continue
         text = extract_pdf_text(pdf_path)
