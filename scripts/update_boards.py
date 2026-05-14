@@ -148,10 +148,6 @@ def board_meeting_key(meeting: Dict[str, Any]) -> Tuple[str, str, str]:
 # ---------------------------------------------------------------------
 
 def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[Dict[str, Any]]:
-    """
-    DOM-order parser for board pages.
-    Captures date lines plus any links following them in the same container.
-    """
     meetings: List[Dict[str, Any]] = []
     current: Optional[Dict[str, Any]] = None
 
@@ -159,7 +155,6 @@ def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[D
         nonlocal current
         if current is None:
             return
-
         current["extra_docs"] = dedupe_docs(current.pop("extra_docs_raw", []))
         meetings.append(current)
         current = None
@@ -167,12 +162,7 @@ def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[D
     def start_meeting(dt: date, context_text: str) -> None:
         nonlocal current
         flush_current()
-
         ctx = (context_text or "").lower()
-        cancelled = "cancel" in ctx
-        rescheduled = "reschedul" in ctx
-        postponed = "postpon" in ctx
-
         current = {
             "date": dt.isoformat(),
             "display_date": format_display_date(dt),
@@ -190,32 +180,26 @@ def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[D
             "extra_docs_raw": [],
             "summary": None,
             "events": [],
-            "cancelled": cancelled,
-            "rescheduled": rescheduled,
-            "postponed": postponed,
+            "cancelled": "cancel" in ctx,
+            "rescheduled": "reschedul" in ctx,
+            "postponed": "postpon" in ctx,
             "is_future": dt > TODAY,
         }
 
-    def process_container(el: Tag) -> None:
+    def process_segment(text: str, links: List[Tag]) -> None:
+        """Process one logical line (br-separated segment or standalone element)."""
         nonlocal current
-
-        text = " ".join(el.stripped_strings)
-        if not text:
-            return
-
         dm = DATE_RE.search(text)
         if dm:
-            dt = parse_date_match(dm)
-            start_meeting(dt, text)
+            start_meeting(parse_date_match(dm), text)
 
         if current is None:
             return
 
-        for a in el.find_all("a", href=True):
+        for a in links:
             href = normalize_absolute_url(a["href"])
             label = clean_label(a.get_text(" ", strip=True))
             kind = classify_link(label, href)
-
             if kind == "agenda" and not current["agenda_url"]:
                 current["agenda_url"] = href
             elif kind == "minutes" and not current["minutes_url"]:
@@ -225,31 +209,68 @@ def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[D
             elif kind == "other":
                 current["extra_docs_raw"].append({"label": label, "url": href})
 
-    containers = content.find_all(["p", "li", "div", "tr"])
+    def split_by_br(el: Tag) -> List[Tuple[str, List[Tag]]]:
+        """
+        Split a tag's contents on <br> boundaries.
+        Returns list of (text, [anchor_tags]) per segment.
+        """
+        segments: List[Tuple[str, List[Tag]]] = []
+        current_text_parts: List[str] = []
+        current_links: List[Tag] = []
 
+        for child in el.children:
+            if isinstance(child, NavigableString):
+                current_text_parts.append(str(child))
+            elif isinstance(child, Tag):
+                if child.name == "br":
+                    segments.append((" ".join(current_text_parts), current_links))
+                    current_text_parts = []
+                    current_links = []
+                elif child.name == "a" and child.get("href"):
+                    current_text_parts.append(child.get_text(" ", strip=True))
+                    current_links.append(child)
+                else:
+                    # Recurse into inline elements (span, strong, em, etc.)
+                    current_text_parts.append(child.get_text(" ", strip=True))
+                    current_links.extend(child.find_all("a", href=True))
+
+        # Don't forget the last segment after the final <br> (or if no <br> at all)
+        segments.append((" ".join(current_text_parts), current_links))
+        return segments
+
+    # Walk top-level block containers
+    containers = content.find_all(["p", "li", "div", "tr"])
     for el in containers:
-        text = " ".join(el.stripped_strings)
-        if not text:
-            continue
-        if DATE_RE.search(text) or el.find("a", href=True):
-            process_container(el)
+        # Check if this element has <br> tags — if so, split it
+        if el.find("br"):
+            for seg_text, seg_links in split_by_br(el):
+                seg_text = re.sub(r"\s+", " ", seg_text).strip()
+                if seg_text or seg_links:
+                    process_segment(seg_text, seg_links)
+        else:
+            # Original behaviour for non-br elements
+            text = re.sub(r"\s+", " ", " ".join(el.stripped_strings)).strip()
+            if not text:
+                continue
+            if DATE_RE.search(text) or el.find("a", href=True):
+                process_segment(text, list(el.find_all("a", href=True)))
 
     flush_current()
 
-    # Merge duplicates by board+date+type
+    # Merge duplicates
     merged: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
     for m in meetings:
         k = board_meeting_key(m)
         if k not in merged:
             merged[k] = deepcopy(m)
             continue
-
         old = merged[k]
         for field in ("agenda_url", "minutes_url", "package_url"):
             if not old.get(field) and m.get(field):
                 old[field] = m[field]
-
-        old["extra_docs"] = dedupe_docs((old.get("extra_docs") or []) + (m.get("extra_docs") or []))
+        old["extra_docs"] = dedupe_docs(
+            (old.get("extra_docs") or []) + (m.get("extra_docs") or [])
+        )
         old["cancelled"] = old.get("cancelled", False) or m.get("cancelled", False)
         old["rescheduled"] = old.get("rescheduled", False) or m.get("rescheduled", False)
         old["postponed"] = old.get("postponed", False) or m.get("postponed", False)
