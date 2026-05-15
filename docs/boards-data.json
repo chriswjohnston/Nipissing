@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-05-15",
   "source": "board pages",
   "boards": [
     {
@@ -393,7 +393,7 @@
           "rescheduled": false,
           "postponed": false,
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Agenda-May-13-2026-Museum-Board.pdf",
-          "minutes_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Boad-Minutes-May-13-2026-docx.pdf",
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
@@ -789,7 +789,7 @@
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
-          "summary": null,
+          "summary": "# Recreation Committee Meeting Summary\n\n**May 4, 2026**\n\n## Key Decisions\n- Approved minutes from the March 2, 2026 meeting\n- Teen dance event on Friday was successful with 20 teens in attendance and $67 in canteen sales\n- Soccer program confirmed to start May 7, 2026 with 86 children registered\n- Trivia night rescheduled from July 25, 2026 to November 21, 2026\n- Movie in the Park event approved; movie selection to be determined and shared with committee\n- Approved facility upgrades including new ceiling tiles, kitchen stoves/hoods, change tables in washrooms, and fitness centre mirrors\n\n## Main Topics\n- **Bottle drive revenue**: April collection from local landfills totaled $317.10\n- **Easter event**: Held April 4th with activities including egg decorating, cookie decorating, crafts, and games for children 12 and under; event was well-received\n- **Soccer program**: Registration closed with 86 children signed up; t-shirts ordered and teams assigned; coaches from last year will be contacted to assist\n- **Facility maintenance and improvements**: Multiple upgrades planned for Community Centre and Fitness Centre; playground wood chips need replenishment; port-a-potties scheduled for beaches; rink nets to be updated\n- **June meeting agenda**: Will focus on new programming ideas and ways to expand recreation offerings\n\n## Notable Items\n- Soccer program runs May 7 to June 25, 2026 (6:00–7:00 p.m.)\n- Port-a-potties to be delivered to both beaches the first week of June\n- East Parry Sound Community Support Services donated $490 to offset Community Centre use\n- Playground requires 4–6 inches of wood chips added every 3–5 years; quotes currently being reviewed\n- New rink nets planned for next season\n\n---\n*Next regular meeting: June 1, 2026*",
           "events": [],
           "body": "Recreation Committee",
           "body_id": "recreation",
