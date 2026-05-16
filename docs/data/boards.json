@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-15",
+  "last_updated": "2026-05-16",
   "source": "board pages",
   "boards": [
     {
@@ -284,6 +284,64 @@
           "extra_docs": []
         },
         {
+          "date": "2026-08-15",
+          "display_date": "Aug 15, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": null,
+          "package_url": null,
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": [
+            {
+              "label": "Rope Basket Making",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Rope-basket-poster-1.pdf"
+            },
+            {
+              "label": "museum@nipissingtownship.com",
+              "url": "mailto:museum@nipissingtownship.com"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-13",
+          "display_date": "Aug 13, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": null,
+          "package_url": null,
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": [
+            {
+              "label": "Rope Coaster Craft",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Rope-basket-poster-1.pdf"
+            }
+          ]
+        },
+        {
           "date": "2026-08-05",
           "display_date": "Aug 5, 2026",
           "year": 2026,
@@ -306,6 +364,76 @@
           "extra_docs": []
         },
         {
+          "date": "2026-08-02",
+          "display_date": "Aug 2, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": null,
+          "package_url": null,
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": [
+            {
+              "label": "Heritage Day Craft Fair",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Childrens-Craft-Fair-1.pdf"
+            },
+            {
+              "label": "Heritage Day Children’s Craft Competition Entry Form",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Childrens-Craft-Competition-2026-Entry-Form.pdf"
+            },
+            {
+              "label": "admin@nipissingtownship.com",
+              "url": "mailto:admin@nipissingtownship.com"
+            },
+            {
+              "label": "2023-10 By-Law – Museum",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-10-Museum-Board.pdf"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-18",
+          "display_date": "Jul 18, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": null,
+          "package_url": null,
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": [
+            {
+              "label": "Ice Cream Making",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Learn-to-Make-Your-Own-Ice-Cream-1.pdf"
+            },
+            {
+              "label": "Heritage Day",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Heritage-Day-poster-2026-1.pdf"
+            }
+          ]
+        },
+        {
           "date": "2026-07-08",
           "display_date": "Jul 8, 2026",
           "year": 2026,
@@ -326,6 +454,33 @@
           "title": "Museum Board",
           "source_kind": "board",
           "extra_docs": []
+        },
+        {
+          "date": "2026-07-04",
+          "display_date": "Jul 4, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": null,
+          "package_url": null,
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "extra_docs": [
+            {
+              "label": "Butter Making",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Butter-Making-1.pdf"
+            }
+          ]
         },
         {
           "date": "2026-07-02",
@@ -397,7 +552,7 @@
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
-          "summary": null,
+          "summary": "# Museum Board Meeting Summary\n\n**May 13, 2026**\n\n## Key Decisions\n- Approved April 1, 2026 meeting minutes (Motion 2026-06)\n- Approved $500 event fee for Country Reruns and Friends to provide live music at Heritage Day (Motion 2026-07)\n- Decided to proceed with Butter Making event on July 2nd as originally advertised, despite it being the museum's opening day\n- Approved Heritage Day to run 11:00 a.m. – 3:00 p.m. with BBQ donations (rather than set prices) supporting church window restoration\n- Approved craft fair competition with three age categories (K–grade 3, grade 4–6, grade 7–8) with community voting and winner announcement at Heritage Day\n\n## Main Topics\n- **Building maintenance**: Engineer completing inspection report; grass seeding requested for renovation area\n- **Summer events**: Butter Making (July 2 and 4) with bread provided by Bernadette Kerr; Rope Crafts and Ice Cream Making workshops planned; board members to review workshop items at June meeting\n- **Heritage Day planning**: Bob Bartlett confirmed for blacksmith demonstration; invitations sent to Dokis First Nation and Nipissing First Nation for displays and participation; craft vendors invited with donation option instead of fees; silent auction planned with outreach to past business donors\n- **Exhibits**: Continuing work on \"The Waterway Journey to Nipissing\" theme and Remembrance Interactive exhibit program\n- **Cataloguing**: Will resume during museum season\n\n## Notable Items\n- Butter Making events scheduled for July 2 and 4, 2026\n- Heritage Day will include live music, blacksmith demonstration, BBQ, and craft fair competition\n- Donations from Heritage Day BBQ will support church window restoration; board investigating grant opportunities for historical windows\n- Craft fair competition deadline and voting process to be finalized before June meeting\n\n---\n*Next regular meeting: Wednesday, June 3, 2026 at 6:00 p.m.*",
           "events": [],
           "body": "Museum Board",
           "body_id": "museum",
