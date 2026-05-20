@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-05-20",
   "source": "board pages",
   "boards": [
     {
@@ -25,7 +25,7 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "is_future": true,
+          "is_future": false,
           "extra_docs": []
         },
         {
