@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-17",
   "source": "board pages",
   "boards": [
     {
@@ -311,6 +311,10 @@
             {
               "label": "museum@nipissingtownship.com",
               "url": "mailto:museum@nipissingtownship.com"
+            },
+            {
+              "label": "Vendor Application",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Vendor-Application-Nipissing-Township-Museum-Heritage-Day-2026.pdf"
             }
           ]
         },
