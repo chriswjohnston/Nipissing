@@ -24,6 +24,7 @@ jobs:
       - name: Run record updaters
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/update_meetings.py
           python scripts/generate_summaries.py
