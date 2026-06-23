@@ -440,10 +440,16 @@ async function init(){
   document.getElementById('hero-title').textContent =
     meeting.display_date || meeting.date;
 
+  // Resolve each document once (archived-first, with the live URL as fallback).
+  // Agendas are only surfaced from 2026 on.
+  const agendaUrl  = showAgenda(meeting) ? docUrl(meeting, 'agenda') : null;
+  const minutesUrl = docUrl(meeting, 'minutes');
+  const packageUrl = docUrl(meeting, 'package');
+
   const actions = [];
-  if(meeting.agenda_url) actions.push(buildHeroBtn('Agenda', meeting.agenda_url));
-  if(meeting.minutes_url) actions.push(buildHeroBtn('Minutes', meeting.minutes_url));
-  if(meeting.package_url) actions.push(buildHeroBtn('Agenda Package', meeting.package_url));
+  if(agendaUrl) actions.push(buildHeroBtn('Agenda', agendaUrl));
+  if(minutesUrl) actions.push(buildHeroBtn('Minutes', minutesUrl));
+  if(packageUrl) actions.push(buildHeroBtn('Agenda Package', packageUrl));
   if(meeting.video_url) actions.push(buildHeroBtn('Video Recording', meeting.video_url));
   document.getElementById('hero-actions').innerHTML = actions.join('');
 
@@ -453,9 +459,9 @@ async function init(){
   document.getElementById('meta-year').textContent = meeting.year || '';
 
   const main = [];
-  if(meeting.agenda_url) main.push(buildDoc('Agenda', meeting.agenda_url));
-  if(meeting.minutes_url) main.push(buildDoc('Minutes', meeting.minutes_url));
-  if(meeting.package_url) main.push(buildDoc('Agenda Package', meeting.package_url));
+  if(agendaUrl) main.push(buildDoc('Agenda', agendaUrl));
+  if(minutesUrl) main.push(buildDoc('Minutes', minutesUrl));
+  if(packageUrl) main.push(buildDoc('Agenda Package', packageUrl));
   if(meeting.video_url) main.push(buildDoc('Video Recording', meeting.video_url));
 
   document.getElementById('main-docs').innerHTML =
@@ -467,7 +473,7 @@ async function init(){
       <div class="docs-section">
         <div class="docs-section-title">Additional Files</div>
         <div class="docs-stack">
-          ${extra.map(d => buildDoc(d.label, d.url)).join('')}
+          ${extra.map(d => buildDoc(d.label, extraDocUrl(d))).join('')}
         </div>
       </div>
     `;
