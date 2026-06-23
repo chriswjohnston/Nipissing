@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import json
 import re
 from pathlib import Path
 from typing import Optional
@@ -43,6 +44,18 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
 ARCHIVE_DIR = DOCS_DIR / "files" / "archive"
+
+# Content-policy gates (match the front-end cutoffs):
+#   - nothing before the PDF era is mirrored
+#   - agendas are only mirrored once they matter on the site (2026+)
+ARCHIVE_MIN_YEAR = 2022
+AGENDA_MIN_YEAR = 2026
+
+# Tombstone of URLs that returned 404, so a deleted document is fetched once,
+# recorded as gone, and never retried (this is what stops the 404 storm).
+# Lives under data/runtime (committed, not the gitignored pdf_cache), so the
+# memory persists across runs. Delete the file or an entry to retry.
+MISSES_FILE = ROOT / "data" / "runtime" / "archive_misses.json"
 
 TOWNSHIP_HOST = "nipissingtownship.com"
 
@@ -84,9 +97,30 @@ def is_township_pdf(url: Optional[str]) -> bool:
     )
 
 
+def _load_misses() -> set:
+    try:
+        return set(json.loads(MISSES_FILE.read_text(encoding="utf-8")))
+    except Exception:
+        return set()
+
+
+def _save_misses() -> None:
+    MISSES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    MISSES_FILE.write_text(json.dumps(sorted(_MISSES), indent=2), encoding="utf-8")
+
+
+_MISSES = _load_misses()
+
+
 def _download(url: str) -> Optional[bytes]:
     try:
         r = requests.get(url, headers=HEADERS, timeout=120, allow_redirects=True)
+        if r.status_code == 404:
+            # Gone for good — record it so we never retry this URL again.
+            print(f"  archive: 404, tombstoned (won't retry) {url}")
+            _MISSES.add(url)
+            _save_misses()
+            return None
         r.raise_for_status()
         data = r.content
         if not data[:5].startswith(b"%PDF"):
@@ -94,6 +128,7 @@ def _download(url: str) -> Optional[bytes]:
             return None
         return data
     except Exception as e:
+        # Transient (timeout/5xx): do NOT tombstone, so it can retry next run.
         print(f"  archive: download failed {url}: {e}")
         return None
 
@@ -233,6 +268,8 @@ def mirror(url: Optional[str], category: str, year=None, *, is_package: bool = F
     """
     if not is_township_pdf(url):
         return None
+    if url in _MISSES:
+        return None  # known-gone (404 tombstone) — don't retry
     return _archive_to_release(url) if is_package else _archive_in_repo(url, category, year)
 
 
@@ -242,13 +279,18 @@ def mirror_record(rec: dict, category: str) -> dict:
     Re-uses an existing mirror if its file is still present, so reruns are cheap
     and nothing already saved is touched.
     """
-    year = rec.get("year")
+    year = rec.get("year") or 0
+    if year and year < ARCHIVE_MIN_YEAR:
+        return rec  # pre-PDF era — not mirrored at all
+
     pairs = [
-        ("agenda_url",  "agenda_archived",  False),
-        ("minutes_url", "minutes_archived", False),
-        ("package_url", "package_archived", True),
+        ("agenda_url",  "agenda_archived",  False, AGENDA_MIN_YEAR),
+        ("minutes_url", "minutes_archived", False, ARCHIVE_MIN_YEAR),
+        ("package_url", "package_archived", True,  ARCHIVE_MIN_YEAR),
     ]
-    for src, dst, is_pkg in pairs:
+    for src, dst, is_pkg, min_year in pairs:
+        if year and year < min_year:
+            continue  # e.g. agendas before 2026 are intentionally skipped
         if rec.get(dst):
             # packages live in Releases (can't stat); in-repo docs we verify exist
             if is_pkg or (DOCS_DIR / rec[dst]).exists():
