@@ -10,6 +10,8 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from archive import mirror_record
+
 
 URL = "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/"
 OUT = Path("data/canonical/meetings.json")
@@ -254,6 +256,11 @@ def main() -> None:
         existing_meetings = payload.get("meetings", [])
 
     final_meetings = merge_meetings(scraped_meetings, existing_meetings)
+
+    # Mirror township PDFs (minutes/agendas in-repo, packages to Releases)
+    # before saving, so archived_* paths land in canonical data.
+    for m in final_meetings:
+        mirror_record(m, "meetings")
 
     payload["last_updated"] = datetime.now().strftime("%Y-%m-%d")
     payload["source"] = URL
