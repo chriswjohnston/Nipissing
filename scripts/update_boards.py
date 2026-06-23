@@ -30,6 +30,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from archive import mirror_record
+
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_DIR = ROOT / "data" / "canonical"
 
@@ -460,6 +462,13 @@ def main() -> None:
         })
 
     merged_payload = merge_canonical(current_payload, scraped_boards)
+
+    # Mirror township PDFs (minutes/agendas in-repo, packages to Releases)
+    # before saving, so archived_* paths land in canonical data.
+    for b in merged_payload["boards"]:
+        for m in b.get("meetings", []):
+            mirror_record(m, f"boards/{b['id']}")
+
     save_json(BOARDS_FILE, merged_payload)
 
     total_meetings = sum(len(b.get("meetings", [])) for b in merged_payload["boards"])
