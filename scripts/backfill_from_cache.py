@@ -46,8 +46,13 @@ def cache_name(url: str) -> str:
 def find_cached(url: Optional[str], folder: Path) -> Optional[Path]:
     if not url:
         return None
-    p = folder / cache_name(url)
-    return p if p.exists() and p.stat().st_size > 0 else None
+    name = cache_name(url)
+    if not name:                       # URL ended in "/" → empty basename
+        return None
+    p = folder / name
+    # require an actual file: guards against a name collapsing to the
+    # cache folder itself (which exists and has nonzero size as a directory)
+    return p if p.is_file() and p.stat().st_size > 0 else None
 
 
 def load(path: Path):
