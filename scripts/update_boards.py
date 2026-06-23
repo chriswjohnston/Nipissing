@@ -1,91 +1,20 @@
 #!/usr/bin/env python3
-"""
-update_boards.py
-
-Forward-looking board / committee meetings updater for the Nipissing public records repo.
-
-Sources:
-- Recreation Committee
-- Museum Board
-- Cemetery Committee
-
-What this does:
-- Scrapes the current Township pages
-- Captures meeting dates even when links are missing
-- Normalizes all board meetings into one canonical boards.json file
-- Preserves existing summaries/events/history already in canonical data
-- Avoids historical rebuild complexity from the old scraper
-"""
-
-from __future__ import annotations
 
 import json
 import re
 from copy import deepcopy
-from datetime import datetime, date
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from archive import mirror_record
 
-ROOT = Path(__file__).resolve().parents[1]
-CANONICAL_DIR = ROOT / "data" / "canonical"
 
-BOARDS_FILE = CANONICAL_DIR / "boards.json"
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-    )
-}
-
-
-def fetch_html(url: str, timeout: int = 30) -> str:
-    """Fetch a page, tolerating the township's trailing-slash changes.
-    Tries the URL as given, then with the slash toggled. Raises only if all fail."""
-    candidates = [url, url.rstrip("/") if url.endswith("/") else url + "/"]
-    last_exc: Optional[Exception] = None
-    for candidate in candidates:
-        try:
-            resp = requests.get(candidate, headers=HEADERS,
-                                timeout=timeout, allow_redirects=True)
-            resp.raise_for_status()
-            return resp.text
-        except requests.exceptions.HTTPError as e:
-            last_exc = e
-            if e.response is not None and e.response.status_code == 404:
-                continue          # try the other slash form
-            raise                 # 500/etc. is a real failure, surface it
-    raise last_exc
-
-
-TODAY = date.today()
-
-BOARDS = [
-    {
-        "id": "recreation",
-        "name": "Recreation Committee",
-        "url": "https://nipissingtownship.com/services/recreation/",
-        "description": "Management of recreational programming and the Community Centre at 2381 Highway 654.",
-    },
-    {
-        "id": "museum",
-        "name": "Museum Board",
-        "url": "https://nipissingtownship.com/services/museum-services-and-information/",
-        "description": "Preservation and display of the history and heritage of Nipissing Township.",
-    },
-    {
-        "id": "cemetery",
-        "name": "Cemetery Committee",
-        "url": "https://nipissingtownship.com/services/cemetery/",
-        "description": "Administration of local cemeteries in Nipissing Township.",
-    },
-]
+URL = "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/"
+OUT = Path("data/canonical/meetings.json")
 
 DATE_RE = re.compile(
     r"(January|February|March|April|May|June|July|August|September|October|November|December)"
@@ -94,17 +23,10 @@ DATE_RE = re.compile(
 )
 
 
-# ---------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------
-
 def load_json(path: Path, default: Any) -> Any:
     if not path.exists():
-        return deepcopy(default)
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
-        return deepcopy(default)
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def save_json(path: Path, data: Any) -> None:
@@ -112,380 +34,283 @@ def save_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def normalize_absolute_url(href: str) -> str:
-    return urljoin("https://nipissingtownship.com", href.strip())
+def normalize_url(href: str) -> str:
+    if href.startswith("http"):
+        return href
+    return "https://nipissingtownship.com" + href
 
 
 def clean_label(text: str) -> str:
-    text = re.sub(r"\s+", " ", text or "").strip()
-    text = text.strip("()[]")
-    return text or "Document"
+    return re.sub(r"\s+", " ", text or "").strip(" ()")
 
 
-def parse_date_match(match: re.Match[str]) -> date:
-    return datetime.strptime(
-        f"{match.group(1).capitalize()} {int(match.group(2))}, {match.group(3)}",
-        "%B %d, %Y",
-    ).date()
-
-
-def format_display_date(dt: date) -> str:
-    return f"{dt.strftime('%b')} {dt.day}, {dt.year}"
-
-
-def classify_link(label: str, href: str) -> str:
-    text = f"{label} {href}".lower()
-    if "package" in text:
+def classify_link(label: str, url: str) -> str:
+    text = f"{label} {url}".lower()
+    if "agenda package" in text or "package" in text:
         return "package"
-    if "minute" in text:
+    if "minutes" in text or "minute" in text:
         return "minutes"
     if "agenda" in text:
         return "agenda"
-    return "other"
+    return "extra"
 
 
-def dedupe_docs(docs: List[Dict[str, str]]) -> List[Dict[str, str]]:
+def meeting_key(m: Dict[str, Any]) -> Tuple[str, str]:
+    return (m["date"], m.get("meeting_type", "Regular"))
+
+
+def unique_extra_docs(docs: List[Dict[str, str]]) -> List[Dict[str, str]]:
     seen = set()
     out = []
-    for doc in docs:
-        label = clean_label(doc.get("label", ""))
-        url = (doc.get("url") or "").strip()
+    for d in docs:
+        label = clean_label(d.get("label", ""))
+        url = (d.get("url") or "").strip()
         if not url:
             continue
         key = (label, url)
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append({"label": label, "url": url})
+        if key not in seen:
+            seen.add(key)
+            out.append({"label": label, "url": url})
     return out
 
 
-def board_meeting_key(meeting: Dict[str, Any]) -> Tuple[str, str, str]:
+# Labels that mark a navigation/index link rather than a real supplementary
+# document. These leak into extra_docs when the listing page is parsed and one
+# meeting record accidentally absorbs links belonging to many other meetings.
+GENERIC_EXTRA_LABELS = {"agenda", "minutes", "agenda package", "package"}
+
+
+def sanitize_extra_docs(meetings: List[Dict[str, Any]]) -> None:
+    """Strip index-scrape noise from every meeting's extra_docs, in place.
+
+    An entry is dropped when it:
+      - duplicates ANY meeting's primary agenda/minutes/package URL,
+      - uses a generic nav label (Agenda / Minutes / Agenda Package), or
+      - is a mailto/non-http link.
+    Genuine supplementary docs (budgets, financial statements, correspondence)
+    are kept, and no meeting records are removed. Idempotent.
+    """
+    primary: set = set()
+    for m in meetings:
+        for f in ("agenda_url", "minutes_url", "package_url"):
+            u = (m.get(f) or "").strip()
+            if u:
+                primary.add(u)
+
+    for m in meetings:
+        cleaned = []
+        for d in m.get("extra_docs", []) or []:
+            url = (d.get("url") or "").strip()
+            label = (d.get("label") or "").strip()
+            if not url or "mailto:" in url or not url.lower().startswith("http"):
+                continue
+            if url in primary:
+                continue
+            if label.lower() in GENERIC_EXTRA_LABELS:
+                continue
+            cleaned.append({"label": label or "Document", "url": url})
+        m["extra_docs"] = cleaned
+
+
+def flags_from_context(text: str) -> Tuple[str, bool]:
+    t = (text or "").lower()
     return (
-        meeting.get("board_id", ""),
-        meeting.get("date", ""),
-        meeting.get("meeting_type", "Board") or "Board",
+        "Special" if "special" in t else "Regular",
+        "cancel" in t,
     )
 
 
-# ---------------------------------------------------------------------
-# Scraping
-# ---------------------------------------------------------------------
-
-def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[Dict[str, Any]]:
-    meetings: List[Dict[str, Any]] = []
+def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
+    meetings_raw: List[Dict[str, Any]] = []
     current: Optional[Dict[str, Any]] = None
 
-    def flush_current() -> None:
+    def flush() -> None:
         nonlocal current
-        if current is None:
-            return
-        current["extra_docs"] = dedupe_docs(current.pop("extra_docs_raw", []))
-        meetings.append(current)
+        if current:
+            meetings_raw.append(dict(current))
         current = None
 
-    def start_meeting(dt: date, context_text: str) -> None:
+    def start_meeting(month: str, day: str, year: str, context_text: str = "") -> None:
         nonlocal current
-        flush_current()
-        ctx = (context_text or "").lower()
+        flush()
+
+        dt = datetime.strptime(
+            f"{month.capitalize()} {int(day)}, {year}",
+            "%B %d, %Y"
+        )
+
+        meeting_type, cancelled = flags_from_context(context_text)
+
         current = {
-            "date": dt.isoformat(),
-            "display_date": format_display_date(dt),
+            "date": dt.strftime("%Y-%m-%d"),
+            "display_date": f"{dt.strftime('%b')} {dt.day}, {dt.year}",
             "year": dt.year,
-            "meeting_type": "Board",
-            "title": board["name"],
-            "board_id": board["id"],
-            "board_name": board["name"],
-            "body": board["name"],
-            "body_id": board["id"],
-            "source_kind": "board",
+            "meeting_type": meeting_type,
             "agenda_url": None,
             "minutes_url": None,
             "package_url": None,
             "extra_docs_raw": [],
-            "summary": None,
-            "events": [],
-            "cancelled": "cancel" in ctx,
-            "rescheduled": "reschedul" in ctx,
-            "postponed": "postpon" in ctx,
-            "is_future": dt > TODAY,
+            "cancelled": cancelled,
         }
 
-    def process_segment(text: str, links: List[Tag]) -> None:
-        """Process one logical line (br-separated segment or standalone element)."""
+    def walk(node: Any) -> None:
         nonlocal current
-        dm = DATE_RE.search(text)
-        if dm:
-            start_meeting(parse_date_match(dm), text)
 
-        if current is None:
-            return
+        if isinstance(node, NavigableString):
+            text = str(node)
+            for dm in DATE_RE.finditer(text):
+                start_meeting(dm.group(1), dm.group(2), dm.group(3), text)
 
-        for a in links:
-            href = normalize_absolute_url(a["href"])
-            label = clean_label(a.get_text(" ", strip=True))
-            kind = classify_link(label, href)
-            if kind == "agenda" and not current["agenda_url"]:
-                current["agenda_url"] = href
-            elif kind == "minutes" and not current["minutes_url"]:
-                current["minutes_url"] = href
-            elif kind == "package" and not current["package_url"]:
-                current["package_url"] = href
-            elif kind == "other":
-                current["extra_docs_raw"].append({"label": label, "url": href})
+        elif isinstance(node, Tag):
+            if node.name == "a":
+                if current:
+                    href = node.get("href")
+                    label = clean_label(node.get_text(" ", strip=True))
 
-    def split_by_br(el: Tag) -> List[Tuple[str, List[Tag]]]:
-        """
-        Split a tag's contents on <br> boundaries.
-        Returns list of (text, [anchor_tags]) per segment.
-        """
-        segments: List[Tuple[str, List[Tag]]] = []
-        current_text_parts: List[str] = []
-        current_links: List[Tag] = []
+                    if href:
+                        url = normalize_url(href)
+                        kind = classify_link(label, url)
 
-        for child in el.children:
-            if isinstance(child, NavigableString):
-                current_text_parts.append(str(child))
-            elif isinstance(child, Tag):
-                if child.name == "br":
-                    segments.append((" ".join(current_text_parts), current_links))
-                    current_text_parts = []
-                    current_links = []
-                elif child.name == "a" and child.get("href"):
-                    current_text_parts.append(child.get_text(" ", strip=True))
-                    current_links.append(child)
-                else:
-                    # Recurse into inline elements (span, strong, em, etc.)
-                    current_text_parts.append(child.get_text(" ", strip=True))
-                    current_links.extend(child.find_all("a", href=True))
+                        if kind == "agenda" and not current["agenda_url"]:
+                            current["agenda_url"] = url
+                        elif kind == "minutes" and not current["minutes_url"]:
+                            current["minutes_url"] = url
+                        elif kind == "package" and not current["package_url"]:
+                            current["package_url"] = url
+                        else:
+                            current["extra_docs_raw"].append({
+                                "label": label,
+                                "url": url,
+                            })
+                return
 
-        # Don't forget the last segment after the final <br> (or if no <br> at all)
-        segments.append((" ".join(current_text_parts), current_links))
-        return segments
+            for child in node.children:
+                walk(child)
 
-    # Walk top-level block containers
-    containers = content.find_all(["p", "li", "div", "tr"])
-    for el in containers:
-        # Check if this element has <br> tags — if so, split it
-        if el.find("br"):
-            for seg_text, seg_links in split_by_br(el):
-                seg_text = re.sub(r"\s+", " ", seg_text).strip()
-                if seg_text or seg_links:
-                    process_segment(seg_text, seg_links)
-        else:
-            # Original behaviour for non-br elements
-            text = re.sub(r"\s+", " ", " ".join(el.stripped_strings)).strip()
-            if not text:
-                continue
-            if DATE_RE.search(text) or el.find("a", href=True):
-                process_segment(text, list(el.find_all("a", href=True)))
+    for el in content.find_all(["p", "li", "div", "tr"]):
+        text = el.get_text(" ", strip=True)
+        if DATE_RE.search(text) or el.find("a"):
+            walk(el)
 
-    flush_current()
+    flush()
 
-    # Merge duplicates
-    merged: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
-    for m in meetings:
-        k = board_meeting_key(m)
+    merged: Dict[Tuple[str, str], Dict[str, Any]] = {}
+
+    for m in meetings_raw:
+        k = meeting_key(m)
         if k not in merged:
             merged[k] = deepcopy(m)
             continue
+
         old = merged[k]
         for field in ("agenda_url", "minutes_url", "package_url"):
             if not old.get(field) and m.get(field):
                 old[field] = m[field]
-        old["extra_docs"] = dedupe_docs(
-            (old.get("extra_docs") or []) + (m.get("extra_docs") or [])
-        )
-        old["cancelled"] = old.get("cancelled", False) or m.get("cancelled", False)
-        old["rescheduled"] = old.get("rescheduled", False) or m.get("rescheduled", False)
-        old["postponed"] = old.get("postponed", False) or m.get("postponed", False)
 
-    out = list(merged.values())
+        old["extra_docs_raw"] += m.get("extra_docs_raw", [])
+
+    out: List[Dict[str, Any]] = []
+    for m in merged.values():
+        out.append({
+            "date": m["date"],
+            "display_date": m["display_date"],
+            "year": m["year"],
+            "meeting_type": m["meeting_type"],
+            "title": "",
+            "agenda_url": m.get("agenda_url"),
+            "minutes_url": m.get("minutes_url"),
+            "package_url": m.get("package_url"),
+            "extra_docs": unique_extra_docs(m.get("extra_docs_raw", [])),
+            "video_url": None,
+            "summary": None,
+            "cancelled": m.get("cancelled", False),
+        })
+
     out.sort(key=lambda x: x["date"], reverse=True)
     return out
 
 
-def scrape_board(board: Dict[str, str]) -> List[Dict[str, Any]]:
-    print(f"Scraping {board['name']} ...")
-    soup = BeautifulSoup(fetch_html(board["url"]), "html.parser")
+def merge_meetings(scraped: List[Dict[str, Any]], existing: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    existing_map = {meeting_key(m): deepcopy(m) for m in existing if isinstance(m, dict) and m.get("date")}
+    final_map: Dict[Tuple[str, str], Dict[str, Any]] = {}
+
+    for m in scraped:
+        k = meeting_key(m)
+        if k in existing_map:
+            old = existing_map[k]
+
+            merged = deepcopy(old)
+            merged["display_date"] = m.get("display_date", old.get("display_date"))
+            merged["year"] = m.get("year", old.get("year"))
+            merged["meeting_type"] = m.get("meeting_type", old.get("meeting_type", "Regular"))
+            merged["title"] = old.get("title", "") or m.get("title", "")
+            merged["agenda_url"] = m.get("agenda_url") or old.get("agenda_url")
+            merged["minutes_url"] = m.get("minutes_url") or old.get("minutes_url")
+            merged["package_url"] = m.get("package_url") or old.get("package_url")
+            merged["video_url"] = old.get("video_url")
+            merged["summary"] = old.get("summary")
+            merged["cancelled"] = m.get("cancelled", old.get("cancelled", False))
+            merged["extra_docs"] = unique_extra_docs(
+                (old.get("extra_docs") or []) + (m.get("extra_docs") or [])
+            )
+            final_map[k] = merged
+        else:
+            final_map[k] = m
+
+    for k, old in existing_map.items():
+        if k not in final_map:
+            final_map[k] = old
+
+    final = list(final_map.values())
+    final.sort(key=lambda x: x["date"], reverse=True)
+    return final
+
+
+def main() -> None:
+    print("Fetching meetings...")
+
+    res = requests.get(URL, timeout=30)
+    res.raise_for_status()
+
+    soup = BeautifulSoup(res.text, "html.parser")
     content = (
         soup.find("div", class_=re.compile(r"entry-content|post-content"))
         or soup.find("article")
         or soup.find("main")
         or soup.body
     )
+
     if content is None:
-        return []
+        raise RuntimeError("Could not find page content to parse")
 
-    meetings = extract_meetings_from_content(content, board)
-    print(
-        f"  {len(meetings)} meeting(s) | "
-        f"{sum(1 for m in meetings if m.get('minutes_url'))} with minutes | "
-        f"{sum(1 for m in meetings if m.get('is_future'))} future"
-    )
-    return meetings
+    scraped_meetings = extract_meetings(content)
 
+    payload = load_json(OUT, {"last_updated": None, "source": URL, "meetings": []})
 
-# ---------------------------------------------------------------------
-# Merge canonical data
-# ---------------------------------------------------------------------
+    if isinstance(payload, list):
+        existing_meetings = payload
+        payload = {"last_updated": None, "source": URL, "meetings": payload}
+    else:
+        existing_meetings = payload.get("meetings", [])
 
-def merge_board_meeting(existing: Dict[str, Any], scraped: Dict[str, Any]) -> Dict[str, Any]:
-    out = deepcopy(existing)
+    final_meetings = merge_meetings(scraped_meetings, existing_meetings)
 
-    for field in (
-        "display_date",
-        "year",
-        "meeting_type",
-        "title",
-        "board_id",
-        "board_name",
-        "body",
-        "body_id",
-        "source_kind",
-        "cancelled",
-        "rescheduled",
-        "postponed",
-        "is_future",
-    ):
-        if scraped.get(field) not in (None, ""):
-            out[field] = scraped[field]
-
-    for field in ("agenda_url", "minutes_url", "package_url"):
-        if scraped.get(field):
-            out[field] = scraped[field]
-
-    out["extra_docs"] = dedupe_docs(
-        (existing.get("extra_docs") or []) + (scraped.get("extra_docs") or [])
-    )
-
-    if not out.get("summary"):
-        out["summary"] = existing.get("summary")
-
-    if not out.get("events"):
-        out["events"] = existing.get("events", [])
-
-    return out
-
-
-def merge_canonical(existing_payload: Dict[str, Any], scraped_by_board: List[Dict[str, Any]]) -> Dict[str, Any]:
-    existing_boards = existing_payload.get("boards", [])
-
-    existing_index: Dict[str, Dict[str, Any]] = {}
-    for board in existing_boards:
-        existing_index[board["id"]] = deepcopy(board)
-
-    scraped_index: Dict[str, Dict[str, Any]] = {}
-    for board in scraped_by_board:
-        scraped_index[board["id"]] = deepcopy(board)
-
-    result_boards: List[Dict[str, Any]] = []
-
-    all_ids = sorted(set(existing_index.keys()) | set(scraped_index.keys()))
-    for board_id in all_ids:
-        old_board = existing_index.get(board_id)
-        new_board = scraped_index.get(board_id)
-
-        if old_board and new_board:
-            merged_board = deepcopy(old_board)
-            merged_board["name"] = new_board.get("name", merged_board.get("name"))
-            merged_board["url"] = new_board.get("url", merged_board.get("url"))
-            merged_board["description"] = new_board.get("description", merged_board.get("description"))
-
-            old_meetings = {board_meeting_key(m): deepcopy(m) for m in old_board.get("meetings", [])}
-            new_meetings = {board_meeting_key(m): deepcopy(m) for m in new_board.get("meetings", [])}
-
-            merged_meetings: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
-
-            for k, scraped_m in new_meetings.items():
-                if k in old_meetings:
-                    merged_meetings[k] = merge_board_meeting(old_meetings[k], scraped_m)
-                else:
-                    nm = deepcopy(scraped_m)
-                    nm.setdefault("summary", None)
-                    nm.setdefault("events", [])
-                    nm["extra_docs"] = dedupe_docs(nm.get("extra_docs") or [])
-                    merged_meetings[k] = nm
-
-            for k, old_m in old_meetings.items():
-                if k not in merged_meetings:
-                    merged_meetings[k] = deepcopy(old_m)
-
-            merged_board["meetings"] = sorted(
-                list(merged_meetings.values()),
-                key=lambda x: x.get("date", ""),
-                reverse=True,
-            )
-            result_boards.append(merged_board)
-
-        elif new_board:
-            nb = deepcopy(new_board)
-            nb["meetings"] = sorted(nb.get("meetings", []), key=lambda x: x.get("date", ""), reverse=True)
-            result_boards.append(nb)
-
-        elif old_board:
-            result_boards.append(deepcopy(old_board))
-
-    return {
-        "last_updated": datetime.now().strftime("%Y-%m-%d"),
-        "source": "board pages",
-        "boards": result_boards,
-    }
-
-
-# ---------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------
-
-def main() -> None:
-    current_payload = load_json(BOARDS_FILE, {"boards": []})
-
-    print("=" * 60)
-    print("Nipissing update_boards.py")
-    print(f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"Existing canonical boards: {len(current_payload.get('boards', []))}")
-    print("=" * 60)
-
-    scraped_boards = []
-    for board in BOARDS:
-        try:
-            meetings = scrape_board(board)
-        except Exception as e:
-            print(f"  ✗ {board['name']} failed ({e}) — keeping stored canonical data")
-            continue  # merge_canonical carries the existing board forward untouched
-        scraped_boards.append({
-            "id": board["id"],
-            "name": board["name"],
-            "url": board["url"],
-            "description": board["description"],
-            "meetings": meetings,
-        })
-
-    merged_payload = merge_canonical(current_payload, scraped_boards)
+    # Strip index-scrape noise from extra_docs — cleans junk carried forward in
+    # canonical and prevents the merge from re-bloating it on future runs.
+    sanitize_extra_docs(final_meetings)
 
     # Mirror township PDFs (minutes/agendas in-repo, packages to Releases)
     # before saving, so archived_* paths land in canonical data.
-    for b in merged_payload["boards"]:
-        for m in b.get("meetings", []):
-            mirror_record(m, f"boards/{b['id']}")
+    for m in final_meetings:
+        mirror_record(m, "meetings")
 
-    save_json(BOARDS_FILE, merged_payload)
+    payload["last_updated"] = datetime.now().strftime("%Y-%m-%d")
+    payload["source"] = URL
+    payload["meetings"] = final_meetings
 
-    total_meetings = sum(len(b.get("meetings", [])) for b in merged_payload["boards"])
-    total_minutes = sum(
-        1 for b in merged_payload["boards"] for m in b.get("meetings", [])
-        if m.get("minutes_url")
-    )
-    total_future = sum(
-        1 for b in merged_payload["boards"] for m in b.get("meetings", [])
-        if m.get("is_future")
-    )
+    save_json(OUT, payload)
 
-    print(f"Saved boards -> {BOARDS_FILE}")
-    print(f"  boards:   {len(merged_payload['boards'])}")
-    print(f"  meetings: {total_meetings}")
-    print(f"  minutes:  {total_minutes}")
-    print(f"  future:   {total_future}")
+    print(f"Saved {len(final_meetings)} meetings")
 
 
 if __name__ == "__main__":
