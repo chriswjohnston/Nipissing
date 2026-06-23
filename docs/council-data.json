@@ -130,6 +130,21 @@
       "date": "2026-06-30",
       "display_date": "Jun 30, 2026",
       "year": 2026,
+      "meeting_type": "Regular",
+      "title": "",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
+      "minutes_url": null,
+      "package_url": null,
+      "extra_docs": [],
+      "video_url": null,
+      "summary": null,
+      "cancelled": false,
+      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__d981e769.pdf"
+    },
+    {
+      "date": "2026-06-30",
+      "display_date": "Jun 30, 2026",
+      "year": 2026,
       "meeting_type": "Special",
       "title": "",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
@@ -138,80 +153,85 @@
       "extra_docs": [],
       "video_url": null,
       "summary": null,
-      "cancelled": false
+      "cancelled": false,
+      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__119a38bd.pdf"
     },
     {
       "date": "2026-06-16",
       "display_date": "Jun 16, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-16-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-16-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-16-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/June-16-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-16-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-16-2026.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": "https://www.youtube.com/watch?v=tYBgPz1ioXM",
       "summary": "# Council Meeting Summary\n\n**Jun 16, 2026**\n\n## Key Decisions\n- Approved 2026-2027 insurance renewal with Intact Insurance\n- Authorized grant application to Hydro One Community Partnership Grant for a backup generator at the Commanda communications tower\n- Passed By-Law 2026-25 to amend the Zoning By-Law 2020-20\n- Passed By-Law 2026-26 to amend the Procedure By-Law 2022-34\n- Rejected two tender submissions for Bear Creek Bridge and Abutment Construction as over budget; directed staff to re-issue tender to four pre-qualified contractors\n- Approved accounts totaling $297,708.30\n- Supported Clearview Township's resolution on public sector salary disclosure inflation adjustments\n\n## Main Topics\n- **Insurance renewal:** Council reviewed and approved the 2026-2027 insurance coverage with Intact Insurance following a presentation by Brokerlink Insurance\n- **Bridge and infrastructure projects:** Updates provided on Hart Road Culvert and road projects; Hummel Bridge replacement remains unfunded; Bear Creek Bridge tender will be re-issued due to cost overruns\n- **Zoning and procedure updates:** Two by-laws passed to update zoning regulations and council procedures\n- **Council vacancy procedure:** Council reviewed a draft appointment procedure for filling council vacancies and will seek public input before finalizing\n\n## Notable Items\n- Jeff Culham, Public Works Equipment Operator, recognized for 20 years of service to the Township\n- Hummel Bridge replacement project has no secured funding to date\n- Draft Council Vacancy Appointment Procedure will be posted on the Township website for public review and comment\n- Accounts approved for payment: $297,708.30\n- Highway rest stops and traveler infrastructure initiative (Highway 11 and 17) to be discussed at next meeting\n\n---\n*Next regular meeting: Jul 14, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-June-16-2026__9a98003a.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-16-2026__7c1a7ca0.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-16-2026__7c1a7ca0.pdf",
+      "agenda_archived": "files/archive/meetings/2026/June-16-2026-Agenda__87d07f49.pdf"
     },
     {
       "date": "2026-06-02",
       "display_date": "Jun 2, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/June-2-2026-Agenda-1.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-2-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-2-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/June-2-2026-Agenda-Amended.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-2-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-2-2026.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": "https://www.youtube.com/watch?v=dTBX5nav4qE",
       "summary": "# Council Meeting Summary\n\n**Jun 2, 2026**\n\n## Key Decisions\n- Approved a $209,690.29 contract with Duncor Enterprises Inc. to resurface and treat 3.6 km of road (Tender NIP-PW-5-2026)\n- Authorized the Mayor and Municipal Administrator to sign a Consent Agreement with Peter Henry Aultman related to three consent applications\n- Approved $20,000 from General Reserves for Alsace Cemetery Survey and Nipissing Union Cemetery fence completion\n- Defeated a resolution supporting Township of Springwater's request to preserve local democratic authority under Provincial Bill 100\n- Approved accounts totaling $116,453.85 for payment\n- Approved the June Newsletter for circulation\n\n## Main Topics\n- **Road maintenance**: Council awarded a tender for resurfacing work on a 3.6 km road section\n- **Cemetery projects**: Discussed funding for two cemetery improvement projects using reserve funds\n- **Public Works safety**: Council supported a request from the Association of Ontario Road Supervisors asking the province to improve health and safety legislation for public works employees\n- **Road treatment materials**: Supported a request to the Ministry of the Environment to reconsider lighter-grade oils used in chip-and-tar surface treatments, citing durability and cost concerns\n- **Procedural updates**: Council reviewed the Procedural By-Law and will draft changes to the Vacant Council By-Law for approval at the next meeting\n\n## Notable Items\n- Updated Procedural By-Law expected to pass at the June 16, 2026 meeting\n- Road resurfacing project valued at $209,690.29\n- Cemetery reserve funding of $20,000 approved\n- Closed session held to discuss a proposed property purchase and complaint investigation\n\n---\n*Next regular meeting: Jun 16, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-June-2-2026__75fcd186.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-2-2026__79f4749d.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-2-2026__79f4749d.pdf",
+      "agenda_archived": "files/archive/meetings/2026/June-2-2026-Agenda-Amended__0ce591ba.pdf"
     },
     {
       "date": "2026-05-19",
       "display_date": "May 19, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/May-19-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-19-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-19-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/May-19-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-19-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-19-2026.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": "https://www.youtube.com/watch?v=ell5QziDJKg&t=13s",
       "summary": "# Council Meeting Summary\n\n**May 19, 2026**\n\n## Key Decisions\n- Approved previous meeting minutes from May 5, 2026\n- Donated $100 to the Powassan Agricultural Society for their 2026 Fall Fair\n- Donated $100 to the Trout Creek Agricultural Society for their 2026 Fall Fair\n- Approved accounts totaling $138,636.74 (dated May 9 and 13, 2026)\n- Passed By-Law No. 2026-23 to confirm the proceedings of this meeting\n- Agreed to review and update Procedural By-Law 2022-34, with draft to be shared for public comment before June 16 passage\n\n## Main Topics\n- **Procedural By-Law updates**: Council discussed changes to the procedural by-law. A draft with updates will be posted on the website and included in the June 2 agenda package for public feedback before final approval on June 16.\n- **Correspondence items**: Council will address several matters at the June 2 meeting, including Provincial Bill 100 on regional governance, requests from road supervisors about health and safety measures, and concerns about road surface treatment materials. Council also discussed a letter from Chris Johnston regarding the Strategic Plan document.\n- **Staff and committee reports**: Members reported on attendance at the Federation of Northern Ontario Municipalities conference, the museum board, water group updates, and housing corporation matters.\n\n## Notable Items\n- Public comment period on Procedural By-Law updates will occur before June 16, 2026\n- Meeting was livestreamed on the Township YouTube Channel\n- Several correspondence items deferred to June 2, 2026 meeting for discussion and action\n\n---\n*Next regular meeting: June 2, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-May-19-2026__c1951c03.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-May-19-2026__c771586d.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-May-19-2026__c771586d.pdf",
+      "agenda_archived": "files/archive/meetings/2026/May-19-2026-Agenda__258ba945.pdf"
     },
     {
       "date": "2026-05-05",
       "display_date": "May 5, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/May-5-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-5-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Council-Package-2.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-5-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Council-Package-1.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": "https://www.youtube.com/live/IaQhYx9rjWk?si=eIZ20Kz63mhvnUk8",
       "summary": "# Council Meeting Summary\n\n**May 5, 2026**\n\n## Key Decisions\n- Passed By-Law 2026-19 to regulate activities and promote safety at municipal beach areas\n- Passed By-Law 2026-20 to set fees charged by the Township\n- Passed By-Law 2026-21 to authorize a maintenance agreement for the Powassan and District Union Public Library\n- Awarded winter sand tender to Miller Paving Ltd for $68,250.00\n- Awarded crushed granite tenders to Evan Hughes Excavating and TZR Contracting totalling $117,676.00\n- Rejected surface treatment tender bids as over budget and authorized re-tendering with modified scope\n- Approved accounts payable totalling $141,268.34\n- Authorized Mayor to send letters of support for Cecil Facer Youth Centre services and requesting increased enforcement at end of ice fishing season\n\n## Main Topics\n- **Beach safety regulations**: Council passed a new by-law to govern activities and safety at municipal beaches\n- **Public works procurement**: Multiple tenders were awarded for winter maintenance materials including sand and crushed granite for road work\n- **Library services**: Council formalized an agreement to maintain the local public library\n- **Youth and community services**: Council supported continued funding for the Cecil Facer Youth Centre in Sudbury\n- **Natural resources enforcement**: Council requested the Ministry of Natural Resources increase enforcement activities at the end of ice fishing season\n- **Staff performance**: Council held a closed session to conduct a performance appraisal for the Municipal Administrator-Clerk-Treasurer\n\n## Notable Items\n- Winter sand contract awarded at $68,250.00 before taxes\n- Total crushed granite contracts awarded at $117,676.00 before taxes\n- Surface treatment tender rejected due to bids exceeding budget; project will be re-tendered with modified scope\n- $100 donation approved for Almaguin Highlands Secondary School Graduation Awards Program\n- Council delegation authorized to attend District of Parry Sound Municipal Association Spring Meeting\n\n---\n*Next regular meeting: May 19, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-May-5-2026__5c6c88ed.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/May-5-2026-Council-Package-2__86e07a81.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/May-5-2026-Council-Package-2__86e07a81.pdf",
+      "agenda_archived": "files/archive/meetings/2026/May-5-2026-Agenda__fd217e52.pdf"
     },
     {
       "date": "2026-04-21",
       "display_date": "Apr 21, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/April-21-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Minutes-April-21-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Agenda-Package-April-21-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/April-21-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-April-21-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-April-21-2026.pdf",
       "extra_docs": [
         {
           "label": "Draft User Fee By-Law",
@@ -223,48 +243,51 @@
       "summary": "# Council Meeting Summary\n\n**Apr 21, 2026**\n\n## Key Decisions\n- Adopted minutes from the April 7, 2026 meeting\n- Passed By-Law 2026-15 to amend the Zoning By-Law 2020-20\n- Passed By-Law 2026-16 to amend the Zoning By-Law 2020-20\n- Passed By-Law 2026-17 to establish a Compliance Audit Committee under the Municipal Elections Act\n- Supported the appointment of Councillor Linda Alkins (Municipality of Callander) to the Area Six vacancy on the District of Parry Sound Social Services Administration Board\n- Approved the Spring 2026 Newsletter for distribution\n- Approved accounts totalling $181,324.22 (dated April 10, 11, and 16, 2026)\n\n## Main Topics\n- **Waste Disposal Site Monitoring:** Pinchin representatives presented the 2025 Waste Disposal Site Monitoring Review to council\n- **User Fee By-Law:** Council reviewed the first draft of proposed changes to the User Fee By-Law, with the final version scheduled for the May 5, 2026 meeting for adoption\n- **Infrastructure Updates:** Operations Superintendent provided an update on road conditions following recent rain events; Fire Chief reported on Ontario Power Generation Dam levels\n- **Committee Reports:** Council members reported on their respective board and committee assignments, including the OPP Police Services Board, library services, water group matters, and municipal housing\n\n## Notable Items\n- Final User Fee By-Law changes will be presented for adoption at the May 5, 2026 council meeting\n- Mayor recognized volunteers during Volunteers Week for their service to the township\n- Meeting was held in person at the Community Centre and livestreamed on YouTube\n\n---\n*Next regular meeting: May 5, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-April-21-2026__b17463bf.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-21-2026__069ce1f2.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-21-2026__069ce1f2.pdf",
+      "agenda_archived": "files/archive/meetings/2026/April-21-2026-Agenda__80eb44a6.pdf"
     },
     {
       "date": "2026-04-07",
       "display_date": "Apr 7, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/April-7-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Minutes-April-7-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Agenda-Package-April-7-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/April-7-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-April-7-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-April-7-2026.pdf",
       "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=VM6ar9WfX7c",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Apr 7, 2026**\n\n## Key Decisions\n- Passed By-Law 2026-13 to close and sell part of a road allowance between Concessions 12 and 13\n- Approved purchase of battery-operated extrication equipment for Fire Department from Code 4 for $79,975\n- Approved purchase of 2026 Ford F150 pickup truck from Mohawk Ford for $71,811.50 plus $6,972.10 extended warranty\n- Awarded Bear Creek Culvert replacement project to Northern Mat & Bridge for $634,491.07 (funded by Health and Safety Water Stream Grant)\n- Approved in-principle application from Arthur Anderson to purchase part of Shore Road Allowance, subject to environmental study and conditions\n- Extended landfill monitoring contract with Pinchin through 2028 at costs of $39,470 (2026), $39,705 (2027), and $39,945 (2028)\n- Delayed electronic swipe card system for landfill sites to September 30, 2026 (originally scheduled for April 1, 2026)\n- Authorized Ontario Fire Prevention Grant agreement for firefighter health and safety program\n- Adopted 2026 Municipal Election procedures and policies ahead of May 1 nomination opening\n- **Defeated** request to deliver sand to Commanda Community Centre and Gurd & Area Historical Corporation parking areas\n\n## Main Topics\n- **Capital equipment purchases**: Council approved two significant equipment purchases for operations and emergency services, including fire department extrication tools and a new public works truck.\n- **Infrastructure projects**: A major bridge replacement project at Bear Creek Culvert was awarded following a competitive tender process, with grant funding supporting the work.\n- **Property matter**: Council reviewed an application to purchase municipal shore road allowance, which will require an independent environmental and fishery assessment before proceeding.\n- **Landfill operations**: The township delayed implementation of a new electronic card access system for landfill sites by five months to allow for additional negotiations and to coordinate with tax bill distribution.\n- **Election preparation**: Council adopted formal procedures and policies for the 2026 municipal election, which opens for nominations on May 1, 2026.\n- **Staffing**: Council held a closed session to review employment agreements for senior staff and discuss a staffing position.\n\n## Notable Items\n- Bear Creek Culvert bridge replacement project cost: $634,491.07\n- Total accounts approved for payment: $577,400.75\n- Electronic landfill card system now launching September 30, 2026 (cards to be mailed with June tax bills)\n- Municipal election nominations open May 1, 2026\n- Landfill monitoring contract extended through 2028\n\n---\n*Next regular meeting: Apr 21, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-April-7-2026__9b24b11f.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-7-2026__4422d429.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-7-2026__4422d429.pdf",
+      "agenda_archived": "files/archive/meetings/2026/April-7-2026-Agenda__0876cbc9.pdf"
     },
     {
       "date": "2026-03-17",
       "display_date": "Mar 17, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/March-17-2026-Agenda-1.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-Mar-17-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/March-17-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-March-17-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-Mar-17-2026.pdf",
       "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=mi40epWqO_s",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Mar 17, 2026**\n\n## Key Decisions\n- Adopted previous meeting minutes from March 3, 2026\n- Passed By-Law 2026-10 to set the 2026 municipal budget with a proposed tax levy increase of 3.4% and tax rate increase of 2.9%\n- Passed By-Law 2026-11 to set tax ratios for municipal purposes in 2026\n- Approved accounts payable totaling $228,406.20 (covering February 28, March 6, and March 11, 2026)\n- Waived landfill tipping fees for volunteer cleanup of Lake Nipissing ice surface debris (temporary card valid March 17 to April 17, 2026)\n- Passed By-Law 2026-12 to confirm all council proceedings from this meeting\n\n## Main Topics\n- **2026 Municipal Budget:** Council held a public session and approved the draft budget with modest tax increases of 2.9% to 3.4%\n- **Regional Fire Training Centre:** Council supported the Municipality of East Ferris's application for funding to build a regional fire training facility that would serve firefighters across Nipissing, East Parry Sound, and East Sudbury districts, reducing travel costs and improving emergency preparedness\n- **Healthcare and Laboratory Services:** Council urged the Province of Ontario to maintain accessible medical laboratory services in Northern Ontario, recognizing the region's unique geographic challenges and workforce needs\n- **Large Animal Veterinary Services:** Council supported efforts to expand enrollment in large animal veterinary programs at the Ontario Veterinary College to address a shortage of large animal veterinarians in the north\n- **Police and Victim Services:** Council endorsed the OPP's work on victim crisis assistance and a coordinated provincial bail notification program\n- **Lake Nipissing Cleanup:** Council waived fees to support volunteer cleanup efforts after ice fishing season and requested provincial enforcement action regarding waste from ice fishing operations\n\n## Notable Items\n- Tax increases of 2.9% to 3.4% take effect in 2026\n- Landfill fee waiver valid March 17 to April 17, 2026 for Lake Nipissing cleanup\n- Regional fire training centre would reduce travel from current facilities in Huntsville, Haileybury, and Sault Ste. Marie\n- Council will request Ministry of Natural Resources enforcement action at the end of ice fishing season\n- Recycling materials from Lake Nipissing cleanup will be directed to Circular Materials (no longer managed by the township)\n\n---\n*Next regular meeting: April 7, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-March-17-2026__32b54761.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Mar-17-2026__a94f21fb.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Mar-17-2026__a94f21fb.pdf",
+      "agenda_archived": "files/archive/meetings/2026/March-17-2026-Agenda__28b4c638.pdf"
     },
     {
       "date": "2026-03-03",
       "display_date": "Mar 3, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/March-3-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-3-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-March-3-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/March-3-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-March-3-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-March-3-2026.pdf",
       "extra_docs": [
         {
           "label": "2025 Financial Statements -KPMG",
@@ -285,6 +308,31 @@
         {
           "label": "2026 Budget Draft Presentation",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf"
+        },
+        {
+          "label": "2025 Financial Statement – KPMG",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/2025-12-31-Township-of-Nipissing-FS-Mar-2-drafts.pdf",
+          "archived": "files/archive/meetings/2026/2025-12-31-Township-of-Nipissing-FS-Mar-2-drafts__e7bb55a3.pdf"
+        },
+        {
+          "label": "2025 Financial Statement Presentation – KPMG",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Statement-Presentation-2025.pdf",
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__fb005b89.pdf"
+        },
+        {
+          "label": "2025 Financial Analysis Presentation – KPMG",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Analysis-Presentation-2025.pdf",
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Analysis-Presentation-2025__352c66b4.pdf"
+        },
+        {
+          "label": "2026-2036 Capital Forecast",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/2026-Capital-Forecast.pdf",
+          "archived": "files/archive/meetings/2026/2026-Capital-Forecast__60d900d0.pdf"
+        },
+        {
+          "label": "2026 Budget Draft Presentation",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf",
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__bb179862.pdf"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=OGlKpjmXUwM",
@@ -292,64 +340,68 @@
       "summary": "# Council Meeting Summary\n\n**Mar 3, 2026**\n\n## Key Decisions\n- Adopted the 2025 Audited Financial Statements for the Township\n- Approved the 2026-2036 Capital Forecast\n- Authorized preparation and circulation of a tender for the Bear Creek Road Culvert Project, including pricing for a pre-fabricated bridge option\n- Authorized the Mayor and Municipal Administrator to sign the Health and Safety Water Stream Grant Transfer Payment Agreement for culvert replacement projects on Bear Creek Road and South River Road\n- Approved accounts totaling $90,837.73 for payment\n- Passed By-Law No. 2026-09 to confirm the proceedings of this Council meeting\n- Donated $100 to the Powassan Maple Syrup Festival 2026\n- Authorized the Mayor to sign a Letter of Support for the Powassan & District Union Public Library's Ontario Trillium Foundation 2026 Capital Grant Application\n\n## Main Topics\n- **2025 Financial Review**: KPMG presented the year-end audit report and financial indicators. The Township's 2025 audited financial statements were reviewed and adopted.\n- **2026 Budget**: Council reviewed the draft 2026 municipal budget for both operating and capital expenses, with a proposed tax levy increase of 3.4% and a tax rate increase of 2.9%.\n- **Infrastructure Projects**: The Bear Creek Road and South River Road culvert replacement projects will move forward with grant funding secured through the Health and Safety Water Stream program.\n- **Committee Reports**: Council members reported on their activities with various boards and committees, including EMS, the library board, police services, and the home for the aged.\n\n## Notable Items\n- The Township successfully secured grant funding for culvert replacement projects on Bear Creek Road and South River Road\n- The 2026 tax levy is proposed to increase by 3.4%\n- Accounts approved for payment total $90,837.73\n- The Bear Creek Road Culvert Project will be tendered, with options to include a pre-fabricated bridge\n\n---\n*Next regular meeting: Mar 17, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-March-3-2026__8c701009.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-March-3-2026__dee55be4.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-March-3-2026__dee55be4.pdf",
+      "agenda_archived": "files/archive/meetings/2026/March-3-2026-Agenda__1df724cf.pdf"
     },
     {
       "date": "2026-02-17",
       "display_date": "Feb 17, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/February-17-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-17-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Feb-17-Council-Package.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/February-17-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-February-17-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-Februay-17-2026.pdf",
       "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=PHK0uaveLEk",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Feb 17, 2026**\n\n## Key Decisions\n- Approved purchase of a new John Deere 870 P wheeled grader from Brandt Tractor Ltd. for $570,650 plus a 5-year extended warranty for $35,737.87 (total $617,000 to be financed through RBC)\n- Agreed to increase Township of Nipissing's share of Powassan District Union Public Library levy from 20% to 22%, with Chisholm reducing from 20% to 18%\n- Passed resolution supporting Highway 11 and 17 safety improvements, urging Ontario and federal governments to implement enhanced driver education, increased enforcement, and \"2+1\" highway design\n- Approved accounts payable totaling $225,232.30\n- Adopted previous meeting minutes from February 3, 2026\n\n## Main Topics\n- **Highway Safety**: Council endorsed a regional resolution calling for serious action on the rising number of fatalities and serious collisions on Highways 11 and 17, requesting the province implement better driver education programs and road safety enforcement\n- **Library Funding**: Discussed cost-sharing arrangement for the shared public library with neighbouring municipalities, with Nipissing taking on additional responsibility based on usage and population data\n- **Equipment Purchase**: Approved financing for a new grader needed for township road maintenance and operations\n- **Department Reports**: Received updates from Fire/Emergency Services and Operations departments on 2025 activities, plus a review of the township's 10-year capital forecast and asset management plan\n\n## Notable Items\n- New grader will be financed over 5 years through RBC\n- Library levy adjustment takes effect following approval by all three member municipalities\n- Meeting was livestreamed on Township YouTube Channel for public access\n\n---\n*Next regular meeting: March 3, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-February-17-2026__c799854c.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Feb-17-Council-Package__b1dc3ab3.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Feb-17-Council-Package__b1dc3ab3.pdf",
+      "agenda_archived": "files/archive/meetings/2026/February-17-2026-Agenda__4181395f.pdf"
     },
     {
       "date": "2026-02-03",
       "display_date": "Feb 3, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/February-3-2026-Agenda-Amended.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Agenda-Package-February-3-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/February-3-2026-Agenda-Amended.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-February-3-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-February-3-2026.pdf",
       "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=zEZK_BNVS4I",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Feb 3, 2026**\n\n## Key Decisions\n- Approved January 20, 2026 meeting minutes\n- Passed By-Law 2026-04 to regulate vehicle parking across the township\n- Passed By-Law 2026-06 to enter into a Municipal Forest Fire Management Agreement\n- Authorized Mayor and Land Planning Administrator to sign Ontario Transfer Payment Agreement for $38,000 Pothole Prevention and Repair Program grant\n- Approved $11,768.40 in remaining pothole program funds toward Rocky Shore Drive Rehabilitation Project in 2026\n- Approved $18,920.00 (plus taxes) to Englobe for geotechnical report on Bear Creek Road culvert replacement project\n- Approved accounts totaling $118,856.18 from January 18, 27, and 28, 2026\n\n## Main Topics\n- **Road and Infrastructure Funding**: Council secured a $38,000 provincial grant for pothole prevention and repair. Remaining funds will support the Rocky Shore Drive rehabilitation work planned for 2026.\n- **Bear Creek Road Culvert Project**: Council accepted a proposal for a geotechnical report needed to plan the replacement of a multiplate culvert on Bear Creek Road, scheduled for 2026.\n- **Waste Management and Recycling**: Council endorsed a multi-municipality resolution supporting investigation into waste incineration and expanded recycling programs, working with Ontario municipalities and provincial/federal governments.\n- **Parking Regulations**: New by-law passed to establish vehicle parking rules across the township.\n- **Forest Fire Management**: Council formalized a Municipal Forest Fire Management Agreement.\n\n## Notable Items\n- $38,000 provincial grant received for pothole prevention and repair\n- $11,768.40 allocated to Rocky Shore Drive Rehabilitation in 2026\n- $18,920.00 cost for Bear Creek Road culvert geotechnical report\n- Closed session held from 7:01 p.m. to 7:38 p.m. to discuss personnel matter and property inquiry\n- Meeting livestreamed on Township of Nipissing YouTube Channel\n\n---\n*Next regular meeting: February 17, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-February-3-2026__eb23f140.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-February-3-2026__4c0dc02d.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-February-3-2026__4c0dc02d.pdf",
+      "agenda_archived": "files/archive/meetings/2026/February-3-2026-Agenda-Amended__c9c714e5.pdf"
     },
     {
       "date": "2026-01-20",
       "display_date": "Jan 20, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/January-20-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-20-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-January-20-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/January-20-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-January-20-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-January-20-2026.pdf",
       "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=aHJOVza17GM",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Jan 20, 2026**\n\n## Key Decisions\n- Approved minutes from the January 6, 2026 meeting\n- Passed a resolution supporting the Association of Municipalities of Ontario's recommendations on Ontario's Conservation Authority system changes, emphasizing local governance and 50-50 municipal funding\n- Approved $6,179.00 contract with AloeRoot Web Services to replace and update the Township website (using WordPress platform)\n- Approved $5,060.00 participation in the City of North Bay's Household Hazardous Waste Program for 2026\n- Authorized a tender process for replacement of the Township grader\n- Approved accounts totaling $120,880.96 from late December 2025 and early January 2026\n- Passed By-Law No. 2026-05 to confirm the proceedings of this meeting\n\n## Main Topics\n- **Conservation Authority changes**: Council expressed support for maintaining local control and decision-making as Ontario transforms its Conservation Authority system, and called for the province to fund transition costs and restore equal municipal funding partnerships.\n- **Website replacement**: The Township's current website platform has been discontinued and needs immediate replacement. Council approved hiring a web services company to rebuild it.\n- **Hazardous waste program**: Council agreed to continue participating in North Bay's program for collecting household hazardous waste from residents.\n- **Equipment procurement**: Council moved forward with replacing the Township grader through a public tender process.\n\n## Notable Items\n- Website replacement project to begin as soon as possible at a cost of $6,179.00 (plus taxes and exchange adjustments)\n- Household hazardous waste program cost: $5,060.00 for 2026\n- One agenda item (Item #8) was deferred to the February 3, 2026 meeting to allow for public comment\n- Meeting was held in person and livestreamed on the Township YouTube channel\n\n---\n*Next regular meeting: February 3, 2026*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2026/Minutes-January-20-2026__e087f32b.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-January-20-2026__0a034700.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-January-20-2026__0a034700.pdf",
+      "agenda_archived": "files/archive/meetings/2026/January-20-2026-Agenda__853abf5b.pdf"
     },
     {
       "date": "2026-01-06",
       "display_date": "Jan 6, 2026",
       "year": 2026,
       "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/January-6-2026-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-Package-January-6-2026.pdf",
+      "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/January-6-2026-Agenda.pdf",
+      "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-January-6-2026.pdf",
+      "package_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-January-6-2026.pdf",
       "extra_docs": [
         {
           "label": "2025 Financial Statements -KPMG",
@@ -381,7 +433,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-20-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-20-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-January-20-2026__e087f32b.pdf"
         },
         {
           "label": "Agenda Package",
@@ -393,7 +446,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-February-3-2026__eb23f140.pdf"
         },
         {
           "label": "Agenda Package",
@@ -405,7 +459,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-17-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-17-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-February-17-2026__c799854c.pdf"
         },
         {
           "label": "Agenda Package",
@@ -417,7 +472,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-3-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-3-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-March-3-2026__8c701009.pdf"
         },
         {
           "label": "Agenda Package",
@@ -429,7 +485,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-March-17-2026__32b54761.pdf"
         },
         {
           "label": "Agenda Package",
@@ -441,7 +498,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Minutes-April-7-2026.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Minutes-April-7-2026.pdf",
+          "archived": "files/archive/meetings/2026/Minutes-April-7-2026__9b24b11f.pdf"
         },
         {
           "label": "Agenda Package",
@@ -457,7 +515,8 @@
       "video_url": "https://www.youtube.com/watch?v=B-JeDGKD4GU",
       "title": "",
       "minutes_archived": "files/archive/meetings/2026/Minutes-January-6-2026__03b83fb3.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-January-6-2026__43ca2a68.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-January-6-2026__43ca2a68.pdf",
+      "agenda_archived": "files/archive/meetings/2026/January-6-2026-Agenda__e510f354.pdf"
     },
     {
       "date": "2025-12-16",
@@ -911,7 +970,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-21-2025-1.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-21-2025-1.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-January-21-2025-1__b1f4e834.pdf"
         },
         {
           "label": "Agenda Package",
@@ -923,7 +983,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-4-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-4-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-February-4-2025__d767468a.pdf"
         },
         {
           "label": "Agenda Package",
@@ -935,7 +996,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-18-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-18-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-February-18-2025__14c9dd8c.pdf"
         },
         {
           "label": "Agenda Package",
@@ -947,7 +1009,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-4-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-4-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-March-4-2025__25ebf6ba.pdf"
         },
         {
           "label": "Agenda Package",
@@ -959,7 +1022,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-18-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-18-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-March-18-2025__384fcebf.pdf"
         },
         {
           "label": "Agenda Package",
@@ -971,7 +1035,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Minutes-April-8-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Minutes-April-8-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-April-8-2025__ec4a1ef0.pdf"
         },
         {
           "label": "Agenda Package",
@@ -991,7 +1056,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-13-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-13-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-May-13-2025__bc66e1d4.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1003,7 +1069,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-27-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-27-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-May-27-2025__7f8123b5.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1015,7 +1082,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-10-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-10-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-June-10-2025__f134f822.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1027,7 +1095,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-24-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-24-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-June-24-2025__a71fad0a.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1039,7 +1108,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-July-15-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-July-15-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-July-15-2025__57ccd912.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1051,7 +1121,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/08/Minutes-August-12-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/08/Minutes-August-12-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-August-12-2025__05494aa0.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1063,7 +1134,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-2-2025-Special-Meeting.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-2-2025-Special-Meeting.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-September-2-2025-Special-Meeting__40320a74.pdf"
         },
         {
           "label": "Agenda",
@@ -1083,7 +1155,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-16-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-16-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-September-16-2025__dbd2b8de.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1095,7 +1168,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-October-7-2025__eee9a18c.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1107,7 +1181,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-28-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-28-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-October-28-2025__8235dd6b.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1119,7 +1194,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Minutes-November-18-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Minutes-November-18-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-November-18-2025__d23ab462.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1131,7 +1207,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-December-2-2025__e0dc6ab0.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1143,7 +1220,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-16-2025.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-16-2025.pdf",
+          "archived": "files/archive/meetings/2025/Minutes-December-16-2025__310af318.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1476,7 +1554,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-19-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-19-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-December-19-2024__893ab61e.pdf"
         },
         {
           "label": "info@nipissingtownship.com",
@@ -1948,7 +2027,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-10-2024-Special.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-10-2024-Special.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-January-10-2024-Special__29ef2f96.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1960,7 +2040,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-16-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-16-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-January-16-2024__2a57ef58.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1972,7 +2053,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-6-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-6-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-February-6-2024__32f47605.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1984,7 +2066,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-February-20-2024__44038141.pdf"
         },
         {
           "label": "Agenda Package",
@@ -1996,7 +2079,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-5-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-5-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-March-5-2024__cd488ad4.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2008,7 +2092,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-19-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-19-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-March-19-2024__b2a64561.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2020,7 +2105,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-2-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-2-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-April-2-2024__6082d42d.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2032,7 +2118,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-16-2024-Special.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-16-2024-Special.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-April-16-2024-Special__3a3aca79.pdf"
         },
         {
           "label": "Agenda",
@@ -2040,7 +2127,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-16-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-16-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-April-16-2024__4b6d988d.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2052,7 +2140,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf",
+          "archived": "files/archive/meetings/2024/Special-Meeting-Minutes-May-9-2024__cc8ede49.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2064,7 +2153,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-May-14-2024__6014a11b.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2076,7 +2166,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-28-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-28-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-May-28-2024__82c11162.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2088,7 +2179,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-4-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-4-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-June-4-2024__61280299.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2100,7 +2192,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-18-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-18-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-June-18-2024__d46097f0.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2112,7 +2205,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-July-16-2024__377c83ec.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2124,7 +2218,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Minutes-August-13-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Minutes-August-13-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-August-13-2024__7c06b534.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2136,7 +2231,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-3-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-3-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-September-3-2024__87ebf424.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2148,7 +2244,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-September-17-2024__35aef44a.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2160,7 +2257,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-1-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-1-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-October-1-2024__518f04a6.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2172,7 +2270,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-22-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-22-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-October-22-2024__8a349a35.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2184,7 +2283,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Minutes-November-12-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Minutes-November-12-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-November-12-2024__c9553a87.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2196,7 +2296,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-December-3-2024__f28810b3.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2208,7 +2309,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-17-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-17-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-December-17-2024__a8c96c88.pdf"
         },
         {
           "label": "Agenda Package",
@@ -2220,7 +2322,8 @@
         },
         {
           "label": "Minutes",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-19-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-19-2024.pdf",
+          "archived": "files/archive/meetings/2024/Minutes-December-19-2024__893ab61e.pdf"
         }
       ],
       "video_url": null,
