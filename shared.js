@@ -6,6 +6,41 @@ let ALL_MEETINGS = [];
 let ALL_DATA = [];
 let LAST_UPDATED = '';
 
+// --- Display policy -----------------------------------------------------------
+// Cutoffs and the archived-fallback resolver live here so every page (the
+// meetings list, the calendar, the detail page, search) behaves identically.
+const SITE_MIN_YEAR = 2022;    // hide pre-PDF-era meetings entirely
+const AGENDA_MIN_YEAR = 2026;  // only surface agenda links from 2026 on
+
+// In-repo archived files (minutes/agendas/extra docs) are committed under
+// docs/, but the site is served from the repo root, so they resolve at
+// docs/files/archive/... . Packages are stored as full GitHub Releases URLs.
+function archivedUrl(path) {
+  if (!path) return null;
+  if (/^https?:\/\//i.test(path)) return path;       // Releases URL, use as-is
+  return 'docs/' + String(path).replace(/^\/+/, ''); // in-repo copy under docs/
+}
+
+// Prefer the preserved archived copy (always reachable) and fall back to the
+// township's live URL only when nothing has been archived.
+function docUrl(meeting, kind) {
+  if (!meeting) return null;
+  const archived = meeting[kind + '_archived'];
+  if (archived) return archivedUrl(archived);
+  return meeting[kind + '_url'] || null;
+}
+
+function extraDocUrl(d) {
+  if (!d) return null;
+  if (d.archived) return archivedUrl(d.archived);
+  return d.url || null;
+}
+
+// Agendas are only shown from 2026 on, and only when a working link exists.
+function showAgenda(meeting) {
+  return Number(meeting && meeting.year) >= AGENDA_MIN_YEAR && !!docUrl(meeting, 'agenda');
+}
+
 function escHtml(str) {
   return String(str ?? '').replace(/[&<>"']/g, ch => ({
     '&': '&amp;',
@@ -79,9 +114,13 @@ function meetingTagClass(meeting) {
 
 function meetingDocPills(meeting) {
   const pills = [];
-  if (meeting?.agenda_url) pills.push(`<a href="${escHtml(meeting.agenda_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Agenda</a>`);
-  if (meeting?.minutes_url) pills.push(`<a href="${escHtml(meeting.minutes_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Minutes</a>`);
-  if (meeting?.package_url) pills.push(`<a href="${escHtml(meeting.package_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Package</a>`);
+  if (showAgenda(meeting)) {
+    pills.push(`<a href="${escHtml(docUrl(meeting, 'agenda'))}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Agenda</a>`);
+  }
+  const mu = docUrl(meeting, 'minutes');
+  if (mu) pills.push(`<a href="${escHtml(mu)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Minutes</a>`);
+  const pu = docUrl(meeting, 'package');
+  if (pu) pills.push(`<a href="${escHtml(pu)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Package</a>`);
   if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Video</a>`);
   return pills.join('');
 }
@@ -326,9 +365,11 @@ async function loadAllData() {
   const flatBoards = flattenBoards(boardsPayload);
   BOARDS = flatBoards.boards;
 
-  ALL_MEETINGS = [...MEETINGS, ...flatBoards.meetings].sort((a, b) =>
-    String(b.date || '').localeCompare(String(a.date || ''))
-  );
+  // Apply the PDF-era cutoff once, centrally — every list, the calendar, the
+  // detail lookup, and search all read from ALL_MEETINGS / ALL_DATA.
+  ALL_MEETINGS = [...MEETINGS, ...flatBoards.meetings]
+    .filter(m => Number(m.year) >= SITE_MIN_YEAR)
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 
   ALL_DATA = [...BYLAWS, ...RESOLUTIONS, ...ALL_MEETINGS];
 
