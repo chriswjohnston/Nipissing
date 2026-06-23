@@ -1,0 +1,13 @@
+# Large PDF download cache — working copies only.
+# Permanent archive lives in docs/files/archive and GitHub Releases.
+data/runtime/pdf_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets / OS cruft
+.env
+.DS_Store
