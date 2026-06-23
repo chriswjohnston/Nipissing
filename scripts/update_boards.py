@@ -36,8 +36,31 @@ CANONICAL_DIR = ROOT / "data" / "canonical"
 BOARDS_FILE = CANONICAL_DIR / "boards.json"
 
 HEADERS = {
-    "User-Agent": "nipissing-public-records/1.0 (board updater)"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    )
 }
+
+
+def fetch_html(url: str, timeout: int = 30) -> str:
+    """Fetch a page, tolerating the township's trailing-slash changes.
+    Tries the URL as given, then with the slash toggled. Raises only if all fail."""
+    candidates = [url, url.rstrip("/") if url.endswith("/") else url + "/"]
+    last_exc: Optional[Exception] = None
+    for candidate in candidates:
+        try:
+            resp = requests.get(candidate, headers=HEADERS,
+                                timeout=timeout, allow_redirects=True)
+            resp.raise_for_status()
+            return resp.text
+        except requests.exceptions.HTTPError as e:
+            last_exc = e
+            if e.response is not None and e.response.status_code == 404:
+                continue          # try the other slash form
+            raise                 # 500/etc. is a real failure, surface it
+    raise last_exc
+
 
 TODAY = date.today()
 
@@ -282,10 +305,7 @@ def extract_meetings_from_content(content: Tag, board: Dict[str, str]) -> List[D
 
 def scrape_board(board: Dict[str, str]) -> List[Dict[str, Any]]:
     print(f"Scraping {board['name']} ...")
-    resp = requests.get(board["url"], headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-
-    soup = BeautifulSoup(resp.text, "html.parser")
+    soup = BeautifulSoup(fetch_html(board["url"]), "html.parser")
     content = (
         soup.find("div", class_=re.compile(r"entry-content|post-content"))
         or soup.find("article")
@@ -426,7 +446,11 @@ def main() -> None:
 
     scraped_boards = []
     for board in BOARDS:
-        meetings = scrape_board(board)
+        try:
+            meetings = scrape_board(board)
+        except Exception as e:
+            print(f"  ✗ {board['name']} failed ({e}) — keeping stored canonical data")
+            continue  # merge_canonical carries the existing board forward untouched
         scraped_boards.append({
             "id": board["id"],
             "name": board["name"],
