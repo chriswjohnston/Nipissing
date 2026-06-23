@@ -34,6 +34,8 @@ import fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 
+from archive import mirror
+
 BASE_URL    = "https://nipissingtownship.com"
 BYLAWS_PAGE = f"{BASE_URL}/municipal-information/by-laws/"
 
@@ -890,6 +892,23 @@ def merge_resolutions(
 
 
 # ─────────────────────────────────────────────────────────────────────
+# Step 4b: mirror township-hosted by-law PDFs into the archive
+# ─────────────────────────────────────────────────────────────────────
+
+def archive_bylaw_pdfs(bylaws: List[Dict[str, Any]]) -> None:
+    """Mirror any by-law pdf_url that is still hosted on the township site.
+    Locally-extracted pdf_urls (relative paths) are skipped automatically."""
+    print("\n═══ Step 4: Mirroring By-Law PDFs ═══")
+    mirrored = 0
+    for b in bylaws:
+        got = mirror(b.get("pdf_url"), "bylaws", b.get("year"))
+        if got:
+            b["pdf_url_archived"] = got
+            mirrored += 1
+    print(f"  Mirrored {mirrored} township-hosted by-law PDF(s)")
+
+
+# ─────────────────────────────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────────────────────────────
 
@@ -918,6 +937,9 @@ def main() -> None:
 
     final_bylaws      = merge_bylaws(existing_bylaws, [page_bylaws, minutes_bylaws])
     final_resolutions = merge_resolutions(existing_resolutions, minutes_resolutions)
+
+    # Mirror township-hosted by-law PDFs into the archive before saving.
+    archive_bylaw_pdfs(final_bylaws)
 
     # Step 5: council term stats — fully automatic, no manual updates needed
     write_term_stats(final_resolutions, meetings)
