@@ -505,6 +505,11 @@ function renderUpcomingList(){
   list.innerHTML = meetings.length ? meetings.map(m => {
   const day = String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2,'0');
 
+  // Archived-first doc URLs; agendas only surface from 2026 on (shared.js).
+  const agendaLink  = showAgenda(m) ? docUrl(m, 'agenda') : null;
+  const minutesLink = docUrl(m, 'minutes');
+  const packageLink = docUrl(m, 'package');
+
   return `
     <div class="upcoming-item">
       <div class="upcoming-date">${escHtml(day)}</div>
@@ -516,9 +521,9 @@ function renderUpcomingList(){
       </div>
 
       <div class="upcoming-links">
-        ${m.agenda_url ? `<a href="${escHtml(m.agenda_url)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
-        ${m.minutes_url ? `<a href="${escHtml(m.minutes_url)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
-        ${m.package_url ? `<a href="${escHtml(m.package_url)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
+        ${agendaLink ? `<a href="${escHtml(agendaLink)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
+        ${minutesLink ? `<a href="${escHtml(minutesLink)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
+        ${packageLink ? `<a href="${escHtml(packageLink)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
       </div>
     </div>
   `;
