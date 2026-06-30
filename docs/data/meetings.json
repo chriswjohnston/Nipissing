@@ -134,12 +134,13 @@
       "title": "",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
       "minutes_url": null,
-      "package_url": null,
+      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Sp-Council-Meeting-June-3026.pdf",
       "extra_docs": [],
       "video_url": null,
       "summary": null,
       "cancelled": false,
-      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__d981e769.pdf"
+      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__d981e769.pdf",
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf"
     },
     {
       "date": "2026-06-30",
