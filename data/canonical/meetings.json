@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "source": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/",
   "meetings": [
     {
@@ -135,14 +135,15 @@
       "meeting_type": "Regular",
       "title": "",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
-      "minutes_url": null,
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-30-2026-Special.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Sp-Council-Meeting-June-3026.pdf",
       "extra_docs": [],
       "video_url": null,
-      "summary": null,
+      "summary": "# Council Meeting Summary\n\n**Jun 30, 2026**\n\n## Key Decisions\n- Awarded the Bear Creek Bridge and Abutment Construction tender (NIP-PW-10-2026) to Degagne Aggregates\n- Passed By-Law No. 2026-28 to confirm the proceedings of this council meeting\n\n## Main Topics\n- Bridge construction project: Council selected a contractor for the Bear Creek Bridge and Abutment Construction work following a tender process\n\n## Notable Items\n- This was a special meeting held in person at the Township Community Centre and livestreamed\n- The meeting was very brief, lasting only 5 minutes (10:00 a.m. to 10:05 a.m.)\n- No conflicts of interest were declared by council members\n\n---\n*Next regular meeting: July 14, 2026*",
       "cancelled": false,
       "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__d981e769.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf",
+      "minutes_archived": "files/archive/meetings/2026/Minutes-June-30-2026-Special__8a127dbe.pdf"
     },
     {
       "date": "2026-06-30",

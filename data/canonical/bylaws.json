@@ -1,7 +1,22 @@
 {
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
+    {
+      "number": "2026-28",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on June 30, 2026",
+      "date_passed": "2026-06-30",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2026-06-30",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Sp-Council-Meeting-June-3026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-30-2026-Special.pdf",
+      "summary": null
+    },
     {
       "number": "2026-27",
       "year": 2026,
