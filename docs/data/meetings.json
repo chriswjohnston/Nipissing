@@ -119,13 +119,14 @@
       "meeting_type": "Regular",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/July-14-2026-Agenda.pdf",
       "minutes_url": null,
-      "package_url": null,
+      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026-2.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": null,
       "summary": null,
       "cancelled": false,
-      "agenda_archived": "files/archive/meetings/2026/July-14-2026-Agenda__b9fbdf53.pdf"
+      "agenda_archived": "files/archive/meetings/2026/July-14-2026-Agenda__b9fbdf53.pdf",
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-July-14-2026-2__5c1bf541.pdf"
     },
     {
       "date": "2026-06-30",
