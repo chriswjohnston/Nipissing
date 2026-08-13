@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "current": {
     "id": "2022-2026",
     "label": "2022–2026 Council",
     "start": "2022-11-15",
     "end": null,
     "first_meeting_of_next_term": null,
-    "total": 977,
-    "carried": 953,
+    "total": 988,
+    "carried": 964,
     "defeated": 3,
     "deferred": 0,
-    "meetings_counted": 84,
-    "last_meeting": "2026-07-14",
+    "meetings_counted": 85,
+    "last_meeting": "2026-08-11",
     "slot": "current"
   },
   "last": {
@@ -36,12 +36,12 @@
       "start": "2022-11-15",
       "end": null,
       "first_meeting_of_next_term": null,
-      "total": 977,
-      "carried": 953,
+      "total": 988,
+      "carried": 964,
       "defeated": 3,
       "deferred": 0,
-      "meetings_counted": 84,
-      "last_meeting": "2026-07-14",
+      "meetings_counted": 85,
+      "last_meeting": "2026-08-11",
       "slot": "current"
     },
     {
