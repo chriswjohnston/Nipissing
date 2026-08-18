@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-18",
   "source": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/",
   "meetings": [
     {
@@ -99,6 +99,21 @@
       "video_url": null,
       "summary": null,
       "cancelled": false
+    },
+    {
+      "date": "2026-08-20",
+      "display_date": "Aug 20, 2026",
+      "year": 2026,
+      "meeting_type": "Regular",
+      "title": "",
+      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/August-20-2026-Special-Meeting-Agenda.pdf",
+      "minutes_url": null,
+      "package_url": null,
+      "extra_docs": [],
+      "video_url": null,
+      "summary": null,
+      "cancelled": false,
+      "agenda_archived": "files/archive/meetings/2026/August-20-2026-Special-Meeting-Agenda__82293375.pdf"
     },
     {
       "date": "2026-08-11",
