@@ -1,7 +1,22 @@
 {
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
+    {
+      "number": "2026-34",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on September 1, 2026",
+      "date_passed": "2026-09-01",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2026-09-01",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/SEPT-1-AGENDA-PACKAGE.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Minutes-September-1-2026.pdf",
+      "summary": null
+    },
     {
       "number": "2026-33",
       "year": 2026,
