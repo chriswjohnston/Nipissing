@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-16",
   "source": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/",
   "meetings": [
     {
@@ -78,15 +78,16 @@
       "year": 2026,
       "meeting_type": "Regular",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/September-15-2026-Agenda-2.pdf",
-      "minutes_url": null,
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Minutes-September-15-2026.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Agenda-Package-Sept-15-2026.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": null,
-      "summary": null,
+      "summary": "# Council Meeting Summary\n\n**Sep 15, 2026**\n\n## Key Decisions\n- Approved Bear Creek Road Bridge Paving contract with Miller Paving Limited for $49,485.39\n- Authorized the Municipal Administrator to sign an agreement with Ontario's Ministry of Natural Resources to share the Township's road network data for the Ontario Road Network\n- Approved the Fall Newsletter for public circulation\n- Approved accounts totaling $134,398.35 dated September 9, 2026\n- Authorized Mayor Yemm, Councillors Chalapenko, Kirkey and Scott, and Deputy Treasurer Kim Turnbull to attend the District of Parry Sound Municipal Association Fall meeting\n- Passed By-Law No. 2026-35 to confirm the proceedings of this Council meeting\n- Received correspondence report\n\n## Main Topics\n- **Bridge paving project**: Council awarded a tender for paving work on Bear Creek Road to Miller Paving Limited.\n- **Provincial data sharing**: The Township agreed to share its road network data with the Province of Ontario to support the Ontario Road Network initiative.\n- **Municipal communications**: Council approved the Fall Newsletter to be sent to residents.\n- **Human Resources matter**: Council held a closed session to discuss a personnel issue (details not disclosed in public minutes).\n- **Provincial consultation**: Council provided feedback to the Ministry of Municipal Affairs and Housing on a request received September 10, 2026.\n\n## Notable Items\n- Bear Creek Road Bridge Paving project cost: $49,485.39 (including taxes)\n- Monthly accounts approved: $134,398.35\n- Closed session held from 6:58 p.m. to 7:18 p.m. for a confidential HR matter\n- Council meeting livestreamed on Township of Nipissing YouTube Channel\n\n---\n*Next regular meeting: October 6, 2026*",
       "cancelled": false,
       "agenda_archived": "files/archive/meetings/2026/September-15-2026-Agenda__7cd6e0d7.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-15-2026__249dcc07.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-15-2026__249dcc07.pdf",
+      "minutes_archived": "files/archive/meetings/2026/Minutes-September-15-2026__340c1277.pdf"
     },
     {
       "date": "2026-09-01",
