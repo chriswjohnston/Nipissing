@@ -14,7 +14,10 @@ from archive import mirror_record
 import youtube
 
 
-URL = "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/"
+URL = "https://nipissingtownship.com/council/council-meeting-dates-agendas-minutes/"
+# The pre-redesign address still served the same page in Oct 2026; kept as a
+# fallback in case the new one moves again.
+FALLBACK_URLS = ["https://nipissingtownship.com/council-meeting-dates-agendas-minutes/"]
 OUT = Path("data/canonical/meetings.json")
 
 DATE_RE = re.compile(
@@ -131,6 +134,11 @@ def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
             meetings_raw.append(dict(current))
         current = None
 
+    # Text seen since the last meeting started, within the current line.
+    # "Special Meeting*" sits in its own <strong> just BEFORE the date, so the
+    # date's own text never contained the word "special".
+    pending: List[str] = []
+
     def start_meeting(month: str, day: str, year: str, context_text: str = "") -> None:
         nonlocal current
         flush()
@@ -141,6 +149,9 @@ def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
         )
 
         meeting_type, cancelled = flags_from_context(context_text)
+        if meeting_type == "Regular" and "special" in " ".join(pending).lower():
+            meeting_type = "Special"
+        pending.clear()
 
         current = {
             "date": dt.strftime("%Y-%m-%d"),
@@ -159,10 +170,18 @@ def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
 
         if isinstance(node, NavigableString):
             text = str(node)
+            last_end = 0
             for dm in DATE_RE.finditer(text):
+                pending.append(text[last_end:dm.start()])
                 start_meeting(dm.group(1), dm.group(2), dm.group(3), text)
+                last_end = dm.end()
+            pending.append(text[last_end:])
 
         elif isinstance(node, Tag):
+            if node.name in ("br", "li", "tr", "p"):
+                pending.clear()          # new line: earlier text can't apply
+            if node.name == "br":
+                return
             if node.name == "a":
                 if current:
                     href = node.get("href")
@@ -191,6 +210,7 @@ def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
     for el in content.find_all(["p", "li", "div", "tr"]):
         text = el.get_text(" ", strip=True)
         if DATE_RE.search(text) or el.find("a"):
+            pending.clear()
             walk(el)
 
     flush()
@@ -258,6 +278,28 @@ def merge_meetings(scraped: List[Dict[str, Any]], existing: List[Dict[str, Any]]
         else:
             final_map[k] = m
 
+    # Older runs missed the "Special Meeting*" label and stored special
+    # meetings as Regular (e.g. 2026-06-30, 2026-08-20). When the page now
+    # lists a date ONLY as Special, fold the stale Regular record into it
+    # (keeping its summary, video, archived copies) instead of carrying a
+    # duplicate. Dates with a genuine Regular + Special pair are untouched.
+    scraped_keys = {meeting_key(m) for m in scraped}
+    for (d, t) in list(scraped_keys):
+        if t != "Special" or (d, "Regular") in scraped_keys:
+            continue
+        stale = existing_map.pop((d, "Regular"), None)
+        if not stale:
+            continue
+        target = final_map[(d, "Special")]
+        for f, v in stale.items():
+            if f in ("meeting_type", "cancelled"):
+                continue
+            if f == "extra_docs":
+                target["extra_docs"] = unique_extra_docs((target.get("extra_docs") or []) + (v or []))
+            elif not target.get(f) and v:
+                target[f] = v
+        print(f"  {d}: folded stale Regular record into Special")
+
     for k, old in existing_map.items():
         if k not in final_map:
             final_map[k] = old
@@ -270,8 +312,17 @@ def merge_meetings(scraped: List[Dict[str, Any]], existing: List[Dict[str, Any]]
 def main() -> None:
     print("Fetching meetings...")
 
-    res = requests.get(URL, timeout=30)
-    res.raise_for_status()
+    res = None
+    for url in [URL] + FALLBACK_URLS:
+        try:
+            res = requests.get(url, timeout=30)
+            res.raise_for_status()
+            break
+        except requests.RequestException as e:
+            print(f"  WARN: {url} failed ({e})")
+            res = None
+    if res is None:
+        raise RuntimeError("Council meetings page unreachable at all known URLs")
 
     soup = BeautifulSoup(res.text, "html.parser")
     content = (

@@ -37,7 +37,7 @@ from bs4 import BeautifulSoup
 from archive import mirror
 
 BASE_URL    = "https://nipissingtownship.com"
-BYLAWS_PAGE = f"{BASE_URL}/municipal-information/by-laws/"
+BYLAWS_PAGE = f"{BASE_URL}/by-law/by-laws/"   # moved in the 2026 site redesign
 
 ROOT               = Path(__file__).resolve().parents[1]
 CANONICAL_DIR      = ROOT / "data" / "canonical"
@@ -345,6 +345,51 @@ def clean_title(title: str) -> str:
     return title
 
 
+# Older runs clipped text with a trailing "..." (by-laws at 180 chars,
+# resolution headlines at 140). Full wording is now always stored; these
+# helpers let the merge replace a clipped value with the full one.
+def is_clipped(text: Optional[str]) -> bool:
+    return bool(text) and text.rstrip().endswith(("...", "…"))
+
+
+def unclipped_prefix(text: str) -> str:
+    return text.rstrip().rstrip(".…").rstrip().lower()
+
+
+def is_fuller_version(old: Optional[str], new: Optional[str]) -> bool:
+    """True when `old` is a clipped copy of `new`."""
+    if not is_clipped(old) or not new or is_clipped(new):
+        return False
+    return new.lower().startswith(unclipped_prefix(old)) and len(new) > len(unclipped_prefix(old))
+
+
+def headline(text: str, limit: int = 160) -> str:
+    """Short display headline for list cards; cut on a word boundary.
+    The full wording is always kept separately (motion_text)."""
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + "…"
+
+
+# Running page headers in minutes PDFs, e.g. "Minutes – August 11, 2026 – Page 2".
+# Without this they land inside any motion that crosses a page break.
+PAGE_HEADER_RE = re.compile(
+    r"^\s*Minutes\s*[–—-].{0,40}?[–—-]\s*Page\s+\d+\s*$",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+# Same header once whitespace is collapsed into stored motion_text.
+INLINE_HEADER_RE = re.compile(
+    r"Minutes\s*[–—-][^.]{0,40}?[–—-]\s*Page\s+\d+", re.IGNORECASE)
+
+
+def strip_page_headers(text: str) -> str:
+    return PAGE_HEADER_RE.sub("", text or "")
+
+
 def parse_year(number: str, href: str = "") -> Optional[int]:
     number = normalize_number(number)
     m = re.match(r"^(\d{4})-\d{1,3}$", number)
@@ -432,8 +477,22 @@ def write_page_range_pdf(
 # ─────────────────────────────────────────────────────────────────────
 
 def scrape_bylaws_page() -> List[Dict[str, Any]]:
+    """
+    2026 layout: one table per category, each under a bold heading.
+    Columns: By-Law Number (linked to the PDF) | By-Law Name | Department.
+    The page is a subset ("complete list available at the Municipal Office"),
+    so it only ever adds to the archive. The short page name is stored as
+    `common_name`; the formal "being a By-law to ..." wording from minutes
+    stays in `title`.
+    Falls back to the old "2022-42 Dog By-Law" link-text format if no
+    table rows are found.
+    """
     print("\n═══ Step 1: By-Laws Page ═══")
-    soup    = fetch_page(BYLAWS_PAGE)
+    try:
+        soup = fetch_page(BYLAWS_PAGE)
+    except Exception as e:
+        print(f"  WARN: by-laws page unavailable ({e}) — skipping")
+        return []
     content = (
         soup.find("div", class_=re.compile(r"entry-content|post-content"))
         or soup.find("article")
@@ -443,34 +502,18 @@ def scrape_bylaws_page() -> List[Dict[str, Any]]:
     if content is None:
         return []
 
-    bylaws: List[Dict[str, Any]] = []
-    seen = set()
-
-    for a in content.find_all("a", href=True):
-        text = a.get_text(" ", strip=True)
-        href = a.get("href", "").strip()
-        if not text:
-            continue
-        m = NUMBER_TITLE_RE.match(text)
-        if not m:
-            continue
-        number = normalize_number(m.group(1))
-        if number in seen:
-            continue
-        seen.add(number)
-
-        title    = clean_title(m.group(2))
+    def record(number: str, name: str, href: str, category: Optional[str]) -> Dict[str, Any]:
         full_url = urljoin(BASE_URL, href)
         pdf_url  = full_url if full_url.lower().endswith((".pdf", ".doc", ".docx")) else None
-        page_url = None if pdf_url else full_url
-
-        bylaws.append({
+        return {
             "number":             number,
             "year":               parse_year(number, href=full_url),
-            "title":              title,
+            "title":              name or f"By-Law {number}",
+            "common_name":        name or None,
+            "categories":         [category] if category else [],
             "date_passed":        None,
             "pdf_url":            pdf_url,
-            "page_url":           page_url,
+            "page_url":           None if pdf_url else full_url,
             "source":             "bylaws_page",
             "status":             "approved",
             "votes":              None,
@@ -478,9 +521,49 @@ def scrape_bylaws_page() -> List[Dict[str, Any]]:
             "agenda_package_url": None,
             "minutes_url":        None,
             "summary":            None,
-        })
+        }
 
+    found: Dict[str, Dict[str, Any]] = {}
+
+    # ── Table layout ────────────────────────────────────────────────
+    for table in content.find_all("table"):
+        heading = table.find_previous(["h2", "h3", "h4", "strong", "b"])
+        category = clean_title(heading.get_text(" ", strip=True)).rstrip(":") if heading else None
+        for tr in table.find_all("tr"):
+            cells = tr.find_all(["td", "th"])
+            if len(cells) < 2:
+                continue
+            a = cells[0].find("a", href=True)
+            nm = BYLAW_NUM_RE.search(cells[0].get_text(" ", strip=True))
+            if not a or not nm:
+                continue                      # header row ("By-Law Number")
+            number = normalize_number(nm.group(1))
+            name   = clean_title(cells[1].get_text(" ", strip=True))
+            if number in found:
+                b = found[number]
+                if category and category not in b["categories"]:
+                    b["categories"].append(category)
+                alt = urljoin(BASE_URL, a["href"])
+                if alt != b.get("pdf_url"):
+                    # e.g. 2024-07 is listed twice with two different files.
+                    b.setdefault("extra_docs", []).append({"label": name or "Document", "url": alt})
+                continue
+            found[number] = record(number, name, a["href"], category)
+
+    # ── Old link-text layout (fallback) ──────────────────────────────
+    if not found:
+        for a in content.find_all("a", href=True):
+            m = NUMBER_TITLE_RE.match(a.get_text(" ", strip=True) or "")
+            if not m:
+                continue
+            number = normalize_number(m.group(1))
+            if number not in found:
+                found[number] = record(number, clean_title(m.group(2)), a["href"], None)
+
+    bylaws = list(found.values())
     print(f"  Found {len(bylaws)} by-law(s) on listing page")
+    if not bylaws:
+        print("  WARN: zero by-laws parsed — the page layout may have changed again")
     return bylaws
 
 
@@ -541,9 +624,7 @@ def parse_bylaws_from_minutes(
         )
         title = None
         if tm:
-            title = clean_title(tm.group(1))
-            if len(title) > 180:
-                title = title[:177] + "..."
+            title = clean_title(tm.group(1))   # full wording, never clipped
 
         status = "approved" if re.search(r'\bCarried\b', body, re.IGNORECASE) else "pending"
         votes  = f"Moved by {mover}, Seconded by {seconder}" if mover and seconder else None
@@ -623,7 +704,7 @@ def parse_resolutions_from_minutes(
             motion_text, re.IGNORECASE,
         )
         bylaw_number = normalize_number(bylaw_match.group(1)) if bylaw_match else None
-        title        = motion_text[:137] + "..." if len(motion_text) > 140 else motion_text
+        title        = headline(motion_text)   # full text lives in motion_text
         votes        = f"Moved by {mover}, Seconded by {seconder}" if mover and seconder else None
 
         results.append({
@@ -674,10 +755,19 @@ def parse_all_minutes(
             continue
         seen_urls.add(minutes_url)
 
-        pdf_path = download_pdf(minutes_url, DOWNLOAD_CACHE_DIR / "minutes")
+        # Prefer our archived copy: the township deletes old minutes, and
+        # the archive is the only way to re-read them.
+        pdf_path = None
+        archived = meeting.get("minutes_archived")
+        if archived and not archived.startswith("http"):
+            local = DOCS_DIR / archived
+            if local.exists():
+                pdf_path = local
+        if pdf_path is None:
+            pdf_path = download_pdf(minutes_url, DOWNLOAD_CACHE_DIR / "minutes")
         if not pdf_path:
             continue
-        text = extract_pdf_text(pdf_path)
+        text = strip_page_headers(extract_pdf_text(pdf_path))
         if not text or len(text.strip()) < 100:
             print(f"  WARN: no text from minutes {meeting['date']}")
             continue
@@ -824,6 +914,24 @@ def merge_bylaw(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]
             and new.get("title")
             and not new["title"].startswith("By-Law ")):
         out["title"] = new["title"]
+    # Replace a title clipped by older runs with the full wording.
+    if is_fuller_version(out.get("title"), new.get("title")):
+        out["title"] = new["title"]
+    # Fields from the by-laws page that minutes never provide.
+    if new.get("common_name") and not out.get("common_name"):
+        out["common_name"] = new["common_name"]
+    if new.get("categories"):
+        out["categories"] = sorted(set(out.get("categories") or []) | set(new["categories"]))
+    if new.get("extra_docs"):
+        seen = {d.get("url") for d in out.get("extra_docs") or []}
+        out["extra_docs"] = (out.get("extra_docs") or []) + [
+            d for d in new["extra_docs"] if d.get("url") not in seen]
+    # A placeholder or short page name gives way to the formal wording from
+    # minutes when the minutes are parsed later.
+    if (new.get("source") == "minutes" and new.get("title")
+            and out.get("source") == "bylaws_page"
+            and out.get("title") == out.get("common_name")):
+        out["title"] = new["title"]
     if out.get("status") == "pending" and new.get("status") in ("approved", "defeated"):
         out["status"] = new["status"]
     if not out.get("date_passed") and new.get("date_passed"):
@@ -865,6 +973,16 @@ def merge_resolution(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str,
     ):
         if not out.get(key) and new.get(key) is not None:
             out[key] = new[key]
+    # Headlines clipped at 140 chars by older runs: rebuild from the full
+    # motion text (which was never clipped).
+    if is_clipped(out.get("title")) and out.get("motion_text"):
+        out["title"] = headline(out["motion_text"])
+    # Motion text that picked up a page header mid-sentence: take the clean
+    # re-parse when it is the same motion.
+    if (new.get("motion_text") and out.get("motion_text")
+            and INLINE_HEADER_RE.search(out["motion_text"])
+            and not INLINE_HEADER_RE.search(new["motion_text"])):
+        out["motion_text"] = new["motion_text"]
     return out
 
 
@@ -884,6 +1002,11 @@ def merge_resolutions(
         idx[num] = merge_resolution(idx[num], r) if num in idx else deepcopy(r)
 
     out = list(idx.values())
+    # Records not re-parsed this run (e.g. from deleted minutes) still get
+    # their clipped headline rebuilt from the full motion text.
+    for r in out:
+        if is_clipped(r.get("title")) and r.get("motion_text"):
+            r["title"] = headline(r["motion_text"])
     out.sort(
         key=lambda r: (r.get("meeting_date") or "", r.get("number") or ""),
         reverse=True,
