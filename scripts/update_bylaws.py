@@ -712,6 +712,7 @@ def parse_resolutions_from_minutes(
             "title":              title,
             "motion_text":        motion_text,
             "meeting_date":       meeting["date"],
+            "meeting_type":       meeting.get("meeting_type", "Regular"),
             "minutes_url":        meeting.get("minutes_url"),
             "status":             status,
             "votes":              votes,
@@ -914,6 +915,13 @@ def merge_bylaw(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]
             and new.get("title")
             and not new["title"].startswith("By-Law ")):
         out["title"] = new["title"]
+    # Old backfill dates like "2024-12-17-special": a fresh minutes parse wins.
+    iso = re.compile(r"\d{4}-\d{2}-\d{2}")
+    if (new.get("meeting_date") and iso.fullmatch(new["meeting_date"])
+            and not iso.fullmatch(out.get("meeting_date") or "")):
+        for f in ("meeting_date", "date_passed", "minutes_url", "agenda_package_url"):
+            if new.get(f):
+                out[f] = new[f]
     # Replace a title clipped by older runs with the full wording.
     if is_fuller_version(out.get("title"), new.get("title")):
         out["title"] = new["title"]
@@ -973,6 +981,23 @@ def merge_resolution(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str,
     ):
         if not out.get(key) and new.get(key) is not None:
             out[key] = new[key]
+    # An old backfill tagged dates like "2025-09-02-special" — and on that day
+    # the tags were reversed. A fresh parse of the minutes is authoritative.
+    if (new.get("meeting_date") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", new["meeting_date"])
+            and out.get("meeting_date") != new["meeting_date"]
+            and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", out.get("meeting_date") or "")):
+        out["meeting_date"] = new["meeting_date"]
+        for f in ("minutes_url", "agenda_package_url"):
+            if new.get(f):
+                out[f] = new[f]
+    if new.get("meeting_type"):
+        out["meeting_type"] = new["meeting_type"]
+    # Motion text cut short by an old backfill (e.g. at 500 chars): take the
+    # full re-parse when it is the same motion, only longer.
+    old_mt, new_mt = out.get("motion_text") or "", new.get("motion_text") or ""
+    if len(new_mt) > len(old_mt) and new_mt.lower().startswith(old_mt.rstrip(" .…").lower()[:200]):
+        out["motion_text"] = new_mt
+        out["title"] = headline(new_mt)
     # Headlines clipped at 140 chars by older runs: rebuild from the full
     # motion text (which was never clipped).
     if is_clipped(out.get("title")) and out.get("motion_text"):

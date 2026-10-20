@@ -21,6 +21,7 @@ Two ways a video gets matched to a meeting:
 """
 
 import json
+import os
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -61,6 +62,9 @@ BODY_KEYWORDS = [
     ("museum", "museum"),
     ("recreation", "recreation"),
     ("cemetery", "cemetery"),
+    # Not tracked on the site, but labelling it keeps these videos out of
+    # the untitled-stream fallback.
+    ("adjustment", "adjustment"),
 ]
 NOT_COUNCIL = ("committee", "board", "adjustment", "conservation", "library", "planning")
 
@@ -139,6 +143,62 @@ def _import_legacy(cache: Dict[str, Dict[str, Any]]) -> None:
             }
 
 
+def _record(title: str, url: str, published: Optional[str]) -> Dict[str, Any]:
+    return {
+        "url": url,
+        "title": title,
+        "published": published or None,
+        "local_date": _local_date(published) if published else None,
+        "title_date": title_date(title),
+        "body": classify_body(title),
+        "special": "special" in (title or "").lower(),
+    }
+
+
+def backfill_from_api(cache: Dict[str, Dict[str, Any]]) -> int:
+    """
+    Optional: page through the channel's whole upload history with the
+    YouTube Data API (needs a free API key in the YOUTUBE_API_KEY secret).
+    The RSS feed only ever shows the 15 newest uploads, so anything that
+    scrolled off before the cache existed can only be recovered this way.
+    Costs ~1 quota unit per 50 videos (daily free quota is 10,000).
+    """
+    key = os.environ.get("YOUTUBE_API_KEY", "").strip()
+    if not key:
+        return 0
+    playlist = "UU" + CHANNEL_ID[2:]          # the channel's "uploads" playlist
+    added, token, pages = 0, None, 0
+    try:
+        while pages < 40:
+            params = {"part": "snippet,contentDetails", "playlistId": playlist,
+                      "maxResults": 50, "key": key}
+            if token:
+                params["pageToken"] = token
+            r = requests.get("https://www.googleapis.com/youtube/v3/playlistItems",
+                             params=params, timeout=20)
+            r.raise_for_status()
+            data = r.json()
+            pages += 1
+            for item in data.get("items", []):
+                sn = item.get("snippet", {})
+                vid = (sn.get("resourceId") or {}).get("videoId")
+                if not vid or vid in cache:
+                    continue
+                published = (item.get("contentDetails") or {}).get("videoPublishedAt") \
+                    or sn.get("publishedAt")
+                cache[vid] = _record(sn.get("title", ""),
+                                     f"https://www.youtube.com/watch?v={vid}", published)
+                added += 1
+            token = data.get("nextPageToken")
+            if not token:
+                break
+        print(f"  API backfill: {added} older video(s) added ({pages} page(s))")
+    except Exception as ex:
+        # Never log the URL: it contains the key.
+        print(f"  Warning: YouTube API backfill failed ({type(ex).__name__})")
+    return added
+
+
 def refresh() -> Dict[str, Dict[str, Any]]:
     """Read the RSS feed, merge into the cache, save, and return the cache."""
     cache: Dict[str, Dict[str, Any]] = _load(CACHE, {})
@@ -162,15 +222,7 @@ def refresh() -> Dict[str, Dict[str, Any]]:
             if not vid or not url:
                 continue
 
-            rec = {
-                "url": url,
-                "title": title,
-                "published": published or None,
-                "local_date": _local_date(published) if published else None,
-                "title_date": title_date(title),
-                "body": classify_body(title),
-                "special": "special" in title.lower(),
-            }
+            rec = _record(title, url, published)
             new = vid not in cache
             # Refresh metadata (titles sometimes get edited after a stream);
             # the URL for a given video ID never changes.
@@ -183,6 +235,12 @@ def refresh() -> Dict[str, Dict[str, Any]]:
         # Transient: keep the cache, never wipe it.
         print(f"  Warning: could not read YouTube RSS: {ex}")
 
+    backfill_from_api(cache)
+    # Re-classify everything with the current rules (e.g. a new body keyword).
+    for v in cache.values():
+        if v.get("title"):            # legacy entries may lack a title
+            v["body"] = classify_body(v["title"])
+            v["title_date"] = title_date(v["title"]) or v.get("title_date")
     _save(CACHE, cache)
     print(f"  {len(cache)} cached ({len(cache) - before} new)")
     return cache
@@ -192,8 +250,13 @@ def labelled(cache: Dict[str, Dict[str, Any]], body: str) -> Dict[str, List[Dict
     """{iso_date: [video, ...]} for videos whose title names this body and a date."""
     out: Dict[str, List[Dict[str, Any]]] = {}
     for v in cache.values():
-        if v.get("body") == body and v.get("title_date"):
-            out.setdefault(v["title_date"], []).append(v)
+        if v.get("body") != body:
+            continue
+        # "Township of Nipissing Special Council Meeting" has no date in the
+        # title; the day it streamed is the meeting day.
+        day = v.get("title_date") or v.get("local_date")
+        if day:
+            out.setdefault(day, []).append(v)
     return out
 
 
@@ -227,12 +290,18 @@ def attach_labelled(meetings: List[Dict[str, Any]], cache: Dict[str, Dict[str, A
         if same_day > 1:
             want_special = m.get("meeting_type") == "Special"
             candidates = [v for v in candidates if bool(v.get("special")) == want_special]
-        if len(candidates) != 1:
+        if not candidates:
             continue
+        # Several uploads for one meeting (live stream + re-upload, or a
+        # stream that restarted): use the earliest, keep them all in videos[].
+        candidates.sort(key=lambda v: v.get("published") or "9999")
         m["video_url"] = candidates[0]["url"]
-        used.add(m["video_url"])
+        if len(candidates) > 1:
+            m["videos"] = [{"url": v["url"], "title": v.get("title", "")} for v in candidates]
+        used.update(v["url"] for v in candidates)
         filled += 1
-        print(f"  video attached ({body}): {m['date']} {m.get('meeting_type', '')}".rstrip())
+        extra = f" (+{len(candidates) - 1} more part/upload)" if len(candidates) > 1 else ""
+        print(f"  video attached ({body}): {m['date']} {m.get('meeting_type', '')}{extra}")
     print(f"  {filled} {body} meeting(s) gained a video")
     return filled
 
