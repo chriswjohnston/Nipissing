@@ -318,10 +318,20 @@
               "archived": "files/archive/boards/museum/2026/Additional-info-to-Sept-2-Mtg__5abe9cc6.pdf"
             }
           ],
-          "video_url": null,
+          "video_url": "https://www.youtube.com/watch?v=-GRnC3KmX04",
           "agenda_archived": "files/archive/boards/museum/2026/Agenda-September-2-2026-Museum-Board__b2c35cc9.pdf",
           "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-September-2-2026-docx__23e8b1ae.pdf",
-          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-2-2026__abe8b962.pdf"
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-2-2026__abe8b962.pdf",
+          "videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=-GRnC3KmX04",
+              "title": "Nipissing Museum Board Meeting - September 2, 2026"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=1Vvlz5Bv3Ak",
+              "title": "Nipissing Museum Board Meeting - September 2, 2026"
+            }
+          ]
         },
         {
           "date": "2026-08-05",
