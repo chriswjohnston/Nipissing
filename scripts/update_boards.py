@@ -107,6 +107,36 @@ DATE_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Records that are NOT meetings and must never be carried forward.
+# (board_id, date) -> reason. A tombstone only removes a record that has no
+# agenda, minutes or package, so a real meeting can never be deleted by it.
+TOMBSTONES: Dict[Tuple[str, str], str] = {
+    # The old museum-services page listed public events; the previous
+    # paragraph walker saved each event date as a board meeting.
+    ("museum", "2026-07-02"): "museum event, not a board meeting",
+    ("museum", "2026-07-04"): "museum event (Butter Making)",
+    ("museum", "2026-07-18"): "museum event (Ice Cream Making / Heritage Day)",
+    ("museum", "2026-08-02"): "museum event (Heritage Day Craft Fair)",
+    ("museum", "2026-08-13"): "museum event (Rope Coaster Craft)",
+    ("museum", "2026-08-15"): "museum event (Rope Basket Making)",
+    ("museum", "2026-05-06"): "placeholder; the May meeting was held May 13",
+}
+
+
+def apply_tombstones(boards: List[Dict[str, Any]]) -> None:
+    for b in boards:
+        kept = []
+        for m in b.get("meetings", []):
+            reason = TOMBSTONES.get((b.get("id", ""), m.get("date", "")))
+            has_docs = any(m.get(f) for f in ("agenda_url", "minutes_url", "package_url"))
+            if reason and not has_docs:
+                print(f"  removed {b['id']} {m['date']}: {reason}")
+                continue
+            if reason and has_docs:
+                print(f"  tombstone ignored for {b['id']} {m['date']}: record has documents")
+            kept.append(m)
+        b["meetings"] = kept
+
 
 # ---------------------------------------------------------------------
 # Helpers
@@ -416,6 +446,20 @@ def sanitize_board_extra_docs(board: Dict[str, Any]) -> None:
     meetings = board.get("meetings", [])
     primary = {_url_key(m.get(f)) for m in meetings
                for f in ("agenda_url", "minutes_url", "package_url") if m.get(f)}
+
+    # A document attached to more than one meeting is a page-level link that
+    # leaked in (by-laws, registration forms) — no real meeting document is
+    # shared between meetings. Move it to page_docs.
+    seen: Dict[str, int] = {}
+    for m in meetings:
+        for k in {_url_key(d.get("url")) for d in m.get("extra_docs") or []}:
+            seen[k] = seen.get(k, 0) + 1
+    leaked = [d for m in meetings for d in m.get("extra_docs") or []
+              if seen.get(_url_key(d.get("url")), 0) > 1
+              and (d.get("url") or "").lower().startswith("http")]
+    if leaked:
+        board["page_docs"] = dedupe_docs((board.get("page_docs") or []) + leaked)
+
     page = {_url_key(d["url"]) for d in board.get("page_docs", [])}
     for m in meetings:
         kept = []
@@ -600,6 +644,8 @@ def main() -> None:
 
     merged_payload = merge_canonical(current_payload, scraped_boards)
 
+    apply_tombstones(merged_payload["boards"])
+
     for b in merged_payload["boards"]:
         sanitize_board_extra_docs(b)
         for m in b.get("meetings", []):
@@ -609,6 +655,12 @@ def main() -> None:
             except (KeyError, ValueError):
                 pass
             m.setdefault("video_url", None)
+            # Minutes exist, so the meeting happened. Older runs leaked the
+            # word "Cancelled" from another row onto the first meeting of a
+            # table (e.g. recreation 2026-01-19, 2025-01-06).
+            if m.get("cancelled") and m.get("minutes_url"):
+                print(f"  un-cancelled {b['id']} {m['date']}: has minutes")
+                m["cancelled"] = False
 
     # YouTube: title-labelled videos first, then untitled streams
     # ("Township of Nipissing's Zoom Meeting") matched by stream date.
