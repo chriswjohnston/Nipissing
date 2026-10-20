@@ -2,7 +2,6 @@
 
 import json
 import re
-import xml.etree.ElementTree as ET
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
@@ -12,42 +11,17 @@ import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from archive import mirror_record
+import youtube
 
 
 URL = "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/"
 OUT = Path("data/canonical/meetings.json")
-
-# YouTube: township channel RSS (only returns the ~15 most recent uploads,
-# so every match is also cached in data/runtime so nothing ages out unmatched).
-YOUTUBE_CHANNEL_ID = "UC2XSMZqRNHbwVppelfKcEXw"
-YOUTUBE_RSS = f"https://www.youtube.com/feeds/videos.xml?channel_id={YOUTUBE_CHANNEL_ID}"
-YOUTUBE_CACHE = Path("data/runtime/youtube_videos.json")
-
-# Videos for other bodies posted to the same channel — never attach to council.
-YOUTUBE_EXCLUDE = (
-    "committee", "adjustment", "conservation", "museum",
-    "recreation", "library", "board", "planning", "public meeting",
-)
 
 DATE_RE = re.compile(
     r"(January|February|March|April|May|June|July|August|September|October|November|December)"
     r"\s+(\d{1,2}),?\s+(\d{4})",
     re.IGNORECASE,
 )
-
-# Tolerant title-date matcher. Current township format:
-#   "Township of Nipissing Council Meeting Sept 01.2026"
-# Also accepts "September 1, 2026", "Sept. 1st, 2026", "Sep 1 2026",
-# "Sept 01-2026", "Sept 01/2026". ISO dates (2026-09-01) handled separately.
-YT_DATE_RE = re.compile(
-    r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?"
-    r"\s*(\d{1,2})(?:st|nd|rd|th)?\s*[,./-]?\s*(\d{4})\b",
-    re.IGNORECASE,
-)
-YT_ISO_RE = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b")
-
-MONTHS = {m: i for i, m in enumerate(
-    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -101,6 +75,44 @@ def unique_extra_docs(docs: List[Dict[str, str]]) -> List[Dict[str, str]]:
     return out
 
 
+# Labels that mark a navigation/index link rather than a real supplementary
+# document. These leak into extra_docs when the listing page is parsed and one
+# meeting record accidentally absorbs links belonging to many other meetings.
+GENERIC_EXTRA_LABELS = {"agenda", "minutes", "agenda package", "package"}
+
+
+def sanitize_extra_docs(meetings: List[Dict[str, Any]]) -> None:
+    """Strip index-scrape noise from every meeting's extra_docs, in place.
+
+    An entry is dropped when it:
+      - duplicates ANY meeting's primary agenda/minutes/package URL,
+      - uses a generic nav label (Agenda / Minutes / Agenda Package), or
+      - is a mailto/non-http link.
+    Genuine supplementary docs (budgets, financial statements, correspondence)
+    are kept, and no meeting records are removed. Idempotent.
+    """
+    primary: set = set()
+    for m in meetings:
+        for f in ("agenda_url", "minutes_url", "package_url"):
+            u = (m.get(f) or "").strip()
+            if u:
+                primary.add(u)
+
+    for m in meetings:
+        cleaned = []
+        for d in m.get("extra_docs", []) or []:
+            url = (d.get("url") or "").strip()
+            label = (d.get("label") or "").strip()
+            if not url or "mailto:" in url or not url.lower().startswith("http"):
+                continue
+            if url in primary:
+                continue
+            if label.lower() in GENERIC_EXTRA_LABELS:
+                continue
+            cleaned.append({"label": label or "Document", "url": url})
+        m["extra_docs"] = cleaned
+
+
 def flags_from_context(text: str) -> Tuple[str, bool]:
     t = (text or "").lower()
     return (
@@ -108,103 +120,6 @@ def flags_from_context(text: str) -> Tuple[str, bool]:
         "cancel" in t,
     )
 
-
-# ── YouTube ──────────────────────────────────────────────────────
-
-def youtube_title_date(title: str) -> Optional[str]:
-    """Return ISO date (YYYY-MM-DD) parsed from a video title, or None."""
-    m = YT_DATE_RE.search(title)
-    if m:
-        month = MONTHS.get(m.group(1)[:3].lower())
-        try:
-            return datetime(int(m.group(3)), month, int(m.group(2))).strftime("%Y-%m-%d")
-        except (TypeError, ValueError):
-            return None
-    m = YT_ISO_RE.search(title)
-    if m:
-        try:
-            return datetime(int(m.group(1)), int(m.group(2)), int(m.group(3))).strftime("%Y-%m-%d")
-        except ValueError:
-            return None
-    return None
-
-
-def fetch_youtube_videos() -> Dict[str, Dict[str, str]]:
-    """
-    Read the channel RSS feed and merge council-meeting videos into the
-    persistent cache. Returns {iso_date: {"url", "title", "special"}}.
-    Logs every title it sees so a future naming change is obvious in the
-    Actions log instead of failing silently.
-    """
-    cache = load_json(YOUTUBE_CACHE, {})
-    before = len(cache)
-    print(f"Fetching YouTube RSS ... ({before} cached)")
-
-    try:
-        resp = requests.get(YOUTUBE_RSS, timeout=20)
-        resp.raise_for_status()
-        ns = {"atom": "http://www.w3.org/2005/Atom"}
-        root = ET.fromstring(resp.content)
-        entries = root.findall("atom:entry", ns)
-        print(f"  Feed returned {len(entries)} entries")
-
-        for entry in entries:
-            title_el = entry.find("atom:title", ns)
-            link_el = entry.find("atom:link", ns)
-            if title_el is None or link_el is None:
-                continue
-            title = (title_el.text or "").strip()
-            url = link_el.get("href", "")
-            tl = title.lower()
-
-            if "council" not in tl:
-                print(f"    skip (not council): {title}")
-                continue
-            if any(w in tl for w in YOUTUBE_EXCLUDE):
-                print(f"    skip (other body):  {title}")
-                continue
-
-            iso = youtube_title_date(title)
-            if not iso:
-                print(f"    skip (no date):     {title}")
-                continue
-
-            if iso not in cache:
-                cache[iso] = {"url": url, "title": title, "special": "special" in tl}
-                print(f"    + {iso} -> {url}  [{title}]")
-            else:
-                print(f"    = {iso} already cached")
-
-    except Exception as e:
-        # Transient: keep using the cache, never wipe it.
-        print(f"  Warning: could not fetch YouTube RSS: {e}")
-
-    save_json(YOUTUBE_CACHE, cache)
-    print(f"  {len(cache)} cached video(s) ({len(cache) - before} new)")
-    return cache
-
-
-def attach_videos(meetings: List[Dict[str, Any]], videos: Dict[str, Dict[str, str]]) -> None:
-    """Fill video_url only where empty — never overwrite an existing link."""
-    filled = 0
-    for m in meetings:
-        if m.get("video_url") or m.get("cancelled"):
-            continue
-        v = videos.get(m.get("date"))
-        if not v:
-            continue
-        # If a Regular and a Special meeting share a date, match on type.
-        is_special = m.get("meeting_type") == "Special"
-        same_day = [x for x in meetings if x.get("date") == m.get("date")]
-        if len(same_day) > 1 and bool(v.get("special")) != is_special:
-            continue
-        m["video_url"] = v["url"]
-        filled += 1
-        print(f"  video attached: {m['date']} ({m.get('meeting_type')})")
-    print(f"  {filled} meeting(s) gained a video")
-
-
-# ── Township scrape ──────────────────────────────────────────────
 
 def extract_meetings(content: Tag) -> List[Dict[str, Any]]:
     meetings_raw: List[Dict[str, Any]] = []
@@ -381,8 +296,13 @@ def main() -> None:
 
     final_meetings = merge_meetings(scraped_meetings, existing_meetings)
 
-    # Attach YouTube recordings (fills empty video_url only).
-    attach_videos(final_meetings, fetch_youtube_videos())
+    # Strip index-scrape noise from extra_docs — cleans junk carried forward in
+    # canonical and prevents the merge from re-bloating it on future runs.
+    sanitize_extra_docs(final_meetings)
+
+    # Attach YouTube recordings from the shared cache (fills empty video_url
+    # only; never overwrites). Council videos are always title-labelled.
+    youtube.attach_labelled(final_meetings, youtube.refresh(), "council")
 
     # Mirror township PDFs (minutes/agendas in-repo, packages to Releases)
     # before saving, so archived_* paths land in canonical data.
