@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-10-20",
-  "source": "https://nipissingtownship.com/municipal-information/by-laws/",
+  "source": "https://nipissingtownship.com/by-law/by-laws/",
   "bylaws": [
     {
       "number": "2026-37",
@@ -110,7 +110,7 @@
     {
       "number": "2026-30",
       "year": 2026,
-      "title": "stop up, close and sell Part of Road Allowance in front of Part Lot 10, Concession 18, designated as Part 1 on Plan 42R11490 in the Township of Nipissing, District of Parry Soun...",
+      "title": "stop up, close and sell Part of Road Allowance in front of Part Lot 10, Concession 18, designated as Part 1 on Plan 42R11490 in the Township of Nipissing, District of Parry Sound (Fletcher)",
       "date_passed": "2026-08-11",
       "pdf_url": "files/bylaws/2026-30.pdf",
       "page_url": null,
@@ -262,7 +262,7 @@
       "year": 2026,
       "title": "provide for fees charged by the Corporation of The Township of Nipissing",
       "date_passed": "2026-05-05",
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2026-20.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -270,14 +270,19 @@
       "meeting_date": "2026-05-05",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Council-Package-2.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-5-2026.pdf",
-      "summary": null
+      "summary": null,
+      "common_name": "User Fees",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2026/2026-20__4fc43198.pdf"
     },
     {
       "number": "2026-19",
       "year": 2026,
       "title": "promote public safety and regulate and govern the activities permitted in municipal beach areas",
       "date_passed": "2026-05-05",
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2026-19.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -285,7 +290,12 @@
       "meeting_date": "2026-05-05",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Council-Package-2.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-May-5-2026.pdf",
-      "summary": null
+      "summary": null,
+      "common_name": "Beach Safety",
+      "categories": [
+        "Provincial Offenses By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2026/2026-19__16c66a18.pdf"
     },
     {
       "number": "2026-18",
@@ -364,7 +374,7 @@
     {
       "number": "2026-13",
       "year": 2026,
-      "title": "stop up, close and sell part of the Road Allowance Between Concession 12 & 13 designated as Part 1 on Plan 42R22858, in the Township of Nipissing, ...",
+      "title": "stop up, close and sell part of the Road Allowance Between Concession 12 & 13 designated as Part 1 on Plan 42R22858, in the Township of Nipissing, District of Parry Sound",
       "date_passed": "2026-04-07",
       "pdf_url": null,
       "page_url": null,
@@ -728,7 +738,7 @@
     {
       "number": "2025-27",
       "year": 2025,
-      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Lot 3, Concession 19 designated as Part 1 on Plan 42R22637, in the To...",
+      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Lot 3, Concession 19 designated as Part 1 on Plan 42R22637, in the Township of Nipissing, District of Parry Sound",
       "date_passed": "2025-10-07",
       "pdf_url": null,
       "page_url": null,
@@ -924,7 +934,7 @@
     {
       "number": "2025-13",
       "year": 2025,
-      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in...",
+      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in default of payment thereof for 2025",
       "date_passed": "2025-04-08",
       "pdf_url": null,
       "page_url": null,
@@ -1246,7 +1256,7 @@
     {
       "number": "2024-50",
       "year": 2024,
-      "title": "enter into an agreement for the provision of fire communication (call-taking, call alerting) services with the North Bay Regional Health Centre for...",
+      "title": "enter into an agreement for the provision of fire communication (call-taking, call alerting) services with the North Bay Regional Health Centre for the Township of Nipissing Fire Department",
       "date_passed": "2024-11-12",
       "pdf_url": null,
       "page_url": null,
@@ -1316,16 +1326,21 @@
     {
       "number": "2024-45",
       "year": 2024,
-      "title": "amend By-Law 2021-58 which prohibits the unauthorized disposal of waste and establishes and regulates a system for the disposal of solid waste in t...",
+      "title": "amend By-Law 2021-58 which prohibits the unauthorized disposal of waste and establishes and regulates a system for the disposal of solid waste in the defined areas of the Township of Nipissing",
       "date_passed": "2024-10-01",
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2024-45.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-10-01",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/October-1-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-October-1-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-October-1-2024.pdf",
+      "common_name": "Landfill",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2024/2024-45__d46c15d7.pdf"
     },
     {
       "number": "2024-44",
@@ -1576,7 +1591,7 @@
     {
       "number": "2024-27",
       "year": 2024,
-      "title": "By-Law 2024-27",
+      "title": "confirm the proceedings of Council at its meeting held on May 14, 2024. Carried",
       "date_passed": "2024-05-14",
       "pdf_url": null,
       "page_url": null,
@@ -1646,7 +1661,7 @@
     {
       "number": "2024-22",
       "year": 2024,
-      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in...",
+      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in default of payment thereof for 2024",
       "date_passed": "2024-05-14",
       "pdf_url": null,
       "page_url": null,
@@ -1842,7 +1857,7 @@
     {
       "number": "2024-08",
       "year": 2024,
-      "title": "appoint a Building Inspector for the purpose of the enforcement of the Building Code Act, its regulations and the Building By-Law for the Corporati...",
+      "title": "appoint a Building Inspector for the purpose of the enforcement of the Building Code Act, its regulations and the Building By-Law for the Corporation of the Township of Nipissing",
       "date_passed": "2024-02-06",
       "pdf_url": null,
       "page_url": null,
@@ -1865,7 +1880,17 @@
       "votes": "Moved by S. Kirkey, Seconded by S. Foote",
       "meeting_date": "2024-02-06",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/Council-Agenda-Package-Feb-6-2024.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-6-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-6-2024.pdf",
+      "common_name": "Providing Public Notice",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ],
+      "extra_docs": [
+        {
+          "label": "Public Notice By-Law",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2024-07-1.pdf"
+        }
+      ]
     },
     {
       "number": "2024-06",
@@ -1996,7 +2021,7 @@
     {
       "number": "2023-48",
       "year": 2023,
-      "title": "authorize a Shared Services Agreement with the Municipality of Callander and the Municipality of Powassan for the provision of Building Inspector B...",
+      "title": "authorize a Shared Services Agreement with the Municipality of Callander and the Municipality of Powassan for the provision of Building Inspector Back-Up Service for the Township of Nipissing",
       "date_passed": "2023-12-19",
       "pdf_url": null,
       "page_url": null,
@@ -2178,7 +2203,7 @@
     {
       "number": "2023-35",
       "year": 2023,
-      "title": "deem part of Registered Plan 42M592 in the Township of Nipissing not to be a part of a Registered Plan of Subdivision for the purposes of Section 5...",
+      "title": "deem part of Registered Plan 42M592 in the Township of Nipissing not to be a part of a Registered Plan of Subdivision for the purposes of Section 50(4) of the Planning Act",
       "date_passed": "2023-07-11",
       "pdf_url": null,
       "page_url": null,
@@ -2265,6 +2290,11 @@
         "Minimum lot and setback requirements apply",
         "Trailer must meet basic health and safety standards",
         "License can be revoked for non-compliance"
+      ],
+      "common_name": "Trailer Licensing",
+      "categories": [
+        "Home & Property By-Laws",
+        "Provincial Offenses By-Laws"
       ]
     },
     {
@@ -2284,7 +2314,7 @@
     {
       "number": "2023-28",
       "year": 2023,
-      "title": "Code of Conduct",
+      "title": "adopt a Code of Conduct for the Members of Council in the Township of Nipissing. Carried",
       "date_passed": "2023-05-02",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2023/07/Code-of-Conduct.pdf",
       "page_url": null,
@@ -2301,6 +2331,10 @@
         "Sets standards for respectful conduct",
         "Complaints handled by the Integrity Commissioner",
         "Penalties range from reprimand to suspension of pay"
+      ],
+      "common_name": "Code of Conduct",
+      "categories": [
+        "Frequently Requested By-Laws"
       ]
     },
     {
@@ -2334,7 +2368,7 @@
     {
       "number": "2023-25",
       "year": 2023,
-      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Broken Lot 11, Concession 18, designated as Parts 1, 2 & 3 on Plan 42...",
+      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Broken Lot 11, Concession 18, designated as Parts 1, 2 & 3 on Plan 42R-21854, in the Township of Nipissing, District of Parry Sound",
       "date_passed": "2023-04-04",
       "pdf_url": null,
       "page_url": null,
@@ -2362,7 +2396,7 @@
     {
       "number": "2023-23",
       "year": 2023,
-      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in...",
+      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in default of payment thereof for 2023",
       "date_passed": "2023-03-21",
       "pdf_url": null,
       "page_url": null,
@@ -2390,7 +2424,7 @@
     {
       "number": "2023-21",
       "year": 2023,
-      "title": "Social Media Policy",
+      "title": "adopt a Website and Social Media Policy for the Township of Nipissing",
       "date_passed": "2023-03-21",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2023/07/Social-Media-Policy.pdf",
       "page_url": null,
@@ -2399,7 +2433,11 @@
       "votes": "Moved by D. Yemm, Seconded by T. Butler",
       "meeting_date": "2023-03-21",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2023/03/March-21-2023-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-March-21-2023.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-March-21-2023.pdf",
+      "common_name": "Social Media Policy",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ]
     },
     {
       "number": "2023-20",
@@ -2502,7 +2540,7 @@
     {
       "number": "2023-13",
       "year": 2023,
-      "title": "deem part of Registered Plan 42M592 in the Township of Nipissing not to be a part of a Registered Plan of Subdivision for the Purposes of Section 5...",
+      "title": "deem part of Registered Plan 42M592 in the Township of Nipissing not to be a part of a Registered Plan of Subdivision for the Purposes of Section 50(4) of the Planning Act",
       "date_passed": "2023-02-07",
       "pdf_url": null,
       "page_url": null,
@@ -2589,12 +2627,16 @@
         "Must comply with provincial trapping regulations",
         "Beaver dam removal permitted to prevent flooding",
         "Township may assist with removal in some cases"
+      ],
+      "common_name": "Nuisance Beaver",
+      "categories": [
+        "Roads & Landfill By-Laws"
       ]
     },
     {
       "number": "2023-07",
       "year": 2023,
-      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Broken Lot 12, Concession 16 designated as parts 1, 2 & 3 on Plan 42R...",
+      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Broken Lot 12, Concession 16 designated as parts 1, 2 & 3 on Plan 42R-21515 and part of the Original Shore Road Allowance in front of Broken Lots 11 & 12, Concession 16 designated as Part 4 on Plan 42R-21515, in the Township of Nipissing, District of Parry Sound",
       "date_passed": "2023-01-17",
       "pdf_url": null,
       "page_url": null,
@@ -2664,7 +2706,7 @@
     {
       "number": "2023-02",
       "year": 2023,
-      "title": "Delegation of Authority",
+      "title": "respecting the delegation of authority to various officers for The Corporation of the Township of Nipissing",
       "date_passed": "2023-01-03",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-02-Delegation-of-Authority.pdf",
       "page_url": null,
@@ -2673,12 +2715,16 @@
       "votes": "Moved by D. Yemm, Seconded by S. Kirkey",
       "meeting_date": "2023-01-03",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/January-3-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-January-3-2023.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-January-3-2023.pdf",
+      "common_name": "Delegation of Authority",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ]
     },
     {
       "number": "2023-01",
       "year": 2023,
-      "title": "Accountability & Transparency",
+      "title": "adopt an administrative policy to ensure Accountability and Transparency for The Corporation of the Township of Nipissing",
       "date_passed": "2023-01-03",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-Accountability-and-Transpare.pdf",
       "page_url": null,
@@ -2687,7 +2733,11 @@
       "votes": "Moved by T. Butler, Seconded by S. Foote",
       "meeting_date": "2023-01-03",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/January-3-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-January-3-2023.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-January-3-2023.pdf",
+      "common_name": "Accountability & Transparency",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ]
     },
     {
       "number": "2022-61",
@@ -2812,7 +2862,7 @@
     {
       "number": "2022-53",
       "year": 2022,
-      "title": "Boundary Road Agreement – Callander",
+      "title": "enter into a Joint Jurisdiction Highway and Connecting Road Routine Maintenance and Repair Agreement with the Corporation of the Municipality of Callander",
       "date_passed": "2022-12-06",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2023/07/Boundary-Road-Callander.pdf",
       "page_url": null,
@@ -2821,7 +2871,11 @@
       "votes": "Moved by D. Yemm, Seconded by S. Foote",
       "meeting_date": "2022-12-06",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2022/12/December-6-Council-Agenda-Package.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/12/Minutes-December-6-2022.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/12/Minutes-December-6-2022.pdf",
+      "common_name": "Boundary Road Agreement – Callander",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ]
     },
     {
       "number": "2022-52",
@@ -2976,7 +3030,7 @@
     {
       "number": "2022-42",
       "year": 2022,
-      "title": "Dog By-Law",
+      "title": "regulate the keeping and registration of dogs within the Township of Nipissing",
       "date_passed": "2022-09-20",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2025/02/2022-42-Dog-ByLaw.pdf",
       "page_url": null,
@@ -2993,6 +3047,10 @@
         "Owners liable for damage caused by their dog",
         "Maximum number of dogs per household may apply",
         "Fines for barking complaints and at-large violations"
+      ],
+      "common_name": "Dog By-Law",
+      "categories": [
+        "Provincial Offenses By-Laws"
       ]
     },
     {
@@ -3074,6 +3132,10 @@
         "Outlines how motions and amendments are handled",
         "Establishes quorum requirements",
         "Governs closed session procedures"
+      ],
+      "common_name": "Procedural",
+      "categories": [
+        "Frequently Requested By-Laws"
       ]
     },
     {
@@ -3088,7 +3150,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Culvert / Entrance",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ]
     },
     {
       "number": "2022-23",
@@ -3116,7 +3182,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Depositing of Snow on Bridge or Highway",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ]
     },
     {
       "number": "2021-58",
@@ -3130,7 +3200,12 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Unauthorized Disposal of Waste",
+      "categories": [
+        "Provincial Offenses By-Laws",
+        "Roads & Landfill By-Laws"
+      ]
     },
     {
       "number": "2021-57",
@@ -3144,7 +3219,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Unopened Road Allowances",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ]
     },
     {
       "number": "2021-50",
@@ -3166,6 +3245,10 @@
         "Time-limited parking in designated public areas",
         "Vehicles in violation may be towed at owner expense",
         "Fines set for each parking infraction"
+      ],
+      "common_name": "Parking By-Law",
+      "categories": [
+        "Provincial Offenses By-Laws"
       ]
     },
     {
@@ -3180,7 +3263,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Community Safety Zone",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ]
     },
     {
       "number": "2021-39",
@@ -3222,7 +3309,51 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Amending Minimum Maintenance Standards Schedule – E",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ]
+    },
+    {
+      "number": "2020-51",
+      "year": 2020,
+      "title": "Procurement By-Law",
+      "common_name": "Procurement By-Law",
+      "categories": [
+        "Frequently Requested By-Laws"
+      ],
+      "date_passed": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-51.pdf",
+      "page_url": null,
+      "source": "bylaws_page",
+      "status": "approved",
+      "votes": null,
+      "meeting_date": null,
+      "agenda_package_url": null,
+      "minutes_url": null,
+      "summary": null,
+      "pdf_url_archived": "files/archive/bylaws/2020/2020-51__dc2b08ac.pdf"
+    },
+    {
+      "number": "2020-42",
+      "year": 2020,
+      "title": "Open Air Burning",
+      "common_name": "Open Air Burning",
+      "categories": [
+        "Provincial Offenses By-Laws"
+      ],
+      "date_passed": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-42.pdf",
+      "page_url": null,
+      "source": "bylaws_page",
+      "status": "approved",
+      "votes": null,
+      "meeting_date": null,
+      "agenda_package_url": null,
+      "minutes_url": null,
+      "summary": null,
+      "pdf_url_archived": "files/archive/bylaws/2020/2020-42__71f4b28a.pdf"
     },
     {
       "number": "2020-27",
@@ -3258,7 +3389,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Public Dock",
+      "categories": [
+        "Provincial Offenses By-Laws"
+      ]
     },
     {
       "number": "2020-08",
@@ -3272,7 +3407,11 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Boundary Road Agreement – Powassan",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ]
     },
     {
       "number": "2020-05",
@@ -3294,6 +3433,10 @@
         "Heavy vehicles must use alternate routes",
         "Fines for exceeding posted weight limits",
         "Protects bridges from structural damage"
+      ],
+      "common_name": "Maximum Weight on Bridges",
+      "categories": [
+        "Roads & Landfill By-Laws"
       ]
     },
     {
@@ -3316,49 +3459,108 @@
         "Pothole repair timelines by road classification",
         "Protects township from liability when standards are met",
         "Based on Ontario Regulation 366/18"
+      ],
+      "common_name": "Minimum Maintenance Standards",
+      "categories": [
+        "Roads & Landfill By-Laws"
       ]
+    },
+    {
+      "number": "2017-03",
+      "year": 2017,
+      "title": "Fireworks",
+      "common_name": "Fireworks",
+      "categories": [
+        "Provincial Offenses By-Laws"
+      ],
+      "date_passed": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2017-03.pdf",
+      "page_url": null,
+      "source": "bylaws_page",
+      "status": "approved",
+      "votes": null,
+      "meeting_date": null,
+      "agenda_package_url": null,
+      "minutes_url": null,
+      "summary": null,
+      "pdf_url_archived": "files/archive/bylaws/2017/2017-03__430e09d8.pdf"
     },
     {
       "number": "2015-23",
       "year": 2015,
       "title": "Amend BL 1088 – Off Road Vehicles on Municipal Roads",
       "date_passed": null,
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2015-23.pdf",
       "page_url": "https://nipissingtownship.com/municipal-information/by-laws/2015-23-amend-bl-1088-off-road-vehicles-on-municipal-roads/",
       "source": "bylaws_page",
       "status": "approved",
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Off Road Vehicles on Municipal Roads",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2015/2015-23__9bb66934.pdf"
     },
     {
       "number": "2013-39",
       "year": 2013,
       "title": "Authorize Speed Limit Changes",
       "date_passed": null,
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2013-39.pdf",
       "page_url": "https://nipissingtownship.com/municipal-information/by-laws/2013-39-authorize-speed-limit-changes/",
       "source": "bylaws_page",
       "status": "approved",
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "Authorize Speed Limit Change",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2013/2013-39__bcba7e10.pdf"
+    },
+    {
+      "number": "2012-53",
+      "year": 2012,
+      "title": "Trailer Use – Temporary Construction",
+      "common_name": "Trailer Use – Temporary Construction",
+      "categories": [
+        "Home & Property By-Laws"
+      ],
+      "date_passed": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/2012-53.pdf",
+      "page_url": null,
+      "source": "bylaws_page",
+      "status": "approved",
+      "votes": null,
+      "meeting_date": null,
+      "agenda_package_url": null,
+      "minutes_url": null,
+      "summary": null,
+      "pdf_url_archived": "files/archive/bylaws/2012/2012-53__e5cd2eda.pdf"
     },
     {
       "number": "2011-43",
       "year": 2011,
       "title": "Entrance 911 By-Law",
       "date_passed": null,
-      "pdf_url": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2011-43.pdf",
       "page_url": "https://nipissingtownship.com/municipal-information/by-laws/2011-43-entrance-911-by-law/",
       "source": "bylaws_page",
       "status": "approved",
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "common_name": "911 / Entrance",
+      "categories": [
+        "Roads & Landfill By-Laws"
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2011/2011-43__553aa2f8.pdf"
     },
     {
       "number": "2011-42",
