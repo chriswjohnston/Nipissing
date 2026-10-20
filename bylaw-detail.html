@@ -441,6 +441,17 @@ function iconCalendar(){
   `;
 }
 
+// Find the council meeting a by-law/resolution came from, so its minutes and
+// agenda package can use our archived copies (the township deletes originals).
+function sourceMeeting(rec){
+  const day = String(rec.meeting_date || '').slice(0, 10);
+  if (!day) return null;
+  const sameDay = MEETINGS.filter(m => m.date === day);
+  return sameDay.find(m => rec.minutes_url && m.minutes_url === rec.minutes_url)
+      || sameDay.find(m => rec.agenda_package_url && m.package_url === rec.agenda_package_url)
+      || sameDay[0] || null;
+}
+
 function docLink(label, href, icon = 'doc'){
   const glyph = icon === 'calendar' ? iconCalendar() : iconDoc();
   return `<a href="${esc(href)}" target="${icon === 'calendar' ? '_self' : '_blank'}" rel="noopener" class="doc-link">${glyph}<span>${esc(label)}</span></a>`;
@@ -465,8 +476,25 @@ async function init(){
   
 
   document.getElementById('bylaw-number').textContent = `By-Law ${bylaw.number}`;
-  document.getElementById('bylaw-title').textContent = bylaw.title || `By-Law ${bylaw.number}`;
-  document.getElementById('bylaw-subtitle').textContent = bylaw.title || '';
+  // Heading: the short common name from the township's by-law page when there
+  // is one ("Dog By-Law"); otherwise the full formal wording from the minutes.
+  // Subtitle: the full formal wording under a common name, or when/who passed
+  // it — never a repeat of the heading.
+  const sentence = t => t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
+  const formal = (bylaw.title && bylaw.title !== bylaw.common_name) ? bylaw.title : '';
+  const heading = bylaw.common_name || sentence(formal) || `By-Law ${bylaw.number}`;
+  let subtitle = '';
+  if (bylaw.common_name && formal) {
+    subtitle = `Being a By-law to ${formal.replace(/^to\s+/i, '')}`;
+  } else {
+    const bits = [];
+    if (bylaw.date_passed) bits.push(`Passed ${fmtDate(bylaw.date_passed)}`);
+    if (bylaw.votes) bits.push(bylaw.votes);
+    subtitle = bits.join(' · ');
+  }
+  document.getElementById('bylaw-title').textContent = heading;
+  document.getElementById('bylaw-subtitle').textContent = subtitle;
+  document.getElementById('bylaw-subtitle').style.display = subtitle ? '' : 'none';
 
   document.getElementById('meta-number').textContent = bylaw.number || '—';
   document.getElementById('meta-year').textContent = bylaw.year || '—';
@@ -481,6 +509,7 @@ async function init(){
   const pills = [];
   pills.push(`<span class="meta-pill status-pill ${statusClass}">${esc(bylaw.status || 'unknown')}</span>`);
   if(bylaw.year) pills.push(`<span class="meta-pill">${esc(String(bylaw.year))}</span>`);
+  (bylaw.categories || []).forEach(c => pills.push(`<span class="meta-pill">${esc(c)}</span>`));
   document.getElementById('bylaw-pills').innerHTML = pills.join('');
 
   if(bylaw.summary){
@@ -489,10 +518,17 @@ async function init(){
   }
 
   const links = [];
-  if(bylaw.pdf_url) links.push(docLink('By-Law PDF', bylaw.pdf_url));
+  // Archived copy first (in-repo paths need the docs/ prefix; archivedUrl adds
+  // it, and passes Releases/township URLs through unchanged).
+  const pdf = archivedUrl(bylaw.pdf_url_archived || bylaw.pdf_url);
+  if(pdf) links.push(docLink('By-Law PDF', pdf));
   if(bylaw.page_url) links.push(docLink('Township By-Law Page', bylaw.page_url));
-  if(bylaw.minutes_url) links.push(docLink('Minutes', bylaw.minutes_url));
-  if(bylaw.agenda_package_url) links.push(docLink('Agenda Package', bylaw.agenda_package_url));
+  const mtg = sourceMeeting(bylaw);
+  const minutes = docUrl(mtg, 'minutes') || bylaw.minutes_url;
+  const pkg = docUrl(mtg, 'package') || bylaw.agenda_package_url;
+  if(minutes) links.push(docLink('Minutes', minutes));
+  if(pkg) links.push(docLink('Agenda Package', pkg));
+  (bylaw.extra_docs || []).forEach(d => { if (d && d.url) links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url))); });
   if(bylaw.meeting_date){
     links.push(docLink(
       'Related Meeting',

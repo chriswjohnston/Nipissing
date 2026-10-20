@@ -402,6 +402,17 @@ function iconCalendar(){
   `;
 }
 
+// Find the council meeting a by-law/resolution came from, so its minutes and
+// agenda package can use our archived copies (the township deletes originals).
+function sourceMeeting(rec){
+  const day = String(rec.meeting_date || '').slice(0, 10);
+  if (!day) return null;
+  const sameDay = MEETINGS.filter(m => m.date === day);
+  return sameDay.find(m => rec.minutes_url && m.minutes_url === rec.minutes_url)
+      || sameDay.find(m => rec.agenda_package_url && m.package_url === rec.agenda_package_url)
+      || sameDay[0] || null;
+}
+
 function docLink(label, href, icon = 'doc'){
   const glyph = icon === 'calendar' ? iconCalendar() : iconDoc();
   return `<a href="${esc(href)}" target="${icon === 'calendar' ? '_self' : '_blank'}" rel="noopener" class="doc-link">${glyph}<span>${esc(label)}</span></a>`;
@@ -447,9 +458,13 @@ async function init(){
   document.getElementById('resolution-pills').innerHTML = pills.join('');
 
   const links = [];
-  if(resolution.pdf_url) links.push(docLink('Resolution PDF', resolution.pdf_url));
-  if(resolution.minutes_url) links.push(docLink('Minutes', resolution.minutes_url));
-  if(resolution.agenda_package_url) links.push(docLink('Agenda Package', resolution.agenda_package_url));
+  const mtg = sourceMeeting(resolution);
+  const pdf = archivedUrl(resolution.pdf_url_archived || resolution.pdf_url);
+  const minutes = docUrl(mtg, 'minutes') || resolution.minutes_url;
+  const pkg = docUrl(mtg, 'package') || resolution.agenda_package_url;
+  if(pdf) links.push(docLink('Resolution PDF', pdf));
+  if(minutes) links.push(docLink('Minutes', minutes));
+  if(pkg) links.push(docLink('Agenda Package', pkg));
   if(resolution.meeting_date){
     links.push(docLink(
       'Related Meeting',
