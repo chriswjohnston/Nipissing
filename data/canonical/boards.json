@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-23",
+  "last_updated": "2026-10-20",
   "source": "board pages",
   "boards": [
     {
@@ -17,8 +17,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/CEMETERY-Committee-AGENDA-May-20-2026.pdf",
-          "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/CEMETERY-COMMITTEE-MINUTES-May-20-2026-.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/CEMETERY-Committee-AGENDA-May-20-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/CEMETERY-COMMITTEE-MINUTES-May-20-2026-.pdf",
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/May-20-2026-Cemetery-Comm-Agen.pdf",
           "summary": "# Cemetery Committee Meeting Summary\n\n**May 20, 2026**\n\n## Key Decisions\n- Appointed Mayor Dave Yemm as Chairperson for 2026\n- Approved minutes from the July 25, 2025 meeting\n- Approved a request to Council for $10,000 from Operating Reserves to fund the Alsace Cemetery expansion survey in 2026\n- Approved a request to Council for $10,000 from Operating Reserves to complete the Nipissing Union Cemetery fencing project in 2026\n- Committed to continuing contributions to the cemetery fencing reserve for ongoing fencing work across all cemeteries\n\n## Main Topics\n- **Alsace Cemetery Expansion**: The Committee discussed plans to expand the Alsace Cemetery. A survey is needed, and a Hydro Geological Study will be required for approval by the Medical Officer of Health. The expansion is expected to create approximately 1,000 new burial lots. The Committee also explored the possibility of harvesting Red Pines on the property to generate revenue for the project.\n- **Nipissing Union Cemetery Fencing**: Part of the fencing along Highway 654 has been completed, but work remains between the new and old sections of the cemetery. Costs have exceeded initial estimates. The Snowmobile Club assisted by installing snow fencing last winter to protect grave markers.\n- **Cemetery Operations**: The Committee discussed procedures for lot ownership transfers, deed naming, lot modifications, and the practice of laying down leaning monuments for safety.\n\n## Notable Items\n- The Township generates $50 per lot sold; the expansion is projected to create $50,000 in lifetime revenue from approximately 1,000 new lots\n- $20,000 total requested from Operating Reserves ($10,000 for survey, $10,000 for fencing completion)\n- Survey work and fencing completion targeted for 2026\n- Red Pine harvesting being investigated as a potential revenue source for the expansion project\n\n---\n*Next regular meeting: no later than February 28, 2027*",
           "events": [],
@@ -28,7 +28,8 @@
           "is_future": false,
           "extra_docs": [],
           "agenda_archived": "files/archive/boards/cemetery/2026/CEMETERY-Committee-AGENDA-May-20-2026__0279b2fe.pdf",
-          "minutes_archived": "files/archive/boards/cemetery/2026/CEMETERY-COMMITTEE-MINUTES-May-20-2026-__7e0d2b15.pdf"
+          "minutes_archived": "files/archive/boards/cemetery/2026/CEMETERY-COMMITTEE-MINUTES-May-20-2026-__7e0d2b15.pdf",
+          "video_url": null
         },
         {
           "date": "2025-07-25",
@@ -50,7 +51,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-02-10",
@@ -72,7 +74,8 @@
           "meeting_type": "Board",
           "title": "Cemetery Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-05-24",
@@ -94,7 +97,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-04-17",
@@ -116,7 +120,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-02-14",
@@ -138,7 +143,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-01-10",
@@ -160,7 +166,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2022-07-11",
@@ -182,7 +189,8 @@
           "body": "Cemetery Committee",
           "body_id": "cemetery",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2022-02-11",
@@ -209,11 +217,26 @@
               "label": "2023-11 Cemetery Committee By-Law",
               "url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-11-Cemetery-Committee.pdf"
             }
-          ]
+          ],
+          "video_url": null
         }
       ],
       "url": "https://nipissingtownship.com/services/cemetery/",
-      "description": "Administration of local cemeteries in Nipissing Township."
+      "description": "Administration of local cemeteries in Nipissing Township.",
+      "page_docs": [
+        {
+          "label": "Cemetery Regulations 2022-38",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-38.pdf"
+        },
+        {
+          "label": "Burial Request Form",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Burial-Request-Form.pdf"
+        },
+        {
+          "label": "Foundation Request Form",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Foundation-Request-Form-2023-Revision.pdf"
+        }
+      ]
     },
     {
       "id": "museum",
@@ -224,7 +247,7 @@
           "display_date": "Nov 4, 2026",
           "year": 2026,
           "is_future": true,
-          "cancelled": false,
+          "cancelled": true,
           "rescheduled": false,
           "postponed": false,
           "agenda_url": null,
@@ -239,19 +262,20 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2026-10-07",
           "display_date": "Oct 7, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-October-7-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Museum-Boad-Minutes-October-7-2026-docx.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-Package-Oct-7-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
@@ -261,19 +285,23 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": "https://www.youtube.com/watch?v=AJOEIVf3rlM",
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-October-7-2026-Museum-Board__0f6fd907.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-October-7-2026-docx__37736f27.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Oct-7-2026__124c16ea.pdf"
         },
         {
           "date": "2026-09-02",
           "display_date": "Sep 2, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Agenda-September-2-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Museum-Boad-Minutes-September-2-2026-docx.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Agenda-Package-Sept-2-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
@@ -283,81 +311,29 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
-        },
-        {
-          "date": "2026-08-15",
-          "display_date": "Aug 15, 2026",
-          "year": 2026,
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "summary": null,
-          "events": [],
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "is_future": true,
           "extra_docs": [
             {
-              "label": "Rope Basket Making",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Rope-basket-poster-1.pdf"
-            },
-            {
-              "label": "museum@nipissingtownship.com",
-              "url": "mailto:museum@nipissingtownship.com"
-            },
-            {
-              "label": "Vendor Application",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Vendor-Application-Nipissing-Township-Museum-Heritage-Day-2026.pdf"
+              "label": "Additional Information",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Additional-info-to-Sept-2-Mtg.pdf",
+              "archived": "files/archive/boards/museum/2026/Additional-info-to-Sept-2-Mtg__5abe9cc6.pdf"
             }
-          ]
-        },
-        {
-          "date": "2026-08-13",
-          "display_date": "Aug 13, 2026",
-          "year": 2026,
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "summary": null,
-          "events": [],
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "is_future": true,
-          "extra_docs": [
-            {
-              "label": "Rope Coaster Craft",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Rope-basket-poster-1.pdf"
-            }
-          ]
+          ],
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-September-2-2026-Museum-Board__b2c35cc9.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-September-2-2026-docx__23e8b1ae.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-2-2026__abe8b962.pdf"
         },
         {
           "date": "2026-08-05",
           "display_date": "Aug 5, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-August-5-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Museum-Board-Aug-5-signed.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Agenda-Packae-Aug-5-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
@@ -367,90 +343,23 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
-        },
-        {
-          "date": "2026-08-02",
-          "display_date": "Aug 2, 2026",
-          "year": 2026,
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "summary": null,
-          "events": [],
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "is_future": true,
-          "extra_docs": [
-            {
-              "label": "Heritage Day Craft Fair",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Childrens-Craft-Fair-1.pdf"
-            },
-            {
-              "label": "Heritage Day Children’s Craft Competition Entry Form",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Childrens-Craft-Competition-2026-Entry-Form.pdf",
-              "archived": "files/archive/boards/museum/2026/Childrens-Craft-Competition-2026-Entry-Form__48170a55.pdf"
-            },
-            {
-              "label": "admin@nipissingtownship.com",
-              "url": "mailto:admin@nipissingtownship.com"
-            },
-            {
-              "label": "2023-10 By-Law – Museum",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-10-Museum-Board.pdf"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-18",
-          "display_date": "Jul 18, 2026",
-          "year": 2026,
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "summary": null,
-          "events": [],
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "is_future": true,
-          "extra_docs": [
-            {
-              "label": "Ice Cream Making",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Learn-to-Make-Your-Own-Ice-Cream-1.pdf"
-            },
-            {
-              "label": "Heritage Day",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Heritage-Day-poster-2026-1.pdf"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-August-5-2026-Museum-Board__5cec6c2f.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Board-Aug-5-signed__a46061e0.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Packae-Aug-5-2026__6b919d29.pdf"
         },
         {
           "date": "2026-07-08",
           "display_date": "Jul 8, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-JULY-8-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Museum-Boad-Minutes-July-8-2026-docx-1.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Museum-Agenda-July-8.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": null,
@@ -460,69 +369,11 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
-        },
-        {
-          "date": "2026-07-04",
-          "display_date": "Jul 4, 2026",
-          "year": 2026,
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "summary": null,
-          "events": [],
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "is_future": true,
-          "extra_docs": [
-            {
-              "label": "Butter Making",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Butter-Making-1.pdf"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-02",
-          "display_date": "Jul 2, 2026",
-          "year": 2026,
-          "is_future": true,
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "summary": null,
-          "events": [],
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "body": "Museum Board",
-          "body_id": "museum",
-          "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "Facebook",
-              "url": "https://www.facebook.com/p/Nipissing-Township-Museum-100049041735962/"
-            },
-            {
-              "label": "admin@nipissingtownship.com",
-              "url": "mailto:admin@nipissingtownship.com"
-            },
-            {
-              "label": "2023-10 By-Law – Museum",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-10-Museum-Board.pdf"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-JULY-8-2026-Museum-Board__a987cc2e.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-July-8-2026-docx-1__3ab6c478.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Agenda-July-8__bd2ca692.pdf"
         },
         {
           "date": "2026-06-03",
@@ -547,7 +398,8 @@
           "extra_docs": [],
           "agenda_archived": "files/archive/boards/museum/2026/Agenda-June-3-2026-Museum-Board__cabb50d6.pdf",
           "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-June-3-2026-docx__ba99e340.pdf",
-          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-June-3-Package__fc11f8ec.pdf"
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-June-3-Package__fc11f8ec.pdf",
+          "video_url": null
         },
         {
           "date": "2026-05-13",
@@ -557,8 +409,8 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Agenda-May-13-2026-Museum-Board.pdf",
-          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Boad-Minutes-May-13-2026-docx.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-May-13-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Museum-Boad-Minutes-May-13-2026-docx.pdf",
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
@@ -570,29 +422,10 @@
           "title": "Museum Board",
           "source_kind": "board",
           "extra_docs": [],
-          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-May-13-2026__579b541d.pdf"
-        },
-        {
-          "date": "2026-05-06",
-          "display_date": "May 6, 2026",
-          "year": 2026,
-          "is_future": false,
-          "cancelled": false,
-          "rescheduled": true,
-          "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "board_id": "museum",
-          "board_name": "Museum Board",
-          "summary": null,
-          "events": [],
-          "body": "Museum Board",
-          "body_id": "museum",
-          "meeting_type": "Board",
-          "title": "Museum Board",
-          "source_kind": "board",
-          "extra_docs": []
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-May-13-2026__579b541d.pdf",
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-May-13-2026-Museum-Board__10921213.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-May-13-2026-docx__d582ceec.pdf"
         },
         {
           "date": "2026-04-01",
@@ -602,9 +435,9 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-April-1-2026-Museum-Board.pdf",
-          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Museum-Boad-Minutes-April-1-2026-docx.pdf",
-          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Museum-Agenda-Package-April-1-.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-April-1-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Boad-Minutes-April-1-2026-docx.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Agenda-Package-April-1-.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": "# Museum Board Meeting Summary\n\n**April 1, 2026**\n\n## Key Decisions\n- Approved minutes from the March 4, 2026 meeting\n- Approved opening all workshop time slots to residents of all ages to improve access\n- Approved proposed workshop schedule that allows staff setup, cleanup time, and visitor museum tours\n- Decided to have students lead workshops with support from Museum Manager and Board members\n- Approved plan to take basket-making workshop to the library in fall 2026, following summer feedback\n- Scheduled rope crafts training session for Board volunteers before the next meeting\n\n## Main Topics\n- **Building repairs and inspection**: Foundation repairs are complete; staff will schedule an inspection before the 2026 season opening\n- **Workshop planning**: The Board discussed timing, age accessibility, and logistics for upcoming butter-making, ice-cream-making, and rope-crafts workshops. Posters for butter and ice-cream workshops will be distributed by Board members\n- **Heritage Day**: The Board reviewed 2025 attendance numbers and discussed fundraising ideas for the August 2026 event. They requested that Fire Halls display promotional signs closer to the event date\n- **Exhibits and programs**: Work continues on \"The Waterway Journey to Nipissing\" exhibit and the Remembrance Interactive program. The Board received positive feedback on the Streams and Ladders game distributed during the 2025 Fire Department Christmas Run\n\n## Notable Items\n- Museum season opening is approaching; foundation inspection is pending\n- Rope crafts training session will occur before the next Board meeting\n- Workshop posters will be available at the May meeting for community distribution\n- Heritage Day fundraising and event details require further discussion at the next meeting\n- Artifact cataloguing and data entry will resume during the museum season\n\n---\n*Next regular meeting: Wednesday, May 6, 2026 at 6:00 p.m.*",
@@ -614,7 +447,11 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-April-1-2026-Museum-Board__bd061e86.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-April-1-2026-docx__ac2944d8.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Agenda-Package-April-1-__088bf74d.pdf"
         },
         {
           "date": "2026-03-04",
@@ -624,9 +461,9 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Agenda-March-4-2026-Museum-Board.pdf",
-          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Museum-Boad-Minutes-March-4-2026-docx.pdf",
-          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Museum-Package-March-4-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-March-4-2026-Museum-Board.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Boad-Minutes-March-4-2026-docx.pdf",
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Package-March-4-2026.pdf",
           "board_id": "museum",
           "board_name": "Museum Board",
           "summary": "# Museum Board Meeting Summary\n\n**Mar 4, 2026**\n\n## Key Decisions\n- Jane Aultman appointed as Chairperson for 2026\n- November 5, 2025 meeting minutes approved\n- Board adjourned at 6:18 p.m.\n\n## Main Topics\n- **Building inspection**: An engineer will inspect the Museum before it opens for the season.\n- **Event planning and volunteers**: Board members are being asked to volunteer for scheduled events. Summer students will help support events. The band \"Country Re-Runs and Friends\" was suggested as live entertainment for Heritage Day.\n- **Exhibit development**: Staff have been developing \"The Waterway Journey to Nipissing\" as the theme for Heritage Day and a Remembrance Interactive exhibit program. The Board discussed applying for grants to create a traveling Remembrance Day exhibit that could visit the Powassan Library after being installed at the Museum.\n- **Cataloguing**: Artifact cataloguing and data entry will resume during the Museum season.\n- **Community feedback**: The Board is gathering feedback on a museum-designed game used during the 2025 Christmas event through Facebook and community discussion to guide future projects.\n\n## Notable Items\n- Engineer inspection of the Museum is scheduled before opening\n- Heritage Day will feature \"The Waterway Journey to Nipissing\" theme\n- Remembrance Interactive exhibit will be installed at the Museum this year to test it before potential grant-funded traveling exhibit\n- Summer students will support seasonal events\n\n---\n*Next regular meeting: Wednesday, April 1, 2026 at 6:00 p.m.*",
@@ -636,7 +473,11 @@
           "body": "Museum Board",
           "body_id": "museum",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-March-4-2026-Museum-Board__4db59d00.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-March-4-2026-docx__0ddeba0d.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Package-March-4-2026__e4f1dbf4.pdf"
         },
         {
           "date": "2025-11-05",
@@ -658,12 +499,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "office@nipissingtownship.com",
-              "url": "mailto:office@nipissingtownship.com"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-10-01",
@@ -685,7 +522,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-09-03",
@@ -707,7 +545,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-08-06",
@@ -729,7 +568,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-07-02",
@@ -751,7 +591,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-06-04",
@@ -773,7 +614,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-05-07",
@@ -795,7 +637,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-04-02",
@@ -817,7 +660,8 @@
           "meeting_type": "Board",
           "title": "Museum Board",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-03-05",
@@ -839,16 +683,22 @@
           "body": "Museum Board",
           "body_id": "museum",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "office@nipissingtownship.com",
-              "url": "mailto:office@nipissingtownship.com"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null
         }
       ],
-      "url": "https://nipissingtownship.com/services/museum-services-and-information/",
-      "description": "Preservation and display of the history and heritage of Nipissing Township."
+      "url": "https://nipissingtownship.com/services/museum/",
+      "description": "Preservation and display of the history and heritage of Nipissing Township.",
+      "page_docs": [
+        {
+          "label": "BY-LAW 2026-20",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/08/2026-20.pdf"
+        },
+        {
+          "label": "2023-10 Museum Board",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-10.pdf"
+        }
+      ]
     },
     {
       "id": "recreation",
@@ -874,81 +724,18 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "info@nipissingtownship.com",
-              "url": "mailto:info@nipissingtownship.com"
-            },
-            {
-              "label": "2023-09 Recreation Committee",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Committee-By-Law.pdf",
-              "archived": "files/archive/boards/recreation/2026/Recreation-Committee-By-Law__528320b1.pdf"
-            },
-            {
-              "label": "Soccer Registration Form",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Registration-Form-Website.pdf",
-              "archived": "files/archive/boards/recreation/2026/Soccer-Registration-Form-Website__200c2007.pdf"
-            },
-            {
-              "label": "Soccer Waver",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Waver.pdf",
-              "archived": "files/archive/boards/recreation/2026/Soccer-Waver__2844a2ac.pdf"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2026-10-05",
           "display_date": "Oct 5, 2026",
           "year": 2026,
-          "is_future": true,
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "board_id": "recreation",
-          "board_name": "Recreation Committee",
-          "summary": null,
-          "events": [],
-          "body": "Recreation Committee",
-          "body_id": "recreation",
-          "meeting_type": "Board",
-          "title": "Recreation Committee",
-          "source_kind": "board",
-          "extra_docs": []
-        },
-        {
-          "date": "2026-09-14",
-          "display_date": "Sep 14, 2026",
-          "year": 2026,
-          "is_future": true,
-          "cancelled": false,
-          "rescheduled": false,
-          "postponed": false,
-          "agenda_url": null,
-          "minutes_url": null,
-          "package_url": null,
-          "board_id": "recreation",
-          "board_name": "Recreation Committee",
-          "summary": null,
-          "events": [],
-          "body": "Recreation Committee",
-          "body_id": "recreation",
-          "meeting_type": "Board",
-          "title": "Recreation Committee",
-          "source_kind": "board",
-          "extra_docs": []
-        },
-        {
-          "date": "2026-06-01",
-          "display_date": "Jun 1, 2026",
-          "year": 2026,
           "is_future": false,
-          "cancelled": true,
+          "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-June-1-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Recreation-Agenda-October-5-2026.pdf",
           "minutes_url": null,
           "package_url": null,
           "board_id": "recreation",
@@ -961,7 +748,57 @@
           "title": "Recreation Committee",
           "source_kind": "board",
           "extra_docs": [],
-          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-June-1-2026__2bbcb2f3.pdf"
+          "video_url": "https://www.youtube.com/watch?v=5_E1eb6RdxQ",
+          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-October-5-2026__b5b0727b.pdf"
+        },
+        {
+          "date": "2026-09-14",
+          "display_date": "Sep 14, 2026",
+          "year": 2026,
+          "is_future": false,
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Recreation-Agenda-September-14-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Recreation-Minutes-September-14-2026.pdf",
+          "package_url": null,
+          "board_id": "recreation",
+          "board_name": "Recreation Committee",
+          "summary": null,
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation",
+          "meeting_type": "Board",
+          "title": "Recreation Committee",
+          "source_kind": "board",
+          "extra_docs": [],
+          "video_url": "https://www.youtube.com/watch?v=gmsNmhxC6gY",
+          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-September-14-2026__29e64ad1.pdf",
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-September-14-2026__464245ff.pdf"
+        },
+        {
+          "date": "2026-06-01",
+          "display_date": "Jun 1, 2026",
+          "year": 2026,
+          "is_future": false,
+          "cancelled": true,
+          "rescheduled": false,
+          "postponed": false,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-June-1-2026.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "board_id": "recreation",
+          "board_name": "Recreation Committee",
+          "summary": null,
+          "events": [],
+          "body": "Recreation Committee",
+          "body_id": "recreation",
+          "meeting_type": "Board",
+          "title": "Recreation Committee",
+          "source_kind": "board",
+          "extra_docs": [],
+          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-June-1-2026__2bbcb2f3.pdf",
+          "video_url": null
         },
         {
           "date": "2026-05-04",
@@ -971,8 +808,8 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-May-4-2026.pdf",
-          "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-May-4-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-May-4-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-May-4-2026.pdf",
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
@@ -985,7 +822,8 @@
           "source_kind": "board",
           "extra_docs": [],
           "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-May-4-2026__ff181684.pdf",
-          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-May-4-2026__fd893c6e.pdf"
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-May-4-2026__fd893c6e.pdf",
+          "video_url": null
         },
         {
           "date": "2026-03-02",
@@ -995,8 +833,8 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-March-2-2026.pdf",
-          "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-March-2-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-March-2-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-March-2-2026.pdf",
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
@@ -1009,7 +847,8 @@
           "source_kind": "board",
           "extra_docs": [],
           "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-March-2-2026__f44cb17c.pdf",
-          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-March-2-2026__ad4dd773.pdf"
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-March-2-2026__ad4dd773.pdf",
+          "video_url": null
         },
         {
           "date": "2026-02-02",
@@ -1019,8 +858,8 @@
           "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-February-2-2026.pdf",
-          "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-February-2-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-February-2-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-February-2-2026.pdf",
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
@@ -1033,18 +872,19 @@
           "extra_docs": [],
           "events": [],
           "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-February-2-2026__0e0c3b3e.pdf",
-          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-February-2-2026__53aa2615.pdf"
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-February-2-2026__53aa2615.pdf",
+          "video_url": null
         },
         {
           "date": "2026-01-19",
           "display_date": "Jan 19, 2026",
           "year": 2026,
           "is_future": false,
-          "cancelled": true,
+          "cancelled": false,
           "rescheduled": false,
           "postponed": false,
-          "agenda_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-January-19-2026.pdf",
-          "minutes_url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-January-19-2026.pdf",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-January-19-2026.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Minutes-January-19-2026.pdf",
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
@@ -1055,29 +895,10 @@
           "body": "Recreation Committee",
           "body_id": "recreation",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "info@nipissingtownship.com",
-              "url": "mailto:info@nipissingtownship.com"
-            },
-            {
-              "label": "2023-09 Recreation Committee",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Committee-By-Law.pdf",
-              "archived": "files/archive/boards/recreation/2026/Recreation-Committee-By-Law__528320b1.pdf"
-            },
-            {
-              "label": "Soccer Registration Form",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Registration-Form-Website.pdf",
-              "archived": "files/archive/boards/recreation/2026/Soccer-Registration-Form-Website__200c2007.pdf"
-            },
-            {
-              "label": "Soccer Waver",
-              "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Waver.pdf",
-              "archived": "files/archive/boards/recreation/2026/Soccer-Waver__2844a2ac.pdf"
-            }
-          ],
+          "extra_docs": [],
           "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-January-19-2026__3cbaf9d9.pdf",
-          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-January-19-2026__aab28a3f.pdf"
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-January-19-2026__aab28a3f.pdf",
+          "video_url": null
         },
         {
           "date": "2025-12-15",
@@ -1099,7 +920,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-11-17",
@@ -1121,7 +943,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-10-06",
@@ -1143,7 +966,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-09-15",
@@ -1165,7 +989,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-08-11",
@@ -1187,7 +1012,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-07-14",
@@ -1209,7 +1035,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-06-09",
@@ -1231,7 +1058,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-05-12",
@@ -1253,7 +1081,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-04-07",
@@ -1275,7 +1104,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-03-03",
@@ -1297,7 +1127,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-02-03",
@@ -1319,14 +1150,15 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2025-01-06",
           "display_date": "Jan 6, 2025",
           "year": 2025,
           "is_future": false,
-          "cancelled": true,
+          "cancelled": false,
           "rescheduled": false,
           "postponed": false,
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Recreation-Agenda-January-6-2025.pdf",
@@ -1341,7 +1173,8 @@
           "body": "Recreation Committee",
           "body_id": "recreation",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-12-02",
@@ -1363,20 +1196,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "info@nipssingtownship.com",
-              "url": "mailto:info@nipssingtownship.com"
-            },
-            {
-              "label": "2026 Soccer Registration Form",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-2026-Registration-Form-Fillable-Form.pdf"
-            },
-            {
-              "label": "2026 Soccer Waiver Form",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-Waver.pdf"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-11-04",
@@ -1398,7 +1219,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-10-07",
@@ -1420,7 +1242,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-09-16",
@@ -1442,7 +1265,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-08-12",
@@ -1464,7 +1288,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-07-15",
@@ -1486,7 +1311,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-06-03",
@@ -1508,7 +1334,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-05-13",
@@ -1530,7 +1357,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-04-15",
@@ -1552,7 +1380,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-03-04",
@@ -1574,7 +1403,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-02-05",
@@ -1596,7 +1426,8 @@
           "meeting_type": "Board",
           "title": "Recreation Committee",
           "source_kind": "board",
-          "extra_docs": []
+          "extra_docs": [],
+          "video_url": null
         },
         {
           "date": "2024-01-15",
@@ -1618,24 +1449,46 @@
           "body": "Recreation Committee",
           "body_id": "recreation",
           "source_kind": "board",
-          "extra_docs": [
-            {
-              "label": "info@nipssingtownship.com",
-              "url": "mailto:info@nipssingtownship.com"
-            },
-            {
-              "label": "2026 Soccer Registration Form",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-2026-Registration-Form-Fillable-Form.pdf"
-            },
-            {
-              "label": "2026 Soccer Waiver Form",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-Waver.pdf"
-            }
-          ]
+          "extra_docs": [],
+          "video_url": null
         }
       ],
       "url": "https://nipissingtownship.com/services/recreation/",
-      "description": "Management of recreational programming and the Community Centre at 2381 Highway 654."
+      "description": "Management of recreational programming and the Community Centre at 2381 Highway 654.",
+      "page_docs": [
+        {
+          "label": "2023-09 Recreation Committee",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-09.pdf"
+        },
+        {
+          "label": "Soccer Registration Form",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Registration-Form-Website.pdf"
+        },
+        {
+          "label": "Soccer Waver",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Waver.pdf"
+        },
+        {
+          "label": "2023-09 Recreation Committee",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Committee-By-Law.pdf"
+        },
+        {
+          "label": "Soccer Registration Form",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Registration-Form-Website.pdf"
+        },
+        {
+          "label": "Soccer Waver",
+          "url": "http://nipissingtownship.com/wp-content/uploads/2026/05/Soccer-Waver.pdf"
+        },
+        {
+          "label": "2026 Soccer Registration Form",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-2026-Registration-Form-Fillable-Form.pdf"
+        },
+        {
+          "label": "2026 Soccer Waiver Form",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Soccer-Waver.pdf"
+        }
+      ]
     }
   ]
 }
