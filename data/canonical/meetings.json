@@ -115,18 +115,32 @@
       "date": "2026-08-20",
       "display_date": "Aug 20, 2026",
       "year": 2026,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "title": "",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/August-20-2026-Special-Meeting-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Minutes-August-20-2026-Special-Meeting.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Aug-20-Council-Meeting-Package-1.pdf",
       "extra_docs": [],
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=m3I5DwW1wmk",
       "summary": "# Council Meeting Summary\n\n**Aug 20, 2026**\n\n## Key Decisions\n- Accepted staff report on reserves and transfers related to a recent lawn mower purchase made outside the budget\n- Closed session held to discuss a human resources matter with municipal solicitor\n- Directed staff to review and update Procurement By-Law 2020-51 to improve financial transparency and controls\n- Passed By-Law No. 2026-33 to confirm the proceedings of this meeting\n\n## Main Topics\n- **Lawn mower purchase and reserves**: The Municipal Administrator explained how reserve funds were used to pay for a lawn mower that was not included in the original budget, and how transfers between accounts are made\n- **Procurement by-law gaps**: Council identified that staff did not follow proper procurement procedures (sections 5.2.g. and Schedule C of By-Law 2020-51) when purchasing the lawn mower, and committed to strengthening the process\n\n## Notable Items\n- Staff must prepare updates to Procurement By-Law 2020-51 including: requiring declaration of surplus equipment in bid acceptance, providing trade-in values for council review, and creating a standard template for all quotation requests\n- Draft updates to the procurement by-law will be presented to council on **October 6, 2026** for review and comment\n- The meeting included a closed session from 6:13 p.m. to 7:06 p.m. to discuss personnel and legal matters\n\n---\n*Next regular meeting: September 1, 2026*",
       "cancelled": false,
       "agenda_archived": "files/archive/meetings/2026/August-20-2026-Special-Meeting-Agenda__82293375.pdf",
       "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Aug-20-Council-Meeting-Package-1__31dda456.pdf",
-      "minutes_archived": "files/archive/meetings/2026/Minutes-August-20-2026-Special-Meeting__6ad2b7c9.pdf"
+      "minutes_archived": "files/archive/meetings/2026/Minutes-August-20-2026-Special-Meeting__6ad2b7c9.pdf",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=m3I5DwW1wmk",
+          "title": "Township of Nipissing Special Council Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=SmDbVMqddkU",
+          "title": "Township of Nipissing Special Council Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=k_l830j5Svk",
+          "title": "Township of Nipissing Special Council Meeting"
+        }
+      ]
     },
     {
       "date": "2026-08-11",
@@ -166,7 +180,7 @@
       "date": "2026-06-30",
       "display_date": "Jun 30, 2026",
       "year": 2026,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "title": "",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-30-2026-Special.pdf",
@@ -175,24 +189,9 @@
       "video_url": null,
       "summary": "# Council Meeting Summary\n\n**Jun 30, 2026**\n\n## Key Decisions\n- Awarded the Bear Creek Bridge and Abutment Construction tender (NIP-PW-10-2026) to Degagne Aggregates\n- Passed By-Law No. 2026-28 to confirm the proceedings of this council meeting\n\n## Main Topics\n- Bridge construction project: Council selected a contractor for the Bear Creek Bridge and Abutment Construction work following a tender process\n\n## Notable Items\n- This was a special meeting held in person at the Township Community Centre and livestreamed\n- The meeting was very brief, lasting only 5 minutes (10:00 a.m. to 10:05 a.m.)\n- No conflicts of interest were declared by council members\n\n---\n*Next regular meeting: July 14, 2026*",
       "cancelled": false,
-      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__d981e769.pdf",
+      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__119a38bd.pdf",
       "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf",
       "minutes_archived": "files/archive/meetings/2026/Minutes-June-30-2026-Special__8a127dbe.pdf"
-    },
-    {
-      "date": "2026-06-30",
-      "display_date": "Jun 30, 2026",
-      "year": 2026,
-      "meeting_type": "Special",
-      "title": "",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf",
-      "minutes_url": null,
-      "package_url": null,
-      "extra_docs": [],
-      "video_url": null,
-      "summary": null,
-      "cancelled": false,
-      "agenda_archived": "files/archive/meetings/2026/June-30-2026-Special-Meeting-Agenda__119a38bd.pdf"
     },
     {
       "date": "2026-06-16",
@@ -622,17 +621,32 @@
       "date": "2025-09-02",
       "display_date": "Sep 2, 2025",
       "year": 2025,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2025/08/September-2-2025-Agenda-Special-Meeting.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-2-2025-Special-Meeting.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Agenda-Package-September-2-2025.pdf",
       "extra_docs": [],
-      "video_url": "https://www.youtube.com/watch?v=HUPTQajeFWk",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Sep 2, 2025**\n\n## Key Decisions\n- Council moved into closed session to receive legal opinions on a planning matter (Motion R2025-148, carried)\n- Council resumed open public meeting after closed session (Motion R2025-149, carried)\n- Meeting was adjourned (Motion R2025-150, carried)\n\n## Main Topics\n- Council received legal advice from external counsel (Ed Veldboom, Russell Christie LLP) and planning consultant (Jamie Robinson, MHBC Planning) regarding a planning matter. The specific details were discussed in closed session.\n\n## Notable Items\n- This was a special meeting held at the Township of Nipissing Community Centre and livestreamed on YouTube\n- Mayor Dave Yemm was absent; four councillors were present\n- The closed session lasted approximately 17 minutes (5:33 p.m. to 5:50 p.m.)\n\n---\n*Next regular meeting: To be confirmed*",
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2025/Minutes-September-2-2025-Special-Meeting__40320a74.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-September-2-2025__8f2b6bd3.pdf"
+      "video_url": null,
+      "package_url": null
+    },
+    {
+      "date": "2025-09-02",
+      "display_date": "Sep 2, 2025",
+      "year": 2025,
+      "meeting_type": "Regular",
+      "title": "",
+      "agenda_url": null,
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/08/Minutes-September-2-2025.pdf",
+      "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Agenda-Package-September-2-2025.pdf",
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=HUPTQajeFWk",
+      "summary": null,
+      "cancelled": false,
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-September-2-2025__8f2b6bd3.pdf",
+      "minutes_archived": "files/archive/meetings/2025/Minutes-September-2-2025__cdfabbcb.pdf"
     },
     {
       "date": "2025-08-12",
@@ -875,23 +889,6 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/January-7-2025-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
-      "extra_docs": [],
-      "video_url": "https://www.youtube.com/watch?v=qXkA365W-K4",
-      "title": "",
-      "summary": "# Council Meeting Summary\n\n**Jan 7, 2025**\n\n## Key Decisions\n- Approved four by-laws: Committee of Adjustment appointments (By-Law 2025-01), temporary borrowing authority for 2025 (By-Law 2025-02), interim tax levy (By-Law 2025-03), and auditor appointment (By-Law 2025-04)\n- Accepted resignations of Rob Serson from the Museum Board and James Scott from the Recreation Committee\n- Appointed Tom Piper to the Recreation Committee\n- Authorized the Mayor and Municipal Administrator to sign a grant agreement with the Office of the Fire Marshal for cancer prevention in the Fire Department\n- Approved accounts totaling $407,517.24 from December 2024\n\n## Main Topics\n- The Powassan District Union Public Library presented its 2025 budget to council\n- Council confirmed committee memberships and filled a vacancy on the Recreation Committee\n- Council passed routine financial and governance by-laws needed to authorize borrowing and set the interim tax levy for the year\n\n## Notable Items\n- A grant from the Office of the Fire Marshal will support cancer prevention initiatives in the Fire Department\n- Total approved spending for December accounts: $407,517.24\n- Interim tax levy by-law passed to allow tax collection during 2025\n\n---\n*Next regular meeting: January 21, 2025*",
-      "cancelled": false,
-      "minutes_archived": "files/archive/meetings/2025/Minutes-January-7-2025__59564c63.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-7-2025-Council-Package__3c31b03a.pdf"
-    },
-    {
-      "date": "2025-01-07",
-      "display_date": "Jan 7, 2025",
-      "year": 2025,
-      "meeting_type": "Special",
-      "title": "",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/January-7-2025-Agenda.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
       "extra_docs": [
         {
           "label": "2024 Audited Financial Statements by KPMG",
@@ -943,8 +940,9 @@
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=qXkA365W-K4",
-      "summary": null,
-      "cancelled": true,
+      "title": "",
+      "summary": "# Council Meeting Summary\n\n**Jan 7, 2025**\n\n## Key Decisions\n- Approved four by-laws: Committee of Adjustment appointments (By-Law 2025-01), temporary borrowing authority for 2025 (By-Law 2025-02), interim tax levy (By-Law 2025-03), and auditor appointment (By-Law 2025-04)\n- Accepted resignations of Rob Serson from the Museum Board and James Scott from the Recreation Committee\n- Appointed Tom Piper to the Recreation Committee\n- Authorized the Mayor and Municipal Administrator to sign a grant agreement with the Office of the Fire Marshal for cancer prevention in the Fire Department\n- Approved accounts totaling $407,517.24 from December 2024\n\n## Main Topics\n- The Powassan District Union Public Library presented its 2025 budget to council\n- Council confirmed committee memberships and filled a vacancy on the Recreation Committee\n- Council passed routine financial and governance by-laws needed to authorize borrowing and set the interim tax levy for the year\n\n## Notable Items\n- A grant from the Office of the Fire Marshal will support cancer prevention initiatives in the Fire Department\n- Total approved spending for December accounts: $407,517.24\n- Interim tax levy by-law passed to allow tax collection during 2025\n\n---\n*Next regular meeting: January 21, 2025*",
+      "cancelled": false,
       "minutes_archived": "files/archive/meetings/2025/Minutes-January-7-2025__59564c63.pdf",
       "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-7-2025-Council-Package__3c31b03a.pdf"
     },
@@ -952,7 +950,7 @@
       "date": "2024-12-19",
       "display_date": "Dec 19, 2024",
       "year": 2024,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Special-Meeting-Agenda-December-19-2024.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-19-2024.pdf",
       "package_url": null,
@@ -1209,18 +1207,6 @@
       "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Special-Meeting-Agenda-Package-May-9-24-1__9d347b9a.pdf"
     },
     {
-      "date": "2024-05-09",
-      "display_date": "May 9, 2024",
-      "year": 2024,
-      "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Special-Meeting-Agenda-May-9-2024-1.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Agenda-Package-May-9-24-1.pdf",
-      "extra_docs": [],
-      "minutes_archived": "files/archive/meetings/2024/Special-Meeting-Minutes-May-9-2024__cc8ede49.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Special-Meeting-Agenda-Package-May-9-24-1__9d347b9a.pdf"
-    },
-    {
       "date": "2024-04-16",
       "display_date": "Apr 16, 2024",
       "year": 2024,
@@ -1385,23 +1371,6 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2023/12/Agenda-January-2-2024.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
-      "extra_docs": [],
-      "title": "",
-      "video_url": null,
-      "summary": null,
-      "cancelled": false,
-      "minutes_archived": "files/archive/meetings/2024/Minutes-January-2-2024__834b60e0.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-2-2024-Council-Agenda-Package__88238f39.pdf"
-    },
-    {
-      "date": "2024-01-02",
-      "display_date": "Jan 2, 2024",
-      "year": 2024,
-      "meeting_type": "Special",
-      "title": "",
-      "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2023/12/Agenda-January-2-2024.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
-      "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
       "extra_docs": [
         {
           "label": "KPMG 2023 Financial Overview",
@@ -1424,6 +1393,7 @@
           "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Resolution-2024-189.pdf"
         }
       ],
+      "title": "",
       "video_url": null,
       "summary": null,
       "cancelled": false,
@@ -2037,9 +2007,9 @@
       "date": "2021-11-16",
       "display_date": "Nov 16, 2021",
       "year": 2021,
-      "meeting_type": "Regular",
-      "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-november-16-2021/",
-      "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-november-16-2021/",
+      "meeting_type": "Special",
+      "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-november-16-2021/",
+      "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-nov-16-2021/",
       "package_url": null,
       "extra_docs": []
     },
@@ -2047,9 +2017,9 @@
       "date": "2021-11-16",
       "display_date": "Nov 16, 2021",
       "year": 2021,
-      "meeting_type": "Special",
-      "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-november-16-2021/",
-      "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-nov-16-2021/",
+      "meeting_type": "Regular",
+      "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-november-16-2021/",
+      "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-november-16-2021/",
       "package_url": null,
       "extra_docs": []
     },
@@ -2387,7 +2357,7 @@
       "date": "2020-07-16",
       "display_date": "Jul 16, 2020",
       "year": 2020,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-thursday-july-16-2020/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-july-16-2020/",
       "package_url": null,
@@ -2557,7 +2527,7 @@
       "date": "2019-10-28",
       "display_date": "Oct 28, 2019",
       "year": 2019,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-special-meeting-october-28-2019/",
       "minutes_url": null,
       "package_url": null,
@@ -2622,7 +2592,7 @@
       "date": "2019-07-24",
       "display_date": "Jul 24, 2019",
       "year": 2019,
-      "meeting_type": "Regular",
+      "meeting_type": "Special",
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-july-24-2019/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-july-24th-2019/",
       "package_url": null,
