@@ -19,8 +19,11 @@ represented through the members appointed for its group of municipalities.
 
 from __future__ import annotations
 
+import json
 import re
+import time
 from datetime import date, datetime
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.parse import urljoin
 
@@ -119,8 +122,77 @@ def fetch_year(session: requests.Session, year: int) -> Optional[List[Dict[str, 
     return items
 
 
-STATS = {"ok": 0, "refused": 0, "other": 0}
+STATS = {"ok": 0, "refused": 0, "other": 0, "skipped_refused": 0}
 _warmed: set = set()
+
+RUNTIME = Path(__file__).resolve().parents[1] / "data" / "runtime"
+REFUSED_FILE = RUNTIME / "dnssab_refused.json"     # url -> date eScribe refused it
+PAGES_FILE = RUNTIME / "dnssab_pages.json"         # meeting page url -> date read
+RETRY_REFUSED_DAYS = 30
+REREAD_RECENT_DAYS = 60                            # minutes/attachments still being posted
+
+
+def _load(path: Path) -> Dict[str, str]:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+REFUSED = _load(REFUSED_FILE)
+PAGES = _load(PAGES_FILE)
+
+
+def _recent(iso: str, days: int) -> bool:
+    try:
+        return (date.today() - date.fromisoformat(iso)).days < days
+    except Exception:
+        return False
+
+
+def collect_attachments(session: requests.Session, m: Dict[str, Any]) -> int:
+    """Read the meeting's eScribe web pages (agenda / post-agenda / minutes)
+    and add every attached document — staff reports etc. — as an extra
+    document labelled with its agenda item ("5.1 Average Market Rents,
+    HS-2025-025"). Each page is read once, or again while the meeting is
+    recent, since attachments and minutes are posted after the meeting."""
+    from bs4 import BeautifulSoup
+    added = 0
+    pages = [d["url"] for d in m.get("extra_docs") or []
+             if "meeting.aspx" in (d.get("url") or "").lower()]
+    for page in pages:
+        if page in PAGES and not _recent(m["date"], REREAD_RECENT_DAYS):
+            continue
+        try:
+            r = session.get(page, timeout=60)
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"  page failed {page}: {e}")
+            continue
+        if r.status_code != 200:
+            continue
+        PAGES[page] = date.today().isoformat()
+        soup = BeautifulSoup(r.text, "html.parser")
+        # eScribe layout: div.AgendaItem holds the item number
+        # (.AgendaItemCounter), title (.AgendaItemTitle) and its attachment
+        # list (.AgendaItemAttachment a.Link -> filestream.ashx?DocumentId=…).
+        # The same links are repeated in a side panel; add_doc ignores repeats.
+        for item in soup.select("div.AgendaItem"):
+            counter = item.select_one(".AgendaItemCounter")
+            title = item.select_one(".AgendaItemTitle")
+            num = " ".join(counter.get_text(" ", strip=True).split()).rstrip(".") if counter else ""
+            name = " ".join(title.get_text(" ", strip=True).split()) if title else ""
+            links = [a for a in item.select(".AgendaItemAttachment a[href]")
+                     if "filestream.ashx" in a["href"].lower()]
+            for a in links:
+                fname = " ".join(a.get_text(" ", strip=True).split())
+                fname = re.sub(r"\.pdf$", "", fname, flags=re.I)
+                head = f"{num} {name}".strip()
+                label = head if len(links) == 1 and head else f"{head} — {fname}".strip(" —")
+                before = len(m.get("extra_docs") or [])
+                add_doc(m, "extra", urljoin(BASE, a["href"]), label or fname or "Attachment")
+                added += len(m.get("extra_docs") or []) - before
+    return added
 
 
 def _meeting_page(m: Dict[str, Any]) -> Optional[str]:
@@ -131,7 +203,11 @@ def _meeting_page(m: Dict[str, Any]) -> Optional[str]:
 def fetch_escribe(session: requests.Session, url: str, page: Optional[str]) -> Optional[bytes]:
     """eScribe refuses FileStream.ashx requests that don't come from a portal
     page (403 seen 2026-10-21). Open the meeting page first, then ask for the
-    file with that page as Referer and browser-like headers."""
+    file with that page as Referer and browser-like headers. A refused file is
+    not asked for again for 30 days."""
+    if url in REFUSED and _recent(REFUSED[url], RETRY_REFUSED_DAYS):
+        STATS["skipped_refused"] += 1
+        return None
     if page and page not in _warmed:
         try:
             session.get(page, timeout=60)
@@ -150,6 +226,7 @@ def fetch_escribe(session: requests.Session, url: str, page: Optional[str]) -> O
         return r.content
     if r.status_code == 403:
         STATS["refused"] += 1
+        REFUSED[url] = date.today().isoformat()
         if STATS["refused"] <= 3:     # enough to diagnose without flooding the log
             print(f"  archive: 403 for {url} (page {page}); "
                   f"server={r.headers.get('Server')} cf-ray={r.headers.get('CF-RAY')} "
@@ -265,9 +342,16 @@ def main() -> None:
         print("  ✗ calendar endpoint returned nothing usable — keeping stored data")
         return   # nothing saved, so a pending rebuild is simply retried next run
     print(f"  {total} meeting(s), {docs} document link(s)")
+    attached = sum(collect_attachments(session, m)
+                   for ms in store.scraped.values() for m in ms.values())
+    print(f"  attachments: {attached} new link(s) from meeting pages")
     store.save("boards/dnssab", mirror=lambda m, cat: mirror_escribe(session, m, cat))
+    RUNTIME.mkdir(parents=True, exist_ok=True)
+    REFUSED_FILE.write_text(json.dumps(REFUSED, indent=1, sort_keys=True), encoding="utf-8")
+    PAGES_FILE.write_text(json.dumps(PAGES, indent=1, sort_keys=True), encoding="utf-8")
     print(f"  archive: {STATS['ok']} document(s) mirrored this run, "
-          f"{STATS['refused']} refused, {STATS['other']} other failures")
+          f"{STATS['refused']} refused, {STATS['other']} other failures, "
+          f"{STATS['skipped_refused']} skipped (refused recently)")
 
 
 if __name__ == "__main__":

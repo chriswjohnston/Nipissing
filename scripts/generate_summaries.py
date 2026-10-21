@@ -119,6 +119,39 @@ def load_minutes_pdf(meeting: Dict[str, Any]) -> bytes:
     return r.content
 
 
+def minutes_web_page(meeting: Dict[str, Any]) -> str:
+    """URL of a web-page version of the minutes, for sources whose PDFs we
+    cannot download (DNSSAB's eScribe portal refuses GitHub's servers but
+    serves its HTML minutes). Empty when a PDF route exists."""
+    if meeting.get("minutes_archived"):
+        return ""
+    url = meeting.get("minutes_url") or ""
+    if url.lower().endswith(".pdf"):
+        return ""
+    for d in meeting.get("extra_docs") or []:
+        u, label = d.get("url") or "", (d.get("label") or "").lower()
+        if "meeting.aspx" in u.lower() and ("postminutes" in u.lower() or "minutes" in label):
+            return u
+    return ""
+
+
+def fetch_html_text(url: str, max_chars: int = 120000) -> str:
+    from bs4 import BeautifulSoup
+    r = requests.get(url, timeout=120, headers={
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"})
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+    # Not "form": ASP.NET pages (eScribe) wrap the whole page in one.
+    for tag in soup(["script", "style", "noscript", "nav"]):
+        tag.decompose()
+    # eScribe: the minutes are in section.Agenda / div.AgendaItems (an id
+    # match on "agenda" would hit the page title instead).
+    main = (soup.select_one("section.Agenda") or soup.select_one("div.AgendaItems")
+            or soup.find("main") or soup.body or soup)
+    return main.get_text("\n", strip=True)[:max_chars]
+
+
 def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
 
     # Try pdfminer first
@@ -442,6 +475,28 @@ def main() -> None:
         print(f"Minutes: {minutes_url}")
 
         try:
+            web = minutes_web_page(meeting)
+            if web:
+                # No PDF route (DNSSAB): summarize the portal's web-page minutes.
+                text = clean_source_text(fetch_html_text(web))
+                if looks_unusable(text):
+                    print(f"Skipped: web-page minutes too short ({len(text)} chars) — {web}")
+                    skipped += 1
+                    continue
+                print("  Using the web-page version of the minutes")
+                summary = call_anthropic(build_prompt(meeting, text))
+                if is_bad_summary(summary):
+                    print(f"Warning: Claude returned a bad/refusal summary for {label} — not saving")
+                    skipped += 1
+                    continue
+                b_idx, m_idx = pointer
+                boards_payload["boards"][b_idx]["meetings"][m_idx]["summary"] = summary
+                save_json(BOARDS_FILE, boards_payload)
+                generated += 1
+                print("Saved summary")
+                time.sleep(1.5)
+                continue
+
             pdf_bytes = load_minutes_pdf(meeting)
             try:
                 text = clean_source_text(fetch_pdf_text(pdf_bytes))
