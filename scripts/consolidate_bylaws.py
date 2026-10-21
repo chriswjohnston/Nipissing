@@ -20,6 +20,7 @@ Output: data/canonical/consolidations.json
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import json
 import os
@@ -41,7 +42,8 @@ TEXT_DIR = DOCS / "files" / "bylaws" / "text"
 
 MODEL = "claude-sonnet-5-5"     # accuracy matters more than cost here
 MAX_TOKENS = 32000
-PROMPT_VERSION = 3
+PROMPT_VERSION = 4
+MAX_PDF_BYTES = 25 * 1024 * 1024   # API limit is 32 MB per request
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 HEADERS = {"User-Agent": "Mozilla/5.0 (nipissing public records)"}
 
@@ -49,7 +51,11 @@ PROMPT = """You are preparing an UNOFFICIAL CONSOLIDATION of a municipal by-law 
 Township of Nipissing, Ontario, for a public records website. Residents will read it to
 understand what the law says today. Accuracy matters more than polish.
 
-You are given the principal by-law and the by-laws that amend it, oldest first. Apply each
+You are given the principal by-law and the by-laws that amend it, oldest first, as PDFs
+(with extracted text only where no PDF is available). Read tables from the page layout:
+keep every column aligned, and leave a cell empty where the original is empty.
+Copies taken from council agenda packages may be marked DRAFT; that is how the township
+publishes its by-laws. Treat them as the passed by-law and do not mention the mark. Apply each
 amendment in order and produce the full text as it reads after all of them.
 
 Rules:
@@ -125,6 +131,33 @@ def pdf_text(data: bytes, tmp: Path) -> str:
     return text
 
 
+def bylaw_pdf(b: Dict[str, Any]) -> Optional[bytes]:
+    """The by-law's PDF for the model to read directly (layout, tables)."""
+    cands: List[Any] = []
+    for key in ("pdf_url_archived", "pdf_url", "extracted_pdf"):
+        v = b.get(key) or ""
+        cands.append(v if v.startswith("http") else (DOCS / v if v else None))
+    for src in cands:
+        try:
+            if isinstance(src, Path):
+                if src.exists():
+                    data = src.read_bytes()
+                else:
+                    continue
+            elif src:
+                r = requests.get(src, headers=HEADERS, timeout=120)
+                if r.status_code != 200:
+                    continue
+                data = r.content
+            else:
+                continue
+            if data[:5].startswith(b"%PDF") and len(data) <= MAX_PDF_BYTES:
+                return data
+        except Exception as e:
+            print(f"  {b['number']}: could not read {src}: {e}")
+    return None
+
+
 def bylaw_text(b: Dict[str, Any]) -> Optional[str]:
     """Text of a by-law's main document. The township PDF (our archived copy
     first) when there is one; otherwise the agenda-package extract."""
@@ -162,14 +195,14 @@ def bylaw_text(b: Dict[str, Any]) -> Optional[str]:
     return None
 
 
-def call_claude(prompt: str) -> Dict[str, Any]:
+def call_claude(content: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Streams the response (long outputs can take several minutes)."""
     r = requests.post(
         "https://api.anthropic.com/v1/messages",
         headers={"x-api-key": API_KEY, "anthropic-version": "2023-06-01",
                  "content-type": "application/json"},
         json={"model": MODEL, "max_tokens": MAX_TOKENS, "stream": True,
-              "messages": [{"role": "user", "content": prompt}]},
+              "messages": [{"role": "user", "content": content}]},
         timeout=(30, 300), stream=True,
     )
     if r.status_code != 200:
@@ -235,22 +268,37 @@ def main() -> None:
             continue
         if not fam.get("consolidate"):
             continue
+        pdfs = {n: bylaw_pdf(bylaws[n]) for n in members}
+        if sum(len(v) for v in pdfs.values() if v) > MAX_PDF_BYTES:    # keep the request under the limit
+            for n in sorted(pdfs, key=lambda n: -len(pdfs[n] or b""))[1:]:
+                pdfs[n] = None
         digest = hashlib.sha256(json.dumps(
-            [PROMPT_VERSION, MODEL, members, [texts[n] for n in members]]).encode()).hexdigest()
+            [PROMPT_VERSION, MODEL, members, [texts[n] for n in members],
+             [hashlib.sha256(pdfs[n]).hexdigest() if pdfs[n] else None for n in members]]
+        ).encode()).hexdigest()
         if entry.get("input_hash") == digest and entry.get("consolidated_markdown"):
             print(f"  {fid}: unchanged")
             continue
         if not API_KEY:
             print(f"  {fid}: ANTHROPIC_API_KEY not set — skipping")
             continue
-        docs = []
+        content: List[Dict[str, Any]] = [
+            {"type": "text", "text": PROMPT.replace("{documents}", "The documents follow.")}]
         for i, n in enumerate(members):
             b = bylaws[n]
             role = "PRINCIPAL BY-LAW" if i == 0 else f"AMENDMENT {i}"
-            docs.append(f"=== {role}: By-law {n} — {b.get('title', '')} "
-                        f"(passed {b.get('date_passed') or 'date unknown'}) ===\n{texts[n]}")
+            head = (f"=== {role}: By-law {n} — {b.get('title', '')} "
+                    f"(passed {b.get('date_passed') or b.get('meeting_date') or 'date unknown'}) ===")
+            if pdfs[n]:
+                content.append({"type": "text", "text": head})
+                content.append({"type": "document", "title": f"By-law {n}",
+                                "source": {"type": "base64", "media_type": "application/pdf",
+                                           "data": base64.b64encode(pdfs[n]).decode()}})
+            else:
+                content.append({"type": "text", "text": f"{head}\n{texts[n]}"})
+        print(f"  {fid}: sending " + ", ".join(f"{n} ({'PDF' if pdfs[n] else 'text'})" for n in members))
         try:
-            result = call_claude(PROMPT.replace("{documents}", "\n\n".join(docs)))
+            result = call_claude(content)
         except Exception as e:
             msg = str(e)[:500]
             print(f"  ✗ {fid}: {msg} — keeping previous consolidation")
