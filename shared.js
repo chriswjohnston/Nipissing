@@ -139,8 +139,50 @@ function meetingDocPills(meeting) {
   return pills.join('');
 }
 
+// Official names, used as each meeting card's title and on the detail page.
+const OFFICIAL_NAMES = {
+  council: 'Township of Nipissing Council',
+  recreation: 'Township of Nipissing Recreation Committee',
+  museum: 'Township of Nipissing Museum Board',
+  cemetery: 'Township of Nipissing Cemetery Committee',
+  adjustment: 'Township of Nipissing Committee of Adjustment',
+  pnc: 'Powassan Nipissing Callander OPP Detachment Board',
+  library: 'Powassan & District Union Public Library Board',
+  'healthunit': 'North Bay Parry Sound District Health Unit — Board of Health',
+  'healthunit-finance': 'North Bay Parry Sound District Health Unit — Finance and Property Committee',
+  'healthunit-personnel': 'North Bay Parry Sound District Health Unit — Personnel Policy, Employee/Labour Relations Committee',
+  dnssab: 'District of Nipissing Social Services Administration Board',
+  'dnssab-ndhc': 'Nipissing District Housing Corporation Board',
+};
+
+function officialName(meeting) {
+  const id = String(meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
+  if (OFFICIAL_NAMES[id]) return OFFICIAL_NAMES[id];
+  // Other DNSSAB committees: "DNSSAB Community Services Committee" etc.
+  if (id.startsWith('dnssab-')) {
+    const name = String(meeting?.board_name || meeting?.body || '')
+      .replace(/^DNSSAB:?\s*/i, '').replace(/\s+Meeting$/i, '');
+    return `District of Nipissing Social Services Administration Board — ${name}`;
+  }
+  return meeting?.board_name || meetingBodyLabel(meeting);
+}
+
+// Badge only when it adds information.
+function meetingBadge(meeting) {
+  if (meeting?.cancelled) return { text: 'Cancelled', cls: 'mb-cancelled' };
+  if (meeting?.postponed) return { text: 'Postponed', cls: 'mb-cancelled' };
+  if (meeting?.meeting_type === 'Special') return { text: 'Special', cls: 'mb-special' };
+  return null;
+}
+
+function bodyColorClass(meeting) {
+  const id = String(meeting?.group || meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
+  return 'body-' + id.replace(/[^a-z0-9-]/g, '');
+}
+
 function meetingCard(meeting, q = '') {
   const href = primaryMeetingUrl(meeting);
+  const badge = meetingBadge(meeting);
 
   return `
   <article class="result-card meeting-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
@@ -152,13 +194,10 @@ function meetingCard(meeting, q = '') {
     <div class="result-body">
 
       <div class="result-meta">
-        <span class="result-type rt-meeting">${escHtml(meetingBodyLabel(meeting).toUpperCase())}</span>
-        <span class="result-num">${escHtml(meetingTypeLabel(meeting))}</span>
+        <span class="meeting-heading">
+          <span class="result-title meeting-name ${bodyColorClass(meeting)}">${highlight(officialName(meeting), q)}</span>${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
+        </span>
         <span class="result-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
-      </div>
-
-      <div class="result-title">
-        ${highlight(meetingTypeLabel(meeting), q)}
       </div>
 
       <div class="result-tags">
