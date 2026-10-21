@@ -685,9 +685,85 @@
       "status": "ok",
       "date": "2021-10-19",
       "date_source": "filename+pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-July-13-2021.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": "20230326"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-of-Adjustment-June-8-2021.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": "20231203"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/02/AGENDA-Feb-8-2022.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-15-2022.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/09/AGENDA-September-19th-2023-COA.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-February-6-2024-COA.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-COA-September-19-2023.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/AGENDA-March-19-2024-COA.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-COA-July-15-2025.pdf": {
+      "status": "gone",
+      "checked": "2026-10-21",
+      "seen": ""
     }
   },
   "meta": {
-    "wayback_checked": "2026-10-21"
+    "wayback_checked": "2026-10-21",
+    "wayback_pages_checked": "2026-10-21"
   }
 }

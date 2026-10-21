@@ -1010,7 +1010,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Council-Agenda-Package-Nov-12-2024-1.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=1SvbtSIqRsU",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-November-12-2024__c9553a87.pdf",
@@ -1026,7 +1026,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/October-22-2024-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=BDJrBaExIAI",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-October-22-2024__8a349a35.pdf",
@@ -1093,7 +1093,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Council-Agenda-Package-September-3-2024.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=cJTGmlzMfcc",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-September-3-2024__87ebf424.pdf",
@@ -1109,11 +1109,21 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Council-Agenda-Package-August-13-2024-1.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=Wj-pCIlcOAk",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-August-13-2024__7c06b534.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-August-13-2024-1__e79ee8fc.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-August-13-2024-1__e79ee8fc.pdf",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=Wj-pCIlcOAk",
+          "title": "Township of Nipissing's Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=a8ZKFEhpPVM",
+          "title": "Township of Nipissing's Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2024-07-16",
@@ -1141,7 +1151,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/June-18-2024-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=rB7_6PcS-Mk",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-June-18-2024__d46097f0.pdf",
@@ -1194,7 +1204,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=4jpn2Sb6byo",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-May-14-2024__6014a11b.pdf",
@@ -1210,7 +1220,7 @@
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Agenda-Package-May-9-24-1.pdf",
       "extra_docs": [],
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=-vacMCdy94A",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Special-Meeting-Minutes-May-9-2024__cc8ede49.pdf",
@@ -1313,7 +1323,7 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/March-5-2024-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=ok0N6CuvFyA",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-March-5-2024__cd488ad4.pdf",
@@ -1329,11 +1339,21 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/February-20-2024-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=cuN2RcCqQZ8",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-February-20-2024__44038141.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/February-20-2024-Council-Agenda-Package__59139902.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/February-20-2024-Council-Agenda-Package__59139902.pdf",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=cuN2RcCqQZ8",
+          "title": "Township of Nipissing's Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=gHaFm8--FxI",
+          "title": "Township of Nipissing's Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2024-02-06",
@@ -1414,7 +1434,7 @@
         }
       ],
       "title": "",
-      "video_url": null,
+      "video_url": "https://www.youtube.com/watch?v=PkqNZQwzHXg",
       "summary": null,
       "cancelled": false,
       "minutes_archived": "files/archive/meetings/2024/Minutes-January-2-2024__834b60e0.pdf",
@@ -1469,7 +1489,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/10/October-17-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-October-17-2023__fcc93dc2.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/October-17-Council-Agenda-Package__a09f0d2a.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/October-17-Council-Agenda-Package__a09f0d2a.pdf",
+      "video_url": "https://www.youtube.com/watch?v=BzFCRfWYG6I"
     },
     {
       "date": "2023-10-03",
@@ -1506,7 +1527,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/09/Council-Agenda-Package-September-5.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-September-5-2023__a3cc1317.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-September-5__c97a1aea.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-September-5__c97a1aea.pdf",
+      "video_url": "https://www.youtube.com/watch?v=8g6vef3-YpA"
     },
     {
       "date": "2023-08-15",
@@ -1518,7 +1540,18 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/08/August-15-Council-Meeting-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-August-15-2023__00632c46.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-15-Council-Meeting-Package__50fde6d7.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-15-Council-Meeting-Package__50fde6d7.pdf",
+      "video_url": "https://www.youtube.com/watch?v=Ky4-T3NrFKA",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=Ky4-T3NrFKA",
+          "title": "Township of Nipissing's Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1FE3hc7gqMI",
+          "title": "Township of Nipissing's Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2023-07-11",
@@ -1530,7 +1563,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/07/July-11-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-July-11-2023__d5eb4257.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/July-11-Council-Agenda-Package__18d1ec1b.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/July-11-Council-Agenda-Package__18d1ec1b.pdf",
+      "video_url": "https://www.youtube.com/watch?v=LUd_5B-4ILA"
     },
     {
       "date": "2023-06-20",
@@ -1560,7 +1594,8 @@
         }
       ],
       "minutes_archived": "files/archive/meetings/2023/Minutes-June-6-2023__98df812c.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/June-6-2023-Council-Package__2029bf40.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/June-6-2023-Council-Package__2029bf40.pdf",
+      "video_url": "https://www.youtube.com/watch?v=gn25YJ2paBs"
     },
     {
       "date": "2023-05-16",
@@ -1652,7 +1687,8 @@
         }
       ],
       "minutes_archived": "files/archive/meetings/2023/Minutes-March-7-2023__ff7f7ea7.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/March-7-Council-Agenda-Package__bf9fc080.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/March-7-Council-Agenda-Package__bf9fc080.pdf",
+      "video_url": "https://www.youtube.com/watch?v=iNwFG_xCGhw"
     },
     {
       "date": "2023-02-21",
@@ -1664,7 +1700,18 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/02/Council-Package-February-21-2023.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-February-21-2023__1de09fb1.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Package-February-21-2023__fa664bea.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Package-February-21-2023__fa664bea.pdf",
+      "video_url": "https://www.youtube.com/watch?v=eWzFkTq7vYY",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=eWzFkTq7vYY",
+          "title": "Township of Nipissing's Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=osXvAtBs29k",
+          "title": "Township of Nipissing's Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2023-02-07",
@@ -1676,7 +1723,18 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/02/February-7-Council-Agenda-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-February-7-2023__707bb71d.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/February-7-Council-Agenda-Package__585b553c.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/February-7-Council-Agenda-Package__585b553c.pdf",
+      "video_url": "https://www.youtube.com/watch?v=YNRiEvEBEAA",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=YNRiEvEBEAA",
+          "title": "Township of Nipissing's Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=CGEW7Rxy9aE",
+          "title": "Township of Nipissing's Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2023-01-17",
@@ -1688,7 +1746,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/Jan-17-Council-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-January-17-2023__f18d17f4.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Jan-17-Council-Package__81da0860.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Jan-17-Council-Package__81da0860.pdf",
+      "video_url": "https://www.youtube.com/watch?v=0bH8JWc7Mik"
     },
     {
       "date": "2023-01-03",
@@ -1700,7 +1759,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2023/01/January-3-Agenda-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2023/Minutes-January-3-2023__36807dce.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-3-Agenda-Package__7d207e36.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-3-Agenda-Package__7d207e36.pdf",
+      "video_url": "https://www.youtube.com/watch?v=REqpaDM0tmY"
     },
     {
       "date": "2022-12-20",
@@ -1773,7 +1833,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2022/11/Council-Agenda-Package-November-15-2022.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2022/Minutes-November-15-2022__a1fed124.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-November-15-2022__3c8bf8b2.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-November-15-2022__3c8bf8b2.pdf",
+      "video_url": "https://www.youtube.com/watch?v=YeUFPZkqbZw"
     },
     {
       "date": "2022-10-25",
@@ -1784,7 +1845,8 @@
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/10/Minutes-October-25-2022.pdf",
       "package_url": null,
       "extra_docs": [],
-      "minutes_archived": "files/archive/meetings/2022/Minutes-October-25-2022__333b7da7.pdf"
+      "minutes_archived": "files/archive/meetings/2022/Minutes-October-25-2022__333b7da7.pdf",
+      "video_url": "https://www.youtube.com/watch?v=jLJ-JxoE75w"
     },
     {
       "date": "2022-10-18",
@@ -1820,7 +1882,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2022/09/September-20-Agenda-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2022/Minutes-September-20-2022__ac365e62.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/September-20-Agenda-Package__3d69c8d5.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/September-20-Agenda-Package__3d69c8d5.pdf",
+      "video_url": "https://www.youtube.com/watch?v=pCNGzafpXeM"
     },
     {
       "date": "2022-09-06",
@@ -1845,7 +1908,8 @@
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2022/08/August-16-Council-Package.pdf",
       "extra_docs": [],
       "minutes_archived": "files/archive/meetings/2022/Minutes-August-16-2022__1bc1f59b.pdf",
-      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-16-Council-Package__a90a09f5.pdf"
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-16-Council-Package__a90a09f5.pdf",
+      "video_url": "https://www.youtube.com/watch?v=usQ3yCEiOd8"
     },
     {
       "date": "2022-07-12",
@@ -1942,7 +2006,18 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/march-29-2022-amended-agenda/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/march-29-2022-minutes/",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-PACKAGE.pdf",
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=dZBnJDZSn1E",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=dZBnJDZSn1E",
+          "title": "Council Meeting including Committee of Adjustment March 29, 2022"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=r5PMn3OPvJI",
+          "title": "Council Meeting including Committee of Adjustment March 29, 2022"
+        }
+      ]
     },
     {
       "date": "2022-03-15",
@@ -1974,7 +2049,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-2/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes/",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2022/02/Feb-11-Special-Council-Meeting-Package.pdf",
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=k40Q-dIBMhg"
     },
     {
       "date": "2022-02-08",
@@ -2073,7 +2149,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-november-16-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-nov-16-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=MsLBwohJQNs"
     },
     {
       "date": "2021-11-16",
@@ -2083,7 +2160,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-november-16-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-november-16-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=JJFRgthPFno"
     },
     {
       "date": "2021-10-19",
@@ -2093,7 +2171,18 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/october-19-2021-amended-agenda/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-october-19-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=3H-nk4cnHD4",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=3H-nk4cnHD4",
+          "title": "Kris Croskery-Hodgins' Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=nKH2o1sz68k",
+          "title": "Kris Croskery-Hodgins' Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2021-10-05",
@@ -2103,7 +2192,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/october-5-2021-amended-agenda/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/council-meeting-minutes-october-5-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=u0ubPehSqO0"
     },
     {
       "date": "2021-09-21",
@@ -2113,7 +2203,18 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-september-21-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=sksWa5EhinM",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=sksWa5EhinM",
+          "title": "Special Council Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=DfQVAJXM6Ag",
+          "title": "Special Council Meeting"
+        }
+      ]
     },
     {
       "date": "2021-09-07",
@@ -2123,7 +2224,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agendas-september-7-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-special-meeting-september-7-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=bdJptXIVKuo"
     },
     {
       "date": "2021-09-07",
@@ -2165,7 +2267,18 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-agenda-august-3-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/special-meeting-minutes-august-3-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=ZIlyat9CuL0",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=ZIlyat9CuL0",
+          "title": "Special Council Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=y8CneD9Pc_I",
+          "title": "Special Council Meeting"
+        }
+      ]
     },
     {
       "date": "2021-07-13",
@@ -2207,7 +2320,18 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-june-8th-2021/",
       "minutes_url": "https://nipissingtownship.com/minutes-june-8-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=-upnQeu18ug",
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=-upnQeu18ug",
+          "title": "Kris Croskery-Hodgins' Zoom Meeting"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vGxMabdBRDs",
+          "title": "Kris Croskery-Hodgins' Zoom Meeting"
+        }
+      ]
     },
     {
       "date": "2021-05-18",
@@ -2250,7 +2374,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-april-20-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-april-20-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=ld1DBlbH8kA"
     },
     {
       "date": "2021-04-06",
@@ -2260,7 +2385,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-april-6-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-april-6-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=HUNtEv0juh0"
     },
     {
       "date": "2021-03-23",
@@ -2290,7 +2416,8 @@
       "agenda_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/agenda-march-9-2021/",
       "minutes_url": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/minutes-march-9-2021/",
       "package_url": null,
-      "extra_docs": []
+      "extra_docs": [],
+      "video_url": "https://www.youtube.com/watch?v=fPbDIMoSNjw"
     },
     {
       "date": "2021-02-17",
