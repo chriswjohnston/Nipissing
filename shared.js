@@ -38,7 +38,10 @@ function extraDocUrl(d) {
 
 // Agendas are only shown from 2026 on, and only when a working link exists.
 function showAgenda(meeting) {
-  return Number(meeting && meeting.year) >= AGENDA_MIN_YEAR && !!docUrl(meeting, 'agenda');
+  // all_agendas: boards where the agenda is the main record (Committee of
+  // Adjustment, joint boards) show agendas from SITE_MIN_YEAR on.
+  const minYear = meeting && meeting.all_agendas ? SITE_MIN_YEAR : AGENDA_MIN_YEAR;
+  return Number(meeting && meeting.year) >= minYear && !!docUrl(meeting, 'agenda');
 }
 
 function escHtml(str) {
@@ -86,7 +89,10 @@ function highlight(text, q) {
 function primaryMeetingUrl(meeting) {
   const date = encodeURIComponent(meeting?.date || '');
   const body = encodeURIComponent(meeting?.body_id || meeting?.board_id || 'council');
-  return `meeting-detail.html?date=${date}&body=${body}`;
+  // A special and a regular meeting of one body can share a date (DNSSAB).
+  const type = meeting?.source_kind === 'board' && meeting?.meeting_type === 'Special'
+    ? '&type=Special' : '';
+  return `meeting-detail.html?date=${date}&body=${body}${type}`;
 }
 
 function meetingBodyLabel(meeting) {
@@ -96,6 +102,8 @@ function meetingBodyLabel(meeting) {
   if (meeting?.board_id === 'museum') return 'Museum Board';
   if (meeting?.board_id === 'cemetery') return 'Cemetery';
   if (meeting?.board_id === 'library') return 'Library Board';
+  if (meeting?.board_id === 'pnc') return 'Police Board';
+  if (meeting?.board_id === 'adjustment') return 'Committee of Adjustment';
   return 'Council';
 }
 
@@ -111,6 +119,10 @@ function meetingTagClass(meeting) {
   if (bodyId === 'museum') return 'tag tag-blue';
   if (bodyId === 'cemetery') return 'tag tag-purple';
   if (bodyId === 'library') return 'tag tag-library';
+  if (bodyId === 'pnc') return 'tag tag-pnc';
+  if (bodyId === 'adjustment') return 'tag tag-adjustment';
+  if (bodyId.startsWith('healthunit')) return 'tag tag-healthunit';
+  if (bodyId.startsWith('dnssab')) return 'tag tag-dnssab';
   return 'tag';
 }
 

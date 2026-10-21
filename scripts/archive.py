@@ -59,6 +59,20 @@ MISSES_FILE = ROOT / "data" / "runtime" / "archive_misses.json"
 
 TOWNSHIP_HOST = "nipissingtownship.com"
 
+# Other public bodies whose documents are mirrored too (joint boards that
+# Nipissing sits on or is represented on). Their files are not always plain
+# ".pdf" paths (eScribe serves FileStream.ashx?DocumentId=...), so these hosts
+# are accepted for any path; _download still rejects anything not a PDF.
+EXTERNAL_HOSTS = (
+    "myhealthunit.ca",                 # North Bay Parry Sound District Health Unit
+    "cdn.govstack.com",                # ...its document CDN
+    "pub-dnssab.escribemeetings.com",  # DNSSAB
+)
+
+# Files bigger than this from external hosts go to the Release, not the repo,
+# to protect the 1 GB Pages limit (board packages there are often huge).
+EXTERNAL_INREPO_MAX_BYTES = 15 * 1024 * 1024
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -95,6 +109,18 @@ def is_township_pdf(url: Optional[str]) -> bool:
         and TOWNSHIP_HOST in p.netloc
         and p.path.lower().endswith(".pdf")
     )
+
+
+def is_external_doc(url: Optional[str]) -> bool:
+    if not url:
+        return False
+    p = urlparse(url)
+    return p.scheme in ("http", "https") and any(
+        p.netloc == h or p.netloc.endswith("." + h) for h in EXTERNAL_HOSTS)
+
+
+def is_archivable(url: Optional[str]) -> bool:
+    return is_township_pdf(url) or is_external_doc(url)
 
 
 def _load_misses() -> set:
@@ -168,6 +194,8 @@ def _archive_in_repo(url: str, category: str, year) -> Optional[str]:
     data = _download(url)
     if data is None:
         return None
+    if is_external_doc(url) and len(data) > EXTERNAL_INREPO_MAX_BYTES:
+        return store_bytes_to_release(url, data)
     return store_bytes_in_repo(url, category, year, data)
 
 
@@ -271,7 +299,7 @@ def mirror(url: Optional[str], category: str, year=None, *, is_package: bool = F
     Small docs → committed under docs/ (repo-relative path, Pages-served).
     Packages   → GitHub Release asset (absolute URL).
     """
-    if not is_township_pdf(url):
+    if not is_archivable(url):
         return None
     if url in _MISSES:
         return None  # known-gone (404 tombstone) — don't retry
@@ -287,9 +315,12 @@ def mirror_record(rec: dict, category: str) -> dict:
     year = rec.get("year") or 0
     if year and year < ARCHIVE_MIN_YEAR:
         return rec  # pre-PDF era — not mirrored at all
+    # Boards whose agendas are the main public record (Committee of
+    # Adjustment, joint boards) set all_agendas: mirror every agenda.
+    agenda_min = ARCHIVE_MIN_YEAR if rec.get("all_agendas") else AGENDA_MIN_YEAR
 
     pairs = [
-        ("agenda_url",  "agenda_archived",  False, AGENDA_MIN_YEAR),
+        ("agenda_url",  "agenda_archived",  False, agenda_min),
         ("minutes_url", "minutes_archived", False, ARCHIVE_MIN_YEAR),
         ("package_url", "package_archived", True,  ARCHIVE_MIN_YEAR),
     ]
