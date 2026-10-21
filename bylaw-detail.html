@@ -521,7 +521,14 @@ async function init(){
   // Archived copy first (in-repo paths need the docs/ prefix; archivedUrl adds
   // it, and passes Releases/township URLs through unchanged).
   const pdf = archivedUrl(bylaw.pdf_url_archived || bylaw.pdf_url);
-  if(pdf) links.push(docLink('By-Law PDF', pdf));
+  const ex = bylaw.extracted_from;
+  const isExtract = ex && bylaw.extracted_pdf && bylaw.pdf_url === bylaw.extracted_pdf;
+  if(pdf){
+    const pages = ex && ex.pages ? (ex.pages[0] === ex.pages[1] ? `p. ${ex.pages[0]}` : `pp. ${ex.pages[0]}–${ex.pages[1]}`) : '';
+    links.push(docLink(isExtract ? `By-Law PDF (agenda package, ${pages})` : 'By-Law PDF', pdf));
+  } else if(bylaw.extracted_pdf){
+    links.push(docLink('By-Law pages from agenda package', archivedUrl(bylaw.extracted_pdf)));
+  }
   if(bylaw.page_url) links.push(docLink('Township By-Law Page', bylaw.page_url));
   const mtg = sourceMeeting(bylaw);
   const minutes = docUrl(mtg, 'minutes') || bylaw.minutes_url;
@@ -538,7 +545,9 @@ async function init(){
   }
 
   document.getElementById('doc-links').innerHTML =
-    links.length ? links.join('') : '<p class="empty-note">No related documents available.</p>';
+    (links.length ? links.join('') : '<p class="empty-note">No related documents available.</p>') +
+    (isExtract ? '<p class="empty-note" style="margin-top:.6rem">Taken from the agenda package: the version presented to council. ' +
+      'Any change made at the meeting is recorded in the minutes.</p>' : '');
 }
 
 init();
