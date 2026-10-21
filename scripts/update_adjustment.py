@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -71,29 +72,16 @@ MAX_CHECK_BYTES = 8 * 1024 * 1024
 WAYBACK_PREFIX = "nipissingtownship.com/wp-content/uploads/"
 WAYBACK_REGEX = r".*([Cc][Oo][Aa]|[Aa]djustment|[Cc]onsent|[Vv]ariance).*"
 WAYBACK_EVERY_DAYS = 7
+# Wall-clock cap for Wayback work per run; unfinished work resumes next run.
+WAYBACK_BUDGET_SECONDS = 10 * 60
 # Old copies of any township page with "adjustment" in its address. Each
 # lists the documents linked at the time; the files themselves are mostly
 # still on the server even though nothing links to them now.
 WAYBACK_PAGE_REGEX = r".*[Aa]djustment.*"
 
-# Older documents found through search engines (still live on 2026-10-21 but
-# not linked or listed anywhere on the township site). Belt and braces for
-# the snapshot scan.
-SEED_URLS = [
-    "https://nipissingtownship.com/wp-content/uploads/2022/02/AGENDA-Feb-8-2022.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-15-2022.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2023/09/AGENDA-September-19th-2023-COA.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-COA-September-19-2023.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-February-6-2024-COA.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2024/03/AGENDA-March-19-2024-COA.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-COA-July-15-2025.pdf",
-    "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf",
-]
+# Note: the 2022-2025 documents were deleted when the township relaunched its
+# website in June 2026 (confirmed 404). Only Wayback copies can recover them.
+SEED_URLS: List[str] = []
 
 # file URL -> "YYYY-MM-DD" for documents whose date can't be detected.
 MANUAL_DATES: Dict[str, str] = {}
@@ -290,38 +278,75 @@ def backfill(state: Dict[str, Any], meta: Dict[str, Any]) -> None:
         examine(url, data, "media-index", state)
 
     # Known older documents and links from old copies of the committee page:
-    # try the live server first (most are still there), then Wayback.
+    # try the live server first, then Wayback.
+    deadline = time.monotonic() + WAYBACK_BUDGET_SECONDS
     links: Dict[str, str] = {u: "" for u in SEED_URLS}
+    links.update(meta.get("snapshot_links", {}))       # links found on earlier runs
+    seen = set(meta.get("snapshots_seen", []))         # copies already read (they never change)
+    queue = meta.get("snapshot_queue", [])
     last_pages = meta.get("wayback_pages_checked")
-    if not last_pages or date.fromisoformat(last_pages) <= TODAY - timedelta(days=WAYBACK_EVERY_DAYS):
+    if not queue and (not last_pages or date.fromisoformat(last_pages)
+                      <= TODAY - timedelta(days=WAYBACK_EVERY_DAYS)):
         snaps = ds.wayback_pages("nipissingtownship.com", WAYBACK_PAGE_REGEX)
-        print(f"  wayback: {len(snaps)} old cop(ies) of committee pages to scan")
-        for snap in snaps:
-            html = ds.wayback_page_html(snap["original"], snap["timestamp"])
-            if not html:
-                continue
-            for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):
-                href = re.sub(r"^https?://web\.archive\.org/web/\d+(id_)?/", "", a["href"])
-                href = https(normalize_absolute_url(href)).replace(":80/", "/")
-                if "/wp-content/uploads/" in href and href.lower().endswith(".pdf"):
-                    links.setdefault(href, snap["timestamp"])
+        queue = [x for x in snaps if f"{x['timestamp']}|{x['original']}" not in seen]
         meta["wayback_pages_checked"] = TODAY.isoformat()
-    found_live = found_wb = gone = 0
+        print(f"  wayback: {len(snaps)} old cop(ies) of committee pages, {len(queue)} not yet read")
+    read = failed = 0
+    while queue and time.monotonic() < deadline:
+        snap = queue[0]
+        html = ds.wayback_page_html(snap["original"], snap["timestamp"])
+        queue.pop(0)
+        if html is None:
+            failed += 1
+            queue.append(snap)                          # retried later / next run
+            if failed >= 5:
+                print("  wayback: archive.org is struggling, continuing next run")
+                break
+            continue
+        seen.add(f"{snap['timestamp']}|{snap['original']}")
+        read += 1
+        for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):
+            href = re.sub(r"^https?://web\.archive\.org/web/\d+(id_)?/", "", a["href"])
+            href = https(normalize_absolute_url(href)).replace(":80/", "/")
+            if "/wp-content/uploads/" in href and href.lower().endswith(".pdf"):
+                links.setdefault(href, snap["timestamp"])
+    if read or queue:
+        print(f"  wayback: read {read} page cop(ies), {len(queue)} still queued")
+    meta["snapshot_queue"] = queue
+    meta["snapshots_seen"] = sorted(seen)
+    meta["snapshot_links"] = {u: t for u, t in links.items() if t}
+
+    found_live = found_wb = gone = later = 0
     for url, ts in sorted(links.items()):
         # Re-examine files the broad search rejected or skipped: a trusted
         # link (committee page, copy of it, seed) overrides that verdict.
         prev = state.get(url, {})
         if prev.get("status") in ("ok", "undated"):
             continue
-        if prev.get("status") == "gone" and prev.get("checked", "") > \
+        # Only a confirmed not-found (live AND Wayback) counts as gone; those
+        # are rechecked weekly. Anything else is retried on the next run.
+        if prev.get("status") == "gone" and prev.get("confirmed") and prev.get("checked", "") > \
                 (TODAY - timedelta(days=WAYBACK_EVERY_DAYS)).isoformat():
-            continue  # gone everywhere: retried weekly, not daily
-        data, source = ds.download_pdf(url), "live (unlinked)"
+            continue
+        if time.monotonic() > deadline:
+            later += 1
+            continue
+        data, live = ds.fetch_pdf(url)
+        source = "live (unlinked)"
+        wb = "skipped"
         if data is None:
-            data, source = ds.wayback_download(url, ts or "2"), f"wayback {ts[:8]}"
+            data, wb = ds.wayback_fetch(url, ts or "2")
+            source = f"wayback {ts[:8]}" if ts else "wayback"
         if data is None:
-            state[url] = {"status": "gone", "checked": TODAY.isoformat(), "seen": ts[:8]}
-            gone += 1
+            if live == "notfound" and wb in ("notfound", "notpdf"):
+                state[url] = {"status": "gone", "confirmed": True,
+                              "checked": TODAY.isoformat(), "seen": ts[:8]}
+                gone += 1
+            else:
+                if prev.get("status") == "gone":
+                    state.pop(url)              # unconfirmed "gone" from an earlier run
+                print(f"    ? {ds.filename_of(url)}: live {live}, wayback {wb} — retry next run")
+                later += 1
             continue
         examine(url, data, source, state, trusted=True)
         if source.startswith("live"):
@@ -329,20 +354,25 @@ def backfill(state: Dict[str, Any], meta: Dict[str, Any]) -> None:
         else:
             found_wb += 1
     print(f"  older links: {len(links)} | {found_live} still live, {found_wb} from Wayback, "
-          f"{gone} gone for good")
+          f"{gone} confirmed gone, {later} to retry")
 
-    # Wayback (deleted files) — weekly, it is slow
+    # Archived PDFs whose own name looks like COA material — weekly
     last = meta.get("wayback_checked")
     if last and date.fromisoformat(last) > TODAY - timedelta(days=WAYBACK_EVERY_DAYS):
-        print(f"  wayback: checked {last}, next check in a few days")
+        return
+    if time.monotonic() > deadline:
+        print("  wayback file scan: out of time, next run")
         return
     files = ds.wayback_files(WAYBACK_PREFIX, WAYBACK_REGEX)
     print(f"  wayback: {len(files)} archived COA-like PDF(s)")
     new = 0
     for f in files:
         url = f["original"]
-        if url in state or url in candidates:
+        if url in state or url in candidates or url in links:
             continue
+        if time.monotonic() > deadline:
+            print("  wayback file scan: out of time, finishing next run")
+            return                                       # wayback_checked not set: resumes
         data = ds.wayback_download(url, f["timestamp"])
         if data is None:
             continue
@@ -350,7 +380,6 @@ def backfill(state: Dict[str, Any], meta: Dict[str, Any]) -> None:
         new += 1
     print(f"  wayback: {new} recovered file(s) examined")
     meta["wayback_checked"] = TODAY.isoformat()
-
 
 def apply_backfill(meetings: Dict[str, Dict[str, Any]], state: Dict[str, Any]) -> List[str]:
     """Attach examined documents. Agenda/minutes create meetings; notices,
@@ -432,10 +461,13 @@ def main() -> None:
     except Exception as e:
         print(f"  ✗ page failed ({e}) — keeping stored meetings")
 
-    try:
-        backfill(state, meta)
-    except Exception as e:
-        print(f"  ✗ backfill failed ({e}) — will retry next run")
+    if ds.recovery_active():
+        try:
+            backfill(state, meta)
+        except Exception as e:
+            print(f"  ✗ backfill failed ({e}) — will retry next run")
+    else:
+        print(f"  history recovery ended {ds.RECOVERY_UNTIL} — live page only")
     unplaced = apply_backfill(meetings, state)
 
     # Meetings known only from a dated recording (documents deleted). The

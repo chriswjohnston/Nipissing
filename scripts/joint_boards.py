@@ -117,7 +117,9 @@ class Store:
             ms[key] = new_meeting(body, dt, meeting_type)
         return ms[key]
 
-    def save(self, category_prefix: str) -> None:
+    def save(self, category_prefix: str, mirror=None) -> None:
+        """mirror(meeting, category) archives documents; default mirror_record."""
+        mirror = mirror or mirror_record
         boards = self.payload["boards"]
         for bid, body in self.bodies.items():
             entry = next((b for b in boards if b.get("id") == bid), None)
@@ -131,6 +133,8 @@ class Store:
             })
             if body.get("members"):
                 entry["members"] = body["members"]
+            if body.get("schema"):
+                entry["schema"] = body["schema"]
             for k in ("resolutions", "page_docs"):
                 if body.get(k):
                     old = {json.dumps(x, sort_keys=True) for x in entry.get(k, [])}
@@ -170,7 +174,7 @@ class Store:
                 m["external"] = True
                 m["all_agendas"] = True
                 m["group"] = self.group
-                mirror_record(m, f"{category_prefix}/{bid}")
+                mirror(m, f"{category_prefix}/{bid}")
             entry["meetings"] = sorted(stored.values(), key=lambda x: x["date"], reverse=True)
 
         self.payload["last_updated"] = TODAY.isoformat()

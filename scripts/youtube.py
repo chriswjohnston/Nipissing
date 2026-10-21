@@ -38,7 +38,6 @@ CACHE = Path("data/runtime/youtube_cache.json")
 # newest page(s) instead of the whole channel history every time.
 BACKFILL_STATE = Path("data/runtime/youtube_backfill.json")
 _BACKFILL_DONE_THIS_RUN = False
-LEGACY_CACHE = Path("data/runtime/youtube_videos.json")  # date-keyed, council only
 LOCAL_TZ = ZoneInfo("America/Toronto")
 
 NS = {
@@ -145,24 +144,6 @@ def _video_id(url: str) -> str:
     return m.group(1) if m else (url or "")
 
 
-def _import_legacy(cache: Dict[str, Dict[str, Any]]) -> None:
-    """One-time import of the short-lived date-keyed council cache."""
-    legacy = _load(LEGACY_CACHE, {})
-    for iso, v in legacy.items():
-        url = v.get("url", "")
-        vid = _video_id(url)
-        if vid and vid not in cache:
-            cache[vid] = {
-                "url": url,
-                "title": v.get("title", ""),
-                "published": None,
-                "local_date": None,
-                "title_date": iso,
-                "body": "council",
-                "special": bool(v.get("special")),
-            }
-
-
 def _record(title: str, url: str, published: Optional[str]) -> Dict[str, Any]:
     return {
         "url": url,
@@ -237,7 +218,6 @@ def backfill_from_api(cache: Dict[str, Dict[str, Any]]) -> int:
 def refresh() -> Dict[str, Dict[str, Any]]:
     """Read the RSS feed, merge into the cache, save, and return the cache."""
     cache: Dict[str, Dict[str, Any]] = _load(CACHE, {})
-    _import_legacy(cache)
     before = len(cache)
     print(f"YouTube: {before} cached video(s); reading RSS ...")
 

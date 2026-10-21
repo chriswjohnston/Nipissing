@@ -34,6 +34,10 @@ BASE = "https://pub-dnssab.escribemeetings.com/"
 CALENDAR_API = urljoin(BASE, "MeetingsCalendarView.aspx/GetCalendarMeetings")
 GROUP = "dnssab"
 FIRST_YEAR = 2022
+# Bump to rebuild the DNSSAB group from eScribe (safe: eScribe keeps the full
+# history). 2 = NDHC Board split out; the first runs merged NDHC and DNSSAB
+# meetings held on the same day.
+SCHEMA = 2
 DESCRIPTION = ("District of Nipissing Social Services Administration Board: social "
                "housing, Ontario Works, child care and paramedic services. Nipissing is "
                "represented through the members appointed for its group of municipalities.")
@@ -74,12 +78,15 @@ def body_for(name: str, store: Store) -> Dict[str, Any]:
                    "", name or "", flags=re.I)
     clean = re.sub(r"\s+", " ", clean).strip(" -–:")
     low = clean.lower()
-    if "committee" in low:
+    if "ndhc" in low or "housing corporation" in low:
+        b = {"id": "dnssab-ndhc", "short": "NDHC",
+             "name": "NDHC Board (Nipissing District Housing Corporation)"}
+    elif "committee" in low:
         b = {"id": f"dnssab-{slug(re.sub(r'(?i)special|meeting', '', clean))}",
              "name": f"DNSSAB: {clean}", "short": f"DNSSAB {clean.split()[0]}"}
     else:
         b = {"id": "dnssab", "name": "DNSSAB Board", "short": "DNSSAB"}
-    b.update(group=GROUP, url=BASE, description=DESCRIPTION)
+    b.update(group=GROUP, url=BASE, description=DESCRIPTION, schema=SCHEMA)
     return store.body(b)
 
 
@@ -112,12 +119,94 @@ def fetch_year(session: requests.Session, year: int) -> Optional[List[Dict[str, 
     return items
 
 
+STATS = {"ok": 0, "refused": 0, "other": 0}
+_warmed: set = set()
+
+
+def _meeting_page(m: Dict[str, Any]) -> Optional[str]:
+    mid = re.search(r"[?&]Id=([0-9a-fA-F-]{36})", m.get("source_url") or "")
+    return f"{BASE}Meeting.aspx?Id={mid.group(1)}&Agenda=Agenda&lang=English" if mid else None
+
+
+def fetch_escribe(session: requests.Session, url: str, page: Optional[str]) -> Optional[bytes]:
+    """eScribe refuses FileStream.ashx requests that don't come from a portal
+    page (403 seen 2026-10-21). Open the meeting page first, then ask for the
+    file with that page as Referer and browser-like headers."""
+    if page and page not in _warmed:
+        try:
+            session.get(page, timeout=60)
+        except Exception:
+            pass
+        _warmed.add(page)
+    try:
+        r = session.get(url, timeout=120, headers={
+            **ds.HEADERS, "Referer": page or BASE,
+            "Accept": "application/pdf,application/octet-stream,*/*;q=0.8"})
+    except Exception as e:
+        STATS["other"] += 1
+        print(f"  archive: {url} failed: {e}")
+        return None
+    if r.content[:5].startswith(b"%PDF"):
+        return r.content
+    if r.status_code == 403:
+        STATS["refused"] += 1
+        if STATS["refused"] <= 3:     # enough to diagnose without flooding the log
+            print(f"  archive: 403 for {url} (page {page}); "
+                  f"server={r.headers.get('Server')} cf-ray={r.headers.get('CF-RAY')} "
+                  f"body={r.content[:120]!r}")
+    else:
+        STATS["other"] += 1
+        print(f"  archive: HTTP {r.status_code} {r.headers.get('Content-Type')} for {url}")
+    return None
+
+
+def _store(url: str, data: bytes, category: str, year: int) -> Optional[str]:
+    if len(data) > archive.EXTERNAL_INREPO_MAX_BYTES:
+        return archive.store_bytes_to_release(url, data)
+    return archive.store_bytes_in_repo(url, category, year, data)
+
+
+def mirror_escribe(session: requests.Session, m: Dict[str, Any], category: str) -> None:
+    year = int(m.get("year") or 0)
+    if year and year < archive.ARCHIVE_MIN_YEAR:
+        return
+    page = _meeting_page(m)
+    for kind in ("agenda", "package", "minutes"):
+        url, dst = m.get(f"{kind}_url"), f"{kind}_archived"
+        if url and not m.get(dst) and archive.is_external_doc(url):
+            data = fetch_escribe(session, url, page)
+            if data:
+                got = _store(url, data, category, year)
+                if got:
+                    m[dst] = got
+                    STATS["ok"] += 1
+    for d in m.get("extra_docs") or []:
+        url = d.get("url")
+        if url and not d.get("archived") and archive.is_external_doc(url):
+            data = fetch_escribe(session, url, page)
+            if data:
+                got = _store(url, data, category, year)
+                if got:
+                    d["archived"] = got
+                    STATS["ok"] += 1
+
+
 def main() -> None:
     print("=" * 60)
     print("Nipissing update_dnssab.py")
     print(f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
     store = Store(GROUP)
+    old = [b for b in store.payload["boards"] if b.get("group") == GROUP]
+    if old and any(b.get("schema") != SCHEMA for b in old):
+        if any(m.get("summary") or m.get("agenda_archived") or m.get("minutes_archived")
+               for b in old for m in b.get("meetings", [])):
+            print("  ! DNSSAB records have summaries/archives — not rebuilding automatically")
+        else:
+            store.payload["boards"] = [b for b in store.payload["boards"]
+                                       if b.get("group") != GROUP]
+            print(f"  rebuilding DNSSAB group from eScribe (schema {SCHEMA}): "
+                  f"dropped {len(old)} stored entries")
     body_for("Board Meeting", store)     # always present, even before data
     session = requests.Session()
     session.headers.update(ds.HEADERS)
@@ -174,13 +263,11 @@ def main() -> None:
 
     if ok_years == 0:
         print("  ✗ calendar endpoint returned nothing usable — keeping stored data")
-        return
+        return   # nothing saved, so a pending rebuild is simply retried next run
     print(f"  {total} meeting(s), {docs} document link(s)")
-    # eScribe's FileStream.ashx serves documents only within a portal session;
-    # without its cookies it returns a web page, so mirror through the session.
-    session.headers["Referer"] = BASE
-    archive.SESSION = session
-    store.save("boards/dnssab")
+    store.save("boards/dnssab", mirror=lambda m, cat: mirror_escribe(session, m, cat))
+    print(f"  archive: {STATS['ok']} document(s) mirrored this run, "
+          f"{STATS['refused']} refused, {STATS['other']} other failures")
 
 
 if __name__ == "__main__":

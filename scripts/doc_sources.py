@@ -19,7 +19,7 @@ from __future__ import annotations
 import re
 import time
 from datetime import date
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import requests
 
@@ -31,6 +31,48 @@ HEADERS = {
 }
 
 WP_BASE = "https://nipissingtownship.com"
+
+# Recovery of older, deleted documents (Wayback Machine, media-index
+# backfills) is a bounded effort: after this date every recovery pass stops
+# by itself and only live sources run. The recovery code can then be deleted.
+RECOVERY_UNTIL = date(2026, 12, 31)
+
+
+def recovery_active() -> bool:
+    return date.today() <= RECOVERY_UNTIL
+
+# Politeness: minimum seconds between requests to one host. archive.org
+# throttles hard (it caused a 10-minute stall on 2026-10-21); the township's
+# WordPress security plugin may block bursts.
+MIN_INTERVAL = {"web.archive.org": 4.0, "nipissingtownship.com": 1.0}
+_last_hit: Dict[str, float] = {}
+
+
+def polite_get(url: str, *, timeout: int = 45, retries: int = 2, **kw) -> requests.Response:
+    """GET with per-host pacing and retries on 429 / 5xx / timeouts.
+    Raises the last error if every attempt fails; 4xx (other than 429) is
+    returned immediately as a response, not retried."""
+    host = re.sub(r"^https?://([^/]+).*$", r"\1", url)
+    gap = next((v for h, v in MIN_INTERVAL.items() if host.endswith(h)), 0.0)
+    kw.setdefault("headers", HEADERS)
+    last: Optional[Exception] = None
+    for attempt in range(retries + 1):
+        wait = _last_hit.get(host, 0) + gap - time.monotonic()
+        if wait > 0:
+            time.sleep(wait)
+        _last_hit[host] = time.monotonic()
+        try:
+            r = requests.get(url, timeout=timeout, allow_redirects=True, **kw)
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            last = e
+        else:
+            if r.status_code == 429 or r.status_code >= 500:
+                last = requests.exceptions.HTTPError(f"{r.status_code}", response=r)
+            else:
+                return r
+        if attempt < retries:
+            time.sleep(5 * (3 ** attempt))      # 5s, 15s
+    raise last  # type: ignore[misc]
 
 _MONTH = (r"(january|february|march|april|may|june|july|august|september|october|"
           r"november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)")
@@ -94,17 +136,28 @@ def pdf_text(data: bytes, pages: int = 1) -> str:
         return ""
 
 
-def download_pdf(url: str, timeout: int = 120) -> Optional[bytes]:
-    """PDF bytes, or None (404 / not a PDF / transient error)."""
+def fetch_pdf(url: str, timeout: int = 120) -> Tuple[Optional[bytes], str]:
+    """(PDF bytes or None, outcome). Outcome is "ok", "notfound" (404/410:
+    really gone), "notpdf" (server answered with something else) or
+    "error" (blocked, throttled, timed out: worth retrying later)."""
     try:
-        r = requests.get(url, headers=HEADERS, timeout=timeout, allow_redirects=True)
-        if r.status_code == 404:
-            return None
-        r.raise_for_status()
+        r = polite_get(url, timeout=timeout)
     except Exception as e:
         print(f"  download failed {url}: {e}")
-        return None
-    return r.content if r.content[:5].startswith(b"%PDF") else None
+        return None, "error"
+    if r.status_code in (404, 410):
+        return None, "notfound"
+    if r.status_code >= 400:
+        print(f"  download refused {url}: HTTP {r.status_code}")
+        return None, "error"
+    if not r.content[:5].startswith(b"%PDF"):
+        return None, "notpdf"
+    return r.content, "ok"
+
+
+def download_pdf(url: str, timeout: int = 120) -> Optional[bytes]:
+    """PDF bytes, or None (see fetch_pdf for the reason)."""
+    return fetch_pdf(url, timeout)[0]
 
 
 # ── WordPress media index ─────────────────────────────────────────────────────
@@ -114,8 +167,8 @@ def wp_media_search(term: str, base: str = WP_BASE, max_pages: int = 30) -> List
     out: List[Dict[str, Any]] = []
     for page in range(1, max_pages + 1):
         try:
-            r = requests.get(f"{base}/wp-json/wp/v2/media", headers=HEADERS, timeout=60,
-                             params={"search": term, "per_page": 100, "page": page,
+            r = polite_get(f"{base}/wp-json/wp/v2/media", timeout=60,
+                           params={"search": term, "per_page": 100, "page": page,
                                      "_fields": "id,date,source_url,mime_type,title,media_details"})
         except Exception as e:
             print(f"  media index failed ({term} p{page}): {e}")
@@ -157,17 +210,12 @@ def wayback_files(url_prefix: str, name_regex: str) -> List[Dict[str, str]]:
         "filter": ["statuscode:200", f"original:{name_regex}"],
         "collapse": "urlkey",
     }
-    for attempt in range(3):
-        try:
-            r = requests.get("https://web.archive.org/cdx/search/cdx", params=params,
-                             headers=HEADERS, timeout=120)
-            r.raise_for_status()
-            rows = r.json()
-            break
-        except Exception as e:
-            print(f"  wayback CDX attempt {attempt + 1} failed: {e}")
-            time.sleep(10)
-    else:
+    try:
+        r = polite_get("https://web.archive.org/cdx/search/cdx", params=params, timeout=120)
+        r.raise_for_status()
+        rows = r.json()
+    except Exception as e:
+        print(f"  wayback CDX failed: {e}")
         return []
     out = []
     for row in rows[1:] if rows else []:
@@ -189,8 +237,7 @@ def wayback_pages(domain: str, url_regex: str, limit: int = 80) -> List[Dict[str
         "collapse": "timestamp:6",
     }
     try:
-        r = requests.get("https://web.archive.org/cdx/search/cdx", params=params,
-                         headers=HEADERS, timeout=180)
+        r = polite_get("https://web.archive.org/cdx/search/cdx", params=params, timeout=120)
         r.raise_for_status()
         rows = r.json()
     except Exception as e:
@@ -205,8 +252,7 @@ def wayback_pages(domain: str, url_regex: str, limit: int = 80) -> List[Dict[str
 
 def wayback_page_html(original: str, timestamp: str) -> Optional[str]:
     try:
-        r = requests.get(f"https://web.archive.org/web/{timestamp}id_/{original}",
-                         headers=HEADERS, timeout=120)
+        r = polite_get(f"https://web.archive.org/web/{timestamp}id_/{original}")
         r.raise_for_status()
         return r.text
     except Exception as e:
@@ -214,9 +260,13 @@ def wayback_page_html(original: str, timestamp: str) -> Optional[str]:
         return None
 
 
+def wayback_fetch(original: str, timestamp: str) -> Tuple[Optional[bytes], str]:
+    """The archived bytes (id_ = raw file, no Wayback toolbar), with outcome."""
+    return fetch_pdf(f"https://web.archive.org/web/{timestamp}id_/{original}", timeout=120)
+
+
 def wayback_download(original: str, timestamp: str) -> Optional[bytes]:
-    """The archived bytes (id_ = raw file, no Wayback toolbar)."""
-    return download_pdf(f"https://web.archive.org/web/{timestamp}id_/{original}", timeout=180)
+    return wayback_fetch(original, timestamp)[0]
 
 
 def unique(seq: Iterable[Any]) -> List[Any]:

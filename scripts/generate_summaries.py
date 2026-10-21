@@ -15,6 +15,7 @@ Rules:
 
 from __future__ import annotations
 
+import base64
 import io
 import json
 import os
@@ -153,6 +154,14 @@ def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
     raise ValueError("Could not extract usable text from PDF with any method")
 
 
+def pdf_page_count(pdf_bytes: bytes) -> int:
+    try:
+        import fitz
+        return len(fitz.open(stream=pdf_bytes, filetype="pdf"))
+    except Exception:
+        return 999
+
+
 def clean_source_text(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
@@ -242,7 +251,7 @@ Source minutes text:
 """.strip()
 
 
-def call_anthropic(prompt: str) -> str:
+def call_anthropic(prompt: str, pdf_bytes: bytes = None) -> str:
     if not ANTHROPIC_API_KEY:
         raise RuntimeError("ANTHROPIC_API_KEY is not set")
 
@@ -259,7 +268,14 @@ def call_anthropic(prompt: str) -> str:
         "messages": [
             {
                 "role": "user",
-                "content": prompt
+                # Scanned minutes have no text layer: send the PDF itself and
+                # Claude reads the page images. Text-layer PDFs send text only.
+                "content": prompt if pdf_bytes is None else [
+                    {"type": "document",
+                     "source": {"type": "base64", "media_type": "application/pdf",
+                                "data": base64.standard_b64encode(pdf_bytes).decode("ascii")}},
+                    {"type": "text", "text": prompt},
+                ],
             }
         ],
     }
@@ -426,16 +442,24 @@ def main() -> None:
         print(f"Minutes: {minutes_url}")
 
         try:
-            text = fetch_pdf_text(load_minutes_pdf(meeting))
-            text = clean_source_text(text)
-
+            pdf_bytes = load_minutes_pdf(meeting)
+            try:
+                text = clean_source_text(fetch_pdf_text(pdf_bytes))
+            except ValueError:
+                text = ""
             if looks_unusable(text):
-                print("Skipped: extracted text is too short or looks unusable")
-                skipped += 1
-                continue
-
-            prompt = build_prompt(meeting, text)
-            summary = call_anthropic(prompt)
+                # Probably a scan. Let Claude read the pages directly, within
+                # the API's limits (32 MB request, 100 pages).
+                if len(pdf_bytes) > 20 * 1024 * 1024 or pdf_page_count(pdf_bytes) > 100:
+                    print("Skipped: no usable text and too large to send as a PDF")
+                    skipped += 1
+                    continue
+                print("  No text layer — sending the PDF itself")
+                prompt = build_prompt(meeting, "(The minutes are attached as a PDF document.)")
+                summary = call_anthropic(prompt, pdf_bytes)
+            else:
+                prompt = build_prompt(meeting, text)
+                summary = call_anthropic(prompt)
 
             # Validate the summary before saving
             if is_bad_summary(summary):

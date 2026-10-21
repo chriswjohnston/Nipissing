@@ -29,6 +29,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           python scripts/update_meetings.py
+          python scripts/recover_documents.py
           python scripts/generate_summaries.py
           python scripts/update_bylaws.py
           python scripts/update_adjustment.py
@@ -37,6 +38,7 @@ jobs:
           python scripts/update_healthunit.py
           python scripts/update_dnssab.py
           python scripts/attach_videos.py
+          python scripts/check_freshness.py
           python scripts/validate_data.py
       - name: Show canonical data counts
         run: |
