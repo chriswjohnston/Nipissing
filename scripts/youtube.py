@@ -34,6 +34,10 @@ import requests
 CHANNEL_ID = "UC2XSMZqRNHbwVppelfKcEXw"
 RSS_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
 CACHE = Path("data/runtime/youtube_cache.json")
+# Records when a full API backfill has completed, so later runs only read the
+# newest page(s) instead of the whole channel history every time.
+BACKFILL_STATE = Path("data/runtime/youtube_backfill.json")
+_BACKFILL_DONE_THIS_RUN = False
 LEGACY_CACHE = Path("data/runtime/youtube_videos.json")  # date-keyed, council only
 LOCAL_TZ = ZoneInfo("America/Toronto")
 
@@ -65,6 +69,10 @@ BODY_KEYWORDS = [
     # Not tracked on the site, but labelling it keeps these videos out of
     # the untitled-stream fallback.
     ("adjustment", "adjustment"),
+    # Police board (PNC OPP Detachment Board) — rarely streamed, but labelled
+    # so it can never be picked up by the untitled-stream fallback.
+    ("detachment", "pnc"),
+    ("police", "pnc"),
 ]
 NOT_COUNCIL = ("committee", "board", "adjustment", "conservation", "library", "planning")
 
@@ -163,9 +171,12 @@ def backfill_from_api(cache: Dict[str, Dict[str, Any]]) -> int:
     scrolled off before the cache existed can only be recovered this way.
     Costs ~1 quota unit per 50 videos (daily free quota is 10,000).
     """
+    global _BACKFILL_DONE_THIS_RUN
     key = os.environ.get("YOUTUBE_API_KEY", "").strip()
-    if not key:
+    if not key or _BACKFILL_DONE_THIS_RUN:
         return 0
+    state = _load(BACKFILL_STATE, {})
+    complete = bool(state.get("complete"))
     playlist = "UU" + CHANNEL_ID[2:]          # the channel's "uploads" playlist
     added, token, pages = 0, None, 0
     try:
@@ -179,20 +190,32 @@ def backfill_from_api(cache: Dict[str, Dict[str, Any]]) -> int:
             r.raise_for_status()
             data = r.json()
             pages += 1
+            page_new = 0
             for item in data.get("items", []):
                 sn = item.get("snippet", {})
                 vid = (sn.get("resourceId") or {}).get("videoId")
                 if not vid or vid in cache:
                     continue
+                if sn.get("title") in ("Private video", "Deleted video"):
+                    continue  # unplayable placeholders in the uploads playlist
                 published = (item.get("contentDetails") or {}).get("videoPublishedAt") \
                     or sn.get("publishedAt")
                 cache[vid] = _record(sn.get("title", ""),
                                      f"https://www.youtube.com/watch?v={vid}", published)
                 added += 1
+                page_new += 1
             token = data.get("nextPageToken")
             if not token:
+                # Reached the oldest upload: the history is fully cached.
+                if not complete:
+                    _save(BACKFILL_STATE, {"complete": datetime.now(timezone.utc)
+                                           .strftime("%Y-%m-%d")})
                 break
-        print(f"  API backfill: {added} older video(s) added ({pages} page(s))")
+            if complete and page_new == 0:
+                break  # incremental mode: nothing new on this page
+        _BACKFILL_DONE_THIS_RUN = True
+        mode = "incremental" if complete else "full history"
+        print(f"  API backfill ({mode}): {added} older video(s) added ({pages} page(s))")
     except Exception as ex:
         # Never log the URL: it contains the key.
         print(f"  Warning: YouTube API backfill failed ({type(ex).__name__})")

@@ -25,11 +25,17 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           python scripts/update_meetings.py
           python scripts/generate_summaries.py
           python scripts/update_bylaws.py
+          python scripts/update_adjustment.py
           python scripts/update_boards.py
+          python scripts/update_library.py
+          python scripts/update_healthunit.py
+          python scripts/update_dnssab.py
           python scripts/validate_data.py
       - name: Show canonical data counts
         run: |
