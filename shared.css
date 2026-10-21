@@ -190,7 +190,12 @@ footer{background:var(--ink);padding:3rem 2rem 2rem}
 
 /* Meeting cards: official body name in its own colour as the title, a badge
    only for Special / Cancelled / Postponed, then the date. */
-.meeting-card .meeting-name{margin:0;font-weight:600}
+.meeting-card .result-meta{flex-wrap:nowrap;align-items:baseline}
+/* Name and badge share one text flow: on a long name the badge follows the
+   last word instead of dropping to its own line. */
+.meeting-card .meeting-heading{flex:1;min-width:0}
+.meeting-card .meeting-name{margin:0;font-weight:600;display:inline}
+.meeting-card .meeting-heading .meeting-badge{display:inline-block;margin-left:.5rem;vertical-align:.1em;white-space:nowrap}
 .body-council{color:#a97900}
 .body-recreation{color:#117a72}
 .body-museum{color:#1c4fd7}

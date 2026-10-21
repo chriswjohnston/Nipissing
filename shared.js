@@ -194,8 +194,9 @@ function meetingCard(meeting, q = '') {
     <div class="result-body">
 
       <div class="result-meta">
-        <span class="result-title meeting-name ${bodyColorClass(meeting)}">${highlight(officialName(meeting), q)}</span>
-        ${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
+        <span class="meeting-heading">
+          <span class="result-title meeting-name ${bodyColorClass(meeting)}">${highlight(officialName(meeting), q)}</span>${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
+        </span>
         <span class="result-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
       </div>
 
