@@ -1,0 +1,13 @@
+{
+  "_about": "By-laws grouped as one law: the principal by-law plus the by-laws that amend it, in order. consolidate=true builds an unofficial consolidated text (scripts/consolidate_bylaws.py). Edit by hand; amendments are listed oldest first.",
+  "families": [
+    {
+      "id": "minimum-maintenance-standards",
+      "name": "Minimum Maintenance Standards",
+      "also_known_as": ["Road Status and Maintenance By-Law"],
+      "principal": "2019-41",
+      "amendments": ["2020-52", "2024-12"],
+      "consolidate": true
+    }
+  ]
+}
