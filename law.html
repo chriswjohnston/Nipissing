@@ -316,6 +316,9 @@
 .amend-mark{display:inline-flex;gap:.35rem;align-items:center;margin:.1rem 0 .6rem;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:600;padding:.15rem .55rem;border-radius:999px;text-decoration:none;border:1px solid}
 .amend-mark.amended{color:#1c4fd7;background:#eef3ff;border-color:#cddbff}
 .amend-mark.deleted{color:#9b2c2c;background:#fdeeee;border-color:#f3c9c9}
+.law-reader-notes{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border, #e2e8f0);font-size:.9rem;color:var(--text-muted, #5b6472)}
+.law-reader-notes ul{margin:.4rem 0 0;padding-left:1.1rem}
+.law-reader-notes li{margin:.25rem 0}
 .amend-mark.unclear{color:#7a4b00;background:#fff4dc;border-color:#f1d9a6}
 .history{list-style:none;margin:0;padding:0}
 .history li{position:relative;padding:0 0 1rem 1.1rem;border-left:2px solid var(--rule)}
@@ -376,6 +379,10 @@
       <div class="detail-title">How it reads today</div>
       <div class="law-notice" id="law-notice"></div>
       <div class="law-text" id="law-text"></div>
+      <div class="law-reader-notes" id="reader-notes" style="display:none">
+        <div class="side-title">About this version</div>
+        <ul id="law-reader-notes"></ul>
+      </div>
     </div>
   </div>
 
@@ -387,10 +394,6 @@
     <div class="side-card" id="changes-card" style="display:none">
       <div class="side-title">What the amendments changed</div>
       <ul class="change-list" id="law-changes"></ul>
-    </div>
-    <div class="side-card" id="unclear-card" style="display:none">
-      <div class="side-title">Points to check</div>
-      <ul class="change-list" id="law-unclear"></ul>
     </div>
   </div>
 </main>
@@ -498,9 +501,10 @@ async function init(){
     document.getElementById('law-changes').innerHTML = law.changes.map(c =>
       `<li><strong>${esc(c.bylaw)}</strong>${c.where ? ` — ${esc(c.where)}` : ''}: ${esc(c.change)}</li>`).join('');
   }
-  if((law.uncertainties || []).length){
-    document.getElementById('unclear-card').style.display = '';
-    document.getElementById('law-unclear').innerHTML = law.uncertainties.map(u => `<li>${esc(u)}</li>`).join('');
+  // Short notes for readers only; the AI's technical review notes stay in the data.
+  if((law.reader_notes || []).length){
+    document.getElementById('reader-notes').style.display = '';
+    document.getElementById('law-reader-notes').innerHTML = law.reader_notes.map(u => `<li>${esc(u)}</li>`).join('');
   }
 }
 init();

@@ -128,7 +128,7 @@ def filename_of(url: str) -> str:
 
 def pdf_text(data: bytes, pages: int = 1) -> str:
     try:
-        import fitz  # pymupdf
+        import pymupdf as fitz  # pymupdf
         doc = fitz.open(stream=data, filetype="pdf")
         return "\n".join(doc[i].get_text() for i in range(min(pages, len(doc))))
     except Exception as e:

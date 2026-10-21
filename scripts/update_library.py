@@ -337,7 +337,7 @@ def download(f: Dict[str, Any]) -> Optional[bytes]:
 
 def first_page_text(data: bytes) -> str:
     try:
-        import fitz  # pymupdf
+        import pymupdf as fitz  # pymupdf
         doc = fitz.open(stream=data, filetype="pdf")
         return doc[0].get_text() if len(doc) else ""
     except Exception as e:

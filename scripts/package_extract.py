@@ -100,7 +100,7 @@ def ocr_png(png: bytes) -> str:
 
 def page_top_text(page, ocr: bool) -> Tuple[str, str]:
     """(text of the top of the page, method). Text layer first, OCR for scans."""
-    import fitz
+    import pymupdf as fitz
     full = page.get_text()
     if len(full.strip()) >= 40:
         clip = fitz.Rect(page.rect.x0, page.rect.y0, page.rect.x1,
@@ -116,7 +116,7 @@ def page_top_text(page, ocr: bool) -> Tuple[str, str]:
 
 def page_top_job(page, ocr: bool):
     """Like page_top_text, but returns a callable so OCR can run in a pool."""
-    import fitz
+    import pymupdf as fitz
     full = page.get_text()
     clip = fitz.Rect(page.rect.x0, page.rect.y0, page.rect.x1,
                      page.rect.y0 + page.rect.height * TOP_FRACTION)
@@ -130,7 +130,7 @@ def page_top_job(page, ocr: bool):
 
 
 def page_full_text(page, ocr: bool) -> str:
-    import fitz
+    import pymupdf as fitz
     full = page.get_text()
     if len(full.strip()) >= 40 or not ocr:
         return full
@@ -236,7 +236,7 @@ def fetch_package(src: str, dest: Path) -> bool:
 
 def process_meeting(meeting: Dict[str, Any], targets: List[str], ocr: bool,
                     workdir: Path) -> Dict[str, Any]:
-    import fitz
+    import pymupdf as fitz
     src = package_source(meeting)
     entry: Dict[str, Any] = {"targets": targets, "checked": date.today().isoformat(),
                              "package": src, "bylaws": {}}
