@@ -34,6 +34,44 @@
     "status": "seeded",
     "targets": []
   },
+  "2026-04-21": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-15",
+      "2026-16",
+      "2026-17",
+      "2026-18"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-21-2026__069ce1f2.pdf",
+    "status": "done",
+    "targets": [
+      "2026-15",
+      "2026-16",
+      "2026-17",
+      "2026-18"
+    ],
+    "version": 2
+  },
+  "2026-05-05": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-19",
+      "2026-20",
+      "2026-21",
+      "2026-22"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/May-5-2026-Council-Package-2__86e07a81.pdf",
+    "status": "done",
+    "targets": [
+      "2026-19",
+      "2026-20",
+      "2026-21",
+      "2026-22"
+    ],
+    "version": 2
+  },
   "2026-05-19": {
     "bylaws": {},
     "checked": "2026-10-21",
