@@ -36,7 +36,8 @@ CANONICAL_DIR = ROOT / "data" / "canonical"
 MEETINGS_FILE = CANONICAL_DIR / "meetings.json"
 BOARDS_FILE = CANONICAL_DIR / "boards.json"
 
-MIN_YEAR = 2026
+# Matches SITE_MIN_YEAR: every meeting the site shows can have a summary.
+MIN_YEAR = 2022
 
 # Phrases that indicate a bad/failed summary that should be cleared and retried
 BAD_SUMMARY_MARKERS = [
