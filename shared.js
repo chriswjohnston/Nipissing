@@ -142,10 +142,10 @@ function meetingDocPills(meeting) {
 // Official names, used as each meeting card's title and on the detail page.
 const OFFICIAL_NAMES = {
   council: 'Township of Nipissing Council',
-  recreation: 'Recreation Committee',
-  museum: 'Museum Board',
-  cemetery: 'Cemetery Committee',
-  adjustment: 'Committee of Adjustment',
+  recreation: 'Township of Nipissing Recreation Committee',
+  museum: 'Township of Nipissing Museum Board',
+  cemetery: 'Township of Nipissing Cemetery Committee',
+  adjustment: 'Township of Nipissing Committee of Adjustment',
   pnc: 'Powassan Nipissing Callander OPP Detachment Board',
   library: 'Powassan & District Union Public Library Board',
   'healthunit': 'North Bay Parry Sound District Health Unit — Board of Health',
