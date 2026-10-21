@@ -56,6 +56,9 @@ BUDGET_SECONDS = 15 * 60   # per run; the rest continues next run
 MAX_PAGES = 40
 TOP_FRACTION = 0.30        # share of a page read for headings
 OCR_WORKERS = 4            # GitHub runners have 4 cores
+# Bump when detection improves: packages done by an older version that had
+# by-laws not found are processed again.
+EXTRACTOR_VERSION = 2
 HEADERS = {"User-Agent": "Mozilla/5.0 (nipissing public records; by-law extraction)"}
 
 # "BY-LAW NO. 2024-12", "By-law Number 2024 - 12", OCR's "BY—LAW #2024-012"
@@ -137,8 +140,28 @@ def page_full_text(page, ocr: bool) -> str:
 
 # ── finding a by-law's pages ──────────────────────────────────────────────────
 
+# OCR slips inside numbers: "2O26-26", "2026-l2", "2O24 - I2".
+def _fix_digits(text: str) -> str:
+    return re.sub(r"(?<=[\d\s-])[OoQD](?=[\d\s-]*\d)|(?<=\d)[OoQD]",
+                  "0", re.sub(r"(?<=[\d-])[lI|](?=[\d\s]|$)|(?<=[\s-])[lI|](?=\d)", "1", text or ""))
+
+
 def heads(text: str) -> List[str]:
-    return [norm(y, n) for y, n in HEAD_RE.findall(text or "")]
+    return [norm(y, n) for y, n in HEAD_RE.findall(_fix_digits(text))]
+
+
+START_RE = re.compile(r"corporation\s+of\s+the\s+(?:township|municipality)", re.I)
+# The resolution that passes a by-law ("THAT we pass By-Law Number …,
+# being a By-Law to …") sits just before it; it is not the by-law.
+RESOLUTION_RE = re.compile(r"moved\s+by|seconded\s+by|\bR\s*20\d\d\s*-\s*\d", re.I)
+BEING_RE = re.compile(r"being\s+a\s+by[\s-]*law", re.I)
+
+
+def start_score(text: str) -> int:
+    """How much a page top looks like the first page of a by-law."""
+    t = (text or "")[:600]
+    return (2 * bool(START_RE.search(t)) + 2 * bool(BEING_RE.search(t))
+            + bool(HEAD_RE.search(_fix_digits(t[:250]))))
 
 
 def own_heading(text: str) -> Optional[str]:
@@ -154,16 +177,17 @@ def find_ranges(tops: List[str], full, targets: List[str]) -> Dict[str, Tuple[in
     full(i): whole-page text, read lazily while walking a by-law's pages."""
     out: Dict[str, Tuple[int, int]] = {}
     for target in targets:
-        start = None
-        for i, t in enumerate(tops):
-            # Listing pages (agenda, minutes) name several by-laws; a by-law's
-            # own first page leads with its number.
-            if own_heading(t) == target and not LISTING_RE.search(t[:300]) \
-                    and len(set(heads(t))) <= 3:
-                start = i
-                break
-        if start is None:
+        # Candidates lead with this by-law's number and aren't listing pages
+        # (agenda, minutes). Of those, the one that looks most like a by-law's
+        # first page wins (staff reports that mention the number lose):
+        # "THE CORPORATION OF THE TOWNSHIP … BY-LAW NO. … Being a by-law to …"
+        cands = [i for i, t in enumerate(tops)
+                 if own_heading(t) == target and not LISTING_RE.search(t[:300])
+                 and not RESOLUTION_RE.search(t[:400]) and len(set(heads(t))) <= 3]
+        if not cands:
             continue
+        best = max(start_score(tops[i]) for i in cands)
+        start = next(i for i in cands if start_score(tops[i]) == best)
         end = start
         signed = bool(SIGNED_RE.search(full(start)))
         for j in range(start + 1, min(len(tops), start + MAX_PAGES)):
@@ -260,6 +284,14 @@ def process_meeting(meeting: Dict[str, Any], targets: List[str], ocr: bool,
         }
     doc.close()
     entry["missing"] = sorted(set(targets) - set(ranges))
+    entry["version"] = EXTRACTOR_VERSION
+    if entry["missing"]:
+        # Show what the page tops said wherever a missing by-law is mentioned,
+        # so a miss can be diagnosed from the log.
+        for i, t in enumerate(tops):
+            flat = " ".join(_fix_digits(t).split())
+            if any(re.search(re.escape(n).replace("\\-", r"\s*[-–]\s*0*"), flat) for n in entry["missing"]):
+                print(f"    p{i + 1} mentions {', '.join(entry['missing'])}: {flat[:140]}")
     entry["status"] = "done" if ocr or "none" not in methods else "needs-ocr"
     return entry
 
@@ -271,6 +303,12 @@ def run(meetings: List[Dict[str, Any]], bylaws: List[Dict[str, Any]]) -> Dict[st
     except Exception:
         state = {}
     ocr = have_tesseract()
+    if ocr:
+        try:
+            v = subprocess.run(["tesseract", "--version"], capture_output=True, text=True).stdout.split("\n")[0]
+            print(f"  OCR: {v}")
+        except Exception:
+            pass
     if not ocr:
         print("  (Tesseract not installed: scanned packages are left for a later run)")
 
@@ -287,7 +325,8 @@ def run(meetings: List[Dict[str, Any]], bylaws: List[Dict[str, Any]]) -> Dict[st
         for d in sorted(by_meeting, reverse=True):              # newest first
             targets = sorted(set(by_meeting[d]))
             prev = state.get(d, {})
-            if prev.get("targets") == targets and prev.get("status") in ("done", "no-package"):
+            if prev.get("targets") == targets and prev.get("status") in ("done", "no-package") \
+                    and not (prev.get("missing") and prev.get("version", 1) < EXTRACTOR_VERSION):
                 continue
             if prev.get("status") == "needs-ocr" and not ocr and prev.get("targets") == targets:
                 continue
