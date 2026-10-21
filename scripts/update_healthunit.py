@@ -71,6 +71,8 @@ def body_for(text: str, filename: str, store: Store) -> Dict[str, Any]:
     else:
         t = (text or "").lower()
         key = next((p for w, p in NAME_TO_PREFIX if w in t), None)
+    if not key and "committee" not in (text or "").lower():
+        key = "boh"          # schedule lines and links that name no committee
     if key:
         b = dict(BODIES[key])
     else:
@@ -193,6 +195,15 @@ def main() -> None:
     print(f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
     store = Store(GROUP)
+    # First run (2026-10-21) created one-meeting bodies named after dates from
+    # schedule lines ("healthunit-april-22-2026"). Remove them; the schedule
+    # now files those dates under the Board of Health.
+    bogus = re.compile(r"^healthunit-[a-z]+-\d{1,2}-\d{4}$")
+    before = len(store.payload["boards"])
+    store.payload["boards"] = [b for b in store.payload["boards"]
+                               if not bogus.match(b.get("id", ""))]
+    if before != len(store.payload["boards"]):
+        print(f"  removed {before - len(store.payload['boards'])} date-named body entries")
     try:
         r = requests.get(URL, headers=ds.HEADERS, timeout=60)
         r.raise_for_status()

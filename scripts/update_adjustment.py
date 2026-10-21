@@ -71,6 +71,29 @@ MAX_CHECK_BYTES = 8 * 1024 * 1024
 WAYBACK_PREFIX = "nipissingtownship.com/wp-content/uploads/"
 WAYBACK_REGEX = r".*([Cc][Oo][Aa]|[Aa]djustment|[Cc]onsent|[Vv]ariance).*"
 WAYBACK_EVERY_DAYS = 7
+# Old copies of any township page with "adjustment" in its address. Each
+# lists the documents linked at the time; the files themselves are mostly
+# still on the server even though nothing links to them now.
+WAYBACK_PAGE_REGEX = r".*[Aa]djustment.*"
+
+# Older documents found through search engines (still live on 2026-10-21 but
+# not linked or listed anywhere on the township site). Belt and braces for
+# the snapshot scan.
+SEED_URLS = [
+    "https://nipissingtownship.com/wp-content/uploads/2022/02/AGENDA-Feb-8-2022.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-15-2022.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2023/09/AGENDA-September-19th-2023-COA.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-COA-September-19-2023.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-February-6-2024-COA.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/AGENDA-March-19-2024-COA.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-COA-July-15-2025.pdf",
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf",
+]
 
 # file URL -> "YYYY-MM-DD" for documents whose date can't be detected.
 MANUAL_DATES: Dict[str, str] = {}
@@ -204,7 +227,8 @@ def candidate_dates(url: str, text: str) -> List[str]:
     return [d.isoformat() for d in ds.unique(found)]
 
 
-def examine(url: str, data: bytes, source: str, state: Dict[str, Any]) -> None:
+def examine(url: str, data: bytes, source: str, state: Dict[str, Any],
+            trusted: bool = False) -> None:
     """Classify + date one PDF and archive it. Records the outcome in state."""
     name = ds.filename_of(url)
     kind = kind_of(name)
@@ -214,7 +238,9 @@ def examine(url: str, data: bytes, source: str, state: Dict[str, Any]) -> None:
     # committee as an agenda item, so the whole page is not enough).
     header = re.sub(r"\s+", " ", text).strip()[:150].lower()
     is_coa_header = "adjustment" in header and "council" not in header
-    if not COA_NAME_RE.search(name) and not is_coa_header:
+    # trusted: linked from the committee's own page (or a copy of it) or a
+    # seed — no header check, so a scanned PDF with no text is still kept.
+    if not trusted and not COA_NAME_RE.search(name) and not is_coa_header:
         state[url] = {"status": "not-coa", "checked": TODAY.isoformat()}
         return
     entry: Dict[str, Any] = {"kind": kind, "source": source, "checked": TODAY.isoformat()}
@@ -262,6 +288,48 @@ def backfill(state: Dict[str, Any], meta: Dict[str, Any]) -> None:
             state[url] = {"status": "skipped", "checked": TODAY.isoformat()}
             continue
         examine(url, data, "media-index", state)
+
+    # Known older documents and links from old copies of the committee page:
+    # try the live server first (most are still there), then Wayback.
+    links: Dict[str, str] = {u: "" for u in SEED_URLS}
+    last_pages = meta.get("wayback_pages_checked")
+    if not last_pages or date.fromisoformat(last_pages) <= TODAY - timedelta(days=WAYBACK_EVERY_DAYS):
+        snaps = ds.wayback_pages("nipissingtownship.com", WAYBACK_PAGE_REGEX)
+        print(f"  wayback: {len(snaps)} old cop(ies) of committee pages to scan")
+        for snap in snaps:
+            html = ds.wayback_page_html(snap["original"], snap["timestamp"])
+            if not html:
+                continue
+            for a in BeautifulSoup(html, "html.parser").find_all("a", href=True):
+                href = re.sub(r"^https?://web\.archive\.org/web/\d+(id_)?/", "", a["href"])
+                href = https(normalize_absolute_url(href)).replace(":80/", "/")
+                if "/wp-content/uploads/" in href and href.lower().endswith(".pdf"):
+                    links.setdefault(href, snap["timestamp"])
+        meta["wayback_pages_checked"] = TODAY.isoformat()
+    found_live = found_wb = gone = 0
+    for url, ts in sorted(links.items()):
+        # Re-examine files the broad search rejected or skipped: a trusted
+        # link (committee page, copy of it, seed) overrides that verdict.
+        prev = state.get(url, {})
+        if prev.get("status") in ("ok", "undated"):
+            continue
+        if prev.get("status") == "gone" and prev.get("checked", "") > \
+                (TODAY - timedelta(days=WAYBACK_EVERY_DAYS)).isoformat():
+            continue  # gone everywhere: retried weekly, not daily
+        data, source = ds.download_pdf(url), "live (unlinked)"
+        if data is None:
+            data, source = ds.wayback_download(url, ts or "2"), f"wayback {ts[:8]}"
+        if data is None:
+            state[url] = {"status": "gone", "checked": TODAY.isoformat(), "seen": ts[:8]}
+            gone += 1
+            continue
+        examine(url, data, source, state, trusted=True)
+        if source.startswith("live"):
+            found_live += 1
+        else:
+            found_wb += 1
+    print(f"  older links: {len(links)} | {found_live} still live, {found_wb} from Wayback, "
+          f"{gone} gone for good")
 
     # Wayback (deleted files) — weekly, it is slow
     last = meta.get("wayback_checked")
@@ -369,6 +437,24 @@ def main() -> None:
     except Exception as e:
         print(f"  ✗ backfill failed ({e}) — will retry next run")
     unplaced = apply_backfill(meetings, state)
+
+    # Meetings known only from a dated recording (documents deleted). The
+    # video is attached by attach_videos.py later in the run.
+    try:
+        cache = json.loads((ROOT / "data" / "runtime" / "youtube_cache.json").read_text())
+    except Exception:
+        cache = {}
+    import youtube
+    added = 0
+    for v in cache.values():
+        iso = v.get("title_date")
+        if iso and "adjustment" in youtube.classify_bodies(v.get("title", "")) \
+                and iso not in meetings and iso >= "2022":
+            meetings[iso] = _new_meeting(date.fromisoformat(iso), BOARD, v.get("title", ""))
+            meetings[iso]["known_from"] = "recording"
+            added += 1
+    if added:
+        print(f"  {added} meeting(s) known only from a dated recording")
 
     for m in meetings.values():
         m["all_agendas"] = True

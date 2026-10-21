@@ -179,6 +179,41 @@ def wayback_files(url_prefix: str, name_regex: str) -> List[Dict[str, str]]:
     return out
 
 
+def wayback_pages(domain: str, url_regex: str, limit: int = 80) -> List[Dict[str, str]]:
+    """HTML captures of pages on `domain` whose URL matches url_regex, at most
+    one per page per month: [{original, timestamp}], oldest first."""
+    params = {
+        "url": domain, "matchType": "domain", "output": "json",
+        "fl": "original,timestamp",
+        "filter": ["statuscode:200", "mimetype:text/html", f"original:{url_regex}"],
+        "collapse": "timestamp:6",
+    }
+    try:
+        r = requests.get("https://web.archive.org/cdx/search/cdx", params=params,
+                         headers=HEADERS, timeout=180)
+        r.raise_for_status()
+        rows = r.json()
+    except Exception as e:
+        print(f"  wayback page index failed: {e}")
+        return []
+    out = [{"original": row[0], "timestamp": row[1]} for row in (rows[1:] if rows else [])]
+    if len(out) > limit:            # spread the sample across the whole period
+        step = len(out) / limit
+        out = [out[int(i * step)] for i in range(limit)]
+    return out
+
+
+def wayback_page_html(original: str, timestamp: str) -> Optional[str]:
+    try:
+        r = requests.get(f"https://web.archive.org/web/{timestamp}id_/{original}",
+                         headers=HEADERS, timeout=120)
+        r.raise_for_status()
+        return r.text
+    except Exception as e:
+        print(f"  wayback page fetch failed {original} @{timestamp}: {e}")
+        return None
+
+
 def wayback_download(original: str, timestamp: str) -> Optional[bytes]:
     """The archived bytes (id_ = raw file, no Wayback toolbar)."""
     return download_pdf(f"https://web.archive.org/web/{timestamp}id_/{original}", timeout=180)
