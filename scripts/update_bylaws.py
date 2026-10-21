@@ -34,6 +34,7 @@ import fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 
+import package_extract
 from archive import mirror
 
 BASE_URL    = "https://nipissingtownship.com"
@@ -794,119 +795,6 @@ def parse_all_minutes(
 # Step 4: extract standalone PDFs from agenda packages
 # ─────────────────────────────────────────────────────────────────────
 
-def find_target_start_pages(
-    page_texts: List[str], targets: List[str]
-) -> Dict[str, int]:
-    starts:        Dict[str, int] = {}
-    upper_targets = [t.upper() for t in targets]
-    for idx, page_text in enumerate(page_texts):
-        up = (page_text or "").upper()
-        for target in upper_targets:
-            if target in up and target not in starts:
-                starts[target] = idx
-    return starts
-
-
-def export_targets_from_package(
-    meeting: Dict[str, Any],
-    targets: List[str],
-    output_dir: Path,
-) -> Dict[str, str]:
-    if not meeting.get("package_url") or not targets:
-        return {}
-    package_path = download_pdf(meeting["package_url"], DOWNLOAD_CACHE_DIR / "packages")
-    if not package_path and meeting.get("package_archived"):
-        # The township deletes old packages; fall back to our archived copy
-        # (a Releases URL, or an in-repo path under docs/).
-        archived = meeting["package_archived"]
-        if archived.startswith("http"):
-            package_path = download_pdf(archived, DOWNLOAD_CACHE_DIR / "packages")
-        elif (DOCS_DIR / archived).exists():
-            package_path = DOCS_DIR / archived
-    if not package_path:
-        return {}
-    page_texts = extract_pdf_page_texts(package_path)
-    if not page_texts:
-        return {}
-    start_map = find_target_start_pages(page_texts, targets)
-    if not start_map:
-        return {}
-
-    ordered  = sorted(start_map.items(), key=lambda x: x[1])
-    exported: Dict[str, str] = {}
-
-    for i, (target, start_page) in enumerate(ordered):
-        next_start  = ordered[i + 1][1] if i + 1 < len(ordered) else len(page_texts)
-        end_page    = max(start_page, next_start - 1)
-        safe_target = target.replace("/", "-")
-        output_path = output_dir / f"{safe_target}.pdf"
-        try:
-            write_page_range_pdf(package_path, start_page, end_page, output_path)
-            exported[target] = relative_docs_url(output_path)
-        except Exception as e:
-            print(f"  WARN: could not export {target} from {meeting['date']}: {e}")
-
-    return exported
-
-
-def enrich_from_packages(
-    meetings:    List[Dict[str, Any]],
-    bylaws:      List[Dict[str, Any]],
-    resolutions: List[Dict[str, Any]],
-) -> None:
-    print("\n═══ Step 3: Extracting PDFs from Agenda Packages ═══")
-
-    bylaws_by_meeting:      Dict[str, List[str]] = {}
-    resolutions_by_meeting: Dict[str, List[str]] = {}
-
-    for b in bylaws:
-        if b.get("meeting_date") and b.get("number"):
-            bylaws_by_meeting.setdefault(b["meeting_date"], []).append(
-                normalize_number(b["number"])
-            )
-    for r in resolutions:
-        if r.get("meeting_date") and r.get("number"):
-            resolutions_by_meeting.setdefault(r["meeting_date"], []).append(
-                resolution_key(r)
-            )
-
-    bylaw_pdf_map:      Dict[str, str] = {}
-    resolution_pdf_map: Dict[str, str] = {}
-
-    for meeting in meetings:
-        meeting_date = meeting.get("date")
-        if not meeting.get("package_url") or not meeting_date:
-            continue
-
-        bylaw_targets = sorted(set(bylaws_by_meeting.get(meeting_date, [])))
-        if bylaw_targets:
-            exported = export_targets_from_package(
-                meeting, bylaw_targets, EXTRACTED_BYLAWS_DIR
-            )
-            bylaw_pdf_map.update(exported)
-            if exported:
-                print(f"  {meeting_date}: extracted {len(exported)} by-law PDF(s)")
-
-        res_targets = sorted(set(resolutions_by_meeting.get(meeting_date, [])))
-        if res_targets:
-            exported = export_targets_from_package(
-                meeting, res_targets, EXTRACTED_RESOLUTIONS_DIR
-            )
-            resolution_pdf_map.update(exported)
-            if exported:
-                print(f"  {meeting_date}: extracted {len(exported)} resolution PDF(s)")
-
-    for b in bylaws:
-        num = normalize_number(b.get("number", ""))
-        if num in bylaw_pdf_map:
-            b["pdf_url"] = bylaw_pdf_map[num]
-
-    for r in resolutions:
-        num = resolution_key(r)
-        if num in resolution_pdf_map:
-            r["pdf_url"] = resolution_pdf_map[num]
-
-
 # ─────────────────────────────────────────────────────────────────────
 # Merge logic (unchanged from original)
 # ─────────────────────────────────────────────────────────────────────
@@ -1089,10 +977,17 @@ def main() -> None:
     page_bylaws                         = scrape_bylaws_page()
     minutes_bylaws, minutes_resolutions = parse_all_minutes(meetings)
 
-    enrich_from_packages(meetings, minutes_bylaws, minutes_resolutions)
-
     final_bylaws      = merge_bylaws(existing_bylaws, [page_bylaws, minutes_bylaws])
     final_resolutions = merge_resolutions(existing_resolutions, minutes_resolutions)
+
+    # Pull each by-law's own pages out of its agenda package (OCR for scans).
+    # Replaces the old enrich_from_packages step, which re-downloaded every
+    # package on every run and found almost nothing in scanned packages.
+    # Packages are processed once each; resolutions are no longer extracted
+    # (8 of 1,062 ever were; their existing PDFs are kept).
+    print("\n═══ Step 3: Extracting by-laws from agenda packages ═══")
+    state = package_extract.run(meetings, final_bylaws)
+    print(f"  by-laws with an extracted PDF: {package_extract.apply(state, final_bylaws)}")
 
     # Mirror township-hosted by-law PDFs into the archive before saving.
     archive_bylaw_pdfs(final_bylaws)
