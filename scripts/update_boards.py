@@ -745,6 +745,8 @@ def main() -> None:
     # Mirror township PDFs (minutes/agendas in-repo, packages to Releases)
     # before saving, so archived_* paths land in canonical data.
     for b in merged_payload["boards"]:
+        if b.get("external"):
+            continue  # joint boards are mirrored by their own scripts (DNSSAB needs a session)
         for m in b.get("meetings", []):
             mirror_record(m, f"boards/{b['id']}")
 

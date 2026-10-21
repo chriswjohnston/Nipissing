@@ -815,6 +815,14 @@ def export_targets_from_package(
     if not meeting.get("package_url") or not targets:
         return {}
     package_path = download_pdf(meeting["package_url"], DOWNLOAD_CACHE_DIR / "packages")
+    if not package_path and meeting.get("package_archived"):
+        # The township deletes old packages; fall back to our archived copy
+        # (a Releases URL, or an in-repo path under docs/).
+        archived = meeting["package_archived"]
+        if archived.startswith("http"):
+            package_path = download_pdf(archived, DOWNLOAD_CACHE_DIR / "packages")
+        elif (DOCS_DIR / archived).exists():
+            package_path = DOCS_DIR / archived
     if not package_path:
         return {}
     page_texts = extract_pdf_page_texts(package_path)

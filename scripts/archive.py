@@ -115,8 +115,13 @@ def is_external_doc(url: Optional[str]) -> bool:
     if not url:
         return False
     p = urlparse(url)
-    return p.scheme in ("http", "https") and any(
-        p.netloc == h or p.netloc.endswith("." + h) for h in EXTERNAL_HOSTS)
+    if not (p.scheme in ("http", "https") and any(
+            p.netloc == h or p.netloc.endswith("." + h) for h in EXTERNAL_HOSTS)):
+        return False
+    # eScribe: only FileStream.ashx serves files; Meeting.aspx is a web page.
+    if "escribemeetings.com" in p.netloc:
+        return p.path.lower().endswith("filestream.ashx")
+    return True
 
 
 def is_archivable(url: Optional[str]) -> bool:
