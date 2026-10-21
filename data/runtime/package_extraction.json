@@ -1,4 +1,39 @@
 {
+  "2024-02-20": {
+    "bylaws": {
+      "2024-10": {
+        "method": "ocr",
+        "pages": [
+          9,
+          9
+        ],
+        "pdf": "files/bylaws/2024-10.pdf",
+        "text": "files/bylaws/text/2024-10.txt"
+      },
+      "2024-11": {
+        "method": "ocr",
+        "pages": [
+          10,
+          10
+        ],
+        "pdf": "files/bylaws/2024-11.pdf",
+        "text": "files/bylaws/text/2024-11.txt"
+      },
+      "2024-12": {
+        "method": "ocr",
+        "pages": [
+          11,
+          11
+        ],
+        "pdf": "files/bylaws/2024-12.pdf",
+        "text": "files/bylaws/text/2024-12.txt"
+      }
+    },
+    "checked": "2026-10-21",
+    "note": "extracted locally; confirmed when the run reaches this package",
+    "status": "seeded",
+    "targets": []
+  },
   "2026-06-16": {
     "bylaws": {},
     "checked": "2026-10-21",
