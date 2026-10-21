@@ -149,6 +149,10 @@
 .mb-museum{background:#dbe9ff;color:#1c4fd7}
 .mb-cemetery{background:#efe7fb;color:#6840b5}
 .mb-library{background:#fde6dc;color:#b04a1e}
+.mb-pnc{background:#e3e7ee;color:#2f3e5c}
+.mb-adjustment{background:#f3efd9;color:#7a6512}
+.mb-healthunit{background:#dff2e3;color:#24713a}
+.mb-dnssab{background:#f9e1ea;color:#a3325a}
 
 
 
@@ -283,6 +287,10 @@
 .legend-museum{background:var(--blue)}
 .legend-cemetery{background:#6840b5}
 .legend-library{background:#b04a1e}
+.legend-pnc{background:#2f3e5c}
+.legend-adjustment{background:#7a6512}
+.legend-healthunit{background:#24713a}
+.legend-dnssab{background:#a3325a}
 
 @media(max-width:980px){
   .header-split{
@@ -350,6 +358,10 @@
         <span class="legend-pill"><span class="legend-dot legend-museum"></span>Museum</span>
         <span class="legend-pill"><span class="legend-dot legend-cemetery"></span>Cemetery</span>
         <span class="legend-pill"><span class="legend-dot legend-library"></span>Library</span>
+        <span class="legend-pill"><span class="legend-dot legend-adjustment"></span>Adjustment</span>
+        <span class="legend-pill"><span class="legend-dot legend-pnc"></span>Police</span>
+        <span class="legend-pill"><span class="legend-dot legend-healthunit"></span>Health Unit</span>
+        <span class="legend-pill"><span class="legend-dot legend-dnssab"></span>DNSSAB</span>
       </div>
     </div>
 
@@ -385,6 +397,10 @@
           <button class="tab-btn" data-body="museum">Museum</button>
           <button class="tab-btn" data-body="cemetery">Cemetery</button>
           <button class="tab-btn" data-body="library">Library</button>
+          <button class="tab-btn" data-body="adjustment">Adjustment</button>
+          <button class="tab-btn" data-body="pnc">Police</button>
+          <button class="tab-btn" data-body="healthunit">Health Unit</button>
+          <button class="tab-btn" data-body="dnssab">DNSSAB</button>
         </div>
       </div>
     </div>
@@ -443,6 +459,10 @@
         <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
         <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
         <li><a href="https://www.powassanlibrary.com/board-members" target="_blank">Library Board</a></li>
+        <li><a href="https://nipissingtownship.com/municipal-information/committee-of-adjustment/" target="_blank">Committee of Adjustment</a></li>
+        <li><a href="https://nipissingtownship.com/services/pnc-detachment-board/" target="_blank">PNC OPP Detachment Board</a></li>
+        <li><a href="https://www.myhealthunit.ca/about-us/boardofhealth/meeting-schedules-agendas-minutes-reports-and-resolutions/" target="_blank">Health Unit Board of Health</a></li>
+        <li><a href="https://pub-dnssab.escribemeetings.com/" target="_blank">DNSSAB</a></li>
       </ul>
     </div>
   </div>
@@ -469,6 +489,10 @@ function bodyBadgeClass(bodyId){
   if(bodyId === 'museum') return 'mb-museum';
   if(bodyId === 'cemetery') return 'mb-cemetery';
   if(bodyId === 'library') return 'mb-library';
+  if(bodyId === 'pnc') return 'mb-pnc';
+  if(bodyId === 'adjustment') return 'mb-adjustment';
+  if(String(bodyId || '').startsWith('healthunit')) return 'mb-healthunit';
+  if(String(bodyId || '').startsWith('dnssab')) return 'mb-dnssab';
   return 'mb-council';
 }
 
@@ -560,7 +584,8 @@ function filteredPastMeetings(){
   let items = ALL_MEETINGS.filter(isPastMeeting);
 
   if(activeBody !== 'all'){
-    items = items.filter(m => (m.body_id || '').toLowerCase() === activeBody);
+    // Joint boards with committees (Health Unit, DNSSAB) filter by group.
+    items = items.filter(m => (m.group || m.body_id || '').toLowerCase() === activeBody);
   }
 
   if(activeYear){
