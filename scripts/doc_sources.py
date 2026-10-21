@@ -32,6 +32,15 @@ HEADERS = {
 
 WP_BASE = "https://nipissingtownship.com"
 
+# Recovery of older, deleted documents (Wayback Machine, media-index
+# backfills) is a bounded effort: after this date every recovery pass stops
+# by itself and only live sources run. The recovery code can then be deleted.
+RECOVERY_UNTIL = date(2026, 12, 31)
+
+
+def recovery_active() -> bool:
+    return date.today() <= RECOVERY_UNTIL
+
 # Politeness: minimum seconds between requests to one host. archive.org
 # throttles hard (it caused a 10-minute stall on 2026-10-21); the township's
 # WordPress security plugin may block bursts.

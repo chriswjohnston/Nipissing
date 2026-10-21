@@ -461,10 +461,13 @@ def main() -> None:
     except Exception as e:
         print(f"  ✗ page failed ({e}) — keeping stored meetings")
 
-    try:
-        backfill(state, meta)
-    except Exception as e:
-        print(f"  ✗ backfill failed ({e}) — will retry next run")
+    if ds.recovery_active():
+        try:
+            backfill(state, meta)
+        except Exception as e:
+            print(f"  ✗ backfill failed ({e}) — will retry next run")
+    else:
+        print(f"  history recovery ended {ds.RECOVERY_UNTIL} — live page only")
     unplaced = apply_backfill(meetings, state)
 
     # Meetings known only from a dated recording (documents deleted). The
