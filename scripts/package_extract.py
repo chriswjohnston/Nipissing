@@ -338,6 +338,8 @@ def run(meetings: List[Dict[str, Any]], bylaws: List[Dict[str, Any]]) -> Dict[st
                 break
             t0 = time.monotonic()
             entry = process_meeting(m, targets, ocr, Path(tmp))
+            if entry["status"] not in ("done",) and prev.get("bylaws"):
+                entry["bylaws"] = prev["bylaws"]    # a failed fetch keeps earlier finds
             state[d] = entry
             done += 1
             found += len(entry["bylaws"])
@@ -362,8 +364,21 @@ def apply(state: Dict[str, Any], bylaws: List[Dict[str, Any]]) -> int:
             found[num] = dict(info, meeting_date=d)
     n = 0
     for b in bylaws:
-        info = found.get(norm_number(b.get("number", "")))
+        num = norm_number(b.get("number", ""))
+        info = found.get(num)
         if not info:
+            # An extract the current extractor no longer finds was wrong pages
+            # (e.g. the resolution passing the by-law): drop it. These are our
+            # own cut-outs, never township documents.
+            stale = f"files/bylaws/{num}.pdf"
+            if b.get("extracted_pdf") == stale or b.get("pdf_url") == stale:
+                for k in ("extracted_pdf", "extracted_text", "extracted_from"):
+                    b.pop(k, None)
+                if b.get("pdf_url") == stale:
+                    b["pdf_url"] = None
+                for f in (DOCS_DIR / stale, TEXT_DIR / f"{num}.txt"):
+                    f.unlink(missing_ok=True)
+                print(f"  removed stale extract for {num}")
             continue
         b["extracted_pdf"] = info["pdf"]
         b["extracted_text"] = info["text"]
