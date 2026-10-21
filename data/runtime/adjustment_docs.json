@@ -1,0 +1,693 @@
+{
+  "files": {
+    "https://nipissingtownship.com/wp-content/uploads/2026/04/CEMETERY-Committee-AGENDA-February-10-2025.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/04/CEMETERY-Committee-AGENDA-July-25-2025.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/2025-38-Appoint-Committee-of-Adjustment.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-11-17",
+        "2026-12-01"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/2025-38-Appoint-Committee-of-Adjustment__3e54c6ef.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/79-and-95-Hinchberger-Consent-Notice-16-June-2026-1.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-06-16",
+        "2026-05-26"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/79-and-95-Hinchberger-Consent-Notice-16-June-2026-1__77eb538f.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/79-and-95-Hinchberger-Consent-Notice-16-June-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-06-16",
+        "2026-05-26"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/79-and-95-Hinchberger-Consent-Notice-16-June-2026__9f5d6754.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/AGENDA-February-17-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-02-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-February-17-2026-COA__dc0f977e.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/AGENDA-February-3-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-02-03",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-February-3-2026-COA__869ef3b8.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/AGENDA-June-16-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-06-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-June-16-2026-COA__2b710ca5.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-April-1-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-January-20-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-June-3-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-March-4-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-May-13-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-April-21-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-April-7-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-February-3-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-Februay-17-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-January-6-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-Mar-17-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-March-3-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026-1.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026-2.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-19-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Application-Minor-Variance-August-2024.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/April-21-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/April-7-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/CEMETERY-Committee-AGENDA-May-20-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Consent-Application-090120.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Consent-Procedures.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/February-17-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/February-3-2026-Agenda-Amended.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/February-3-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/January-20-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/January-6-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/June-2-2026-Agenda-Amended.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/June-2-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026-1.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026-1__e21ffcb8.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026__2d1e4a6d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/March-17-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/March-3-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/May-19-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/May-5-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-COA-February-17-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-02-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-February-17-2026__080f99fe.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Museum-Agenda-Package-April-1-.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/OWNERS-CONSENT-FORM.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-February-2-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-January-19-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-June-1-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-March-2-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Recreation-Agenda-May-4-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Revised-Minutes-COA-February-3-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-02-03",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Revised-Minutes-COA-February-3-2026__5a867d10.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Warman-Consent-Notice-of-Decision.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-02-04",
+        "2026-02-24"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Warman-Consent-Notice-of-Decision__d0b9402b.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Warman-Consent-Notice-of-Public-Hearing-16-January-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-01-16",
+        "2026-02-03"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Warman-Consent-Notice-of-Public-Hearing-16-January-2026__8557050d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Warman-Consent-Planning-Report-3-February-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-02-03"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Warman-Consent-Planning-Report-3-February-2026__21a0cf6f.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Webpage-Consent-Procedure-1.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Webpage-Consent-Procedure.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/79-and-95-Hinchberger-Bay-Road-Consent-Decision.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-06-19",
+        "2026-07-09"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/79-and-95-Hinchberger-Bay-Road-Consent-Decision__2e08ff87.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/79-and-95-Hinchberger-Bay-Road-Consent-Report-16-June-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-06-16"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/79-and-95-Hinchberger-Bay-Road-Consent-Report-16-June-2026__ab164165.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/AGENDA-July-14-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-07-14",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-July-14-2026-COA__0d06c720.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-16-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-2-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/June-16-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda-1.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/June-30-2026-Special-Meeting-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/03-PNC-Agenda-May-5-2025.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/04-PNC-Agenda-Package-062325-june.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/05-PNC-Agenda-for-September-29-2025.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/AGENDA-August-11-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-08-11",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-August-11-2026-COA__d8d64955.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-August-5-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-JULY-8-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026-1.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026-2.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-nov-25.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-September-23-2024.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-jan-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/December-1-2025-Agenda-Package-reduced.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/July-14-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/March-agenda-package-1.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Michael-Consent-Planning-Report-14-July-2026-002.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-07-14"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Michael-Consent-Planning-Report-14-July-2026-002__32a3579b.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Minutes-COA-June-16-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-06-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-June-16-2026__afe15efd.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Museum-Agenda-July-8.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/07/Watson-Consent-Notice-of-Public-Hearing-11-August-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-08-11",
+        "2026-07-20"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Watson-Consent-Notice-of-Public-Hearing-11-August-2026__53d38015.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/AGENDA-September-1-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-09-01",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-September-1-2026-COA__6feac56b.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Agenda-Packae-Aug-5-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Agenda-September-2-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Aug-11-2026-Agenda-Package.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/August-11-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/August-20-2026-Special-Meeting-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Brenner-Consent-Notice-of-Public-Hearing-1-September-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-09-01",
+        "2026-08-11"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Brenner-Consent-Notice-of-Public-Hearing-1-September-2026__998a8f3c.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Brenner-Consent-Planning-Report-1-September-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-09-01"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Brenner-Consent-Planning-Report-1-September-2026__392b7bea.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Minutes-COA-July-14-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-07-14",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-July-14-2026__e0f56fbb.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Recreation-Agenda-September-14-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/SEPT-1-AGENDA-PACKAGE.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/September-1-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Watson-Consent-Notice-of-Decision.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-08-12",
+        "2026-09-01"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Watson-Consent-Notice-of-Decision__f63df062.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/08/Watson-Consent-Planning-Report-11-August-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-08-11"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Watson-Consent-Planning-Report-11-August-2026__ca42475a.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/Agenda-Package-Sept-15-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/Agenda-Package-Sept-2-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/October-6-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/Recreation-Agenda-October-5-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/September-15-2026-Agenda-1.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/September-15-2026-Agenda-2.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/09/September-15-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/AGENDA-October-6-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-10-06",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-October-6-2026-COA__24682d14.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-October-7-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-Package-Oct-20-2026.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-Package-Oct-7-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-Package-October-6-2026.pdf": {
+      "status": "skipped",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Howse-Consent-Planning-Report-6-October-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-10-06"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Howse-Consent-Planning-Report-6-October-2026__7ea25214.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Lamb-Consent-Planning-Report-6-October-2026.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "candidates": [
+        "2026-10-06"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Lamb-Consent-Planning-Report-6-October-2026__439b5833.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Minutes-COA-October-6-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-10-06",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-October-6-2026__a0f78991.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/Minutes-COA-September-1-2026.pdf": {
+      "kind": "minutes",
+      "source": "media-index",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2026-09-01",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-September-1-2026__e91bb42d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/October-20-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/10/October-6-2026-Agenda.pdf": {
+      "status": "not-coa",
+      "checked": "2026-10-21"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2020/09/Webpage-Consent-Procedure.pdf": {
+      "kind": "extra",
+      "source": "wayback 20210514",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2021/11/consentstillar.pdf": {
+      "kind": "extra",
+      "source": "wayback 20230529",
+      "checked": "2026-10-21",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-October-19-2021.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20230529",
+      "checked": "2026-10-21",
+      "status": "ok",
+      "date": "2021-10-19",
+      "date_source": "filename+pdf"
+    }
+  },
+  "meta": {
+    "wayback_checked": "2026-10-21"
+  }
+}
