@@ -135,15 +135,18 @@ def _download(url: str) -> Optional[bytes]:
 
 # ── in-repo backend (served by GitHub Pages) ──────────────────────────────────
 
-def store_bytes_in_repo(url: str, category: str, year, data: bytes) -> Optional[str]:
+def store_bytes_in_repo(url: str, category: str, year, data: bytes,
+                        filename: Optional[str] = None) -> Optional[str]:
     """Archive already-in-hand PDF bytes into the in-repo mirror.
-    Used by both the live archiver and the offline cache backfill."""
+    Used by both the live archiver and the offline cache backfill.
+    `filename` overrides the URL-derived name (used for Google Drive files,
+    whose URLs carry no useful filename)."""
     if not data or not data[:5].startswith(b"%PDF"):
         return None
     bucket = str(year) if year else "undated"
     out_dir = ARCHIVE_DIR / category / bucket
     out_dir.mkdir(parents=True, exist_ok=True)
-    target = out_dir / _safe_name(url)
+    target = out_dir / (filename or _safe_name(url))
     rel = target.relative_to(DOCS_DIR).as_posix()
 
     if target.exists() and target.stat().st_size > 0:
@@ -205,9 +208,11 @@ def _get_or_create_release(repo: str, token: str) -> Optional[dict]:
     return rel
 
 
-def store_bytes_to_release(url: str, data: bytes) -> Optional[str]:
+def store_bytes_to_release(url: str, data: bytes,
+                           asset_name: Optional[str] = None) -> Optional[str]:
     """Upload already-in-hand PDF bytes to the rolling Release as an asset.
-    Used by both the live archiver and the offline cache backfill."""
+    Used by both the live archiver and the offline cache backfill.
+    `asset_name` overrides the URL-derived name (used for Google Drive files)."""
     repo, token = _gh_repo(), _gh_token()
     if not (repo and token):
         print(f"  archive: no token/repo in env — skipping package {url}")
@@ -216,7 +221,7 @@ def store_bytes_to_release(url: str, data: bytes) -> Optional[str]:
     if not rel:
         return None
 
-    asset_name = _safe_name(url)
+    asset_name = asset_name or _safe_name(url)
     for asset in rel.get("assets", []):
         if asset["name"] == asset_name:
             return asset["browser_download_url"]  # already uploaded

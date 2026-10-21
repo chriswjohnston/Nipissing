@@ -664,8 +664,12 @@ def main() -> None:
 
     # YouTube: title-labelled videos first, then untitled streams
     # ("Township of Nipissing's Zoom Meeting") matched by stream date.
+    # External boards (e.g. the library board, written by update_library.py)
+    # are never streamed on the township channel; keep them out of matching so
+    # an untitled township stream can't be attached to them by date.
     cache = youtube.refresh()
-    by_body = {b["id"]: b.get("meetings", []) for b in merged_payload["boards"]}
+    by_body = {b["id"]: b.get("meetings", []) for b in merged_payload["boards"]
+               if not b.get("external")}
     for body_id, meetings in by_body.items():
         youtube.attach_labelled(meetings, cache, body_id)
     council = load_json(MEETINGS_FILE, {"meetings": []})

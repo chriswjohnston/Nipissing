@@ -1,0 +1,214 @@
+diff --git a/.github/workflows/update-records.yml b/.github/workflows/update-records.yml
+index a5a7124..57dce37 100644
+--- a/.github/workflows/update-records.yml
++++ b/.github/workflows/update-records.yml
+@@ -25,11 +25,13 @@ jobs:
+         env:
+           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+         run: |
+           python scripts/update_meetings.py
+           python scripts/generate_summaries.py
+           python scripts/update_bylaws.py
+           python scripts/update_boards.py
++          python scripts/update_library.py
+           python scripts/validate_data.py
+       - name: Show canonical data counts
+         run: |
+diff --git a/council.html b/council.html
+index 28370dc..f2cebbb 100644
+--- a/council.html
++++ b/council.html
+@@ -148,6 +148,7 @@
+ .mb-recreation{background:#d9f3f0;color:#117a72}
+ .mb-museum{background:#dbe9ff;color:#1c4fd7}
+ .mb-cemetery{background:#efe7fb;color:#6840b5}
++.mb-library{background:#fde6dc;color:#b04a1e}
+ 
+ 
+ 
+@@ -281,6 +282,7 @@
+ .legend-recreation{background:var(--teal)}
+ .legend-museum{background:var(--blue)}
+ .legend-cemetery{background:#6840b5}
++.legend-library{background:#b04a1e}
+ 
+ @media(max-width:980px){
+   .header-split{
+@@ -347,6 +349,7 @@
+         <span class="legend-pill"><span class="legend-dot legend-recreation"></span>Recreation</span>
+         <span class="legend-pill"><span class="legend-dot legend-museum"></span>Museum</span>
+         <span class="legend-pill"><span class="legend-dot legend-cemetery"></span>Cemetery</span>
++        <span class="legend-pill"><span class="legend-dot legend-library"></span>Library</span>
+       </div>
+     </div>
+ 
+@@ -381,6 +384,7 @@
+           <button class="tab-btn" data-body="recreation">Recreation</button>
+           <button class="tab-btn" data-body="museum">Museum</button>
+           <button class="tab-btn" data-body="cemetery">Cemetery</button>
++          <button class="tab-btn" data-body="library">Library</button>
+         </div>
+       </div>
+     </div>
+@@ -438,6 +442,7 @@
+         <li><a href="https://nipissingtownship.com/services/recreation/" target="_blank">Recreation Committee</a></li>
+         <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
+         <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
++        <li><a href="https://www.powassanlibrary.com/board-members" target="_blank">Library Board</a></li>
+       </ul>
+     </div>
+   </div>
+@@ -463,6 +468,7 @@ function bodyBadgeClass(bodyId){
+   if(bodyId === 'recreation') return 'mb-recreation';
+   if(bodyId === 'museum') return 'mb-museum';
+   if(bodyId === 'cemetery') return 'mb-cemetery';
++  if(bodyId === 'library') return 'mb-library';
+   return 'mb-council';
+ }
+ 
+diff --git a/scripts/archive.py b/scripts/archive.py
+index 928df41..afa7952 100644
+--- a/scripts/archive.py
++++ b/scripts/archive.py
+@@ -135,15 +135,18 @@ def _download(url: str) -> Optional[bytes]:
+ 
+ # ── in-repo backend (served by GitHub Pages) ──────────────────────────────────
+ 
+-def store_bytes_in_repo(url: str, category: str, year, data: bytes) -> Optional[str]:
++def store_bytes_in_repo(url: str, category: str, year, data: bytes,
++                        filename: Optional[str] = None) -> Optional[str]:
+     """Archive already-in-hand PDF bytes into the in-repo mirror.
+-    Used by both the live archiver and the offline cache backfill."""
++    Used by both the live archiver and the offline cache backfill.
++    `filename` overrides the URL-derived name (used for Google Drive files,
++    whose URLs carry no useful filename)."""
+     if not data or not data[:5].startswith(b"%PDF"):
+         return None
+     bucket = str(year) if year else "undated"
+     out_dir = ARCHIVE_DIR / category / bucket
+     out_dir.mkdir(parents=True, exist_ok=True)
+-    target = out_dir / _safe_name(url)
++    target = out_dir / (filename or _safe_name(url))
+     rel = target.relative_to(DOCS_DIR).as_posix()
+ 
+     if target.exists() and target.stat().st_size > 0:
+@@ -205,9 +208,11 @@ def _get_or_create_release(repo: str, token: str) -> Optional[dict]:
+     return rel
+ 
+ 
+-def store_bytes_to_release(url: str, data: bytes) -> Optional[str]:
++def store_bytes_to_release(url: str, data: bytes,
++                           asset_name: Optional[str] = None) -> Optional[str]:
+     """Upload already-in-hand PDF bytes to the rolling Release as an asset.
+-    Used by both the live archiver and the offline cache backfill."""
++    Used by both the live archiver and the offline cache backfill.
++    `asset_name` overrides the URL-derived name (used for Google Drive files)."""
+     repo, token = _gh_repo(), _gh_token()
+     if not (repo and token):
+         print(f"  archive: no token/repo in env — skipping package {url}")
+@@ -216,7 +221,7 @@ def store_bytes_to_release(url: str, data: bytes) -> Optional[str]:
+     if not rel:
+         return None
+ 
+-    asset_name = _safe_name(url)
++    asset_name = asset_name or _safe_name(url)
+     for asset in rel.get("assets", []):
+         if asset["name"] == asset_name:
+             return asset["browser_download_url"]  # already uploaded
+diff --git a/scripts/generate_summaries.py b/scripts/generate_summaries.py
+index 39d0717..9b00cf6 100644
+--- a/scripts/generate_summaries.py
++++ b/scripts/generate_summaries.py
+@@ -97,13 +97,27 @@ def is_bad_summary(summary: str) -> bool:
+     return any(marker in tl for marker in BAD_SUMMARY_MARKERS)
+ 
+ 
+-def fetch_pdf_text(url: str, max_chars: int = 120000) -> str:
++def load_minutes_pdf(meeting: Dict[str, Any]) -> bytes:
++    """Minutes PDF bytes: the in-repo archived copy when there is one (it
++    survives township deletions, and is the only route for Google Drive
++    sources such as the library board), else the live minutes_url."""
++    archived = meeting.get("minutes_archived")
++    if archived and not re.match(r"^https?://", archived, re.I):
++        local = ROOT / "docs" / archived.lstrip("/")
++        if local.exists():
++            print(f"  Using archived copy docs/{archived.lstrip('/')}")
++            return local.read_bytes()
++
++    url = meeting.get("minutes_url")
+     if not url or not url.lower().endswith(".pdf"):
+         raise ValueError("Not a PDF URL")
+ 
+     r = requests.get(url, timeout=120)
+     r.raise_for_status()
+-    pdf_bytes = r.content
++    return r.content
++
++
++def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
+ 
+     # Try pdfminer first
+     try:
+@@ -181,9 +195,12 @@ def board_label(board_id: str) -> str:
+ def build_prompt(meeting: Dict[str, Any], source_text: str) -> str:
+     body = meeting.get("body") or meeting.get("board_name") or "Council"
+     date_text = meeting.get("display_date") or meeting.get("date") or ""
++    # External boards (the library board) aren't township bodies.
++    org = (meeting.get("board_name") or body) if meeting.get("external") \
++        else f"Township of Nipissing {body}"
+ 
+     return f"""
+-Summarize this Township of Nipissing {body} meeting in plain language for a public archive.
++Summarize this {org} meeting in plain language for a public archive.
+ 
+ Meeting date: {date_text}
+ Meeting body: {body}
+@@ -408,7 +425,7 @@ def main() -> None:
+         print(f"Minutes: {minutes_url}")
+ 
+         try:
+-            text = fetch_pdf_text(minutes_url)
++            text = fetch_pdf_text(load_minutes_pdf(meeting))
+             text = clean_source_text(text)
+ 
+             if looks_unusable(text):
+diff --git a/scripts/update_boards.py b/scripts/update_boards.py
+index 2656b75..231e721 100644
+--- a/scripts/update_boards.py
++++ b/scripts/update_boards.py
+@@ -664,8 +664,12 @@ def main() -> None:
+ 
+     # YouTube: title-labelled videos first, then untitled streams
+     # ("Township of Nipissing's Zoom Meeting") matched by stream date.
++    # External boards (e.g. the library board, written by update_library.py)
++    # are never streamed on the township channel; keep them out of matching so
++    # an untitled township stream can't be attached to them by date.
+     cache = youtube.refresh()
+-    by_body = {b["id"]: b.get("meetings", []) for b in merged_payload["boards"]}
++    by_body = {b["id"]: b.get("meetings", []) for b in merged_payload["boards"]
++               if not b.get("external")}
+     for body_id, meetings in by_body.items():
+         youtube.attach_labelled(meetings, cache, body_id)
+     council = load_json(MEETINGS_FILE, {"meetings": []})
+diff --git a/shared.js b/shared.js
+index 889936c..051d918 100644
+--- a/shared.js
++++ b/shared.js
+@@ -95,6 +95,7 @@ function meetingBodyLabel(meeting) {
+   if (meeting?.board_id === 'recreation') return 'Recreation';
+   if (meeting?.board_id === 'museum') return 'Museum Board';
+   if (meeting?.board_id === 'cemetery') return 'Cemetery';
++  if (meeting?.board_id === 'library') return 'Library Board';
+   return 'Council';
+ }
+ 
+@@ -109,6 +110,7 @@ function meetingTagClass(meeting) {
+   if (bodyId === 'recreation') return 'tag tag-teal';
+   if (bodyId === 'museum') return 'tag tag-blue';
+   if (bodyId === 'cemetery') return 'tag tag-purple';
++  if (bodyId === 'library') return 'tag tag-library';
+   return 'tag';
+ }
+ 

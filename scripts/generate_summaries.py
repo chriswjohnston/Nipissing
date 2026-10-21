@@ -97,13 +97,27 @@ def is_bad_summary(summary: str) -> bool:
     return any(marker in tl for marker in BAD_SUMMARY_MARKERS)
 
 
-def fetch_pdf_text(url: str, max_chars: int = 120000) -> str:
+def load_minutes_pdf(meeting: Dict[str, Any]) -> bytes:
+    """Minutes PDF bytes: the in-repo archived copy when there is one (it
+    survives township deletions, and is the only route for Google Drive
+    sources such as the library board), else the live minutes_url."""
+    archived = meeting.get("minutes_archived")
+    if archived and not re.match(r"^https?://", archived, re.I):
+        local = ROOT / "docs" / archived.lstrip("/")
+        if local.exists():
+            print(f"  Using archived copy docs/{archived.lstrip('/')}")
+            return local.read_bytes()
+
+    url = meeting.get("minutes_url")
     if not url or not url.lower().endswith(".pdf"):
         raise ValueError("Not a PDF URL")
 
     r = requests.get(url, timeout=120)
     r.raise_for_status()
-    pdf_bytes = r.content
+    return r.content
+
+
+def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
 
     # Try pdfminer first
     try:
@@ -181,9 +195,12 @@ def board_label(board_id: str) -> str:
 def build_prompt(meeting: Dict[str, Any], source_text: str) -> str:
     body = meeting.get("body") or meeting.get("board_name") or "Council"
     date_text = meeting.get("display_date") or meeting.get("date") or ""
+    # External boards (the library board) aren't township bodies.
+    org = (meeting.get("board_name") or body) if meeting.get("external") \
+        else f"Township of Nipissing {body}"
 
     return f"""
-Summarize this Township of Nipissing {body} meeting in plain language for a public archive.
+Summarize this {org} meeting in plain language for a public archive.
 
 Meeting date: {date_text}
 Meeting body: {body}
@@ -408,7 +425,7 @@ def main() -> None:
         print(f"Minutes: {minutes_url}")
 
         try:
-            text = fetch_pdf_text(minutes_url)
+            text = fetch_pdf_text(load_minutes_pdf(meeting))
             text = clean_source_text(text)
 
             if looks_unusable(text):
