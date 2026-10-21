@@ -40,18 +40,34 @@ OUT = ROOT / "data" / "runtime" / "bylaw_inventory.json"
 BASE = "https://nipissingtownship.com"
 
 # YYYY-N(NN) not followed by -DD (dates) and not preceded by R (resolutions).
-NUM_RE = re.compile(r"(?<![\dRr])((?:19|20)\d\d)\s*[-_–]\s*0*(\d{1,3})(?![\d])(?!\s*[-_]\s*\d{1,2}\b)")
+# Not preceded by a letter (R2024-030 resolutions, A2026-01 / C2026-04
+# minor-variance and consent files) or by a day ("July-14-2026-1" is a date
+# plus WordPress's duplicate suffix).
+NUM_RE = re.compile(r"(?<![\dA-Za-z])(?<!\d[-_])(?<!\d\d[-_])((?:19|20)\d\d)\s*[-_–]\s*0*(\d{1,3})(?![\d])(?!\s*[-_]\s*\d{1,2}\b)")
 BYLAW_WORD = re.compile(r"by[\s_-]*law|bylaw|\bBL\b", re.I)
+
+
+MONTH_BEFORE = re.compile(
+    r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?[\s_-]*$", re.I)
 
 
 def numbers_in(text: str) -> List[str]:
     t = unquote(text or "").replace("%20", " ")
     out = []
-    for y, n in NUM_RE.findall(t):
-        num = f"{int(y)}-{int(n):02d}"
+    for m in NUM_RE.finditer(t):
+        # "16-June-2026-1": a date (day-month-year) plus a duplicate suffix
+        if MONTH_BEFORE.search(t[max(0, m.start() - 12):m.start()]):
+            continue
+        num = f"{int(m.group(1))}-{int(m.group(2)):02d}"
         if num not in out:
             out.append(num)
     return out
+
+
+# By-laws of other bodies that number their own (the police board has its
+# own 2024-01, 2025-01): a file whose name or page names one of them is
+# never matched to a township by-law.
+OTHER_BODY = re.compile(r"\bPNC\b|detachment|police|library|DNSSAB|health\s*unit", re.I)
 
 
 def fetch_all(kind: str, fields: str) -> List[Dict[str, Any]]:
@@ -80,11 +96,10 @@ def fetch_all(kind: str, fields: str) -> List[Dict[str, Any]]:
     return items
 
 
-def main() -> None:
-    print("=" * 60)
-    print("Nipissing inventory_bylaws.py")
-    print("=" * 60)
-    files: Dict[str, Dict[str, Any]] = {}     # url -> info
+def survey() -> Dict[str, Dict[str, Any]]:
+    """Every PDF on the township site: {url: {url, title, uploaded,
+    in_media_library, found_on[], link_texts[]}}."""
+    files: Dict[str, Dict[str, Any]] = {}
 
     def add(url: str, **info) -> None:
         url = url.replace("http://", "https://", 1).split("#")[0]
@@ -101,7 +116,6 @@ def main() -> None:
         if (m.get("mime_type") or "").endswith("pdf") or (m.get("source_url") or "").lower().endswith(".pdf"):
             add(m["source_url"], title=unescape((m.get("title") or {}).get("rendered", "")),
                 uploaded=(m.get("date") or "")[:10], in_media_library=True)
-
     for kind in ("pages", "posts"):
         for p in fetch_all(kind, "id,link,title,content"):
             html = (p.get("content") or {}).get("rendered", "")
@@ -112,31 +126,45 @@ def main() -> None:
                     continue
                 add(href, found_on=f"{page_title} | {p.get('link')}",
                     link_text=" ".join(a.get_text(" ", strip=True).split()))
+    return files
 
-    archive = json.loads(BYLAWS_FILE.read_text(encoding="utf-8"))["bylaws"]
-    arch = {b["number"]: b for b in archive}
 
+def match(files: Dict[str, Dict[str, Any]], known: set) -> Dict[str, List[Dict[str, Any]]]:
+    """By-law number -> site files that are that by-law's own document."""
     by_number: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for f in files.values():
         name = Path(unquote(f["url"])).name
         texts = [name, f.get("title", "")] + f["link_texts"]
-        nums = []
+        nums: List[str] = []
         for t in texts:
             for n in numbers_in(t):
                 if n not in nums:
                     nums.append(n)
         if not nums:
             continue
-        # Count it as a by-law file when something says "by-law", or the
-        # filename starts with the number ("2020-52-Amend-…"), or the number
-        # is a by-law we already know.
+        if OTHER_BODY.search(" ".join([name] + f["found_on"])):
+            continue
         says_bylaw = any(BYLAW_WORD.search(t or "") for t in texts)
         leads = re.match(r"\s*(?:19|20)\d\d[-_ ]\d", name) is not None
-        if not (says_bylaw or leads or nums[0] in arch):
+        if not (says_bylaw or leads or nums[0] in known):
             continue
         f["numbers"] = nums
         by_number[nums[0]].append(f)
+    return by_number
 
+
+def main() -> None:
+    print("=" * 60)
+    print("Nipissing inventory_bylaws.py")
+    print("=" * 60)
+    files = survey()
+    archive = json.loads(BYLAWS_FILE.read_text(encoding="utf-8"))["bylaws"]
+    arch = {b["number"]: b for b in archive}
+    by_number = match(files, set(arch))
+    write_report(files, arch, by_number)
+
+
+def write_report(files, arch, by_number) -> None:
     report: Dict[str, Any] = {"checked": date.today().isoformat(),
                               "site_pdfs_scanned": len(files), "bylaws": {}}
     for num in sorted(set(by_number) | set(arch)):
@@ -153,21 +181,10 @@ def main() -> None:
         }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
-
     b = report["bylaws"]
     on_site = {n for n, v in b.items() if v["site_files"]}
-    print(f"\nSite PDFs scanned: {len(files)}; by-law numbers with a site PDF: {len(on_site)}")
-    print(f"  archive by-laws: {len(arch)}")
-    print(f"  archive by-laws with a site PDF:            {len(on_site & set(arch))}")
-    print(f"    …that the archive does not link yet:      "
-          f"{sum(1 for n in on_site & set(arch) if not (arch[n].get('pdf_url') or '').startswith('http'))}")
-    print(f"  archive by-laws with no site PDF:           {len(set(arch) - on_site)}")
-    print(f"  site by-laws missing from the archive:      {len(on_site - set(arch))}")
-    print(f"  by-laws with more than one site PDF:        "
-          f"{sum(1 for n in on_site if len(b[n]['site_files']) > 1)}")
-    for n in sorted(on_site - set(arch))[:40]:
-        f = b[n]["site_files"][0]
-        print(f"    new: {n}  {Path(unquote(f['url'])).name}")
+    print(f"  site PDFs scanned: {len(files)}; by-laws with a site PDF: {len(on_site & set(arch))} "
+          f"of {len(arch)}; missing from archive: {sorted(on_site - set(arch))}")
 
 
 if __name__ == "__main__":

@@ -34,6 +34,8 @@ import fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 
+import bylaw_sources
+import inventory_bylaws
 import package_extract
 from archive import mirror
 
@@ -942,13 +944,21 @@ def merge_resolutions(
 def archive_bylaw_pdfs(bylaws: List[Dict[str, Any]]) -> None:
     """Mirror any by-law pdf_url that is still hosted on the township site.
     Locally-extracted pdf_urls (relative paths) are skipped automatically."""
-    print("\n═══ Step 4: Mirroring By-Law PDFs ═══")
+    print("\n═══ Step 5: Mirroring By-Law PDFs ═══")
     mirrored = 0
     for b in bylaws:
-        got = mirror(b.get("pdf_url"), "bylaws", b.get("year"))
-        if got:
-            b["pdf_url_archived"] = got
-            mirrored += 1
+        if not b.get("pdf_url_archived"):
+            got = mirror(b.get("pdf_url"), "bylaws", b.get("year"))
+            if got:
+                b["pdf_url_archived"] = got
+                mirrored += 1
+        # township consolidations, maps, earlier uploads
+        for d in b.get("extra_docs") or []:
+            if not d.get("archived"):
+                got = mirror(d.get("url"), "bylaws", b.get("year"))
+                if got:
+                    d["archived"] = got
+                    mirrored += 1
     print(f"  Mirrored {mirrored} township-hosted by-law PDF(s)")
 
 
@@ -980,12 +990,25 @@ def main() -> None:
     final_bylaws      = merge_bylaws(existing_bylaws, [page_bylaws, minutes_bylaws])
     final_resolutions = merge_resolutions(existing_resolutions, minutes_resolutions)
 
-    # Pull each by-law's own pages out of its agenda package (OCR for scans).
+    # Primary source: the township website. Sweep every PDF on the site and
+    # make the township's own file each by-law's main document; add by-laws
+    # that are only on the site. (Site down -> keep stored data.)
+    print("\n═══ Step 3: By-law PDFs on the township website ═══")
+    try:
+        files = inventory_bylaws.survey()
+        known = {b["number"] for b in final_bylaws if b.get("number")}
+        by_number = inventory_bylaws.match(files, known)
+        print(f"  {bylaw_sources.apply(by_number, final_bylaws)}")
+        inventory_bylaws.write_report(files, {b["number"]: b for b in final_bylaws}, by_number)
+    except Exception as e:
+        print(f"  ✗ website sweep failed ({e}) — keeping stored by-law documents")
+
+    # Fallback: pull each by-law's own pages out of its agenda package (OCR for scans).
     # Replaces the old enrich_from_packages step, which re-downloaded every
     # package on every run and found almost nothing in scanned packages.
     # Packages are processed once each; resolutions are no longer extracted
     # (8 of 1,062 ever were; their existing PDFs are kept).
-    print("\n═══ Step 3: Extracting by-laws from agenda packages ═══")
+    print("\n═══ Step 4: Extracting by-laws from agenda packages (fallback) ═══")
     state = package_extract.run(meetings, final_bylaws)
     print(f"  by-laws with an extracted PDF: {package_extract.apply(state, final_bylaws)}")
 
