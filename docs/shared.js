@@ -95,6 +95,7 @@ function meetingBodyLabel(meeting) {
   if (meeting?.board_id === 'recreation') return 'Recreation';
   if (meeting?.board_id === 'museum') return 'Museum Board';
   if (meeting?.board_id === 'cemetery') return 'Cemetery';
+  if (meeting?.board_id === 'library') return 'Library Board';
   return 'Council';
 }
 
@@ -109,6 +110,7 @@ function meetingTagClass(meeting) {
   if (bodyId === 'recreation') return 'tag tag-teal';
   if (bodyId === 'museum') return 'tag tag-blue';
   if (bodyId === 'cemetery') return 'tag tag-purple';
+  if (bodyId === 'library') return 'tag tag-library';
   return 'tag';
 }
 

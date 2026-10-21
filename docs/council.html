@@ -148,6 +148,7 @@
 .mb-recreation{background:#d9f3f0;color:#117a72}
 .mb-museum{background:#dbe9ff;color:#1c4fd7}
 .mb-cemetery{background:#efe7fb;color:#6840b5}
+.mb-library{background:#fde6dc;color:#b04a1e}
 
 
 
@@ -281,6 +282,7 @@
 .legend-recreation{background:var(--teal)}
 .legend-museum{background:var(--blue)}
 .legend-cemetery{background:#6840b5}
+.legend-library{background:#b04a1e}
 
 @media(max-width:980px){
   .header-split{
@@ -347,6 +349,7 @@
         <span class="legend-pill"><span class="legend-dot legend-recreation"></span>Recreation</span>
         <span class="legend-pill"><span class="legend-dot legend-museum"></span>Museum</span>
         <span class="legend-pill"><span class="legend-dot legend-cemetery"></span>Cemetery</span>
+        <span class="legend-pill"><span class="legend-dot legend-library"></span>Library</span>
       </div>
     </div>
 
@@ -381,6 +384,7 @@
           <button class="tab-btn" data-body="recreation">Recreation</button>
           <button class="tab-btn" data-body="museum">Museum</button>
           <button class="tab-btn" data-body="cemetery">Cemetery</button>
+          <button class="tab-btn" data-body="library">Library</button>
         </div>
       </div>
     </div>
@@ -438,6 +442,7 @@
         <li><a href="https://nipissingtownship.com/services/recreation/" target="_blank">Recreation Committee</a></li>
         <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
         <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
+        <li><a href="https://www.powassanlibrary.com/board-members" target="_blank">Library Board</a></li>
       </ul>
     </div>
   </div>
@@ -463,6 +468,7 @@ function bodyBadgeClass(bodyId){
   if(bodyId === 'recreation') return 'mb-recreation';
   if(bodyId === 'museum') return 'mb-museum';
   if(bodyId === 'cemetery') return 'mb-cemetery';
+  if(bodyId === 'library') return 'mb-library';
   return 'mb-council';
 }
 
