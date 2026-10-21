@@ -48,7 +48,8 @@
       "2026-25",
       "2026-26",
       "2026-27"
-    ]
+    ],
+    "version": 2
   },
   "2026-06-30": {
     "bylaws": {},
@@ -60,7 +61,8 @@
     "status": "done",
     "targets": [
       "2026-28"
-    ]
+    ],
+    "version": 2
   },
   "2026-07-14": {
     "bylaws": {},
@@ -72,14 +74,15 @@
     "status": "done",
     "targets": [
       "2026-29"
-    ]
+    ],
+    "version": 2
   },
   "2026-08-11": {
     "bylaws": {
       "2026-31": {
         "method": "text",
         "pages": [
-          20,
+          30,
           31
         ],
         "pdf": "files/bylaws/2026-31.pdf",
@@ -97,7 +100,8 @@
       "2026-30",
       "2026-31",
       "2026-32"
-    ]
+    ],
+    "version": 2
   },
   "2026-08-20": {
     "bylaws": {},
@@ -109,7 +113,8 @@
     "status": "done",
     "targets": [
       "2026-33"
-    ]
+    ],
+    "version": 2
   },
   "2026-09-01": {
     "bylaws": {},
@@ -121,7 +126,8 @@
     "status": "done",
     "targets": [
       "2026-34"
-    ]
+    ],
+    "version": 2
   },
   "2026-09-15": {
     "bylaws": {},
@@ -133,7 +139,8 @@
     "status": "done",
     "targets": [
       "2026-35"
-    ]
+    ],
+    "version": 2
   },
   "2026-10-06": {
     "bylaws": {
@@ -156,6 +163,20 @@
     "targets": [
       "2026-36",
       "2026-37"
-    ]
+    ],
+    "version": 2
+  },
+  "2026-10-20": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-38"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Oct-20-2026__33061a18.pdf",
+    "status": "done",
+    "targets": [
+      "2026-38"
+    ],
+    "version": 2
   }
 }

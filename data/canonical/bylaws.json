@@ -3,6 +3,21 @@
   "source": "https://nipissingtownship.com/by-law/by-laws/",
   "bylaws": [
     {
+      "number": "2026-38",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on October 20, 2026",
+      "date_passed": "2026-10-20",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2026-10-20",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Agenda-Package-Oct-20-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Minutes-October-20-2026.pdf",
+      "summary": null
+    },
+    {
       "number": "2026-37",
       "year": 2026,
       "title": "confirm the proceedings of Council at its meeting held on October 6, 2026",
@@ -124,7 +139,7 @@
       "extracted_from": {
         "meeting_date": "2026-08-11",
         "pages": [
-          20,
+          30,
           31
         ],
         "method": "text"
@@ -136,7 +151,7 @@
       "year": 2026,
       "title": "stop up, close and sell Part of Road Allowance in front of Part Lot 10, Concession 18, designated as Part 1 on Plan 42R11490 in the Township of Nipissing, District of Parry Sound (Fletcher)",
       "date_passed": "2026-08-11",
-      "pdf_url": "files/bylaws/2026-30.pdf",
+      "pdf_url": null,
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -1883,42 +1898,72 @@
       "year": 2024,
       "title": "Amend By-Law Number 2019-41, cited as the Township of Nipissing Road Status and Maintenance By-Law",
       "date_passed": "2024-02-20",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-12.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by T. Butler",
       "meeting_date": "2024-02-20",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/February-20-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-12.pdf",
+      "extracted_text": "files/bylaws/text/2024-12.txt",
+      "extracted_from": {
+        "meeting_date": "2024-02-20",
+        "pages": [
+          11,
+          11
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-11",
       "year": 2024,
       "title": "Amend By-Law number 2021-50, to regulate the parking of vehicles within the Corporation of the Township of Nipissing",
       "date_passed": "2024-02-20",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-11.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by D. Yemm, Seconded by S. Foote",
       "meeting_date": "2024-02-20",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/February-20-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-11.pdf",
+      "extracted_text": "files/bylaws/text/2024-11.txt",
+      "extracted_from": {
+        "meeting_date": "2024-02-20",
+        "pages": [
+          10,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-10",
       "year": 2024,
       "title": "amend By-Law Number 2022-34, cited as the “Procedural By-Law” to update the public notice guidelines for meetings",
       "date_passed": "2024-02-20",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-10.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by T. Butler, Seconded by S. Kirkey",
       "meeting_date": "2024-02-20",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/February-20-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-February-20-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-10.pdf",
+      "extracted_text": "files/bylaws/text/2024-10.txt",
+      "extracted_from": {
+        "meeting_date": "2024-02-20",
+        "pages": [
+          9,
+          9
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-09",
@@ -3399,6 +3444,20 @@
       "pdf_url_archived": "files/archive/bylaws/2022/2022-29__6021381b.pdf"
     },
     {
+      "number": "2022-26",
+      "year": 2022,
+      "title": "By-Law 2022-26 (Lands to be Rezoned to the Environmental Protection (EP) Zone, 1945 Alsace Road)",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-No.-2022-26-1945-Alsace-Road.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "pdf_url_archived": "files/archive/bylaws/2022/By-Law-No.-2022-26-1945-Alsace-Road__1d496d3c.pdf"
+    },
+    {
       "number": "2022-23",
       "year": 2022,
       "title": "Amend Zoning By-Law 2020-20 Section 3.44 Trailers",
@@ -3419,6 +3478,34 @@
       ],
       "pdf_source": "township_site",
       "pdf_url_archived": "files/archive/bylaws/2022/By-Law-No.-2022-23-Trailers-Motor-Homes-and-Campers__0739c329.pdf"
+    },
+    {
+      "number": "2022-10",
+      "year": 2022,
+      "title": "By-Law 2022-10 (Removal of a Holding (H) Symbol, 3292 Highway 534)",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Removal-of-a-Holding-H-Symbol-3292-Highway-534.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "pdf_url_archived": "files/archive/bylaws/2022/Removal-of-a-Holding-H-Symbol-3292-Highway-534__33a3f07b.pdf"
+    },
+    {
+      "number": "2022-01",
+      "year": 2022,
+      "title": "By-Law 2022-01 (Special Zone 15, 3758 Alsace Road)",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.15-3758-Alsace-Road.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "pdf_url_archived": "files/archive/bylaws/2022/5.14-Special-Zone-No.15-3758-Alsace-Road__a7a46618.pdf"
     },
     {
       "number": "2021-63",
@@ -3509,6 +3596,34 @@
       ],
       "pdf_source": "township_site",
       "pdf_url_archived": "files/archive/bylaws/2021/2021-57__445eeee3.pdf"
+    },
+    {
+      "number": "2021-56",
+      "year": 2021,
+      "title": "By-Law 2021-56 (Special Zone 14, 3850 Highway 654)",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.14-3850-Highway-654.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "pdf_url_archived": "files/archive/bylaws/2021/5.14-Special-Zone-No.14-3850-Highway-654__7e2908e6.pdf"
+    },
+    {
+      "number": "2021-52",
+      "year": 2021,
+      "title": "By-Law 2021-52 (Special Zone 13, 678 Sunset Cove Road)",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "pdf_url_archived": "files/archive/bylaws/2021/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road__7dfda851.pdf"
     },
     {
       "number": "2021-50",
@@ -3660,6 +3775,27 @@
       ]
     },
     {
+      "number": "2020-43",
+      "year": 2020,
+      "title": "By-Law 2020-43",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-43.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/building/building-department/",
+      "extra_docs": [
+        {
+          "label": "Earlier upload (2026-05-11): 2020-43-Appoint-Inspector-for-Residential-Tenancies-Act.pdf",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2020-43-Appoint-Inspector-for-Residential-Tenancies-Act.pdf",
+          "archived": "files/archive/bylaws/2020/2020-43-Appoint-Inspector-for-Residential-Tenancies-Act__af994311.pdf"
+        }
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2020/2020-43__b4a92ddf.pdf"
+    },
+    {
       "number": "2020-42",
       "year": 2020,
       "title": "Open Air Burning",
@@ -3708,6 +3844,27 @@
         "Seasonal hours of operation posted at the site",
         "Illegal dumping subject to fines and cleanup costs"
       ]
+    },
+    {
+      "number": "2020-20",
+      "year": 2020,
+      "title": "Zoning By-law No. 2020-20",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Zoning-By-law-No.-2020-20-PASSED-December-1-2020-1.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/land-planning/planning/",
+      "extra_docs": [
+        {
+          "label": "Map",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Zoning-By-Law-2020-20-MAP-ONLY.pdf",
+          "archived": "files/archive/bylaws/2020/Zoning-By-Law-2020-20-MAP-ONLY__c245d95d.pdf"
+        }
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2020/Zoning-By-law-No.-2020-20-PASSED-December-1-2020-1__0d487a13.pdf"
     },
     {
       "number": "2020-17",
@@ -3844,6 +4001,27 @@
       ],
       "pdf_source": "township_site",
       "pdf_url_archived": "files/archive/bylaws/2019/2019-41__fa43d965.pdf"
+    },
+    {
+      "number": "2017-04",
+      "year": 2017,
+      "title": "Building By-Law 2017-04",
+      "status": "approved",
+      "source": "township_site",
+      "date_passed": null,
+      "votes": null,
+      "meeting_date": null,
+      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2017-04.pdf",
+      "pdf_source": "township_site",
+      "page_url": "https://nipissingtownship.com/building/building-department/",
+      "extra_docs": [
+        {
+          "label": "Earlier upload (2026-05-11): Building-By-Law-2017-04-1.pdf",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Building-By-Law-2017-04-1.pdf",
+          "archived": "files/archive/bylaws/2017/Building-By-Law-2017-04-1__5110e48c.pdf"
+        }
+      ],
+      "pdf_url_archived": "files/archive/bylaws/2017/2017-04__2e800a16.pdf"
     },
     {
       "number": "2017-03",
@@ -4018,139 +4196,6 @@
       "meeting_date": null,
       "agenda_package_url": null,
       "minutes_url": null
-    },
-    {
-      "number": "2017-04",
-      "year": 2017,
-      "title": "Building By-Law 2017-04",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2017-04.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/building/building-department/",
-      "extra_docs": [
-        {
-          "label": "Earlier upload (2026-05-11): Building-By-Law-2017-04-1.pdf",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Building-By-Law-2017-04-1.pdf",
-          "archived": "files/archive/bylaws/2017/Building-By-Law-2017-04-1__5110e48c.pdf"
-        }
-      ],
-      "pdf_url_archived": "files/archive/bylaws/2017/2017-04__2e800a16.pdf"
-    },
-    {
-      "number": "2020-20",
-      "year": 2020,
-      "title": "Zoning By-law No. 2020-20",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Zoning-By-law-No.-2020-20-PASSED-December-1-2020-1.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "extra_docs": [
-        {
-          "label": "Map",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Zoning-By-Law-2020-20-MAP-ONLY.pdf",
-          "archived": "files/archive/bylaws/2020/Zoning-By-Law-2020-20-MAP-ONLY__c245d95d.pdf"
-        }
-      ],
-      "pdf_url_archived": "files/archive/bylaws/2020/Zoning-By-law-No.-2020-20-PASSED-December-1-2020-1__0d487a13.pdf"
-    },
-    {
-      "number": "2020-43",
-      "year": 2020,
-      "title": "By-Law 2020-43",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-43.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/building/building-department/",
-      "extra_docs": [
-        {
-          "label": "Earlier upload (2026-05-11): 2020-43-Appoint-Inspector-for-Residential-Tenancies-Act.pdf",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2020-43-Appoint-Inspector-for-Residential-Tenancies-Act.pdf",
-          "archived": "files/archive/bylaws/2020/2020-43-Appoint-Inspector-for-Residential-Tenancies-Act__af994311.pdf"
-        }
-      ],
-      "pdf_url_archived": "files/archive/bylaws/2020/2020-43__b4a92ddf.pdf"
-    },
-    {
-      "number": "2021-52",
-      "year": 2021,
-      "title": "By-Law 2021-52 (Special Zone 13, 678 Sunset Cove Road)",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2021/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road__7dfda851.pdf"
-    },
-    {
-      "number": "2021-56",
-      "year": 2021,
-      "title": "By-Law 2021-56 (Special Zone 14, 3850 Highway 654)",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.14-3850-Highway-654.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2021/5.14-Special-Zone-No.14-3850-Highway-654__7e2908e6.pdf"
-    },
-    {
-      "number": "2022-01",
-      "year": 2022,
-      "title": "By-Law 2022-01 (Special Zone 15, 3758 Alsace Road)",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.15-3758-Alsace-Road.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2022/5.14-Special-Zone-No.15-3758-Alsace-Road__a7a46618.pdf"
-    },
-    {
-      "number": "2022-10",
-      "year": 2022,
-      "title": "By-Law 2022-10 (Removal of a Holding (H) Symbol, 3292 Highway 534)",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Removal-of-a-Holding-H-Symbol-3292-Highway-534.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2022/Removal-of-a-Holding-H-Symbol-3292-Highway-534__33a3f07b.pdf"
-    },
-    {
-      "number": "2022-26",
-      "year": 2022,
-      "title": "By-Law 2022-26 (Lands to be Rezoned to the Environmental Protection (EP) Zone, 1945 Alsace Road)",
-      "status": "approved",
-      "source": "township_site",
-      "date_passed": null,
-      "votes": null,
-      "meeting_date": null,
-      "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-No.-2022-26-1945-Alsace-Road.pdf",
-      "pdf_source": "township_site",
-      "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2022/By-Law-No.-2022-26-1945-Alsace-Road__1d496d3c.pdf"
     }
   ]
 }
