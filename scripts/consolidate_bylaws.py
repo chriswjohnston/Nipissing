@@ -41,7 +41,7 @@ TEXT_DIR = DOCS / "files" / "bylaws" / "text"
 
 MODEL = "claude-sonnet-5-5"     # accuracy matters more than cost here
 MAX_TOKENS = 32000
-PROMPT_VERSION = 1
+PROMPT_VERSION = 2
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 HEADERS = {"User-Agent": "Mozilla/5.0 (nipissing public records)"}
 
@@ -68,14 +68,22 @@ Rules:
 - Leave out signature blocks, "read a first, second and third time" lines and page
   headers/footers.
 
-Return ONLY a JSON object:
+Answer in exactly two parts and nothing else.
+
+Part 1, the full consolidated text in Markdown, with markers, between these tags:
+<consolidated>
+...
+</consolidated>
+
+Part 2, a JSON object between these tags:
+<notes>
 {
-  "consolidated_markdown": "<the full consolidated text in Markdown, with markers>",
   "changes": [{"bylaw": "<number>", "where": "<section/schedule>", "change": "<plain-language summary>"}],
   "already_incorporated": ["<numbers>"],
   "uncertainties": ["<plain-language notes>"],
   "summary": "<2-3 sentences: what this law does, in plain language>"
 }
+</notes>
 
 {documents}
 """
@@ -149,24 +157,44 @@ def bylaw_text(b: Dict[str, Any]) -> Optional[str]:
 
 
 def call_claude(prompt: str) -> Dict[str, Any]:
+    """Streams the response (long outputs can take several minutes)."""
     r = requests.post(
         "https://api.anthropic.com/v1/messages",
         headers={"x-api-key": API_KEY, "anthropic-version": "2023-06-01",
                  "content-type": "application/json"},
-        json={"model": MODEL, "max_tokens": MAX_TOKENS, "temperature": 0,
+        json={"model": MODEL, "max_tokens": MAX_TOKENS, "stream": True,
               "messages": [{"role": "user", "content": prompt}]},
-        timeout=900,
+        timeout=(30, 300), stream=True,
     )
     if r.status_code != 200:
-        raise RuntimeError(f"API {r.status_code}: {r.text[:300]}")
-    data = r.json()
-    if data.get("stop_reason") == "max_tokens":
+        raise RuntimeError(f"API {r.status_code}: {r.text[:400]}")
+    parts, stop = [], None
+    for line in r.iter_lines(decode_unicode=True):
+        if not line or not line.startswith("data:"):
+            continue
+        ev = json.loads(line[5:])
+        t = ev.get("type")
+        if t == "content_block_delta" and ev["delta"].get("type") == "text_delta":
+            parts.append(ev["delta"]["text"])
+        elif t == "message_delta":
+            stop = ev.get("delta", {}).get("stop_reason") or stop
+        elif t == "error":
+            raise RuntimeError(f"API stream error: {ev.get('error')}")
+    text = "".join(parts)
+    if stop == "max_tokens":
         raise RuntimeError("output hit the length limit; consolidation incomplete")
-    text = "".join(p.get("text", "") for p in data.get("content", []) if p.get("type") == "text")
-    m = re.search(r"\{.*\}", text, re.S)
-    if not m:
-        raise RuntimeError("no JSON in response")
-    return json.loads(m.group(0))
+    body = re.search(r"<consolidated>\s*(.*?)\s*</consolidated>", text, re.S)
+    if not body or len(body.group(1)) < 200:
+        raise RuntimeError(f"no consolidated text in response (stop={stop}, {len(text)} chars): {text[:200]!r}")
+    notes: Dict[str, Any] = {}
+    m = re.search(r"<notes>\s*(\{.*\})\s*</notes>", text, re.S)
+    if m:
+        try:
+            notes = json.loads(m.group(1))
+        except Exception as e:
+            notes = {"uncertainties": [f"(notes could not be read: {e})"]}
+    notes["consolidated_markdown"] = body.group(1)
+    return notes
 
 
 def main() -> None:
@@ -218,8 +246,12 @@ def main() -> None:
         try:
             result = call_claude(PROMPT.replace("{documents}", "\n\n".join(docs)))
         except Exception as e:
-            print(f"  ✗ {fid}: {e} — keeping previous consolidation")
+            msg = str(e)[:500]
+            print(f"  ✗ {fid}: {msg} — keeping previous consolidation")
+            print(f"::warning title=Consolidation failed: {fid}::{msg}")
+            entry["last_error"] = {"date": date.today().isoformat(), "error": msg}
             continue
+        entry.pop("last_error", None)
         entry.update({
             "consolidated_markdown": result.get("consolidated_markdown", ""),
             "changes": result.get("changes", []),
