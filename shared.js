@@ -139,8 +139,54 @@ function meetingDocPills(meeting) {
   return pills.join('');
 }
 
+// Routine motions that say nothing about what a meeting decided.
+const ROUTINE_DECISION = /^(?:approved|adopted|accepted|received|confirmed)\b.{0,60}\b(?:minutes|agenda)\b|\badjourn|call(?:ed)? to order|pecuniary interest|^(?:appointed|elected).{0,40}\b(?:chair|vice)/i;
+
+// One-line "what happened": the first substantive Key Decision from the AI
+// summary. Null when there is no summary.
+function meetingHeadline(meeting) {
+  const s = String(meeting?.summary || '');
+  if (!s) return null;
+  const parts = s.split(/^##\s*Key Decisions\s*$/mi);
+  const section = (parts.length > 1 ? parts[1].split(/^##\s/m)[0] : s);
+  const bullets = [...section.matchAll(/^\s*[-*]\s+(.+)$/gm)]
+    .map(m => m[1].replace(/\*\*|__|`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').trim())
+    .filter(Boolean);
+  if (!bullets.length) return null;
+  const pick = bullets.find(b => !ROUTINE_DECISION.test(b)) || bullets[0];
+  return pick.length > 160 ? pick.slice(0, 157).replace(/\s+\S*$/, '') + '…' : pick;
+}
+
+// Status badge only when it adds information.
+function meetingBadge(meeting) {
+  if (meeting?.cancelled) return { text: 'Cancelled', cls: 'mb-cancelled' };
+  if (meeting?.postponed) return { text: 'Postponed', cls: 'mb-cancelled' };
+  if (meeting?.is_future) return { text: 'Upcoming', cls: 'mb-upcoming' };
+  if (meeting?.meeting_type === 'Special') return { text: 'Special', cls: 'mb-special' };
+  return null;
+}
+
+// Fallback title when there is no summary to draw from.
+function meetingStatusLine(meeting) {
+  const type = meeting?.meeting_type === 'Special' ? 'Special meeting' : 'Meeting';
+  if (meeting?.cancelled) return `${type} cancelled`;
+  if (meeting?.is_future) return showAgenda(meeting) || docUrl(meeting, 'package')
+    ? 'Agenda posted' : 'Scheduled';
+  if (docUrl(meeting, 'minutes')) return 'Minutes available — summary coming';
+  if (showAgenda(meeting) || docUrl(meeting, 'package')) return 'Agenda posted · minutes not yet available';
+  if (meeting?.video_url) return 'Recording available · documents not published';
+  return 'No documents published';
+}
+
+function bodyColorClass(meeting) {
+  const id = String(meeting?.group || meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
+  return 'body-' + id.replace(/[^a-z0-9-]/g, '');
+}
+
 function meetingCard(meeting, q = '') {
   const href = primaryMeetingUrl(meeting);
+  const badge = meetingBadge(meeting);
+  const headline = meetingHeadline(meeting);
 
   return `
   <article class="result-card meeting-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
@@ -152,13 +198,13 @@ function meetingCard(meeting, q = '') {
     <div class="result-body">
 
       <div class="result-meta">
-        <span class="result-type rt-meeting">${escHtml(meetingBodyLabel(meeting).toUpperCase())}</span>
-        <span class="result-num">${escHtml(meetingTypeLabel(meeting))}</span>
+        <span class="result-type rt-meeting ${bodyColorClass(meeting)}">${highlight(meetingBodyLabel(meeting), q)}</span>
+        ${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
         <span class="result-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
       </div>
 
-      <div class="result-title">
-        ${highlight(meetingTypeLabel(meeting), q)}
+      <div class="result-title${headline ? '' : ' result-title-muted'}">
+        ${headline ? highlight(headline, q) : escHtml(meetingStatusLine(meeting))}
       </div>
 
       <div class="result-tags">
