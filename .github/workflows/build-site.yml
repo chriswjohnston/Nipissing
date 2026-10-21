@@ -10,6 +10,12 @@ on:
       - completed
 permissions:
   contents: write
+# Back-to-back pushes (e.g. two merges seconds apart) start overlapping
+# builds; the older one then fails to push. Cancel it instead: the newest
+# build includes every change.
+concurrency:
+  group: build-site
+  cancel-in-progress: true
 jobs:
   build-site:
     runs-on: ubuntu-latest

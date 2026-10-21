@@ -33,12 +33,26 @@ jobs:
         # validate_data.py is the exception: if it fails, nothing is committed.
         run: |
           failed=""
+          # Township site check, once: if it's down (2026-10-21 hosting outage),
+          # its updaters would each wait out long timeouts, so skip them.
+          township_up=1
+          if ! curl -sS -o /dev/null --max-time 25 -A "Mozilla/5.0" \
+               -w "township site: HTTP %{http_code} in %{time_total}s\n" \
+               --fail https://nipissingtownship.com/council/council-meeting-dates-agendas-minutes/; then
+            township_up=0
+            echo "::warning title=Township website unreachable::Skipping update_meetings, update_bylaws, update_adjustment and update_boards this run; stored data kept. They resume automatically when the site is back."
+          fi
           for s in update_meetings recover_documents generate_summaries update_bylaws \
                    update_adjustment update_boards update_library update_healthunit \
                    update_dnssab attach_videos check_freshness; do
+            case "$s" in
+              update_meetings|update_bylaws|update_adjustment|update_boards)
+                if [ "$township_up" = 0 ]; then echo "skipped $s (township site down)"; continue; fi ;;
+            esac
             echo "::group::$s"
-            if ! python "scripts/$s.py"; then
-              echo "::warning title=$s failed::$s.py exited with an error; its stored data was kept. See its section of this log."
+            # 30-minute ceiling per updater so one hanging source can't stall the run.
+            if ! timeout 30m python "scripts/$s.py"; then
+              echo "::warning title=$s failed::$s.py exited with an error or ran over 30 minutes; its stored data was kept. See its section of this log."
               failed="$failed $s"
             fi
             echo "::endgroup::"
