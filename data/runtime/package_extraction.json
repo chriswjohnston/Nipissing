@@ -1,0 +1,126 @@
+{
+  "2026-06-16": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-25",
+      "2026-26",
+      "2026-27"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-16-2026__7c1a7ca0.pdf",
+    "status": "done",
+    "targets": [
+      "2026-25",
+      "2026-26",
+      "2026-27"
+    ]
+  },
+  "2026-06-30": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-28"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf",
+    "status": "done",
+    "targets": [
+      "2026-28"
+    ]
+  },
+  "2026-07-14": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-29"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-July-14-2026-2__5c1bf541.pdf",
+    "status": "done",
+    "targets": [
+      "2026-29"
+    ]
+  },
+  "2026-08-11": {
+    "bylaws": {
+      "2026-31": {
+        "method": "text",
+        "pages": [
+          20,
+          31
+        ],
+        "pdf": "files/bylaws/2026-31.pdf",
+        "text": "files/bylaws/text/2026-31.txt"
+      }
+    },
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-30",
+      "2026-32"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Aug-11-2026-Agenda-Package__40ca2174.pdf",
+    "status": "done",
+    "targets": [
+      "2026-30",
+      "2026-31",
+      "2026-32"
+    ]
+  },
+  "2026-08-20": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-33"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Aug-20-Council-Meeting-Package-1__31dda456.pdf",
+    "status": "done",
+    "targets": [
+      "2026-33"
+    ]
+  },
+  "2026-09-01": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-34"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/SEPT-1-AGENDA-PACKAGE__ae514abd.pdf",
+    "status": "done",
+    "targets": [
+      "2026-34"
+    ]
+  },
+  "2026-09-15": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-35"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-15-2026__249dcc07.pdf",
+    "status": "done",
+    "targets": [
+      "2026-35"
+    ]
+  },
+  "2026-10-06": {
+    "bylaws": {
+      "2026-36": {
+        "method": "ocr",
+        "pages": [
+          19,
+          20
+        ],
+        "pdf": "files/bylaws/2026-36.pdf",
+        "text": "files/bylaws/text/2026-36.txt"
+      }
+    },
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-37"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-October-6-2026__f6fdd715.pdf",
+    "status": "done",
+    "targets": [
+      "2026-36",
+      "2026-37"
+    ]
+  }
+}

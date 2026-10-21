@@ -1,6 +1,6 @@
 {
   "checked": "2026-10-21",
-  "site_pdfs_scanned": 528,
+  "site_pdfs_scanned": 529,
   "bylaws": {
     "1088": {
       "in_archive": true,
@@ -19,7 +19,7 @@
     "2011-42": {
       "in_archive": true,
       "archive_title": "Trailer Use (Temporary during Construction)",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2011-42.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -208,10 +208,10 @@
       ]
     },
     "2017-04": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "Building By-Law 2017-04",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2017-04.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2017-04.pdf",
@@ -255,7 +255,7 @@
     "2019-41": {
       "in_archive": true,
       "archive_title": "Minimum Maintenance Standards",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2024/07/2019-41-Adopt-MMS-for-Municipal-Highways-Consolidated.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2019-41.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -302,7 +302,7 @@
     "2020-05": {
       "in_archive": true,
       "archive_title": "Maximum Weight on Bridges",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2020/03/2020-05-Amending-Maximum-Weight-on-Bridges-.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-05.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -337,7 +337,7 @@
     "2020-08": {
       "in_archive": true,
       "archive_title": "Boundary Road Agreement – Powassan",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/Boundary-Road-2020-08-Powassan.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-08.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -371,7 +371,7 @@
     "2020-17": {
       "in_archive": true,
       "archive_title": "Public Dock",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2020/04/2020-17-Public-Dock-By-Law.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-17.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -416,10 +416,10 @@
       ]
     },
     "2020-20": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "Zoning By-law No. 2020-20",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/Zoning-By-law-No.-2020-20-PASSED-December-1-2020-1.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Zoning-By-Law-2020-20-MAP-ONLY.pdf",
@@ -448,8 +448,7 @@
             "Zoning By-law No. 2020-20"
           ],
           "numbers": [
-            "2020-20",
-            "2020-01"
+            "2020-20"
           ]
         },
         {
@@ -537,10 +536,10 @@
       ]
     },
     "2020-43": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2020-43",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-43.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-43.pdf",
@@ -607,7 +606,7 @@
     "2020-52": {
       "in_archive": true,
       "archive_title": "Amending Minimum Maintenance Standards Schedule – E",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/2020-52-Amend-2019-41-Schedule-E-MMS.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2020-52.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -656,7 +655,7 @@
     "2021-48": {
       "in_archive": true,
       "archive_title": "Community Safety Zone",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/2021-48-Community-Safety-Zone.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-48.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -690,7 +689,7 @@
     "2021-50": {
       "in_archive": true,
       "archive_title": "Parking By-Law",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/02/2021-50-Parking-By-Law-Consolidated.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-50.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -722,10 +721,10 @@
       ]
     },
     "2021-52": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2021-52 (Special Zone 13, 678 Sunset Cove Road)",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.13-Special-Zone-No.-13-678-Sunset-Cove-Road.pdf",
@@ -745,10 +744,10 @@
       ]
     },
     "2021-56": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2021-56 (Special Zone 14, 3850 Highway 654)",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.14-3850-Highway-654.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.14-3850-Highway-654.pdf",
@@ -770,7 +769,7 @@
     "2021-57": {
       "in_archive": true,
       "archive_title": "Unopened Road Allowances",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2021/12/By-Law-2021-57-Application-to-Use-Unopen.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-57.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -804,7 +803,7 @@
     "2021-58": {
       "in_archive": true,
       "archive_title": "Unauthorized Disposal of Waste",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2021/12/By-Law-2021-58-Regulate-Disposal-of-Waste.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-58.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -838,7 +837,7 @@
     "2021-63": {
       "in_archive": true,
       "archive_title": "Depositing of Snow on Bridge or Highway",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2021/12/Pushing-Snow-By-Law-2021-63.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-63.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -870,10 +869,10 @@
       ]
     },
     "2022-01": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2022-01 (Special Zone 15, 3758 Alsace Road)",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.15-3758-Alsace-Road.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.15-3758-Alsace-Road.pdf",
@@ -893,10 +892,10 @@
       ]
     },
     "2022-10": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2022-10 (Removal of a Holding (H) Symbol, 3292 Highway 534)",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/Removal-of-a-Holding-H-Symbol-3292-Highway-534.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Removal-of-a-Holding-H-Symbol-3292-Highway-534.pdf",
@@ -918,7 +917,7 @@
     "2022-23": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20 Section 3.44 Trailers",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2024/01/By-Law-No.-2022-23-2.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-No.-2022-23-Trailers-Motor-Homes-and-Campers.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -939,10 +938,10 @@
       ]
     },
     "2022-26": {
-      "in_archive": false,
-      "archive_title": null,
-      "archive_pdf": null,
-      "archive_source": null,
+      "in_archive": true,
+      "archive_title": "By-Law 2022-26 (Lands to be Rezoned to the Environmental Protection (EP) Zone, 1945 Alsace Road)",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-No.-2022-26-1945-Alsace-Road.pdf",
+      "archive_source": "township_site",
       "site_files": [
         {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-No.-2022-26-1945-Alsace-Road.pdf",
@@ -964,7 +963,7 @@
     "2022-29": {
       "in_archive": true,
       "archive_title": "Culvert / Entrance",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2022/06/2022-29-Entrance-Permit.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-29.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1024,7 +1023,7 @@
     "2022-34": {
       "in_archive": true,
       "archive_title": "Procedural",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2024/02/2022-34-Procedural-By-Law-Consolidated.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-34.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1114,7 +1113,7 @@
     "2022-38": {
       "in_archive": true,
       "archive_title": "Cemetery Regulations",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/3293945-Corporation-of-the-Township-of-Nipissing-By-Law-August-18-2022.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-38.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1162,7 +1161,7 @@
     "2022-41": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/ZBA-2022-41-Duncan-Lake.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -1185,7 +1184,7 @@
     "2022-42": {
       "in_archive": true,
       "archive_title": "Dog By-Law",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2025/02/2022-42-Dog-ByLaw.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-42.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1250,7 +1249,7 @@
     "2022-44": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20 for the Removal of a Holding (H) Symbol, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/Removal-of-Holding-H-Symbol-2675-Highway-654.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -1322,7 +1321,7 @@
     "2022-52": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.16-Special-Zone-No.-16-Lake-Nipissing-Road.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -1345,7 +1344,7 @@
     "2022-53": {
       "in_archive": true,
       "archive_title": "Boundary Road Agreement – Callander",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/Boundary-Road-Callander.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-53.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1389,7 +1388,7 @@
     "2022-57": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2022-57-165-Muskeg-Road.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -1440,7 +1439,7 @@
     "2023-01": {
       "in_archive": true,
       "archive_title": "Accountability & Transparency",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-Accountability-and-Transpare.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-01.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1463,7 +1462,7 @@
     "2023-02": {
       "in_archive": true,
       "archive_title": "Delegation of Authority",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-02-Delegation-of-Authority.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-02.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1486,7 +1485,7 @@
     "2023-03": {
       "in_archive": true,
       "archive_title": "Regulate Sale of Land",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-03-Regulate-Sale-0f-Public-.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-03.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1533,7 +1532,7 @@
     "2023-08": {
       "in_archive": true,
       "archive_title": "Nuisance Beaver",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/2023-Nuisance-Beaver-Amended.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-08.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1558,7 +1557,7 @@
     "2023-09": {
       "in_archive": true,
       "archive_title": "Recreation Committee",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/ByLaw-2023-09-Recreation-Committee-By-Law.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-09.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1581,7 +1580,7 @@
     "2023-10": {
       "in_archive": true,
       "archive_title": "Museum Board",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/By-Law-2023-10-Museum-Board.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-10.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1643,7 +1642,7 @@
     "2023-15": {
       "in_archive": true,
       "archive_title": "Establishing and Regulating Fire Department",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/2023-Establishing-and-Regulating-FD-By-Law.docx",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-15.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1701,7 +1700,7 @@
     "2023-21": {
       "in_archive": true,
       "archive_title": "Social Media Policy",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/Social-Media-Policy.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-21.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1724,7 +1723,7 @@
     "2023-22": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20, as amended; and for the Removal of a Holding (H) Symbol in Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2023-22-and-Removal-a-Holding-H-Symbol-3568-Highway-534.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -1782,7 +1781,7 @@
     "2023-28": {
       "in_archive": true,
       "archive_title": "Code of Conduct",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/07/Code-of-Conduct.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-28.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1814,7 +1813,7 @@
     "2023-30": {
       "in_archive": true,
       "archive_title": "Trailer Licensing",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2025/05/2023-Trailer-Licensing-By-Law-Consolidated.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2023-30.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -1988,23 +1987,7 @@
       "archive_title": "provide for an Interim Tax Levy",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/PNC-Board-Procedural-Bylaw-Final.pdf",
-          "title": "PNC Board – Procedural Bylaw – Final",
-          "uploaded": "2026-07-13",
-          "in_media_library": true,
-          "found_on": [
-            "PNC Detachment Board 3 | https://nipissingtownship.com/services/pnc-detachment-board/"
-          ],
-          "link_texts": [
-            "PNC Board Procedural By-Law 2024-01"
-          ],
-          "numbers": [
-            "2024-01"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2024-02": {
       "in_archive": true,
@@ -2030,7 +2013,7 @@
     "2024-05": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2024-05-118-Chapmans-Landing-Road.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2060,7 +2043,7 @@
     "2024-07": {
       "in_archive": true,
       "archive_title": "Providing Public Notice",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2024/02/By-law-2024-07-Providing-Public-Notice.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2024-07-1.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -2284,7 +2267,7 @@
     "2024-33": {
       "in_archive": true,
       "archive_title": "User Fees",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2024/07/User-Fee-By-Law-2024-33.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/2024-33-User-Fees.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
@@ -2303,7 +2286,7 @@
     "2024-34": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2024-34.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2361,7 +2344,7 @@
     "2024-40": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2024-40-Special-Zone-18-to-permit-the-development-of-a-recreational-dwelling.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2454,7 +2437,7 @@
     "2024-47": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2024-47-Special-Zone-19-Spanner-Island.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2570,23 +2553,7 @@
       "archive_title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Bylaw-2025-01-To-amend-the-name-of-North-Bay-OPP-Detachement-Board-3.pdf",
-          "title": "Bylaw 2025-01 To amend the name of North Bay OPP Detachement Board 3",
-          "uploaded": "2026-07-13",
-          "in_media_library": true,
-          "found_on": [
-            "PNC Detachment Board 3 | https://nipissingtownship.com/services/pnc-detachment-board/"
-          ],
-          "link_texts": [
-            "By-Law 2025-01 – To Amend Detachment Board Name"
-          ],
-          "numbers": [
-            "2025-01"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2025-02": {
       "in_archive": true,
@@ -2619,7 +2586,7 @@
     "2025-06": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20 as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2025-06-Special-Zone-20-707-Sunset-Cove-Road.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2740,7 +2707,7 @@
     "2025-21": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/By-Law-2025-21-Special-Zone-21-22-Ponderosa-Road.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2784,7 +2751,7 @@
     "2025-25": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20 as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2025-25.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2821,7 +2788,7 @@
     "2025-28": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20 as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2025-28.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2844,7 +2811,7 @@
     "2025-29": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20 as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2025-29.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2923,7 +2890,7 @@
     "2025-38": {
       "in_archive": true,
       "archive_title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/2025-38-Appoint-Committee-of-Adjustment.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -2962,250 +2929,14 @@
       "archive_title": "enter into an Agreement for a Municipal Facilities Maintenance Person for the Township of Nipissing",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026-1.pdf",
-          "title": "Agenda Package July 14 2026",
-          "uploaded": "2026-07-13",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01-1.pdf",
-          "title": "CAO PUBLIC NOTICE A2026-01",
-          "uploaded": "2026-06-25",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
-          "title": "CAO PUBLIC NOTICE A2026-01",
-          "uploaded": "2026-06-25",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/79-and-95-Hinchberger-Consent-Notice-16-June-2026-1.pdf",
-          "title": "79 and 95 Hinchberger – Consent Notice – 16 June 2026",
-          "uploaded": "2026-05-29",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/CAO-PUBLIC-NOTICE-A2026-01-Morin-1.pdf",
-          "title": "CAO PUBLIC NOTICE A2026-01 Morin",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/A2026-01-Decision-Morin-2.pdf",
-          "title": "A2026-01 Decision Morin",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/A2026-01-Decision-Morin-1.pdf",
-          "title": "A2026-01 Decision Morin",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026-1.pdf",
-          "title": "Magee and Cunningham Consent – Planning Report – 17 February 2026",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Planning Report"
-          ],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026-1.pdf",
-          "title": "Magee and Cunningham – Notice of Public Hearing – 29 January 2026",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/CAO-PUBLIC-NOTICE-A2026-01-Morin.pdf",
-          "title": "CAO PUBLIC NOTICE A2026-01 Morin",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/A2026-01-Decision-Morin.pdf",
-          "title": "A2026-01 Decision Morin",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026-1.pdf",
-          "title": "Agenda Package May 13 2026",
-          "uploaded": "2026-05-14",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-01"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-02": {
       "in_archive": true,
       "archive_title": "provide for an Interim Tax Levy",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/A2026-02.pdf",
-          "title": "A2026-02",
-          "uploaded": "2026-07-20",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-02"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Michael-Consent-Planning-Report-14-July-2026-002.pdf",
-          "title": "Michael Consent – Planning Report – 14 July 2026 (002)",
-          "uploaded": "2026-07-20",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Planning Report"
-          ],
-          "numbers": [
-            "2026-02"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Agenda-Package-July-14-2026-2.pdf",
-          "title": "Agenda Package July 14 2026",
-          "uploaded": "2026-07-13",
-          "in_media_library": true,
-          "found_on": [
-            "Council Meeting Dates, Agendas & Minutes | https://nipissingtownship.com/council/council-meeting-dates-agendas-minutes/"
-          ],
-          "link_texts": [
-            "Agenda Package"
-          ],
-          "numbers": [
-            "2026-02"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-May-13-2026-2.pdf",
-          "title": "Agenda Package May 13 2026",
-          "uploaded": "2026-05-20",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-02"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Signed-Decision-C2026-02-Magee-1.pdf",
-          "title": "Signed Decision C2026-02 – Magee",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-02"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Signed-Decision-C2026-02-Magee.pdf",
-          "title": "Signed Decision C2026-02 – Magee",
-          "uploaded": "2026-05-19",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-02"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-03": {
       "in_archive": true,
@@ -3219,49 +2950,7 @@
       "archive_title": "amend Consolidated By-Law Number 2021-50, to regulate the parking of vehicles within the Corporation of the Township of",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Notice-of-Decision-C2026-04-.pdf",
-          "title": "Notice of Decision C2026-04",
-          "uploaded": "2026-07-20",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-04"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/C2026-04-Michael-Public-Notice-1.pdf",
-          "title": "C2026-04 Michael Public Notice",
-          "uploaded": "2026-06-25",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-04"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/C2026-04-Michael-Public-Notice.pdf",
-          "title": "C2026-04 Michael Public Notice",
-          "uploaded": "2026-06-24",
-          "in_media_library": true,
-          "found_on": [],
-          "link_texts": [],
-          "numbers": [
-            "2026-04"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-05": {
       "in_archive": true,
@@ -3275,99 +2964,21 @@
       "archive_title": "enter into a Municipal Forest Fire Management Agreement",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Decision-C2026-06.pdf",
-          "title": "Decision C2026-06",
-          "uploaded": "2026-10-05",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-06"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-07": {
       "in_archive": true,
       "archive_title": "confirm the proceedings of Council at its meeting held on February 3, 2026",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/10/Signed-Decision-C2026-07.pdf",
-          "title": "Signed Decision C2026-07",
-          "uploaded": "2026-10-14",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-07"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/10/C2026-07-lamb.pdf",
-          "title": "C2026-07 lamb",
-          "uploaded": "2026-10-05",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-07"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-08": {
       "in_archive": true,
       "archive_title": "confirm the proceedings of Council at its meeting held on February 17, 2026",
       "archive_pdf": null,
       "archive_source": "minutes",
-      "site_files": [
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/10/C2026-08-Signed-Decision.pdf",
-          "title": "C2026-08 Signed Decision",
-          "uploaded": "2026-10-14",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Decision"
-          ],
-          "numbers": [
-            "2026-08"
-          ]
-        },
-        {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/10/C2026-08-Howse.pdf",
-          "title": "C2026-08 Howse",
-          "uploaded": "2026-10-05",
-          "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "Public Notice"
-          ],
-          "numbers": [
-            "2026-08"
-          ]
-        }
-      ]
+      "site_files": []
     },
     "2026-09": {
       "in_archive": true,
@@ -3414,7 +3025,7 @@
     "2026-15": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law Number 2020-20",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2026-15.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -3437,7 +3048,7 @@
     "2026-16": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law Number 2020-20",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2026-16.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -3624,7 +3235,7 @@
     "2026-25": {
       "in_archive": true,
       "archive_title": "amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2026-25.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -3682,7 +3293,7 @@
     "2026-31": {
       "in_archive": true,
       "archive_title": "establish a Procedure for the Appointment of an Eligible Elector to Fill a Council Vacancy under the Municipal Act for the Corporation of the Township of Nipissing",
-      "archive_pdf": "files/bylaws/2026-31.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/08/Council-Vacancy-Procedure-2026-w-BL-2026-31.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
@@ -3733,7 +3344,7 @@
     "2026-36": {
       "in_archive": true,
       "archive_title": "Amend Zoning By-Law 2020-20, as amended",
-      "archive_pdf": "files/bylaws/2026-36.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/10/By-Law-2026-36.pdf",
       "archive_source": "minutes",
       "site_files": [
         {
