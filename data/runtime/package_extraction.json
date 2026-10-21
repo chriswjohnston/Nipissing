@@ -34,6 +34,32 @@
     "status": "seeded",
     "targets": []
   },
+  "2026-05-19": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-23"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-May-19-2026__c771586d.pdf",
+    "status": "done",
+    "targets": [
+      "2026-23"
+    ],
+    "version": 2
+  },
+  "2026-06-02": {
+    "bylaws": {},
+    "checked": "2026-10-21",
+    "missing": [
+      "2026-24"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-2-2026__79f4749d.pdf",
+    "status": "done",
+    "targets": [
+      "2026-24"
+    ],
+    "version": 2
+  },
   "2026-06-16": {
     "bylaws": {},
     "checked": "2026-10-21",

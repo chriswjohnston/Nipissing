@@ -1150,10 +1150,115 @@
           "source_kind": "board",
           "external": true,
           "all_agendas": true,
-          "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2938",
+          "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2953",
           "minutes_url": null,
           "package_url": null,
-          "extra_docs": [],
+          "extra_docs": [
+            {
+              "label": "Earlier agenda version",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2938"
+            },
+            {
+              "label": "Agenda (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=0ee8612d-668c-44c5-bfc6-8492060cce08&Agenda=Agenda&lang=English"
+            },
+            {
+              "label": "Post Agenda (PDF)",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2968"
+            },
+            {
+              "label": "Post Agenda (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=0ee8612d-668c-44c5-bfc6-8492060cce08&Agenda=PostAgenda&lang=English"
+            },
+            {
+              "label": "4 Approval of Minutes — Post-Meeting Minutes - FACM_Sep23_2026 - English",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2939"
+            },
+            {
+              "label": "4 Approval of Minutes — Post-Meeting Minutes - dnssab-bm_Sep23_2026 - English",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2940"
+            },
+            {
+              "label": "7.1 Truth and Reconciliation Ad Hoc Committee Update – End of Board Term, CORP-2026-025",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2948"
+            },
+            {
+              "label": "7.2 CPLTC+ Program Funding Approval, PS-2026-008",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2941"
+            },
+            {
+              "label": "7.3 2027 Response Time Standards Plan, PS-2026-007",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2945"
+            },
+            {
+              "label": "7.4 The Growing Together Resource Library, CS-2026-005",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2944"
+            },
+            {
+              "label": "7.5 Political Elections Policy Update, CORP-2026-023 — Political Elections Policy Update - CORP-2026-023",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2942"
+            },
+            {
+              "label": "7.5 Political Elections Policy Update, CORP-2026-023 — Political Elections Policy",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2943"
+            },
+            {
+              "label": "7.6 District Wide Cold Weather Planning 2026-27, COORD-2026-037",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2947"
+            },
+            {
+              "label": "8.1 Market Rent Integration and Portable Housing Benefit, COORD-2026-038",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2946"
+            },
+            {
+              "label": "11.1 2027 Board Meeting Calendar",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2949"
+            },
+            {
+              "label": "4 Approval of Minutes — Post-Meeting Minutes - FACM_Sep23_2026 - English",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2954"
+            },
+            {
+              "label": "4 Approval of Minutes — Post-Meeting Minutes - dnssab-bm_Sep23_2026 - English",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2955"
+            },
+            {
+              "label": "7.1 Truth and Reconciliation Ad Hoc Committee Update – End of Board Term, CORP-2026-025",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2963"
+            },
+            {
+              "label": "7.2 CPLTC+ Program Funding Approval, PS-2026-008",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2956"
+            },
+            {
+              "label": "7.3 2027 Response Time Standards Plan, PS-2026-007",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2960"
+            },
+            {
+              "label": "7.4 The Growing Together Resource Library, CS-2026-005",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2959"
+            },
+            {
+              "label": "7.5 Political Elections Policy Update, CORP-2026-023 — Political Elections Policy Update - CORP-2026-023",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2957"
+            },
+            {
+              "label": "7.5 Political Elections Policy Update, CORP-2026-023 — Political Elections Policy",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2958"
+            },
+            {
+              "label": "7.6 District Wide Cold Weather Planning 2026-27, COORD-2026-037",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2962"
+            },
+            {
+              "label": "8.1 Market Rent Integration and Portable Housing Benefit, COORD-2026-038",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2961"
+            },
+            {
+              "label": "11.1 2027 Board Meeting Calendar",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2964"
+            }
+          ],
           "summary": null,
           "events": [],
           "cancelled": false,
@@ -1161,7 +1266,8 @@
           "postponed": false,
           "is_future": false,
           "video_url": null,
-          "location": "DNSSAB Boardroom"
+          "location": "DNSSAB Boardroom",
+          "source_url": "https://pub-dnssab.escribemeetings.com/MeetingsCalendarView.aspx/Meeting?Id=0ee8612d-668c-44c5-bfc6-8492060cce08"
         },
         {
           "date": "2026-09-23",
@@ -1178,7 +1284,7 @@
           "external": true,
           "all_agendas": true,
           "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2904",
-          "minutes_url": null,
+          "minutes_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2978",
           "package_url": null,
           "extra_docs": [
             {
@@ -1240,6 +1346,38 @@
             {
               "label": "7.4 Mult-Sector Service Accountability Agreement Declaration of Compliance, PS-2026-006 — 2025-26 MSAA Schedule F_Declaration of Compliance",
               "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2929"
+            },
+            {
+              "label": "Minutes (PDF)",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2979"
+            },
+            {
+              "label": "Minutes (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=03c2e5a8-34df-4912-af39-aa97d774ca5e&Agenda=PostMinutes&lang=English"
+            },
+            {
+              "label": "4 Approval of Minutes",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2974"
+            },
+            {
+              "label": "7.1 2025 Annual Housing Services Update, COORD-2026-034",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2969"
+            },
+            {
+              "label": "7.2 Homelessness Outreach & Program Engagement Update, COORD-2026-035",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2971"
+            },
+            {
+              "label": "7.3 Association of Municipalities Ontario (AMO) Delegations Follow Up, CORP-2026-022",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2970"
+            },
+            {
+              "label": "7.4 Mult-Sector Service Accountability Agreement Declaration of Compliance, PS-2026-006 — Multi-Sector Service Accountability Agreement Declaration of Compliance - PS-2026-006",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2972"
+            },
+            {
+              "label": "7.4 Mult-Sector Service Accountability Agreement Declaration of Compliance, PS-2026-006 — 2025-26 MSAA Schedule F_Declaration of Compliance",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2973"
             }
           ],
           "summary": null,
@@ -7537,7 +7675,7 @@
           "external": true,
           "all_agendas": true,
           "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2911",
-          "minutes_url": null,
+          "minutes_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2986",
           "package_url": null,
           "extra_docs": [
             {
@@ -7575,6 +7713,26 @@
             {
               "label": "6.2 2027 Preliminary Budget Issues Report, CORP-2026-021",
               "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2920"
+            },
+            {
+              "label": "Minutes (PDF)",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2987"
+            },
+            {
+              "label": "Minutes (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=475d3470-cbcc-421f-b71e-e16ca3321622&Agenda=PostMinutes&lang=English"
+            },
+            {
+              "label": "5.1 DNSSAB Year-to-date (YTD) Financial Report, January 1 to June 30, 2026, CORP-2026-020",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2981"
+            },
+            {
+              "label": "6.1 2026 Reserves Report, CORP-2026-019",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2980"
+            },
+            {
+              "label": "6.2 2027 Preliminary Budget Issues Report, CORP-2026-021",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2982"
             }
           ],
           "summary": null,
@@ -8634,10 +8792,51 @@
           "source_kind": "board",
           "external": true,
           "all_agendas": true,
-          "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2936",
+          "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2999",
           "minutes_url": null,
           "package_url": null,
-          "extra_docs": [],
+          "extra_docs": [
+            {
+              "label": "Earlier agenda version",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2936"
+            },
+            {
+              "label": "Agenda (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=254d0fa0-c739-4316-b9f9-d28dee92ea02&Agenda=Agenda&lang=English"
+            },
+            {
+              "label": "Post Agenda (PDF)",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=3006"
+            },
+            {
+              "label": "Post Agenda (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=254d0fa0-c739-4316-b9f9-d28dee92ea02&Agenda=PostAgenda&lang=English"
+            },
+            {
+              "label": "4 Approval of Minutes",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2993"
+            },
+            {
+              "label": "6.1 2026 NDHC Reserves Report, NDHC-2026-012",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2994"
+            },
+            {
+              "label": "6.2 NDHC Market Rent Integration – 365 Lakeshore Drive, North Bay, NDHC-2026-011",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=2995"
+            },
+            {
+              "label": "4 Approval of Minutes",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=3000"
+            },
+            {
+              "label": "6.1 2026 NDHC Reserves Report, NDHC-2026-012",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=3001"
+            },
+            {
+              "label": "6.2 NDHC Market Rent Integration – 365 Lakeshore Drive, North Bay, NDHC-2026-011",
+              "url": "https://pub-dnssab.escribemeetings.com/filestream.ashx?DocumentId=3002"
+            }
+          ],
           "summary": null,
           "events": [],
           "cancelled": false,
@@ -8645,7 +8844,8 @@
           "postponed": false,
           "is_future": false,
           "video_url": null,
-          "location": "DNSSAB Boardroom"
+          "location": "DNSSAB Boardroom",
+          "source_url": "https://pub-dnssab.escribemeetings.com/MeetingsCalendarView.aspx/Meeting?Id=254d0fa0-c739-4316-b9f9-d28dee92ea02"
         },
         {
           "date": "2026-08-12",
@@ -8662,7 +8862,7 @@
           "external": true,
           "all_agendas": true,
           "agenda_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2828",
-          "minutes_url": null,
+          "minutes_url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2991",
           "package_url": null,
           "extra_docs": [
             {
@@ -8676,6 +8876,14 @@
             {
               "label": "Post Agenda (HTML)",
               "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=7fe1d0ab-b050-4f49-9eb7-bec383a133a3&Agenda=PostAgenda&lang=English"
+            },
+            {
+              "label": "Minutes (PDF)",
+              "url": "https://pub-dnssab.escribemeetings.com/FileStream.ashx?DocumentId=2992"
+            },
+            {
+              "label": "Minutes (HTML)",
+              "url": "https://pub-dnssab.escribemeetings.com/Meeting.aspx?Id=7fe1d0ab-b050-4f49-9eb7-bec383a133a3&Agenda=PostMinutes&lang=English"
             }
           ],
           "summary": null,
