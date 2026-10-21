@@ -1,0 +1,103 @@
+{
+  "checked": "2026-10-21",
+  "bodies": {
+    "adjustment": {
+      "last_meeting": "2026-10-06",
+      "next_meeting": null,
+      "days_quiet": 15,
+      "limit_days": 150,
+      "stale": false
+    },
+    "cemetery": {
+      "last_meeting": "2026-05-20",
+      "next_meeting": null,
+      "days_quiet": 154,
+      "limit_days": 400,
+      "stale": false
+    },
+    "council": {
+      "last_meeting": "2026-10-20",
+      "next_meeting": "2026-11-17",
+      "days_quiet": 0,
+      "limit_days": 45,
+      "stale": false
+    },
+    "dnssab": {
+      "last_meeting": "2026-10-21",
+      "next_meeting": "2026-11-25",
+      "days_quiet": 0,
+      "limit_days": 90,
+      "stale": false
+    },
+    "dnssab-community-services-committee": {
+      "last_meeting": "2026-06-24",
+      "next_meeting": "2026-11-25",
+      "days_quiet": 0,
+      "limit_days": 365,
+      "stale": false
+    },
+    "dnssab-finance-and-administration-committee": {
+      "last_meeting": "2026-09-23",
+      "next_meeting": null,
+      "days_quiet": 28,
+      "limit_days": 365,
+      "stale": false
+    },
+    "dnssab-ndhc": {
+      "last_meeting": "2026-10-21",
+      "next_meeting": null,
+      "days_quiet": 0,
+      "limit_days": 120,
+      "stale": false
+    },
+    "healthunit": {
+      "last_meeting": "2026-10-07",
+      "next_meeting": "2027-01-27",
+      "days_quiet": 0,
+      "limit_days": 150,
+      "stale": false
+    },
+    "healthunit-finance": {
+      "last_meeting": "2026-10-07",
+      "next_meeting": null,
+      "days_quiet": 14,
+      "limit_days": 365,
+      "stale": false
+    },
+    "healthunit-personnel": {
+      "last_meeting": "2026-06-24",
+      "next_meeting": null,
+      "days_quiet": 119,
+      "limit_days": 365,
+      "stale": false
+    },
+    "library": {
+      "last_meeting": "2026-10-19",
+      "next_meeting": "2026-11-16",
+      "days_quiet": 0,
+      "limit_days": 120,
+      "stale": false
+    },
+    "museum": {
+      "last_meeting": "2026-10-07",
+      "next_meeting": null,
+      "days_quiet": 14,
+      "limit_days": 120,
+      "stale": false
+    },
+    "pnc": {
+      "last_meeting": "2026-09-14",
+      "next_meeting": "2026-12-07",
+      "days_quiet": 0,
+      "limit_days": 180,
+      "stale": false
+    },
+    "recreation": {
+      "last_meeting": "2026-10-05",
+      "next_meeting": "2026-11-23",
+      "days_quiet": 0,
+      "limit_days": 90,
+      "stale": false
+    }
+  }
+}
