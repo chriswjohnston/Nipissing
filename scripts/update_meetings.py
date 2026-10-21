@@ -43,6 +43,8 @@ def save_json(path: Path, data: Any) -> None:
 
 
 def normalize_url(href: str) -> str:
+    if href.startswith("http://"):
+        href = "https://" + href[7:]        # the site links both; same file
     if href.startswith("http"):
         return href
     return "https://nipissingtownship.com" + href
