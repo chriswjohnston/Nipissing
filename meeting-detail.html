@@ -435,11 +435,13 @@ async function init(){
     return;
   }
 
-  const bodyLabel = meeting.body || 'Council';
-  const typeLabel = meeting.meeting_type || 'Meeting';
+  const bodyLabel = officialName(meeting);
+  // "Board" adds nothing to a board's name; Regular/Special etc. do.
+  const typeLabel = (meeting.meeting_type && meeting.meeting_type !== 'Board')
+    ? meeting.meeting_type : '';
 
   document.getElementById('hero-kicker').textContent =
-    `${typeLabel.toUpperCase()} · ${bodyLabel.toUpperCase()}`;
+    (typeLabel ? `${typeLabel} · ` : '') + bodyLabel;
 
   document.getElementById('hero-title').textContent =
     meeting.display_date || meeting.date;

@@ -188,9 +188,9 @@ footer{background:var(--ink);padding:3rem 2rem 2rem}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}
 }
 
-/* Meeting cards: body name in its own colour, badge only when informative,
-   title = first substantive decision from the summary (or a status line). */
-.meeting-card .result-type{font-size:.7rem}
+/* Meeting cards: official body name in its own colour as the title, a badge
+   only for Special / Cancelled / Postponed, then the date. */
+.meeting-card .meeting-name{margin:0;font-weight:600}
 .body-council{color:#a97900}
 .body-recreation{color:#117a72}
 .body-museum{color:#1c4fd7}
@@ -202,6 +202,4 @@ footer{background:var(--ink);padding:3rem 2rem 2rem}
 .body-dnssab{color:#a3325a}
 .meeting-badge{font-size:.64rem;font-weight:600;letter-spacing:.04em;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--rule);color:var(--ink-3);background:var(--page)}
 .mb-special{color:#7a4b00;background:#fff4dc;border-color:#f1d9a6}
-.mb-upcoming{color:#1c4fd7;background:#eef3ff;border-color:#cddbff}
 .mb-cancelled{color:#9b2c2c;background:#fdeeee;border-color:#f3c9c9}
-.result-title-muted{color:var(--ink-3);font-style:italic}
