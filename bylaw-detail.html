@@ -357,6 +357,8 @@
         </div>
       </div>
 
+      <a id="law-banner" href="#" style="display:none;margin:0 0 1rem;padding:.75rem 1rem;border-radius:10px;background:#eef3ff;border:1px solid #cddbff;color:#1c4fd7;text-decoration:none;font-size:.88rem;font-weight:600"></a>
+
       <div class="content-block" id="summary-block" style="display:none">
         <h3>Summary</h3>
         <p id="bylaw-summary"></p>
@@ -511,6 +513,21 @@ async function init(){
   if(bylaw.year) pills.push(`<span class="meta-pill">${esc(String(bylaw.year))}</span>`);
   (bylaw.categories || []).forEach(c => pills.push(`<span class="meta-pill">${esc(c)}</span>`));
   document.getElementById('bylaw-pills').innerHTML = pills.join('');
+
+  // Part of an amended law? Point to the one page that shows it as it reads today.
+  try {
+    const cons = (await (await fetch('data/canonical/consolidations.json', {cache: 'no-cache'})).json()).consolidations || {};
+    const law = Object.values(cons).find(l => l.principal === bylaw.number || (l.amendments || []).includes(bylaw.number));
+    if (law) {
+      const banner = document.getElementById('law-banner');
+      const role = law.principal === bylaw.number
+        ? `This by-law has been amended ${law.amendments.length} time${law.amendments.length === 1 ? '' : 's'}.`
+        : `This by-law amends ${law.name} (By-law ${law.principal}).`;
+      banner.textContent = `${role} Read the ${law.name} as it reads today →`;
+      banner.href = `law.html?id=${encodeURIComponent(law.id)}`;
+      banner.style.display = 'block';
+    }
+  } catch (e) { /* no consolidations yet */ }
 
   if(bylaw.summary){
     document.getElementById('summary-block').style.display = '';
