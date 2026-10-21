@@ -64,6 +64,7 @@ Rules:
 - Apply every amendment exactly as written. Do not paraphrase amended wording.
 - Immediately after every passage that an amendment added, replaced or changed, add a
   marker on its own line: {{amended: <number> | <what changed, a few words>}}
+  where <number> is always the AMENDING by-law's number, e.g. 2024-12 (never a section).
   For a deleted provision keep its number and write: "[Deleted]" followed by
   {{deleted: <number>}}
 - The principal document may itself be a consolidation that already includes some
