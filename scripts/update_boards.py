@@ -99,6 +99,19 @@ BOARDS = [
         "url": "https://nipissingtownship.com/services/cemetery/",
         "description": "Administration of local cemeteries in Nipissing Township.",
     },
+    {
+        # Joint board with Powassan and Callander; Nipissing hosts the files.
+        # 2025-26 meetings are in tables, 2024 is a bulleted list.
+        "id": "pnc",
+        "name": "PNC OPP Detachment Board",
+        "url": "https://nipissingtownship.com/services/pnc-detachment-board/",
+        "description": (
+            "Powassan Nipissing Callander O.P.P. Detachment Board (local police "
+            "services board), established under the Community Safety and Policing Act."
+        ),
+        "list_meetings": True,
+        "all_agendas": True,
+    },
 ]
 
 DATE_RE = re.compile(
@@ -419,6 +432,43 @@ def extract_meetings_from_tables(rows: List[Tuple[date, Tag]],
     return out
 
 
+def extract_meetings_from_list_items(content: Tag, board: Dict[str, str],
+                                     skip_dates: set) -> Tuple[List[Dict[str, Any]], List[Tag]]:
+    """Meetings written as bullet points ("September 23, 2024 – Agenda | Minutes").
+    Only <li> elements outside tables whose own text holds a date are used,
+    and only the links inside that <li>. Returns (meetings, li_elements)."""
+    merged: Dict[str, Dict[str, Any]] = {}
+    used: List[Tag] = []
+    for li in content.find_all("li"):
+        if li.find_parent("table") or li.find_parent("nav"):
+            continue
+        text = re.sub(r"\s+", " ", li.get_text(" ", strip=True))
+        dm = DATE_RE.search(text)
+        if not dm or len(text) > 300:
+            continue
+        dt = parse_date_match(dm)
+        if dt.isoformat() in skip_dates:
+            continue
+        m = merged.get(dt.isoformat())
+        if m is None:
+            m = merged[dt.isoformat()] = _new_meeting(dt, board, text)
+        used.append(li)
+        for a in li.find_all("a", href=True):
+            href = normalize_absolute_url(a["href"])
+            if not href.lower().startswith("http"):
+                continue
+            label = clean_label(a.get_text(" ", strip=True))
+            kind = classify_link(label, href)
+            if kind in ("agenda", "minutes", "package") and not m[f"{kind}_url"]:
+                m[f"{kind}_url"] = href
+            else:
+                m["extra_docs"].append({"label": label, "url": href})
+    out = list(merged.values())
+    for m in out:
+        m["extra_docs"] = dedupe_docs(m["extra_docs"])
+    return out, used
+
+
 def page_level_docs(content: Tag, rows: List[Tuple[date, Tag]]) -> List[Dict[str, str]]:
     """PDF links on the page that are NOT inside a dated meeting row
     (by-laws, forms). mailto/tel links are dropped."""
@@ -487,7 +537,19 @@ def scrape_board(board: Dict[str, str]) -> Tuple[List[Dict[str, Any]], List[Dict
     rows = dated_rows(content)
     if rows:
         meetings = extract_meetings_from_tables(rows, board)
-        page_docs = page_level_docs(content, rows)
+        if board.get("list_meetings"):
+            extra, lis = extract_meetings_from_list_items(
+                content, board, {m["date"] for m in meetings})
+            if extra:
+                print(f"  {len(extra)} more meeting(s) from bulleted lists")
+            meetings = sorted(meetings + extra, key=lambda x: x["date"], reverse=True)
+            # Links inside those list items are meeting docs, not page docs.
+            in_lists = {normalize_absolute_url(a["href"])
+                        for li in lis for a in li.find_all("a", href=True)}
+            page_docs = [d for d in page_level_docs(content, rows)
+                         if d["url"] not in in_lists]
+        else:
+            page_docs = page_level_docs(content, rows)
     else:
         print("  no dated table rows found — using paragraph fallback")
         meetings = extract_meetings_from_content(content, board)
@@ -518,6 +580,7 @@ def merge_board_meeting(existing: Dict[str, Any], scraped: Dict[str, Any]) -> Di
         "body",
         "body_id",
         "source_kind",
+        "all_agendas",
         "cancelled",
         "rescheduled",
         "postponed",
@@ -641,6 +704,9 @@ def main() -> None:
             "page_docs": page_docs,
             "meetings": meetings,
         })
+        if board.get("all_agendas"):
+            for m in meetings:
+                m["all_agendas"] = True
 
     merged_payload = merge_canonical(current_payload, scraped_boards)
 
