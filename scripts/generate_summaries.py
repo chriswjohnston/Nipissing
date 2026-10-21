@@ -142,9 +142,13 @@ def fetch_html_text(url: str, max_chars: int = 120000) -> str:
                       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"})
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
-    for tag in soup(["script", "style", "noscript", "header", "footer", "nav", "form"]):
+    # Not "form": ASP.NET pages (eScribe) wrap the whole page in one.
+    for tag in soup(["script", "style", "noscript", "nav"]):
         tag.decompose()
-    main = soup.find(id=re.compile(r"agenda|minutes|content", re.I)) or soup.body or soup
+    # eScribe: the minutes are in section.Agenda / div.AgendaItems (an id
+    # match on "agenda" would hit the page title instead).
+    main = (soup.select_one("section.Agenda") or soup.select_one("div.AgendaItems")
+            or soup.find("main") or soup.body or soup)
     return main.get_text("\n", strip=True)[:max_chars]
 
 

@@ -173,26 +173,25 @@ def collect_attachments(session: requests.Session, m: Dict[str, Any]) -> int:
             continue
         PAGES[page] = date.today().isoformat()
         soup = BeautifulSoup(r.text, "html.parser")
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if "filestream.ashx" not in href.lower():
-                continue
-            url = urljoin(BASE, href)
-            label = " ".join(a.get_text(" ", strip=True).split())
-            if len(label) < 4:                       # icon-only link: use the item heading
-                node = a
-                for _ in range(5):
-                    node = node.parent
-                    if node is None:
-                        break
-                    txt = " ".join(node.get_text(" ", strip=True).split())
-                    mm = re.search(r"\b(\d+(?:\.\d+)+)\s+(.{4,160}?)(?=\s+\d+(?:\.\d+)+\s|$)", txt)
-                    if mm:
-                        label = f"{mm.group(1)} {mm.group(2)}"
-                        break
-            before = len(m.get("extra_docs") or [])
-            add_doc(m, "extra", url, label or "Attachment")
-            added += len(m.get("extra_docs") or []) - before
+        # eScribe layout: div.AgendaItem holds the item number
+        # (.AgendaItemCounter), title (.AgendaItemTitle) and its attachment
+        # list (.AgendaItemAttachment a.Link -> filestream.ashx?DocumentId=…).
+        # The same links are repeated in a side panel; add_doc ignores repeats.
+        for item in soup.select("div.AgendaItem"):
+            counter = item.select_one(".AgendaItemCounter")
+            title = item.select_one(".AgendaItemTitle")
+            num = " ".join(counter.get_text(" ", strip=True).split()).rstrip(".") if counter else ""
+            name = " ".join(title.get_text(" ", strip=True).split()) if title else ""
+            links = [a for a in item.select(".AgendaItemAttachment a[href]")
+                     if "filestream.ashx" in a["href"].lower()]
+            for a in links:
+                fname = " ".join(a.get_text(" ", strip=True).split())
+                fname = re.sub(r"\.pdf$", "", fname, flags=re.I)
+                head = f"{num} {name}".strip()
+                label = head if len(links) == 1 and head else f"{head} — {fname}".strip(" —")
+                before = len(m.get("extra_docs") or [])
+                add_doc(m, "extra", urljoin(BASE, a["href"]), label or fname or "Attachment")
+                added += len(m.get("extra_docs") or []) - before
     return added
 
 
