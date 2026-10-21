@@ -118,6 +118,18 @@ def classify_body(title: str) -> Optional[str]:
     return None
 
 
+def classify_bodies(title: str) -> List[str]:
+    """Every body a title names. Combined sessions ("Council Meeting including
+    Committee of Adjustment March 29, 2022") belong to both."""
+    tl = (title or "").lower()
+    out = [body for kw, body in BODY_KEYWORDS if kw in tl]
+    out = list(dict.fromkeys(out))
+    other_board = any(w in tl for w in NOT_COUNCIL if w != "adjustment") and "adjustment" not in tl
+    if "council" in tl and not other_board and "council" not in out:
+        out.append("council")
+    return out
+
+
 def _local_date(published: str) -> Optional[str]:
     try:
         dt = datetime.fromisoformat(published.replace("Z", "+00:00"))

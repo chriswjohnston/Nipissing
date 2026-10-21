@@ -36,6 +36,7 @@ jobs:
           python scripts/update_library.py
           python scripts/update_healthunit.py
           python scripts/update_dnssab.py
+          python scripts/attach_videos.py
           python scripts/validate_data.py
       - name: Show canonical data counts
         run: |

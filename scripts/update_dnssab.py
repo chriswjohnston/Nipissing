@@ -26,6 +26,7 @@ from urllib.parse import urljoin
 
 import requests
 
+import archive
 import doc_sources as ds
 from joint_boards import Store, add_doc, slug
 
@@ -163,7 +164,8 @@ def main() -> None:
                 fmt = (g(doc, "Format") or "").lower()
                 title = g(doc, "Title", "Name", "Type") or "Document"
                 if "html" in fmt or "meeting.aspx" in url.lower():
-                    add_doc(m, "extra", url, f"{title} (web page)")
+                    label = title if "html" in title.lower() else f"{title} (web page)"
+                    add_doc(m, "extra", url, label)
                     continue
                 add_doc(m, kind_for(doc), url, title)
                 docs += 1
@@ -174,6 +176,10 @@ def main() -> None:
         print("  ✗ calendar endpoint returned nothing usable — keeping stored data")
         return
     print(f"  {total} meeting(s), {docs} document link(s)")
+    # eScribe's FileStream.ashx serves documents only within a portal session;
+    # without its cookies it returns a web page, so mirror through the session.
+    session.headers["Referer"] = BASE
+    archive.SESSION = session
     store.save("boards/dnssab")
 
 

@@ -137,10 +137,14 @@ def _save_misses() -> None:
 
 _MISSES = _load_misses()
 
+# Optional requests.Session for hosts that need cookies (eScribe). A script
+# sets archive.SESSION before mirroring; None means plain requests.
+SESSION = None
+
 
 def _download(url: str) -> Optional[bytes]:
     try:
-        r = requests.get(url, headers=HEADERS, timeout=120, allow_redirects=True)
+        r = (SESSION or requests).get(url, headers=HEADERS, timeout=120, allow_redirects=True)
         if r.status_code == 404:
             # Gone for good — record it so we never retry this URL again.
             print(f"  archive: 404, tombstoned (won't retry) {url}")
@@ -150,7 +154,8 @@ def _download(url: str) -> Optional[bytes]:
         r.raise_for_status()
         data = r.content
         if not data[:5].startswith(b"%PDF"):
-            print(f"  archive: not a PDF, skipping {url}")
+            print(f"  archive: not a PDF ({r.headers.get('Content-Type', '?')}, "
+                  f"{data[:60]!r}), skipping {url}")
             return None
         return data
     except Exception as e:
