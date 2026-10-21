@@ -41,7 +41,7 @@ TEXT_DIR = DOCS / "files" / "bylaws" / "text"
 
 MODEL = "claude-sonnet-5-5"     # accuracy matters more than cost here
 MAX_TOKENS = 32000
-PROMPT_VERSION = 2
+PROMPT_VERSION = 3
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 HEADERS = {"User-Agent": "Mozilla/5.0 (nipissing public records)"}
 
@@ -65,6 +65,11 @@ Rules:
 - If an amendment's instruction is ambiguous or refers to text you cannot find, do not
   guess: leave the original text, add {{unclear: <number> | <short reason>}}, and list
   it in "uncertainties".
+- Tables: reproduce only what you can read reliably. If a column or table is too
+  garbled in the source to reproduce faithfully, leave it out and write in its place
+  "[This table/column could not be read reliably from the source; see the original
+  by-law.]" rather than reconstructing it.
+- Maps and images: write "[Map: <title>. See the original by-law.]"
 - Leave out signature blocks, "read a first, second and third time" lines and page
   headers/footers.
 
@@ -80,7 +85,8 @@ Part 2, a JSON object between these tags:
 {
   "changes": [{"bylaw": "<number>", "where": "<section/schedule>", "change": "<plain-language summary>"}],
   "already_incorporated": ["<numbers>"],
-  "uncertainties": ["<plain-language notes>"],
+  "reader_notes": ["<at most 3 short notes a resident needs to read this correctly, in plain language, e.g. that maps are not reproduced or that a table was left out; no technical detail about OCR or how you worked>"],
+  "uncertainties": ["<technical review notes for the site editor: anything you could not resolve, OCR problems, judgement calls>"],
   "summary": "<2-3 sentences: what this law does, in plain language>"
 }
 </notes>
@@ -97,7 +103,7 @@ def load(path: Path, default):
 
 
 def ocr_pdf(pdf: Path) -> str:
-    import fitz
+    import pymupdf as fitz
     if not shutil.which("tesseract"):
         return ""
     out = []
@@ -110,7 +116,7 @@ def ocr_pdf(pdf: Path) -> str:
 
 
 def pdf_text(data: bytes, tmp: Path) -> str:
-    import fitz
+    import pymupdf as fitz
     tmp.write_bytes(data)
     doc = fitz.open(str(tmp))
     text = "\n\n".join(p.get_text() for p in doc)
@@ -257,6 +263,7 @@ def main() -> None:
             "changes": result.get("changes", []),
             "already_incorporated": result.get("already_incorporated", []),
             "uncertainties": result.get("uncertainties", []),
+            "reader_notes": result.get("reader_notes", [])[:3],
             "summary": result.get("summary", ""),
             "generated": date.today().isoformat(), "model": MODEL, "input_hash": digest,
         })

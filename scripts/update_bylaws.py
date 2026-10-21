@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 
-import fitz  # PyMuPDF
+import pymupdf as fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 

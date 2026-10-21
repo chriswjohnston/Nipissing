@@ -170,7 +170,7 @@ def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
 
     # Fall back to pymupdf
     try:
-        import fitz
+        import pymupdf as fitz
         doc = fitz.open(stream=pdf_bytes, filetype="pdf")
         pages = []
         for page in doc:
@@ -189,7 +189,7 @@ def fetch_pdf_text(pdf_bytes: bytes, max_chars: int = 120000) -> str:
 
 def pdf_page_count(pdf_bytes: bytes) -> int:
     try:
-        import fitz
+        import pymupdf as fitz
         return len(fitz.open(stream=pdf_bytes, filetype="pdf"))
     except Exception:
         return 999
