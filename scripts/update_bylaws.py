@@ -242,7 +242,7 @@ def compute_term_stats(
 ) -> Dict[str, Any]:
     in_term = [
         r for r in resolutions
-        if r.get("meeting_date")
+        if r.get("meeting_date") and not r.get("fragment")
         and r["meeting_date"] >= term_start
         and (term_end is None or r["meeting_date"] <= term_end)
     ]
@@ -603,7 +603,15 @@ def parse_bylaws_from_minutes(
     text: str, meeting: Dict[str, Any]
 ) -> List[Dict[str, Any]]:
     results: List[Dict[str, Any]] = []
-    blocks = re.split(r'(R\d{4}-\d+)', text)
+    # A resolution starts a line with its number and the mover/seconder
+    # ("R2024-237 S. Foote, J. Scott:"). Splitting on every R-number also cut
+    # motions at references like "approved by Resolution R2023-208", which
+    # made fragment entries and lost the real motion's Carried/Deferred.
+    # The number may stand alone on its line, and a stray character can sit
+    # before the mover ("R2024-125 1J. Scott", "R2024-019 B S. Kirkey").
+    blocks = re.split(r'(?m)^[ \t]*(R\d{4}-\d+)\b(?=[ \t]*$|[ \t]+\S{0,3}\s*[A-Z]\.\s*[\w\'’-]+\s*,|[ \t]*:)', text)
+    if len(blocks) < 3:                       # unusual layout: old behaviour
+        blocks = re.split(r'(R\d{4}-\d+)', text)
 
     for i in range(1, len(blocks), 2):
         res_number = blocks[i]
@@ -672,7 +680,15 @@ def parse_resolutions_from_minutes(
     text: str, meeting: Dict[str, Any]
 ) -> List[Dict[str, Any]]:
     results: List[Dict[str, Any]] = []
-    blocks = re.split(r'(R\d{4}-\d+)', text)
+    # A resolution starts a line with its number and the mover/seconder
+    # ("R2024-237 S. Foote, J. Scott:"). Splitting on every R-number also cut
+    # motions at references like "approved by Resolution R2023-208", which
+    # made fragment entries and lost the real motion's Carried/Deferred.
+    # The number may stand alone on its line, and a stray character can sit
+    # before the mover ("R2024-125 1J. Scott", "R2024-019 B S. Kirkey").
+    blocks = re.split(r'(?m)^[ \t]*(R\d{4}-\d+)\b(?=[ \t]*$|[ \t]+\S{0,3}\s*[A-Z]\.\s*[\w\'’-]+\s*,|[ \t]*:)', text)
+    if len(blocks) < 3:                       # unusual layout: old behaviour
+        blocks = re.split(r'(R\d{4}-\d+)', text)
 
     for i in range(1, len(blocks), 2):
         res_number = blocks[i].upper()
@@ -699,6 +715,10 @@ def parse_resolutions_from_minutes(
             status = "deferred"
         elif re.search(r'\bCarried\b', body, re.IGNORECASE):
             status = "carried"
+        elif re.search(r'\bpassed\s+this\b', body, re.IGNORECASE):
+            status = "carried"            # a by-law "read ... and passed this" day
+        elif re.search(r'\b(?:tabled|to\s+be\s+revisited|postponed)\b', body, re.IGNORECASE):
+            status = "deferred"
         else:
             status = "unknown"
 
@@ -890,6 +910,10 @@ def merge_resolution(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str,
                 out[f] = new[f]
     if new.get("meeting_type"):
         out["meeting_type"] = new["meeting_type"]
+    # The minutes are re-read every run; a status they state wins over an
+    # older "unknown" (e.g. a deferral the old splitter cut off).
+    if new.get("status") and new["status"] != "unknown" and out.get("status") in (None, "", "unknown", "pending"):
+        out["status"] = new["status"]
     # Motion text cut short by an old backfill (e.g. at 500 chars): take the
     # full re-parse when it is the same motion, only longer.
     old_mt, new_mt = out.get("motion_text") or "", new.get("motion_text") or ""

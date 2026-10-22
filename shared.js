@@ -549,6 +549,7 @@ function buildDecisions(bylaws, resolutions) {
   const passedBy = new Map();
   const out = [];
   for (const r of resolutions) {
+    if (r.fragment) continue;   // piece of another motion, split off by an old parser
     const num = r.bylaw_number && String(r.bylaw_number);
     const text = r.motion_text || r.title || '';
     // Fold in only the resolution that passes the by-law. One that merely
