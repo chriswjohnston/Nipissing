@@ -206,12 +206,26 @@ async function init(){
   document.getElementById('bylaw-pills').innerHTML = pills.join('');
   document.getElementById('bylaw-pills').hidden = !pills.length;
 
+  // Repealed, or replaced an older by-law outright?
+  const banner = document.getElementById('law-banner');
+  if (bylaw.repealed_by) {
+    banner.textContent = `No longer in force. Repealed by By-law ${bylaw.repealed_by}` +
+      (bylaw.repealed_date ? ` on ${fmtDate(bylaw.repealed_date)}` : '') + `. Read By-law ${bylaw.repealed_by}.`;
+    banner.href = `bylaw-detail.html?id=${encodeURIComponent(bylaw.repealed_by)}`;
+    banner.classList.add('law-banner-repealed');
+    banner.style.display = 'block';
+  } else if ((bylaw.repeals || []).length) {
+    const old = bylaw.repeals.join(', ');
+    banner.textContent = `This by-law replaced By-law ${old}, which it repealed. See By-law ${bylaw.repeals[0]}.`;
+    banner.href = `bylaw-detail.html?id=${encodeURIComponent(bylaw.repeals[0])}`;
+    banner.style.display = 'block';
+  }
+
   // Part of an amended law? Point to the one page that shows it as it reads today.
   try {
     const cons = (await (await fetch('data/canonical/consolidations.json', {cache: 'no-cache'})).json()).consolidations || {};
     const law = Object.values(cons).find(l => l.principal === bylaw.number || (l.amendments || []).includes(bylaw.number));
-    if (law) {
-      const banner = document.getElementById('law-banner');
+    if (law && !bylaw.repealed_by) {
       const role = law.principal === bylaw.number
         ? `This by-law has been amended ${law.amendments.length} time${law.amendments.length === 1 ? '' : 's'}.`
         : `This by-law amends ${law.name} (By-law ${law.principal}).`;

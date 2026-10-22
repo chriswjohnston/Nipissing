@@ -140,6 +140,7 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .status-approved,.status-carried{color:var(--ok);background:var(--ok-tint);border-color:#BFDDC8}
 .status-defeated{color:var(--warn);background:var(--warn-tint);border-color:var(--warn-rule)}
 .status-pending,.status-unknown,.status-deferred{color:var(--special);background:var(--special-tint);border-color:var(--special-rule)}
+.status-repealed{color:var(--muted);background:var(--paper);border-color:var(--rule)}
 .status-pill{text-transform:capitalize}
 
 /* ── Record lists (meetings, by-laws, resolutions) ─────────────────── */
@@ -249,6 +250,7 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .content-block p{font-family:var(--serif);font-size:18px;line-height:1.7;max-width:68ch}
 .empty-note{color:var(--muted);font-size:15px}
 .law-banner{display:block;margin:0 0 20px;padding:16px 20px;border:1.5px solid var(--ledger);border-radius:var(--radius);background:var(--ledger-tint);color:var(--ledger-dk);font-weight:600;text-decoration:none}
+.law-banner-repealed{border-color:var(--rule);background:var(--paper);color:var(--ink)}
 .law-banner:hover{text-decoration:underline;color:var(--ledger-dk)}
 
 /* Document links, with the stamp when we keep the copy */
