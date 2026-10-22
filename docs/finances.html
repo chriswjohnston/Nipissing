@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finances — Nipissing Public Record</title>
+<meta name="description" content="Township of Nipissing finances since 2009: property taxes, spending, staff pay, grants, reserves and debt, with every budget, audited statement and capital forecast kept.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css?v=20261022p">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="laws.html" data-nav="laws">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions">Decisions</a></li>
+        <li><a href="finances.html" data-nav="finances" aria-current="page">Finances</a></li>
+        <li><a href="terms.html" data-nav="terms">Terms</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <h1>Finances</h1>
+    <p class="page-lede">Where the township’s money comes from and where it goes, every year since 2009. Figures come from the financial return the township files with the Province each year, built from its audited statements. Every budget, audited statement and capital forecast is kept here, because the township removes older ones from its site.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="state-msg" id="loading"><strong>Loading the figures…</strong></div>
+    <div id="fin" hidden>
+      <div class="fin-tiles" id="tiles"></div>
+
+      <section class="filed fin-section" aria-labelledby="tax-tab">
+        <h2 class="filed-tab" id="tax-tab">Property taxes</h2>
+        <div class="filed-body">
+          <div class="fin-split">
+            <div>
+              <h3 class="fin-h">What the township raised from property taxes</h3>
+              <p class="fin-sub">The township’s share of the tax bill, before school taxes, each year since 2009.</p>
+              <div class="fin-chart" id="chart-tax"></div>
+              <p class="fin-legend"><span class="key key-actual"></span>From the township’s financial return <span class="key key-plan"></span>Budget</p>
+            </div>
+            <div class="fin-notes">
+              <h3 class="fin-h4">Reading this chart</h3>
+              <ul id="tax-notes"></ul>
+            </div>
+          </div>
+          <h3 class="fin-h4" style="margin-top:28px">Each year’s budget, and a typical home</h3>
+          <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Budgets and a typical home’s township tax">
+            <table class="fin-table" id="budget-table"></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="filed fin-section" aria-labelledby="spend-tab">
+        <h2 class="filed-tab" id="spend-tab">Where the money goes</h2>
+        <div class="filed-body">
+          <div class="fin-split even">
+            <div>
+              <h3 class="fin-h" id="fn-title"></h3>
+              <p class="fin-sub" id="fn-sub"></p>
+              <div id="chart-functions"></div>
+            </div>
+            <div>
+              <h3 class="fin-h">Bills from bodies the township doesn’t run</h3>
+              <p class="fin-sub" id="others-sub"></p>
+              <div id="chart-others"></div>
+            </div>
+          </div>
+          <p class="docs-key" id="spend-source"></p>
+        </div>
+      </section>
+
+      <section class="filed fin-section" aria-labelledby="staff-tab">
+        <h2 class="filed-tab" id="staff-tab">Staff pay</h2>
+        <div class="filed-body">
+          <div class="fin-split">
+            <div>
+              <h3 class="fin-h">Salaries, wages and benefits</h3>
+              <p class="fin-sub">Everyone the township employs. Council pay is set separately.</p>
+              <div class="fin-chart" id="chart-salaries"></div>
+              <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Staff pay by year"><table class="fin-table compact" id="staff-table"></table></div>
+            </div>
+            <div class="fin-notes">
+              <h3 class="fin-h4">The decisions behind it</h3>
+              <ol class="fin-bylaws" id="pay-bylaws"></ol>
+              <p class="fin-small">Each pay-grid by-law amends the pay equity plan, but the township posts it without Schedule A, the grid itself. <a href="decisions.html?q=remuneration">Council pay by-laws</a> are passed each December.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="filed fin-section" aria-labelledby="grant-tab">
+        <h2 class="filed-tab" id="grant-tab">Grants and funding</h2>
+        <div class="filed-body">
+          <h3 class="fin-h">Money from other governments</h3>
+          <p class="fin-sub">The Province’s Partnership Fund arrives every year. Other provincial and federal grants come for particular projects, so the total swings.</p>
+          <p class="fin-legend" id="grant-legend"></p>
+          <div class="fin-chart" id="chart-grants"></div>
+          <details class="routine-details"><summary>Show as a table</summary>
+            <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Grants by year"><table class="fin-table compact" id="grant-table"></table></div>
+          </details>
+          <p class="fin-small" style="margin-top:14px">Every grant council applied for or accepted is in <a href="decisions.html?kind=Grants">Decisions → Grants</a>.</p>
+        </div>
+      </section>
+
+      <section class="filed fin-section" aria-labelledby="save-tab">
+        <h2 class="filed-tab" id="save-tab">Savings and debt</h2>
+        <div class="filed-body">
+          <div class="fin-split even">
+            <div>
+              <h3 class="fin-h">Reserves and debt at year end</h3>
+              <p class="fin-legend"><span class="key key-actual"></span>Reserves (money set aside) <span class="key key-debt"></span>Long-term debt</p>
+              <div class="fin-chart" id="chart-reserves"></div>
+            </div>
+            <div>
+              <h3 class="fin-h">Against similar municipalities nearby</h3>
+              <p class="fin-sub" id="comp-sub"></p>
+              <div id="comparators"></div>
+              <p class="docs-key" id="comp-source"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="filed fin-section" aria-labelledby="doc-tab">
+        <h2 class="filed-tab" id="doc-tab">Documents</h2>
+        <div class="filed-body">
+          <h3 class="fin-h">Every financial document, by year</h3>
+          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears.</p>
+          <div id="doc-shelf"></div>
+        </div>
+      </section>
+
+      <section class="fin-method" aria-label="About these figures">
+        <div><h3 class="fin-h4">Where the numbers come from</h3><p>The Financial Information Return each municipality files with the Province, built from its audited statements, on the same form every year. Budgets come from the presentations to council. <a id="fir-link" href="#">The Province’s open data</a>.</p></div>
+        <div><h3 class="fin-h4">What “spent” leaves out</h3><p>An accounting charge for the future cost of closing the landfill and other assets ($1.31M in 2025). The audited statements report it; it isn’t money spent that year.</p></div>
+        <div><h3 class="fin-h4">If a number looks wrong</h3><p>Figures are copied, not calculated by the township for this page. <a href="https://github.com/chriswjohnston/Nipissing/issues/new?title=Finances%3A+" target="_blank" rel="noopener">Report it</a> and it will be checked against the source.</p></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <h2 class="footer-name">Nipissing Public Record</h2>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing/issues/new?title=Missing+document%3A+&amp;body=%2A%2AWhat%27s+missing+or+wrong%3F%2A%2A%0A%28A+meeting%2C+by-law%2C+resolution+or+document.+Include+the+date+or+number+if+you+know+it.%29%0A%0A%2A%2ALink%2C+if+you+have+one%3A%2A%2A%0A%0A%2A%2AAnything+else%3F%2A%2A%0A" target="_blank" rel="noopener">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="shared.js?v=20261022p"></script>
+<script>
+// ── formatting ──────────────────────────────────────────────────────────
+const money = (v, short = true) => {
+  if (v == null) return '—';
+  const a = Math.abs(v), s = v < 0 ? '−' : '';
+  if (short && a >= 1e6) return `${s}$${(a / 1e6).toFixed(2)}M`;
+  if (short && a >= 1e4) return `${s}$${Math.round(a / 1e3).toLocaleString('en-CA')}k`;
+  return `${s}$${Math.round(a).toLocaleString('en-CA')}`;
+};
+const pct = (a, b) => `${b >= a ? '+' : '−'}${Math.abs((b / a - 1) * 100).toFixed(0)}%`;
+const esc = s => escHtml(String(s ?? ''));
+// Draw at the container's own width so labels stay readable on a phone.
+const widthOf = id => Math.max(320, Math.round(document.getElementById(id).clientWidth || 760));
+const every = w => w < 520 ? 4 : 2;
+
+function niceMax(v){
+  const p = Math.pow(10, Math.floor(Math.log10(v)));
+  for (const m of [1, 1.25, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10]) if (v <= m * p) return { max: m * p, step: (m * p) / 4 };
+  return { max: v, step: v / 4 };
+}
+
+// A column chart drawn as SVG. bars: [{label, value, kind, title}]; kind
+// "plan" is hatched (a budget), "debt" uses the second colour.
+let hatchId = 0;
+function columnChart(bars, { height = 280, labelEvery = 1, groups = null, ariaLabel = '', width = 760 } = {}){
+  const W = width, H = height, L = 64, R = 26, T = 22, B = 30, PW = W - L - R, PH = H - T - B;
+  const values = groups ? groups.flatMap(g => g.bars.map(b => b.value)) : bars.map(b => b.value);
+  const { max, step } = niceMax(Math.max(...values, 1));
+  const y = v => T + PH - PH * v / max;
+  const id = `h${++hatchId}`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(ariaLabel)}" class="fin-svg">
+    <defs><pattern id="${id}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="6" class="hatch-line"/></pattern></defs>`;
+  for (let v = 0; v <= max + 1e-6; v += step)
+    s += `<line x1="${L}" x2="${L + PW}" y1="${y(v)}" y2="${y(v)}" class="${v ? 'grid' : 'base'}"/><text x="${L - 8}" y="${y(v) + 4}" text-anchor="end" class="tick">${v ? money(v) : '$0'}</text>`;
+  const items = groups || bars.map(b => ({ label: b.label, bars: [b] }));
+  const slot = PW / items.length;
+  items.forEach((g, i) => {
+    const n = g.bars.length, bw = Math.min(n > 1 ? 16 : 34, (slot * 0.7) / n);
+    g.bars.forEach((b, j) => {
+      const x = L + slot * i + (slot - bw * n - 2 * (n - 1)) / 2 + j * (bw + 2);
+      const h = Math.max(PH * b.value / max, b.value > 0 ? 1 : 0), top = y(b.value), r = Math.min(4, h, bw / 2);
+      const cls = b.kind === 'plan' ? 'bar-plan' : b.kind === 'debt' ? 'bar-debt' : b.kind === 'soft' ? 'bar-soft' : 'bar';
+      s += `<path d="M${x},${top + h} V${top + r} Q${x},${top} ${x + r},${top} H${x + bw - r} Q${x + bw},${top} ${x + bw},${top + r} V${top + h} Z" class="${cls}" ${b.kind === 'plan' ? `fill="url(#${id})"` : ''}><title>${esc(b.title || `${g.label}: ${money(b.value, false)}`)}</title></path>`;
+      if (b.showValue) s += `<text x="${x + bw / 2}" y="${top - 6}" text-anchor="middle" class="val">${money(b.value)}</text>`;
+    });
+    if (i % labelEvery === 0 || (i === items.length - 1 && i % labelEvery >= labelEvery / 2)) s += `<text x="${L + slot * i + slot / 2}" y="${T + PH + 20}" text-anchor="middle" class="tick">${esc(g.label)}</text>`;
+  });
+  return s + '</svg>';
+}
+
+function stackedChart(years, series, { height = 300, width = 1040, labelEvery = 2 } = {}){
+  const W = width, H = height, L = 64, R = 26, T = 22, B = 30, PW = W - L - R, PH = H - T - B;
+  const totals = years.map(y => series.reduce((a, s) => a + (s.get(y) || 0), 0));
+  const { max, step } = niceMax(Math.max(...totals, 1));
+  const yv = v => T + PH - PH * v / max;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Grants by source and year" class="fin-svg">`;
+  for (let v = 0; v <= max + 1e-6; v += step)
+    s += `<line x1="${L}" x2="${L + PW}" y1="${yv(v)}" y2="${yv(v)}" class="${v ? 'grid' : 'base'}"/><text x="${L - 8}" y="${yv(v) + 4}" text-anchor="end" class="tick">${v ? money(v) : '$0'}</text>`;
+  const slot = PW / years.length, bw = Math.min(30, slot * 0.66);
+  years.forEach((yr, i) => {
+    const x = L + slot * i + (slot - bw) / 2;
+    let base = 0;
+    const parts = series.map(se => ({ se, v: Math.max(0, se.get(yr) || 0) })).filter(p => p.v > 0);
+    parts.forEach((p, k) => {
+      const top = yv(base + p.v), bottom = yv(base) - (k ? 1 : 0), h = Math.max(bottom - top, 0.5);
+      const last = k === parts.length - 1, r = last ? Math.min(4, h, bw / 2) : 0;
+      s += `<path d="M${x},${top + h} V${top + r} Q${x},${top} ${x + r},${top} H${x + bw - r} Q${x + bw},${top} ${x + bw},${top + r} V${top + h} Z" class="${p.se.cls}"><title>${yr}, ${esc(p.se.name)}: ${money(p.v, false)}</title></path>`;
+      base += p.v;
+    });
+    if (i % labelEvery === 0 || (i === years.length - 1 && i % labelEvery >= labelEvery / 2)) s += `<text x="${x + bw / 2}" y="${T + PH + 20}" text-anchor="middle" class="tick">${yr}</text>`;
+  });
+  return s + '</svg>';
+}
+
+function hbars(rows, total, cls = ''){
+  const max = Math.max(...rows.map(r => r[1]));
+  return `<ul class="fin-hbars ${cls}">${rows.map(([name, v]) => `
+    <li><span class="hb-name">${esc(name)}</span>
+      <span class="hb-track" aria-hidden="true"><span style="width:${Math.max(0.6, v / max * 100).toFixed(1)}%"></span></span>
+      <span class="hb-val"><strong>${money(v)}</strong> · ${(v / total * 100).toFixed(0)}%</span></li>`).join('')}</ul>`;
+}
+
+function strip(ind){
+  const fmt = v => ind.unit === '%' ? `${v.toFixed(2)}%` : (v ? `$${v.toLocaleString('en-CA')}` : 'none');
+  const pos = v => ((v - ind.low) / (ind.high - ind.low) * 100).toFixed(1);
+  return `<div class="fin-strip">
+    <div class="fs-head"><span class="fs-label">${esc(ind.label)}</span><span class="fs-val">Nipissing <strong>${fmt(ind.nipissing)}</strong> · average ${fmt(ind.average)}</span></div>
+    <div class="fs-track" aria-hidden="true"><span class="fs-line"></span><span class="fs-avg" style="left:${pos(ind.average)}%"></span><span class="fs-dot" style="left:calc(${pos(ind.nipissing)}% - 9px)"></span></div>
+    <div class="fs-ends"><span>Lowest ${fmt(ind.low)}</span><span>Highest ${fmt(ind.high)}</span></div></div>`;
+}
+
+const KIND_ORDER = ['Audited financial statements', 'Auditor’s presentation', 'Budget', 'Capital budget and forecast', 'Tax rates', 'Asset management plan', 'Council remuneration', 'User fees', 'Policy', 'Other financial document'];
+
+async function init(){
+  await loadAllData();
+  let S = {}, F = {};
+  try { S = await (await fetch('data/canonical/financial_series.json', {cache: 'no-cache'})).json(); } catch {}
+  try { F = await (await fetch('data/canonical/financials.json', {cache: 'no-cache'})).json(); } catch {}
+  const Y = S.years || {};
+  const years = Object.keys(Y).sort();
+  document.getElementById('loading').hidden = true;
+  if (!years.length) { document.getElementById('loading').hidden = false; document.getElementById('loading').innerHTML = '<strong>The figures aren’t ready yet.</strong>'; return; }
+  document.getElementById('fin').hidden = false;
+  const first = years[0], last = years[years.length - 1], L = Y[last], P = Y[first];
+  const budgets = (F.budgets || []).slice().sort((a, b) => b.year - a.year);
+  const nextBudget = budgets.find(b => String(b.year) > last);
+  if (S.source) document.getElementById('fir-link').href = S.source.url;
+
+  // ── tiles
+  const home = budgets[0];
+  const homeTax = home && home.rate_residential_municipal ? home.home_assessment * home.rate_residential_municipal : null;
+  const y2020 = Y['2020'];
+  document.getElementById('tiles').innerHTML = [
+    [`Raised from property taxes, ${last}`, money(L.property_tax), `${pct(P.property_tax, L.property_tax)} since ${first}${y2020 ? `; ${pct(y2020.property_tax, L.property_tax)} since 2020` : ''}.`],
+    [`Spent running the township, ${last}`, money(L.spent), `Roads and transportation are the largest share, ${(L.fn_transportation / L.spent * 100).toFixed(0)}%.`],
+    [`Staff pay and benefits, ${last}`, money(L.salaries), `${pct(P.salaries, L.salaries)} since ${first}. ${L.full_time} full-time positions, up from ${P.full_time}.`],
+    homeTax ? [`A typical home’s township tax, ${home.year}`, `$${Math.round(homeTax).toLocaleString('en-CA')}`, `On a $${home.home_assessment.toLocaleString('en-CA')} assessment, $${home.home_change.toFixed(2)} more than the year before. School tax is extra.`] : null,
+  ].filter(Boolean).map(([k, v, s]) => `<dl class="fin-tile"><dt class="ft-k">${k}</dt><dd class="ft-v">${v}</dd><dd class="ft-s">${s}</dd></dl>`).join('');
+
+  // ── taxes
+  const wt = widthOf('chart-tax'), roomy = wt >= 520;
+  const taxBars = years.map(y => ({ label: y, value: Y[y].property_tax, showValue: y === first || (roomy && (y === last || y === '2020')) || (!nextBudget && y === last) }));
+  if (nextBudget) taxBars.push({ label: `${nextBudget.year}`, value: nextBudget.levy, kind: 'plan', showValue: true, title: `${nextBudget.year} budget: ${money(nextBudget.levy, false)}` });
+  document.getElementById('chart-tax').innerHTML = columnChart(taxBars, { width: wt, labelEvery: every(wt), ariaLabel: `Property taxes raised, ${first} to ${nextBudget ? nextBudget.year : last}` });
+  const avg = (a, b, n) => ((Math.pow(b / a, 1 / n) - 1) * 100).toFixed(1);
+  const n10 = String(Number(last) - 10);
+  document.getElementById('tax-notes').innerHTML = [
+    `<li><strong>The total grows faster than any one bill.</strong> New homes add to the total even when the rate stays the same. The township’s auditor put growth since 2022 at 7.4% a year, 2.7 points of it from new assessment.</li>`,
+    Y[n10] ? `<li><strong>Over ten years</strong> (${n10} to ${last}) the total grew ${avg(Y[n10].property_tax, L.property_tax, 10)}% a year on average.</li>` : '',
+    `<li><strong>The budget table below</strong> shows what each year’s increase meant for a typical home.</li>`,
+  ].join('');
+  document.getElementById('budget-table').innerHTML = `<thead><tr><th scope="col">Year</th><th scope="col">Taxes to raise (budget)</th><th scope="col">Increase</th><th scope="col">Typical home</th><th scope="col">Its increase</th><th scope="col">Sources</th></tr></thead><tbody>` +
+    budgets.map(b => `<tr><td>${b.year}</td><td>${money(b.levy, false)}</td><td>+${b.levy_change_pct}%</td>
+      <td>${b.rate_residential_municipal ? `$${Math.round(b.home_assessment * b.rate_residential_municipal).toLocaleString('en-CA')} on $${b.home_assessment.toLocaleString('en-CA')}` : `$${b.home_assessment.toLocaleString('en-CA')} assessment`}</td>
+      <td>+$${b.home_change.toFixed(2)}</td>
+      <td><a href="${esc(archivedUrl(b.source.doc))}#page=${b.source.page}" target="_blank" rel="noopener">Budget</a>${b.bylaw ? ` · <a href="bylaw-detail.html?id=${encodeURIComponent(b.bylaw)}">By-law ${esc(b.bylaw)}</a>` : ''}</td></tr>`).join('') +
+    `</tbody>`;
+
+  // ── where the money goes
+  const FN = [['Roads and transportation', 'fn_transportation'], ['Fire, policing and building', 'fn_protection'], ['Running the township', 'fn_general'],
+    ['Health services', 'fn_health'], ['Social services', 'fn_social'], ['Landfill and recycling', 'fn_environmental'], ['Recreation and the museum', 'fn_recreation'], ['Planning', 'fn_planning']];
+  const aro = L.aro_accretion || 0;
+  const fnRows = FN.map(([n, k]) => [n, (L[k] || 0) - (k === 'fn_environmental' ? Math.min(aro, L[k] || 0) : 0)]).filter(r => r[1] > 0).sort((a, b) => b[1] - a[1]);
+  document.getElementById('fn-title').textContent = `${last} spending, by service`;
+  document.getElementById('fn-sub').textContent = `${money(L.spent)} in all, including wear on roads and equipment (amortization).`;
+  document.getElementById('chart-functions').innerHTML = hbars(fnRows, fnRows.reduce((a, r) => a + r[1], 0));
+  const bo = F.bills_from_others;
+  if (bo) {
+    const tot = bo.items.reduce((a, r) => a + r[1], 0);
+    document.getElementById('others-sub').textContent = `${money(tot)} in ${bo.year}, about ${Math.round(tot / L.property_tax * 100)}% of what property taxes raised. Council doesn’t set these; they arrive as levies and contracts.`;
+    document.getElementById('chart-others').innerHTML = hbars(bo.items, tot, 'soft');
+    document.getElementById('spend-source').innerHTML = `Sources: the ${last} financial return, Schedule 40 (the landfill’s asset-retirement charge left out), and the <a href="${esc(archivedUrl(bo.source.doc))}#page=${bo.source.page}" target="_blank" rel="noopener">${esc(bo.source.label)}</a>.`;
+  }
+
+  // ── staff
+  const ws = widthOf('chart-salaries');
+  document.getElementById('chart-salaries').innerHTML = columnChart(years.map(y => ({ label: y, value: Y[y].salaries, showValue: y === first || y === last })),
+    { width: ws, labelEvery: every(ws), ariaLabel: `Salaries, wages and benefits, ${first} to ${last}` });
+  const sy = years.filter((y, i) => i % 2 === 0 || y === last);
+  document.getElementById('staff-table').innerHTML = `<thead><tr><th scope="col">Year</th>${sy.map(y => `<th scope="col">${y}</th>`).join('')}</tr></thead><tbody>
+    <tr><th scope="row">Share of spending</th>${sy.map(y => `<td>${(Y[y].salaries / Y[y].spent * 100).toFixed(0)}%</td>`).join('')}</tr>
+    <tr><th scope="row">Full-time positions</th>${sy.map(y => `<td>${Y[y].full_time ?? '—'}</td>`).join('')}</tr></tbody>`;
+  const pb = F.pay_bylaws || {};
+  const byNum = Object.fromEntries(BYLAWS.map(b => [String(b.number), b]));
+  document.getElementById('pay-bylaws').innerHTML = (pb.pay_equity || []).map(n => {
+    const b = byNum[n] || {};
+    const d = b.date_passed || b.meeting_date;
+    return `<li><a href="bylaw-detail.html?id=${encodeURIComponent(n)}">By-law ${esc(n)}</a><span>Pay grid ${(b.title || '').toLowerCase().includes('amend') ? 'updated' : 'set'}${d ? `, ${new Date(d + 'T00:00:00').toLocaleDateString('en-CA', {month: 'long', year: 'numeric'})}` : ''}</span></li>`;
+  }).join('');
+
+  // ── grants
+  const GS = [
+    { name: 'Partnership Fund (OMPF)', cls: 'g1', get: y => Y[y].ompf || 0 },
+    { name: 'Other provincial', cls: 'g2', get: y => Y[y].grants_other_provincial || 0 },
+    { name: 'Federal, incl. gas tax', cls: 'g3', get: y => Y[y].grants_federal || 0 },
+  ];
+  document.getElementById('grant-legend').innerHTML = GS.map(g => `<span class="key ${g.cls}"></span>${esc(g.name)}`).join(' ');
+  const wg = widthOf('chart-grants');
+  document.getElementById('chart-grants').innerHTML = stackedChart(years, GS, { width: wg, labelEvery: every(wg) });
+  document.getElementById('grant-table').innerHTML = `<thead><tr><th scope="col">Year</th>${GS.map(g => `<th scope="col">${esc(g.name)}</th>`).join('')}<th scope="col">Total</th></tr></thead><tbody>` +
+    years.slice().reverse().map(y => `<tr><td>${y}</td>${GS.map(g => `<td>${money(g.get(y))}</td>`).join('')}<td><strong>${money(GS.reduce((a, g) => a + g.get(y), 0))}</strong></td></tr>`).join('') + '</tbody>';
+
+  // ── reserves and debt
+  const wr = widthOf('chart-reserves');
+  document.getElementById('chart-reserves').innerHTML = columnChart(null, { labelEvery: every(wr), width: wr, height: 300, ariaLabel: 'Reserves and long-term debt by year',
+    groups: years.map(y => ({ label: y, bars: [{ value: Y[y].reserves || 0, title: `${y} reserves: ${money(Y[y].reserves, false)}` }, { value: Y[y].debt || 0, kind: 'debt', title: `${y} long-term debt: ${money(Y[y].debt, false)}` }] })) });
+  const C = F.comparators;
+  if (C) {
+    document.getElementById('comp-sub').textContent = `The auditor’s comparison group: ${C.group.join(', ')}. ${C.year} figures.`;
+    document.getElementById('comparators').innerHTML = C.indicators.map(strip).join('');
+    document.getElementById('comp-source').innerHTML = `Source: <a href="${esc(archivedUrl(C.source.doc))}#page=${C.source.page}" target="_blank" rel="noopener">${esc(C.source.label)}</a>.`;
+  }
+
+  // ── documents shelf
+  const docs = (F.documents || []).filter(d => d.archived || d.url);
+  const byYear = {};
+  docs.forEach(d => (byYear[d.year || 'Undated'] ||= []).push(d));
+  document.getElementById('doc-shelf').innerHTML = `<ol class="fin-shelf">${Object.keys(byYear).sort().reverse().map(y => `
+    <li><span class="fs-year">${esc(y)}</span><ul>${byYear[y].sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind)).map(d => {
+      const href = d.archived ? archivedUrl(d.archived) : null;
+      const title = d.title || d.kind;
+      return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a> ${keptStamp()}`
+        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
+    }).join('')}</ul></li>`).join('')}</ol>`;
+}
+
+init();
+</script>
+</body>
+</html>
