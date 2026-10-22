@@ -209,14 +209,11 @@
     "cemetery": {
       "meetings": 9,
       "totals": {
-        "no_summary": 3,
         "no_minutes": 1,
-        "no_video": 1
+        "no_video": 1,
+        "no_summary": 2
       },
       "issues": {
-        "2024-02-14 Board": {
-          "no_summary": true
-        },
         "2024-01-10 Board": {
           "no_minutes": true,
           "no_video": true

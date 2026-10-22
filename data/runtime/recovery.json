@@ -16,7 +16,7 @@
     "checked": "2026-10-21"
   },
   "https://nipissingtownship.com/wp-content/uploads/2024/02/CEMETERY-COMMITTEE-MINUTES-February-14-2024.pdf": {
-    "outcome": "error",
+    "outcome": "recovered",
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2024/01/Cemetery-Committee-mintues-July-2022.pdf": {
@@ -60,7 +60,7 @@
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/11/Recreation-Minutes-November-17-2025.pdf": {
-    "outcome": "error",
+    "outcome": "recovered",
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/10/Recreation-Minutes-October-6-2025.pdf": {
@@ -76,6 +76,10 @@
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/05/Recreation-Minutes-May-12-2025.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-22"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2025/03/Recreation-Minutes-March-3-2025.pdf": {
     "outcome": "error",
     "checked": "2026-10-22"
   }
