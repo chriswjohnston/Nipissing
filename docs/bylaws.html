@@ -3,320 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>By-Laws & Resolutions — Nipissing Township Public Records</title>
-<meta name="description" content="Browse Nipissing Township by-laws and resolutions.">
+<title>By-laws and resolutions — Nipissing Public Record</title>
+<meta name="description" content="Every Township of Nipissing by-law and council resolution, searchable, with amended laws shown as they read today.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-/* ── existing filters styles ──────────────────────────────────────── */
-.filters-wrap{
-  border-bottom:1px solid var(--rule);
-  background:var(--white);
-}
-.filters-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:1rem 2rem .9rem;
-}
-.filters-row{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  flex-wrap:wrap;
-}
-.search-grow{
-  flex:1 1 420px;
-  min-width:280px;
-}
-.inline-filter{
-  display:flex;
-  align-items:center;
-  gap:.7rem;
-  flex-wrap:wrap;
-}
-.inline-label{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-}
-.year-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
-  margin-top:.7rem;
-}
-.year-pill-wrap{
-  display:flex;
-  gap:.35rem;
-  flex-wrap:wrap;
-}
-.year-pill-wrap .tab-btn,
-.type-pill-wrap .tab-btn{
-  padding:.48rem .82rem;
-}
-.body-results{
-  padding-top:2rem;
-}
-.year-group{
-  margin-bottom:2.5rem;
-}
-.year-heading{
-  font-family:'Source Serif 4',serif;
-  font-size:1.5rem;
-  font-weight:700;
-  color:var(--ink);
-  margin-bottom:1rem;
-  padding-bottom:.6rem;
-  border-bottom:2px solid var(--rule);
-  display:flex;
-  align-items:baseline;
-  gap:.75rem;
-}
-.year-heading .year-count{
-  font-family:'DM Sans',sans-serif;
-  font-size:.75rem;
-  font-weight:500;
-  color:var(--ink-4);
-  border:1px solid var(--rule);
-  padding:.15rem .55rem;
-  border-radius:10px;
-}
-.section-anchor{
-  scroll-margin-top:120px;
-}
-
-/* ── term stats bars ──────────────────────────────────────────────── */
-.term-stats-wrap{
-  background:var(--white);
-  border-bottom:1px solid var(--rule);
-}
-.term-bar{
-  border-bottom:1px solid var(--rule);
-}
-.term-bar:last-child{
-  border-bottom:none;
-}
-.term-bar-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:.6rem 2rem;
-  display:flex;
-  align-items:center;
-  gap:1.25rem;
-  flex-wrap:wrap;
-}
-.term-bar--last .term-bar-inner{
-  background:var(--bg-off,#fafaf8);
-}
-.term-bar-label{
-  display:flex;
-  align-items:center;
-  gap:.4rem;
-  font-family:'DM Sans',sans-serif;
-  font-size:.7rem;
-  font-weight:700;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  white-space:nowrap;
-  min-width:145px;
-  flex-shrink:0;
-}
-.term-dot{
-  display:inline-block;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  flex-shrink:0;
-}
-.term-dot--live{
-  background:#22c55e;
-  box-shadow:0 0 0 0 rgba(34,197,94,.5);
-  animation:tdot-pulse 2.4s ease-in-out infinite;
-}
-.term-dot--past{
-  background:#94a3b8;
-}
-@keyframes tdot-pulse{
-  0%,100%{ box-shadow:0 0 0 0   rgba(34,197,94,.45); }
-  50%    { box-shadow:0 0 0 5px rgba(34,197,94,0);   }
-}
-.term-bar-stats{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.tstat{
-  display:flex;
-  align-items:baseline;
-  gap:.3rem;
-  padding:0 .85rem;
-}
-.tstat:first-child{ padding-left:0; }
-.tstat-val{
-  font-family:'Source Serif 4',serif;
-  font-size:1.1rem;
-  font-weight:600;
-  color:var(--ink);
-  line-height:1;
-}
-.tstat-val.carried { color:#16a34a; }
-.tstat-val.defeated{ color:#dc2626; }
-.tstat-val.deferred{ color:#b45309; }
-.tstat-val.neutral { color:var(--ink-4); font-weight:400; font-size:.85rem; }
-.tstat-lbl{
-  font-family:'DM Sans',sans-serif;
-  font-size:.68rem;
-  color:var(--ink-4);
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  font-weight:500;
-  white-space:nowrap;
-}
-.tstat-div{
-  width:1px;
-  height:1rem;
-  background:var(--rule);
-  flex-shrink:0;
-}
-
-@media(max-width:700px){
-  .filters-inner{ padding:1rem 1.25rem .9rem; }
-  .term-bar-inner{ padding:.55rem 1.25rem; gap:.6rem; }
-  .term-bar-label{ min-width:0; }
-  .tstat{ padding:0 .55rem; }
-  .tstat-val{ font-size:.95rem; }
-  .hide-xs{ display:none !important; }
-}
-</style>
 </head>
-
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html" class="active">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Meetings</a></li>
-    </ul>
-
-    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws" aria-current="page">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<div class="page-header">
-  <div class="page-header-inner">
-    <p class="page-eyebrow">Nipissing Township · Public Records</p>
-    <h1>By-Laws &amp; <em>Resolutions</em></h1>
-    <p>Search by-laws passed by Council and resolutions recorded in meeting minutes.</p>
+<main id="main">
+  <div class="wrap page-head">
+    <h1 id="page-title">By-laws and resolutions</h1>
+    <p class="page-lede" id="page-lede">Every by-law passed by council, and every resolution recorded in the minutes.</p>
   </div>
-</div>
 
-
-
-<div class="filters-wrap">
-  <div class="filters-inner">
-    <div class="filters-row">
-      <div class="filter-search search-grow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input id="search" type="search" placeholder="Search by number, title, motion text…" autocomplete="off">
+  <div class="wrap" id="laws-section" hidden style="padding-bottom:40px">
+    <section class="filed" aria-labelledby="laws-tab">
+      <h2 class="filed-tab" id="laws-tab">Laws in force</h2>
+      <div class="filed-body">
+        <p class="section-note">A by-law is often changed by later by-laws. These pages apply the changes for you, so you can read the law as it stands, with each change marked.</p>
+        <div class="law-cards" id="law-cards"></div>
       </div>
+    </section>
+  </div>
 
-      <div class="inline-filter">
-        <div class="inline-label">Type</div>
-        <div class="tab-group type-pill-wrap">
-          <button class="tab-btn active" data-type="all">All</button>
-          <button class="tab-btn" data-type="bylaw">By-Laws</button>
-          <button class="tab-btn" data-type="resolution">Resolutions</button>
+  <div class="filters-wrap">
+    <div class="filters-inner">
+      <div class="filters-row">
+        <div class="filter-field" style="flex:1 1 380px;max-width:560px">
+          <label class="filter-label" for="search">Search</label>
+          <div class="filter-search" style="max-width:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="search" type="search" placeholder="A number, a road, words from the motion…" autocomplete="off">
+          </div>
+        </div>
+        <div class="filter-field">
+          <span class="filter-label" id="type-label">Show</span>
+          <div class="tab-group type-pill-wrap" role="group" aria-labelledby="type-label">
+            <button type="button" class="tab-btn active" data-type="all" aria-pressed="true">Both</button>
+            <button type="button" class="tab-btn" data-type="bylaw" aria-pressed="false">By-laws</button>
+            <button type="button" class="tab-btn" data-type="resolution" aria-pressed="false">Resolutions</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="year-row">
-      <div>
-        <div class="inline-label" style="margin-bottom:.35rem;">Year</div>
-        <div class="year-pill-wrap tab-group" id="year-pills">
-          <button class="tab-btn active" data-year="">All Years</button>
+      <div class="year-row">
+        <div class="filter-field">
+          <span class="filter-label" id="year-label">Year</span>
+          <div class="year-pill-wrap tab-group" id="year-pills" role="group" aria-labelledby="year-label">
+            <button type="button" class="tab-btn active" data-year="">All years</button>
+          </div>
         </div>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
       </div>
-      <span class="result-count" id="result-count"></span>
     </div>
   </div>
-</div>
 
-<main id="main" class="body-results">
-  <section class="section-anchor">
+  <div class="wrap body-results">
     <div id="results-container"></div>
-  </section>
-
-  <div class="state-msg" id="empty" style="display:none">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-    </svg>
-    <strong>No records found</strong>
-    <p>Try different search terms or clear a filter.</p>
-  </div>
-
-  <div class="state-msg" id="loading">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-    </svg>
-    <strong>Loading by-laws and resolutions…</strong>
+    <div class="state-msg" id="empty" hidden>
+      <strong>No records match</strong>
+      <p>Try a by-law number such as 2020-20, fewer words, or “All years”.</p>
+    </div>
+    <div class="state-msg" id="loading">
+      <strong>Loading by-laws and resolutions…</strong>
+    </div>
   </div>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Nipissing Township<br>Public Records</div>
-      <p class="footer-desc">An independent public archive — data from nipissingtownship.com.</p>
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
-    <div>
-      <div class="footer-heading">Sections</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home &amp; Search</a></li>
-        <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-        <li><a href="council.html">Meetings</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-heading">Sources</div>
-      <ul class="footer-links">
-        <li><a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">Township By-Laws</a></li>
-        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Meetings</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Data from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> · Updated automatically</p>
-    <p>Not an official Township resource</p>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
+    </ul>
   </div>
 </footer>
 
@@ -326,6 +119,12 @@
 let activeType = 'all';
 let activeYear = '';
 let searchQ    = '';
+
+function getTypeParam(){
+  const p = new URL(window.location.href).searchParams.get('type');
+  if(p) return p;
+  return window.location.hash === '#resolutions' ? 'resolution' : 'all';
+}
 
 function yearForItem(item){
   if(item._type === 'bylaw'){
@@ -358,7 +157,7 @@ function renderYearPills(){
   const wrap  = document.getElementById('year-pills');
 
   wrap.innerHTML = `
-    <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All Years</button>
+    <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All years</button>
     ${years.map(y => `
       <button class="tab-btn ${String(activeYear) === String(y) ? 'active' : ''}" data-year="${escHtml(String(y))}">${escHtml(String(y))}</button>
     `).join('')}
@@ -385,7 +184,7 @@ function renderResults(){
     items = scored.map(x => x.item);
 
     document.getElementById('result-count').textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
-    document.getElementById('empty').style.display      = items.length ? 'none' : '';
+    document.getElementById('empty').hidden = !!items.length;
     document.getElementById('results-container').innerHTML = `
       <div class="results-grid">
         ${items.map(item => item._type === 'bylaw' ? bylawCard(item, searchQ) : resolutionCard(item, searchQ)).join('')}
@@ -395,7 +194,7 @@ function renderResults(){
   }
 
   document.getElementById('result-count').textContent   = `${items.length} record${items.length === 1 ? '' : 's'}`;
-  document.getElementById('empty').style.display        = items.length ? 'none' : '';
+  document.getElementById('empty').hidden = !!items.length;
 
   const grouped = {};
   items.forEach(item => {
@@ -419,9 +218,44 @@ function renderResults(){
   `).join('');
 }
 
+const TYPE_COPY = {
+  all: ['By-laws and resolutions', 'Every by-law passed by council, and every resolution recorded in the minutes.'],
+  bylaw: ['By-laws', 'Every by-law passed by Township of Nipissing Council. Where a by-law has been amended, the law as it stands today is filed above.'],
+  resolution: ['Decisions', 'Every resolution recorded in council minutes, with who moved and seconded it and whether it carried.'],
+};
+
+function applyType(type, push){
+  activeType = TYPE_COPY[type] ? type : 'all';
+  document.querySelectorAll('[data-type]').forEach(b => {
+    const on = b.dataset.type === activeType;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const [h, lede] = TYPE_COPY[activeType];
+  document.getElementById('page-title').textContent = h;
+  document.getElementById('page-lede').textContent = lede;
+  document.title = `${h} — Nipissing Public Record`;
+  document.querySelectorAll('[data-nav]').forEach(a => a.removeAttribute('aria-current'));
+  const nav = document.querySelector(`[data-nav="${activeType === 'resolution' ? 'decisions' : 'laws'}"]`);
+  if(nav) nav.setAttribute('aria-current', 'page');
+  document.getElementById('laws-section').hidden = activeType === 'resolution' || !LAWS.length;
+  if(push){
+    const url = new URL(window.location.href);
+    if(activeType === 'all') url.searchParams.delete('type'); else url.searchParams.set('type', activeType);
+    url.hash = '';
+    history.replaceState(null, '', url);
+  }
+}
+
+let LAWS = [];
+
 async function init(){
   await loadAllData();
-  document.getElementById('loading').style.display = 'none';
+  LAWS = await loadLaws();
+  document.getElementById('law-cards').innerHTML = LAWS.map(lawCardHtml).join('');
+  const initial = getTypeParam();
+  applyType(initial, false);
+  document.getElementById('loading').hidden = true;
 
   renderYearPills();
   renderResults();
@@ -433,9 +267,7 @@ async function init(){
 
   document.querySelectorAll('[data-type]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeType = btn.dataset.type;
+      applyType(btn.dataset.type, true);
       renderResults();
     });
   });
@@ -443,73 +275,6 @@ async function init(){
 
 init();
 
-/* ── council term stats bars ─────────────────────────────────────── */
-(function(){
-
-  function fmt(n){
-    return (n != null) ? Number(n).toLocaleString() : '—';
-  }
-
-  function fmtDate(iso){
-    if(!iso) return '—';
-    return new Date(iso + 'T00:00:00').toLocaleDateString('en-CA', {
-      year:'numeric', month:'short', day:'numeric'
-    });
-  }
-
-  function fmtTermDates(term){
-    const s = fmtDate(term.start);
-    const e = term.end ? fmtDate(term.end) : 'present';
-    return `${s} – ${e}`;
-  }
-
-  async function loadTermStats(){
-    try {
-      const resp = await fetch('data/canonical/council_terms.json');
-      if(!resp.ok) return;
-      const data = await resp.json();
-
-      const wrap = document.getElementById('term-stats-wrap');
-
-      // Current term
-      if(data.current){
-        const c = data.current;
-        document.getElementById('tbar-current-name').textContent = c.label || 'Current Council';
-        document.getElementById('tc-total').textContent    = fmt(c.total);
-        document.getElementById('tc-carried').textContent  = fmt(c.carried);
-        document.getElementById('tc-defeated').textContent = fmt(c.defeated);
-        document.getElementById('tc-deferred').textContent = fmt(c.deferred);
-        document.getElementById('tc-updated').textContent  =
-          c.last_meeting ? fmtDate(c.last_meeting) : (data.last_updated || '—');
-        wrap.style.display = '';
-      }
-
-      // Last term
-      if(data.last){
-        const l   = data.last;
-        const bar = document.getElementById('tbar-last');
-        document.getElementById('tbar-last-name').textContent = l.label || 'Previous Council';
-        document.getElementById('tl-total').textContent    = fmt(l.total);
-        document.getElementById('tl-carried').textContent  = fmt(l.carried);
-        document.getElementById('tl-defeated').textContent = fmt(l.defeated);
-        document.getElementById('tl-deferred').textContent = fmt(l.deferred);
-        document.getElementById('tl-dates').textContent    = fmtTermDates(l);
-        bar.style.display = '';
-      }
-
-      // Hide wrapper entirely if no data loaded
-      if(!data.current && !data.last){
-        wrap.style.display = 'none';
-      }
-
-    } catch(e){
-      // Stats bar is non-critical — fail silently
-    }
-  }
-
-  loadTermStats();
-
-})();
 </script>
 </body>
 </html>

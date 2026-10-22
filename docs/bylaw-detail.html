@@ -3,401 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>By-Law — Nipissing Township Public Records</title>
+<title>By-law — Nipissing Public Record</title>
+<meta name="description" content="A Township of Nipissing by-law, with its documents and the meeting it was passed at.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-.detail-wrap{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  gap:2rem;
-  max-width:1240px;
-  margin:2rem auto;
-  padding:0 2rem;
-}
-
-@media(max-width:900px){
-  .detail-wrap{grid-template-columns:1fr}
-}
-
-.detail-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.5rem;
-}
-
-.detail-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.bylaw-page-header{
-  background:#1f5682;
-  color:#fff;
-  padding:32px 0 40px;
-  border-bottom:3px solid #c69214;
-}
-
-.bylaw-page-header .header-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:0 2rem;
-}
-
-.bylaw-page-header .back-link{
-  display:inline-block;
-  margin-bottom:12px;
-  color:rgba(255,255,255,0.92);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-}
-
-.bylaw-page-header .back-link:hover{
-  text-decoration:underline;
-}
-
-.bylaw-page-header .header-meta{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  flex-wrap:wrap;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.88);
-  margin-bottom:8px;
-  opacity:1;
-}
-
-.bylaw-page-header .header-title{
-  font-size:36px;
-  line-height:1.1;
-  margin:0 0 8px;
-  color:#fff;
-  font-weight:700;
-}
-
-.bylaw-page-header .header-subtitle{
-  font-size:18px;
-  line-height:1.5;
-  color:rgba(255,255,255,0.95);
-  margin-bottom:16px;
-  max-width:920px;
-  opacity:1;
-}
-
-.bylaw-page-header .header-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.bylaw-page-header .header-actions a{
-  display:inline-flex;
-  align-items:center;
-  padding:10px 14px;
-  border:1px solid rgba(255,255,255,0.45);
-  border-radius:10px;
-  color:#fff;
-  text-decoration:none;
-  background:rgba(255,255,255,0.06);
-  font-weight:500;
-}
-
-.bylaw-page-header .header-actions a:hover{
-  background:rgba(255,255,255,0.12);
-}
-
-.bylaw-page-header .header-status{
-  color:rgba(255,255,255,0.92);
-}
-
-.bylaw-icon{
-  width:48px;
-  height:48px;
-  border-radius:10px;
-  background:var(--blue-lt);
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-}
-
-.bylaw-icon svg{
-  width:22px;
-  height:22px;
-}
-
-.bylaw-meta{
-  min-width:0;
-}
-
-.bylaw-number{
-  font-size:.74rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--blue);
-  margin-bottom:.35rem;
-}
-
-.bylaw-name{
-  font-family:var(--font-display, Georgia, serif);
-  font-size:1.65rem;
-  line-height:1.25;
-  color:var(--ink);
-  margin:0 0 .55rem 0;
-}
-
-.bylaw-subtitle{
-  color:var(--ink-3);
-  font-size:.98rem;
-  line-height:1.6;
-  margin-bottom:.9rem;
-}
-
-.meta-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.45rem;
-}
-
-.meta-pill{
-  display:inline-flex;
-  align-items:center;
-  padding:.25rem .55rem;
-  border-radius:8px;
-  border:1px solid var(--rule);
-  background:var(--page);
-  font-size:.78rem;
-  color:var(--ink-3);
-}
-
-.status-pill{
-  font-weight:600;
-}
-
-.status-approved{
-  background:#e8f5ea;
-  border-color:#cde7d3;
-  color:#22743d;
-}
-
-.status-pending{
-  background:#fff6e2;
-  border-color:#ecdca9;
-  color:#9a6d00;
-}
-
-.status-defeated{
-  background:#fdeaea;
-  border-color:#efc8c8;
-  color:#b42318;
-}
-
-.content-block{
-  margin-top:1.25rem;
-}
-
-.content-block h3{
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin:0 0 .65rem 0;
-}
-
-.content-block p{
-  margin:.55rem 0;
-  line-height:1.7;
-  color:var(--ink);
-}
-
-.side-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.2rem;
-  margin-bottom:1rem;
-}
-
-.side-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.meta-row{
-  margin-bottom:.9rem;
-  padding-bottom:.9rem;
-  border-bottom:1px solid var(--rule);
-}
-
-.meta-row:last-child{
-  margin-bottom:0;
-  padding-bottom:0;
-  border-bottom:none;
-}
-
-.meta-label{
-  font-size:.68rem;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  letter-spacing:.05em;
-  margin-bottom:.25rem;
-}
-
-.meta-value{
-  font-size:.95rem;
-  font-weight:600;
-  color:var(--ink);
-}
-
-.docs-stack{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-
-.doc-link{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  padding:.7rem .8rem;
-  border:1px solid var(--rule);
-  border-radius:10px;
-  text-decoration:none;
-  color:var(--ink);
-  font-size:.88rem;
-  font-weight:500;
-  background:var(--white);
-  transition:.15s;
-}
-
-.doc-link:hover{
-  background:var(--blue-lt);
-  border-color:var(--blue);
-}
-
-.doc-link svg{
-  width:16px;
-  height:16px;
-  flex-shrink:0;
-}
-
-.empty-note{
-  color:var(--ink-4);
-  font-size:.9rem;
-  font-style:italic;
-}
-</style>
 </head>
-
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html" class="active">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Meetings</a></li>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws" aria-current="page">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <a href="bylaws.html?type=bylaw" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All by-laws</a>
+    <p class="page-kicker" id="bylaw-number"></p>
+    <h1 id="bylaw-title"></h1>
+    <p class="page-lede" id="bylaw-subtitle"></p>
+    <div class="meta-pills" id="bylaw-pills" hidden></div>
+  </div>
+
+  <div class="wrap detail-wrap">
+    <div>
+      <a id="law-banner" class="law-banner" href="#" style="display:none"></a>
+      <section class="filed" id="summary-block" style="display:none" aria-labelledby="bl-summary-tab">
+        <h2 class="filed-tab" id="bl-summary-tab">What it does</h2>
+        <div class="filed-body content-block" style="margin-top:0"><p id="bylaw-summary"></p></div>
+      </section>
+      <section class="filed" aria-labelledby="bl-docs-tab" style="margin-top:24px">
+        <h2 class="filed-tab" id="bl-docs-tab">Documents</h2>
+        <div class="filed-body">
+          <div class="docs-stack" id="doc-links"></div>
+          <p class="docs-key">“Copy kept” means this archive holds its own copy, so the link keeps working if the township removes the original.</p>
+        </div>
+      </section>
+    </div>
+
+    <aside class="detail-side">
+      <section class="side-card" aria-labelledby="bl-details">
+        <h2 class="side-title" id="bl-details">Details</h2>
+        <div class="meta-row"><span class="meta-label">Number</span><span class="meta-value num" id="meta-number"></span></div>
+        <div class="meta-row"><span class="meta-label">Year</span><span class="meta-value num" id="meta-year"></span></div>
+        <div class="meta-row"><span class="meta-label">Date passed</span><span class="meta-value" id="meta-date-passed"></span></div>
+        <div class="meta-row"><span class="meta-label">Status</span><span class="meta-value" id="meta-status" style="text-transform:capitalize"></span></div>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
     </ul>
   </div>
-</nav>
-
-<section class="bylaw-page-header">
-  <div class="header-inner">
-    <a href="bylaws.html" class="back-link">← Back to By-Laws</a>
-    
-    <h1 class="header-title" id="bylaw-header-number"></h1>
-
-  </div>
-</section>
-
-<main class="detail-wrap">
-
-  <div>
-    <div class="detail-card">
-      <div class="detail-title">By-Law</div>
-
-      <div class="bylaw-header">
-        <div class="bylaw-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-        </div>
-
-        <div class="bylaw-meta">
-          <div class="bylaw-number" id="bylaw-number"></div>
-          <h1 class="bylaw-name" id="bylaw-title"></h1>
-          <div class="bylaw-subtitle" id="bylaw-subtitle"></div>
-
-          <div class="meta-pills" id="bylaw-pills"></div>
-        </div>
-      </div>
-
-      <a id="law-banner" href="#" style="display:none;margin:0 0 1rem;padding:.75rem 1rem;border-radius:10px;background:#eef3ff;border:1px solid #cddbff;color:#1c4fd7;text-decoration:none;font-size:.88rem;font-weight:600"></a>
-
-      <div class="content-block" id="summary-block" style="display:none">
-        <h3>Summary</h3>
-        <p id="bylaw-summary"></p>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="side-card">
-      <div class="side-title">Details</div>
-
-      <div class="meta-row">
-        <div class="meta-label">Number</div>
-        <div class="meta-value" id="meta-number"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Year</div>
-        <div class="meta-value" id="meta-year"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Date Passed</div>
-        <div class="meta-value" id="meta-date-passed"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Status</div>
-        <div class="meta-value" id="meta-status"></div>
-      </div>
-    </div>
-
-    <div class="side-card">
-      <div class="side-title">Documents &amp; Links</div>
-      <div class="docs-stack" id="doc-links"></div>
-    </div>
-  </div>
-
-</main>
+</footer>
 
 <script src="shared.js"></script>
 <script>
@@ -455,8 +147,7 @@ function sourceMeeting(rec){
 }
 
 function docLink(label, href, icon = 'doc'){
-  const glyph = icon === 'calendar' ? iconCalendar() : iconDoc();
-  return `<a href="${esc(href)}" target="${icon === 'calendar' ? '_self' : '_blank'}" rel="noopener" class="doc-link">${glyph}<span>${esc(label)}</span></a>`;
+  return docLinkHtml(label, href, { internal: icon === 'calendar' });
 }
 
 async function init(){
@@ -466,33 +157,34 @@ async function init(){
   const bylaw = BYLAWS.find(b => String(b.number) === String(id));
 
   if(!bylaw){
-    document.body.innerHTML = '<p style="padding:2rem">By-law not found</p>';
+    document.getElementById('bylaw-title').textContent = 'By-law not found';
+    document.querySelector('.detail-wrap').innerHTML =
+      '<div class="state-msg"><strong>We couldn’t find that by-law number.</strong><p><a href="bylaws.html?type=bylaw">Browse all by-laws</a> or search by title.</p></div>';
     return;
   }
 
-  document.title = `By-Law ${bylaw.number} — Nipissing Township Public Records`;
+  document.title = `By-law ${bylaw.number} — Nipissing Public Record`;
 
-  document.getElementById('bylaw-header-number').textContent =
-    bylaw?.number ? `By-Law ${bylaw.number}` : 'By-Law';
+
 
   
 
-  document.getElementById('bylaw-number').textContent = `By-Law ${bylaw.number}`;
+  document.getElementById('bylaw-number').textContent = `By-law ${bylaw.number}`;
   // Heading: the short common name from the township's by-law page when there
   // is one ("Dog By-Law"); otherwise the full formal wording from the minutes.
   // Subtitle: the full formal wording under a common name, or when/who passed
   // it — never a repeat of the heading.
   const sentence = t => t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
   const formal = (bylaw.title && bylaw.title !== bylaw.common_name) ? bylaw.title : '';
-  const heading = bylaw.common_name || sentence(formal) || `By-Law ${bylaw.number}`;
+  const heading = bylaw.common_name || sentence(formal) || `By-law ${bylaw.number}`;
   let subtitle = '';
   if (bylaw.common_name && formal) {
-    subtitle = `Being a By-law to ${formal.replace(/^to\s+/i, '')}`;
+    subtitle = `Being a by-law to ${formal.replace(/^to\s+/i, '')}`;
   } else {
     const bits = [];
     if (bylaw.date_passed) bits.push(`Passed ${fmtDate(bylaw.date_passed)}`);
     if (bylaw.votes) bits.push(bylaw.votes);
-    subtitle = bits.join(' · ');
+    subtitle = bits.join('. ');
   }
   document.getElementById('bylaw-title').textContent = heading;
   document.getElementById('bylaw-subtitle').textContent = subtitle;
@@ -509,10 +201,10 @@ async function init(){
     'status-pending';
 
   const pills = [];
-  pills.push(`<span class="meta-pill status-pill ${statusClass}">${esc(bylaw.status || 'unknown')}</span>`);
-  if(bylaw.year) pills.push(`<span class="meta-pill">${esc(String(bylaw.year))}</span>`);
+  if(bylaw.status && bylaw.status !== 'approved') pills.push(`<span class="meta-pill status-pill ${statusClass}">${esc(bylaw.status)}</span>`);
   (bylaw.categories || []).forEach(c => pills.push(`<span class="meta-pill">${esc(c)}</span>`));
   document.getElementById('bylaw-pills').innerHTML = pills.join('');
+  document.getElementById('bylaw-pills').hidden = !pills.length;
 
   // Part of an amended law? Point to the one page that shows it as it reads today.
   try {
@@ -523,7 +215,7 @@ async function init(){
       const role = law.principal === bylaw.number
         ? `This by-law has been amended ${law.amendments.length} time${law.amendments.length === 1 ? '' : 's'}.`
         : `This by-law amends ${law.name} (By-law ${law.principal}).`;
-      banner.textContent = `${role} Read the ${law.name} as it reads today →`;
+      banner.textContent = `${role} Read ${law.name} as it stands today, with every change applied.`;
       banner.href = `law.html?id=${encodeURIComponent(law.id)}`;
       banner.style.display = 'block';
     }
@@ -542,28 +234,28 @@ async function init(){
   const isExtract = ex && bylaw.extracted_pdf && bylaw.pdf_url === bylaw.extracted_pdf;
   if(pdf){
     const pages = ex && ex.pages ? (ex.pages[0] === ex.pages[1] ? `p. ${ex.pages[0]}` : `pp. ${ex.pages[0]}–${ex.pages[1]}`) : '';
-    links.push(docLink(isExtract ? `By-Law PDF (agenda package, ${pages})` : 'By-Law PDF', pdf));
+    links.push(docLink(isExtract ? `By-law, from the agenda package (${pages})` : 'By-law', pdf));
   } else if(bylaw.extracted_pdf){
-    links.push(docLink('By-Law pages from agenda package', archivedUrl(bylaw.extracted_pdf)));
+    links.push(docLink('By-law, from the agenda package', archivedUrl(bylaw.extracted_pdf)));
   }
-  if(bylaw.page_url) links.push(docLink('Township By-Law Page', bylaw.page_url));
+  if(bylaw.page_url) links.push(docLink('Township’s page for this by-law', bylaw.page_url));
   const mtg = sourceMeeting(bylaw);
   const minutes = docUrl(mtg, 'minutes') || bylaw.minutes_url;
   const pkg = docUrl(mtg, 'package') || bylaw.agenda_package_url;
   if(minutes) links.push(docLink('Minutes', minutes));
-  if(pkg) links.push(docLink('Agenda Package', pkg));
+  if(pkg) links.push(docLink('Agenda package', pkg));
   (bylaw.extra_docs || []).forEach(d => { if (d && d.url) links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url))); });
   if(bylaw.meeting_date){
     links.push(docLink(
-      'Related Meeting',
+      'The meeting it was passed at',
       `meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date)}&body=council`,
       'calendar'
     ));
   }
 
   document.getElementById('doc-links').innerHTML =
-    (links.length ? links.join('') : '<p class="empty-note">No related documents available.</p>') +
-    (isExtract ? '<p class="empty-note" style="margin-top:.6rem">Taken from the agenda package: the version presented to council. ' +
+    (links.length ? links.join('') : '<p class="empty-note">No document has been found for this by-law yet.</p>') +
+    (isExtract ? '<p class="docs-key">Taken from the agenda package: the version presented to council. ' +
       'Any change made at the meeting is recorded in the minutes.</p>' : '');
 }
 

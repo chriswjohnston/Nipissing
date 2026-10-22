@@ -3,472 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meetings — Nipissing Township Public Records</title>
-<meta name="description" content="Browse Nipissing Township Council, board, and committee meetings — agendas, minutes, packages, and available recordings.">
+<title>Meetings — Nipissing Public Record</title>
+<meta name="description" content="Agendas, minutes and video for Township of Nipissing Council and the committees and boards it sits on.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-.header-split{
-  display:grid;
-  grid-template-columns:minmax(340px,1.1fr) minmax(320px,.9fr);
-  gap:2rem;
-  align-items:start;
-}
-
-.header-copy p{
-  max-width:38rem;
-}
-
-.header-upcoming{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:1rem;
-}
-
-.upcoming-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:.8rem;
-}
-
-.upcoming-title{
-  font-family:'Source Serif 4',serif;
-  font-size:1.2rem;
-  font-weight:700;
-  color:#fff;
-}
-
-.calendar-arrow{
-  width:36px;
-  height:36px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.08);
-  color:#fff;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.calendar-arrow:hover{
-  background:rgba(255,255,255,.15);
-}
-
-.upcoming-list{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-
-.upcoming-item{
-  display:grid;
-  grid-template-columns:52px 170px auto;
-  align-items:center;
-  gap:.55rem;
-  padding:.5rem .65rem;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.04);
-  border-radius:10px;
-}
-
-.upcoming-date{
-  font-weight:700;
-  color:#fff;
-  text-align:center;
-  font-size:1.05rem;
-}
-
-.upcoming-label{
-  display:flex;
-  align-items:center;
-  min-width:0;
-}
-
-.upcoming-meeting-link{
-  display:inline-flex;
-  align-items:center;
-  text-decoration:none;
-}
-
-.month-badge{
-  padding:.15rem .5rem;
-  border-radius:999px;
-  font-size:.65rem;
-  font-weight:700;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-.upcoming-links{
-  display:flex;
-  gap:.3rem;
-  flex-wrap:wrap;
-  justify-content:flex-start;
-}
-
-.upcoming-link{
-  min-width:70px;
-  text-align:center;
-  padding:.2rem .5rem;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.16);
-  color:#fff;
-  font-size:.68rem;
-  text-decoration:none;
-  background:rgba(255,255,255,.07);
-}
-
-.upcoming-link:hover{
-  background:rgba(255,255,255,.15);
-}
-
-@media(max-width:700px){
-  .upcoming-item{
-    grid-template-columns:50px 1fr;
-  }
-
-  .upcoming-links{
-    grid-column:1 / -1;
-  }
-}
-
-
-
-
-
-
-
-.mb-council{background:#f5e7c3;color:#a97900}
-.mb-recreation{background:#d9f3f0;color:#117a72}
-.mb-museum{background:#dbe9ff;color:#1c4fd7}
-.mb-cemetery{background:#efe7fb;color:#6840b5}
-.mb-library{background:#fde6dc;color:#b04a1e}
-.mb-pnc{background:#e3e7ee;color:#2f3e5c}
-.mb-adjustment{background:#f3efd9;color:#7a6512}
-.mb-healthunit{background:#dff2e3;color:#24713a}
-.mb-dnssab{background:#f9e1ea;color:#a3325a}
-
-
-
-
-
-
-
-.upcoming-empty{
-  padding:.75rem .85rem;
-  border:1px dashed rgba(255,255,255,.18);
-  border-radius:10px;
-  color:rgba(255,255,255,.76);
-  font-size:.85rem;
-}
-
-.filters-wrap{
-  border-bottom:1px solid var(--rule);
-  background:var(--white);
-}
-
-.filters-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:1rem 2rem .9rem;
-}
-
-.filters-row{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  flex-wrap:wrap;
-}
-
-.search-grow{
-  flex:1 1 420px;
-  min-width:280px;
-}
-
-.inline-filter{
-  display:flex;
-  align-items:center;
-  gap:.7rem;
-  flex-wrap:wrap;
-}
-
-.inline-label{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-}
-
-.year-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
-  margin-top:.7rem;
-}
-
-.year-pill-wrap{
-  display:flex;
-  gap:.35rem;
-  flex-wrap:wrap;
-}
-
-.year-pill-wrap .tab-btn,
-.type-pill-wrap .tab-btn{
-  padding:.48rem .82rem;
-}
-
-.body-results{
-  padding-top:2rem;
-}
-
-.year-group{
-  margin-bottom:2.5rem;
-}
-
-.year-heading{
-  font-family:'Source Serif 4',serif;
-  font-size:1.5rem;
-  font-weight:700;
-  color:var(--ink);
-  margin-bottom:1rem;
-  padding-bottom:.6rem;
-  border-bottom:2px solid var(--rule);
-  display:flex;
-  align-items:baseline;
-  gap:.75rem;
-}
-
-.year-heading .year-count{
-  font-family:'DM Sans',sans-serif;
-  font-size:.75rem;
-  font-weight:500;
-  color:var(--ink-4);
-  border:1px solid var(--rule);
-  padding:.15rem .55rem;
-  border-radius:10px;
-}
-
-.calendar-legend{
-  display:flex;
-  gap:.45rem;
-  flex-wrap:wrap;
-  margin-top:.8rem;
-}
-
-.legend-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:.35rem;
-  font-size:.64rem;
-  font-weight:700;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.8);
-}
-
-.legend-dot{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  display:inline-block;
-}
-
-.legend-council{background:var(--gold)}
-.legend-recreation{background:var(--teal)}
-.legend-museum{background:var(--blue)}
-.legend-cemetery{background:#6840b5}
-.legend-library{background:#b04a1e}
-.legend-pnc{background:#2f3e5c}
-.legend-adjustment{background:#7a6512}
-.legend-healthunit{background:#24713a}
-.legend-dnssab{background:#a3325a}
-
-@media(max-width:980px){
-  .header-split{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:700px){
-  .filters-inner{
-    padding:1rem 1.25rem .9rem;
-  }
-
-  .upcoming-item{
-    grid-template-columns:50px 1fr;
-  }
-
-  .upcoming-links{
-    grid-column:1 / -1;
-  }
-}
-</style>
 </head>
-
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html" class="active">Meetings</a></li>
-    </ul>
-
-    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings" aria-current="page">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<div class="page-header">
-  <div class="page-header-inner header-split">
-
-    <div class="header-copy">
-      <p class="page-eyebrow">Nipissing Township · Public Records</p>
-      <h1>Meetings <em>Archive</em></h1>
-      <p>Council, board, and committee meetings — agendas, minutes, and packages.</p>
-
-      <div class="calendar-legend">
-        <span class="legend-pill"><span class="legend-dot legend-council"></span>Council</span>
-        <span class="legend-pill"><span class="legend-dot legend-recreation"></span>Recreation</span>
-        <span class="legend-pill"><span class="legend-dot legend-museum"></span>Museum</span>
-        <span class="legend-pill"><span class="legend-dot legend-cemetery"></span>Cemetery</span>
-        <span class="legend-pill"><span class="legend-dot legend-library"></span>Library</span>
-        <span class="legend-pill"><span class="legend-dot legend-adjustment"></span>Adjustment</span>
-        <span class="legend-pill"><span class="legend-dot legend-pnc"></span>Police</span>
-        <span class="legend-pill"><span class="legend-dot legend-healthunit"></span>Health Unit</span>
-        <span class="legend-pill"><span class="legend-dot legend-dnssab"></span>DNSSAB</span>
-      </div>
-    </div>
-
-    <div class="header-upcoming">
-      <div class="upcoming-top">
-        <button class="calendar-arrow" id="cal-prev" aria-label="Previous month">‹</button>
-        <div class="upcoming-title" id="calendar-title"></div>
-        <button class="calendar-arrow" id="cal-next" aria-label="Next month">›</button>
-      </div>
-      <div class="upcoming-list" id="upcoming-list"></div>
-    </div>
-
+<main id="main">
+  <div class="wrap page-head">
+        <h1>Meetings</h1>
+        <p class="page-lede">Agendas, minutes and video for Township of Nipissing Council, its committees, and the shared and district boards it sits on. Summaries are added once the minutes are posted.</p>
   </div>
-</div>
 
-<div class="filters-wrap">
-  <div class="filters-inner">
-    <div class="filters-row">
-      <div class="filter-search search-grow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input id="search" type="search" placeholder="Search by date, body, type…" autocomplete="off">
-      </div>
-
-      <div class="inline-filter">
-        <div class="inline-label">Type</div>
-        <div class="tab-group type-pill-wrap">
-          <button class="tab-btn active" data-body="all">All</button>
-          <button class="tab-btn" data-body="council">Council</button>
-          <button class="tab-btn" data-body="recreation">Recreation</button>
-          <button class="tab-btn" data-body="museum">Museum</button>
-          <button class="tab-btn" data-body="cemetery">Cemetery</button>
-          <button class="tab-btn" data-body="library">Library</button>
-          <button class="tab-btn" data-body="adjustment">Adjustment</button>
-          <button class="tab-btn" data-body="pnc">Police</button>
-          <button class="tab-btn" data-body="healthunit">Health Unit</button>
-          <button class="tab-btn" data-body="dnssab">DNSSAB</button>
+  <div class="filters-wrap">
+    <div class="filters-inner">
+      <div class="filters-row">
+        <div class="filter-field" style="flex:1 1 380px;max-width:560px">
+          <label class="filter-label" for="search">Search meetings</label>
+          <div class="filter-search" style="max-width:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="search" type="search" placeholder="A date, a board, a topic…" autocomplete="off">
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="year-row">
-      <div>
-        <div class="inline-label" style="margin-bottom:.35rem;">Year</div>
-        <div class="year-pill-wrap tab-group" id="year-pills">
-          <button class="tab-btn active" data-year="">All Years</button>
+      <div class="filter-field">
+        <span class="filter-label" id="body-label">Council or board</span>
+        <div class="tab-group type-pill-wrap" role="group" aria-labelledby="body-label">
+          <button type="button" class="tab-btn active" data-body="all" aria-pressed="true">All</button>
+          <button type="button" class="tab-btn" data-body="council" aria-pressed="false">Council</button>
+          <button type="button" class="tab-btn" data-body="adjustment" aria-pressed="false">Committee of Adjustment</button>
+          <button type="button" class="tab-btn" data-body="recreation" aria-pressed="false">Recreation Committee</button>
+          <button type="button" class="tab-btn" data-body="museum" aria-pressed="false">Museum Board</button>
+          <button type="button" class="tab-btn" data-body="cemetery" aria-pressed="false">Cemetery Committee</button>
+          <button type="button" class="tab-btn" data-body="library" aria-pressed="false">Library Board</button>
+          <button type="button" class="tab-btn" data-body="pnc" aria-pressed="false">OPP Detachment Board</button>
+          <button type="button" class="tab-btn" data-body="healthunit" aria-pressed="false">Health Unit</button>
+          <button type="button" class="tab-btn" data-body="dnssab" aria-pressed="false">Social Services Board</button>
         </div>
       </div>
-      <span class="result-count" id="result-count"></span>
+      <div class="year-row">
+        <div class="filter-field">
+          <span class="filter-label" id="year-label">Year</span>
+          <div class="year-pill-wrap tab-group" id="year-pills" role="group" aria-labelledby="year-label">
+            <button type="button" class="tab-btn active" data-year="">All years</button>
+          </div>
+        </div>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
+      </div>
     </div>
   </div>
-</div>
 
-<main id="main" class="body-results">
-  <div id="results-container"></div>
-
-  <div class="state-msg" id="empty" style="display:none">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-    </svg>
-    <strong>No meetings found</strong>
-    <p>Try different search terms or clear a filter.</p>
-  </div>
-
-  <div class="state-msg" id="loading">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-    </svg>
-    <strong>Loading meetings…</strong>
+  <div class="wrap body-results split">
+    <div class="wide">
+    <div id="results-container"></div>
+    <div class="state-msg" id="empty" hidden>
+      <strong>No meetings match</strong>
+      <p>Try a different search, or choose “All” above.</p>
+    </div>
+    <div class="state-msg" id="loading">
+      <strong>Loading meetings…</strong>
+    </div>
+    </div>
+      <section class="narrow filed month-panel" aria-labelledby="month-tab">
+        <h2 class="filed-tab" id="month-tab">Month by month</h2>
+        <div class="filed-body tight" style="padding-top:16px">
+          <div class="month-nav">
+            <button type="button" class="calendar-arrow" id="cal-prev" aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <p class="month-title" id="calendar-title" aria-live="polite"></p>
+            <button type="button" class="calendar-arrow" id="cal-next" aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+          <ol class="upcoming-list" id="upcoming-list"></ol>
+        </div>
+      </section>
   </div>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Nipissing Township<br>Public Records</div>
-      <p class="footer-desc">An independent public archive — data from nipissingtownship.com.</p>
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
-    <div>
-      <div class="footer-heading">Sections</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home &amp; Search</a></li>
-        <li><a href="bylaws.html">By-Laws</a></li>
-        <li><a href="bylaws.html#resolutions">Resolutions</a></li>
-        <li><a href="council.html">Meetings</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-heading">Sources</div>
-      <ul class="footer-links">
-        <li><a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">Council Archive</a></li>
-        <li><a href="https://nipissingtownship.com/services/recreation/" target="_blank">Recreation Committee</a></li>
-        <li><a href="https://nipissingtownship.com/services/museum-services-and-information/" target="_blank">Museum Board</a></li>
-        <li><a href="https://nipissingtownship.com/services/cemetery/" target="_blank">Cemetery Committee</a></li>
-        <li><a href="https://www.powassanlibrary.com/board-members" target="_blank">Library Board</a></li>
-        <li><a href="https://nipissingtownship.com/municipal-information/committee-of-adjustment/" target="_blank">Committee of Adjustment</a></li>
-        <li><a href="https://nipissingtownship.com/services/pnc-detachment-board/" target="_blank">PNC OPP Detachment Board</a></li>
-        <li><a href="https://www.myhealthunit.ca/about-us/boardofhealth/meeting-schedules-agendas-minutes-reports-and-resolutions/" target="_blank">Health Unit Board of Health</a></li>
-        <li><a href="https://pub-dnssab.escribemeetings.com/" target="_blank">DNSSAB</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Data from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> · Updated automatically</p>
-    <p>Not an official Township resource</p>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
+    </ul>
   </div>
 </footer>
 
@@ -512,17 +163,15 @@ function isPastMeeting(meeting){
 }
 
 function meetingsForMonth(year, month){
+  // Cancelled and postponed meetings stay in the month view with a badge.
   return ALL_MEETINGS.filter(m => {
-    if(m.cancelled) return false;
-    if(m.rescheduled) return false;
-    if(m.postponed) return false;
     if(!m.date) return false;
     const d = new Date(`${m.date}T00:00:00`);
     if(Number.isNaN(d.getTime())) return false;
     return d.getFullYear() === year && d.getMonth() === month;
   }).sort((a,b) => String(a.date || '').localeCompare(String(b.date || '')));
 }
-  
+
 function renderUpcomingList(){
   const title = document.getElementById('calendar-title');
   const list = document.getElementById('upcoming-list');
@@ -533,31 +182,24 @@ function renderUpcomingList(){
   const meetings = meetingsForMonth(calendarYear, calendarMonth);
 
   list.innerHTML = meetings.length ? meetings.map(m => {
-  const day = String(new Date(`${m.date}T00:00:00`).getDate()).padStart(2,'0');
-
-  // Archived-first doc URLs; agendas only surface from 2026 on (shared.js).
-  const agendaLink  = showAgenda(m) ? docUrl(m, 'agenda') : null;
-  const minutesLink = docUrl(m, 'minutes');
-  const packageLink = docUrl(m, 'package');
-
-  return `
-    <div class="upcoming-item">
-      <div class="upcoming-date">${escHtml(day)}</div>
-
-      <div class="upcoming-label">
-        <a href="${escHtml(primaryMeetingUrl(m))}" class="upcoming-meeting-link">
-          <span class="month-badge ${bodyBadgeClass(m.body_id)}">${escHtml(m.body || 'Meeting')}</span>
-        </a>
-      </div>
-
-      <div class="upcoming-links">
-        ${agendaLink ? `<a href="${escHtml(agendaLink)}" class="upcoming-link" target="_blank" rel="noopener">Agenda</a>` : ''}
-        ${minutesLink ? `<a href="${escHtml(minutesLink)}" class="upcoming-link" target="_blank" rel="noopener">Minutes</a>` : ''}
-        ${packageLink ? `<a href="${escHtml(packageLink)}" class="upcoming-link" target="_blank" rel="noopener">Package</a>` : ''}
-      </div>
-    </div>
-  `;
-}).join('') : `<div class="upcoming-empty">No scheduled meetings in this month.</div>`;
+    const day = new Date(`${m.date}T00:00:00`).getDate();
+    const badge = meetingBadge(m);
+    // Archived-first doc URLs; agendas only surface from 2026 on (shared.js).
+    const links = [
+      showAgenda(m) && ['Agenda', docUrl(m, 'agenda')],
+      docUrl(m, 'minutes') && ['Minutes', docUrl(m, 'minutes')],
+      docUrl(m, 'package') && ['Package', docUrl(m, 'package')],
+      m.video_url && ['Video', m.video_url],
+    ].filter(Boolean);
+    return `
+      <li class="upcoming-item">
+        <span class="upcoming-date">${day}</span>
+        <span class="upcoming-label">
+          <a href="${escHtml(primaryMeetingUrl(m))}" class="upcoming-meeting-link ${bodyColorClass(m)}">${escHtml(officialName(m))}</a>${badge ? ` <span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
+        </span>
+        ${links.length ? `<span class="upcoming-links">${links.map(([l, u]) => `<a href="${escHtml(u)}" class="upcoming-link" target="_blank" rel="noopener">${l}</a>`).join('')}</span>` : ''}
+      </li>`;
+  }).join('') : `<li class="upcoming-empty">No meetings this month.</li>`;
 }
 
 function renderYearPills(){
@@ -565,7 +207,7 @@ function renderYearPills(){
   const wrap = document.getElementById('year-pills');
 
   wrap.innerHTML = `
-    <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All Years</button>
+    <button class="tab-btn ${activeYear === '' ? 'active' : ''}" data-year="">All years</button>
     ${years.map(y => `
       <button class="tab-btn ${String(activeYear) === String(y) ? 'active' : ''}" data-year="${escHtml(y)}">${escHtml(y)}</button>
     `).join('')}
@@ -607,13 +249,13 @@ function renderBodyResults(){
     items = scored.map(x => x.m);
 
     document.getElementById('result-count').textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
-    document.getElementById('empty').style.display = items.length ? 'none' : '';
+    document.getElementById('empty').hidden = !!items.length;
     document.getElementById('results-container').innerHTML = items.map(m => meetingCard(m, searchQ)).join('');
     return;
   }
 
   document.getElementById('result-count').textContent = `${items.length} meeting${items.length === 1 ? '' : 's'}`;
-  document.getElementById('empty').style.display = items.length ? 'none' : '';
+  document.getElementById('empty').hidden = !!items.length;
 
   const byYear = {};
   items.forEach(m => {
@@ -639,7 +281,7 @@ function renderBodyResults(){
 
 async function init(){
   await loadAllData();
-  document.getElementById('loading').style.display = 'none';
+  document.getElementById('loading').hidden = true;
 
   renderUpcomingList();
   renderYearPills();
@@ -654,6 +296,7 @@ async function init(){
     btn.addEventListener('click', () => {
       document.querySelectorAll('[data-body]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      document.querySelectorAll('[data-body]').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
       activeBody = btn.dataset.body;
       renderBodyResults();
     });

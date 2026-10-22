@@ -3,360 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Resolution — Nipissing Township Public Records</title>
+<title>Resolution — Nipissing Public Record</title>
+<meta name="description" content="A Township of Nipissing council resolution: the motion, who moved it, and whether it carried.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-.detail-wrap{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  gap:2rem;
-  max-width:1240px;
-  margin:2rem auto;
-  padding:0 2rem;
-}
-
-@media(max-width:900px){
-  .detail-wrap{grid-template-columns:1fr}
-}
-
-.resolution-page-header{
-  background:#1f5682;
-  color:#fff;
-  padding:32px 0 40px;
-  border-bottom:3px solid #c69214;
-}
-
-.resolution-page-header .header-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:0 2rem;
-}
-
-.resolution-page-header .back-link{
-  display:inline-block;
-  margin-bottom:12px;
-  color:rgba(255,255,255,0.92);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-}
-
-.resolution-page-header .back-link:hover{
-  text-decoration:underline;
-}
-
-.resolution-page-header .header-title{
-  font-size:36px;
-  line-height:1.1;
-  margin:0;
-  color:#fff;
-  font-weight:700;
-}
-
-.detail-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.5rem;
-}
-
-.detail-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.resolution-header{
-  display:flex;
-  align-items:flex-start;
-  gap:1rem;
-}
-
-.resolution-icon{
-  width:48px;
-  height:48px;
-  border-radius:10px;
-  background:var(--teal-lt);
-  color:var(--teal);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-}
-
-.resolution-icon svg{
-  width:22px;
-  height:22px;
-}
-
-.resolution-meta{
-  min-width:0;
-}
-
-.resolution-number{
-  font-size:.74rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--teal);
-  margin-bottom:.35rem;
-}
-
-.resolution-name{
-  font-family:var(--font-display, Georgia, serif);
-  font-size:1.65rem;
-  line-height:1.25;
-  color:var(--ink);
-  margin:0 0 .55rem 0;
-}
-
-.resolution-subtitle{
-  color:var(--ink-3);
-  font-size:.98rem;
-  line-height:1.6;
-  margin-bottom:.9rem;
-}
-
-.meta-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.45rem;
-}
-
-.meta-pill{
-  display:inline-flex;
-  align-items:center;
-  padding:.25rem .55rem;
-  border-radius:8px;
-  border:1px solid var(--rule);
-  background:var(--page);
-  font-size:.78rem;
-  color:var(--ink-3);
-}
-
-.status-pill{
-  font-weight:600;
-}
-
-.status-carried{
-  background:#e8f5ea;
-  border-color:#cde7d3;
-  color:#22743d;
-}
-
-.status-defeated{
-  background:#fdeaea;
-  border-color:#efc8c8;
-  color:#b42318;
-}
-
-.status-unknown{
-  background:#fff6e2;
-  border-color:#ecdca9;
-  color:#9a6d00;
-}
-
-.content-block{
-  margin-top:1.25rem;
-}
-
-.content-block h3{
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin:0 0 .65rem 0;
-}
-
-.content-block p{
-  margin:.55rem 0;
-  line-height:1.7;
-  color:var(--ink);
-}
-
-.side-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.2rem;
-  margin-bottom:1rem;
-}
-
-.side-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.meta-row{
-  margin-bottom:.9rem;
-  padding-bottom:.9rem;
-  border-bottom:1px solid var(--rule);
-}
-
-.meta-row:last-child{
-  margin-bottom:0;
-  padding-bottom:0;
-  border-bottom:none;
-}
-
-.meta-label{
-  font-size:.68rem;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  letter-spacing:.05em;
-  margin-bottom:.25rem;
-}
-
-.meta-value{
-  font-size:.95rem;
-  font-weight:600;
-  color:var(--ink);
-}
-
-.docs-stack{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-
-.doc-link{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  padding:.7rem .8rem;
-  border:1px solid var(--rule);
-  border-radius:10px;
-  text-decoration:none;
-  color:var(--ink);
-  font-size:.88rem;
-  font-weight:500;
-  background:var(--white);
-  transition:.15s;
-}
-
-.doc-link:hover{
-  background:var(--blue-lt);
-  border-color:var(--blue);
-}
-
-.doc-link svg{
-  width:16px;
-  height:16px;
-  flex-shrink:0;
-}
-
-.empty-note{
-  color:var(--ink-4);
-  font-size:.9rem;
-  font-style:italic;
-}
-</style>
 </head>
-
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html" class="active">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Meetings</a></li>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions" aria-current="page">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <a href="bylaws.html?type=resolution" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All decisions</a>
+    <p class="page-kicker body-council" id="resolution-number"></p>
+    <h1 id="resolution-title" style="max-width:32ch"></h1>
+    <p class="page-lede" id="resolution-subtitle"></p>
+    <div class="meta-pills" id="resolution-pills"></div>
+  </div>
+
+  <div class="wrap detail-wrap">
+    <div>
+      <section class="filed" aria-labelledby="motion-tab">
+        <h2 class="filed-tab" id="motion-tab">The motion</h2>
+        <div class="filed-body content-block" style="margin-top:0"><p id="motion-text"></p></div>
+      </section>
+      <section class="filed" aria-labelledby="rs-docs-tab" style="margin-top:24px">
+        <h2 class="filed-tab" id="rs-docs-tab">Where it’s recorded</h2>
+        <div class="filed-body">
+          <div class="docs-stack" id="doc-links"></div>
+          <p class="docs-key">“Copy kept” means this archive holds its own copy, so the link keeps working if the township removes the original.</p>
+        </div>
+      </section>
+    </div>
+
+    <aside class="detail-side">
+      <section class="side-card" aria-labelledby="rs-details">
+        <h2 class="side-title" id="rs-details">Details</h2>
+        <div class="meta-row"><span class="meta-label">Number</span><span class="meta-value num" id="meta-number"></span></div>
+        <div class="meta-row"><span class="meta-label">Meeting date</span><span class="meta-value" id="meta-meeting-date"></span></div>
+        <div class="meta-row"><span class="meta-label">Moved by</span><span class="meta-value" id="meta-mover"></span></div>
+        <div class="meta-row"><span class="meta-label">Seconded by</span><span class="meta-value" id="meta-seconder"></span></div>
+        <div class="meta-row"><span class="meta-label">Result</span><span class="meta-value" id="meta-status" style="text-transform:capitalize"></span></div>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
     </ul>
   </div>
-</nav>
-
-<section class="resolution-page-header">
-  <div class="header-inner">
-    <a href="bylaws.html" class="back-link">← Back to By-Laws &amp; Resolutions</a>
-    <h1 class="header-title" id="resolution-header-number"></h1>
-  </div>
-</section>
-
-<main class="detail-wrap">
-
-  <div>
-    <div class="detail-card">
-      <div class="detail-title">Resolution</div>
-
-      <div class="resolution-header">
-        <div class="resolution-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
-            <rect x="9" y="3" width="6" height="4" rx="1"/>
-            <path d="m9 14 2 2 4-4"/>
-          </svg>
-        </div>
-
-        <div class="resolution-meta">
-          <div class="resolution-number" id="resolution-number"></div>
-          <h1 class="resolution-name" id="resolution-title"></h1>
-          <div class="resolution-subtitle" id="resolution-subtitle"></div>
-          <div class="meta-pills" id="resolution-pills"></div>
-        </div>
-      </div>
-
-      <div class="content-block">
-        <h3>Motion Text</h3>
-        <p id="motion-text"></p>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="side-card">
-      <div class="side-title">Details</div>
-
-      <div class="meta-row">
-        <div class="meta-label">Number</div>
-        <div class="meta-value" id="meta-number"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Meeting Date</div>
-        <div class="meta-value" id="meta-meeting-date"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Mover</div>
-        <div class="meta-value" id="meta-mover"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Seconder</div>
-        <div class="meta-value" id="meta-seconder"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Status</div>
-        <div class="meta-value" id="meta-status"></div>
-      </div>
-    </div>
-
-    <div class="side-card">
-      <div class="side-title">Documents &amp; Links</div>
-      <div class="docs-stack" id="doc-links"></div>
-    </div>
-  </div>
-
-</main>
+</footer>
 
 <script src="shared.js"></script>
 <script>
@@ -414,8 +147,7 @@ function sourceMeeting(rec){
 }
 
 function docLink(label, href, icon = 'doc'){
-  const glyph = icon === 'calendar' ? iconCalendar() : iconDoc();
-  return `<a href="${esc(href)}" target="${icon === 'calendar' ? '_self' : '_blank'}" rel="noopener" class="doc-link">${glyph}<span>${esc(label)}</span></a>`;
+  return docLinkHtml(label, href, { internal: icon === 'calendar' });
 }
 
 async function init(){
@@ -425,17 +157,20 @@ async function init(){
   const resolution = RESOLUTIONS.find(r => String(r.number || '').toUpperCase() === id);
 
   if(!resolution){
-    document.body.innerHTML = '<p style="padding:2rem">Resolution not found</p>';
+    document.getElementById('resolution-title').textContent = 'Resolution not found';
+    document.querySelector('.detail-wrap').innerHTML =
+      '<div class="state-msg"><strong>We couldn’t find that resolution number.</strong><p><a href="bylaws.html?type=resolution">Browse all decisions</a> or search by words from the motion.</p></div>';
     return;
   }
 
-  document.title = `${resolution.number} — Nipissing Township Public Records`;
+  document.title = `Resolution ${resolution.number} — Nipissing Public Record`;
 
-  document.getElementById('resolution-header-number').textContent =
-    resolution.number || 'Resolution';
 
-  document.getElementById('resolution-number').textContent = resolution.number || 'Resolution';
-  document.getElementById('resolution-title').textContent = resolution.title || resolution.number || 'Resolution';
+
+  document.getElementById('resolution-number').textContent = `Resolution ${resolution.number || ''}`;
+  const motion = resolution.motion_text || resolution.title || '';
+  const short = motion.length > 160 ? '' : motion;
+  document.getElementById('resolution-title').textContent = short || `Resolution ${resolution.number}`;
   document.getElementById('resolution-subtitle').textContent = resolution.category || '';
 
   document.getElementById('motion-text').textContent = resolution.motion_text || '—';
@@ -454,7 +189,7 @@ async function init(){
   const pills = [];
   pills.push(`<span class="meta-pill status-pill ${statusClass}">${esc(resolution.status || 'unknown')}</span>`);
   if(resolution.category) pills.push(`<span class="meta-pill">${esc(resolution.category)}</span>`);
-  if(resolution.bylaw_number) pills.push(`<span class="meta-pill">By-Law ${esc(resolution.bylaw_number)}</span>`);
+  
   document.getElementById('resolution-pills').innerHTML = pills.join('');
 
   const links = [];
@@ -462,26 +197,26 @@ async function init(){
   const pdf = archivedUrl(resolution.pdf_url_archived || resolution.pdf_url);
   const minutes = docUrl(mtg, 'minutes') || resolution.minutes_url;
   const pkg = docUrl(mtg, 'package') || resolution.agenda_package_url;
-  if(pdf) links.push(docLink('Resolution PDF', pdf));
+  if(pdf) links.push(docLink('Resolution', pdf));
   if(minutes) links.push(docLink('Minutes', minutes));
-  if(pkg) links.push(docLink('Agenda Package', pkg));
+  if(pkg) links.push(docLink('Agenda package', pkg));
   if(resolution.meeting_date){
     links.push(docLink(
-      'Related Meeting',
+      'The meeting',
       `meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date)}&body=council`,
       'calendar'
     ));
   }
   if(resolution.bylaw_number){
     links.push(docLink(
-      `Related By-Law ${resolution.bylaw_number}`,
+      `By-law ${resolution.bylaw_number}`,
       `bylaw-detail.html?id=${encodeURIComponent(resolution.bylaw_number)}`,
       'calendar'
     ));
   }
 
   document.getElementById('doc-links').innerHTML =
-    links.length ? links.join('') : '<p class="empty-note">No related documents available.</p>';
+    links.length ? links.join('') : '<p class="empty-note">No documents have been found for this resolution.</p>';
 }
 
 init();
