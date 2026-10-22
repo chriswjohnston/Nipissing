@@ -334,8 +334,8 @@
         {
           "label": "2025 Financial Statement Presentation – KPMG",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Statement-Presentation-2025.pdf",
-          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__df9fdc29.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__df9fdc29.pdf"
         },
         {
           "label": "2025 Financial Analysis Presentation – KPMG",
@@ -345,14 +345,14 @@
         {
           "label": "2026-2036 Capital Forecast",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Capital-Forecast.pdf",
-          "archived": "files/archive/meetings/2026/2026-Capital-Forecast__eee92375.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/meetings/2026/2026-Capital-Forecast__eee92375.pdf"
         },
         {
           "label": "2026 Budget Draft Presentation",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf",
-          "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf"
         },
         {
           "label": "2025 Financial Statement – KPMG (draft",
@@ -480,13 +480,7 @@
         {
           "label": "Council Remuneration Comparative Report, October 2025 (agenda package pp. 46–47)",
           "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=46",
-          "archived": "files/archive/financial/2025/Council-Remuneration-Comparative-Report-2025.pdf",
-          "from_package": {
-            "pages": [
-              46,
-              47
-            ]
-          }
+          "archived": "files/archive/financial/2025/Council-Remuneration-Comparative-Report-2025.pdf"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=tNtaUpFm4DQ",
@@ -735,8 +729,8 @@
         {
           "label": "Final Draft, 2025 Budget Presentation",
           "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf",
-          "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Final-presentation__a6078d16.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Final-presentation__a6078d16.pdf"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=8CQB010m1xY",
@@ -774,14 +768,14 @@
         {
           "label": "2024 Audited Financial Statements by KPMG",
           "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-Financial-Statement-Presentation-2024.pdf",
-          "archived": "files/archive/financial/2025/Township-of-Nipissing-Financial-Statement-Presentation-2024__676affec.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/financial/2025/Township-of-Nipissing-Financial-Statement-Presentation-2024__676affec.pdf"
         },
         {
           "label": "Capital Budget ****&**** Asset Management Forecast 2025-2035",
           "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration.pdf",
-          "archived": "files/archive/financial/2025/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration__822b8b56.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/financial/2025/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration__822b8b56.pdf"
         },
         {
           "label": "Draft 2025 Budget Presentation",
@@ -1167,14 +1161,14 @@
         {
           "label": "2024 Budget Draft Presentation",
           "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf",
-          "archived": "files/archive/financial/2024/Township-of-Nipissing-2024-Budget-Draft-presentation__5fc2b99b.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/financial/2024/Township-of-Nipissing-2024-Budget-Draft-presentation__5fc2b99b.pdf"
         },
         {
           "label": "Capital Budget 2024-2034 Forecast",
           "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf",
-          "archived": "files/archive/financial/2024/CAPITAL-BUDGET-2024-2034-FORECAST__b33709c7.pdf",
-          "provided": "2026-10-22"
+          "provided": "2026-10-22",
+          "archived": "files/archive/financial/2024/CAPITAL-BUDGET-2024-2034-FORECAST__b33709c7.pdf"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=rjBt6-YKf1E",

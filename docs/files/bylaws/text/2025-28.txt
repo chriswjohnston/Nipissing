@@ -28,7 +28,7 @@ at 4009 Highway 522, in the Township of Nipissing, the following applies:
 The zone boundaries of the Special Zone No. 24 (SZ 24) are identified on
 Schedule ‘A’ to this By-law.
 
-5.23.2. Regulations
+5.23.2 Regulations
 Within the Special Zone No. 24 (SZ 24), a banquet hall shall be a permitted
 use, in addition to the uses permitted within the Residential Hamlet (RH)
 
@@ -41,7 +41,6 @@ Read a first, second time and third time, and passed this 7th of October, 2025.
 
 Mayor
 
-Municipal Administrator-Clerk-Treasurer
 
 
 SCHEDULE ‘A1’
@@ -55,6 +54,3 @@ Zone No. 24 (SZ 24)
 This is Schedule ‘A1’ to Zoning By-law 2025-28
 Passed this 7th day of October, 2025
 
-Mayor
-
-Municipal Administrator-Clerk-Treasurer

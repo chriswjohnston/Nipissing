@@ -7751,6 +7751,31 @@
    ],
    "version": 1,
    "read": "2026-10-22"
+  },
+  "2023-11-14": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/November-14-2023-Council-Agenda-Package__aaad42cd.pdf",
+   "pages": 121,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      120
+     ],
+     "title": ""
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: October 27 and 28; November 8, 2023; Totaling $155,997.02 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor",
+     "pages": [
+      121,
+      121
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
   }
  }
 }
