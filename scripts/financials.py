@@ -241,6 +241,10 @@ def main() -> None:
                 if plan.get(k):
                     d[k] = plan[k]
 
+    # A draft of a by-law isn't a financial record of its own: the passed
+    # by-law is on its by-law page (the 2026 user fee by-law is 2026-20).
+    for k in [k for k, d in docs.items() if re.search(r"\bdraft\b.*\bby-?\s?law\b", d.get("title") or "", re.I)]:
+        del docs[k]
     same_files(docs)
     # Copy recovered files back onto the meetings, so meeting pages link them too.
     for m in meetings.get("meetings", []):

@@ -183,7 +183,13 @@
    "spent": 3217813,
    "grants_total": 900356,
    "grants_other_provincial": 229554,
-   "grants_federal": 138902
+   "grants_federal": 138902,
+   "filed": {
+    "date": "March 23, 2012",
+    "treasurer": "Kris Croskery",
+    "auditor": "Peter Schwarzl C.A.",
+    "audit_firm": "BDO Canada LLP"
+   }
   },
   "2010": {
    "property_tax": 1829408,
@@ -222,7 +228,13 @@
    "spent": 3659348,
    "grants_total": 774903,
    "grants_other_provincial": 119060,
-   "grants_federal": 160643
+   "grants_federal": 160643,
+   "filed": {
+    "date": "August 08, 2011",
+    "treasurer": "Kris Croskery",
+    "auditor": "Dean Decaire CA",
+    "audit_firm": "BDO Canada LLP"
+   }
   },
   "2011": {
    "property_tax": 1933091,
@@ -260,7 +272,13 @@
    "spent": 3808035,
    "grants_total": 594730,
    "grants_other_provincial": 3925,
-   "grants_federal": 103205
+   "grants_federal": 103205,
+   "filed": {
+    "date": "April 08, 2013",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Dean N Decaire CA",
+    "audit_firm": "BDO Canada LLP"
+   }
   },
   "2012": {
    "property_tax": 2004776,
@@ -298,7 +316,13 @@
    "spent": 2773399,
    "grants_total": 614047,
    "grants_other_provincial": 4705,
-   "grants_federal": 104742
+   "grants_federal": 104742,
+   "filed": {
+    "date": "February 07, 2014",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Denise Beardmore",
+    "audit_firm": "BDO Canada LLP"
+   }
   },
   "2013": {
    "property_tax": 2036935,
@@ -335,7 +359,13 @@
    "spent": 3215586,
    "grants_total": 667405,
    "grants_other_provincial": 75546,
-   "grants_federal": 100859
+   "grants_federal": 100859,
+   "filed": {
+    "date": "November 24, 2014",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Josh Trudeau",
+    "audit_firm": "BDO Canada LLP"
+   }
   },
   "2014": {
    "property_tax": 2098047,
@@ -373,7 +403,13 @@
    "spent": 3082068,
    "grants_total": 621434,
    "grants_other_provincial": 42979,
-   "grants_federal": 103355
+   "grants_federal": 103355,
+   "filed": {
+    "date": "June 02, 2015",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Mitchell Crown",
+    "audit_firm": "KPMG"
+   }
   },
   "2015": {
    "property_tax": 2200203,
@@ -411,7 +447,13 @@
    "spent": 2925893,
    "grants_total": 577537,
    "grants_other_provincial": 26882,
-   "grants_federal": 69355
+   "grants_federal": 69355,
+   "filed": {
+    "date": "06/26/2017",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2016": {
    "property_tax": 2365094,
@@ -449,7 +491,13 @@
    "spent": 3149077,
    "grants_total": 600094,
    "grants_other_provincial": 25000,
-   "grants_federal": 71094
+   "grants_federal": 71094,
+   "filed": {
+    "date": "09/25/2017",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2017": {
    "property_tax": 2443906,
@@ -486,7 +534,13 @@
    "spent": 3251174,
    "grants_total": 719134,
    "grants_other_provincial": 54999,
-   "grants_federal": 160135
+   "grants_federal": 160135,
+   "filed": {
+    "date": "09/26/2018",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2018": {
    "property_tax": 2531083,
@@ -524,7 +578,13 @@
    "spent": 3412323,
    "grants_total": 767983,
    "grants_other_provincial": 74783,
-   "grants_federal": 119500
+   "grants_federal": 119500,
+   "filed": {
+    "date": "2020-03-26",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2019": {
    "property_tax": 2627137,
@@ -560,7 +620,13 @@
    "spent": 3519597,
    "grants_total": 1297097,
    "grants_other_provincial": 552098,
-   "grants_federal": 147299
+   "grants_federal": 147299,
+   "filed": {
+    "date": "06/08/2021",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2020": {
    "property_tax": 2716139,
@@ -597,7 +663,13 @@
    "spent": 3676961,
    "grants_total": 1070999,
    "grants_other_provincial": 284750,
-   "grants_federal": 165449
+   "grants_federal": 165449,
+   "filed": {
+    "date": "06/29/2021",
+    "treasurer": "KRIS CROSKERY-HODGINS",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2021": {
    "property_tax": 2810551,
@@ -636,7 +708,13 @@
    "spent": 3883726,
    "grants_total": 863348,
    "grants_other_provincial": 118037,
-   "grants_federal": 126311
+   "grants_federal": 126311,
+   "filed": {
+    "date": "08/15/2022",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2022": {
    "property_tax": 2970218,
@@ -674,7 +752,13 @@
    "spent": 3895952,
    "grants_total": 1216570,
    "grants_other_provincial": 397555,
-   "grants_federal": 189615
+   "grants_federal": 189615,
+   "filed": {
+    "date": "08/22/2023",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2023": {
    "property_tax": 3178436,
@@ -714,7 +798,13 @@
    "spent": 4384900,
    "grants_total": 1163340,
    "grants_other_provincial": 280634,
-   "grants_federal": 220006
+   "grants_federal": 220006,
+   "filed": {
+    "date": "02/25/2025",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2024": {
    "property_tax": 3437281,
@@ -753,7 +843,13 @@
    "spent": 4715147,
    "grants_total": 769378,
    "grants_other_provincial": 31816,
-   "grants_federal": 103362
+   "grants_federal": 103362,
+   "filed": {
+    "date": "2025-06-16",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   },
   "2025": {
    "property_tax": 3677660,
@@ -792,7 +888,13 @@
    "spent": 4960236,
    "grants_total": 1326806,
    "grants_other_provincial": 458255,
-   "grants_federal": 151251
+   "grants_federal": 151251,
+   "filed": {
+    "date": "2026-06-30",
+    "treasurer": "Kris Croskery-Hodgins",
+    "auditor": "Oscar Poloni",
+    "audit_firm": "KPMG"
+   }
   }
  },
  "built": "2026-10-22"

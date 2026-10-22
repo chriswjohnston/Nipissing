@@ -70,17 +70,6 @@
       "bylaw_checked": true
     },
     {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/2026-User-Fee-Draft.pdf",
-      "title": "Draft User Fee By-Law",
-      "kind": "User fees",
-      "year": 2026,
-      "first_seen": "2026-10-22",
-      "meetings": [
-        "2026-04-21"
-      ],
-      "removed": true
-    },
-    {
       "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=52",
       "title": "Schedule: 2025 Asset Management Plan, as adopted (pp. 52–114 of the agenda package, includes Appendix B)",
       "kind": "Asset management plan",
@@ -276,7 +265,9 @@
       "meetings": [
         "2023-03-07"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2024/KPMG-Financial-Indicator-Presentation__25581ef2.pdf",
+      "provided": "2026-10-22"
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf",
@@ -331,7 +322,9 @@
       "meetings": [
         "2024-04-02"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2024/Township-of-Nipissing-Financial-Statement-Presentation-2023-1__14c1cc66.pdf",
+      "provided": "2026-10-22"
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2023/03/2023-Budget-Report.pdf",
