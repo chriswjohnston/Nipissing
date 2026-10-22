@@ -4,9 +4,48 @@
     {
       "id": "minimum-maintenance-standards",
       "name": "Minimum Maintenance Standards",
-      "also_known_as": ["Road Status and Maintenance By-Law"],
+      "also_known_as": [
+        "Road Status and Maintenance By-Law"
+      ],
       "principal": "2019-41",
-      "amendments": ["2020-52", "2024-12"],
+      "amendments": [
+        "2020-52",
+        "2024-12"
+      ],
+      "consolidate": true
+    },
+    {
+      "id": "trailer-licensing",
+      "name": "Trailer Licensing",
+      "also_known_as": [
+        "Trailer Licence By-Law"
+      ],
+      "principal": "2023-30",
+      "amendments": [
+        "2025-16"
+      ],
+      "consolidate": true
+    },
+    {
+      "id": "unauthorized-disposal-of-waste",
+      "name": "Unauthorized Disposal of Waste",
+      "principal": "2021-58",
+      "amendments": [
+        "2024-45"
+      ],
+      "consolidate": true
+    },
+    {
+      "id": "parking",
+      "name": "Parking",
+      "also_known_as": [
+        "Parking By-Law"
+      ],
+      "principal": "2021-50",
+      "amendments": [
+        "2024-11",
+        "2026-04"
+      ],
       "consolidate": true
     }
   ]
