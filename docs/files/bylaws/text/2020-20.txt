@@ -1,0 +1,5185 @@
+Township of Nipissing 
+Zoning By-law 2020-20 
+Passed on December 1, 2020
+
+
+ 
+ 
+TABLE OF CONTENTS 
+ 
+SECTION 1 
+– INTERPRETATION ............................................................... 1 
+1.1 
+APPLICATION ............................................................................ 1 
+1.2 
+APPLICABILITY OF "USE" ............................................................... 1 
+1.3 
+CLOSED STREET, LANE OR RIGHT-OF-WAY ......................................... 1 
+1.4 
+COMMITTEE OF ADJUSTMENT ......................................................... 1 
+1.5 
+DEFINED AREA .......................................................................... 1 
+1.6 
+DEFINED ZONE AREAS .................................................................. 1 
+1.7 
+LITIGATION .............................................................................. 2 
+1.8 
+REPEALS ................................................................................. 2 
+1.9 
+SEVERABILITY ........................................................................... 2 
+1.10 
+SHORT TITLE ............................................................................ 2 
+1.11 
+SINGULAR AND PLURAL WORDS ...................................................... 2 
+1.12 
+SITE SPECIFIC ZONES .................................................................. 2 
+1.13 
+HOLDING ZONES ........................................................................ 2 
+1.14 
+TEMPORARY USE ZONES ............................................................... 3 
+1.15 
+USE OF LAND, BUILDING, OR STRUCTURE .......................................... 3 
+1.16 
+ZONE SCHEDULES ...................................................................... 3 
+SECTION 2 
+– DEFINITIONS ..................................................................... 4 
+SECTION 3 
+- GENERAL PROVISIONS ........................................................ 23 
+3.1 
+APPLICATION ...........................................................................23 
+3.2 
+ACCESS REGULATIONS TO IMPROVED STREET .....................................23 
+3.3 
+ACCESSORY BUILDINGS, USES, OR STRUCTURES ..................................23 
+3.4 
+AGRICULTURAL USES – MINIMUM LOT AREA ........................................24 
+3.5 
+AMENITY REQUIREMENTS .............................................................24 
+3.6 
+BED AND BREAKFAST ESTABLISHMENTS ............................................25 
+3.7 
+BOATHOUSE, PUMPHOUSE AND DOCKING FACILITIES ............................25 
+3.8 
+BUILDINGS TO BE MOVED ............................................................27 
+3.9 
+DWELLING UNIT IN NON-RESIDENTIAL BUILDING OR LOT ........................27 
+3.10 
+DWELLING UNIT IN C1, C2 OR C3 ZONES ...........................................27 
+3.11 
+DWELLINGS PER LOT ..................................................................28 
+3.12 
+SECONDARY DWELLING UNITS WITHIN A SINGLE UNIT DWELLING AND WITHIN 
+ACCESSORY STRUCTURES ............................................................28 
+3.13 
+BUILDINGS, STRUCTURES AND USES IN ENVIRONMENTAL PROTECTION (EP) 
+ZONES ...................................................................................29 
+3.14 
+FRONTAGE ON A HIGHWAY ..........................................................29 
+3.15 
+HAZARD LANDS OR LAND SUBJECT TO FLOODING ................................30 
+3.16 
+HEIGHT REGULATIONS ................................................................30 
+3.17 
+HOME INDUSTRY .......................................................................30 
+3.18 
+HOME OCCUPATION ...................................................................30 
+3.19 
+ICE BUNGALOW AND ICE HUT........................................................31 
+3.20 
+LAKE NIPISSING FLOOD PLAIN AND OTHER FLOOD PLAINS .......................31 
+3.21 
+LANDSCAPING ..........................................................................32 
+3.22 
+LOADING REQUIREMENTS ............................................................32 
+3.23 
+NON-COMPLYING LOTS, BUILDINGS AND STRUCTURES ...........................33 
+3.24 
+NON-CONFORMING USES .............................................................34 
+
+
+ 
+ 
+3.25 
+OCCUPANCY OF INCOMPLETE BUILDINGS ..........................................35 
+3.26 
+OPEN OR OUTSIDE STORAGE PROHIBITED .........................................35 
+3.27 
+PARKING REQUIREMENTS .............................................................36 
+3.28 
+PARKING REQUIREMENTS, EXISTING BUILDINGS HAVING LESS THAN MINIMUM 
+REQUIREMENT .........................................................................37 
+3.29 
+PARKING AREA STANDARDS ..........................................................37 
+3.30 
+PARKING AREA STANDARDS FOR ENTRANCE AND EXIT ...........................38 
+3.31 
+PERMITTED ENCROACHMENTS IN YARDS ...........................................38 
+3.32 
+PITS AND QUARRIES ...................................................................39 
+3.33 
+PROHIBITED USES .....................................................................39 
+3.34 
+PUBLIC USES PERMITTED .............................................................39 
+3.35 
+REDUCTION OF REQUIREMENTS .....................................................40 
+3.36 
+SETBACKS FOR SEPTIC SYSTEMS .....................................................40 
+3.37 
+SETBACK FROM WATERBODY ........................................................40 
+3.38 
+SETBACKS FROM ALL ROADS .........................................................40 
+3.39 
+SETBACK IN POTENTIAL HAZARD LAND AREAS ....................................41 
+3.40 
+SITE PLAN CONTROL ..................................................................41 
+3.41 
+STORAGE CONTAINERS ...............................................................41 
+3.42 
+SWIMMING POOLS .....................................................................42 
+3.43 
+TEMPORARY CONSTRUCTION USES ..................................................42 
+3.44 
+TRAILERS, MOTOR HOMES, AND CAMPERS .........................................43 
+3.45 
+TRAILER PARK AND PRIVATE RECREATIONAL USES ...............................43 
+3.46 
+TRUCK, BUS, COACH AND STORAGE CONTAINERS ................................43 
+3.47 
+VEGETATIVE BUFFERS ................................................................43 
+3.48 
+VISIBILITY TRIANGLES AT ROAD INTERSECTIONS ..................................43 
+SECTION 4 
+– ZONES ........................................................................... 45 
+4.1 
+ZONES ...................................................................................45 
+4.2 
+SCHEDULES .............................................................................45 
+4.3 
+ZONE BOUNDARIES ....................................................................45 
+4.4 
+BOATHOUSE (BH) ZONE ..............................................................46 
+4.5 
+COMMERCIAL, GENERAL (C1) ZONE .................................................47 
+4.6 
+COMMERCIAL, HIGHWAY AND TOURIST (C2) ZONE ...............................49 
+4.7 
+COMMERCIAL, RESORT (C3) ZONE ...................................................50 
+4.8 
+ENVIRONMENTAL PROTECTION (EP) ZONE .........................................51 
+4.9 
+HAZARD (HAZ) ZONE ..................................................................51 
+4.10 
+INDUSTRIAL, EXTRACTIVE (MX) ZONE ..............................................52 
+4.11 
+INDUSTRIAL, GENERAL (M1) ZONE ..................................................53 
+4.12 
+OPEN SPACE (OS) ZONE ..............................................................53 
+4.13 
+RESIDENTIAL, ESTATE (RE) ZONE ...................................................54 
+4.14 
+RESIDENTIAL, HAMLET (RH) ZONE ..................................................55 
+4.15 
+SHORELINE RESIDENTIAL (SR) ZONE ................................................55 
+4.16 
+LIMITED SERVICE RESIDENTIAL (LSR) ZONE ........................................56 
+4.17 
+RURAL (RU) ZONE .....................................................................56 
+4.18 
+WASTE DISPOSAL (WD) ZONE ........................................................59 
+SECTION 5 
+– SPECIAL ZONES ................................................................ 60 
+5.1 
+SPECIAL ZONE NO.1 (Formerly By-law No. 633 - Waltonian Marina) ...........60 
+5.2 
+SPECIAL ZONE NO. 2 (Formerly By-law Nos. 909 and 933) ......................61 
+
+
+ 
+ 
+5.3 
+SPECIAL ZONE NO. 3 (Gurd Lot 24, Con. 6) .......................................62 
+5.4 
+SPECIAL ZONE NO. 4 (Nipissing Lot 12, Con. 11) .................................63 
+5.5 
+SPECIAL ZONE NO. 5 (Nipissing Part of Lot 10, Con. 8 and Gurd, Part of Lot 3, 
+Con. 15) ................................................................................64 
+5.6 
+SPECIAL ZONE NO. 6 (Bear Creek Lots) ............................................64 
+5.7 
+SPECIAL ZONE NO. 7 (Nipissing, Part of Lots 13, 14, & 15 Con. 11 & 12) .....65 
+5.8 
+SPECIAL ZONE NO. 8 (Nipissing, Lot 12, Con. 9) ..................................65 
+5.9 
+SPECIAL ZONE NO. 9 (125 Hunters Bay Road) .....................................66 
+5.10 
+SPECIAL ZONE NO. 10 (Lillian Court, Part of Lot 18, Concession 19) ..........67 
+5.11 
+SPECIAL ZONE NO. 11 (3724 Alsace Road, Part of Lot 183 and Part of all Lot 
+184, Concession B) ....................................................................67 
+5.12 
+SPECIAL ZONE NO. 12 (4383 Highway 654) ........................................67 
+SECTION 6 
+- HOLDING PROVISIONS AND TEMPORARY USE BY-LAWS ................ 69 
+6.1 
+HOLDING PROVISIONS ................................................................69 
+6.2 
+TEMPORARY USE BY-LAWS ...........................................................69 
+SECTION 7 
+– ADMINISTRATION .............................................................. 70 
+7.1 
+ADMINISTRATION AND ENFORCEMENT ..............................................70 
+7.2 
+APPLICATIONS FOR BUILDING PERMITS .............................................70 
+7.3 
+EFFECTIVE DATE .......................................................................70 
+7.4 
+REMEDIES ...............................................................................70 
+7.5 
+VIOLATION AND PENALTY ............................................................70 
+SCHEDULE “B” TO BY-LAW NO. 2020-20 ................................................... 72 
+ 
+ 
+SCHEDULES 
+ 
+Schedule A – Zoning Schedule 
+Schedule B – Performance Standards
+
+
+ 
+ 
+ 
+THE TOWNSHIP OF NIPISSING 
+ 
+ZONING BY-LAW NO. 2020-20 
+BEING A BY-LAW TO REGULATE THE USE OF LAND, 
+BUILDINGS AND STRUCTURES IN THE TOWNSHIP OF NIPISSING 
+ 
+ 
+ 
+WHEREAS the authority is granted under Section 34 of The Planning Act, R.S.O. 1990, as 
+amended, to pass by-laws prohibiting and regulating the use of lands, buildings and 
+structures and the type of construction, height, bulk, location, spacing and character of 
+buildings and structures to be erected or altered;  
+ 
+AND WHEREAS the Council of the Township of Nipissing deems it necessary and desirable, 
+and in the public interest to repeal all other Zoning By-laws in the Township of Nipissing, 
+specifically By-law 980, 1068, 1090, 1091, 2009-40,  2011-14, and 2012-12.  
+ 
+AND WHEREAS Council of the Township of Nipissing deems it necessary and desirable to 
+formally waive the two year moratorium for Zoning By-law Amendments and Minor 
+Variances in accordance with the provisions of Sections 34 (10.0.0.1 and 10.0.0.2) and 
+45 (1.3 and 1.4) of the Planning Act.    
+ 
+AND WHEREAS the Corporation of the Township of Nipissing has an Official Plan; 
+ 
+AND WHEREAS this by-law conforms to the Official Plan for the Township of Nipissing;  
+ 
+NOW, THEREFORE, THE COUNCIL OF THE CORPORATION OF THE TOWNSHIP OF 
+NIPISSING ENACTS AS FOLLOWS: 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+1
+SECTION 1 
+ – INTERPRETATION 
+1.1 
+APPLICATION 
+In their interpretation and application, the provisions of this By-law shall be held to the 
+minimum requirement adopted for the promotion of the public health, safety, 
+convenience or general welfare. Whenever the requirements of this By-law are at 
+variance with the requirements of any other By-law, the most restrictive, or the By-law 
+imposing the higher standards, shall govern and apply. Nothing in this By-law shall be 
+construed to exempt any person from complying with the requirements of any By-law of 
+the Township of Nipissing or from any statute or requirement of the Province of Ontario 
+or of the Government of Canada. 
+ 
+1.2 
+APPLICABILITY OF "USE"  
+Unless the context otherwise requires, the expression "use" or "to use" in this By-law 
+includes anything done or permitted by the owner or occupant of any land, building or 
+structure, directly or indirectly or by or through any trustee, tenant, servant, or agent, 
+acting for or with the knowledge or consent of such owner or occupant, for the purpose 
+of making use of the said land, building or structure.  
+ 
+1.3 
+CLOSED STREET, LANE OR RIGHT-OF-WAY 
+In the event a dedicated street, lane or right-of-way shown on Schedule A forming part 
+of this By-law is closed, the property formerly in such street, lane or right-of-way shall 
+be included within the Zone of the adjoining property on either side of such closed 
+street, lane or right-of-way. If a closed street, lane or right-of-way is the boundary 
+between two or more different Zones, the new Zone boundaries shall be the former 
+centre line of the closed street, lane or right-of-way.  
+ 
+1.4 
+COMMITTEE OF ADJUSTMENT  
+Where the uses of land, buildings or structures permitted in the By-law are defined in 
+general terms, the Committee of Adjustment may permit the use of any land, building 
+or structure for any purpose that, in the opinion of the Committee, conforms with the 
+uses permitted in the By-law.  
+ 
+1.5 
+DEFINED AREA  
+This By-law applies to all land within the municipal boundaries of the Corporation of the 
+Township of Nipissing. 
+ 
+1.6 
+DEFINED ZONE AREAS  
+The extent and boundaries of all Zones are shown on Schedule A are hereby defined as 
+areas to which the provisions of this By-law shall apply. The area enclosed by any zone 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+2
+consists of all land lying within the zone boundaries, including streets, right-of-ways, 
+and watercourses.  
+ 
+1.7 
+LITIGATION  
+This By-law does not affect the rights of any party or any land concerned in any action, 
+litigation or other proceeding pending on the date of the final passage thereof, except 
+to the extent to be determined in the final adjudication of such action, litigation or 
+other proceedings.  
+ 
+1.8 
+REPEALS  
+Upon the final approval of this By-law, all other Zoning By-laws in the Township of 
+Nipissing are hereby repealed, specifically By-law 980, 1068, 1090, 1091, 2009-40,  2011-
+14, and 2012-12.   
+ 
+1.9 
+SEVERABILITY  
+If any provision of this By-law, including any part of any Zone as shown on any Schedule, 
+is for any reason held to be invalid, it is hereby declared to be the intention that all the 
+remaining provisions shall remain in full force and effect until repealed, notwithstanding 
+that one or more provisions shall have been declared to be invalid.  
+ 
+1.10 
+SHORT TITLE  
+This By-law may be cited as "The Township of Nipissing Zoning By-law".  
+ 
+1.11 
+SINGULAR AND PLURAL WORDS  
+In this By-law, unless the context clearly requires otherwise, words used in the singular 
+include the plural and vice versa. 
+ 
+1.12 
+SITE SPECIFIC ZONES 
+This By-law identifies site specific zones with a Special Zone.  Where a property on the 
+attached Schedule(s) is identified by a SZ, and a number, such as SZ1, the symbol refers 
+to a site-specific zone that applies to the lands noted. Site-specific zones are listed in 
+Section 5 of this By-law. 
+ 
+1.13 
+HOLDING ZONES 
+Notwithstanding any other provision in this By-law, where a Zone symbol is followed by 
+the letter (H), no person shall use the land to which the letter (H) applies for any use 
+other than the use which existed on the date this By-law was passed, until the (H) is 
+removed in accordance with the policies of the Official Plan and the provisions of this 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+3
+By-law and/or the requirements of any amending By-law, and the requirements of the 
+Planning Act, as amended. 
+ 
+1.14 
+TEMPORARY USE ZONES 
+Notwithstanding any other provision in this By-law, where a Zone symbol is preceded by 
+the Letter (T), no person shall use the land to which the letter (T) applies for any use 
+other than the use identified in the applicable zone or use identified in Section 6.2.1, 
+until such time that the applicable by-law under section 6.2.1 expires. 
+ 
+1.15 
+USE OF LAND, BUILDING, OR STRUCTURE  
+Except as provided by the Planning Act of Ontario no building, structure or land shall be 
+used, and no building or structure shall be hereafter erected, structurally altered or 
+enlarged, and no lot created within the limits of the Municipality as now or hereafter 
+legally constituted except in conformity with the provisions of this By-law.  
+ 
+1.16 
+ZONE SCHEDULES  
+Schedules A and Schedule B attached hereto, are hereby declared to form part of this 
+By-law. 
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+4
+SECTION 2 
+ – DEFINITIONS 
+ABATTOIR means a use, building or structure specifically designed to accommodate the 
+penning and slaughtering of live animals and fowl and the preliminary processing of 
+animal carcasses and may include the packing, treating, storing and sale of the product 
+on the premises.  
+ 
+ACCESSORY means a use, building or structure that is naturally and normally incidental, 
+subordinate and exclusively devoted to the principal use, building or structure and 
+located on the same lot therewith. Accessory may include the temporary storage of a 
+travel trailer, ice bungalow or ice-hut, provided the same is not used for sleeping or 
+cooking during such period of temporary storage.  
+ 
+AGRICULTURAL SERVICES means the use of land, structure or building for the purposes 
+of buying and selling commodities and services that are necessary to support agricultural 
+operations but does not include any manufacturing, assembling, processing, 
+warehousing, or construction uses.  
+ 
+AGRICULTURAL, USE means the use of land, buildings or structures for the purposes of 
+animal husbandry, horticulture, dairying, fallow and / or forestry, and shall include 
+crops and pasturage, raising of poultry and other similar uses and shall include a fruit 
+and vegetable market and maple syrup operation. An agricultural use does not include 
+the extraction, mining, or excavating of peat for commercial purposes. 
+ 
+ALTER means to change an existing structure in any fashion that requires a building 
+permit under the Ontario Building Code Act.  
+ 
+ANIMAL HOSPITAL means a building or structure where animals, including birds and 
+livestock are treated and where domestic animals, including birds are kept for 
+treatment and shall include a veterinary establishment and a veterinary clinic, but not 
+a kennel.  
+ 
+ARTISAN OPERATION means an establishment where articles or goods are produced, 
+assembled, processed or manufactured on a custom or individual basis by an artist, 
+craftsman or similar trained or skilled operator and may include the sale of such goods, 
+including but not limited to the operations of a painter, potter, custom dressmaker, 
+photographer, jewelry maker, woodworker, cabinet maker, sculptor, model builder and 
+sign maker. 
+ 
+AUTO BODY SHOP means an establishment for the repair of damage to a motor vehicle 
+caused by collision, accident, corrosion or age, and, without limiting the generality of 
+the foregoing, includes the reconstruction of motor vehicles, the painting or repainting 
+of motor vehicles and the rebuilding or conversion of automotive engines or engine 
+parts, but does not include a repair garage, an impounding yard, an automobile service 
+station or a gas bar.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+5
+AUTOMOBILE SERVICE STATION means a building or a clearly defined space on a lot 
+where gasoline, propane, oil, tires, batteries and other similar products for the 
+maintenance of motor vehicles may be sold or where vehicles may be oiled, greased and 
+subjected to minor or running repairs essential to the actual operation of motor 
+vehicles. For the purpose of this definition, the sale of cold drinks, packaged foods, 
+tobacco and similar convenience goods for service station customers, may be allowed in 
+conjunction therewith as an accessory and incidental use to the principal operation. 
+ 
+BAKERY means a factory for producing, mixing, compounding or baking bread, biscuits, 
+ice cream cones, cakes, pies, buns, or any other bakery product of which flour or meal 
+is the principal ingredient, but does not include a restaurant or other premises where 
+any such product is made for consumption on the premises or a bake shop.  
+ 
+BAKE SHOP means a building or structure or part thereof where products of a bakery are 
+sold or offered for sale by retail, including incidental baking of products for retail or 
+wholesale.  
+ 
+BANK/TRUST COMPANY means an institution where money is deposited, kept, lent, or 
+exchanged.  
+ 
+BANQUET HALL means a building or part of a building used for the purpose of 
+entertaining a large group of people where food and liquor are generally provided.  
+ 
+BASEMENT means that space of the dwelling that is partly below grade which has more 
+than one-half of its interior height measured from floor to ceiling above the average 
+finished grade around the exterior of the building.  
+ 
+BED AND BREAKFAST ESTABLISHMENT means a single unit dwelling used incidentally to 
+provide accommodation and meals to transient travelers but does not include a 
+restaurant.  
+ 
+BERM means a raised barrier usually made of compacted soil separating two areas. 
+ 
+BOATHOUSE means an accessory building or structure which is designed or used only for 
+the sheltering or storage of boats, other forms of water transportation and related 
+equipment on or over the water. 
+ 
+BOAT LIFT means a structure located in a waterbody that is used to elevate a boat or 
+vessel and is attached to the lands under water. 
+ 
+BREEZEWAY means a roofed or covered outdoor passageway having sides which are open 
+and unenclosed. 
+ 
+BUFFER STRIP means a landscaped or naturally vegetated area of land devoted 
+exclusively to the provision of visual amenity and intended to obstruct or partially 
+obstruct the view between adjacent uses.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+6
+BUILDING means any structure, whether temporary or permanent, used or built for the 
+shelter, accommodation or enclosure of persons, animals or chattels, other than a lawful 
+boundary wall or fence, and shall include any structure, loading dock, staging gallery, 
+wall, excavation, storage tank, gasoline pump, pump island, bleacher, fence, swimming 
+pool, grandstand, awning, bin, bunker or platform, vessel or vehicle used for any of the 
+said purposes. 
+ 
+BUILDING BY-LAW means any by-law of the municipality passed pursuant to the Building 
+Code Act.  
+ 
+BUILDING PERMIT means a permit required under the Building By-law.  
+ 
+BUILDING SUPPLY OUTLET means a building or structure in which building or construction 
+and home improvement materials are offered or kept for sale at retail and may include 
+the fabrication of certain materials related to home improvement.  
+ 
+BULK FUEL STORAGE means the use of land, building or structure for the storage and 
+distribution of fuels and oils but not including retail sales or key lock operations.  
+ 
+BUS STORAGE means an area with or without a building for the storage and/or sheltering 
+of buses and may incorporate the servicing of such vehicles.  
+ 
+CABIN, HOUSEKEEPING means a separate building located in a licensed tourist 
+establishment designed to provide sleeping accommodations and facilities for the 
+preparation and cooking of food and intended to be rented or leased for recreational 
+uses from time to time throughout the year.  
+ 
+CABIN, TOURIST means a separate building designed to provide only sleeping 
+accommodation for the travelling or vacationing public  
+ 
+CAMPING ESTABLISHMENT means the use of land, managed as a unit, for the provision 
+of short term accommodation for tent trailers, travel trailers, recreation vehicles and 
+campers and includes accessory facilities which support the use, such as administration 
+offices, retail uses, laundry facilities, game rooms or other similar facilities but does 
+not include a mobile home park.  
+ 
+CANNABIS PRODUCTION FACILITY means premises used or occupied by a  person 
+or 
+organization licensed by the Government of Canada for the production of cannabis or 
+cannabis products, including where cannabis or any of its derivatives, such as resin or 
+oils, is grown, cultivated, harvested, manufactured, processed, packaged, or labelled, 
+and associated activities permitted by the federal license, such as research and 
+development, storage, shipping, and destruction; this excludes industrial hemp. 
+ 
+CARPORT means an enclosed or partially enclosed structure having a minimum of sixty 
+percent (60%) open area with a roof which is designed or used for the storage of one or 
+more private vehicles.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+7
+CELLAR means that space of the building that is partly or entirely below grade which 
+has one-half or less than one-half of its height measured from floor to ceiling above 
+finished grade around the exterior of the building. 
+ 
+CEMETERY means land that is set apart or used as a place for interment of the dead. A 
+cemetery may include such accessory uses as mausoleums, crematoriums and 
+columbariums.  
+ 
+CLINIC means a building or part thereof used for medical, dental, surgical or 
+therapeutical treatment of human beings, but where patients are not usually lodged 
+overnight.  
+ 
+CLUB, SERVICE means a meeting place for members of a Community service organization 
+or charity.  
+ 
+COMMERCIAL USE means the use of any land, building or structure for the purposes of 
+buying or selling commodities and supplying services, as distinguished from such uses as 
+manufacturing or assembling of goods, warehousing, contractors' yards and similar uses.  
+ 
+COMMUNITY FACILITY means any tract of land or building used for community activities 
+which may be used for ancillary commercial purposes and the control of which is vested 
+in the Municipality, a local board or commission thereof, or a non-profit community 
+organization.  
+ 
+CONSERVATION USE means the preservation, protection and/or improvement of the 
+components of the natural environment through management and maintenance for both 
+the individual and society's uses, both in the present and in the future.  
+ 
+CONTRACTOR'S YARD means an area with or without buildings used for the storage of 
+materials and equipment related to the construction industry.  
+ 
+CONVENIENCE STORE means a retail store serving the daily or occasional needs of the 
+residents of the immediate area with a variety of goods such as groceries, meats, 
+vegetables, beverages, dairy products, patent medicines and/or newspapers, but shall 
+not include an automobile service station.  
+ 
+COUNCIL means the Council of The Corporation of the Township of Nipissing.  
+ 
+DAY NURSERY means a day nursery within the meaning of The Day Nurseries Act of 
+Ontario, and amendments thereto.  
+ 
+DECK means an open, non-roofed and unenclosed accessory structure which is designed 
+for lounging or sunbathing and is attached to a building. 
+ 
+DECK, FREE-STANDING means an open, non-roofed accessory structure which is designed 
+for lounging or sunbathing and is not attached to a building, with the exception that a 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+8
+gazebo may be erected on a free-standing deck, only where a gazebo is a permitted 
+structure. 
+ 
+DOCK means a temporary or permanent non-roofed structure located on a navigable 
+waterway, designed to provide docking and mooring services for a boat or other form of 
+water transportation. 
+ 
+DOMESTIC PET means cats; dogs; caged birds; aquarium fish; non-poisonous, non-
+venomous and non-constricting arthropods, reptiles and amphibians; and small 
+mammals such as rabbits, gerbils, hamsters, guinea pigs, fancy mice and fancy rats.  
+ 
+DRIVING RANGE means a public or private area operated for the purpose of developing 
+golfing techniques, including miniature golf courses, but excluding golf courses.  
+ 
+DRY INDUSTRY means an industry which by the nature of its operation, process or 
+fabrication of raw materials or service rendered does not require a water supply other 
+than that available from within the limits of the lot upon which the use is located and 
+from which the only waste water discharges are stormwater drainage; or sanitary 
+sewage produced by normal sanitary and eating facilities required for employees.  
+ 
+DWELLING means a building, occupied or capable of being occupied as a home, residence 
+or sleeping place by one or more persons, but shall not include hotels, boarding and 
+rooming houses, motels, institutions, or hunt camps. 
+ 
+DWELLING UNIT means a group of rooms used or designed or intended to be used by one 
+or more persons as a single, independent and separate housekeeping establishment in 
+which food preparation and sanitary facilities are provided for the exclusive use of such 
+person or persons; and which has a private entrance from outside the building or from 
+a common hallway inside the building.  
+ 
+DWELLING, CONVERTED RECREATIONAL means a recreational dwelling converted to a 
+year round residential dwelling through renovation and alteration, by applying building 
+and construction standards applicable to a permanent residential dwelling.  
+ 
+DWELLING, RECREATIONAL means a dwelling unit, other than a mobile home dwelling 
+unit, which is used as a secondary place of residence for vacation and recreational 
+purposes only, from time to time during the year, but which is not to be used as a 
+principal residence by the owner or any other person.  
+ 
+DWELLING, SINGLE UNIT means a completely detached building consisting of one 
+dwelling unit other than a mobile home to which entrance is gained only by a private 
+entrance outside the building. 
+ 
+DWELLING UNIT, SECONDARY means a self-contained dwelling unit created by either an 
+interior renovation within an existing dwelling, or as an exterior addition, provided that 
+one entire face of the addition is attached to the principal dwelling, and shall not be 
+considered a second dwelling on the lot for the purposes of this By-law; or a self-
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+9
+contained dwelling unit located within an accessory building.DWELLING UNIT, 
+ACCESSORY means a dwelling unit which is accessory to a permitted non-residential 
+principal use. 
+ 
+EAVE means a roof overhang, free of enclosing walls, without supporting columns.  
+ 
+EFFICIENCY UNIT means a part of a hotel or motel which contains sleeping facilities, 
+private sanitary facilities and cooking facilities which are located in not more than two 
+rooms, excluding the washroom.  
+ 
+EQUIPMENT SALES AND RENTAL ESTABLISHMENT, LIGHT means an establishment in which 
+light machinery and equipment such as air compressors and related tools and 
+accessories, augers, automotive tools, cleaning equipment, light compaction 
+equipment, concrete and masonry equipment, electric tools and accessories, fastening 
+devices such as staplers and tackers, floor and carpet tools, gasoline generators, jacks 
+and hydraulic equipment, lawn and garden tools, ladders, moving equipment; painting 
+and decorating equipment, pipe tools and accessories, plumbing tools and accessories; 
+and appurtenances are repaired, or offered or kept for sale, rent, lease or hire.  
+ 
+EQUIPMENT SALES AND RENTAL ESTABLISHMENT, INDUSTRIAL means an establishment in 
+which machinery, equipment, furniture, fixtures and other goods, of a size and type 
+which would be used for business, industrial and major construction undertakings are 
+repaired, or offered or kept for sale, rent, lease or hire.  
+ 
+ERECT means build, construct, reconstruct, alter, enlarge and relocate and without 
+limiting the generality of the foregoing is taken to include any preliminary physical 
+operation such as excavating, grading, piling, cribbing, filling or draining, structurally 
+altering any existing building or structure by an addition, deletion, enlargement or 
+extension.  
+ 
+EXISTING means existing as of the date of the final passing of this By-law.  
+ 
+EXTERIOR LIGHTING means any form of artificial illumination located outside of a 
+building or structure.  
+ 
+FARM IMPLEMENT SALES AND SERVICE ESTABLISHMENT means the use of land, buildings 
+or structures for the sale, storage or repair of equipment associated with the operation 
+of a farm. 
+ 
+FLOOD PLAIN means the area bordering a lake, swamp, river, stream, or water course 
+which is subject to flooding.  
+ 
+FLOOR AREA means the ground floor area of a building measured by the outside walls, 
+excluding, in the case of a dwelling house, any garage, carport, porch, veranda, deck 
+or sunroom (unless such sunroom is habitable at all seasons of the year).  
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+10 
+FLOOR AREA, GROSS means the sum of all floors of a dwelling measured from the face 
+of the exterior walls, but excluding any basement, unfinished attic, garage, carport, 
+verandah, porch, deck or sunroom (unless the sunroom is habitable at all seasons of the 
+year) or other similar appurtenant structures.    
+ 
+FOOD STAND means a portable structure or vehicle where food is offered. A maximum 
+of 6 outdoor tables may be provided in association with this use. 
+ 
+FOOD STORE means a retail establishment primarily selling food as well as other 
+convenience and household goods.  
+ 
+FORESTRY USE means the general raising and harvesting of wood and without limiting 
+the generality of the foregoing, shall include the raising and cutting of fuel wood, 
+pulpwood, lumber, Christmas trees and other forest products.  
+ 
+FRUIT AND VEGETABLE MARKET means the commercial use of land, buildings or 
+structures, predominantly involved in the sale of fresh farm produce. 
+ 
+FUNERAL HOME means a commercial establishment providing funeral supplies and 
+services to the public.  
+ 
+GARAGE, PRIVATE means an accessory building either separate from or attached to the 
+main building, which is designed or used for the storage of one or more private vehicles 
+and the storage of household equipment, incidental to residential occupancy.  
+ 
+GARDEN CENTRE means the use of land, buildings or structures or part thereof for the 
+purpose of buying or selling lawn and garden equipment, furnishings and supplies and 
+includes a nursery garden.  
+ 
+GAS BAR means one or more pump islands, each consisting of one or more gasoline 
+pumps, and a shelter, which shall not be used for the sale of any product other than 
+liquids and small accessories required for the operation of motor vehicles, but shall not 
+include any other establishment otherwise defined or classified in this By-law.  
+ 
+GAZEBO means a free standing, roofed accessory structure which is not enclosed, except 
+by means of screening or glass and which is utilized for recreational purposes in 
+conjunction with the main building.   
+ 
+GOLF COURSE means a public or private area operated for the purpose of playing golf 
+including a par three golf course and including such ancillary uses as a driving range, a 
+miniature golf course, or a clubhouse. 
+ 
+GRADE, ESTABLISHED means, with reference to a building or structure, the average 
+elevation of the finished surface of the ground where it meets the exterior of all sides 
+of such building or structure, and, when used with reference to a street, road or highway 
+will refer to the elevation established by the Municipality or other designated authority.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+11 
+GROUP HOME means a single housekeeping unit in a residential dwelling in which three 
+to ten persons, (excluding supervisory staff or the receiving household), live under 
+responsible supervision consistent with the particular requirements of its residents. A 
+group home is licensed and/or approved for funding under Provincial statutes and 
+municipal by-laws.  
+ 
+HAZARD LAND means lands subject to natural environmental hazards, such as flood 
+susceptibility, poor drainage, organic soils, erosion, steep slopes or any other physical 
+condition or limitation which is hazardous to human life and/or property.  
+ 
+HEIGHT, BOATHOUSE when used with reference to a boathouse, height means the 
+vertical distance between the normal ordinary water's edge and the highest part of the 
+roof, in the case of a boathouse or any portion of a boathouse over water, and the 
+vertical distance between the established grade and the highest part of the roof, in the 
+case of a boathouse or any portion of a boathouse over land.  
+ 
+HEIGHT, BUILDING means the vertical distance of a building measured between the 
+established grade at the exterior walls and: (i) the highest point of the roof surface or 
+the parapet, whichever is greater of a flat roof; (ii) the roof deck line of a mansard roof; 
+(iii) the mean level between the eaves and the ridge of a gabled, hip, gambrel or other 
+type of pitched roof.  
+ 
+HEREAFTER means after the date of passing of this By-law.  
+ 
+HEREIN means anywhere in this By-law.  
+ 
+HEREOF means of this By-law.  
+ 
+HERETO means to this By-law or attached to this By-law.  
+ 
+HIGH WATERMARK means the normal ordinary high water mark of any body of water at 
+the time of the original survey of the Township unless the high water mark of any body 
+of water shall have been altered by the construction of a dam or dams operated by or 
+for a public authority, in which case, the measurement shall be from the maximum high 
+water mark as controlled by such dam or dams. A high water mark shall be determined 
+by depiction on a survey prepared by an Ontario Land Surveyor.  
+ 
+HOME INDUSTRY means a gainful occupation conducted primarily within a building or 
+part of a building accessory to a single unit dwelling.  
+ 
+HOME OCCUPATION means a gainful occupation conducted entirely within a dwelling 
+unit.  
+ 
+HOTEL means an establishment offering sleeping accommodation and usually meals and 
+refreshments to the travelling public and provided that not more than 25% of the 
+rentable units may be efficiency units.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+12 
+HOT TUB means a structure which is designed to contain water, is used in conjunction 
+with a high velocity water circulation system or air injection, and is generally not 
+emptied after each individual use.   
+ 
+HUMAN HABITATION means a place occupied by humans designed for living including but 
+not limited to, sleeping, eating or food preparation, including a den, library, exercise 
+room, hobby room, or enclosed sunroom.   
+ 
+HUNT CAMP means a building or structure having a maximum floor area of 70 square 
+metres consisting of one or more rooms which is at least partially furnished and may 
+include facilities for the preparation of food and overnight accommodation on a 
+temporary basis for use only during the hunting or fishing seasons but shall not include 
+any other establishments or use as may be defined or classified in this By-law.  
+ 
+ICE HUT means a building that is designed to be transported onto the ice of a lake for 
+shelter during fishing during winter months.  When on land, an ice hut shall be 
+considered an accessory structure. 
+ 
+ICE BUNGALOW means an accommodation unit designed to be mobile and transported 
+onto the ice of a lake for temporary accommodation purposes during winter months. 
+When on land, an ice bungalow shall be considered an accessory structure. 
+ 
+INDUSTRIAL USE means the use of any land, building or structure designed for the 
+purpose of manufacturing, assembling, making, preparing, printing, inspecting, 
+ornamenting, finishing, treating, altering, repairing, warehousing or storing or adapting 
+for sale any goods, substance, article or thing, or any part thereof, and the storage of 
+building and construction equipment and materials, as distinguished from the buying 
+and selling of retail commodities and the supplying of personal services.  
+ 
+INSTITUTION means any land, building, structure or part thereof used for a non-
+commercial purpose by any organization, group or association for the promotion of 
+charitable, educational or benevolent objectives but excluding any place of detention 
+or correction.  
+ 
+KENNEL means a place where dogs and other domestic animals other than poultry or 
+livestock are bred and raised, and are sold or kept for sale or boarded.  
+ 
+LANDSCAPING means any combination of trees, shrubs, flowers, grass or other 
+horticultural elements, decorative stonework, paving screening or other architectural 
+elements, all of which are designed to enhance the visual amenity of a property, to 
+regulate drainage, and/or to provide a screen to mitigate any objectionable aspects 
+that may detrimentally affect adjacent land. 
+ 
+LIVESTOCK means cattle, horses, pigs, goats, sheep, poultry, and similar animals 
+typically associated with an agricultural use. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+13 
+LIVESTOCK FACILITY means a building or structure where animals or poultry are housed 
+such as a livestock barn, including beef feedlots, and associated facilities for manure 
+storage.  
+ 
+LOADING SPACE means an area of land which is provided and maintained upon the same 
+lot or lots upon which the main use is located, for the temporary parking of one or more 
+commercial motor vehicles while merchandise or materials are being loaded or unloaded 
+from such vehicle(s).  
+ 
+LOT means a parcel of land, whether such parcel is described in a registered deed or is 
+shown on a registered plan of subdivision including any of its parts which are subject to 
+right-of-way or easement and which is capable of being conveyed.  
+ 
+LOT AREA means the total horizontal area within the lot lines of a lot.  
+ 
+LOT, CORNER means a lot at the intersection of two or more streets, or upon two parts 
+of the same street, the adjacent sides of which street or streets (or, in the case of a 
+curved corner, the tangents at the street extremities of the side lot lines) contain an 
+angle of not more than one hundred and thirty-five degrees. In the case of a curved 
+corner the corner of the lot shall be that point on the street line nearest to the point of 
+intersection of the said tangents.  
+ 
+LOT COVERAGE means that percentage of lot area covered by all buildings including 
+accessory buildings and a boathouse on/or adjacent to a lot but excluding uncovered 
+buildings or structures.  
+ 
+LOT DEPTH means the perpendicular distance measured in a horizontal plane between 
+the front and rear lot lines. Where these lines are not parallel, it shall be the length of 
+a line joining the mid-point of the front lot line with either the mid-point of the rear lot 
+line or in the case of a triangular lot the apex of the triangle formed by the side lot 
+lines.  
+ 
+LOT, FRONTAGE means the horizontal distance between the side lot lines measured 
+along the front lot line, except that: (i) where the front lot line is not a straight line or 
+is not perpendicular to the side lot lines but the side lot lines are parallel, lot frontage 
+means the horizontal perpendicular distance between the side lot lines; and (ii) where 
+the side lot lines are not parallel, the lot frontage is to be measured by a line six (6) 
+metres back from the parallel to the chord of the lot frontage, and for the purpose of 
+this paragraph, the chord of the lot frontage is a straight line joining the two points 
+where the side lot lines intersect the front lot line. 
+ 
+LOT, INTERIOR means a lot other than a corner lot with only one frontage on a road.  
+ 
+LOT LINE means any boundary of a lot.  
+ 
+LOT LINE, EXTERIOR SIDE means the longer lot line which abuts the road on a corner lot. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+14 
+LOT LINE, FRONT means the lot line that abuts the road except that: (i) in the case of a 
+corner lot, the shorter lot line that abuts the road shall be deemed to be the front lot 
+line; and (ii) in the case of waterfront lot, the front lot line shall be the normal ordinary 
+water’s edge or the line of the inner limit of the original road allowance along the shore 
+of such body of water.  
+ 
+LOT LINE, INTERIOR SIDE means a side lot line other than an exterior side lot line.  
+ 
+LOT LINE, REAR means the lot line furthest from or opposite to the front lot line.  
+ 
+LOT LINE, SIDE means a lot line other than a front or rear lot line.  
+ 
+LOT, WATERFRONT means a lot which fronts on a navigable body of water or upon an 
+unopened and unstopped up-road allowance laid out along the shore of a navigable body 
+of water.  
+ 
+MAIN BUILDING means the building designed or used for the principal use on the lot.  
+ 
+MAIN WALL means the exterior front, side or rear wall of a building, and all structural 
+members essential to the support of a fully or partially enclosed space or roof, where 
+such members are nearer to a lot line than the said exterior wall.  
+ 
+MARINA means a commercial establishment or premises, containing docking facilities or 
+mooring facilities where boats or boat accessories are berthed, stored, serviced, 
+repaired, or kept for sale or rent and where facilities for the sale of marine fuels or 
+lubricants, accessory retail sales and a taxi and/or barging service are provided and 
+where waste water pumping facilities may be provided.  
+ 
+MINERAL AGGREGATE RESOURCE USE means the use of land or buildings for the 
+extraction and processing of raw materials from the earth, which would include 
+quarrying, sand and gravel pit operations and associated operations such as washing, 
+screening, crushing and storage of sand, gravel, ballast, stone aggregate, clays, brick, 
+and other surface and sub-surface resource materials. It is also deemed to include 
+accessory and associated operations such as cement and concrete batching plants, 
+asphalt and road materials operations, offices and weight equipment, conveyers, 
+parking and garage areas for trucks, as well as incidental accessory uses such as water 
+storage.  
+ 
+MOBILE HOME means any dwelling that is designed to be mobile, and constructed or 
+manufactured to provide a permanent residence for one or more persons certified in 
+accordance with C.S.A. Standard Z240. 
+ 
+MOBILE HOME PARK means a parcel of land which has been developed for the placement 
+of mobile homes.  
+ 
+MOTEL means a roadside hotel for motorists, having rooms adjacent to an outside 
+parking space.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+15 
+ 
+MOTOR VEHICLE, COMMERCIAL means any vehicle used for commercial purposes having 
+permanently attached thereto a truck or delivery body and without limiting the 
+generality of the foregoing, includes: ambulances, hearses, motor buses, etc.  
+ 
+MOTOR VEHICLE, SALES AREA means any land, building or structure where new or used 
+automobiles, trucks, buses, recreational vehicles, all terrain vehicles, motorcycles, 
+snow machines, boats, etc. are kept for sale or rent and in conjunction with which there 
+may be a motor vehicle repair garage or body shop.  
+ 
+MUNICIPAL LAW ENFORCEMENT OFFICER means a person duly appointed by Council as a 
+Municipal Law Enforcement Officer and charged with the duty of enforcing the by-laws 
+of the municipality.  
+ 
+MUNICIPALITY means the Corporation of the Township of Nipissing.  
+ 
+NON-COMPLYING means that which does not conform, comply or agree with the 
+regulations of this By-Law as of the date of final passing thereof  
+ 
+NON-CONFORMING USE means a use which is not permitted in the zone in which the said 
+use is situated.  
+ 
+NORMAL ORDINARY WATER'S EDGE means the observable mark made by the action of 
+water under normal conditions on the shore or bank of a body of water which action has 
+been so common and usual that it has created a difference between the character of 
+the vegetation or soil on one side of the mark and the character of the vegetation or 
+soil on the other side of the mark.  
+ 
+NORMAL ORDINARY WATER'S EDGE, LAKE NIPISSING means the regulated summer normal 
+elevation for Lake Nipissing of 195.8 metres Canadian Geodetic Datum.  
+ 
+NURSERY GARDEN means land used for the growing of sod, flowers, bushes, trees or 
+other gardening, landscaping or orchard stock for wholesale or retail sale. 
+ 
+NURSING HOME means a building in which rooms or lodging are provided for hire or pay, 
+with or without meals, and where personal care, nursing services and medical care and 
+treatment are provided or made available.  
+ 
+OBNOXIOUS USE means an offensive trade within the meaning of the appropriate statute 
+or any use which is offensive or dangerous by reason of the emission of odour, smoke, 
+dust, noise, gas fumes, vibration or refuse matter.  
+ 
+OFFICE means a room or rooms where business may be transacted, a service performed 
+or consultation given, but does not include a clinic or the manufacturing, assembling or 
+servicing of any product.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+16 
+OPEN SPACE, USABLE means open, unobstructed space on a lot which is suitable for 
+landscaping, including any part of the site occupied by recreational accessory buildings, 
+any surfaced walk, patio or similar area, any sports or recreational area, any ornamental 
+or swimming pool, any balcony at least one and five-tenths (1.5) metres in width and 
+the roof or other part of a building or structure open to the air and used for landscaping 
+and as a recreational area, but excluding any driveway or ramp, whether surfaced or 
+not, and any curb, retaining wall, parking area or loading space.  
+ 
+OPEN STORAGE means the storage of goods in the open air or in unenclosed portions of 
+buildings which are open on the sides, but shall not include a limited display of goods 
+and products for advertising and demonstration purposes.  
+ 
+PARK means an area consisting largely of open space, which may include a recreational 
+area, playground, playfield or similar use but shall not include a mobile home park or a 
+camping establishment.  
+ 
+PARKlNG AREA means an area other than a street used for the temporary parking of two 
+or more motor vehicles as accommodation for visitors, clients, customers, residents or 
+employees whether free or for profit or gain.  
+ 
+PARKING SPACE means an area enclosed in a principal building, in an accessory building 
+or unenclosed, set aside for the purpose of parking one vehicle having access to a street 
+or lane.  
+ 
+PERSON means any individual, association, firm, partnership, incorporated company, 
+corporation, agent or trustee and the heirs, executors or other legal representatives of 
+a person to whom the context can apply according to law.  
+ 
+PERSONAL SERVICE ESTABLISHMENT means an establishment wherein a service to meet 
+some general personal need or to benefit the personal needs of individuals is performed. 
+This definition may include a barber shop, a beauty salon, a dress-making shop, a shoe 
+repair shop, a tailor shop, a laundromat, a photographic studio or similar use, but shall 
+not include a funeral home or the manufacturing or fabrication of goods for sale.  
+ 
+PIT means a place where unconsolidated gravel, stone, sand, earth, clay, fill, mineral 
+or other material is being or has been removed by means of an open excavation to supply 
+material for construction, industrial or manufacturing purposes, but does not include a 
+wayside pit.  
+ 
+PLACE OF ENTERTAINMENT means a motion picture or other theatre, auditorium, public 
+hall, billiard or pool room, bowling alley, dance hall, or music hall, but does not include 
+any place of entertainment or amusement otherwise defined or classified in this By-law.  
+ 
+PLACE OF WORSHIP means a building dedicated to religious worship and may include 
+such accessory uses as a nursery school, an assembly hall, a school of religious 
+education, convent, monastery or parish hall.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+17 
+PORTABLE ASPHALT PLANT means a facility which is not of permanent construction but 
+is designed to be dismantled and moved to another location as required, with equipment 
+designed to heat and dry aggregate and mix aggregate with bituminous asphalt to 
+produce asphalt paving material and includes stockpiling of bulk materials used in the 
+process.  
+ 
+PRINCIPAL USE means the predominate purpose for which any land, building, structure 
+or premises, or part thereof, is used, designed, arranged, occupied or maintained.  
+ 
+PRIVATE PARK means any open space or recreational area, other than a public park, 
+owned and operated or maintained in whole or in part for profit by an  organization on 
+a commercial and/or private members basis, and may include therein one or more 
+swimming, wading and boat facilities, picnic area, ski area, gardens or refreshment 
+rooms.  
+ 
+PRIVATE ROAD means a road which affords access to abutting lots and is not maintained 
+by a public authority.  
+ 
+PUBLIC AUTHORITY means any Federal, Provincial or municipal agency and includes any 
+commission, board, authority or department established by such agency.  
+ 
+PUBLIC PARK means an area of public land specifically defined or set aside for use by 
+and for the general public in both active or passive recreational uses; and includes all 
+landscaping, facilities and apparatus, playing fields, utilities, buildings and other 
+structures that are consistent with the general purposes of public parkland, and whether 
+or not such recreational facilities are publicly operated or operated by other 
+organizations pursuant to arrangements with the public authority owning the park and 
+may include public and private cemeteries.  
+ 
+PUBLIC ROAD, OPENED means a public highway, public road or street which has been 
+assumed for public use and is maintained by the Municipality or other public authority.  
+ 
+PUBLIC UTILITY means any facility or building provided by the Township of Nipissing, 
+the Province of Ontario, or the Government of Canada or their agencies or by a gas, 
+hydro, telephone or railway company for the supply of utility services.  
+ 
+PUMPHOUSE means a structure designed to enclose a water pump.  
+ 
+QUARRY means a place where consolidated rock has been or is being removed by means 
+of an open excavation to supply material for construction, industrial or manufacturing 
+purposes, but does not include a wayside quarry or open pit metal mine.  
+ 
+RECREATIONAL USE means the use of any land, building, structure or equipment for 
+outdoor and indoor sports and games including a swimming pool, tennis court, ball field, 
+soccer field, skating rink or arena, open air theatre, playgrounds and other similar uses, 
+but does not include a shooting gallery, or archery, rifle, pistol skeet or trap range, a 
+race track or commercial amusement park or theatre.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+18 
+ 
+RECREATIONAL VEHICLE means any vehicle so constructed that it is used for temporary 
+eating and sleeping accommodation for travel, vacation and/or recreational use, or as 
+further defined in the Motor Vehicles Act for Ontario. Such vehicle shall include tourist 
+trailers, motorized homes, tent trailers and campers mounted on motorized vehicles.  
+ 
+REPAIR GARAGE means an establishment for the repair or replacement of parts in a 
+motor vehicle and without limiting the generality of the foregoing, shock absorbers, 
+transmissions, gears, brakes, clutch assemblies, steering assemblies, radiators, heating 
+or cooling systems, ignition systems, mechanical or electrical parts or systems, the 
+installation of undercoating, engine tuning, lubrication and engine conversion or 
+replacement, but does not include an auto body shop, an impounding yard, an 
+automobile service station or a gas bar.  
+ 
+RESTAURANT means a building or structure or part thereof where food is prepared and 
+offered for sale to the public for consumption primarily within the building or structure 
+and as accessory use thereto may be engaged in providing customers with take-out 
+service. 
+ 
+RESTAURANT, TAKE-OUT means a building or structure or part thereof where food and 
+drink is prepared and served to the public for consumption outside of such building or 
+structure or part thereof.  
+ 
+RETAIL STORE means a building or part thereof where goods, services, wares, 
+merchandise, substances, articles or things are offered or kept for sale or rent by retail 
+directly to the public, but does not include any manufacturing process or construction 
+uses.  
+ 
+RIDING STABLE means land and buildings used to house horses and for their exercise and 
+training and may include a school boarding stables, tack shop or other related uses.  
+ 
+RIGHT-OF-WAY means an easement for access over one or more lots.  
+ 
+SALVAGE YARD means land or buildings used for an automobile wrecking yard or 
+premises, the keeping and/or storing, of used building products, waste paper, rags, 
+bones, bottles, bicycles, automobile tires, old metal, other scrap material or salvage 
+and where such materials are bought, sold, exchanged, baled, packed, disassembled or 
+handled for further use.  
+ 
+SAWMILL means a building, structure or area where timber is cut, sawed or planed, 
+either to finished lumber, or as an intermediary step and may include facilities for the 
+kiln drying of lumber and mayor may not include the distribution of such products on a 
+wholesale or retail basis.  
+ 
+SCHOOL means a public school, a separate school, a university, a college or a private 
+school authorized by the authority having jurisdiction.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+19 
+SENSITIVE AREA means areas of land and/or water of ecological or geological importance 
+which are sensitive because of their uniqueness. This uniqueness is often related to one 
+or more functions, such as, scientific research, education and interpretation, species 
+maintenance, conservation of unique or representative occurrences of flora, fauna, land 
+forms or geology.  
+ 
+SEPTIC SYSTEM means a sewage treatment unit as defined by the Ontario Building Code 
+Act.  A septic system shall include all components of the system, including the mantel.   
+ 
+SERVICE INDUSTRY means an establishment for servicing or repairing any of the 
+following: tires, including vulcanizing or retreading, batteries, brakes or radiators, 
+automotive ignition, exhaust or electrical systems, snowmobiles, outboard motors, 
+furnaces or oil burners, water or air coolers or domestic water heaters, fixtures or 
+equipment pertaining to any of the above or any other like articles. Service industry 
+also includes a printing establishment, a laundry or cleaning establishment, a paint, 
+plumbing, welding or sheet metal shop and similar uses. 
+ 
+SERVICE OR REPAIR SHOP means any building or part thereof used primarily for the 
+servicing or repairing of household articles and shall include radio, television, home 
+entertainment and household appliances but shall not include industrial or 
+manufacturing or motor vehicle repair shops.  
+ 
+SETBACK means the distance between any lot line and the nearest part of any main wall 
+of any building or structure on the lot.  
+ 
+SHORELINE means any lot line or part thereof which abuts a navigable waterway, or a 
+Crown land shoreline reserve.  
+ 
+SITE PLAN means a scaled drawing showing the relationship between the lot lines and 
+the uses, buildings or structures existing or proposed on a lot, including such details as 
+parking areas, access points, exterior lighting, driveways, walkways, landscaped areas, 
+walls, fences, vaults, storage and collection areas, building areas, setbacks from lot 
+lines, height  and areas for special uses.  
+ 
+STORAGE CONTAINER means the trailer portion of a tractor-trailer unit or transport 
+truck without the running gear, or a rail or seaway container traditionally used for the 
+shipping and transportation of goods and materials. 
+ 
+STOREY means the portion of a building, other than a basement or cellar, between the 
+surface of any floor and the surface of the floor next above, or, if there is no floor above 
+it, that portion between the surface of such floor and the ceiling above it.  
+ 
+STREET LINE means the boundary line between a lot and a street, road or highway.  
+ 
+STRUCTURE means anything that is erected, built or constructed of parts joined together 
+or any such erection fixed to or supported by the soil or any other structure. For the 
+purposes of this By-law, a fence not exceeding one and 1.9 metres in height shall be 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+20 
+deemed not to be a structure and for the purpose of setbacks or yards required in this 
+By-law, a sign shall not be deemed to be a structure.  This definition shall include septic 
+systems, swimming pools and hot tubs.   
+ 
+SWIMMING POOL mean a structure other than a hot tub, which holds water exceeding 
+91 centimetres in depth at any point and is used for recreational purposes.   
+ 
+TEMPORARY USE means the use of land, building or structure for a fixed period of time 
+with the intent to discontinue such use upon the expiration of the time period. 
+ 
+TOP OF BANK means the location up-slope from the scoured channel of a stream, or 
+shoreline of other waters, where an abrupt change in slope occurs.   
+ 
+TOURIST 
+ESTABLISHMENT 
+means 
+an 
+establishment 
+that 
+provides 
+sleeping 
+accommodation, with or without meals, including tourist cabins, housekeeping cabin, a 
+motel, a motor court, an auto court, a hotel and all buildings operating under The 
+Tourism Act, as amended.  
+ 
+TRAILER means a vehicle that is at any time drawn upon a highway by a motor vehicle 
+and for the purposes of this By-law does not include a mobile home.  
+ 
+TRAILER, CONSTRUCTION means any trailer designed to be temporarily located on a 
+parcel of land during the construction of a building or the development of land utilized 
+for temporary shelter and/or the storage of equipment related to the construction 
+occurring on the land and having the running gear and towing equipment permanently 
+attached. 
+ 
+TRAILER, PARK MODEL means a trailer that is designed in accordance with CSA Z241 
+standards. 
+ 
+TRAILER, TRAVEL OR TENT means any trailer which is designed to be temporarily utilized 
+for living, shelter and sleeping accommodation, with or without cooking facilities and 
+which has running gear and towing equipment that is permanently attached and is not 
+permanently affixed to the ground.  
+ 
+USE means the purpose for which a lot or building or a structure or any combination 
+thereof is designed, constructed, arranged, occupied, maintained or utilized.  
+ 
+VEGETATIVE BUFFER means an area of land consisting of forest or indigenous vegetation 
+that is maintained in a natural state to help filter sediment nutrients and other 
+pollutants from runoff into the waterbody and to maintain the natural aesthetic quality 
+of natural environments. 
+ 
+VOLUME means the measurement of three dimensional space (cubic metres) within the 
+enclosed portion of a building, structure or natural feature. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+21 
+WAREHOUSE means a building or part of a building used primarily, for the housing, 
+adapting for sale, storage and distribution of goods, wares, merchandise, food stuff, 
+substances or articles and may include facilities for a wholesale or retail commercial 
+outlet.  
+ 
+WASTE DISPOSAL SITE means a place where garbage, refuse or domestic or industrial 
+waste is disposed of or dumped and which is approved by the applicable Government 
+agency(ies).  
+ 
+WATER ACCESS LOT means a lot that has frontage on a waterbody and is not capable of 
+obtaining access from a Provincial highway, road, or private road. 
+ 
+WATERBODY means any bay, lake, natural watercourse or canal, other than a drainage 
+or irrigation canal.  
+ 
+WATERCOURSE means the natural channel for a perennial or intermittent stream of 
+water including a river or stream.  
+ 
+WATERFRONT LANDING means the use of land as a docking and parking facility, which 
+serves as a mainland access point for a commercial or residential property that are 
+accessible by water. 
+ 
+WAYSIDE PIT or WAYSIDE QUARRY means a temporary pit or quarry opened and used by 
+a public road authority solely for the purpose of a particular project or contract of road 
+construction and not located on the road right-of-way.  
+ 
+WETLANDS means lands that are seasonally or permanently covered by shallow water, 
+as well as lands where the water table is close to or at the surface. In either case the 
+presence of abundant water has caused the formation of hydric soils and has favoured 
+the dominance of either hydrophytic or water tolerant plants. The four major types of 
+Wetlands are swamps, marshes, bogs, and fens.  
+ 
+WETLANDS, SIGNIFICANT means those wetlands identified as provincially significant 
+wetlands by the Ministry of Natural Resources through an evaluation system. 
+ 
+WHOLESALE USE means any establishment in which goods, wares, merchandise, 
+substances, articles or things are offered or kept for sale or rent by wholesale to others, 
+for resale and to industrial and commercial users.  
+ 
+YARD means an open, uncovered and unoccupied space appurtenant to a building.  
+ 
+YARD, EXTERIOR SIDE means the side yard of a corner lot, which side yard extends from 
+the front yard to the rear yard between the exterior side lot line abutting a street and 
+the nearest main wall of any main building or structure on the lot.  
+ 
+YARD, FRONT means a yard extending across the full width of the lot between the front 
+lot line and the nearest main wall of any main building or structure on the lot.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+22 
+ 
+YARD, INTERIOR SIDE means a side yard other than an exterior side yard.  
+ 
+YARD, REAR means a yard extending across the full width of the lot between the rear 
+lot line and the nearest main wall of any main building or structure on such lot.  
+ 
+YARD, REQUIRED means the minimum yard required by the provisions of this By-Law.  
+ 
+YARD, SIDE means a yard between the nearest main wall of any main building or 
+structure and the side lot line extending from the front yard (or front lot line if no front 
+yard is required) to the rear yard (or rear lot line if no rear yard is required).  
+ 
+YARD, WATER means a yard extending from the normal ordinary water's edge on any 
+body of water to the nearest wall of any building or structure on the lot. 
+ 
+YURT means a circular domed seasonal structure for accommodation that is portable 
+and self-sufficient, usually consisting of a wooden frame covered by felt or canvas.   
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+23 
+SECTION 3 
+ - GENERAL PROVISIONS 
+3.1 
+APPLICATION  
+The provisions of this section apply to all zones except as may be indicated otherwise.  
+ 
+3.2 
+ACCESS REGULATIONS TO IMPROVED STREET  
+No person shall erect any building or structure in any zone unless the lot upon which 
+such building or structure is to be erected abuts an opened public road which is presently 
+being maintained year-round by the Municipality or the Province of Ontario.  
+ 
+3.2.1 
+Exemption for Water Access Lots  
+The provisions of Section 3.2 do not apply to a dwelling provided the lot is a lot of record 
+or separate parcel that was in existence on October 30, 1980 or is a lot created by 
+consent or by plan of subdivision under Section 51 of the Planning Act and which has 
+frontage on Ruth Lake, Wolfe Lake, McQuaby Lake, Lake Nipissing or the navigable 
+portion of the South River and the lot has water access.  
+ 
+3.2.2 
+Exemption for Pits, Quarries and Hydro Facilities  
+The provisions of Section 3.2 do not apply to buildings or structures associated with pits, 
+quarries and electric power transmission facilities.  
+ 
+3.2.3 
+Exemption for Hunt Camps and Maple Syrup Operations  
+The provisions of Section 3.2 do not apply to hunt camps or maple syrup operations.  
+ 
+3.3 
+ACCESSORY BUILDINGS, USES, OR STRUCTURES  
+Accessory uses, buildings or structures are permitted in any zone, subject to the 
+provisions of the said zone and the following:  
+ 
+a)  
+No accessory building or structure may be used for human habitation, 
+unless otherwise permitted by this By-law. The use of any accessory 
+building or structure for the keeping of animals, other than domestic 
+pets, is not permitted in any Residential, Hamlet (RH) Zone, Shoreline 
+Residential, (SR) Zone or Limited Service Residential (LSR) Zone. 
+b) 
+An accessory building shall not be erected prior to the erection of a 
+permitted dwelling on the same lot except where it is necessary for 
+the storage of tools and materials for use in connection with the 
+construction of such dwelling and no accessory building shall be used 
+prior to the erection of such dwelling for any purpose other than such 
+storage.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+24 
+c) 
+Notwithstanding any other setback required by this By-law, no 
+accessory building or structure shall be located closer than 3 metres 
+to a side lot line or a rear lot line. In no case shall an accessory 
+building be located closer than 8 metres to a road.  
+d) 
+No accessory building shall exceed 4.5 metres in height in any 
+Residential Zone.  On lots less than 5 hectares in the Rural Zone the 
+maximum height of an accessory building is 6.5 metres.  On lots 
+greater than 5 hectares the maximum height for an accessory building 
+is 11 metres.  
+e) 
+A gazebo shall not be permitted in the front yard of a property in the 
+Shoreline Residential (SR) Zone or the Limited Service Residential 
+(LSR) Zone. 
+f) 
+A gazebo shall have a maximum floor area of 15 square metres. 
+g) 
+Notwithstanding the provisions of Sub-section 3.3 c), in any Industrial 
+Zone, an accessory building shall comply with all regulations required 
+by this By-law for the main building on the lot.  
+h) 
+In any Industrial Zone, an accessory commercial use shall be 
+permitted within the main building provided that the said use does 
+not exceed 10 percent of the gross floor area or a maximum area of 
+100 square metres whichever is the lesser.  
+i) 
+All accessory uses, buildings and structures to a permitted principal 
+use shall be located on the same lot. 
+3.4 
+AGRICULTURAL USES – MINIMUM LOT AREA 
+In any zone where agricultural uses are permitted, livestock shall only be permitted on 
+lots greater than 2.0 hectares.  For properties between 1.0 hectare and 2.0 hectares, a 
+maximum of 20 chickens may be permitted.  
+ 
+3.5 
+AMENITY REQUIREMENTS  
+Notwithstanding any other provisions of this By-law, where a lot in any Commercial or 
+Industrial Zone fronts on a street opposite a Residential Zone or abuts a Residential 
+Zone, the following amenity requirements shall be provided:  
+ 
+a) 
+A strip of land not less than 6 metres in width along the front, side 
+and/or rear lot lines, within the Industrial or Commercial Zone and 
+adjacent to the Residential Zone shall be adequately landscaped 
+except where used for entrances and exits.  
+b) 
+No open storage shall be permitted in any yard adjacent to the 
+Residential Zone.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+25 
+c) 
+Exterior lighting and illuminated signs shall be so arranged as to 
+deflect light away from the adjacent Residential Zone.  
+3.6 
+BED AND BREAKFAST ESTABLISHMENTS  
+In all Zones where a bed and breakfast establishment is a permitted use, the following 
+shall apply:  
+ 
+a) 
+The number of guest rooms shall not exceed 4.  
+b) 
+A minimum of 1 parking space for each guest room shall be required.  
+c) 
+Subject to applicable and required permits and approvals, one sign 
+not exceeding 1 square metre in size shall be permitted in the front 
+yard.  
+3.7 
+BOATHOUSE, PUMPHOUSE AND DOCKING FACILITIES 
+Unless otherwise prohibited by this By-law, a boathouse, pump house, or docking facility 
+may be erected and used in a yard abutting a navigable waterway provided that the 
+location complies with the required minimum side yard requirements for boathouses 
+and for accessory buildings or structures. 
+ 
+Where an encroachment onto the bed of the waterbody is proposed, permission to 
+construct or install the in-water and/or shoreline structure or facility shall only be 
+permitted if approval to occupy the area has been obtained from or meets the 
+prescriptive requirements of the authority having jurisdiction.  
+ 
+a) 
+Where a boathouse is permitted, the owner shall have acquired the 
+Shoreline Road Allowance, where existing, prior to the construction 
+of the boathouse. 
+b) 
+No more than 25% or a maximum of 23 metres of the shoreline 
+frontage of a lot, whichever is less, of any one residentially zoned 
+property shall be occupied by in-water or shoreline structures and 
+facilities. 
+c) 
+All boathouses, docks and marine facilities shall have a minimum 
+setback from the side lot line of 3 metres on a straight line projected 
+into the water from the shoreline. 
+3.7.1 
+Boathouses  
+a) 
+Where permitted by this By-law, a maximum of one boathouse shall 
+be permitted per lot. 
+b) 
+The width of the boathouse measured parallel to the shoreline shall 
+be included in the 25% or 23 metre limit on the construction or 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+26 
+installation of in-water structures and facilities along the shoreline 
+frontage of a lot in accordance Section 3.8 (b). 
+c) 
+The first 3 metres of a boathouse supporting structure adjacent to the 
+shoreline shall be an open span. 
+d) 
+A minimum of 50% of the total length of the boathouse supporting 
+structure that extends out from the shoreline shall be open span. 
+e) 
+A boathouse shall not exceed one storey and shall not exceed a height 
+of 6 metres.    
+f) 
+For the purposes of this Section, building height shall be the distance 
+above the normal or controlled water level. A gambrel or mansard 
+roof shall not be permitted on a boathouse. 
+g) 
+A maximum of 25% of the boathouse may be located inland of the 
+natural shoreline and the boathouse shall be located no further than 
+15 metres from the shoreline. 
+3.7.2 
+Docks and Boat Lifts 
+a) 
+The maximum length of a dock shall be 15 metres extending into the 
+waterbody, from the normal ordinary water’s edge.  
+b) 
+The maximum combined surface area of all docks, including any 
+attached fingers, and open decks above the water but not including 
+docking within a boathouse, shall be 112 square metres.  
+c) 
+Gazebos, pergolas, or other like or similar structures shall not be 
+permitted on a dock. 
+d) 
+Boat lifts shall be located within or adjacent to the permitted dock 
+and/or boathouse. 
+3.7.3 
+Docks, Boat Lifts, Boathouses, Decks and Pumphouse - Restricted Area 
+a)  
+A dock, boat lift, boathouse, deck, pumphouse, fence or accessory 
+structure shall not be permitted on beach areas identified on 
+Schedule A to this By-law. 
+b) 
+A dock, boat lift or boathouse, deck, pumphouse, fence or accessory 
+structure shall not be permitted in the water adjacent to a beach area 
+identified on Schedule A to this By-law. 
+c) 
+A deck that is attached to the principal dwelling may be permitted in 
+the front yard of a lot in a beach area in accordance with the 
+provisions of this By-law. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+27 
+d) 
+An accessory structure may be permitted in the rear yard of a lot in a 
+beach area in accordance with the provisions of this By-law. 
+3.8 
+BUILDINGS TO BE MOVED  
+In all Zones, no building shall be moved within or into the limits of the area covered by 
+this By-Law without a permit from the Municipality, nor shall said building be moved 
+into any zone where it would not qualify as a permitted use.  
+ 
+3.9 
+DWELLING UNIT IN NON-RESIDENTIAL BUILDING OR LOT  
+No person shall use any lot, or erect, alter or use any building or structure for the 
+purpose of a separate dwelling unit on a lot zoned other than for residential uses or 
+within a portion of a non-residential building except in accordance with the following 
+regulations:  
+ 
+a) 
+Only one single unit dwelling unit for use by the owner or operator 
+shall be permitted except in the C1, C2 or C3 zones where the 
+permitted dwelling unit can be either a single detached or an 
+accessory dwelling unit in accordance with Section 3.12.  
+b) 
+The dwelling unit shall have a private water supply and sewage system 
+where such have been approved by the appropriate public authority.  
+c) 
+The single unit dwelling unit shall have a minimum floor area of 80 
+square metres.  
+d) 
+The dwelling unit shall have a separate parking space as provided by 
+sub-section 3.29 hereto.  
+3.10 
+DWELLING UNIT IN C1, C2 OR C3 ZONES  
+Where an accessory dwelling unit is permitted in a General Commercial (C1) Zone, a 
+Highway and Tourist (C2) Zone, or a Resort Commercial (C3) Zone the accessory dwelling 
+unit shall conform to the following provisions:  
+ 
+a) 
+The unit shall form a subordinate part of the commercial building.  
+b) 
+Pedestrian access to the residential portion of the building shall be 
+provided for the sole use of the dwelling units.  
+c) 
+Satisfactory access shall be provided for delivery vehicles to the 
+residential portion of said building.  
+d) 
+Satisfactory access from a road to a side yard or a rear yard shall be 
+provided for all commercial buildings to permit the carrying of goods 
+and supplies.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+28 
+3.11 
+DWELLINGS PER LOT  
+In this By-law, no more than one dwelling shall be permitted on any lot, unless otherwise 
+specified by this By-law.  
+ 
+3.12 
+SECONDARY DWELLING UNITS WITHIN A SINGLE UNIT DWELLING AND 
+WITHIN ACCESSORY STRUCTURES  
+3.12.1 
+Secondary Dwelling Units within a Single Unit Dwelling 
+A secondary dwelling unit shall be permitted within a single unit dwelling in the Hamlet 
+Residential (RH) Zone, the Estate Residential (RE) Zone and the Rural (RU) Zone.  Any 
+secondary dwelling unit shall be developed in accordance with the following provisions:  
+ 
+a) 
+A maximum of one (1) secondary dwelling unit shall be permitted 
+within single unit dwelling. 
+ 
+b) 
+The doorway entrance that leads to a secondary dwelling unit is 
+limited to locations on the ground floor only, except where building 
+and fire codes dictate otherwise. 
+ 
+c)  
+Parking for the secondary dwelling unit shall be provided in 
+accordance with the parking provisions in this By-law. 
+ 
+d)  
+Notwithstanding any other provision in this By-law, the required 
+parking space for a secondary dwelling unit may be stacked behind 
+the required parking space of the principal dwelling in the driveway. 
+The creation of the secondary dwelling unit must not eliminate a 
+required parking space for the principal dwelling unit. 
+ 
+e)  
+The secondary dwelling unit shall not exceed 56.0 square metres of 
+any portion of the single unit dwelling that is located at or above 
+grade. Except for the entrance, any secondary dwelling unit located 
+entirely in the basement may occupy the entire basement regardless 
+of size. 
+ 
+f)  
+A secondary dwelling unit is not permitted in a non-conforming single 
+unit dwelling. 
+ 
+g) 
+The appropriate authority has approved the private sewage disposal 
+system to service the total sewage flow on the lot. 
+ 
+3.12.2 
+Secondary Dwelling Units within Accessory Buildings 
+A secondary dwelling unit shall be permitted within an accessory building in the Hamlet 
+Residential (RH) Zone, the Estate Residential (RE) Zone and the Rural (RU) Zone.  Any 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+29 
+secondary dwelling unit within an accessory building shall be developed in accordance 
+with the following provisions: 
+ 
+a)  
+Only one (1) secondary dwelling unit within an accessory building shall 
+be permitted per lot, provided that the lot contains an existing 
+dwelling unit. 
+ 
+b)  
+The appropriate authority has approved the private sewage disposal 
+system to service the total sewage flow on the lot. 
+ 
+c)  
+A secondary dwelling unit shall not exceed 56.0 square metres of floor 
+area. 
+ 
+d)  
+One additional dedicated parking space above the requirements of 
+this By-law for the related zone shall be provided for the secondary 
+dwelling unit. 
+ 
+e)  
+The accessory building must be located in the interior side yard or 
+rear yard. 
+ 
+f)  
+The secondary dwelling unit shall only be permitted in accessory 
+structures that comply to the minimum yard requirements for the 
+principal building of the zone in which it is located.  
+ 
+g)  
+A secondary dwelling unit is only permitted on a lot with a minimum 
+lot area of 0.8 hectares. 
+ 
+3.13 
+BUILDINGS, STRUCTURES AND USES IN ENVIRONMENTAL PROTECTION (EP) 
+ZONES 
+The construction or installation of in-water shoreline structures and facilities shall not 
+be permitted in an Environmental Protection (EP) Zone.   
+ 
+3.14 
+FRONTAGE ON A HIGHWAY  
+Notwithstanding any other provision of this By-law, where a lot in any Commercial or 
+Industrial Zone fronts on a Provincial Highway and is not opposite any residential zone, 
+the following amenity requirements shall be provided:  
+ 
+a) 
+A strip of land not less than 1.5 metres in width along the front lot 
+line adjacent to the road shall be adequately landscaped.  
+b) 
+No front yard may be used for employee parking and any front yard 
+that is not used for driveways and visitor's parking spaces shall be 
+adequately landscaped. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+30 
+3.15 
+HAZARD LANDS OR LAND SUBJECT TO FLOODING  
+The erection of any building or structure requiring the construction of waterworks, 
+sewage or drainage facilities is prohibited in all Zones on land that is subject to flooding 
+on land that is rocky, low lying, marshy or otherwise unstable.  
+ 
+3.16 
+HEIGHT REGULATIONS  
+The height regulations in this By-law shall not apply to church spires, belfries, water 
+tanks, elevator enclosures, barns, silos, all agricultural structures, flagpoles, television, 
+radio or tower antennae, ventilators, skylights or chimneys, clock towers, wind 
+generators, windmills, solar energy collectors, air conditioners or incidental equipment 
+associated with internal building equipment.  
+ 
+3.17 
+HOME INDUSTRY  
+Where a home industry is permitted in any zone, the said use shall be maintained in 
+accordance with the following provisions:  
+ 
+a) 
+Such home industry is clearly secondary to the main residential use 
+and does not change the main residential character of the property.  
+b) 
+There is no external advertising other than a sign erected in 
+accordance with any by-laws of the corporation regulating signs.  
+c) 
+There is no external storage of goods, materials or equipment.  
+d) 
+Such home industry is not an obnoxious trade, business or 
+manufacture or which is a traffic generator that would impact 
+negatively on a provincial highway.  
+e) 
+Not more than two persons not resident in the dwelling are employed 
+therein on a full-time basis. 
+f) 
+The lot on which the use is proposed shall have at least 60 metres of 
+frontage and an area of not less than 1.6 hectares.  
+3.18 
+HOME OCCUPATION  
+Where a home occupation is permitted in any zone, the said use shall be maintained in 
+accordance with the following provisions:  
+ 
+a) 
+The occupation shall be carried on by a person or persons resident in 
+the dwelling unit.  
+b) 
+Not more than one assistant who is not a resident in said dwelling may 
+operate in or from said dwelling.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+31 
+c) 
+The use of the dwelling unit for the home occupation shall be clearly 
+incidental and subordinate to its use for residential purposes by its 
+occupants, and not more than 25% of the floor area of the dwelling 
+unit shall be used in the conduct of the home occupation.  
+d) 
+There shall be no change in the outside appearance of the building or 
+premises, or other visible evidence of the conduct of such home 
+occupation other than one sign, not exceeding 0.2 square metres in 
+area, non-illuminated, and mounted flat against the wall of the 
+principal building.  
+e) 
+No home occupation shall be conducted in any accessory building.  
+f) 
+There shall be no goods, wares, or merchandise publicly offered or 
+exposed for sale on the premises.  
+g) 
+Such home occupation is not an obnoxious trade, business or 
+manufacture or which is a traffic generator that would impact 
+negatively on a provincial highway.  
+h) 
+One off-street parking space shall be provided for each twenty-eight 
+(28) square metres of floor area or portion thereof devoted to said 
+use in addition to that required for the dwelling.  
+3.19 
+ICE BUNGALOW AND ICE HUT 
+a) 
+An Ice Bungalow or Ice Hut shall only be permitted to be used for 
+human habitation, including temporary accommodation, when 
+located on ice. 
+b) 
+Notwithstanding any other provision of this by-law, no ice hut or ice 
+bungalow shall be stored within the required front yard or exterior 
+side yard of a lot. 
+3.20 
+LAKE NIPISSING FLOOD PLAIN AND OTHER FLOOD PLAINS 
+a) Notwithstanding any other provision of this By-law, no building intended 
+for human habitation shall be constructed in any zone within the flood 
+plain of Lake Nipissing unless all openings to such building are above an 
+elevation of 197.25 m C.G.D. 
+ 
+b) For lots subject to the fetch of Lake Nipissing:  
+ 
+i. 
+the building is setback at least 5 metres from the 197.25 m 
+C.G.D; and, 
+  
+ii. 
+the building is located at least 15 metres from the top of bank.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+32 
+3.21 
+LANDSCAPING  
+a) 
+All required landscaping shall be maintained in a healthy condition. 
+b) 
+Where a Commercial or Industrial zone abuts any zone, other than 
+any class of Commercial or Industrial zone, a landscaped buffer not 
+less than 3 metres in width shall be provided within the Commercial 
+or Industrial zone boundary. 
+c) 
+Notwithstanding the above, a landscaped buffer may be reduced in 
+width to 1.5 metres where a coniferous planting strip or opaque 
+fence, 2 metres in height is provided in conjunction with the 
+landscaping. 
+d)  
+In Commercial Zones except the C1 Zone and Industrial Zones, a 1.5 
+metre landscaped buffer shall be provided abutting the front lot line, 
+exclusive of entrances. 
+e)  
+A 1.5 metre landscaped buffer shall be provided abutting the front lot 
+line, exclusive of entrances, in the case of a free-standing Parking Lot 
+in the General Commercial (C1) Zone. 
+3.22 
+LOADING REQUIREMENTS  
+For every building or structure to be erected or enlarged, or any land to be used in any 
+zone for any commercial or industrial purpose involving the movements of goods or 
+persons, loading spaces shall be provided in accordance with the following provisions: 
+ 
+FLOOR AREA OF BUILDING 
+LOADING SPACES REQUIRED 
+Less than 100 square metres 
+No space 
+For every additional 100 square 
+metres fraction thereof 
+One space 
+ 
+a) 
+Access to loading or unloading spaces shall be by means of a driveway 
+with a minimum width of 3 metres for one-way traffic, and a minimum 
+width of 6 metres for two-way traffic.  
+b) 
+The driveway, loading and unloading spaces shall be constructed and 
+maintained in a condition which provides for a stable surface that is 
+treated so as to prevent the raising of dust or loose particles and with 
+provisions for drainage facilities.  
+c) 
+ The loading space or spaces required shall be located in the interior 
+side or rear yard unless set back from the street line a minimum 
+distance of 15 metres. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+33 
+d) 
+When a building or structure has insufficient loading space at the date 
+of the passing of this By-law to comply with the requirements herein, 
+this By-law shall not be construed to require that the deficiency be 
+made up prior to the construction of any addition. No addition may 
+be built, however, and no change of use may occur, the effect of 
+which would be an increase in that deficiency.  
+3.23 
+NON-COMPLYING LOTS, BUILDINGS AND STRUCTURES  
+a) 
+Expansion of Legal Non-Complying Buildings and Structures 
+ 
+Where a building or structure has been lawfully erected on a lot 
+having less than the minimum frontage and/or area, or having less 
+than the minimum setback, and/or yard or any other provision 
+required in this By-law, the said building or structure shall be deemed 
+to comply with this By-law with respect to any deficiency or 
+deficiencies; and further the said building or structure may be 
+reconstructed, replaced or renovated provided that: 
+i) 
+The, reconstruction, replacement or renovation does not 
+further reduce such setback and or front yard and/or side yard 
+and/or rear yard having less than the minimum required by 
+this By-law; and, 
+ii) 
+The reconstruction, replacement or renovation does not 
+further increase the volume of non-complying structure in 
+required yard; and, 
+iii) 
+All other provisions of this By-law are complied. 
+ 
+b) 
+Existing Undersized Lots 
+ 
+Where a lot, having a lesser lot area and/or lot frontage than required 
+herein, existed on the date of passing of this By-law, or where such a 
+lot is created by a public authority or correction of title, such smaller 
+lot may be used and a permitted building or structure may be erected 
+and/or used on such a smaller lot provided that all other applicable 
+provisions of this By-law are complied with and provided that a 
+sewage system that complies with the regulations under Building Code 
+can be installed on the lands. 
+c) 
+Undersized Lots Resulting From Boundary Adjustment or Lot Addition 
+ 
+Lots which have been increased in frontage or area following adoption 
+of this By-law as a result of a Planning Act approval, but still do not 
+comply with minimum area or frontage requirements of this By-law, 
+may also be used in accordance with Sub-section (b) and furthermore 
+no zoning amendment shall be necessary to legalize the undersized 
+lot. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+34 
+ 
+Undersized Lots Subject to Expropriation or Transfer to Public 
+Authority or Private Road Association 
+ 
+Existing undersized lots which have been decreased in frontage or 
+area following adoption of this By-law as a result of an expropriation 
+by public authority or transfer of land to a private road association, 
+but still do not comply with minimum area or frontage requirements 
+of this By-law, may also be used in accordance with Sub-section (b) 
+and furthermore no zoning amendment shall be necessary to legalize 
+the undersized lot 
+3.24 
+NON-CONFORMING USES  
+a) 
+Continuation of Existing Uses 
+ 
+The provisions of this By-law shall not apply to prevent the use of any 
+existing lot, building or structure for any purpose prohibited by this 
+By-law if such existing lot, building or structure was lawfully used for 
+such purposes prior to the effective date of this By-law and provided 
+that the lot, building or structure continues to be used for that 
+purpose.  Where the use ceases to exist for a period of two years, the 
+use will be deemed to have been discontinued. 
+b) 
+Exterior Extension 
+ 
+The exterior of any building or structure which was lawfully used prior 
+to the effective date of this By-law for a purpose not permissible 
+within the Zone in which it is located, shall not be enlarged, 
+extended, reconstructed or otherwise structurally altered, unless 
+such building or structure is thereafter to be used for a purpose 
+permitted within such Zone, and complies with all requirements of 
+this By-law for such Zone unless these changes are necessary to 
+provide for flood proofing or insulation of the building. 
+c) 
+Interior Alteration 
+ 
+The interior of any building or structure which was lawfully used, prior 
+to the effective date of the By-law, for a purpose not permissible 
+within the Zone in which it is located, may be reconstructed or 
+structurally altered for the existing purpose for which such building 
+or structure was lawfully used. 
+d) 
+Restoration  
+ 
+Nothing in this By-law shall prevent the strengthening or restoration 
+to a safe condition of any existing, legal non-conforming building or 
+structure or part thereof, provided that the strengthening or 
+restoration does not increase the building height, size or volume or 
+change the existing, lawful use of such existing building or structure 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+35 
+or unless these changes are necessary to provide for flood proofing or 
+insulation of the building.  
+e) 
+Re-establishment of Existing Building and Structures 
+ 
+Nothing in this By-law shall apply to prevent the re-establishment of 
+any existing utilized non-conforming or non-complying building or 
+structure which is damaged by causes beyond the control of the 
+owner, other than flooding, provided a building permit is issued for 
+the re-establishment of the building or structure within 8 months of 
+the incident which rendered the building or structure unsafe or 
+unusable.  The building or structure may be re-established in the same 
+location on which it existed on the date of passage of this By-law, but 
+the extent of non-conformity or non-compliance may not be further 
+increased. 
+ 
+Buildings and structures damaged or destroyed as the result of natural 
+flooding shall not be re-established except in accordance with the 
+provisions of this By-law. 
+f) 
+Building Permit Issued 
+ 
+The provisions of this By-law shall not apply to prevent the use of any 
+existing lot, building or structure for any purpose prohibited by this 
+By-law for which the footings or foundations have been constructed 
+prior to the passing of this By-law, so long as the building or structure, 
+is substantially completed within one year after the date of the 
+passing of this By-law and a building permit is issued by the Chief 
+Building Official. 
+g) 
+Effective Date for Legal Non-Conformity 
+ 
+For the purpose of this By-law the effective date for the Legal Non-
+Conforming Use provisions shall be June 6, 2000.  
+3.25 
+OCCUPANCY OF INCOMPLETE BUILDINGS  
+No building shall be occupied unless an occupancy permit has been issued by the Chief 
+Building Official.   
+ 
+3.26 
+OPEN OR OUTSIDE STORAGE PROHIBITED  
+Notwithstanding any other provisions of this By-law, no open or outside storage shall be 
+permitted in any front yard in any Zone.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+36 
+3.27 
+PARKING REQUIREMENTS  
+Any person who erects or enlarges a building after the date of enactment of this By-law, 
+in any Zone, shall provide an area for automobile parking located on the same lot with 
+the said building except in the case of a water access lot.  
+ 
+a) 
+Any parking area designed to serve water access lots shall have a 
+minimum area of 40 metres squared for each lot to be served and no 
+parking shall be permitted within 8 metres of the high water mark or 
+within 3 metres of any lot line abutting a lot in a Residential Zone.  
+b) 
+Adequate provisions for access to a street or public lane from each 
+individual parking space shall be provided.  
+c) 
+Where in this By-law parking facilities are required, the parking area 
+shall be maintained with a stable surface treated to prevent the 
+raising of dust and any lights erected thereon shall be directed away 
+from any adjacent lots. Parking areas in any residential zone shall be 
+located only in a side or rear yard.  
+d) 
+Such parking spaces shall be provided and maintained in accordance 
+with the following requirements and are accumulative when more 
+than one of the listed land uses is located within any building or 
+structure. 
+e) 
+Parking Spaces shall be required to be a minimum of 3 metres by 6 
+metres. 
+ 
+TYPE OF BUILDING 
+MINIMUM PARKING REQUIRED 
+Any single unit dwelling, accessory 
+dwelling, or recreational dwelling.  
+Two parking spaces per dwelling unit on 
+the lot. 
+Any secondary dwelling unit. 
+One parking space. 
+Any commercial use, clinic, general 
+office, home industry or commercial 
+floor space of the building. 
+One parking space for each thirty (30) 
+square metres of commercial floor space 
+of the building. 
+Auditorium, arena, church, hall, 
+restaurant, club and other places of 
+assembly. 
+One parking space for each four persons 
+that can be restaurant, club and other 
+accommodated or one parking space for 
+each 4.5 square metres places of 
+assembly of floor space devoted to such 
+use, whichever is greater. 
+Industrial Use  
+One parking space for each one hundred 
+(100) square metres of building floor 
+space on the lot. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+37 
+TYPE OF BUILDING 
+MINIMUM PARKING REQUIRED 
+Schools 
+One parking space for each teaching 
+staff member plus parking spaces for 
+places of assembly, as given above. 
+Government Buildings 
+One parking space for each four 
+employees plus a parking area for 
+visitors with a minimum capacity of ten 
+parking spaces. 
+Hotels, Motels and Tourist Cabins 
+One parking space for each guest room 
+or suite plus parking spaces for places of 
+assembly, as given above. 
+For each tent or trailer space in a 
+camping establishment 
+One parking space 
+ 
+3.28 
+PARKING REQUIREMENTS, EXISTING BUILDINGS HAVING LESS THAN 
+MINIMUM REQUIREMENT 
+When a building or structure has insufficient parking area at the date of the passing of 
+this By-law to comply with the requirements herein, this By-law shall not be construed 
+to require that the deficiency be made up prior to the construction of any addition. 
+However, no change of use may occur, the effect of which would be an increase in that 
+deficiency.  
+ 
+3.29 
+PARKING AREA STANDARDS  
+Where in this By-law, parking areas for more than four vehicles are required, the 
+following standards shall be met:  
+ 
+a) 
+Adequate drainage facilities shall be provided and maintained in 
+accordance with the requirements of the Municipality.  
+b) 
+Parking areas shall be constructed of crushed stone, asphaltic paving, 
+concrete, paver stones or similar materials and the limits of said 
+parking area shall be defined by a fence, curb or other suitable 
+obstruction designed to provide a neat appearance; and prevent the 
+encroachment of vehicles on adjoining property.  
+c) 
+Each parking space shall have an area not less than 3 metres by 6 
+metres and shall be provided with unobstructed access to a street by 
+a driveway, aisle or lane. 
+d) 
+The lights used for illumination of parking areas shall be so arranged 
+as to divert the light away from adjacent lots.  
+e) 
+For any parking area in a commercial or industrial zone which is 
+required to be used in winter, an additional area equal to 20% of the 
+parking area must be provided.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+38 
+f) 
+No sign other than directional signs and a sign indicating the name of 
+the owner, not exceeding 3 square metres in size shall be erected on 
+any parking area or parking lot.  
+g) 
+Where a parking area is situated on the boundary between any non-
+residential zone and any residential zone, a strip of land not less than 
+1.5 metres in width, lying within the non-residential zone along said 
+boundary shall be used for no purpose other than landscaping.  
+3.30 
+PARKING AREA STANDARDS FOR ENTRANCE AND EXIT  
+Where in this By-law loading spaces or parking areas for more than four vehicles are 
+required:  
+ 
+a) 
+Entrance and exit ramps for vehicular traffic shall not exceed two in 
+number and each such ramp shall have a minimum width of 9 metres.  
+b) 
+A driveway leading to any parking or loading area, shall have a 
+minimum width of 3 metres for one way traffic, and a minimum width 
+of 6 metres for two way traffic.  
+c) 
+No driveway shall be located closer than 15 metres from the limits of 
+the rights-of-way at a street intersection.  
+3.31 
+PERMITTED ENCROACHMENTS IN YARDS  
+Every part of any yard required by this By-law shall be open and unobstructed by any 
+structure from the ground to the sky except that those structures listed in the following 
+table shall be permitted to project into the minimum yards required by this By-law for 
+the following specified distances: 
+ 
+Structure 
+Yards and Setbacks in 
+Which Projection is 
+Permitted 
+Maximum Projection into 
+the Required Minimum 
+Yard or Setback 
+Requirement 
+Sills, belt courses, cornices, 
+eaves or canopies, gutters, 
+chimneys or pilasters. 
+Any yard. 
+One metre. 
+Fire escapes and exterior 
+staircases. 
+Rear and exterior side 
+yards only. 
+One metre. 
+Window bays. 
+Front, rear and exterior 
+side yards only. 
+One metre over a maximum 
+width of three metres. 
+Balconies. 
+Any yard for multiple 
+family dwellings. Front, 
+rear and exterior side 
+yards only for all other 
+dwelling types. 
+Two metres. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+39 
+Structure 
+Yards and Setbacks in 
+Which Projection is 
+Permitted 
+Maximum Projection into 
+the Required Minimum 
+Yard or Setback 
+Requirement 
+Open, roofed porches not 
+exceeding one storey in 
+height, uncovered terraces. 
+Front and rear yards only. 
+Three metres including 
+eaves and cornices. 
+Deck. 
+Front and rear yards only. 
+ 
+ 
+Interior and exterior side 
+yard.  
+Four metres including 
+railings. 
+ 
+Two metres. 
+ 
+In no case shall the above structures encroach less than one metre to any lot line. 
+ 
+3.32 
+PITS AND QUARRIES  
+The making or establishment of pits and quarries is prohibited within the Municipality 
+except as provided in a zone for this purpose. However, this shall not apply to prevent 
+the temporary use of any land in any zone by a public authority or its agent for a wayside 
+pit, wayside quarry or portable asphalt plant except for any residential zone, 
+Environmental Protection (EP) Zone or Hazard (HAZ) Zone.  
+ 
+3.33 
+PROHIBITED USES  
+The use of a recreational vehicle or mobile home for human habitation shall be 
+prohibited within the area covered by this By-law, except in a Zone where such uses are 
+specifically permitted. 
+ 
+3.34 
+PUBLIC USES PERMITTED  
+The provisions of this By-law shall not apply to prevent the use of any land or to the 
+erection or use of any building or structure for the purpose of public service by the 
+Municipality or any department of the Government of Ontario or Canada, including 
+Ontario Hydro, or any public utility company provided that:  
+ 
+a) 
+The proponent, before carrying out or authorizing any undertaking 
+that the proponent considers will directly affect the Municipality, 
+shall consult with, and have regard for, the established planning 
+policies of the Municipality.  
+b) 
+The lot coverage, setback and yard regulations prescribed for the 
+zone in which such land, building, or structure is located are complied 
+with.  
+c) 
+The parking and loading regulations prescribed for the use are 
+complied with.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+40 
+d) 
+No goods, materials, or equipment are stored in the open in a 
+Residential Zone or in a lot adjacent to a Residential Zone.  
+3.35 
+REDUCTION OF REQUIREMENTS 
+No person shall change the purpose for which any land, building or structure is used or 
+erect any building, or structure, or construct an addition to any existing building or 
+structure, or sever any lands, if the effect of such actions is to cause the original 
+adjoining, remaining or new building, structure or lot to be in contravention with this 
+By-law. 
+ 
+3.36 
+SETBACKS FOR SEPTIC SYSTEMS 
+Notwithstanding any other setback required by this By-law, all components of a septic 
+system, including but not limited to the tank, bed, and mantle shall be setback a 
+distance of at least 30.0 metres from a waterbody. 
+ 
+3.37 
+SETBACK FROM WATERBODY 
+All buildings, structures, fences and signs shall be setback a distance of at least 30 
+metres from a waterbody, watercourse and the normal ordinary water’s edge and shall 
+not be permitted in the front yard of lot abutting the shoreline or shore road allowance 
+except:    
+ 
+a) 
+Where such buildings and structures are intended for conservation, 
+flood protection, erosion control and essential public services 
+normally associated with the waterfront, and;  
+b) 
+Where a boathouse, pumphouse or dock is being erected or altered in 
+accordance with the provisions of this by-law. 
+c) 
+For the purpose of this provision, the normal ordinary water's edge 
+shall be determined by delineation on a survey prepared by an Ontario 
+Land Surveyor.  
+3.38 
+SETBACKS FROM ALL ROADS 
+Where a building or structure is to be located or erected adjacent to a road in any zone, 
+a minimum setback of 15 metres from the edge of the right-of-way shall be provided for 
+commercial and industrial uses and a minimum setback of 8 metres from the edge of 
+the right-of-way shall be provided for residential uses. Any development located 
+adjacent to a road shall be carried out in accordance with the setback requirements, 
+access and building permit controls of the Ministry of Transportation and the Township 
+of Nipissing. Any proposed access to a road shall be subject to the prior approval of the 
+authority having jurisdiction over the road.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+41 
+3.39 
+SETBACK IN POTENTIAL HAZARD LAND AREAS  
+Notwithstanding any other provision of this By-Law, no new building, structure or placing 
+and/or removal of fill of any kind whether originating on the site or elsewhere shall be 
+permitted within 30 metres from the normal ordinary water's edge of any lake, river, or 
+watercourse shown on Schedule A to this By-law except for those uses required for 
+conservation, erosion control, flood protection and essential public services normally 
+associated with the waterfront.  
+ 
+3.40 
+SITE PLAN CONTROL  
+The following areas are subject to Site Plan Control:  
+ 
+a) 
+all Commercial Zones; 
+b) 
+all Industrial Zones except mineral aggregate extractive zones; 
+c) 
+all lands located below the established flood elevations; 
+d) 
+any Special Zone that would permit a commercial or industrial use; 
+e) 
+Any residential property with 3 or more units; 
+f) 
+Council may deem that any new use within an Environmental 
+Protection Zone or Hazard Zone be subject to Site Plan Control; and 
+g) 
+all uses abutting shorelines. 
+3.41 
+STORAGE CONTAINERS  
+a) Storage containers shall only be permitted within the Industrial General 
+(M1) Zone and the Rural (RU) Zone.   
+ 
+b) Storage containers shall be permitted as an accessory building or as a 
+principal building.  
+ 
+c) Within the Rural (RU) Zone, storage containers shall be setback a 
+minimum of 30 metres from a road allowance and front lot line and a 
+minimum of 20 metres from any other lot line. 
+ 
+d) A maximum of two storage containers shall be permitted on a lot within 
+the Rural (RU) Zone, however for a lot with a lot area of 5 hectares or 
+greater, an additional storage container may be permitted.   
+ 
+e) Notwithstanding any other provision in this By-law, storage containers 
+shall not be permitted to be located within a front or exterior side yard. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+42 
+f) Unless otherwise stated in this By-law, storage containers shall adhere to 
+the provisions of Section 3.3 and shall be used exclusively for the 
+temporary storage of goods and materials and may not be used to 
+accommodate work areas, shops, office uses or retail sales.  
+ 
+3.42 
+SWIMMING POOLS  
+Notwithstanding the provisions of this By-law, a swimming pool shall be permitted in 
+any Zone (except for the Hazard Lands (HAZ) Zone or the Environmental Protection (EP) 
+Zone), provided that:  
+ 
+a) 
+No part of such pool shall be located closer to any side lot line or 
+street line than the minimum distance required for principal building 
+location on such lot, and  
+b) 
+The maximum height of such pool is one and a half (1.5) metres above 
+the average finished grade level of the ground adjoining and within 
+five (5) metres of such pool, and  
+c) 
+Any building or structure, required for changing clothing or for 
+pumping or filtering facilities, or other similar accessory uses, shall 
+comply with the provisions of this By-law respecting accessory 
+buildings on such lot, and  
+d) 
+In the rear yard, no part of such pool shall be located closer to any 
+rear lot line or street line than the minimum distance required for an 
+accessory building located on such lot, and  
+e) 
+Every swimming pool shall be enclosed by a fence with a minimum 
+height of 1.2 metres and shall not contain rails or other horizontal or 
+diagonal bracing on the outside of the fence that may facilitate 
+climbing. 
+3.43 
+TEMPORARY CONSTRUCTION USES  
+Notwithstanding any other provisions of this By-law, uses such as a construction camp 
+or other such temporary work camp, a tool shed, scaffold, sign or other building or 
+structure incidental to the construction shall be permitted provided that:  
+ 
+a) 
+A building permit has been obtained from the Township and is in good 
+standing.   
+b)  
+Any sign which is erected does not exceed 3 square metres in area.  
+c) 
+Such uses, buildings or structures, including a temporary storage 
+container may be used only as long as the same are necessary for work 
+in progress which has neither been finished or abandoned and which 
+has a valid Building Permit.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+43 
+d) 
+Such uses, buildings or structures are removed when the work in 
+connection with which they are constructed is terminated.  
+3.44 
+TRAILERS, MOTOR HOMES, AND CAMPERS  
+The parking and storage of trailers, motor homes, truck campers, tent trailers and travel 
+trailers shall be prohibited in all Zones except where such parking or storage is a 
+permitted use in accordance with this By-law or is accessory to a dwelling located on 
+the lot and the trailer, motor home, or camper is owned by the occupant of the lot. 
+Where permitted on a residential lot, a maximum of one trailer or motor home in the 
+front, or exterior side lot is permitted to be parked or stored. 
+ 
+Notwithstanding the above, travel and tent trailers may be permitted on a lot in the 
+Rural (RU) Zone and used for recreational purposes, subject to the following: 
+ 
+a) 
+Minimum lot area of 2 hectares;  
+ 
+b) 
+Minimum distance of 500 metres from the shoreline of a lake; and, 
+ 
+c) 
+Applicable licences have been obtained from the Township.  
+ 
+3.45 
+TRAILER PARK AND PRIVATE RECREATIONAL USES 
+Unless specifically permitted by this By-law, the establishment of trailer parks, mobile 
+home parks, summer camps, commercial clubs, camping establishments or private 
+recreational parks shall be prohibited within the area covered by this By-law. 
+ 
+3.46 
+TRUCK, BUS, COACH AND STORAGE CONTAINERS 
+No truck, bus, coach, railway car body, or storage container shall be used as a 
+permanent or seasonal dwelling unit within the Municipality, whether or not the same 
+is mounted on wheels.   
+ 
+3.47 
+VEGETATIVE BUFFERS 
+A vegetative buffer of 30 metres of natural vegetation shall be developed and 
+maintained inland of the high watermark.  The vegetative buffer shall only be 
+interrupted for a pathway not to exceed 4 metres in width to provide access to the 
+water. 
+ 
+3.48 
+VISIBILITY TRIANGLES AT ROAD INTERSECTIONS  
+Notwithstanding any other provisions of this By-Law, in any corner lot or any lot at the 
+intersection of two roads in any Zone, no building, structure, berm, fence, trees, 
+hedges, or shrubs with a height exceeding one metre above the grade of the road, shall 
+be erected within the triangular space measured:  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+44 
+a) 
+Along the street lines for a distance of nine metres from their point 
+of intersection. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+45 
+SECTION 4 
+ – ZONES 
+4.1 
+ZONES  
+For the purpose of this By-law, the Township of Nipissing is hereby divided into the 
+following Zones:  
+ 
+ 
+ZONE  
+SYMBOL  
+ 
+ 
+Boathouse Zone 
+BH 
+ 
+Commercial, General Zone  
+CI  
+ 
+Commercial, Highway & Tourist Zone  
+C2  
+ 
+Commercial, Resort Zone  
+C3  
+ 
+Environmental Protection Zone  
+EP  
+ 
+Hazard Zone  
+HAZ  
+ 
+Industrial, Extractive Zone  
+MX  
+ 
+Industrial, General Zone  
+MI  
+ 
+Open Space Zone  
+OS  
+ 
+Residential, Estate Zone  
+RE  
+ 
+Residential, Hamlet Zone  
+RH  
+ 
+Shoreline Residential Zone  
+SR  
+ 
+Limited Service Residential 
+LSR 
+ 
+Rural Zone  
+RU  
+ 
+Special Zone  
+SZ  
+ 
+Waste Disposal Zone  
+WD  
+ 
+4.2 
+SCHEDULES  
+The zones set out in Section 4.1 and the boundaries of such zones are shown upon the 
+schedules attached hereto, marked Schedule A to which zone boundaries and schedules 
+are hereby declared to form part of this By-law.  
+ 
+4.3 
+ZONE BOUNDARIES  
+Where uncertainty exists with respect to the boundaries of the various zones as shown 
+on Schedule A, the following rules shall apply:  
+ 
+a) 
+Roads or Streets  
+ 
+The zone boundaries are either roads or streets unless otherwise 
+shown, and where indicated boundaries on Schedule A are shown as 
+approximate roads or streets, the said roads or streets shall be 
+construed to be the zone boundaries. 
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+46 
+b)  
+Lot Lines  
+ 
+Where the zone boundaries are not shown to be roads or streets, and 
+where indicated boundaries on Schedule A are shown as approximate 
+lot lines, the said lot lines shall be construed to be the zone 
+boundaries unless said boundaries are otherwise indicated on the 
+map.  
+c)  
+Road, Street or Right-of-Way  
+ 
+A road, street, right-of-way or watercourse identified on Schedule A 
+shall, unless otherwise indicated, be included within the zone of the 
+adjoining property on either side thereof; and where such road, 
+street, right-of-way or watercourse serve as a boundary between 
+different zones, a line midway in such road, street, right-of-way or 
+watercourse and extending in the general direction of the long 
+division thereof shall be considered the boundary between zones 
+unless specifically indicated otherwise.  
+d)  
+Closed Road, Street or Right-of-Way  
+ 
+In the event a dedicated road, street or right-of-way shown on the 
+map is closed, the property formerly in said road street or right-of-
+way shall be included within the zone of the adjoining property on 
+either side of the said closed road, street or right-of-way, and the 
+zone boundary shall be the former centre line of the said closed road, 
+street or right-of-way.  
+e)  
+River or Lakeshore  
+ 
+Where any zone on Schedule A abuts a river or lakeshore, such zone 
+shall be deemed to extend into the river or lake and apply to any 
+water lots or to any land created by changing water levels, land fill 
+operations or by any other means. 
+4.4 
+BOATHOUSE (BH) ZONE 
+4.4.1 
+Permitted Uses 
+No person shall within any Boathouse Zone (BH) Zone use any lot or erect, alter or use 
+any building or structure for any purpose except one or more of the following uses:  
+ 
+a) 
+Boathouse Uses  
+one boathouse and/or dock per lot together with accessory buildings 
+thereto provided that no building may be used for human habitation  
+  
+b) 
+Private Open Space Uses:  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+47 
+vehicular and water craft access  
+docks with the approval of the Ministry of Natural Resources as 
+necessary. 
+ 
+4.4.2 
+Zone Requirements 
+In Boathouse Zone, no building, structure or land shall be used and no building or 
+structure shall hereafter be erected or altered except in accordance with the 
+requirements of this By-law: 
+ 
+a) 
+Boathouse Uses  - Main Building 
+i) min. front yard  
+Nil 
+ii) min. side yard  
+0.6m 
+iii) min. rear yard  
+6.1m 
+iv) max. coverage  
+50% 
+v) min. lot area 
+existing 
+vi) min. lot frontage  
+existing  
+vii) max. height 
+4.6m 
+ 
+4.4.3 
+General Provisions 
+a) 
+The owner of every boathouse shall provide one parking space on the 
+same lot as the boathouse. b)  No sewage disposal systems or 
+holding tanks may be installed on any lot or block without a permit 
+issued under the Ontario Building Code Act (Ont. Reg. 403/97 as 
+amended) or its successors.  
+4.5 
+COMMERCIAL, GENERAL (C1) ZONE  
+4.5.1 
+Permitted Uses  
+No person shall within any Commercial, General (C1) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+a) 
+Residential Uses:  
+a dwelling unit in accordance with the provisions of Section 3.10, 3.11 
+and 3.12 of this By-Law.  
+ 
+b) 
+Commercial Uses:  
+an accessory food stand 
+an automobile service station  
+a bake shop  
+a bank or trust Company  
+a banquet hall  
+a bed and breakfast establishment  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+48 
+a clinic  
+a conservation use  
+a convenience store  
+a day nursery  
+a dry cleaning business  
+a food store  
+a funeral home  
+a garden centre  
+a gas bar  
+a hotel, a motel  
+an institutional use  
+a laundromat  
+an office  
+a personal service establishment  
+a place of entertainment  
+a place of worship  
+a playground  
+a private park  
+a public park  
+a repair garage  
+a restaurant 
+a retail store  
+a school  
+a service club  
+a service shop  
+a take-out restaurant  
+a wholesale use  
+ 
+4.5.2 
+Zone Requirements  
+No person shall within any Commercial, General (C1) Zone use any lot, or erect, alter 
+or use any building or structure except in accordance with Schedule “B” - Zone 
+Requirements Table as applicable to a (C1) Zone, and the applicable provisions of 
+Section 3 - General Provisions. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+49 
+4.6 
+COMMERCIAL, HIGHWAY AND TOURIST (C2) ZONE  
+4.6.1 
+Permitted Uses 
+No person shall within any Commercial, Highway and Tourist (C2) Zone use any lot or 
+erect, alter or use any building or structure for any purpose except one or more of the 
+following uses:  
+ 
+a)  
+Residential Uses:  
+a dwelling unit in accordance with the provisions of Section 3.10, 3.11 
+and 3.12 of this By-Law.  
+ 
+(b)  
+Commercial Uses:  
+an agricultural service  
+an animal hospital  
+an automobile service station or repair garage  
+a banquet hall  
+a bed and breakfast establishment  
+a building supply outlet  
+a camping establishment  
+a clinic  
+a convenience store  
+a farm implement sales and service establishment  
+a fruit and vegetable market  
+a garden centre  
+a gas bar  
+a hotel, motel and/or tourist establishment  
+a laundromat  
+a light equipment sales and rental establishment  
+a motor vehicle sales area  
+a nursing home 
+an office  
+a place of entertainment  
+a repair garage  
+a restaurant  
+a retail and service establishment designed to serve primarily the 
+needs of the travelling public 
+a service shop  
+a take-out restaurant  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+50 
+4.6.2 
+Zone Requirements  
+No person shall within any Commercial, Highway and Tourist (C2) Zone use any lot, or 
+erect, alter or use any building or structure except in accordance with Schedule "B" - 
+Zone Requirements Table as applicable to a (C2) Zone, and the applicable provisions of 
+Section 3 - General Provisions. 
+ 
+4.7 
+COMMERCIAL, RESORT (C3) ZONE  
+4.7.1 
+Permitted Uses  
+No person shall within any Commercial, Resort (C3) Zone use any lot or erect, alter 
+or use any building or structure for any purpose except one or more of the following 
+uses:  
+ 
+(a)  
+Residential Uses:  
+a dwelling unit in accordance with the provisions of Section 3.10, 3.11 
+and 3.12 of this By-Law.  
+ 
+(b)  
+Commercial Uses:  
+a bed and breakfast establishment  
+a boat sales, rental and servicing establishment  
+a camping establishment  
+a food stand 
+a hotel, motel, or tourist establishment  
+a marina  
+a private park  
+a public park  
+a restaurant  
+a retail store accessory to a permitted use  
+a recreational facility accessory to a permitted use 
+a tourist cabin  
+a waterfront landing  
+accessory storage of ice huts and ice bungalows 
+ 
+4.7.2 
+Zone Requirements 
+No person shall within any Commercial, Resort (C3) Zone use any lot, or erect, alter or 
+use any building or structure except in accordance with Schedule “B” - Zone 
+Requirements Table as applicable to a (C3) Zone, and the applicable provisions of 
+Section 3 - General Provisions. 
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+51 
+4.8 
+ENVIRONMENTAL PROTECTION (EP) ZONE  
+4.8.1 
+Permitted Uses 
+No person shall within any Environmental Protection (EP) Zone use any lot or erect, alter 
+or use any building or structure for any purpose except one or more of the following: 
+ 
+a)  
+Permitted Uses  
+a conservation use  
+an existing building or structure 
+ 
+4.8.2 
+Zone Requirements 
+No person shall within any Environmental Protection (EP) Zone use any lot, or erect, 
+alter or use any building or structure except in accordance with Schedule “B” - Zone 
+Requirements Table as applicable to a (EP) Zone, and the applicable provisions of 
+Section 3 - General Provisions. 
+ 
+4.9 
+HAZARD (HAZ) ZONE  
+4.9.1 
+Permitted Uses 
+No person shall within any Hazard (HAZ) Zone use any lot or erect, alter or use any 
+building or structure for any purpose except one or more of the following uses:  
+ 
+a) 
+Permitted Uses 
+an existing building or structure  
+an agricultural or forestry use  
+a conservation use  
+a public park  
+a private park  
+public or private recreation use  
+a dock and boathouses approved by the Township and as necessary by 
+the Ministry of Natural Resources and Forestry 
+ 
+b) 
+No new building or structure shall be permitted in a Hazard (HAZ) 
+Zone other than those required for conservation, erosion control, 
+flood protection, and essential public services normally associated 
+with water frontage.  
+c)  
+All buildings or structures erected at the time of the adoption of this 
+By-Law are deemed to be legal conforming uses. Enlargements or 
+extensions to existing buildings or structures will require an 
+amendment or a minor variance to this By-Law.  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+52 
+4.9.2 
+Zone Requirements 
+No person shall within any Hazard (HAZ) Zone use any lot, or erect, alter or use any 
+building or structure except in accordance with Schedule “B”  - Zone Requirements 
+Table as applicable to a (HAZ) Zone, and the applicable provisions of Section 3 - General 
+Provisions.  
+ 
+4.10 
+INDUSTRIAL, EXTRACTIVE (MX) ZONE  
+4.10.1 
+Permitted Uses 
+No person shall within any Industrial, Extractive (MX) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+ 
+a) 
+Industrial Uses  
+a pit  
+a quarry  
+a mineral aggregate resource use 
+ 
+4.10.2 
+Zone Requirements 
+No person shall within any Industrial, Extractive (MX) Zone use any lot, or erect, alter 
+or use any building or structure except in accordance with Schedule "B" - Zone 
+Requirements Table as applicable to a (MX) Zone, the applicable provisions of Section 3 
+- General Provisions and the following additional provisions:  
+ 
+a) 
+Excavation Area Setbacks  
+ 
+No part of any excavation other than for an access road shall be 
+permitted to locate within:  
+i)  
+30 metres of an adjacent property line, public street or 
+highway;  
+ii)  
+15 metres of a watercourse;  
+iii)  
+150 metres of a residential structure.  
+ 
+b) 
+Stockpiling and Operations Setbacks  
+ 
+No aggregate, topsoil, subsoil or overburden shall be piled and no 
+processing plant shall be located within:  
+i)  
+30 metres of an adjacent property line;  
+ii)  
+15 metres of a watercourse;  
+iii)  
+90 metres of land restricted to a residential use by this By-
+law. The provisions of this Section do not apply to earth berms 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+53 
+that are intended to screen adjoining lands from the operation 
+of the site.  
+ 
+4.11 
+INDUSTRIAL, GENERAL (M1) ZONE  
+4.11.1 
+Permitted Uses 
+No person shall within any Industrial, General (M1) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+ 
+a) 
+Industrial Uses  
+an auto body shop  
+a bakery  
+a building supply outlet  
+a communications and public utilities facility  
+a contractor's yard  
+a dry industry  
+a farm produce facility  
+a fuel depot  
+a light equipment repair sales and rental establishment  
+an industrial equipment repair sales and rental establishment  
+a lumber yard  
+a salvage yard  
+a sawmill 
+a repair garage  
+a transportation depot  
+a warehouse  
+a wholesale use  
+an incidental or accessory commercial use such as a wholesale outlet, 
+a bulk sales office, administrative office, showroom or merchandising 
+centre  
+ 
+4.11.2 
+Zone Requirements 
+No person shall within any Industrial, General (M1) Zone use any lot, or erect, alter or 
+use any building or structure except in accordance with Schedule “B” - Zone 
+Requirements Table as applicable to a (M1) Zone, and the applicable provisions of 
+Section 3 - General Provisions.  
+ 
+4.12 
+OPEN SPACE (OS) ZONE  
+4.12.1 
+Permitted Uses 
+No person shall within any Open Space (OS) Zone use any lot or erect, alter or use any 
+building or structure for any purpose except one or more of the following uses:  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+54 
+ 
+a) 
+Open Space and Recreational Uses  
+a cemetery  
+a conservation use  
+a public or private recreational use  
+a private park  
+a public park  
+ 
+4.12.2 
+Zone Requirements 
+No person shall within any Open Space (OS) Zone use any lot, or erect, alter or use any 
+building or structure except in accordance with Schedule “B” - Zone Requirements Table 
+as applicable to a (OS) Zone, and the applicable provisions of Section 3 - General 
+Provisions.  
+ 
+4.13 
+RESIDENTIAL, ESTATE (RE) ZONE  
+4.13.1 
+Permitted Uses 
+No person shall within any Residential, Estate (RE) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+a)  
+Residential Uses  
+a single unit dwelling 
+a secondary dwelling unit 
+a home occupation  
+ 
+b)  
+Non-Residential Uses  
+a private park  
+a public park  
+a public utility  
+accessory storage of 1 ice hut 
+ 
+4.13.2 
+Zone Requirements 
+No person shall within any Residential, Estate (RE) Zone use any lot, or erect, alter or 
+use any building or structure except in accordance with Schedule “B” - Zone 
+Requirements Table as applicable to a (RE) Zone, and the applicable provisions of 
+Section 3 - General Provisions.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+55 
+4.14 
+RESIDENTIAL, HAMLET (RH) ZONE  
+4.14.1 
+Permitted Uses 
+No person shall within any Residential, Hamlet (RH) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+a)  
+Residential Uses  
+a single unit dwelling 
+a secondary dwelling unit 
+a home occupation  
+a group home  
+ 
+b)  
+Non-Residential Uses  
+a community facility  
+a day nursery  
+a place of worship  
+a private park  
+a public park  
+a public utility  
+a school  
+accessory storage of 1 ice hut 
+ 
+4.14.2 
+Zone Requirements 
+No person shall within any Residential, Hamlet (RH) Zone use any lot, or erect, alter or 
+use any building or structure except in accordance with Schedule “B”  - Zone 
+Requirements Table as applicable to a (RH) Zone, and the applicable provisions of 
+Section 3 - General Provisions.  
+ 
+4.15 
+SHORELINE RESIDENTIAL (SR) ZONE  
+4.15.1 
+Permitted Uses 
+No person shall within any Shoreline Residential (SR) Zone use any lot or erect, alter or 
+use any building or structure for any purpose except one or more of the following uses:  
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+56 
+a) 
+Residential Uses  
+a single unit dwelling 
+a recreational dwelling unit  
+a home occupation  
+accessory storage of 1 ice hut 
+accessory dock 
+accessory boathouse 
+ 
+4.15.2 
+Zone Requirements 
+No person shall within any Shoreline Residential (SR) Zone use any lot, or erect, alter or 
+use any building or structure except in accordance with Schedule “B”  - Zone 
+Requirements Table as applicable to a (SR) Zone, and the applicable provisions of 
+Section 3 - General Provisions.  
+ 
+4.16 
+LIMITED SERVICE RESIDENTIAL (LSR) ZONE 
+4.16.1 
+Permitted Uses 
+No person shall within any Limited Service Residential (LSR) Zone use any lot or erect, 
+alter or use any building or structure for any purpose except one or more of the following 
+uses:  
+ 
+a)  
+Residential Uses  
+a single unit dwelling 
+a recreational dwelling unit  
+a home occupation  
+accessory storage of 1 ice hut 
+accessory dock 
+accessory boathouse 
+ 
+4.16.2 
+Zone Requirements 
+No person shall within any Limited Service Residential (LSR) Zone use any lot, or erect, 
+alter or use any building or structure except in accordance with Schedule “B”  - Zone 
+Requirements Table as applicable to a (LSR) Zone, and the applicable provisions of 
+Section 3 - General Provisions.  
+ 
+4.17 
+RURAL (RU) ZONE  
+4.17.1 
+Permitted Uses 
+No person shall within any Rural (RU) Zone use any lot or erect, alter or use any building 
+or structure for any purpose except one or more of the following uses:  
+ 
+a) 
+Residential Uses  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+57 
+a recreational dwelling  
+a converted recreational dwelling  
+a single unit dwelling 
+a secondary dwelling unit  
+a group home  
+a home occupation  
+a home industry 
+a bed and breakfast establishment  
+accessory storage of 1 ice hut or ice bungalow 
+ 
+b) 
+Rural Uses  
+an artisan shop  
+an agricultural service establishment  
+an agricultural use  
+a bus storage area  
+a cemetery  
+a community facility 
+a conservation use  
+a farm implement sales and service establishment  
+a farm produce outlet or storage facility  
+a fruit and vegetable market 
+a forestry use  
+a hunt camp 
+a livestock facility  
+a maple syrup operation  
+a nursery garden or commercial greenhouse  
+a private park  
+a public park  
+a riding stable  
+a wayside pit  
+a wayside quarry 
+ 
+c)  
+Special Uses  
+an abattoir  
+an animal hospital or kennel 
+ 
+4.17.2 
+Zone Requirements 
+No person shall within any Rural (RU) Zone use any lot, or erect, alter or use any building 
+or structure except in accordance with Schedule "B" -Zone Requirements Table as 
+applicable to a (RU) Zone, the applicable provisions of Section 3 - General Provisions 
+and with the following additional provisions:  
+ 
+a) 
+Minimum Distance Separation  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+58 
+ii) 
+All new development shall comply with the Minimum Distance 
+Separation formulae.  
+ 
+ii) 
+Minimum Distance Separation I (MDS I) Notwithstanding any 
+other provisions of this By-law to the contrary, lands to be 
+rezoned from a Rural (RU) Zone to permit a residential, 
+institutional, commercial, industrial or recreational use, shall 
+comply with the MDS I. c Notwithstanding any other provisions 
+of this By-law to the contrary, a residential use to be located 
+upon an existing lot of record and permitted by a Rural (RU) 
+Zone, shall not be required to comply with the MDS I.  
+iii)  
+Minimum Distance Separation II (MDS II) Notwithstanding any 
+other provisions of this By-law to the contrary, a new or 
+expanding livestock facility permitted by a (RU) Zone, shall 
+comply with the MDS II. Notwithstanding any other provisions 
+of this By-law to the contrary, the MDS II calculated separation 
+distances will be measured from the nearest point of an 
+existing lot of record 3.0 hectares in size or less, to the nearest 
+point of the proposed livestock facility where the existing lot 
+of record is permitted by a Rural (RU) Zone and the proposed 
+livestock facility is permitted by a Rural (RU) Zone.  
+ 
+b) 
+Hunt Camps 
+ 
+Hunt Camps, as defined in this By-law, are permitted in the Rural (RU) 
+Zone subject to the following special provisions:  
+i)  
+minimum lot area - 20 hectares  
+ii)  
+minimum setback from opened public road allowance - 100 
+metres  
+iii)  
+minimum setback from any lot line - 50 metres  
+iv)  
+maximum floor area - 70 square metres  
+v)  
+maximum number of units - 1  
+ 
+ 
+c) 
+Kennels  
+ 
+Kennels, as defined in this By-law, are permitted in the Rural Zone 
+subject to the following special provision:  
+i)  
+minimum setback from any lot line - 150 metres  
+ 
+d) 
+Abattoirs  
+ 
+Abattoirs, as defined in this By-law, are permitted in the Rural Zone 
+subject to the following special provisions:  
+i)  
+New abattoir minimum setback from a dwelling - 300 metres  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+59 
+ii)  
+Existing abattoir minimum setback from a dwelling - 150 
+metres·  
+ 
+Notwithstanding any other provision in this By-law to the contrary, no new dwelling shall 
+be constructed, located or erected within 300 metres of a new abattoir constructed 
+after the date of passing of this By-law and 150 metres of an existing abattoir.  
+ 
+4.18 
+WASTE DISPOSAL (WD) ZONE  
+4.18.1 
+Permitted Uses 
+No person shall within any Waste Disposal (WD) Zone use any lot or erect, alter or use 
+any building or structure for any purpose except one or more of the following uses:  
+ 
+a) 
+Permitted Uses 
+an existing closed or abandoned waste disposal site  
+a waste disposal site  
+a recycling depot  
+a conservation use  
+ 
+4.18.2 
+Zone Requirements  
+No person shall within any Waste Disposal (WD) Zone use any lot, or erect, alter or use 
+any building or structure except in accordance with Schedule 'B' - Zone Requirements 
+Table as applicable to a (WD) Zone, and the applicable provisions of Section 3 - General 
+Provisions and with the following additional provisions:  
+ 
+a) 
+Minimum Distance Separation Notwithstanding any other provision of 
+this By-law to the contrary, no dwellings shall be permitted within 
+100 metres of the zone boundary of a Waste Disposal (WD) Zone. 
+ 
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+60 
+SECTION 5 
+– SPECIAL ZONES 
+5.1 
+SPECIAL ZONE NO.1 (Formerly By-law No. 633 - Waltonian Marina) 
+Notwithstanding any other provision of this By-law on Part of Lot 1, Concession 19 in the 
+Township of Nipissing, the following applies:  
+ 
+5.1.1 
+Zone Boundaries  
+The zone boundaries of Commercial, Resort Special Zone NO.1 (SZ 1) are identified on 
+the Schedules to this By-law.  
+ 
+5.1.2 
+Permitted Uses  
+No person shall within Commercial, Resort Special Zone NO.1 (SZ 1) use any land or 
+erect or use any building or structure except for one or more of the following uses:  
+ 
+a marina  
+ 
+5.1.3 
+Regulations  
+In Commercial, Resort Special Zone No.1, (SZ 1) no building, structure or land shall be 
+used and no building or structure shall hereafter be erected or altered except in 
+accordance with the requirements of the Commercial, Resort (C3) Zone, except as 
+hereby expressly varied.  
+ 
+min. lot area  
+0.2 hectares 
+min. lot frontage  
+30 m 
+min. lot depth  
+60 m 
+min. front yard  
+10 m 
+min. side yard  
+5 m 
+min. rear yard  
+5 m 
+min. floor area  
+max. lot coverage  
+50% 
+max. height  
+10 m 
+ 
+5.1.4 
+Special Provisions  
+In Commercial, Resort Special Zone No.1 (SZ 1), the following special provisions shall 
+apply:  
+ 
+a) 
+All lighting associated with the marina operation shall be directed 
+away from surrounding recreational residential uses.  
+b) 
+An undisturbed vegetative buffer of 2 metres shall be maintained on 
+the internal side yard of the lot used for marina purposes. 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+61 
+All buildings and structures erected or altered and all use of land in Commercial, Resort 
+Special Zone No.1 (SZ 1) shall conform to all other applicable provisions of this By-law 
+except as hereby expressly varied. 
+5.2 
+SPECIAL ZONE NO. 2 (Formerly By-law Nos. 909 and 933) 
+Notwithstanding any other provision of this By-law on Part of Lots 22, Concession 4 in 
+the Township of Nipissing, the following applies:  
+ 
+5.2.1 
+Zone Boundaries  
+The zone boundaries of Commercial, Resort Special Zone No. 2 (SZ 2) are identified on 
+the Schedules to this By-law.  
+ 
+5.2.2 
+Definitions  
+In Commercial, Resort Special Zone No. 2 (SZ 2), the following definitions shall govern  
+ 
+a) 
+Seasonal Recreational Tourist Trailer Park means an establishment 
+comprising land or premises under single ownership, used for the 
+parking of no more than nine (9) Seasonal Recreational Tourist 
+Trailers, as defined in this By-law, and to be inhabited between the 
+months of May and October only.  
+b) 
+Seasonal Recreational Tourist Trailer means any vehicle so 
+constructed that it is suitable for being attached to a motor vehicle 
+for the purpose of being drawn or propelled by the motor vehicle to 
+a Seasonal Tourist Trailer Park, as defined in this By-law, that is 
+designed for, and used for a temporary or seasonal period, but does 
+not include a modular home, a mobile home, or a principle residence.  
+5.2.3 
+Permitted Uses  
+No person shall within Commercial, Resort Special Zone No. 2 (SZ 2) use any land or 
+erect or use any building or structure except for one or more of the following uses:  
+ 
+uses permitted in the Shoreline Residential  (SR) Zone  
+a seasonal recreational tourist trailer park  
+ 
+5.2.4 
+Regulations  
+In Commercial, Resort Special Zone No. 2, (SZ 2) no building, structure or land shall be 
+used and no building or structure shall hereafter be erected or altered except in 
+accordance with the requirements of the Commercial, Resort (CR) Zone, except as 
+hereby expressly varied:  
+ 
+maximum number of seasonal recreational tourist trails  
+9  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+62 
+5.2.5 
+Special Provisions  
+In Commercial, Resort Special Zone No. 2 (SZ 2), the following special provisions shall 
+apply:  
+ 
+a) 
+Each Seasonal Recreational Tourist Trailer shall be provided with a 
+connection to a sewage disposal system including a tile field to be 
+located no closer than 305 metres from the high water mark of Wolfe 
+Lake.  
+b) 
+Each Seasonal Recreational Tourist Trailer shall be provided with a 
+connection to a potable drinking water supply.  
+c) 
+No person shall occupy a Seasonal Recreational Tourist Trailer during 
+the calendar months of November, December, January, February, 
+March and April in any year.  
+5.2.6 
+Site Plan Control  
+a) 
+ The subject property is hereby designated to be a Site Plan Control 
+Area pursuant to the provisions of Section 41 of the Planning Act and 
+the Official Plan of the Township of Nipissing.  
+b) 
+No person shall develop lands which have been designated as a Site 
+Plan Control Area except in accordance with the terms of a Site Plan 
+Control Agreement registered on title thereto.  
+c) 
+The Mayor and Clerk are hereby authorized to execute the Site Plan 
+Control Agreement.  
+All buildings and structures erected or altered and all use of land in Shoreline Residential 
+Special Zone No. 2 (SZ 2) shall conform to all other applicable provisions of this By-law 
+except as hereby expressly varied. 
+5.3 
+SPECIAL ZONE NO. 3 (Gurd Lot 24, Con. 6) 
+Notwithstanding any other provision of this By-law on Part of Lot 24, Concession 6 in the 
+Township of Nipissing (Former Geographic Township of Gurd) being Part of Parcel 9862 
+the following applies:  
+ 
+5.3.1 
+Zone Boundaries  
+The zone boundaries of Rural Special Zone No. 3 (SZ 3) are identified on the Schedules 
+to this By-law.  
+ 
+5.3.2 
+Permitted Uses  
+No person shall within Rural Special Zone No. 3 (SZ 3) use any land or erect or use any 
+building or structure except for one or more of the following uses:  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+63 
+ 
+uses permitted in the Rural (RU) Zone  
+ 
+5.3.3 
+Regulations  
+In Rural Special Zone No. 3 (SZ 3) no building, structure or land shall be used and no 
+building or structure shall hereafter be erected or altered except in accordance with 
+the requirements of the Rural (RU) Zone, except as hereby expressly varied:  
+ 
+maximum number of single unit dwellings: 3 
+All buildings and structures erected or altered and all use of land in Rural Special Zone 
+No. 3 (SZ 3) shall conform to all other applicable provisions of this By-law except as 
+hereby expressly varied. 
+ 
+5.4 
+SPECIAL ZONE NO. 4 (Nipissing Lot 12, Con. 11) 
+Notwithstanding any other provision of this By-law on Part of Lot 12, Concession 11 in 
+the Township of Nipissing being Part of Parcel 3478 Nipissing, the following applies:  
+ 
+5.4.1 
+Zone Boundaries  
+The zone boundaries of Rural Special Zone No. 4 (SZ 4) are identified on the Schedules 
+to this By-law.  
+ 
+5.4.2 
+Permitted Uses  
+No person shall within Rural Special Zone No. 4 (SZ 4) use any land or erect or use any 
+building or structure except for one or more of the following uses:  
+ 
+uses permitted in the Rural (RU) Zone  
+a bait shop  
+ 
+5.4.3 
+Regulations  
+In Rural Special Zone No. 4 (SZ 4) no building, structure or land shall be used and no 
+building or structure shall hereafter be erected or altered except in accordance with 
+the requirements of the Rural (RU) Zone. 
+ 
+All buildings and structures erected or altered and all use of land in Rural Special Zone 
+No. 4 (SZ 4) shall conform to all other applicable provisions of this By-law except as 
+hereby expressly varied. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+64 
+5.5 
+SPECIAL ZONE NO. 5 (Nipissing Part of Lot 10, Con. 8 and Gurd, Part of Lot 
+3, Con. 15) 
+Notwithstanding any other provision of this By-law on Part of Lot 10, Concession 8 in the 
+Township of Nipissing being Part of Part 3, Plan 42R-I0376 and Part of Lot 3, Concession 
+15 in the Township of Gurd now in the Township of Nipissing, the following applies:  
+ 
+5.5.1 
+Zone Boundaries  
+The zone boundaries of Rural Special Zone No. 5 (SZ 5) are identified on the Schedules 
+to  this By-law.  
+ 
+5.5.2 
+Permitted Uses  
+No person shall within Rural Special Zone No. 5 (SZ 5) use any land or erect or use any 
+building or structure except for one or more of the following uses:  
+ 
+uses permitted in the Rural (RU) Zone  
+a sawmill  
+ 
+5.5.3 
+Regulations  
+In Rural Special Zone No. 5 (SZ 5) no building, structure or land shall be used and no 
+building or structure shall hereafter be erected or altered except in accordance with 
+the requirements of the Rural (RU) Zone.  
+ 
+All buildings and structures erected or altered and all use of land in Rural Special Zone 
+No. 5 (SZ 5) shall conform to all other applicable provisions of this By-law except as 
+hereby expressly varied. 
+ 
+5.6 
+SPECIAL ZONE NO. 6 (Bear Creek Lots)  
+Notwithstanding any other provision of this By-law on Part of Lots 9 & 10, Concession 17 
+in the Township of Nipissing being Parts 5, 6, 7, 8 & 9, the following applies:  
+ 
+5.6.1 
+Zone Boundaries  
+The zone boundaries of Special Zone No.6 (SZ 6) are identified on the Schedules to this 
+By-law.  
+ 
+5.6.2 
+Permitted Uses 
+No person shall within Special Zone No.6 (SZ 6) use any land or erect or use any building 
+or structure except for one or more of the following uses:  
+ 
+uses permitted in the Limited Service Residential (LSR) Zone.  
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+65 
+5.6.3 
+Regulations  
+In Special Zone No. 6 (SZ 6) no building, structure or land shall be used and no building 
+or structure shall hereafter be erected or altered except as hereby expressly varied:  
+ 
+a) 
+The road access requirements of Section 3.2 of the Township of 
+Nipissing Zoning By-law do not apply.  
+All buildings and structures erected or altered and all use of land in Special Zone No. 6 
+(SZ 6) shall conform to all other applicable provisions of this By-law except as hereby 
+expressly varied. 
+ 
+5.7 
+SPECIAL ZONE NO. 7 (Nipissing, Part of Lots 13, 14, & 15 Con. 11 & 12) 
+Notwithstanding any other provision of this By-law on Part of Lots 13, 14, & 15, 
+Concessions 11 and 12 in the Township of Nipissing, the following applies:  
+ 
+5.7.1 
+Zone Boundaries  
+The zone boundaries of Special Zone No. 7 (SZ 7) are identified on the Schedules to this 
+By-law.  
+ 
+5.7.2 
+Permitted Uses  
+No person shall within Special Zone No.7 (SZ 7) use any land or erect or use any building 
+or structure except for the following uses: 
+ 
+One (1) single unit dwelling per lot  
+Accessory uses 
+ 
+5.7.3 
+Regulations  
+In Residential Hamlet Zone No. 7 (SZ 7) no building, structure or land shall be used and 
+no building or structure shall hereafter be erected or altered except in accordance with 
+the requirements of the Residential Hamlet (RH) Zone, except as hereby expressly 
+varied:  
+ 
+a) 
+The minimum lot frontage shall be reduced from 46 metres to 44.6 
+metres. 
+All buildings and structures erected or altered and all use of land in Special Zone No. 7 
+(SZ 7) shall conform to all other applicable provisions of this By-law except as hereby 
+expressly varied. 
+ 
+5.8 
+SPECIAL ZONE NO. 8 (Nipissing, Lot 12, Con. 9) 
+Notwithstanding any other provision of this By-law on Part of Lot 12, Concession 9 in the 
+Township of Nipissing being Part of Parcel 4718 Nipissing, the following applies:  
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+66 
+ 
+5.8.1 
+Zone Boundaries  
+The zone boundaries of Special Zone No.8 (SZ 8) are identified on the Schedules to this 
+By-law.  
+ 
+5.8.2 
+Permitted Uses  
+No person shall within Special Zone No.8 (SZ 8) use any land or erect or use any building 
+or structure except for the following uses: 
+ 
+Uses permitted in the Rural (RU) Zone 
+A dwelling that contains two residential units.   
+ 
+5.8.3 
+Regulations  
+In the Rural Special Zone No.8 (SZ 8) no building, structure or land shall be used and no 
+building or structure shall hereafter be erected or altered except in accordance with 
+the requirements of the Rural (RU) Zone, except as hereby expressly varied:  
+ 
+a) 
+maximum number of dwellings: 
+ 
+2 
+b) 
+maximum number of dwelling units:  
+3 
+All buildings and structures erected or altered and all use of land in Special Zone No. 8 
+(SZ 8) shall conform to all other applicable provisions of this By-law except as hereby 
+expressly varied. 
+5.9 
+SPECIAL ZONE NO. 9 (125 Hunters Bay Road) 
+ 
+5.9.1 
+Zone Boundaries 
+The zone boundaries of the Resort Commercial Special Zone No. 9 (SZ 9) are identified 
+on the Schedules to this By-law.   
+ 
+5.9.2 
+Permitted Uses 
+No person shall within Resort Commercial Special Zone No. 9 (SZ 9) use any land or erect 
+or use any building or structure except for the uses permitted in the Resort Commercial 
+(C3) Zone. 
+ 
+5.9.3 
+Regulations 
+In the Resort Commercial Special Zone No. 9 (SZ 9), existing buildings and structures are 
+permitted as of the date of the passing of this By-law (April 17, 2018), including those 
+buildings located within 30 metres from a waterbody.   
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+67 
+5.10 
+SPECIAL ZONE NO. 10 (Lillian Court, Part of Lot 18, Concession 19) 
+5.10.1 
+Zone Boundaries 
+The zone boundaries of Special Zone No. 10 (SZ 10) are identified on the Schedules to 
+this By-law. 
+ 
+5.10.2 
+Permitted Uses 
+No person shall within Special Zone No. 10 (SZ 10) use any land or erect or use any 
+building or structure except for the following uses: 
+ 
+ 
+Single unit detached dwelling 
+ 
+Accessory storage of one ice hut 
+ 
+One floating dock (Note: The floating dock cannot be installed until 
+after May 31, to assure that walleye or northern pike have spawned, 
+eggs have hatched and larvae have dispersed) 
+ 
+5.10.3 
+Regulations 
+Within Special Zone No. 10 (SZ 10) the following uses of land, or erection or use of any 
+building or structure shall be prohibited:  
+ 
+ 
+Fill or grading within 20 metres from the shoreline 
+ 
+Buildings or structures within 20 metres of the shoreline 
+ 
+5.11 
+SPECIAL ZONE NO. 11 (3724 Alsace Road, Part of Lot 183 and Part of all 
+Lot 184, Concession B) 
+5.11.1 
+Zone Boundaries 
+The zone boundaries of Special Zone No. 11 (SZ 11) are identified on the Schedules to 
+this By-law. 
+ 
+5.11.2 
+Regulations  
+Within the Special Zone No. 11 (SZ 11), where a driveway is required to access the west 
+portion of the property through the SZ 11 Zone, only one driveway shall be permitted 
+per lot.  Otherwise, the permitted uses within the EP Zone apply.   
+ 
+5.12 
+SPECIAL ZONE NO. 12 (4383 Highway 654) 
+Notwithstanding any other provision of this By-law on Part Lot 13, Concession 10, in the 
+Township of Nipissing being 4383 Highway 654, the following applies: 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+68 
+5.12.1 
+Zone Boundaries 
+The zone boundaries of Special Zone No. 12 (SZ 12) are identified on the Schedules to 
+this By-law. 
+ 
+5.12.2 
+Permitted Uses 
+No person shall within Special Zone No. 12 (SZ 12) use any land or erect or use any 
+building or structure except for the following uses: 
+ 
+In addition to the uses permitted within the Hamlet Residential (RH) Zone, a home 
+industry shall also be permitted.   
+5.12.3 
+ Regulations  
+A home industry shall be permitted within the Special Zone No. 12 (SZ 12) in accordance 
+with the following: 
+ 
+ 
+Minimum Lot Frontage: 40 metres 
+ 
+Minimum Lot Area: 0.18 hectares 
+ 
+Minimum setback for an accessory building being used for a home 
+industry: 4.5 metres from a road and road allowance.  
+ 
+Maximum building height for an accessory building being used for a 
+home industry: 5 metres.   
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+69 
+SECTION 6 
+ - HOLDING PROVISIONS AND TEMPORARY USE BY-LAWS 
+6.1 
+HOLDING PROVISIONS  
+a) 
+Notwithstanding any other provision in this By-law, where a Zone 
+symbol is followed by the letter “H” and a number (for example M1-
+(H1) or SR-(H2) no person shall use the land to which the letter (H) 
+applies for any use other than the use which existed on the date this 
+By-law was passed, until the (H) is removed in accordance with the 
+policies of the Official Plan and the Planning Act, as amended. 
+ 
+Council may pass a By-law pursuant to Section 36 of the Planning Act to remove the 
+Holding (H) Symbol, thereby placing the lands in the zone indicated by the zone symbol, 
+when all of the applicable requirements have been met. 
+ 
+Zones with Holding Provisions are identified in Table 6.1.1 below in this Section. 
+ 
+6.1.1 
+List of Holding Provisions 
+Holding 
+Number 
+Property Description 
+Holding Provision 
+ 
+H1 
+Multiple Locations 
+The lifting of the H1 Holding provision 
+permitting the development of any new 
+use or new or enlarged buildings and 
+structures requiring a water supply 
+within the waste disposal assessment 
+area shall not be permitted until Council 
+receives confirmation from the Ministry 
+of the Environment that all of the studies 
+required by the Township have been 
+completed in accordance with Section 
+6.4 of the Official Plan. 
+ 
+ 
+6.2 
+TEMPORARY USE BY-LAWS 
+Where on Schedules to this By-law, a zone symbol is followed by the letter “T” and a 
+number (for example C1-(T1)), one or more additional uses are permitted on the lands 
+noted until the permission granted by the Site Specific Temporary Use By-law expires. 
+Table 6.2.1 identifies the Temporary Use Zones within the Municipality. 
+ 
+6.2.1 
+List of Temporary Use By-laws 
+Temporary 
+Use Number 
+Property 
+Description 
+Temporary 
+Use Provision 
+Date of 
+Passing 
+Date of Expiry 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+70 
+SECTION 7 
+ – ADMINISTRATION 
+7.1 
+ADMINISTRATION AND ENFORCEMENT  
+This By-law shall be administered by the Municipal Law Enforcement Officer or such 
+other person as the Council designates and no permit for the use of land or for the 
+erection or use of any building or structure or approval of any application for any 
+municipal license within the jurisdiction of the Council shall be issued or given, where 
+the proposed building, structure or use would be in violation of any provisions of this 
+By-law.  
+ 
+7.2 
+APPLICATIONS FOR BUILDING PERMITS  
+In addition to all the requirements of the Building By-law or any other By-law, every 
+applicant for a building permit shall file with his application a plan, in duplicate, drawn 
+to scale, showing the true dimensions of the lot proposed to be built upon or otherwise 
+developed, the proposed location, height and dimensions of the building or structure or 
+work in respect of which the permit is applied for and the location on such lot of every 
+existing building or structure, together with a statement, signed by the owner, 
+disclosing the exact use proposed for each building or structure aforesaid and giving all 
+information necessary to determine whether or not such building or structure and the 
+proposed use thereof conform with the requirements of this By-law.  
+ 
+7.3 
+EFFECTIVE DATE  
+This By-law shall become effective on the date of passing if no notice of objection is 
+filed with the Clerk within the time provided. If a notice of objection is filed with the 
+Clerk, this By-law shall become effective on the date of approval by the Local Planning 
+Appeal Tribunal.   
+ 
+7.4 
+REMEDIES  
+Where any building or structure is or is proposed to be erected, altered, reconstructed, 
+extended or enlarged, or any building or structure or part thereof is or is proposed to 
+be used, or any land is or is proposed to be used, in contravention of the provisions of 
+this By-law, the same may be restrained by action at the instance of any ratepayer, or 
+of the Council of the Municipality pursuant to the provisions of The Planning Act, R.S.O. 
+1990, as amended. 
+ 
+7.5 
+VIOLATION AND PENALTY  
+Every person who uses any land or erects or uses any building or structure in a manner 
+contrary to any requirement of this By-law, or who causes or permits such use or 
+erection, or who violates any provision of this By-law or causes or permits a violation, 
+is guilty of an offense and upon conviction, therefore, shall be liable for a fine in 
+accordance with The Planning Act, R.S.O. 1990, as amended. 
+ 
+
+
+ 
+Township of Nipissing 
+ 
+ 
+Zoning By-law 2020-20 
+ 
+Passed on December 1, 2020 
+71 
+ 
+READ A FIRST TIME THIS 1ST DAY OF DECEMBER, 2020.  
+ 
+ 
+ 
+ 
+ 
+MAYOR 
+ 
+ 
+ 
+ 
+CAO - CLERK  
+ 
+ 
+ 
+READ A SECOND AND THIRD TIME AND FINALLY PASSED THIS 1ST DAY OF DECEMBER, 2020.  
+ 
+ 
+ 
+ 
+MAYOR  
+ 
+ 
+ 
+ 
+CAO - CLERK
+
+
+ 
+  
+SCHEDULE “B” TO BY-LAW NO. 2020-20 
+ 
+Zone 
+Symbol 
+Zone 
+Min. Lot 
+Front. 
+Min Lot 
+Area 
+Max Lot 
+Cov. 
+MINIMUM YARDS (1) 
+ 
+Max 
+Height 
+Front 
+(1) 
+Ext. 
+Side 
+(1) 
+Int. 
+Side 
+(1) 
+Rear 
+(1) 
+m 
+ha 
+% 
+m 
+m 
+m 
+m 
+ 
+m 
+SR 
+Shoreline 
+Residential 
+60 
+0.8 
+10 
+15 
+6 
+6 
+15 
+ 
+10 
+LSR 
+Limited Service 
+Residential 
+60 
+0.8 
+10 
+15 
+6 
+6 
+15 
+ 
+10 
+RH 
+Hamlet Residential 
+60 
+ 
+0.4 
+ 
+15 
+ 
+15 
+ 
+6 
+ 
+6 
+ 
+15 
+ 
+ 
+10 
+ 
+RE 
+Estate Residential 
+60 
+0.8 
+15 
+15 
+6 
+6 
+15 
+ 
+10 
+C1 
+General 
+Commercial 
+60 
+0.8 
+50 
+15 
+6 
+6 
+ 15 
+- 
+10 
+C2 
+Highway & Tourist 
+Commercial 
+60 
+0.8 
+50 
+15 
+6 
+6 
+ 15 
+- 
+10 
+C3 
+Resort Commercial 
+90 
+0.8 
+30 
+20 
+6 
+6 
+15 
+- 
+10 
+M1 
+General Industrial 
+60 
+0.8 
+30 
+15 
+6 
+6 
+15 
+- 
+- 
+MX 
+Extractive 
+Industrial 
+60 
+0.8 
+- 
+15 
+15 
+15 
+15 
+- 
+- 
+RU 
+Rural 
+60 
+0.8 
+15 
+15 
+6 
+6 
+15 
+- 
+10 
+OS 
+Open Space 
+- 
+- 
+20 
+15 
+15 
+15 
+15 
+- 
+10 
+FP 
+Flood Plain 
+- 
+- 
+- 
+15 
+6 
+6 
+15 
+- 
+- 
+EP 
+Environmental 
+Protection 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+HAZ 
+Hazard 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+WD 
+Waste Disposal 
+- 
+- 
+- 
+30 
+30 
+30 
+30 
+- 
+- 
+SZ 
+Special Zone 
+See Section 5 
+BH 
+Boathouse 
+See Section 4.4 
+(1) In the case of a lot which abuts a body of water shown on Schedule A, the minimum setback from the normal ordinary 
+water’s edge is 30 m (See Subsection 3.37). 
+ 
+ 
+ 
+  
+ 
+ 
+
+
+MX
+MX
+MX
+LSR
+WD
+MX
+MX
+M1
+OS
+C1
+SZ5
+C3
+SZ5
+LSR
+MX
+MX
+SZ3
+OS
+M1
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU(H1)
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+LSR
+LSR
+LSR
+SZ8
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+LSR
+RH
+LSR
+MX
+LSR
+SR
+SR
+SR
+SZ4
+LSR
+SR
+SR
+MX
+RH
+RU
+C3
+SR
+WD
+M1
+SR
+SR
+OS
+LSR
+C3
+SZ9
+C3
+M1
+SR
+LSR
+C3
+C3
+SR
+C3
+LSR
+OS
+LSR
+OS
+SR
+C3
+C3
+C3
+SR
+C3
+RE
+C3
+C3
+BH
+OS
+M1
+C3
+SR
+C3
+SR
+HAZ
+LSR
+SZ1
+SR
+SR
+C3
+C3
+SR
+SZ2
+LSR
+C3
+C1
+C3
+OS
+C3
+SR
+LSR
+BH
+LSR
+C2
+C2
+BH
+LSR
+LSR
+OS
+OS
+SR
+OS
+RU
+RU
+OS
+SR
+OS
+RU
+RU
+RU
+RU
+RU
+HAZ
+C3
+LSR
+HAZ
+SR
+RU
+RH
+RU
+RU
+RU
+RU
+RU
+LSR
+LSR
+RU
+RU
+RU
+RU
+RU
+LSR
+SZ7
+OS
+OS
+RU
+RU
+RU
+C3
+RU
+RU
+C1
+RU
+RU
+RU
+LSR
+RU
+RU
+RU
+RU
+RU
+LSR
+LSR
+LSR
+SR
+RU
+RU
+RU
+LSR
+LSR
+RU
+RU
+SR
+LSR
+SR
+SR
+RU
+RU
+RU
+OS
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+LSR
+LSR
+SR
+SR
+LSR
+LSR
+LSR
+LSR
+SR
+SZ6
+SR
+LSR
+LSR
+LSR
+LSR
+LSR
+LSR
+SR
+SR
+SR
+SR
+LSR
+RU
+RH
+LSR
+SZ10
+SR
+LSR
+LSR
+SR
+RU(H1)
+LSR
+SR
+RU
+RH
+RH
+C3
+LSR
+LSR
+RU
+LSR
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+RU
+SZ11
+LSR
+RU(H1)
+RU(H1)
+SZ12
+BH
+OS
+RU
+Hwy 534
+Waltonian Dr
+Pine Dr
+Westview Dr
+Greening
+Bay Rd
+Shady Lane
+Clair's Lane
+Kervins Bay Rd
+William Rd
+Lillian Crt
+Hinchberger Bay Dr
+Stormy Point Rd
+Pike Bay Rd
+Jones Rd
+Sandy Bay Rd
+Rockview Rd
+Hunters Bay Rd
+Marion Dr
+Birchgrove Dr
+Lakeview
+Dr
+Rocky Shore Dr
+Sunset Cove Rd
+Muskeg Rd
+Sunset Cove Rd
+Ruston Rd
+Hart Rd
+Hazelglen Rd
+Stone Cutters Rd
+Hwy 654
+Culham Rd
+Byers Rd
+Lake Nipissing Rd
+Chapmans
+Landing Rd
+South River Rd
+Power Plant Rd
+Barton Lake Rd
+Barber Valley Rd
+Hwy 534
+Settlers Rd
+Evergreen Lane
+Otter Lane
+Unger Rd
+Beaver Lane
+Fraser Rd
+Harrison Rd
+Niagara Rd
+Green Acres Rd
+Gerber Rd
+Wolf Lake Rd
+Kings Rd
+Simpson Hill Rd
+Hwy 534
+Hamilton Farm Rd
+Armstrong Rd
+Hwy 534
+Bella Hill Rd
+Ski Hill Rd
+Mountain
+View Rd
+Aspen Lane
+Sun Valley Way
+Maple Ridge
+Dowdall Rd
+Stillar Side Rd
+Busch's Mill Rd
+Alsace Rd
+Hemlock Rd
+Schlosser Line
+Stories Rd
+Ruth Haven Dr
+Toeppner Blvd
+Our Lane
+Swalwells Dr
+Bailey Bridge Rd
+Pilgers Rd
+Alsace Rd
+Barrett Rd
+Alsace Rd
+Old Nipissing Rd N
+Hwy 522
+Bennett Rd
+Old Nipissing Rd S
+Hwy 522
+Lingenfelters Rd
+Ponderosa Rd
+Lamb's Rd
+Black Creek Rd N
+Butterfield Rd
+Sprucedale Rd
+Black Creek Rd S
+Granite Hill Rd
+Rye Rd
+Booth Rd
+Rye Rd
+McQuaby Lake Rd
+Simulium Dr
+Johnson Lane
+Promised Land Rd
+Sunrise Dr
+Sunrise Ln
+Bray Lake
+Conservation
+Reserve
+South River
+Forest
+Conservation
+Reserve
+Fish Bay
+PSW
+Fish Bay
+Conservation
+Reserve
+Municipality of Callander
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+Municipality of Powassan
+4
+3
+2
+1
+7
+6
+5
+4
+3
+2
+1
+9
+8
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+185
+194
+203
+210
+Con A
+Con B
+Con B
+Con A
+4
+3
+2
+1
+10
+9
+8
+7
+6
+15
+14
+13
+12
+11
+20
+19
+18
+17
+16
+24
+23
+22
+21
+33 34
+35
+32
+31
+30
+29
+28
+27
+26
+25
+Machar Twp
+3
+2
+1
+6
+5
+4
+9
+8
+7
+Pringle Twp
+12
+11
+10
+14
+13
+17
+16
+15
+19
+18
+All Islands are Zoned 'LSR'
+All Islands are
+Zoned 'LSR'
+All Islands
+are Zoned 'LSR'
+All Islands are Zoned 'LSR'
+South Bay
+Provincial Park
+Storie
+Alsace
+Christian
+Valley
+Hotham
+Nipissing
+Nipissing
+Beach
+5
+Lake Nipissing
+Ruth Lake
+McQuaby Lake
+Wolfe Lake
+Fish Bay
+South River
+South River
+Barton
+Lake
+South River
+Gerber
+Lake
+Busch Lake
+Bear Creek
+Muskie Creek
+Commanda
+Chapman's Landing
+Wade's Landing
+Parcel Boundary
+Base Information
+Township of Nipissing 
+Zoning By-law 2020-20
+Schedule A - Zoning
+Township of Nipissing
+Boundary
+´
+0
+1
+2
+3
+0.5
+Kilometers
+Watercourse
+Waterbody
+Passed on December 1, 2020 
+1:40,000
+Zoning
+Environmental Protection
+Zone
+Zoning
+Beach Areas
+Legend
+Crown Land
+Contains information licensed under
+the open government license - Ontario
+Provincial Highway
+Private Road
+Municipal Road (Seasonal)
+Municipal Road (Year Round)

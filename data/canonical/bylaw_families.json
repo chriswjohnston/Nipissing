@@ -47,6 +47,20 @@
         "2026-04"
       ],
       "consolidate": true
+    },
+    {
+      "id": "procedural",
+      "name": "Procedural By-law",
+      "also_known_as": [
+        "Procedure By-Law",
+        "Procedural By-Law"
+      ],
+      "principal": "2022-34",
+      "amendments": [
+        "2024-10",
+        "2026-26"
+      ],
+      "consolidate": true
     }
   ]
 }

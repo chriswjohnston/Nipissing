@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022k">
+<link rel="stylesheet" href="shared.css?v=20261022l">
 </head>
 <body>
 
@@ -141,7 +141,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022k"></script>
+<script src="shared.js?v=20261022l"></script>
 <script>
 let activeFilter = 'all';
 const todayIso = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
@@ -229,7 +229,12 @@ function renderUpcoming() {
 }
 
 async function renderLaws() {
-  const laws = await loadLaws();
+  // Every law in effect has a page now; the home page shows the amended
+  // ones, most recently changed first. The rest are on the Laws page.
+  const byNum = Object.fromEntries(BYLAWS.map(b => [String(b.number), b]));
+  const lastChange = l => (l.amendments || []).map(n => byNum[n]?.date_passed || byNum[n]?.meeting_date || '').sort().pop() || '';
+  const laws = (await loadLaws()).filter(l => (l.amendments || []).length && l.mode !== 'outline')
+    .sort((a, b) => lastChange(b).localeCompare(lastChange(a))).slice(0, 6);
   document.getElementById('law-cards').innerHTML = laws.length
     ? laws.map(lawCardHtml).join('')
     : '<p class="empty-note">The first consolidated laws are being prepared.</p>';

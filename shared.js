@@ -472,9 +472,10 @@ function lawCardHtml(law) {
   const basis = `By-law ${law.principal}` + (amends.length
     ? `, amended by ${amends.length === 1 ? amends[0] : amends.slice(0, -1).join(', ') + ' and ' + amends[amends.length - 1]}`
     : '');
-  const note = law.consolidated_markdown
-    ? `Unofficial consolidation${last ? `, last amended ${last}` : ''}`
-    : 'Being assembled; the original documents are linked';
+  const note = !(law.consolidated_markdown || (law.contents || []).length)
+    ? 'Being assembled; the original documents are linked'
+    : law.mode === 'outline' ? 'What it does and what’s in it'
+    : amends.length ? `Unofficial consolidation${last ? `, last amended ${last}` : ''}` : 'Full text';
   return `<a class="law-card" href="law.html?id=${encodeURIComponent(law.id)}">
     <span class="law-card-name">${escHtml(law.name || law.id)}</span>
     <span class="law-card-basis">${escHtml(basis)}</span>

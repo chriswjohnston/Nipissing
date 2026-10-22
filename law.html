@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022k">
+<link rel="stylesheet" href="shared.css?v=20261022l">
 </head>
 <body>
 
@@ -75,6 +75,7 @@
         <div class="filed-body">
           <div class="law-notice" id="law-notice"></div>
           <div class="law-text" id="law-text"></div>
+          <ol class="law-outline" id="law-outline" hidden></ol>
           <div class="law-reader-notes" id="reader-notes" style="display:none">
             <h3 class="side-title">About this version</h3>
             <ul id="law-reader-notes"></ul>
@@ -87,6 +88,10 @@
       <section class="side-card" aria-labelledby="hist-title">
         <h2 class="side-title" id="hist-title">History</h2>
         <ol class="history" id="law-history"></ol>
+      </section>
+      <section class="side-card" id="related-card" hidden aria-labelledby="rel-title">
+        <h2 class="side-title" id="rel-title">Related decisions</h2>
+        <ul class="change-list" id="law-related"></ul>
       </section>
       <section class="side-card" id="changes-card" style="display:none" aria-labelledby="chg-title">
         <h2 class="side-title" id="chg-title">What the amendments changed</h2>
@@ -111,7 +116,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022k"></script>
+<script src="shared.js?v=20261022l"></script>
 <script>
 function getParam(n){ return new URL(window.location.href).searchParams.get(n); }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
@@ -189,26 +194,46 @@ async function init(){
   document.getElementById('law-name').textContent = law.name;
   const aka = (law.also_known_as || []).length ? `. Also cited as ${law.also_known_as.join(', ')}` : '';
   document.getElementById('law-subtitle').textContent =
-    `By-law ${law.principal}` + (amends.length ? `, as amended by ${amends.map(a => a.number).join(' and ')}` : '') + aka;
+    `By-law ${law.principal}` + (amends.length > 3 ? `, amended ${amends.length} times`
+      : amends.length ? `, as amended by ${amends.length === 1 ? amends[0].number : amends.slice(0, -1).map(a => a.number).join(', ') + ' and ' + amends[amends.length - 1].number}` : '') + aka;
 
   if(law.summary){
     document.getElementById('law-summary-block').style.display = '';
     document.getElementById('law-summary').textContent = law.summary;
   }
 
+  // Every law reads the same way: what it does, then the text. The text is
+  // the by-law with its amendments applied (consolidated), the by-law as
+  // passed (clean), or, for a by-law too long to reproduce (Zoning), an
+  // outline of its parts with the original linked.
+  const mode = law.mode || (amends.length ? 'consolidated' : 'clean');
   const notice = document.getElementById('law-notice');
-  if(law.consolidated_markdown){
-    notice.innerHTML = `<strong>Unofficial consolidation.</strong> Assembled automatically from the original by-law and its amendments ` +
-      `(${esc(fmt(law.generated))}) so you can read the law in one place. Each change is marked with the by-law that made it. ` +
-      `For legal purposes rely on the original documents in the history, or contact the Township.`;
+  const original = archivedUrl(p.pdf_url_archived || p.pdf_url);
+  if(mode === 'outline' && (law.contents || []).length){
+    document.getElementById('law-text-tab').textContent = 'What’s in it';
+    notice.innerHTML = `<strong>The by-law is ${law.pages ? `${esc(law.pages)} pages` : 'long'}</strong>, too long to reproduce here. ` +
+      `These are its main parts, described automatically (${esc(fmt(law.generated))}). ` +
+      (original ? `<a href="${esc(original)}" target="_blank" rel="noopener">Read the full by-law</a>. ` : '') +
+      (amends.length ? `It has been amended ${amends.length} time${amends.length === 1 ? '' : 's'} since; each amendment is listed in the history.` : '');
+    const ol = document.getElementById('law-outline');
+    ol.innerHTML = law.contents.map(c => `<li><strong>${esc(c.part)}</strong><span>${esc(c.about)}</span></li>`).join('');
+    ol.hidden = false;
+  } else if(law.consolidated_markdown){
+    notice.innerHTML = mode === 'clean'
+      ? `<strong>Unofficial copy.</strong> The text of By-law ${esc(p.number)} as passed, transcribed automatically ` +
+        `(${esc(fmt(law.generated))}) so it reads easily on any screen. It has not been amended. ` +
+        `For legal purposes rely on the original document in the history, or contact the Township.`
+      : `<strong>Unofficial consolidation.</strong> Assembled automatically from the original by-law and its amendments ` +
+        `(${esc(fmt(law.generated))}) so you can read the law in one place. Each change is marked with the by-law that made it. ` +
+        `For legal purposes rely on the original documents in the history, or contact the Township.`;
     document.getElementById('law-text').innerHTML = renderLaw(law.consolidated_markdown);
   } else {
     notice.innerHTML = law.missing_text && law.missing_text.length
-      ? `The consolidated text isn't ready yet: waiting for the text of by-law ${law.missing_text.map(esc).join(', ')}. The original documents are linked in the history.`
-      : `The consolidated text isn't ready yet. The original documents are linked in the history.`;
+      ? `The text isn’t ready yet: no copy of by-law ${law.missing_text.map(esc).join(', ')} has been found. The documents that have been found are linked in the history.`
+      : `The text is being prepared and appears here after the next daily update. The original documents are linked in the history.`;
   }
 
-  const hist = [{ b: p, role: 'Original by-law' }].concat(amends.map((b, i) => ({ b, role: `Amendment ${i + 1}` })));
+  const hist = [{ b: p, role: amends.length ? 'Original by-law' : 'By-law' }].concat(amends.map((b, i) => ({ b, role: `Amendment ${i + 1}` })));
   document.getElementById('law-history').innerHTML = hist.map(({ b, role }) => {
     const pdf = archivedUrl(b.pdf_url_archived || b.pdf_url);
     const when = b.date_passed || b.meeting_date;
@@ -216,6 +241,23 @@ async function init(){
       <div class="h-title">${esc(b.common_name || b.title || '')}</div>
       <div class="h-links"><a href="bylaw-detail.html?id=${encodeURIComponent(b.number)}">Details</a>${pdf ? `<a href="${esc(pdf)}" target="_blank" rel="noopener">PDF</a>` : ''}</div></li>`;
   }).join('');
+
+  // From laws_in_effect.json: a note (e.g. a by-law that hasn't been found)
+  // and related decisions, both added by hand.
+  try {
+    const list = await (await fetch('data/canonical/laws_in_effect.json', {cache: 'no-cache'})).json();
+    const entry = (list.topics || []).flatMap(t => t.laws || []).find(l => String(l.bylaw) === String(law.principal));
+    if(entry?.note) notice.insertAdjacentHTML('beforeend', `<span class="law-note-extra">${esc(entry.note)}.</span>`);
+    const rel = (entry?.related || []).map(r => {
+      const res = RESOLUTIONS.find(x => x.number === r.id);
+      const href = /^R/i.test(r.id) ? `decisions.html?q=${encodeURIComponent(r.id)}&routine=1` : `bylaw-detail.html?id=${encodeURIComponent(r.id)}`;
+      return `<li><a href="${href}"><strong>${esc(r.id)}</strong></a>${res ? `, ${esc(fmt(res.meeting_date))}` : ''}: ${esc(r.text)}</li>`;
+    });
+    if(rel.length){
+      document.getElementById('law-related').innerHTML = rel.join('');
+      document.getElementById('related-card').hidden = false;
+    }
+  } catch(e) {}
 
   if((law.changes || []).length){
     document.getElementById('changes-card').style.display = '';

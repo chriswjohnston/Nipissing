@@ -1,5 +1,5 @@
 {
-  "_about": "The township's standing laws, grouped by topic for the Laws page (laws.html). Each entry names the by-law that holds the law today; amendments are found automatically from by-law titles and bylaw_families.json, and a consolidated text is used when consolidations.json has one. Edit by hand: add a law, move it between topics, or rename it. A law whose by-law is marked repealed in bylaws.json moves to the repealed list on its own.",
+  "_about": "The township's standing laws, grouped by topic for the Laws page (laws.html). Each entry names the by-law that holds the law today; amendments are found automatically from by-law titles and bylaw_families.json, and a consolidated text is used when consolidations.json has one. Edit by hand: add a law, move it between topics, or rename it. A law whose by-law is marked repealed in bylaws.json moves to the repealed list on its own. Optional per law: \"note\" (shown on the Laws page and the law page) and \"related\" (decisions listed beside the law).",
   "topics": [
     {
       "id": "roads",
@@ -8,7 +8,8 @@
         { "name": "Minimum Maintenance Standards", "bylaw": "2019-41" },
         { "name": "Parking", "bylaw": "2021-50" },
         { "name": "Off-road vehicles on municipal roads", "bylaw": "2015-23" },
-        { "name": "Maximum weight on bridges", "bylaw": "2020-05", "note": "Amends By-law 2019-42, which hasn’t been found" },
+        { "name": "Maximum weight on bridges", "bylaw": "2020-05", "note": "Amends By-law 2019-42, which hasn’t been found",
+          "related": [{ "id": "R2024-128", "text": "Hummel Bridge closed to all vehicles after an engineering inspection" }] },
         { "name": "Speed limits", "bylaw": "2013-39" },
         { "name": "Community safety zone", "bylaw": "2021-48" },
         { "name": "Culverts and entrances", "bylaw": "2022-29" },

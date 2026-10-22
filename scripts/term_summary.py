@@ -165,7 +165,7 @@ def main() -> None:
     force = "--force" in sys.argv
     changed = False
     for term in data.get("terms", []):
-        if term.get("upcoming") or today.isoformat() < term["start"]:
+        if today.isoformat() < term["start"]:          # not started yet ("upcoming" is only a hint)
             continue
         ended_long_ago = term["end"] < (today - timedelta(days=400)).isoformat()
         if ended_long_ago and not force:
