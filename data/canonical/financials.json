@@ -1,0 +1,254 @@
+{
+  "_about": "Financial documents kept by the archive (built daily by scripts/financials.py) and the figures the Financials page charts (entered by hand; every figure names its source).",
+  "documents": [
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf",
+      "title": "2026 Budget Draft Presentation",
+      "kind": "Budget",
+      "year": 2026,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ],
+      "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Capital-Forecast.pdf",
+      "title": "2026-2036 Capital Forecast",
+      "kind": "Capital budget and forecast",
+      "year": 2026,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ],
+      "archived": "files/archive/meetings/2026/2026-Capital-Forecast__eee92375.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/2026-User-Fee-Draft.pdf",
+      "title": "Draft User Fee By-Law",
+      "kind": "User fees",
+      "year": 2026,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-04-21"
+      ]
+    },
+    {
+      "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=52",
+      "title": "Schedule: 2025 Asset Management Plan, as adopted (pp. 52–114 of the agenda package, includes Appendix B)",
+      "kind": "Asset management plan",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "archived": "files/archive/financial/2025/2025-Asset-Management-Plan-as-adopted-By-law-2025-32.pdf",
+      "bylaw": "2025-32"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Township-of-Nipissing-2025-Asset-Management-Plan-1.pdf",
+      "title": "Township of Nipissing 2025 Asset Management Plan",
+      "kind": "Asset management plan",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-10-28"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Twp-of-Nipissing-2025-Asset-Management-Plan-Final.pdf",
+      "title": "Township of Nipissing Asset Management Plan, 2025 (Final)",
+      "kind": "Asset management plan",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "archived": "files/archive/financial/2026/Twp-of-Nipissing-2025-Asset-Management-Plan-Final__a23f3ad5.pdf",
+      "as_adopted": {
+        "archived": "files/archive/financial/2025/2025-Asset-Management-Plan-as-adopted-By-law-2025-32.pdf",
+        "bylaw": "2025-32",
+        "note": "The version council adopted on November 18, 2025 includes Appendix B (asset inventory details), which the posted version leaves out."
+      }
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2025-12-31-Township-of-Nipissing-FS-Mar-2-drafts.pdf",
+      "title": "2025 Financial Statement – KPMG (draft",
+      "kind": "Audited financial statements",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ],
+      "archived": "files/archive/meetings/2026/2025-12-31-Township-of-Nipissing-FS-Mar-2-drafts__2a5c0575.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/2025-12-31-Township-of-Nipissing-FS.pdf",
+      "title": "2025 Financial Statements -KPMG",
+      "kind": "Audited financial statements",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Analysis-Presentation-2025.pdf",
+      "title": "2025 Financial Analysis Presentation – KPMG",
+      "kind": "Auditor’s presentation",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ],
+      "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Analysis-Presentation-2025__71078166.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Statement-Presentation-2025.pdf",
+      "title": "2025 Financial Statement Presentation – KPMG",
+      "kind": "Auditor’s presentation",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2026-03-03"
+      ],
+      "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__df9fdc29.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-2025-Budget-Draft-presentation.pdf",
+      "title": "Draft 2025 Budget Presentation",
+      "kind": "Budget",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-03-04"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf",
+      "title": "Final Draft, 2025 Budget Presentation",
+      "kind": "Budget",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-04-08"
+      ],
+      "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Final-presentation__a6078d16.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration.pdf",
+      "title": "Capital Budget & Asset Management Forecast 2025-2035",
+      "kind": "Capital budget and forecast",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-03-04"
+      ],
+      "archived": "files/archive/financial/2025/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration__822b8b56.pdf"
+    },
+    {
+      "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=46",
+      "title": "Council Remuneration Comparative Report, October 2025 (agenda package pp. 46–47)",
+      "kind": "Council remuneration",
+      "year": 2025,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-11-18"
+      ],
+      "archived": "files/archive/financial/2025/Council-Remuneration-Comparative-Report-2025.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-Financial-Statement-Presentation-2024.pdf",
+      "title": "2024 Audited Financial Statements by KPMG",
+      "kind": "Auditor’s presentation",
+      "year": 2024,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2025-03-04"
+      ],
+      "archived": "files/archive/financial/2025/Township-of-Nipissing-Financial-Statement-Presentation-2024__676affec.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/KPMG-Financial-Indicator-Presentation.pdf",
+      "title": "KPMG Financial Indicator Presentation",
+      "kind": "Auditor’s presentation",
+      "year": 2024,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2023-03-07"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf",
+      "title": "2024 Budget Draft Presentation",
+      "kind": "Budget",
+      "year": 2024,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2024-04-16"
+      ],
+      "archived": "files/archive/financial/2024/Township-of-Nipissing-2024-Budget-Draft-presentation__5fc2b99b.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf",
+      "title": "Capital Budget 2024-2034 Forecast",
+      "kind": "Capital budget and forecast",
+      "year": 2024,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2024-04-16"
+      ],
+      "archived": "files/archive/financial/2024/CAPITAL-BUDGET-2024-2034-FORECAST__b33709c7.pdf"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Strategic-Asset-Management-Policy-2023.pdf",
+      "title": "Strategic Asset Management Policy 2023",
+      "kind": "Asset management plan",
+      "year": 2023,
+      "first_seen": "2026-10-22"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-Financial-Statement-Presentation-2023-1.pdf",
+      "title": "KPMG 2023 Financial Overview",
+      "kind": "Auditor’s presentation",
+      "year": 2023,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2024-04-02"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2023/03/2023-Budget-Report.pdf",
+      "title": "2023 Budget Report",
+      "kind": "Budget",
+      "year": 2023,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2023-03-21"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2022/06/Township-of-Nipissing-Financial-Analysis-Council-Presentation.pdf",
+      "title": "Township of Nipissing Financial Analysis",
+      "kind": "Auditor’s presentation",
+      "year": 2022,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2022-06-07"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2022/12/2022-Budget-Report.pdf",
+      "title": "2022 Budget Report)",
+      "kind": "Budget",
+      "year": 2022,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2022-12-20"
+      ]
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Nipissing-Asset-Management-Plan-Final-2017.pdf",
+      "title": "Township of Nipissing Asset Management Plan, 2017 (Final)",
+      "kind": "Asset management plan",
+      "year": 2017,
+      "first_seen": "2026-10-22"
+    }
+  ],
+  "fir_years": [],
+  "updated": "2026-10-22"
+}

@@ -49,7 +49,8 @@ def doc_key(url: str) -> str:
     if "nipissingtownship.com" in p.netloc:
         return f"township:{stem}.{ext}"
     # other hosts (eScribe, Drive): query strings identify the file
-    return f"{p.netloc}{p.path}?{p.query}".lower()
+    # (#page=46 marks pages cut from a package: each cut is its own document)
+    return f"{p.netloc}{p.path}?{p.query}{'#' + p.fragment if p.fragment else ''}".lower()
 
 
 def _upload(url: str) -> str:
@@ -102,6 +103,7 @@ def tidy(m: Dict[str, Any]) -> int:
                 seen.append(body)
             if not variants:
                 keep = {"label": d.get("label") or "Document", "url": https(d.get("url"))}
+                keep.update({k: d[k] for k in ("provided", "from_package") if d.get(k)})
                 variants.append(keep)
             if not variants[0].get("archived") and d.get("archived") \
                     and (body is None or body == seen[0]):
