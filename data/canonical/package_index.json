@@ -1,0 +1,877 @@
+{
+ "_about": "Contents of each council agenda package (scripts/package_index.py). Pages are 1-based. Text: data/packages/<date>.txt.gz.",
+ "packages": {
+  "2026-10-20": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Oct-20-2026__33061a18.pdf",
+   "pages": 30,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Townslitp_t}'f.:__ N IPISSING The Corporation of the Township of Nipissing 45 Beatty Street Nipi"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 6, 2026 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Council of the Township of Nipissing recognizes the significant essential services provided by public libraries in Ontario, specifically in rural and smalle",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we adopt the Township of Nipissing Fire Department Roster dated September 30, 2026, Appendix A to this Resolution. CHALAPENKO FOOTE KIRKEY SCOTT YEMM For Agains",
+     "pages": [
+      6,
+      7
+     ],
+     "papers": [
+      7,
+      7
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the purchase of two additional Radar Speed Signs was approved in the 2026 Budget, estimated amount of $13,000.00; AND THAT 3 quotes were obtained: Cedar Signs -",
+     "pages": [
+      8,
+      14
+     ],
+     "papers": [
+      9,
+      14
+     ]
+    },
+    {
+     "kind": "report",
+     "from": "Dan Macinnis",
+     "date": "October 20, 2026",
+     "pages": [
+      15,
+      15
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Year-End Report on Capital Projects",
+     "from": "",
+     "pages": [
+      16,
+      16
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Background: October 6, 2026 Dan Macinnis, Operations Superintendent Chapman's Landing Dock The Corporation of the Township of Nipissing 45 Beatty Street Nipissi",
+     "from": "",
+     "pages": [
+      17,
+      22
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      23,
+      23
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Recreation Committee Minutes October 5, 2026 Township of Nipissing Recreation Committee October 5, 2026 A meetin",
+     "pages": [
+      24,
+      25
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management October 7, 2026 A regular meeting of the Nipissing Township Museum",
+     "pages": [
+      26,
+      29
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: October 6, 7, 8, 10, and 15, 2026. Totaling $1,065,810.40 be approved. YEMM CHALAPENKO FOOTE KIRKEY SCOTT For Against Carried M",
+     "pages": [
+      30,
+      30
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-10-06": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-October-6-2026__f6fdd715.pdf",
+   "pages": 43,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Towns fiw.._§f.:__ NIPISSING i--t1LJ.!o:_.. \"Ljft tftc way It sr.ou(tf 6e\" .t>\\sss \\:, The Corpo"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 15, 2026 A regular meeting of the Township of Nipissing Council was hel",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "there is an advertised vacancy on the Township of Nipissing Recreation Committee for the remainder of the 2022-2026 Council term; AND WHEREAS a letter of intere",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Nipissing Fire Department has expired Personal Protection Equipment (PPE) designated surplus and for destruction; AND WHEREAS a request has been",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Nipissing Fire Department was awarded a grant through the Hydro One Community Partnership Grant for a Back Up Power Generator for Radio Communic",
+     "pages": [
+      6,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Ni pissing Fire ', , Hydro One Community Partnership Grant fo Communication Systems; NOW THEREFORE we authorize t by Limitless Electrical Soluti",
+     "pages": [
+      7,
+      11
+     ],
+     "papers": [
+      8,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the signing of a Memorandum of Understanding with the South Shore Restoule Snowmobile Club for use of municipal road allowances. Appendix B- Snowmo",
+     "pages": [
+      12,
+      16
+     ],
+     "papers": [
+      13,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Mayor and Municipal Administrator to sign the Acknowledgment and Direction regarding Dobson transfer to Township of Nipissing, Part of Lot 8, C",
+     "pages": [
+      17,
+      17
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we pass By-Law Number 2026-36, being a By-Law to Amend Zoning By-Law 2020-20, as amended. Read a first, second and third time and passed this 6th day of October",
+     "pages": [
+      18,
+      18
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2026-36",
+     "title": "to Amend Zoning By-law 2020-20, as amended\" WHEREAS the Corporation of the Township of Nipissing has received an application to amend Zoning By-law 2020-20 as a",
+     "pages": [
+      19,
+      21
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      22,
+      42
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: September 12, 17, 23, 26, and 28, 2026. Totaling $271,543.22 be approved. YEMM CHALAPENKO FOOTE KIRKEY SCOTT For Against Carrie",
+     "pages": [
+      43,
+      43
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-09-15": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-Sept-15-2026__249dcc07.pdf",
+   "pages": 24,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Township oF zs The Corporation of the Township of Nipissing PI IN 5 Beatty Street wm Ss -) Nipissin"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 1, 2026 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Nipissing has received a request from the Ministry of Natural Resources for permission to use the Township's road network data for the Ontario R",
+     "pages": [
+      4,
+      5
+     ],
+     "papers": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize Mayor Yemm, Councillors Chalapenko, Kirkey and Scott, and Deputy Treasurer-Office Assistant Kim Turnbull to attend the District of Parry Sound Muni",
+     "pages": [
+      6,
+      7
+     ],
+     "papers": [
+      7,
+      7
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      8,
+      15
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management August 5,2026 A regular meeting of the Nipissing Township Museum B",
+     "pages": [
+      16,
+      18
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management September 2, 2026 A regular meeting of the Nipissing Township Muse",
+     "pages": [
+      19,
+      22
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: September 9, 2026 Totaling $134,398.35 be approved. For Against YEMM CHALAPENKO FOOTE KIRKEY SCOTT Carried Mayor: Dave Yemm",
+     "pages": [
+      23,
+      23
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239.(2)(b) personal matters about an identifiable individual, including municipal",
+     "pages": [
+      24,
+      24
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-09-01": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/SEPT-1-AGENDA-PACKAGE__ae514abd.pdf",
+   "pages": 51,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Toi,vnsfitp_,ff_ __ NIPISSING p,JloLJ,s,Y \"L!fe tfu: way it s(wu{,l/je\" .:e\\sss t The Corporatio"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, August 11, 2026 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      2
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2026-30",
+     "title": "to stop up, close and sell Part of Road Allowance in front of Part Lot 10, Concession 18, designated as Part 1 on Plan 42R11490 in the Township of Nipissing, Di",
+     "pages": [
+      3,
+      3
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Thursday, August 20, 2026 A special meeting of the Township of Nipissing Council was held",
+     "pages": [
+      4,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council passed the Use of Municipal Resources During an Election Campaign, Rules and Procedures on April 7, 2026, Resolution R2026-79; AND WHEREAS the Procedure",
+     "pages": [
+      7,
+      8
+     ],
+     "papers": [
+      8,
+      8
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the submission of an application for the Emergency Management Grant 2026-2027 for purchase of emergency management equipment. CHALAPENKO FOOTE KIRK",
+     "pages": [
+      9,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "invasive plants are identified as a concern locally and provincially; AND WHEREAS the Town of Halton Hills Resolution No. 2026-0107 captures all of the concerns",
+     "pages": [
+      10,
+      15
+     ],
+     "papers": [
+      11,
+      15
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      16,
+      48
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management August 5,2026 A regular meeting of the Nipissing Township Museum B",
+     "pages": [
+      49,
+      50
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: August 14, 15, 24, 26, 27 and 29, 2026 Totaling $461,292.99 be approved. YEMM CHALAPENKO FOOTE KIRKEY SCOTT For Against Carried",
+     "pages": [
+      51,
+      51
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-08-20": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Aug-20-Council-Meeting-Package-1__31dda456.pdf",
+   "pages": 5,
+   "items": [
+    {
+     "kind": "report",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Reserve Accounts and Transfers",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "August 17, 2026",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "report",
+     "date": "August 20, 2026",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-175",
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239.(2)(b) personal matters about an identifiable individual, including municipal",
+     "pages": [
+      5,
+      5
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-08-11": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Aug-11-2026-Agenda-Package__40ca2174.pdf",
+   "pages": 69,
+   "items": [
+    {
+     "kind": "report",
+     "title": "Update on Electronic Landfill Card Transition",
+     "from": "Dan Macinnis, Operations Superintendent",
+     "date": "August 11, 2026",
+     "pages": [
+      1,
+      2
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, July 14, 2026 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      3,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-164",
+     "title": "we accept the Quote from J&J Equipment Repair Inc. for the purchase of a Country Clipper Commercial Zero Turn Mower; Cost: $22,600.00 including applicable taxes",
+     "pages": [
+      6,
+      12
+     ],
+     "papers": [
+      7,
+      12
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-165",
+     "title": "we authorize the submission of a grant application to the Fire Protection Grant for the 2026-2027 allocation provided by the Ministry of the Solicitor General; ",
+     "pages": [
+      13,
+      13
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-166",
+     "title": "we accept the Quote from Best Choice Plumbing for the supply and installation of a UV System for water treatment at the Township of Nipissing Community Centre. ",
+     "pages": [
+      14,
+      15
+     ],
+     "papers": [
+      15,
+      15
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-167",
+     "title": "we dedicate the remainder of the Northern Ontario Resource Development Support Fund for 2026 and the 2027 allotment to the joint project of replacing the multip",
+     "pages": [
+      16,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-168",
+     "title": "we pass By-Law Number 2026-30, being a By-Law to stop up, close and sell Part of Road Allowance in front of Part Lot 10, Concession 18, designated as Part 1 on ",
+     "pages": [
+      17,
+      28
+     ],
+     "papers": [
+      18,
+      28
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-169",
+     "title": "we pass By-Law Number 2026-31, being a By-Law to establish a Procedure for the Appointment of an Eligible Elector to Fill a Council Vacancy under the Municipal ",
+     "pages": [
+      29,
+      29
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2026-31",
+     "title": "to establish a Procedure for the Appointment of an Eligible Elector to Fill a Council Vacancy under the Municipal Actfor the Corporation of the Township of Nipi",
+     "pages": [
+      30,
+      36
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      37,
+      66
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management July 8, 2026 A regular meeting of the Nipissing Township Museum Bo",
+     "pages": [
+      67,
+      68
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: July 18, 21, 23, 28, 29, and August 1, 2026. Totaling $1,127,409.85 be approved. YEMM CHALAPENKO FOOTE KIRKEY SCOTT For Against",
+     "pages": [
+      69,
+      69
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-07-14": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-July-14-2026-2__5c1bf541.pdf",
+   "pages": 67,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "TownsftiJ!._<ff_ __ NIPISSING The Corporation of the Township of Nipissing 45 Beatty Street Nipi"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 16, 2026 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      4
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 30, 2026 A special meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council has received information from Staff regarding the failure of a shared culvert located on Hart Road; AND WHEREAS the Municipality of Callander has been c",
+     "pages": [
+      6,
+      7
+     ],
+     "papers": [
+      7,
+      7
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we support the Township of Armour Motion #2026-158 requesting the Province of Ontario to prioritize the development of new and upgraded highway rest stops and t",
+     "pages": [
+      8,
+      10
+     ],
+     "papers": [
+      9,
+      10
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this Council does approve \"in principle\" the Application of Samuel Eric Bagyan and Cheryl Ann Butler, to purchase part of the Shore Road Allowance located in fr",
+     "pages": [
+      11,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council receives and approves the 2025-2026 Asset Management Annual Report prepared for submission to the Province of Ontario. CHALAPENKO FOOTE KIRKEY SCOTT YEM",
+     "pages": [
+      12,
+      12
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Asset Management Annual Review for Council -------- -- --",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer Kim Turnbull, Deputy Treasurer-Office Assistant",
+     "date": "July 14, 2026",
+     "pages": [
+      13,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Build Communities Strong Fund Direct Delivery Stream has been released; AND WHEREAS the Township of Nipissing and the Municipality of Powassan are actively ",
+     "pages": [
+      17,
+      17
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we confirm the appointment of Firefighters to the Township of Nipissing Fire Department as listed on Appendix A, attached to this Resolution. CHALAPENKO FOOTE K",
+     "pages": [
+      18,
+      22
+     ],
+     "papers": [
+      19,
+      22
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      23,
+      66
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: lune 20, 25, July 4, and 8, 2026. Totaling $658,310.14 be approved. YEMM CHALAPENKO FOOTE KIRKEY SCOTT For Against Carried Mayo",
+     "pages": [
+      67,
+      67
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-06-30": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Sp-Council-Meeting-June-3026__5b68882f.pdf",
+   "pages": 3,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      2
+     ],
+     "title": "Township oF The Corporation of the Township of Nipissing T 45 Beatty Street NIPISS NG Nipissing ON"
+    },
+    {
+     "kind": "resolution",
+     "number": "R2026-149",
+     "title": "we award Tender Re-Issue NIP-PW-10-2026 for the Bear Creék Bridge and Abutment Construction to Degagne Aggregate . Total Tender Price $593,872.23 in For fipsons",
+     "pages": [
+      3,
+      3
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2026-06-16": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-16-2026__7c1a7ca0.pdf",
+   "pages": 70,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "fF The Corporation of the Township of Nipissing NIPISSIN 45 Beatty Street Nipissing ON POH 1WO Tel"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 2, 2026 A regular meeting of the Township of Nipissing Council was held on T",
+     "pages": [
+      2,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the 2026-2027 Insurance Renewal from Intact Insurance, as presented. For Against CHALAPENKO FOOTE KIRKEY SCOTT YEMM Carried Mayor: Dave Yemm",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the submission of a grant application to the Hydro One Community Partnership Grant for a back-up generator at the Commanda communications tower. Fo",
+     "pages": [
+      6,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Council of the Township of Nipissing supports Clearview Township’s resolution dated May 11, 2026 regarding Public Sector Salary Disclosure Inflation Adjustm",
+     "pages": [
+      7,
+      9
+     ],
+     "papers": [
+      8,
+      9
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Bear Creek Bridge and Abutment Construction NIP-PW-10-2026 Invitational Tender",
+     "from": "Dan Macinnis, Operations Superintendent Kim Turnbull, Deputy Treasurer, Office Assistant",
+     "date": "June 16, 2026",
+     "pages": [
+      10,
+      10
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Operations Superintendent and the Municipal. Administrator schedule a meeting with each bidder to verify ¢ Costs and | negotiate ct if required",
+     "pages": [
+      11,
+      17
+     ],
+     "papers": [
+      12,
+      17
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2024-133",
+     "title": "we approve the updated Appointment Procedure for Filling Vacancy on Council, as attached. For Against Carried / Son fk Mayor: Tom Piper",
+     "pages": [
+      18,
+      18
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2026-26",
+     "title": "to Amend By-Law Number 2022-34, cited as the “Procedural By-Law” to update the public notice guidelines for meetings. WHEREAS the Township of Nipissing Council ",
+     "pages": [
+      19,
+      26
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      27,
+      67
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management June 3, 2026 A regular meeting of the Nipissing Township Museum Bo",
+     "pages": [
+      68,
+      69
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: June 4, 6, and 11, 2026. Totaling $297,708.30 be approved. For Against YEMM CHALAPENKO FOOTE KIRKEY SCOTT Carried Mayor: Dave Y",
+     "pages": [
+      70,
+      70
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  }
+ }
+}
