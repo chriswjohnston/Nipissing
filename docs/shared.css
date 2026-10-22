@@ -259,6 +259,7 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .doc-link:hover{border-color:var(--ledger);background:var(--ledger-tint);color:var(--ink)}
 .doc-link > svg{width:18px;height:18px;flex-shrink:0;color:var(--muted)}
 .doc-link .doc-label{flex:1;min-width:0}
+.doc-gone{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;min-height:48px;padding:10px 14px;border:1px dashed var(--rule);border-radius:var(--radius);color:var(--muted)}
 .docs-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule-soft)}
 .docs-section-title{font-size:15px;font-weight:700;margin-bottom:10px}
 .docs-key{font-size:13.5px;color:var(--muted);margin-top:12px}

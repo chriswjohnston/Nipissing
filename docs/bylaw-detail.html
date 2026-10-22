@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022i">
+<link rel="stylesheet" href="shared.css?v=20261022j">
 </head>
 <body>
 
@@ -112,7 +112,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022i"></script>
+<script src="shared.js?v=20261022j"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -304,6 +304,12 @@ async function init(){
   // archive data but add nothing for a reader, so they aren't listed.
   (bylaw.extra_docs || []).forEach(d => {
     if (!d || !d.url || /^Earlier upload/i.test(d.label || '')) return;
+    // Removed by the township, and no copy survives anywhere: say so
+    // instead of offering a dead link.
+    if (d.gone && !d.archived) {
+      links.push(`<p class="doc-gone"><span class="doc-label">${esc(d.label || 'Document')}</span><span class="source-note">Removed by the township; no copy survives</span></p>`);
+      return;
+    }
     links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url)));
   });
   if(bylaw.meeting_date){
