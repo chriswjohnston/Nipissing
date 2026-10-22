@@ -1719,12 +1719,21 @@
     "version": 2
   },
   "2026-04-21": {
-    "bylaws": {},
+    "bylaws": {
+      "2026-17": {
+        "method": "ocr",
+        "pages": [
+          17,
+          18
+        ],
+        "pdf": "files/bylaws/2026-17.pdf",
+        "text": "files/bylaws/text/2026-17.txt"
+      }
+    },
     "checked": "2026-10-21",
     "missing": [
       "2026-15",
       "2026-16",
-      "2026-17",
       "2026-18"
     ],
     "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-21-2026__069ce1f2.pdf",
@@ -1738,11 +1747,28 @@
     "version": 2
   },
   "2026-05-05": {
-    "bylaws": {},
+    "bylaws": {
+      "2026-19": {
+        "method": "ocr",
+        "pages": [
+          4,
+          6
+        ],
+        "pdf": "files/bylaws/2026-19.pdf",
+        "text": "files/bylaws/text/2026-19.txt"
+      },
+      "2026-20": {
+        "method": "ocr",
+        "pages": [
+          9,
+          13
+        ],
+        "pdf": "files/bylaws/2026-20.pdf",
+        "text": "files/bylaws/text/2026-20.txt"
+      }
+    },
     "checked": "2026-10-21",
     "missing": [
-      "2026-19",
-      "2026-20",
       "2026-21",
       "2026-22"
     ],
@@ -1783,11 +1809,20 @@
     "version": 2
   },
   "2026-06-16": {
-    "bylaws": {},
-    "checked": "2026-10-21",
+    "bylaws": {
+      "2026-26": {
+        "method": "ocr",
+        "pages": [
+          19,
+          19
+        ],
+        "pdf": "files/bylaws/2026-26.pdf",
+        "text": "files/bylaws/text/2026-26.txt"
+      }
+    },
+    "checked": "2026-10-22",
     "missing": [
       "2026-25",
-      "2026-26",
       "2026-27"
     ],
     "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-June-16-2026__7c1a7ca0.pdf",
