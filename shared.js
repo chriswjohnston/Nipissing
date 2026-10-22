@@ -583,15 +583,15 @@ function decisionRowHtml(d, q = '') {
   const label = d.type === 'bylaw' ? `By-law ${d.id}` : d.id;
   const status = d.status && !['carried', 'approved'].includes(d.status)
     ? `<span class="${bylawStatusClass(d.status)}">${escHtml(d.status)}</span>` : '';
-  const law = d.lawLink ? `<a class="decision-law" href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>` : '';
-  const passed = d.passedBy ? `<span class="decision-passed">Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>` : '';
+  const meta = [`<span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>`];
+  if (d.lawLink) meta.push(`<a href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>`);
+  if (d.passedBy) meta.push(`<span>Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>`);
   return `<li class="decision-row${d.routine ? ' is-routine' : ''}">
     <a class="decision-num" href="${escHtml(d.href)}">${highlight(label, q)}</a>
     <div class="decision-main">
       <span class="decision-text">${highlight(d.text, q)}</span>${status}
-      ${law || passed ? `<div class="decision-meta">${law}${passed}</div>` : ''}
+      <div class="decision-meta">${meta.join('')}</div>
     </div>
-    <span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>
   </li>`;
 }
 
