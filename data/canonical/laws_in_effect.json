@@ -24,8 +24,7 @@
       "id": "waste",
       "name": "Waste and landfill",
       "laws": [
-        { "name": "Landfill", "bylaw": "2020-27" },
-        { "name": "Unauthorized disposal of waste", "bylaw": "2021-58" }
+        { "name": "Landfill and waste disposal", "bylaw": "2021-58", "note": "Replaced the 2020 Landfill By-law (2020-27)" }
       ]
     },
     {

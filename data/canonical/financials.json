@@ -379,5 +379,157 @@
     2024,
     2025
   ],
-  "updated": "2026-10-22"
+  "updated": "2026-10-22",
+  "budgets": [
+    {
+      "year": 2026,
+      "levy": 3771555,
+      "levy_change_pct": 3.4,
+      "home_assessment": 217000,
+      "home_change": 65.53,
+      "rate_residential_municipal": 0.00918403,
+      "note": "The draft budget gave a 2.9% rate increase; the rates passed in By-law 2026-10 rose 3.4%.",
+      "source": {
+        "label": "2026 Budget Draft presentation, p. 2–3",
+        "doc": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf",
+        "page": 2
+      },
+      "bylaw": "2026-10"
+    },
+    {
+      "year": 2025,
+      "levy": 3589106,
+      "levy_change_pct": 4.66,
+      "rate_change_pct": 3.95,
+      "home_assessment": 216000,
+      "home_change": 85.42,
+      "rate_residential_municipal": 0.00888204,
+      "source": {
+        "label": "2025 Budget Final presentation, p. 2–3",
+        "doc": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Final-presentation__a6078d16.pdf",
+        "page": 2
+      },
+      "bylaw": "2025-13"
+    },
+    {
+      "year": 2024,
+      "levy": 3400786,
+      "levy_change_pct": 7.34,
+      "rate_change_pct": 6.15,
+      "home_assessment": 215000,
+      "home_change": 124.77,
+      "source": {
+        "label": "2024 Budget Draft presentation, p. 2–3",
+        "doc": "files/archive/financial/2024/Township-of-Nipissing-2024-Budget-Draft-presentation__5fc2b99b.pdf",
+        "page": 2
+      },
+      "bylaw": "2024-22"
+    }
+  ],
+  "bills_from_others": {
+    "year": 2025,
+    "source": {
+      "label": "2026 Budget Draft presentation, p. 3 (2025 actuals)",
+      "doc": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf",
+      "page": 3
+    },
+    "items": [
+      [
+        "OPP policing",
+        325490
+      ],
+      [
+        "District social services (DNSSAB)",
+        188256
+      ],
+      [
+        "Eastholme long-term care",
+        146823
+      ],
+      [
+        "Ambulance (EMS)",
+        141104
+      ],
+      [
+        "Health unit",
+        60041
+      ],
+      [
+        "MPAC assessment",
+        59017
+      ],
+      [
+        "Library",
+        41555
+      ]
+    ]
+  },
+  "comparators": {
+    "year": 2024,
+    "source": {
+      "label": "KPMG Financial Indicators presentation to council, March 3, 2026, p. 5–6",
+      "doc": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Analysis-Presentation-2025__71078166.pdf",
+      "page": 6
+    },
+    "group": [
+      "Armour",
+      "Bonfield",
+      "Kearney",
+      "Markstay-Warren",
+      "Mattawa",
+      "Powassan",
+      "South Algonquin",
+      "St. Joseph",
+      "Temagami"
+    ],
+    "indicators": [
+      {
+        "label": "Residential taxes per household",
+        "nipissing": 3330,
+        "average": 2918,
+        "low": 2109,
+        "high": 3538,
+        "unit": "$"
+      },
+      {
+        "label": "Residential taxes as a share of household income",
+        "nipissing": 3.38,
+        "average": 3.38,
+        "low": 2.42,
+        "high": 4.06,
+        "unit": "%"
+      },
+      {
+        "label": "Reserves per household",
+        "nipissing": 3700,
+        "average": 2798,
+        "low": 1016,
+        "high": 4943,
+        "unit": "$"
+      },
+      {
+        "label": "Long-term debt per household",
+        "nipissing": 671,
+        "average": 1218,
+        "low": 0,
+        "high": 6963,
+        "unit": "$"
+      }
+    ]
+  },
+  "pay_bylaws": {
+    "pay_equity": [
+      "2025-36",
+      "2024-55",
+      "2024-24",
+      "2023-50",
+      "2022-59"
+    ],
+    "council": [
+      "2025-35",
+      "2024-54",
+      "2023-49",
+      "2022-58"
+    ]
+  }
 }

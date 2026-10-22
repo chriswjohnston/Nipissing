@@ -30,7 +30,7 @@ def load(name: str, default):
 def main() -> None:
     urls = []   # (path, lastmod or None, priority)
     for page, pr in [("", "1.0"), ("council.html", "0.9"), ("laws.html", "0.9"), ("decisions.html", "0.9"),
-                     ("terms.html", "0.7"), ("about.html", "0.5")]:
+                     ("finances.html", "0.8"), ("terms.html", "0.7"), ("about.html", "0.5")]:
         urls.append((page, TODAY if pr != "0.5" else None, pr))
 
     bylaws = load("bylaws.json", {}).get("bylaws", [])
