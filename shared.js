@@ -521,6 +521,8 @@ const KIND_RULES = [
   ['Scheduling', /meeting\s+schedule|holiday\s+hours|\boffice\s+(?:to\s+)?close|\bclose\s+(?:the\s+)?(?:township\s+)?(?:administrative\s+)?office|reschedul|changes?\s+the\s+date\s+of|town\s+hall\s+meeting\s+to\s+be\s+held/i],
   ['Support for municipalities', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion|submission|appeal|requests?|nomination|correspondence|investigation)\b|\bsupports?\s+(?:the\s+)?(?:city|town|township|municipality|county|district|association|AMO|FONOM|MPP|ROMA)\b|\bendorses?\b|\b(?:request|requests|urge|urges)\s+(?:that\s+)?(?:the\s+)?(?:province|provincial|government|ministry|federal|minister|premier)\b|\bletter\s+(?:requesting|of\s+support)|resolution\s+of\s+support|recommendations\s+provided\s+to\s+the\s+province|\bsupport\s+the\s+nomination|\bnominat/i],
   ['Newsletters', /\bnewsletter/i],
+  ['Taxes and budget', /\btransfer\b[^.]{0,200}\breserves?\b/i],
+  ['Landfill and waste', /\blandfills?\b|\bwaste\b|tipping\s+fees?|\brecycl|blue\s+box|bag\s+limit|transfer\s+station|\bfill\s+site\b/i],
   ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan|acknowledgment\s+and\s+direction/i],
   ['Spending and contracts', /\btender\b|\bquotes?\b|\bquotation\b|\bRFP\b|\bpurchase|\baward|\bbid\b|\bestimate\s+provided|\bdonat|\bdedicat\w*\s+(?:the\s+)?(?:remainder|funds?|allotment)|\bproceed\s+with\b|estimated\s+cost|\bwaives?\b[^.]{0,40}\bfees?\b/i],
   ['Conference attendance', /\b(?:attend|attendance|registration)\b[^.]{0,200}\b(?:conference|convention|meeting|association|symposium|workshop|seminar|summit|AGM)\b|\bconferences?\b|\bconventions?\b/i],
@@ -543,7 +545,7 @@ function decisionKind(text) {
 }
 
 const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Taxes and budget', 'Zoning and land',
-  'Agreements', 'Appointments', 'Laws and policies', 'Grants', 'Support for municipalities',
+  'Agreements', 'Appointments', 'Laws and policies', 'Landfill and waste', 'Grants', 'Support for municipalities',
   'Elections', 'Scheduling', 'Newsletters', 'Conference attendance', 'Closed sessions', 'Other'];
 
 // One list of decisions. Each by-law appears once; the resolution that
