@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022l">
+<link rel="stylesheet" href="shared.css?v=20261022o">
 </head>
 <body>
 
@@ -47,6 +47,7 @@
     <h1 id="resolution-title" style="max-width:32ch"></h1>
     <p class="page-lede" id="resolution-subtitle"></p>
     <div class="meta-pills" id="resolution-pills"></div>
+    <a class="law-banner" id="res-banner" href="#" style="display:none;margin-top:18px"></a>
   </div>
 
   <div class="wrap detail-wrap">
@@ -73,6 +74,10 @@
         <div class="meta-row"><span class="meta-label">Seconded by</span><span class="meta-value" id="meta-seconder"></span></div>
         <div class="meta-row"><span class="meta-label">Result</span><span class="meta-value" id="meta-status" style="text-transform:capitalize"></span></div>
       </section>
+      <section class="side-card" id="links-card" hidden aria-labelledby="rs-links">
+        <h2 class="side-title" id="rs-links">Connected decisions</h2>
+        <ul class="change-list" id="res-links"></ul>
+      </section>
     </aside>
   </div>
 </main>
@@ -80,7 +85,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer-inner">
     <div class="footer-about">
-      <p class="footer-name">Nipissing Public Record</p>
+      <h2 class="footer-name">Nipissing Public Record</h2>
       <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
     <ul class="footer-links">
@@ -92,7 +97,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022l"></script>
+<script src="shared.js?v=20261022o"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -179,6 +184,7 @@ async function init(){
   }
 
   document.title = `Resolution ${resolution.number} — Nipissing Public Record`;
+  setDescription(`Township of Nipissing council resolution ${resolution.number}, ${fmtDate(resolution.meeting_date)}: ${resolution.motion_text || ''}`);
 
 
 
@@ -223,6 +229,35 @@ async function init(){
 
   document.getElementById('doc-links').innerHTML =
     links.join('') + meetingGroup(resolution.meeting_date, minutes, pkg);
+
+  // The draft in the agenda package, and the papers that came with it.
+  try {
+    const idx = (await (await fetch('data/canonical/package_index.json', {cache: 'no-cache'})).json()).packages || {};
+    const it = (idx[resolution.meeting_date]?.items || []).find(i => i.kind === 'resolution' && i.number === resolution.number);
+    if (it && pkg) {
+      const span = it.papers ? (it.papers[0] === it.papers[1] ? `p. ${it.papers[0]}` : `pp. ${it.papers[0]}–${it.papers[1]}`) : '';
+      document.getElementById('doc-links').insertAdjacentHTML('afterbegin',
+        docLink(it.papers ? `The papers council had (agenda package, ${span})` : `The draft in the agenda package (p. ${it.pages[0]})`,
+          `${pkg}#page=${(it.papers || it.pages)[0]}`));
+    }
+  } catch (e) { /* no index yet */ }
+
+  // Decisions that name this one, or that this one names.
+  const refs = resolutionRefs(RESOLUTIONS).get(resolution.number);
+  if (refs) {
+    const later = refs.referredBy.find(x => ['rescinds', 'replaces'].includes(x.verb));
+    if (later) {
+      const banner = document.getElementById('res-banner');
+      banner.textContent = `${later.verb === 'rescinds' ? 'Rescinded' : 'Replaced'} by ${later.number} on ${fmtDate(later.rec.meeting_date)}. Read the decision that applies now.`;
+      banner.href = `resolution-detail.html?id=${encodeURIComponent(later.number)}`;
+      banner.style.display = 'block';
+    }
+    const item = (x, dir) => `<li>${dir === 'out' ? esc(x.verb[0].toUpperCase() + x.verb.slice(1)) : `${esc({ rescinds: 'Rescinded by', replaces: 'Replaced by', amends: 'Amended by' }[x.verb] || 'Referred to by')}`} ` +
+      (x.rec ? `<a href="resolution-detail.html?id=${encodeURIComponent(x.number)}"><strong>${esc(x.number)}</strong></a>, ${esc(fmtDate(x.rec.meeting_date))}` : `<strong>${esc(x.number)}</strong> (before this archive’s records)`) + '</li>';
+    document.getElementById('res-links').innerHTML =
+      refs.referredBy.map(x => item(x, 'in')).concat(refs.refersTo.map(x => item(x, 'out'))).join('');
+    document.getElementById('links-card').hidden = false;
+  }
   if(resolution.meeting_date){
     document.getElementById('meta-meeting-date').innerHTML =
       `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date)}&body=council">${esc(fmtDate(resolution.meeting_date))}</a>`;

@@ -332,7 +332,8 @@
         {
           "label": "2025 Financial Statement Presentation – KPMG",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-Financial-Statement-Presentation-2025.pdf",
-          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__df9fdc29.pdf"
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-Financial-Statement-Presentation-2025__df9fdc29.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "2025 Financial Analysis Presentation – KPMG",
@@ -342,12 +343,14 @@
         {
           "label": "2026-2036 Capital Forecast",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Capital-Forecast.pdf",
-          "archived": "files/archive/meetings/2026/2026-Capital-Forecast__eee92375.pdf"
+          "archived": "files/archive/meetings/2026/2026-Capital-Forecast__eee92375.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "2026 Budget Draft Presentation",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf",
-          "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf"
+          "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "2025 Financial Statement – KPMG (draft",
@@ -422,32 +425,7 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/January-6-2026-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Minutes-January-6-2026.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Agenda-Package-January-6-2026.pdf",
-      "extra_docs": [
-        {
-          "label": "2025 Financial Statements -KPMG",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/2025-12-31-Township-of-Nipissing-FS.pdf"
-        },
-        {
-          "label": "2025 Financial Statement Presentation – KPMG",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Township-of-Nipissing-Financial-Statement-Presentation-2025.pdf"
-        },
-        {
-          "label": "2025 Financial Analysis Presentation – KPMG",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Township-of-Nipissing-Financial-Analysis-Presentation-2025.pdf"
-        },
-        {
-          "label": "2026-2036 Capital Forecast",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/2026-Capital-Forecast.pdf"
-        },
-        {
-          "label": "2026 Budget Draft Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf"
-        },
-        {
-          "label": "Draft User Fee By-Law",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/04/2026-User-Fee-Draft.pdf"
-        }
-      ],
+      "extra_docs": [],
       "cancelled": false,
       "summary": "# Council Meeting Summary\n\n**Jan 6, 2026**\n\n## Key Decisions\n- Approved December 16, 2025 meeting minutes\n- Set two advance voting dates for the 2026 Municipal Election (October 10 and 17, 2026)\n- Approved January 2026 newsletter for distribution\n- Authorized staff attendance at Federation of Northern Ontario Municipalities conference (May 11-13, 2026 in Timmins) and Northeastern Fire Education Conference (March 27, 2026 in Huntsville)\n- Approved submission of 2026 Summer Employment Opportunities Grant\n- Extended Powassan and District Union Public Library Agreement to February 28, 2026\n- Expanded employee benefits to include Health Savings Account at cost of $6,500 plus taxes and fees\n- Passed By-Law 2026-01 to hire a Municipal Facilities Maintenance Person\n- Passed By-Law 2026-02 for Interim Tax Levy\n- Passed By-Law 2026-03 to confirm council proceedings\n- Approved accounts totalling $164,411.24\n\n## Main Topics\n- **2026 Municipal Election:** Council set up two advance polling locations and dates to make voting more accessible to residents.\n- **Staff Development:** Council authorized attendance at two professional conferences to keep staff and council members current on municipal best practices and fire safety education.\n- **Landfill Access:** Council approved implementing an electronic card system for landfill sites, effective April 1, 2026, to improve site management and access control.\n- **Employee Benefits:** Council expanded the employee benefit plan to include a Health Savings Account option for staff.\n- **Library Services:** The agreement with Powassan and District Union Public Library was extended through the end of February.\n\n## Notable Items\n- Advance voting for 2026 Municipal Election: October 10 and 17, 2026\n- Electronic landfill card system launches: April 1, 2026\n- Employee Health Savings Account cost increase: $6,500 plus applicable taxes and fees\n- Accounts approved for payment: $164,411.24\n- Library agreement extension deadline: February 28, 2026\n\n---\n*Next regular meeting: January 20, 2026*",
       "video_url": "https://www.youtube.com/watch?v=B-JeDGKD4GU",
@@ -496,7 +474,19 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/November-18-2025-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Minutes-November-18-2025.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Agenda-Package-November-18-2025.pdf",
-      "extra_docs": [],
+      "extra_docs": [
+        {
+          "label": "Council Remuneration Comparative Report, October 2025 (agenda package pp. 46–47)",
+          "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=46",
+          "archived": "files/archive/financial/2025/Council-Remuneration-Comparative-Report-2025.pdf",
+          "from_package": {
+            "pages": [
+              46,
+              47
+            ]
+          }
+        }
+      ],
       "video_url": "https://www.youtube.com/watch?v=tNtaUpFm4DQ",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Nov 18, 2025**\n\n## Key Decisions\n- Approved a new Contract Position for Facility Maintenance Person\n- Authorized $6,000 + HST to Ontario Water Well Fracturing LTD for well pump replacement and hydrofracturing services at the Community Centre\n- Set 2025 holiday closure hours for municipal offices and landfill (offices closed Dec 24 at noon, Dec 25–26, Dec 31 at noon, and Jan 1; landfill closed Dec 25–26 and Jan 1)\n- Approved township office closure on December 10, 2025 for staff training\n- Passed By-Law 2025-32 adopting an Asset Management Plan for the township\n- Approved the 2025–2029 Multi-Year Accessibility Plan Update\n- Accepted a Change Order #1 with Circular Materials Ontario regarding Blue Box material collection at depots\n\n## Main Topics\n- **Community Centre maintenance**: Council approved funding to repair and replace the submersible well pump system at the Community Centre\n- **Staffing**: A new contract position for facility maintenance was created to support township operations\n- **Holiday operations**: Council set specific closure dates and times for December and January to allow staff time off during the holiday season\n- **Professional development**: Three council members and staff will attend the Good Roads Conference in late March 2026\n- **Asset management**: The township adopted a formal plan to manage municipal infrastructure and assets over the next five years\n- **Accessibility**: Council reaffirmed its commitment to accessibility by approving an updated multi-year plan\n\n## Notable Items\n- Well pump work at Community Centre: $6,000 + HST\n- Good Roads Conference attendance: March 29–April 1, 2026\n- Staff training day: December 10, 2025\n- Accounts approved for payment: $257,941.70 (covering Oct 25–Nov 13, 2025)\n- One Recreation Committee member resigned\n\n---\n*Next regular meeting: To be determined (minutes to be approved at next regular Council meeting)*",
@@ -742,7 +732,9 @@
       "extra_docs": [
         {
           "label": "Final Draft, 2025 Budget Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf",
+          "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Final-presentation__a6078d16.pdf",
+          "provided": "2026-10-22"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=8CQB010m1xY",
@@ -779,11 +771,15 @@
       "extra_docs": [
         {
           "label": "2024 Audited Financial Statements by KPMG",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-Financial-Statement-Presentation-2024.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-Financial-Statement-Presentation-2024.pdf",
+          "archived": "files/archive/financial/2025/Township-of-Nipissing-Financial-Statement-Presentation-2024__676affec.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "Capital Budget ****&**** Asset Management Forecast 2025-2035",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration.pdf",
+          "archived": "files/archive/financial/2025/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration__822b8b56.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "Draft 2025 Budget Presentation",
@@ -853,56 +849,7 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/January-7-2025-Agenda.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
-      "extra_docs": [
-        {
-          "label": "2024 Audited Financial Statements by KPMG",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-Financial-Statement-Presentation-2024.pdf"
-        },
-        {
-          "label": "Capital Budget & Asset Management Forecast 2025-2035",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/CAPITAL-BUDGET-2025-2035-FORECAST-Reconsideration.pdf"
-        },
-        {
-          "label": "Draft 2025 Budget Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-2025-Budget-Draft-presentation.pdf"
-        },
-        {
-          "label": "Final Draft, 2025 Budget Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf"
-        },
-        {
-          "label": "Landfill Status Update",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Landfill-status-update-2024.pdf"
-        },
-        {
-          "label": "Township of Nipissing 2025 Asset Management Plan",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Township-of-Nipissing-2025-Asset-Management-Plan-1.pdf"
-        },
-        {
-          "label": "AMP Council Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Nipissing-Council-AMP-Presentation.pdf"
-        },
-        {
-          "label": "KPMG 2023 Financial Overview",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-Financial-Statement-Presentation-2023-1.pdf"
-        },
-        {
-          "label": "2024 Budget Draft Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf"
-        },
-        {
-          "label": "Capital Budget 2024-2034 Forecast",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf"
-        },
-        {
-          "label": "Hummel Bridge- Site Review Inspection/Load Evaluation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Hummel-Bridge-Site-Review-Inspection.pdf"
-        },
-        {
-          "label": "Re-scheduled",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Resolution-2024-189.pdf"
-        }
-      ],
+      "extra_docs": [],
       "video_url": "https://www.youtube.com/watch?v=qXkA365W-K4",
       "title": "",
       "summary": "# Council Meeting Summary\n\n**Jan 7, 2025**\n\n## Key Decisions\n- Approved four by-laws: Committee of Adjustment appointments (By-Law 2025-01), temporary borrowing authority for 2025 (By-Law 2025-02), interim tax levy (By-Law 2025-03), and auditor appointment (By-Law 2025-04)\n- Accepted resignations of Rob Serson from the Museum Board and James Scott from the Recreation Committee\n- Appointed Tom Piper to the Recreation Committee\n- Authorized the Mayor and Municipal Administrator to sign a grant agreement with the Office of the Fire Marshal for cancer prevention in the Fire Department\n- Approved accounts totaling $407,517.24 from December 2024\n\n## Main Topics\n- The Powassan District Union Public Library presented its 2025 budget to council\n- Council confirmed committee memberships and filled a vacancy on the Recreation Committee\n- Council passed routine financial and governance by-laws needed to authorize borrowing and set the interim tax levy for the year\n\n## Notable Items\n- A grant from the Office of the Fire Marshal will support cancer prevention initiatives in the Fire Department\n- Total approved spending for December accounts: $407,517.24\n- Interim tax levy by-law passed to allow tax collection during 2025\n\n---\n*Next regular meeting: January 21, 2025*",
@@ -1217,11 +1164,15 @@
       "extra_docs": [
         {
           "label": "2024 Budget Draft Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf",
+          "archived": "files/archive/financial/2024/Township-of-Nipissing-2024-Budget-Draft-presentation__5fc2b99b.pdf",
+          "provided": "2026-10-22"
         },
         {
           "label": "Capital Budget 2024-2034 Forecast",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf",
+          "archived": "files/archive/financial/2024/CAPITAL-BUDGET-2024-2034-FORECAST__b33709c7.pdf",
+          "provided": "2026-10-22"
         }
       ],
       "video_url": "https://www.youtube.com/watch?v=rjBt6-YKf1E",
@@ -1366,28 +1317,7 @@
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2023/12/Agenda-January-2-2024.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
       "package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
-      "extra_docs": [
-        {
-          "label": "KPMG 2023 Financial Overview",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-Financial-Statement-Presentation-2023-1.pdf"
-        },
-        {
-          "label": "2024 Budget Draft Presentation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf"
-        },
-        {
-          "label": "Capital Budget 2024-2034 Forecast",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAPITAL-BUDGET-2024-2034-FORECAST.pdf"
-        },
-        {
-          "label": "Hummel Bridge- Site Review Inspection/Load Evaluation",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Hummel-Bridge-Site-Review-Inspection.pdf"
-        },
-        {
-          "label": "Re-scheduled",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Resolution-2024-189.pdf"
-        }
-      ],
+      "extra_docs": [],
       "title": "",
       "video_url": "https://www.youtube.com/watch?v=PkqNZQwzHXg",
       "summary": "# Council Meeting Summary\n\n**Jan 2, 2024**\n\n## Key Decisions\n- Approved attendance at three 2024 municipal conferences: Good Roads Conference (April), Federation of Northern Ontario Municipalities (May), and Rural Ontario Municipal Association Conference (January)\n- Appointed James Scott to the Cemetery Committee for the remainder of the current council term\n- Appointed Kim Turnbull as Interim Secretary to the Recreation Committee\n- Transferred $258,885.07 from 2023 budget to reserves: $68,885.07 for TownSuite software, $100,000 for Bear Creek Landfill closing costs, and $90,000 for garage roof replacement\n- Passed By-Law 2024-01 (Interim Tax Levy)\n- Passed By-Law 2024-02 (Emergency Management Program Committee appointment)\n- Approved accounts totaling $202,736.63\n\n## Main Topics\n- **Conference attendance**: Council authorized staff and councillors to attend professional development conferences across Ontario in early 2024\n- **Committee appointments**: Two positions were filled to support ongoing township operations\n- **Budget reserves**: Council set aside nearly $259,000 from 2023 funds for three specific projects planned for 2024\n- **Emergency management**: A new Emergency Management Program Committee was formally established by by-law\n\n## Notable Items\n- Total accounts approved: $202,736.63\n- Reserve funds allocated: $258,885.07 for three projects (software, landfill closure, roof replacement)\n- Bear Creek Landfill closing costs budgeted at $100,000\n- Meeting held in person and livestreamed to YouTube\n\n---\n*Next regular meeting: January 16, 2024*",

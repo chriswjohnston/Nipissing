@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022l">
+<link rel="stylesheet" href="shared.css?v=20261022o">
 </head>
 <body>
 
@@ -65,6 +65,15 @@
           <ol class="decision-list" id="routine-list"></ol>
         </details>
       </section>
+      <section id="package-section" hidden aria-labelledby="pkg-title" style="margin-top:40px">
+        <h2 class="section-title" id="pkg-title">In the agenda package</h2>
+        <p class="section-note">What council had in front of it. Staff reports often hold what the minutes leave out: progress, numbers, what happens next.</p>
+        <div id="package-reports"></div>
+        <details class="routine-details" id="package-more-wrap">
+          <summary id="package-more-summary"></summary>
+          <ol class="pkg-list" id="package-more"></ol>
+        </details>
+      </section>
     </section>
 
     <aside class="detail-side">
@@ -88,7 +97,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer-inner">
     <div class="footer-about">
-      <p class="footer-name">Nipissing Public Record</p>
+      <h2 class="footer-name">Nipissing Public Record</h2>
       <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
     <ul class="footer-links">
@@ -100,7 +109,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022l"></script>
+<script src="shared.js?v=20261022o"></script>
 
 <script>
 function getParam(name){
@@ -292,6 +301,28 @@ async function init(){
       document.getElementById('decisions-section').hidden = false;
     }
   }
+
+  // Contents of the agenda package, read page by page (package_index.json).
+  try {
+    const idx = (await (await fetch('data/canonical/package_index.json', {cache: 'no-cache'})).json()).packages || {};
+    const pk = (meeting.body_id || 'council') === 'council' && idx[meeting.date];
+    if (pk && packageUrl && (pk.items || []).length) {
+      const at = n => `${packageUrl}#page=${n}`;
+      const pages = it => it.pages[0] === it.pages[1] ? `p. ${it.pages[0]}` : `pp. ${it.pages[0]}–${it.pages[1]}`;
+      const reports = pk.items.filter(i => i.kind === 'report');
+      document.getElementById('package-reports').innerHTML = reports.length ? `<ol class="report-list">${reports.map(r => `
+        <li><a class="report-title" href="${escHtml(at(r.pages[0]))}" target="_blank" rel="noopener">${escHtml(r.title || 'Staff report')}</a>
+          <span class="report-meta">Staff report${r.from ? `, from ${escHtml(r.from)}` : ''} · ${pages(r)}</span></li>`).join('')}</ol>` : '<p class="section-note">No staff reports in this package.</p>';
+      const KIND = { resolution: 'Draft resolution', bylaw: 'By-law', minutes: 'Minutes', correspondence: 'Correspondence', agenda: 'Agenda', other: 'Other' };
+      const rest = pk.items.filter(i => i.kind !== 'report');
+      document.getElementById('package-more-summary').textContent = `Everything else in the package: ${rest.length} item${rest.length === 1 ? '' : 's'}, ${pk.pages} pages`;
+      document.getElementById('package-more').innerHTML = rest.map(i => `
+        <li><span class="pkg-kind">${escHtml(KIND[i.kind] || i.kind)}${i.number ? ` ${escHtml(i.number)}` : ''}</span>
+          <a href="${escHtml(at(i.pages[0]))}" target="_blank" rel="noopener">${escHtml((i.title || '').slice(0, 140) || 'Untitled')}</a>
+          <span class="pkg-pages">${pages(i)}${i.papers ? `, with ${i.papers[1] - i.papers[0] + 1} page${i.papers[1] > i.papers[0] ? 's' : ''} of backing papers` : ''}</span></li>`).join('');
+      document.getElementById('package-section').hidden = false;
+    }
+  } catch (e) { /* no index yet */ }
 
   const extra = meeting.extra_docs || [];
   if(extra.length){
