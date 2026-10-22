@@ -517,15 +517,17 @@ function isRoutineText(text) {
 const KIND_RULES = [
   ['Bills paid', /statement\s+of\s+accounts|accounts\s+payable|\baccounts\b[^.]{0,80}\bbe\s+approved/i],
   ['Closed sessions', /closed\s+to\s+the\s+public|closed\s+session|in[-\s]camera|resume\s+to\s+an?\s+open|reconvene|rise\s+from|section\s+239/i],
-  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion|submission|appeal)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Elections', /\belection\b|\bvoting\b|\bballots?\b|advance\s+poll|\bpolling\b|compliance\s+audit/i],
+  ['Scheduling', /meeting\s+schedule|holiday\s+hours|\boffice\s+(?:to\s+)?close|\bclose\s+(?:the\s+)?(?:township\s+)?(?:administrative\s+)?office|reschedul|changes?\s+the\s+date\s+of|town\s+hall\s+meeting\s+to\s+be\s+held/i],
+  ['Support for municipalities', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion|submission|appeal|requests?|nomination|correspondence|investigation)\b|\bsupports?\s+(?:the\s+)?(?:city|town|township|municipality|county|district|association|AMO|FONOM|MPP|ROMA)\b|\bendorses?\b|\b(?:request|requests|urge|urges)\s+(?:that\s+)?(?:the\s+)?(?:province|provincial|government|ministry|federal|minister|premier)\b|\bletter\s+(?:requesting|of\s+support)|resolution\s+of\s+support|recommendations\s+provided\s+to\s+the\s+province|\bsupport\s+the\s+nomination|\bnominat/i],
   ['Newsletters', /\bnewsletter/i],
-  ['Conference attendance', /\b(?:attend|attendance|registration)\b[^.]{0,200}\b(?:conference|convention|meeting|association|symposium|workshop|seminar|summit|AGM)\b|\bconference\b|\bconvention\b/i],
+  ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan|acknowledgment\s+and\s+direction/i],
+  ['Spending and contracts', /\btender\b|\bquotes?\b|\bquotation\b|\bRFP\b|\bpurchase|\baward|\bbid\b|\bestimate\s+provided|\bdonat|\bdedicat\w*\s+(?:the\s+)?(?:remainder|funds?|allotment)|\bproceed\s+with\b|estimated\s+cost|\bwaives?\b[^.]{0,40}\bfees?\b/i],
+  ['Conference attendance', /\b(?:attend|attendance|registration)\b[^.]{0,200}\b(?:conference|convention|meeting|association|symposium|workshop|seminar|summit|AGM)\b|\bconferences?\b|\bconventions?\b/i],
   ['Grants', /\bgrant\b|\bfunding\s+(?:application|program|stream)|\bapplication\s+(?:to|for)\s+(?:the\s+)?[\w\s,&-]{0,60}(?:fund|program|stream)\b/i],
-  ['Appointments', /\bappoint|\bresignation\b|\bhire\b|\bhiring\b|\broster\b|\bintegrity\s+commissioner\b|\bremuneration\b|\bposition\s+description/i],
-  ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan/i],
+  ['Appointments', /\bappoint|\bresignation\b|\bhire\b|\bhiring\b|\broster\b|\bintegrity\s+commissioner\b|\bremuneration\b|\bposition\s+description|\bletter\s+of\s+interest/i],
   ['Agreements', /\bagreement\b|memorandum\s+of\s+understanding|\bMOU\b|\benter\s+into\b|\bcontract\b/i],
-  ['Spending and contracts', /\btender\b|\bquotes?\b|\bRFP\b|\bpurchase|\baward|\bbid\b|\bestimate\s+provided|\bdonat|\bgrant\b/i],
-  ['Taxes and budget', /\btax\s+(?:rates?|ratios?|levy|arrears|sale|registration)|\binterim\s+(?:tax\s+)?levy|\blevy\b|\b(?:adopt|approve)s?\s+the\s+[\w\s-]{0,30}budget|\bbudget\s+be\s+(?:adopted|approved)|\bestimates\b|\bborrow|\bdebenture|\breserve\s+fund|\binsurance\b|\bwrite[-\s]off|\btax\s+write|\bfees?\s+and\s+charges/i],
+  ['Taxes and budget', /\btax\s+(?:rates?|ratios?|levy|arrears|sale|registration)|\binterim\s+(?:tax\s+)?levy|\blevy\b|\bbudget\b|\bestimates\b|\bborrow|\bdebenture|\breserves?\b|\binsurance\b|\bwrite[-\s]off|\bfees?\s+and\s+charges|financial\s+statements|capital\s+forecast|\bforecast\b|asset\s+management/i],
   ['Spending and contracts', /\$\s?\d/],
   ['Laws and policies', /\bby-?law\b|\bpolicy\b|\bprocedures?\b|\bcode\s+of\s+conduct\b|\bplan\b|\bguidelines?\b|\bstrategy\b/i],
 ];
@@ -540,9 +542,9 @@ function decisionKind(text) {
   return 'Other';
 }
 
-const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Zoning and land', 'Agreements',
-  'Appointments', 'Taxes and budget', 'Laws and policies', 'Grants', 'Newsletters',
-  'Conference attendance', 'Support for other councils', 'Closed sessions', 'Other'];
+const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Taxes and budget', 'Zoning and land',
+  'Agreements', 'Appointments', 'Laws and policies', 'Grants', 'Support for municipalities',
+  'Elections', 'Scheduling', 'Newsletters', 'Conference attendance', 'Closed sessions', 'Other'];
 
 // One list of decisions. Each by-law appears once; the resolution that
 // passed it is folded in (passedBy). Returns newest first.
