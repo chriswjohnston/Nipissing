@@ -493,6 +493,8 @@ function operativeText(text) {
   const parts = t.split(/\b(?:NOW\s+THEREFORE(?:\s+BE\s+IT\s+RESOLVED)?|BE\s+IT\s+RESOLVED)\b[,:]?\s*/i);
   let op = parts.length > 1 ? parts[parts.length - 1] : t;
   op = op.replace(/^(?:that|THAT)\s+/, '').trim();
+  // The outcome and any note after it ("Defeated. Ed Veldboom left the meeting.")
+  op = op.replace(/\s+(?:Carried|Defeated|Deferred|Lost|Withdrawn|CARRIED|DEFEATED|DEFERRED)(?:\.|\s*$)[\s\S]*$/, '').trim();
   return op ? op.charAt(0).toUpperCase() + op.slice(1) : t;
 }
 
@@ -503,6 +505,7 @@ const ROUTINE_RULES = [
   /\b(?:meeting|council)\s+(?:be\s+|is\s+)?adjourn/i,
   /^(?:that\s+)?(?:we|council)\s+receives?\s+(?:the\s+)?[\w\s,.-]{0,80}(?:report|correspondence|minutes|presentation|delegation|letter|update)s?\b[^.]{0,40}(?:as\s+presented|for\s+information)/i,
   /^(?:that\s+)?(?:we|council)\s+receives?\s+the\s+correspondence/i,
+  /^(?:that\s+)?(?:we|council)\s+(?:receives?|accepts?)\s+the\s+correspondence/i,
   /\bconfirm\s+the\s+proceedings\s+of\s+council\b/i,
 ];
 
@@ -514,7 +517,10 @@ function isRoutineText(text) {
 const KIND_RULES = [
   ['Bills paid', /statement\s+of\s+accounts|accounts\s+payable|\baccounts\b[^.]{0,80}\bbe\s+approved/i],
   ['Closed sessions', /closed\s+to\s+the\s+public|closed\s+session|in[-\s]camera|resume\s+to\s+an?\s+open|reconvene|rise\s+from|section\s+239/i],
-  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion|submission|appeal)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Newsletters', /\bnewsletter/i],
+  ['Conference attendance', /\b(?:attend|attendance|registration)\b[^.]{0,200}\b(?:conference|convention|meeting|association|symposium|workshop|seminar|summit|AGM)\b|\bconference\b|\bconvention\b/i],
+  ['Grants', /\bgrant\b|\bfunding\s+(?:application|program|stream)|\bapplication\s+(?:to|for)\s+(?:the\s+)?[\w\s,&-]{0,60}(?:fund|program|stream)\b/i],
   ['Appointments', /\bappoint|\bresignation\b|\bhire\b|\bhiring\b|\broster\b|\bintegrity\s+commissioner\b|\bremuneration\b|\bposition\s+description/i],
   ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan/i],
   ['Agreements', /\bagreement\b|memorandum\s+of\s+understanding|\bMOU\b|\benter\s+into\b|\bcontract\b/i],
@@ -525,14 +531,18 @@ const KIND_RULES = [
 ];
 
 function decisionKind(text) {
-  const t = String(text || '');
-  for (const [kind, re] of KIND_RULES) if (re.test(t)) return kind;
+  // Council's operative words decide first; the WHEREAS background only
+  // when those say nothing (it often mentions grants, budgets, other bodies).
+  const full = String(text || '');
+  for (const t of [operativeText(full), full]) {
+    for (const [kind, re] of KIND_RULES) if (re.test(t)) return kind;
+  }
   return 'Other';
 }
 
 const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Zoning and land', 'Agreements',
-  'Appointments', 'Taxes and budget', 'Laws and policies', 'Support for other councils',
-  'Closed sessions', 'Other'];
+  'Appointments', 'Taxes and budget', 'Laws and policies', 'Grants', 'Newsletters',
+  'Conference attendance', 'Support for other councils', 'Closed sessions', 'Other'];
 
 // One list of decisions. Each by-law appears once; the resolution that
 // passed it is folded in (passedBy). Returns newest first.
@@ -541,14 +551,19 @@ function buildDecisions(bylaws, resolutions) {
   const passedBy = new Map();
   const out = [];
   for (const r of resolutions) {
+    if (r.fragment) continue;   // piece of another motion, split off by an old parser
     const num = r.bylaw_number && String(r.bylaw_number);
-    if (num && byNum.has(num)) { passedBy.set(num, r); continue; }
     const text = r.motion_text || r.title || '';
+    // Fold in only the resolution that passes the by-law. One that merely
+    // mentions a by-law ("Procurement By-Law 2020-51 was not followed")
+    // stays a decision of its own.
+    if (num && byNum.has(num) && /\bpass(?:es|ed)?\s+(?:the\s+)?by-?law\b/i.test(text)) { passedBy.set(num, r); continue; }
     const op = operativeText(text);
     out.push({
       type: 'resolution', id: r.number, date: String(r.meeting_date || '').slice(0, 10),
       text: op, full: text, status: String(r.status || '').toLowerCase(),
       routine: isRoutineText(op) || isRoutineText(text), kind: decisionKind(text),
+      refersTo: num && byNum.has(num) ? num : '',
       href: `resolution-detail.html?id=${encodeURIComponent(r.number)}`, rec: r,
     });
   }
@@ -575,15 +590,16 @@ function decisionRowHtml(d, q = '') {
   const label = d.type === 'bylaw' ? `By-law ${d.id}` : d.id;
   const status = d.status && !['carried', 'approved'].includes(d.status)
     ? `<span class="${bylawStatusClass(d.status)}">${escHtml(d.status)}</span>` : '';
-  const law = d.lawLink ? `<a class="decision-law" href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>` : '';
-  const passed = d.passedBy ? `<span class="decision-passed">Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>` : '';
+  const meta = [`<span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>`];
+  if (d.lawLink) meta.push(`<a href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>`);
+  if (d.refersTo) meta.push(`<span>Refers to <a href="bylaw-detail.html?id=${encodeURIComponent(d.refersTo)}">By-law ${escHtml(d.refersTo)}</a></span>`);
+  if (d.passedBy) meta.push(`<span>Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>`);
   return `<li class="decision-row${d.routine ? ' is-routine' : ''}">
     <a class="decision-num" href="${escHtml(d.href)}">${highlight(label, q)}</a>
     <div class="decision-main">
       <span class="decision-text">${highlight(d.text, q)}</span>${status}
-      ${law || passed ? `<div class="decision-meta">${law}${passed}</div>` : ''}
+      <div class="decision-meta">${meta.join('')}</div>
     </div>
-    <span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>
   </li>`;
 }
 

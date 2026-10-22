@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="shared.css?v=20261022f">
 </head>
 <body>
 
@@ -33,6 +33,7 @@
         <li><a href="council.html" data-nav="meetings">Meetings</a></li>
         <li><a href="laws.html" data-nav="laws">Laws</a></li>
         <li><a href="decisions.html" data-nav="decisions" aria-current="page">Decisions</a></li>
+        <li><a href="terms.html" data-nav="terms">Terms</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -105,7 +106,7 @@
   </div>
 </footer>
 
-<script src="shared.js"></script>
+<script src="shared.js?v=20261022f"></script>
 <script>
 const PAGE = 25;
 const state = { show: 'all', year: '', kind: '', q: '', routine: false, limit: PAGE };
@@ -216,10 +217,10 @@ function render(){
     const dated = g.date !== 'undated';
     const title = dated ? new Date(`${g.date}T00:00:00`).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Date not recorded';
     const meeting = dated && council.has(g.date)
-      ? `<a class="body-council" style="font-weight:600;text-decoration:none" href="meeting-detail.html?date=${encodeURIComponent(g.date)}&body=council">Township of Nipissing Council</a>` : '';
-    const note = g.hidden ? `<span class="group-note">${g.hidden} routine item${g.hidden === 1 ? '' : 's'} hidden</span>` : '';
+      ? `<a class="body-council" href="meeting-detail.html?date=${encodeURIComponent(g.date)}&body=council">Township of Nipissing Council</a>` : '';
+    const note = g.hidden ? `<span class="group-note">Plus ${g.hidden} routine item${g.hidden === 1 ? '' : 's'}, such as adopting minutes</span>` : '';
     return `<section aria-label="${escHtml(title)}">
-      <div class="decision-group-head"><h2>${escHtml(title)}</h2>${meeting}${note}</div>
+      <div class="decision-group-head"><h2>${escHtml(title)}</h2>${meeting || note ? `<div class="decision-group-sub">${meeting}${note}</div>` : ''}</div>
       <ol class="decision-list">${g.items.map(d => decisionRowHtml(d, state.q)).join('')}</ol>
     </section>`;
   }).join('');
