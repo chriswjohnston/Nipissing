@@ -51,7 +51,7 @@ jobs:
           fi
           for s in update_meetings recover_documents generate_summaries update_bylaws consolidate_bylaws \
                    update_adjustment update_boards update_library update_healthunit \
-                   update_dnssab attach_videos doc_tidy check_freshness audit_site; do
+                   update_dnssab attach_videos doc_tidy archive_plans check_freshness audit_site; do
             case "$s" in
               update_meetings|update_bylaws|update_adjustment|update_boards)
                 if [ "$township_up" = 0 ]; then echo "skipped $s (township site down)"; continue; fi ;;
