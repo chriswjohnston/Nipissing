@@ -213,7 +213,7 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .latest-sub{color:var(--muted);margin:4px 0 18px}
 .latest-body{font-size:18px;font-weight:700;margin-bottom:14px}
 .latest-main h3{font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:14px}
-.decision-list{padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:17px;max-width:66ch}
+.key-decisions{padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:17px;max-width:66ch}
 .ai-note{font-size:14px;color:var(--muted);margin-top:20px;max-width:66ch}
 
 /* Laws in force */
@@ -338,6 +338,53 @@ a.amend-mark:hover{text-decoration:underline}
 .prose ul{margin:12px 0 12px 24px}
 .prose li{margin:6px 0}
 
+/* ── Laws page ─────────────────────────────────────────────────────── */
+.laws-layout{display:flex;flex-wrap:wrap;gap:40px 56px;align-items:flex-start;padding-bottom:80px}
+.laws-topics{flex:1 1 220px;min-width:0}
+.laws-topics-title{font-weight:700;margin-bottom:8px}
+.laws-topics ul{list-style:none;border-top:2px solid var(--ink)}
+.laws-topics li{border-bottom:1px solid var(--rule-soft)}
+.laws-topics ul a{display:flex;justify-content:space-between;gap:12px;padding:10px 0;font-weight:600;color:var(--ink);text-decoration:none}
+.laws-topics ul a:hover{color:var(--ledger-dk);text-decoration:underline}
+.laws-topics .cnt{color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.laws-topics-note{margin-top:20px;font-size:14.5px;color:var(--muted)}
+.laws-topics-note a{font-weight:600}
+.laws-main{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:40px}
+.law-topic h2{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:10px;scroll-margin-top:16px}
+.law-list{list-style:none;border-top:2px solid var(--ink)}
+.law-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 20px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.law-row-name{font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+.law-row-name:hover{color:var(--ledger-dk);text-decoration:underline}
+.law-row-note{display:block;font-size:14.5px;color:var(--muted)}
+.law-row-num{font-size:14.5px;color:var(--ink-2);font-variant-numeric:lining-nums tabular-nums;text-align:right;white-space:nowrap}
+.law-repealed{font-size:15px;color:var(--muted)}
+.law-repealed a{font-weight:600}
+.find-law{display:flex;flex-direction:column;gap:6px;max-width:520px;margin-top:28px}
+
+/* ── Decisions ─────────────────────────────────────────────────────── */
+.decision-groups{display:flex;flex-direction:column;gap:44px}
+.decision-group-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:10px}
+.decision-group-head h2{font-family:var(--serif);font-size:26px;font-weight:600}
+.decision-group-head .group-note{margin-left:auto;color:var(--muted);font-size:14.5px}
+.decision-list{list-style:none;border-top:2px solid var(--ink)}
+.decision-row{display:grid;grid-template-columns:136px minmax(0,1fr) 190px;gap:4px 20px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.decision-num{font-weight:600;text-decoration:none;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.decision-num:hover{text-decoration:underline}
+.decision-main{min-width:0}
+.decision-text{max-width:76ch}
+.decision-main .status-pill{margin-left:8px}
+.decision-meta{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:4px;font-size:14.5px;color:var(--muted)}
+.decision-meta a{font-weight:600}
+.decision-kind{font-size:14.5px;color:var(--muted)}
+.decision-row.is-routine .decision-text{color:var(--ink-2)}
+.routine-toggle{display:flex;align-items:center;gap:10px;font-size:15px;min-height:32px;cursor:pointer}
+.routine-toggle input{width:20px;height:20px;accent-color:var(--ledger)}
+.select-input{height:48px;padding:0 12px;font:inherit;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);min-width:140px}
+.more-wrap{margin-top:32px;display:flex;justify-content:center}
+.routine-details{margin-top:10px}
+.routine-details summary{cursor:pointer;font-weight:600;color:var(--ledger);min-height:44px;display:flex;align-items:center}
+.routine-details .decision-list{margin-top:4px}
+
 /* ── Footer ────────────────────────────────────────────────────────── */
 .site-footer{background:var(--ledger);color:#E9F0EC;margin-top:24px}
 .site-footer-inner{display:flex;flex-wrap:wrap;gap:32px 64px;padding-top:48px;padding-bottom:48px}
@@ -379,6 +426,10 @@ a.amend-mark:hover{text-decoration:underline}
   .page-lede{font-size:17px}
   .filed-body{padding:20px}
   .record-row{grid-template-columns:minmax(0,1fr)}
+  .decision-row{grid-template-columns:minmax(0,1fr)}
+  .decision-kind{order:-1}
+  .law-row{grid-template-columns:minmax(0,1fr)}
+  .law-row-num{text-align:left}
   .record-date{font-size:14.5px;color:var(--muted)}
   .search-row{flex-direction:column}
   .search-row .search-input{flex:none;width:100%}

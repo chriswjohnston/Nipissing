@@ -1,0 +1,83 @@
+{
+  "_about": "The township's standing laws, grouped by topic for the Laws page (laws.html). Each entry names the by-law that holds the law today; amendments are found automatically from by-law titles and bylaw_families.json, and a consolidated text is used when consolidations.json has one. Edit by hand: add a law, move it between topics, or rename it. A law whose by-law is marked repealed in bylaws.json moves to the repealed list on its own.",
+  "topics": [
+    {
+      "id": "roads",
+      "name": "Roads and vehicles",
+      "laws": [
+        { "name": "Minimum Maintenance Standards", "bylaw": "2019-41" },
+        { "name": "Parking", "bylaw": "2021-50" },
+        { "name": "Off-road vehicles on municipal roads", "bylaw": "2015-23" },
+        { "name": "Maximum weight on bridges", "bylaw": "2020-05", "note": "Amends By-law 2019-42, which hasn’t been found" },
+        { "name": "Speed limits", "bylaw": "2013-39" },
+        { "name": "Community safety zone", "bylaw": "2021-48" },
+        { "name": "Culverts and entrances", "bylaw": "2022-29" },
+        { "name": "Entrances and 911 numbering", "bylaw": "2011-43" },
+        { "name": "Snow on roads and bridges", "bylaw": "2021-63" },
+        { "name": "Unopened road allowances", "bylaw": "2021-57" },
+        { "name": "Boundary road agreement with Powassan", "bylaw": "2020-08" },
+        { "name": "Boundary road agreement with Callander", "bylaw": "2022-53" }
+      ]
+    },
+    {
+      "id": "waste",
+      "name": "Waste and landfill",
+      "laws": [
+        { "name": "Landfill", "bylaw": "2020-27" },
+        { "name": "Unauthorized disposal of waste", "bylaw": "2021-58" }
+      ]
+    },
+    {
+      "id": "land",
+      "name": "Land, building and zoning",
+      "laws": [
+        { "name": "Zoning", "bylaw": "2020-20" },
+        { "name": "Building", "bylaw": "2017-04" },
+        { "name": "Trailer licensing", "bylaw": "2023-30" },
+        { "name": "Trailers during construction", "bylaw": "2012-53" },
+        { "name": "Sale of land", "bylaw": "2023-03" }
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire and emergencies",
+      "laws": [
+        { "name": "Open air burning", "bylaw": "2020-42" },
+        { "name": "Fireworks", "bylaw": "2017-03" },
+        { "name": "Fire department", "bylaw": "2023-15" }
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "laws": [
+        { "name": "Dogs", "bylaw": "2022-42" },
+        { "name": "Nuisance beavers", "bylaw": "2023-08" }
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Beaches, docks and cemeteries",
+      "laws": [
+        { "name": "Beach safety", "bylaw": "2026-19" },
+        { "name": "Public dock", "bylaw": "2020-17" },
+        { "name": "Cemetery regulations", "bylaw": "2022-38" }
+      ]
+    },
+    {
+      "id": "council",
+      "name": "Council and administration",
+      "laws": [
+        { "name": "Procedure for council meetings", "bylaw": "2022-34" },
+        { "name": "Code of conduct for council", "bylaw": "2023-28" },
+        { "name": "Procurement", "bylaw": "2020-51" },
+        { "name": "User fees", "bylaw": "2026-20" },
+        { "name": "Delegation of authority", "bylaw": "2023-02" },
+        { "name": "Accountability and transparency", "bylaw": "2023-01" },
+        { "name": "Public notice", "bylaw": "2024-07" },
+        { "name": "Website and social media", "bylaw": "2023-21" },
+        { "name": "Filling a council vacancy", "bylaw": "2026-31" }
+      ]
+    }
+  ]
+}

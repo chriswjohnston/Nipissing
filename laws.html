@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laws in effect — Nipissing Public Record</title>
+<meta name="description" content="The Township of Nipissing’s standing laws, by topic, each shown as it reads today with any amendments applied.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="laws.html" data-nav="laws" aria-current="page">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <h1>Laws in effect</h1>
+    <p class="page-lede">The by-laws that set the township’s standing rules — for roads, burning, dogs, docks and how council works. Each one opens to the law as it reads today, with any amendments noted.</p>
+    <div class="find-law">
+      <label class="filter-label" for="find-law">Find a law</label>
+      <div class="filter-search" style="max-width:520px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="find-law" type="search" placeholder="Burning, parking, dogs, trailers…" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap laws-layout">
+    <nav class="laws-topics" aria-labelledby="topics-title">
+      <p class="laws-topics-title" id="topics-title">Topics</p>
+      <ul id="topic-nav"></ul>
+      <p class="laws-topics-note">Looking for a budget, a rezoning for one property, or an agreement? Those are in <a href="decisions.html">Decisions</a>.</p>
+    </nav>
+    <div class="laws-main">
+      <div id="law-topics" style="display:flex;flex-direction:column;gap:40px"></div>
+      <div class="state-msg" id="laws-empty" hidden>
+        <strong>No law matches that</strong>
+        <p>Try a different word, or search <a href="decisions.html">all decisions</a>.</p>
+      </div>
+      <p class="law-repealed" id="law-repealed" hidden></p>
+      <div class="state-msg" id="loading"><strong>Loading laws…</strong></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing/issues/new?title=Missing+document%3A+&amp;body=%2A%2AWhat%27s+missing+or+wrong%3F%2A%2A%0A%28A+meeting%2C+by-law%2C+resolution+or+document.+Include+the+date+or+number+if+you+know+it.%29%0A%0A%2A%2ALink%2C+if+you+have+one%3A%2A%2A%0A%0A%2A%2AAnything+else%3F%2A%2A%0A" target="_blank" rel="noopener">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+let LAW_ROWS = [];
+
+async function init(){
+  await loadAllData();
+  let list = { topics: [] };
+  try { list = await (await fetch('data/canonical/laws_in_effect.json', { cache: 'no-cache' })).json(); } catch {}
+  const cons = await loadLaws();
+  const byNum = new Map(BYLAWS.map(b => [String(b.number), b]));
+  const amends = amendmentIndex(BYLAWS, cons);
+  const consFor = n => cons.find(c => c.principal === n);
+
+  const topics = (list.topics || []).map(t => {
+    const laws = (t.laws || []).map(l => {
+      const b = byNum.get(String(l.bylaw)) || { number: l.bylaw };
+      if (String(b.status || '').toLowerCase() === 'repealed') return null;
+      const c = consFor(String(l.bylaw));
+      const notes = [];
+      if (l.note) notes.push(l.note);
+      if (b.repeals?.length) notes.push(`Replaced By-law ${b.repeals.join(', ')}`);
+      const a = amendedNote(amends.get(String(l.bylaw)));
+      if (a) notes.push(a + (c?.consolidated_markdown ? '. Shown with the changes applied' : ''));
+      return {
+        name: l.name, num: String(l.bylaw), note: notes.join('. '),
+        href: c ? `law.html?id=${encodeURIComponent(c.id)}` : `bylaw-detail.html?id=${encodeURIComponent(l.bylaw)}`,
+        hay: normText(`${l.name} ${l.bylaw} ${b.title || ''} ${b.common_name || ''} ${t.name}`),
+      };
+    }).filter(Boolean);
+    return { id: t.id, name: t.name, laws };
+  }).filter(t => t.laws.length);
+  LAW_ROWS = topics;
+
+  document.getElementById('loading').hidden = true;
+  render('');
+
+  const repealed = BYLAWS.filter(b => String(b.status || '').toLowerCase() === 'repealed');
+  if (repealed.length) {
+    const p = document.getElementById('law-repealed');
+    p.innerHTML = 'No longer in effect: ' + repealed.map(b =>
+      `<a href="bylaw-detail.html?id=${encodeURIComponent(b.number)}">${escHtml(b.common_name || sentenceCase(b.title))} (${escHtml(b.number)})</a>` +
+      (b.repealed_by ? `, repealed by ${escHtml(b.repealed_by)}` : '')).join('; ') + '.';
+    p.hidden = false;
+  }
+  document.getElementById('find-law').addEventListener('input', e => render(e.target.value));
+}
+
+function render(q){
+  const query = normText(q);
+  const shown = LAW_ROWS.map(t => ({ ...t, laws: query ? t.laws.filter(l => l.hay.includes(query)) : t.laws }))
+    .filter(t => t.laws.length);
+  document.getElementById('topic-nav').innerHTML = shown.map(t =>
+    `<li><a href="#topic-${escHtml(t.id)}"><span>${escHtml(t.name)}</span><span class="cnt">${t.laws.length}</span></a></li>`).join('');
+  document.getElementById('law-topics').innerHTML = shown.map(t => `
+    <section class="law-topic" aria-labelledby="topic-${escHtml(t.id)}">
+      <h2 id="topic-${escHtml(t.id)}">${escHtml(t.name)}</h2>
+      <ul class="law-list">${t.laws.map(l => `
+        <li class="law-row">
+          <span><a class="law-row-name" href="${escHtml(l.href)}">${highlight(l.name, q)}</a>${l.note ? `<span class="law-row-note">${escHtml(l.note)}</span>` : ''}</span>
+          <span class="law-row-num">By-law ${escHtml(l.num)}</span>
+        </li>`).join('')}
+      </ul>
+    </section>`).join('');
+  document.getElementById('laws-empty').hidden = !!shown.length;
+}
+
+init();
+</script>
+</body>
+</html>

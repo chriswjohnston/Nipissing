@@ -31,8 +31,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="council.html" data-nav="meetings">Meetings</a></li>
-        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
-        <li><a href="bylaws.html?type=resolution" data-nav="decisions" aria-current="page">Decisions</a></li>
+        <li><a href="laws.html" data-nav="laws">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions" aria-current="page">Decisions</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -41,7 +41,7 @@
 
 <main id="main">
   <div class="wrap page-head">
-    <a href="bylaws.html?type=resolution" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All decisions</a>
+    <a href="decisions.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All decisions</a>
     <p class="page-kicker body-council" id="resolution-number"></p>
     <h1 id="resolution-title" style="max-width:32ch"></h1>
     <p class="page-lede" id="resolution-subtitle"></p>
@@ -159,7 +159,7 @@ async function init(){
   if(!resolution){
     document.getElementById('resolution-title').textContent = 'Resolution not found';
     document.querySelector('.detail-wrap').innerHTML =
-      '<div class="state-msg"><strong>We couldn’t find that resolution number.</strong><p><a href="bylaws.html?type=resolution">Browse all decisions</a> or search by words from the motion.</p></div>';
+      '<div class="state-msg"><strong>We couldn’t find that resolution number.</strong><p><a href="decisions.html?show=resolutions">Browse all decisions</a> or search by words from the motion.</p></div>';
     return;
   }
 

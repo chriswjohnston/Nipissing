@@ -481,3 +481,144 @@ function lawCardHtml(law) {
     <span class="law-card-note">${escHtml(note)}</span>
   </a>`;
 }
+
+// ── Decisions: resolutions and by-laws as one record ───────────────────
+// Rules work on council's own wording; no AI. Order matters: first match wins.
+
+// The operative part of a motion: what follows "NOW THEREFORE" / "BE IT
+// RESOLVED", without a leading "mover, seconder:" prefix.
+function operativeText(text) {
+  let t = String(text || '').replace(/\s+/g, ' ').trim();
+  t = t.replace(/^[A-Z]\.\s*[A-Z][\w'’-]+,\s*[A-Z]\.\s*[A-Z][\w'’-]+:\s*/, '');
+  const parts = t.split(/\b(?:NOW\s+THEREFORE(?:\s+BE\s+IT\s+RESOLVED)?|BE\s+IT\s+RESOLVED)\b[,:]?\s*/i);
+  let op = parts.length > 1 ? parts[parts.length - 1] : t;
+  op = op.replace(/^(?:that|THAT)\s+/, '').trim();
+  return op ? op.charAt(0).toUpperCase() + op.slice(1) : t;
+}
+
+const ROUTINE_RULES = [
+  /\bminutes\b[^.]{0,160}\b(?:be\s+)?(?:adopted|approved)\b/i,
+  /\badopt(?:s|ed)?\s+the\s+minutes\b/i,
+  /\bagenda\b[^.]{0,80}\b(?:be\s+)?(?:adopted|approved)\b/i,
+  /\b(?:meeting|council)\s+(?:be\s+|is\s+)?adjourn/i,
+  /^(?:that\s+)?(?:we|council)\s+receives?\s+(?:the\s+)?[\w\s,.-]{0,80}(?:report|correspondence|minutes|presentation|delegation|letter|update)s?\b[^.]{0,40}(?:as\s+presented|for\s+information)/i,
+  /^(?:that\s+)?(?:we|council)\s+receives?\s+the\s+correspondence/i,
+  /\bconfirm\s+the\s+proceedings\s+of\s+council\b/i,
+];
+
+function isRoutineText(text) {
+  const t = String(text || '');
+  return ROUTINE_RULES.some(re => re.test(t));
+}
+
+const KIND_RULES = [
+  ['Bills paid', /statement\s+of\s+accounts|accounts\s+payable|\baccounts\b[^.]{0,80}\bbe\s+approved/i],
+  ['Closed sessions', /closed\s+to\s+the\s+public|closed\s+session|in[-\s]camera|resume\s+to\s+an?\s+open|reconvene|rise\s+from|section\s+239/i],
+  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Appointments', /\bappoint|\bresignation\b|\bhire\b|\bhiring\b|\broster\b|\bintegrity\s+commissioner\b|\bremuneration\b|\bposition\s+description/i],
+  ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan/i],
+  ['Agreements', /\bagreement\b|memorandum\s+of\s+understanding|\bMOU\b|\benter\s+into\b|\bcontract\b/i],
+  ['Spending and contracts', /\btender\b|\bquotes?\b|\bRFP\b|\bpurchase|\baward|\bbid\b|\bestimate\s+provided|\bdonat|\bgrant\b/i],
+  ['Taxes and budget', /\btax\s+(?:rates?|ratios?|levy|arrears|sale|registration)|\binterim\s+(?:tax\s+)?levy|\blevy\b|\b(?:adopt|approve)s?\s+the\s+[\w\s-]{0,30}budget|\bbudget\s+be\s+(?:adopted|approved)|\bestimates\b|\bborrow|\bdebenture|\breserve\s+fund|\binsurance\b|\bwrite[-\s]off|\btax\s+write|\bfees?\s+and\s+charges/i],
+  ['Spending and contracts', /\$\s?\d/],
+  ['Laws and policies', /\bby-?law\b|\bpolicy\b|\bprocedures?\b|\bcode\s+of\s+conduct\b|\bplan\b|\bguidelines?\b|\bstrategy\b/i],
+];
+
+function decisionKind(text) {
+  const t = String(text || '');
+  for (const [kind, re] of KIND_RULES) if (re.test(t)) return kind;
+  return 'Other';
+}
+
+const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Zoning and land', 'Agreements',
+  'Appointments', 'Taxes and budget', 'Laws and policies', 'Support for other councils',
+  'Closed sessions', 'Other'];
+
+// One list of decisions. Each by-law appears once; the resolution that
+// passed it is folded in (passedBy). Returns newest first.
+function buildDecisions(bylaws, resolutions) {
+  const byNum = new Map(bylaws.map(b => [String(b.number), b]));
+  const passedBy = new Map();
+  const out = [];
+  for (const r of resolutions) {
+    const num = r.bylaw_number && String(r.bylaw_number);
+    if (num && byNum.has(num)) { passedBy.set(num, r); continue; }
+    const text = r.motion_text || r.title || '';
+    const op = operativeText(text);
+    out.push({
+      type: 'resolution', id: r.number, date: String(r.meeting_date || '').slice(0, 10),
+      text: op, full: text, status: String(r.status || '').toLowerCase(),
+      routine: isRoutineText(op) || isRoutineText(text), kind: decisionKind(text),
+      href: `resolution-detail.html?id=${encodeURIComponent(r.number)}`, rec: r,
+    });
+  }
+  for (const b of bylaws) {
+    const num = String(b.number);
+    const res = passedBy.get(num);
+    const title = b.common_name && b.title && b.common_name !== b.title
+      ? `${b.common_name}: ${sentenceCase(b.title)}` : sentenceCase(b.title || b.common_name || '');
+    out.push({
+      type: 'bylaw', id: num, date: String(b.date_passed || b.meeting_date || res?.meeting_date || '').slice(0, 10),
+      text: title, full: `${b.title || ''} ${b.common_name || ''}`, status: String(b.status || '').toLowerCase(),
+      routine: isRoutineText(b.title), kind: decisionKind(`${b.title || ''} ${b.common_name || ''} by-law`),
+      passedBy: res ? res.number : '', href: `bylaw-detail.html?id=${encodeURIComponent(num)}`, rec: b,
+    });
+  }
+  // Newest meeting first; within a meeting, in the order council took them
+  // (a by-law sits where the resolution that passed it did).
+  const seq = d => String(d.passedBy || d.id);
+  return out.sort((a, b) => (b.date || '').localeCompare(a.date || '')
+    || seq(a).localeCompare(seq(b), undefined, { numeric: true }));
+}
+
+function decisionRowHtml(d, q = '') {
+  const label = d.type === 'bylaw' ? `By-law ${d.id}` : d.id;
+  const status = d.status && !['carried', 'approved'].includes(d.status)
+    ? `<span class="${bylawStatusClass(d.status)}">${escHtml(d.status)}</span>` : '';
+  const law = d.lawLink ? `<a class="decision-law" href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>` : '';
+  const passed = d.passedBy ? `<span class="decision-passed">Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>` : '';
+  return `<li class="decision-row${d.routine ? ' is-routine' : ''}">
+    <a class="decision-num" href="${escHtml(d.href)}">${highlight(label, q)}</a>
+    <div class="decision-main">
+      <span class="decision-text">${highlight(d.text, q)}</span>${status}
+      ${law || passed ? `<div class="decision-meta">${law}${passed}</div>` : ''}
+    </div>
+    <span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>
+  </li>`;
+}
+
+// ── Amendments, found from by-law titles ───────────────────────────────
+// "amend By-law 2021-50", "Amend Zoning By-Law Number 2020-20", "Amend BL 1088".
+const AMEND_RE = /\bamend(?:s|ing)?\b[^.]{0,80}?\b(?:by-?law|bl)\s*(?:no\.?|number|#)?\s*(\d{4}-\d{1,3}|\d{3,4})\b/i;
+
+function amendsTarget(bylaw) {
+  const m = String(bylaw?.title || '').match(AMEND_RE);
+  return m && m[1] !== String(bylaw.number) ? m[1] : null;
+}
+
+// Map principal by-law number -> its amending by-laws, oldest first.
+function amendmentIndex(bylaws, laws = []) {
+  const idx = new Map();
+  const add = (p, b) => {
+    if (!idx.has(p)) idx.set(p, []);
+    if (!idx.get(p).some(x => x.number === b.number)) idx.get(p).push(b);
+  };
+  const byNum = new Map(bylaws.map(b => [String(b.number), b]));
+  for (const b of bylaws) {
+    if (b.repeals?.length) continue;           // a replacement, not an amendment
+    const t = amendsTarget(b);
+    if (t) add(t, b);
+  }
+  for (const law of laws) for (const n of law.amendments || []) if (byNum.has(n)) add(law.principal, byNum.get(n));
+  const when = b => b.date_passed || b.meeting_date || '';
+  for (const list of idx.values()) list.sort((a, b) => when(a).localeCompare(when(b)));
+  return idx;
+}
+
+function amendedNote(list) {
+  if (!list?.length) return '';
+  const n = list.length;
+  const times = n === 1 ? 'once' : n === 2 ? 'twice' : `${n} times`;
+  const last = (list[n - 1].date_passed || list[n - 1].meeting_date || '').slice(0, 4);
+  return n === 1 ? `Amended once${last ? `, in ${last}` : ''}` : `Amended ${times}${last ? `, most recently in ${last}` : ''}`;
+}
