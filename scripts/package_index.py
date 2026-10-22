@@ -70,7 +70,7 @@ def page_texts(pdf: Path, ocr: bool) -> List[str]:
             texts.append(None)
             jobs.append((i, page.get_pixmap(dpi=150, colorspace=pymupdf.csGRAY).tobytes("png")))
     if jobs:
-        with ThreadPoolExecutor(4) as ex:
+        with ThreadPoolExecutor(max(2, __import__('os').cpu_count() or 2)) as ex:
             for (i, _), t in zip(jobs, ex.map(lambda j: pe.ocr_png(j[1]), jobs)):
                 texts[i] = t
     return [t or "" for t in texts]
@@ -218,6 +218,12 @@ def main() -> None:
                 print(f"  {m['date']}: package not available")
                 continue
             pages = page_texts(dest, ocr)
+            blank = sum(1 for t in pages if len(t.strip()) < 40)
+            if blank > len(pages) * 0.3:
+                # OCR timed out or failed on many pages: don't file a half-read
+                # package as done; it's tried again next run.
+                print(f"  {m['date']}: {blank} of {len(pages)} pages unreadable — will retry")
+                continue
             if not any(len(p.strip()) > 40 for p in pages):
                 print(f"  {m['date']}: no text (OCR unavailable?) — later")
                 continue
