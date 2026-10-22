@@ -31,8 +31,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="council.html" data-nav="meetings">Meetings</a></li>
-        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
-        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="laws.html" data-nav="laws">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions">Decisions</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -66,8 +66,8 @@
         <div class="filed-body tight">
           <dl class="kept-list">
             <dt><a href="council.html">Meetings</a></dt><dd id="stat-meetings">—</dd>
-            <dt><a href="bylaws.html?type=bylaw">By-laws</a></dt><dd id="stat-bylaws">—</dd>
-            <dt><a href="bylaws.html?type=resolution">Resolutions</a></dt><dd id="stat-resolutions">—</dd>
+            <dt><a href="decisions.html?show=bylaws">By-laws</a></dt><dd id="stat-bylaws">—</dd>
+            <dt><a href="decisions.html?show=resolutions">Resolutions</a></dt><dd id="stat-resolutions">—</dd>
             <dt>Councils and boards</dt><dd id="stat-bodies">—</dd>
           </dl>
           <p class="kept-note" id="stat-updated">Checked against the township’s site every morning.</p>
@@ -107,16 +107,17 @@
       </div>
 
       <section class="filed" aria-labelledby="laws-tab">
-        <h2 class="filed-tab" id="laws-tab">Laws in force</h2>
+        <h2 class="filed-tab" id="laws-tab">Laws in effect</h2>
         <div class="filed-body split">
           <div class="wide">
-            <p class="section-note">A by-law is often changed by later by-laws. Here the changes are applied for you, so you can read the law as it stands, with each change marked.</p>
+            <p class="section-note">The township’s standing rules, by topic, each shown as it reads today. Where a law has been amended, the changes are applied for you.</p>
             <div class="law-cards" id="law-cards"></div>
+            <a class="section-more" href="laws.html">All laws in effect, by topic</a>
           </div>
           <div class="narrow">
             <h3 style="font-size:17px;font-weight:700;margin-bottom:4px">Recently passed by-laws</h3>
             <ul class="mini-list" id="recent-bylaws"></ul>
-            <a class="section-more" href="bylaws.html?type=bylaw" id="all-bylaws-link">All by-laws</a>
+            <a class="section-more" href="decisions.html?show=bylaws" id="all-bylaws-link">All by-laws</a>
           </div>
         </div>
       </section>
@@ -200,7 +201,7 @@ function renderLatest() {
     <div class="latest-main">
       ${decisions.length ? `
         <h3>What council decided</h3>
-        <ul class="decision-list">${decisions.map(d => `<li>${escHtml(d)}</li>`).join('')}</ul>
+        <ul class="key-decisions">${decisions.map(d => `<li>${escHtml(d)}</li>`).join('')}</ul>
         <p class="ai-note">Summary written by AI from the minutes. The minutes are the official record.</p>
       ` : `<h3>Summary on its way</h3><p class="section-note">A plain-language summary is added once the minutes are posted.</p>`}
       <a class="section-more" href="${escHtml(href)}">Read the full meeting record</a>
