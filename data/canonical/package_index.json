@@ -6,12 +6,12 @@
    "pages": 30,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Townslitp_t}'f.:__ N IPISSING The Corporation of the Township of Nipissing 45 Beatty Street Nipi"
+     ]
     },
     {
      "kind": "minutes",
@@ -125,12 +125,12 @@
    "pages": 43,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Towns fiw.._§f.:__ NIPISSING i--t1LJ.!o:_.. \"Ljft tftc way It sr.ou(tf 6e\" .t>\\sss \\:, The Corpo"
+     ]
     },
     {
      "kind": "minutes",
@@ -338,12 +338,12 @@
    "pages": 51,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Toi,vnsfitp_,ff_ __ NIPISSING p,JloLJ,s,Y \"L!fe tfu: way it s(wu{,l/je\" .:e\\sss t The Corporatio"
+     ]
     },
     {
      "kind": "minutes",
@@ -439,7 +439,8 @@
    "pages": 5,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
@@ -481,12 +482,20 @@
    "pages": 69,
    "items": [
     {
-     "kind": "report",
-     "title": "Update on Electronic Landfill Card Transition",
-     "from": "Dan Macinnis, Operations Superintendent The Corporation of the Township of Nipissing 45 Beatty Street Nipissing ON P0H l.W0 Telephone 705-724-2144 Fax 705-724-5",
-     "date": "August 11, 2026",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
+      1
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Update on Electronic Landfill Card Transition",
+     "from": "Dan Macinnis, Operations Superintendent",
+     "date": "August 11, 2026",
+     "pages": [
+      2,
       2
      ]
     },
@@ -607,12 +616,12 @@
    "pages": 67,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "TownsftiJ!._<ff_ __ NIPISSING The Corporation of the Township of Nipissing 45 Beatty Street Nipi"
+     ]
     },
     {
      "kind": "minutes",
@@ -676,7 +685,7 @@
     },
     {
      "kind": "report",
-     "title": "Asset Management Annual Review for Council -------- -- --",
+     "title": "Asset Management Annual Review for Council",
      "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer Kim Turnbull, Deputy Treasurer-Office Assistant",
      "date": "July 14, 2026",
      "pages": [
@@ -732,12 +741,12 @@
    "pages": 3,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       2
-     ],
-     "title": "Township oF The Corporation of the Township of Nipissing T 45 Beatty Street NIPISS NG Nipissing ON"
+     ]
     },
     {
      "kind": "resolution",
@@ -757,12 +766,12 @@
    "pages": 70,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "fF The Corporation of the Township of Nipissing NIPISSIN 45 Beatty Street Nipissing ON POH 1WO Tel"
+     ]
     },
     {
      "kind": "minutes",
@@ -878,12 +887,12 @@
    "pages": 36,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township The Corporation of the Township of Nipissing NIPISSI 45 Beatty Street ae ae Nipissing ON P"
+     ]
     },
     {
      "kind": "minutes",
@@ -1290,12 +1299,12 @@
    "pages": 29,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "—_— | Township of = The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street xt Nip"
+     ]
     },
     {
      "kind": "minutes",
@@ -1340,12 +1349,12 @@
    "pages": 70,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township of The Corporation of the Township of Nipissing NITPTG ci 5 Beatty Street IPISSIN ss, Nipis"
+     ]
     },
     {
      "kind": "minutes",
@@ -1520,11 +1529,19 @@
    "pages": 37,
    "items": [
     {
-     "kind": "report",
-     "title": "Lake Nipissing Water Levels and 2026 Spring Outlook Date: March 17, 2026",
-     "date": "March 17, 2026",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
+      1
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Lake Nipissing Water Levels and 2026 Spring Outlook",
+     "date": "March 17, 2026",
+     "pages": [
+      2,
       3
      ]
     },
@@ -1634,12 +1651,12 @@
    "pages": 59,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township of The Corporation of the Township of Nipissing PISSING 45 Beatty Street NI N otts, Nipiss"
+     ]
     },
     {
      "kind": "minutes",
@@ -1728,12 +1745,12 @@
    "pages": 40,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing Township of ~~ : NIPISSING 45 Beatty Street ott, Nipis"
+     ]
     },
     {
      "kind": "minutes",
@@ -1840,12 +1857,12 @@
    "pages": 25,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing Township of 45 Beatty Street S Beatty Stree NIPISSING"
+     ]
     },
     {
      "kind": "minutes",
@@ -1952,12 +1969,12 @@
    "pages": 66,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing Townshi 3 NIPISSING a 45 Beatty Street Nipissing ON P"
+     ]
     },
     {
      "kind": "minutes",
@@ -2066,12 +2083,12 @@
    "pages": 70,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "= Township ef The Corporation of the Towel enema NIPISSING Nipissing ON POH 1WO “Life tie way ir sh"
+     ]
     },
     {
      "kind": "minutes",
@@ -2148,7 +2165,7 @@
     {
      "kind": "report",
      "title": "Bill 27 - Resource Management and Safety Act, 2025 - Approved amendments to the Forest Fires Prevention Act",
-     "from": "Amanda Holmes, Assistant Deputy Minister, Provincial Services Division,",
+     "from": "Amanda Holmes, Assistant Deputy Minister, Provincial Services Division",
      "date": "December 19, 2025",
      "pages": [
       17,
@@ -2173,12 +2190,12 @@
    "pages": 30,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township ore The Corporation of the Township of Nipissing NI I 45 Beatty Street a NG Nipissing ON PO"
+     ]
     },
     {
      "kind": "minutes",
@@ -2345,7 +2362,7 @@
     },
     {
      "kind": "report",
-     "title": "2026 Municipal Election Voting Method.",
+     "title": "2026 Municipal Election Voting Method",
      "from": "Kristin Linklater, Deputy Clerk — Administrative Assistant.",
      "date": "December 2, 2025",
      "pages": [
@@ -2538,12 +2555,12 @@
    "pages": 150,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oF The Corporation of the Township of Nipissing 45 Beatty Street NIPISSING Nipissing ON PO"
+     ]
     },
     {
      "kind": "minutes",
@@ -2741,25 +2758,18 @@
    "pages": 33,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Townst P The Corporation of the Township of Nipissing eatty Street NIPISSIN hs Nipissing ON POH 1W0"
+     ]
     },
     {
      "kind": "minutes",
      "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 7, 2025 A regular meeting of the Township of Nipissing Council was held o",
      "pages": [
       2,
-      2
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      3,
       4
      ]
     },
@@ -2910,12 +2920,12 @@
    "pages": 80,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing nship of 45 Beatty Street NIPISSING Nipissing ON POH 1"
+     ]
     },
     {
      "kind": "minutes",
@@ -3116,12 +3126,12 @@
    "pages": 66,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oa The Corporation of the Township of Nipissing NIPISSING __ 45 Beatty Street ss, Nipissin"
+     ]
     },
     {
      "kind": "minutes",
@@ -3224,12 +3234,12 @@
    "pages": 26,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "| >... Township The Corporation of the Township of Nipissing SCINIC 45 Beatty Street NIPISSING , N"
+     ]
     },
     {
      "kind": "minutes",
@@ -3464,12 +3474,12 @@
    "pages": 38,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       4
-     ],
-     "title": "| Township of The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street whts, Nipiss"
+     ]
     },
     {
      "kind": "minutes",
@@ -3572,12 +3582,12 @@
    "pages": 42,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township Pa The Corporation of the Township of Nipissing z ship of 45 Beatty Street NIPISSING Nipiss"
+     ]
     },
     {
      "kind": "minutes",
@@ -3590,27 +3600,12 @@
     {
      "kind": "report",
      "title": "Tender Results and Project Recommendations Stone Cutter’s Road Culvert",
-     "from": "Dan MaciInnis, Operations Superintendent Kim Turnbull, Deputy Treasurer-Office Assistant Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "from": "Dan MaciInnis, Operations Superintendent Kim Turnbull, Deputy Treasurer-Office Assistant Kris Croskery-Hodgins, Municipa",
      "date": "June 19, 2025",
      "pages": [
       4,
-      4
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      5,
-      5
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      6,
       8
-     ],
-     "date": "July 1, 2025"
+     ]
     },
     {
      "kind": "resolution",
@@ -3677,12 +3672,12 @@
    "pages": 62,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township OF The Corporation of the Township of Nipissing NIPISSING 5 Beatty Street S hts Nipissing"
+     ]
     },
     {
      "kind": "minutes",
@@ -3695,17 +3690,10 @@
     {
      "kind": "report",
      "title": "Comments on Bill 17, Protect Ontario by Building Faster and Smarter Act, 2025",
-     "from": "John-Paul Negrinotti, Land Planning & Technology Administrator Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "from": "John-Paul Negrinotti, Land Planning & Technology Administrator Kris Croskery-Hodgins, Municipal Administrator-Clerk-Trea",
      "date": "June 6, 2025",
      "pages": [
       5,
-      5
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      6,
       6
      ]
     },
@@ -3768,7 +3756,7 @@
     {
      "kind": "report",
      "title": "Introduction of Bill 27, the Resource Management Safety Act, 2025 including proposed amendments to the Forest Fires Prevention Act",
-     "from": "Amanda Holmes, Assistant Deputy Minister, Provincial Services Division,",
+     "from": "Amanda Holmes, Assistant Deputy Minister, Provincial Services Division",
      "date": "May 28, 2025",
      "pages": [
       35,
@@ -3953,12 +3941,12 @@
    "pages": 60,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       5
-     ],
-     "title": "Township of —_ The Corporation of the Township of Nipissing 45 Beatty Stree ee Nipissing ON POH 1Wo"
+     ]
     },
     {
      "kind": "minutes",
@@ -4041,6 +4029,7 @@
     },
     {
      "kind": "report",
+     "title": "For Against",
      "date": "May 13, 2025",
      "pages": [
       17,
@@ -4126,7 +4115,7 @@
    "items": [
     {
      "kind": "report",
-     "title": "Additional Fire Protection Grant Funding Available Dear Council,",
+     "title": "Additional Fire Protection Grant Funding Available",
      "pages": [
       1,
       2
@@ -4267,12 +4256,12 @@
    "pages": 57,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township Ps) The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street 5. Nipissing O"
+     ]
     },
     {
      "kind": "minutes",
@@ -4392,12 +4381,12 @@
    "pages": 14,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "=e The Corporation of the Township of Nipissing IPI 45 Beatty Street N SING Nipissing ON POH 1WO Li"
+     ]
     },
     {
      "kind": "minutes",
@@ -4474,12 +4463,12 @@
    "pages": 19,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township ofan The Corporation of the Township of Nipissing 45 Beatty Street NIPISSING 7 Nipissing O"
+     ]
     },
     {
      "kind": "minutes",
@@ -4568,7 +4557,7 @@
     },
     {
      "kind": "report",
-     "title": "Volunteer Appreciation Historical Data BACKGROUND/OVERVIEW",
+     "title": "Volunteer Appreciation Historical Data",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "January 24, 2025",
      "pages": [
@@ -4664,12 +4653,12 @@
    "pages": 35,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township m The Corporation of the Township of Nipissing NIPISSING obeaty saeet Nipissing ON POH 1WO"
+     ]
     },
     {
      "kind": "minutes",
@@ -4894,12 +4883,12 @@
    "pages": 32,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Ss The Corporation of the Township of Nipissing IPI SING 45 Beatty Street N S' NG ae Nipissing ON P"
+     ]
     },
     {
      "kind": "minutes",
@@ -5020,12 +5009,12 @@
    "pages": 53,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "TK hip ~ The Corporation of the Township of Nipissing NIPISS! NG 45 Beatty Street Nipissing ON POH"
+     ]
     },
     {
      "kind": "bylaw",
@@ -5162,12 +5151,12 @@
    "pages": 131,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Tonnes The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street seteng Nipissing ON"
+     ]
     },
     {
      "kind": "minutes",
@@ -5374,7 +5363,8 @@
    "pages": 27,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
@@ -5524,7 +5514,8 @@
    "pages": 42,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       2
@@ -5540,7 +5531,7 @@
     },
     {
      "kind": "report",
-     "title": "Adding a Deputy Treasurer to the Administration Team BACKGROUND/OVERVIEW",
+     "title": "Adding a Deputy Treasurer to the Administration Team",
      "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
      "date": "September 10, 2024",
      "pages": [
@@ -5613,12 +5604,12 @@
    "pages": 35,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Tork P:) The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street mE Nipissing ON PO"
+     ]
     },
     {
      "kind": "minutes",
@@ -5714,12 +5705,12 @@
    "pages": 51,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oe The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street = Nipissing ON"
+     ]
     },
     {
      "kind": "minutes",
@@ -5745,7 +5736,7 @@
     {
      "kind": "report",
      "title": "Service Delivery Enhancements",
-     "from": "Kim Turnbull, Deputy Clerk, Interim, Office Assistant-Intern John-Paul Negrinotti, Land Planning & Technology Administrator — Deputy Treasurer",
+     "from": "Kim Turnbull, Deputy Clerk, Interim, Office Assistant-Intern John-Paul Negrinotti, Land Planning & Technology Administra",
      "date": "August 13, 2024",
      "pages": [
       28,
@@ -5754,8 +5745,8 @@
     },
     {
      "kind": "report",
-     "title": "| Website and Social Media Updates",
-     "from": "John-Paul Negrinotti, Land Planning & Technology Administrator — Deputy Treasurer Kim Turnbull, Deputy Clerk, interim, Office Assistant-Intern",
+     "title": "Website and Social Media Updates",
+     "from": "John-Paul Negrinotti, Land Planning & Technology Administrator — Deputy Treasurer Kim Turnbull, Deputy Clerk, interim, O",
      "date": "August 13, 2024",
      "pages": [
       30,
@@ -5837,12 +5828,12 @@
    "pages": 100,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "> The Corporation of the Township of Nipissing i. <Ta 45 Beatty Street NIPISSING Nipissing ON POH 1"
+     ]
     },
     {
      "kind": "minutes",
@@ -5948,7 +5939,7 @@
     },
     {
      "kind": "report",
-     "title": "Review of Investment of Municipal Funds Policy BACKGROUND/OVERVIEW",
+     "title": "Review of Investment of Municipal Funds Policy",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "July 15, 2024",
      "pages": [
@@ -6015,7 +6006,7 @@
     },
     {
      "kind": "report",
-     "title": "Review of User Fee Policy and Current User Fees BACKGROUND/OVERVIEW",
+     "title": "Review of User Fee Policy and Current User Fees",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "June 13, 2024",
      "pages": [
@@ -6086,12 +6077,12 @@
    "pages": 28,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township ore The Corporation of the Township of Nipissing NIPISSING a 45 Beatty Street | Nipissing"
+     ]
     },
     {
      "kind": "resolution",
@@ -6233,7 +6224,8 @@
    "pages": 36,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
@@ -6323,12 +6315,12 @@
    "pages": 92,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       38
-     ],
-     "title": "Tose The Corporation of the Township of Nipissing NIPISS NG 45 Beatty Street . Nipissing ON POH 1W0"
+     ]
     },
     {
      "kind": "bylaw",
@@ -6465,12 +6457,12 @@
    "pages": 25,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       25
-     ],
-     "title": "Township PS The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street a ani Nipissing"
+     ]
     }
    ],
    "version": 1,
@@ -6481,12 +6473,12 @@
    "pages": 18,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township = The Corporation of the Township of Nipissing NIPISSIN 45 Beatty Street ss a Nipissing ON"
+     ]
     },
     {
      "kind": "minutes",
@@ -6692,7 +6684,7 @@
     },
     {
      "kind": "report",
-     "title": "Final Draft — Human Resources Policy & Procedures Manual BACKGROUND/OVERVIEW",
+     "title": "Final Draft — Human Resources Policy & Procedures Manual",
      "from": "Kim Turnbull, Office Assistant-Intern, Deputy Clerk, Interim",
      "date": "March 28, 2024",
      "pages": [
@@ -6726,12 +6718,12 @@
    "pages": 39,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing NIPISSING ___ 45 Beatty Street attty, Nipissing ON POH"
+     ]
     },
     {
      "kind": "minutes",
@@ -6826,7 +6818,7 @@
     },
     {
      "kind": "report",
-     "title": "Proposed Town Hall Meeting BACKGROUND/OVERVIEW",
+     "title": "Proposed Town Hall Meeting",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "February 27, 2024",
      "pages": [
@@ -6843,7 +6835,7 @@
     },
     {
      "kind": "report",
-     "title": "Investigation Results - Non-Compliant Zoning Uses of Link’s Beach BACKGROUND/OVERVIEW",
+     "title": "Investigation Results - Non-Compliant Zoning Uses of Link’s Beach",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "February 22, 2024",
      "pages": [
@@ -6940,12 +6932,12 @@
    "pages": 141,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       2
-     ],
-     "title": "Tononship PD The Corporation of the Township of Nipissing 45 Beatty Street NIPISSING : Nipissing ON"
+     ]
     },
     {
      "kind": "minutes",
@@ -7085,12 +7077,12 @@
    "pages": 38,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township © The Corporation of the Township of Nipissing PISSING 45 Beatty Street NI Ss c Nipissing"
+     ]
     },
     {
      "kind": "minutes",
@@ -7241,18 +7233,11 @@
     },
     {
      "kind": "report",
-     "title": "Foundation Repair RFQ-2023-01 Results BACKGROUND/OVERVIEW",
+     "title": "Foundation Repair RFQ-2023-01 Results",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "January 9, 2024",
      "pages": [
       13,
-      13
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      14,
       14
      ]
     },
@@ -7273,7 +7258,8 @@
    "pages": 4,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
@@ -7281,7 +7267,7 @@
     },
     {
      "kind": "report",
-     "title": "Short Term Accommodations — Regulation Options BACKGROUND/OVERVIEW",
+     "title": "Short Term Accommodations — Regulation Options",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "January 5, 2024",
      "pages": [
@@ -7312,12 +7298,12 @@
    "pages": 67,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "—— Township Pome The Corporation of the Township of Nipissing eatty Street NIPISSING Nipissing ON"
+     ]
     },
     {
      "kind": "minutes",
@@ -7481,7 +7467,7 @@
     },
     {
      "kind": "report",
-     "title": "SCBA RFP Results BACKGROUND/OVERVIEW",
+     "title": "SCBA RFP Results",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "December 12, 2023",
      "pages": [
@@ -7544,7 +7530,7 @@
     },
     {
      "kind": "report",
-     "title": "Shared Service Agreement for Building Related Services BACKGROUND/OVERVIEW",
+     "title": "Shared Service Agreement for Building Related Services",
      "from": "Kris Croskery-Hodgins, Municipal Administrator",
      "date": "December 5, 2023",
      "pages": [
@@ -7606,12 +7592,12 @@
    "pages": 102,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Ton _ F The Corporation of the Township of Nipissing eInic 45 Beatty Street NIPI SING . Nipissing O"
+     ]
     },
     {
      "kind": "minutes",
@@ -7649,7 +7635,7 @@
     },
     {
      "kind": "report",
-     "title": "Human Resources RFP Results BACKGROUND/OVERVIEW",
+     "title": "Human Resources RFP Results",
      "from": "Kris Croskery-Hodgins, Municipal! Administrator",
      "date": "November 27, 2023",
      "pages": [
@@ -7715,27 +7701,11 @@
     },
     {
      "kind": "report",
-     "title": "Request for Additional Road Signage BACKGROUND/OVERVIEW",
+     "title": "Request for Additional Road Signage",
      "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
      "date": "August 1, 2023",
      "pages": [
       98,
-      98
-     ]
-    },
-    {
-     "kind": "report",
-     "title": "e The signs provide an additional distraction to drivers and may foster a disrespect for all",
-     "pages": [
-      99,
-      99
-     ]
-    },
-    {
-     "kind": "report",
-     "title": "FINANCIAL IMPACT",
-     "pages": [
-      100,
       101
      ]
     },
@@ -7757,12 +7727,81 @@
    "pages": 121,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
-      120
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 17, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "LANDFILL STATUS 2023",
+     "pages": [
+      4,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we direct municipal staff to research and prepare a draft Bag Limit Program for the Township of Nipissing landfill sites for potential implementation in 2024. F",
+     "pages": [
+      17,
+      17
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Final Draft Strategic Plan 2023-2026",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "November 7, 2023",
+     "pages": [
+      18,
+      36
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Income Tax Act provides for a $3,000 volunteer firefighter and volunteer search and rescue tax credit; AND WHEREAS volunteer firefighters are providing a va",
+     "pages": [
+      37,
+      40
      ],
-     "title": ""
+     "papers": [
+      38,
+      40
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the NFPA standard for Self Contained Breathing Apparatus (SCBA) units is changing in 2024 and 2025; AND WHEREAS the Capital Forecast for Fire Department equipme",
+     "pages": [
+      41,
+      78
+     ],
+     "papers": [
+      42,
+      78
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Minutes of the Board of Directors Meeting 2023-10 Tuesday September 19, 2023 A regular meeting of the Golden Sunshine Mu",
+     "pages": [
+      79,
+      120
+     ]
     },
     {
      "kind": "resolution",
@@ -7771,6 +7810,2349 @@
      "pages": [
       121,
       121
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-10-17": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/October-17-Council-Agenda-Package__a09f0d2a.pdf",
+   "pages": 35,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 3, 2023 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2023-41",
+     "title": "to confirm the proceedings of Council at its meeting held on October 3, 2023. Read a first, second and third time and passed this 3\" day of October. Carried. R2",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Council of the Township of Nipissing supports the Town of Midland Resolution passed September 6, 2023, requesting the Federal and Provincial Governments inv",
+     "pages": [
+      5,
+      6
+     ],
+     "papers": [
+      6,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve RFQ-2023-01, Foundation Repair — Nipissing Township Museum Office Building for circulation. The successful bid is expected to be included in the 2024",
+     "pages": [
+      7,
+      7
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "RFP — Human Resources Consultant — Compensation, Pay Equity and Policy Review",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "October 13, 2023",
+     "pages": [
+      8,
+      8
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the circulation of a Request for Proposal for a Human Resources Consultant - Compensation, Pay Equity and Policy Review. The project to be included",
+     "pages": [
+      9,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the updated Township of Nipissing Multi-Year Accessibility Plan for 2023, as presented. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom",
+     "pages": [
+      10,
+      25
+     ],
+     "papers": [
+      11,
+      25
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      26,
+      28
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes September 11, 2023 MINUTES Township of Nipissing Recreation Committee September 11, 2023 A",
+     "pages": [
+      29,
+      29
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes September 11, 2023 - Placement will be at both Landfills for now, next year Park and Beache",
+     "pages": [
+      30,
+      30
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes September 11, 2023 Minutes to be approved by the Board at the next scheduled Board Meeting.",
+     "pages": [
+      31,
+      31
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes October 2, 2023 MINUTES Township of Nipissing Recreation Committee October 2, 2023 A meetin",
+     "pages": [
+      32,
+      32
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes October 2, 2023 - Pre-Bag Candy - Need Volunteers, for handing out candy, decorating and cl",
+     "pages": [
+      33,
+      33
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management October 4, 2023 A regular meeting of the Nipissing Township Museum",
+     "pages": [
+      34,
+      35
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-10-03": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/October-3-2023-Council-Agenda-Package__f0494545.pdf",
+   "pages": 52,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      2
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council authorizes the procurement of a peer review of the survey work of the shore road allowance in front of Pt Broken Lot 11, Concession 19, for the purpose ",
+     "pages": [
+      3,
+      3
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 19, 2023 A regular meeting of the Township of Nipissing Council was hel",
+     "pages": [
+      4,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the signing of a Memorandum of Understanding with the South Shore Restoule Snowmobile Club for use of municipal road allowances. Appendix A — Snowm",
+     "pages": [
+      6,
+      9
+     ],
+     "papers": [
+      7,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Mayor to sign a letter requesting reconsideration of Central Ambulance Communication Centre (CACC) boundaries between Nipissing and Parry Sound",
+     "pages": [
+      10,
+      12
+     ],
+     "papers": [
+      11,
+      12
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Nipissing recognized the urgent need for physicians in Northern Ontario as it is experiencing a shortage of trained physicians and specialist ph",
+     "pages": [
+      13,
+      24
+     ],
+     "papers": [
+      14,
+      24
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      25,
+      30
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-09 Tuesday A",
+     "pages": [
+      31,
+      52
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-09-19": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/September-19-2023-Council-Agenda-Package__3cf86456.pdf",
+   "pages": 72,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 5, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      17
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Mayor and Municipal Administrator to sign a Conditional Contribution Agreement with the Northern Ontario Heritage Fund Corporation (NOHFC) for ",
+     "pages": [
+      18,
+      18
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the purchase of a hopper sander insert from Bumper to Bumper — H.E. Brown as provided in Estimate 791959/D. Quoted cost including applicable taxes: $",
+     "pages": [
+      19,
+      21
+     ],
+     "papers": [
+      20,
+      21
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the Fall 2023 Newsletter for circulation, as presented. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      22,
+      22
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we adopt an updated Appendix B to the Fire Department Establishing and Regulating By-Law Number 2023-15; Township of Nipissing Fire Department Organizational Ch",
+     "pages": [
+      23,
+      24
+     ],
+     "papers": [
+      24,
+      24
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "2023 Budget Update",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "September 14, 2023",
+     "pages": [
+      25,
+      28
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      29,
+      46
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management September 6, 2023 A regular meeting of the Nipissing Township Muse",
+     "pages": [
+      47,
+      54
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Recommendation to address Ontario’s Mental Health & Addictions Crisis",
+     "from": "FONOM Board",
+     "date": "August 21, 2023",
+     "pages": [
+      55,
+      58
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Provincial Grant Provided to Northern Ontario Health Units",
+     "from": "FONOM Board",
+     "date": "August 22, 2023",
+     "pages": [
+      59,
+      62
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "School Board Trustee Elections in 2026",
+     "from": "FONOM Board",
+     "date": "August 21, 2023",
+     "pages": [
+      63,
+      71
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(2)(a) and (k) of the Municipal Act, 2001, c. 25, for consideration of the fol",
+     "pages": [
+      72,
+      72
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-09-05": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-September-5__c97a1aea.pdf",
+   "pages": 46,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, August 15, 2023 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      14
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Request for Additional Road Signage",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "August 1, 2023",
+     "pages": [
+      15,
+      19
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Office Assistant Position update",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "September 5, 2023",
+     "pages": [
+      20,
+      21
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      22,
+      29
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-08 Tuesday J",
+     "pages": [
+      30,
+      45
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(3.1) of the Municipal Act, 2001, c. 25, for consideration of the following su",
+     "pages": [
+      46,
+      46
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-08-15": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-15-Council-Meeting-Package__50fde6d7.pdf",
+   "pages": 37,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, July 11, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Short-Term Rentals present concerns for residents of the Township of Nipissing, as shared during Town Hall Meeting discussions and various communications receiv",
+     "pages": [
+      7,
+      9
+     ],
+     "papers": [
+      8,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Council of the Township of Nipissing supports the Municipality of North Perth Resolution requesting Provincial support to municipalities to fill vacant Buil",
+     "pages": [
+      10,
+      12
+     ],
+     "papers": [
+      11,
+      12
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Food Cycler Review",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "August 4, 2023",
+     "pages": [
+      13,
+      23
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Request for Additional Road Signage",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "August 1, 2023",
+     "pages": [
+      24,
+      28
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      29,
+      31
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES @ Nipissing Township Museum Board of Management August 2, 2023 A regular meeting of the Nipissing Township Museu",
+     "pages": [
+      32,
+      35
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: July 12, 22, 25 and 28; August 3, 4 and 5, 2023; Totaling $290,289.76 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM C",
+     "pages": [
+      36,
+      36
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(2)(k) of the Municipal Act, 2001, c. 25, for consideration of the following s",
+     "pages": [
+      37,
+      37
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-07-11": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/July-11-Council-Agenda-Package__18d1ec1b.pdf",
+   "pages": 38,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 20, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Federal and Provincial Governments need to support their most vulnerable households, the ones who are or are at risk of becoming homeless. Overall, housing ",
+     "pages": [
+      4,
+      6
+     ],
+     "papers": [
+      5,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this Council does approve “in principle” the Application of Richard and Mary Wynia, to purchase the Shore Road Allowance located in front of Plan M146, Lot 20, ",
+     "pages": [
+      7,
+      10
+     ],
+     "papers": [
+      8,
+      10
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      11,
+      15
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-07 Tuesday M",
+     "pages": [
+      16,
+      37
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(2)(e) and (k) of the Municipal Act, 2001, c. 25, for consideration of the fol",
+     "pages": [
+      38,
+      38
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-06-20": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/June-20-Council-Agenda-Package__9c6d68ed.pdf",
+   "pages": 127,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 6, 2023 A regular meeting of the Township of Nipissing Council was held on T",
+     "pages": [
+      2,
+      2
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2023-33",
+     "title": "to confirm the proceedings of Council at its meeting held on June 6, 2023. Read a first, second and third time and passed this 6\" day of June, 2023. Carried. R2",
+     "pages": [
+      3,
+      4
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      5,
+      127
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-06-06": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/June-6-2023-Council-Package__2029bf40.pdf",
+   "pages": 33,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Township of The Corporation of the Township of Nipissing NIPISSING ___ 45 Beatty Street athe Nipiss"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, May 16, 2023 A regular meeting of the Township of Nipissing Council was held on T",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Road Needs Study RFP",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "June 2, 2023",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-04 Tuesday A",
+     "pages": [
+      6,
+      33
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-05-16": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/May-16-Council-Agenda-Package__c18a6777.pdf",
+   "pages": 89,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, May 2, 2023 A regular meeting of the Township of Nipissing Council was held on Tu",
+     "pages": [
+      2,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive the Community Safety and Well-Being Plan Update as presented. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      6,
+      6
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "May 16, 2023",
+     "from": "",
+     "pages": [
+      7,
+      69
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      70,
+      88
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(3.1) of the Municipal Act, 2001, c. 25, for consideration of the following su",
+     "pages": [
+      89,
+      89
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-05-02": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/May-2-2023-Amended-Agenda-Package__29d89992.pdf",
+   "pages": 64,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the minutes of the Council Meeting held April 18, 2023, be adopted as published. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: TOM PIPER",
+     "pages": [
+      2,
+      2
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, April 18, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      3,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we award Tender NIP-PW-2023-5, Double Surface Treatment and Reseal of Birchgrove Phase 3 to Duncor enterprises Inc. Total Tender price $176,634.70, including ap",
+     "pages": [
+      6,
+      7
+     ],
+     "papers": [
+      7,
+      7
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we award Tender NIP-PW-2023-6, Supply, crush and apply approximately 3,500 Tonnes of 7/8” Crushed Quarry Granite to Birchgrove Drive to Evan Hughes Excavating. ",
+     "pages": [
+      8,
+      9
+     ],
+     "papers": [
+      9,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we award Tender NIP-PW-2023-7, approximately 3,500 Tonnes of Quarried B Granite, to be picked up by the municipality to Evan Hughes Excavating. Total Tender pri",
+     "pages": [
+      10,
+      11
+     ],
+     "papers": [
+      11,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we award Tender NIP-PW-2023-8, approximately 3,000 Tonnes of Crushed Quarry Granite, to be picked up by the municipality to Evan Hughes Excavating. Total Tender",
+     "pages": [
+      12,
+      13
+     ],
+     "papers": [
+      13,
+      13
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $100 to the Almaguin Highlands Secondary School Graduation Awards Program for 2023. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Pipe",
+     "pages": [
+      14,
+      15
+     ],
+     "papers": [
+      15,
+      15
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Retail Business Holidays Act requires retail businesses to be closed on the following holidays: Victoria Day; Canada Day; Labour Day; Thanksgiving; Good Fri",
+     "pages": [
+      16,
+      18
+     ],
+     "papers": [
+      17,
+      18
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the cost of Policing and Emergency Services affects northern, rural communities’ ability to support local social and health issues; AND WHEREAS there are severa",
+     "pages": [
+      19,
+      22
+     ],
+     "papers": [
+      20,
+      22
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we pass By-Law Number 2023- _, being a By-law to adopt a Code of Conduct for the Members of Council in the Township of Nipissing. Read a first, second and third",
+     "pages": [
+      23,
+      32
+     ],
+     "papers": [
+      24,
+      32
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we pass By-Law Number 2023- , being a By-law to adopt a Municipal Position Description for the Museum Staff positions for the Township of Nipissing. Read a firs",
+     "pages": [
+      33,
+      35
+     ],
+     "papers": [
+      34,
+      35
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Trailer Licencing By-Law Update",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "May 2, 2023",
+     "pages": [
+      36,
+      48
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we pass By-Law Number 2023- _, being a By-law to licence trailers within the Township of Nipissing. Read a first, second and third time and passed this 2\"4 day ",
+     "pages": [
+      49,
+      58
+     ],
+     "papers": [
+      50,
+      58
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we accept the correspondence as presented. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: TOM PIPER",
+     "pages": [
+      59,
+      59
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      60,
+      62
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: April 25 and May 1, 2023; Totaling $35,736.67 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: TOM PIPER",
+     "pages": [
+      63,
+      64
+     ],
+     "papers": [
+      64,
+      64
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-04-18": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/April-18-Council-Agenda-Package__60139f7b.pdf",
+   "pages": 30,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "*sanuediajunw 0} Buipeojumop 3s02 332307 AWN pesodo.d 07 uolsoddo 6uipsebau suosiuadns peoy oejuO Jo"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, April 4, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      7
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $50.00 to the Powassan and District Union Public Library to assist with the StoryWalk® initiative. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried ",
+     "pages": [
+      8,
+      9
+     ],
+     "papers": [
+      9,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $100 to the Trout Creek Agricultural Society towards the 2023 Fall air. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      10,
+      11
+     ],
+     "papers": [
+      11,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "under Section 380(6) of the Municipal Act, 2001 municipalities had provisions to apply for surplus proceeds from tax sales within their jurisdiction; AND WHEREA",
+     "pages": [
+      12,
+      13
+     ],
+     "papers": [
+      13,
+      13
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Enbridge recently made an announcement of their intention to begin charging third-party contractors and other utilities $200 CAD (plus applicable taxes) for uti",
+     "pages": [
+      14,
+      15
+     ],
+     "papers": [
+      15,
+      15
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      16,
+      16
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes April 3, 2023 MINUTES Township of Nipissing Recreation Committee April 3, 2023 A meeting of",
+     "pages": [
+      17,
+      17
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Recreation Committee Minutes April 3, 2023 - Times to be determined. - Karaoke Machine available. - More details to be b",
+     "pages": [
+      18,
+      19
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-02 Tuesday F",
+     "pages": [
+      20,
+      27
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: April 3 and 13, 2023; Totaling $396,749.99 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: TOM PIPER",
+     "pages": [
+      28,
+      29
+     ],
+     "papers": [
+      29,
+      29
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(3.1) of the Municipal Act, 2001, c. 25, for consideration of the following su",
+     "pages": [
+      30,
+      30
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-04-04": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/April-4-2023-Agenda-Package__c793f92b.pdf",
+   "pages": 32,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      2
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, March 21, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      3,
+      10
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "in negotiations with the Municipality of Powassan regarding boundary road construction it is apparent that it would be beneficial to both parties to complete th",
+     "pages": [
+      11,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we appoint Tom Marchant to the Township of Nipissing Cemetery Committee for the remainder of the Council term. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carrie",
+     "pages": [
+      12,
+      13
+     ],
+     "papers": [
+      13,
+      13
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $100 to the Almaguin Adult Learning Centre for programming. For Against PIPER BUTLER KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      14,
+      15
+     ],
+     "papers": [
+      15,
+      15
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "NOHFC Intern Application, Workforce Development Stream",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator-Clerk-Treasurer",
+     "date": "April 4, 2023",
+     "pages": [
+      16,
+      17
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      18,
+      32
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-03-21": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/March-21-2023-Council-Agenda-Package__c9671b41.pdf",
+   "pages": 60,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, March 7, 2023 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      36
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the three-year Consulting Services — Landfill Monitoring 2023-2025 Proposal provided by Pinchin; And that we authorize the Municipal Administrator to",
+     "pages": [
+      37,
+      37
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Bear Creek Landfill has reached within 4 years remaining fill capacity; NOW THEREFORE we authorize Pinching to proceed with a request for expansion of the f",
+     "pages": [
+      38,
+      38
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "compaction of the municipal landfill sites has been recommended as a method of extending the fill capacity; AND WHEREAS the purchase of a new compactor unit is ",
+     "pages": [
+      39,
+      40
+     ],
+     "papers": [
+      40,
+      40
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      41,
+      52
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2023-01 Tuesday J",
+     "pages": [
+      53,
+      60
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-03-07": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/March-7-Council-Agenda-Package__bf9fc080.pdf",
+   "pages": 57,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, February 21, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      30
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive the Final 2022 Annual Water Quality Monitoring Reports for the Bear Creek Landfill and Wolfe Lake Landfill from Pinchin as presented. For Against - D",
+     "pages": [
+      31,
+      31
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we adopt Complaint Policy, Number 2019-02, Revision 1, as the Formal Complaint Procedure for the Township of Nipissing. For Against PIPER BUTLER FOOTE KIRKEY YE",
+     "pages": [
+      32,
+      32
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "a",
+     "pages": [
+      33,
+      39
+     ],
+     "papers": [
+      34,
+      39
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      40,
+      57
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-02-21": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Package-February-21-2023__fa664bea.pdf",
+   "pages": 42,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, February 7, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Municipal Administrator to sign Work Orders for the Small Business Lighting Program for lighting upgrades to the Community Centre, Public Works",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council approved the purchase of a Tandem Axle Diesel Truck, Resolution R2022-35; AND WHEREAS Council approved the method of purchasing to be via financing, Res",
+     "pages": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2022-35",
+     "title": "the replacement of the 2005 Tandem Truck with Snow Plow equipment has been designated for replacement in the 2024 approved Capital Forecast; AND WHEREAS signifi",
+     "pages": [
+      6,
+      10
+     ],
+     "papers": [
+      7,
+      10
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "a municipali",
+     "pages": [
+      11,
+      14
+     ],
+     "papers": [
+      12,
+      14
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2023-15",
+     "title": "to establish and/or continue a Fire Department. WHEREAS Section 8.(1) of the Municipal Act, S.O. 2001, Part II, provides that the powers of a municipality under",
+     "pages": [
+      15,
+      35
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      36,
+      40
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES Nipissing Township Museum Board of Management February 1, 2023 A meeting of the Nipissing Township Museum Board",
+     "pages": [
+      41,
+      42
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-02-07": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/February-7-Council-Agenda-Package__585b553c.pdf",
+   "pages": 57,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, January 17, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      20
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council has received a request for a refund of Consent Application Fees provided for a matter that is no longer legally viable due to unforeseen circumstances o",
+     "pages": [
+      21,
+      21
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "there are currently advertised vacancies on the Township of Nipissing Recreation Committee and Cemetery Committee, Council has received a letter of interest for",
+     "pages": [
+      22,
+      23
+     ],
+     "papers": [
+      23,
+      23
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2020-35",
+     "title": "to establish and/or continue a Fire Department. WHEREAS Section 8.(1) of the Municipal Act, S.O. 2001, Part II, provides that the powers of a municipality under",
+     "pages": [
+      24,
+      43
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      44,
+      52
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2022-12 Tuesday D",
+     "pages": [
+      53,
+      56
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(2)(b) (e) and (k) of the Municipal Act, 2001, c. 25, for consideration of the",
+     "pages": [
+      57,
+      57
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-01-17": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Jan-17-Council-Package__81da0860.pdf",
+   "pages": 48,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, January 3, 2023 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      4
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Township of Nipissing supports the nomination of Blair Flowers of the Township of Machar as the Parry Sound-Northeast member to the North Bay Parry sound Di",
+     "pages": [
+      5,
+      20
+     ],
+     "papers": [
+      6,
+      20
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Updates to Committee/Board By-Laws",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "January 10, 2023",
+     "pages": [
+      21,
+      40
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      41,
+      48
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2023-01-03": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/January-3-Agenda-Package__7d207e36.pdf",
+   "pages": 55,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, December 20, 2022 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      4
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Reconsideration of Shore Road Allowance Closure and Sale — Duggan/Dickinson",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "January 3, 2023",
+     "pages": [
+      5,
+      9
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2022-153",
+     "title": "this Council does approve “in principle” the Application of Andrea Dickinson and Tracy Duggan by Paul Goodridge, Agent on behalf of owners, to purchase the Shor",
+     "pages": [
+      10,
+      11
+     ],
+     "papers": [
+      11,
+      11
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we Rescind Resolution R2022-153 passed August 16, 2022, approving “in principle” the Application of Andrea Dickinson and Tracy Duggan by Paul Goodridge, Agent o",
+     "pages": [
+      12,
+      12
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council received Motion #15 from the Corporation of the Township of Armour during the meeting held December 20, 2022; NOW THEREFORE Council supports the request",
+     "pages": [
+      13,
+      15
+     ],
+     "papers": [
+      14,
+      15
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this Council does approve “in principle” the Application of Tanner Hincks to purchase the Shore Road Allowance located in front of Pt Broken Lot 11, Con 16, Pla",
+     "pages": [
+      16,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we support the nomination of Mayor Peter McIsaac, Municipality of Powassan, as Representative to the Parry Sound District Social Services Administration Board. ",
+     "pages": [
+      17,
+      20
+     ],
+     "papers": [
+      18,
+      20
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Updates to Required By-Laws",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "January 3, 2023",
+     "pages": [
+      21,
+      43
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      44,
+      45
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2022-11 Tuesday N",
+     "pages": [
+      46,
+      55
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-12-20": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/December-20-2022-Agenda-Package__bb06bf40.pdf",
+   "pages": 67,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      9
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Shore Road Allowance Application — Dickinson/Duggan — Birchgrove Drive",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "December 20, 2022",
+     "pages": [
+      10,
+      12
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": "R2022-153",
+     "title": "we Reconsider Resolution Number R2022-153, passed August 16, 2022, approving “in principle” the Application of Andrea Dickinson and Tracy Duggan by Paul Goodrid",
+     "pages": [
+      13,
+      13
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this Council does approve “in principle” the Application of Andrea Dickinson and Tracy Duggan by Paul Goodridge, Agent on behalf of owners, to purchase the Shor",
+     "pages": [
+      14,
+      14
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Response to Dickinson and Duggan Land Swap Request",
+     "from": "Patrick Townes, BA, BEd and Jamie Robinson, BES, MCIP, RPP",
+     "date": "July 7, 2022",
+     "pages": [
+      15,
+      18
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, December 6, 2022 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      19,
+      21
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the updated Hazard Identification Risk Analysis, Appendix X to the Township of Nipissing Emergency Plan. For Against PIPER BUTLER FOOTE KIRKEY YEMM C",
+     "pages": [
+      22,
+      24
+     ],
+     "papers": [
+      23,
+      24
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize the Mayor and the Municipal Administrator to sign the Acknowledgment and Direction for the transfer of Part 2 and Part 3, Plan 42R-20658, satisfyin",
+     "pages": [
+      25,
+      27
+     ],
+     "papers": [
+      26,
+      27
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "do not have lot frontage on a municipal road. A lot addition to provide lot frontage and access to the western most proposed lot (Lot 16, Concession | and 2). T",
+     "pages": [
+      28,
+      30
+     ],
+     "papers": [
+      29,
+      30
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we approve the 2022 Review and Update of the Township of Nipissing Multi-Year Accessibility Plan. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom ",
+     "pages": [
+      31,
+      45
+     ],
+     "papers": [
+      32,
+      45
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Council of the Township of Nipissing receives the Election Accessibility Report for the 2022 Municipal Election. For Against PIPER BUTLER FOOTE KIRKEY YEMM ",
+     "pages": [
+      46,
+      46
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "December 6, 2022",
+     "pages": [
+      47,
+      50
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we transfer the machine credit for the Road Equipment and Fire Apparatus to reserve at the end of 2022; That we transfer the surplus revenue in the Building Ser",
+     "pages": [
+      51,
+      51
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $100 to the Powassan Lions Club for the 2023 Christmas Hampers. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      52,
+      53
+     ],
+     "papers": [
+      53,
+      53
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we donate $100 to the MADD Canada. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor: Tom Piper",
+     "pages": [
+      54,
+      55
+     ],
+     "papers": [
+      55,
+      55
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we support the nomination of Councillor Jordy Carr, Municipality of Callander, as Ward 6 Representative to the District of Parry Sound Municipal Association Exe",
+     "pages": [
+      56,
+      58
+     ],
+     "papers": [
+      57,
+      58
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we support the nomination of Councillor Mike Dell, Municipality of Callander, as Representative to the Parry Sound District Social Services Administration Board",
+     "pages": [
+      59,
+      67
+     ],
+     "papers": [
+      60,
+      67
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-12-06": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/December-6-Council-Agenda-Package__eedf0236.pdf",
+   "pages": 91,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      13
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Boundary Road Agreement Renewal with Municipality of Callander",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "December 6, 2022",
+     "pages": [
+      14,
+      25
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Shared Service Agreement for CBO Services",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "December 6, 2022",
+     "pages": [
+      26,
+      32
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, November 15, 2022 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      33,
+      35
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, November 22, 2022 A Special meeting of the Township of Nipissing Council was held",
+     "pages": [
+      36,
+      36
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council supports the appointment of Dave Britton, Municipality of Powassan to represent Area 1 on the Eastholme Home for the Aged — Board of Management. For Aga",
+     "pages": [
+      37,
+      38
+     ],
+     "papers": [
+      38,
+      38
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "correspondence dated November 15” from Nipissing Township be received; And further that the Municipality of Powassan support the nomination of Mayor Tom Piper; ",
+     "pages": [
+      39,
+      39
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council nominates Shelly Foote for the appointment to represent the Township of Nipissing and the Municipalities of Callander and Powassan on the Parry Sound Di",
+     "pages": [
+      40,
+      46
+     ],
+     "papers": [
+      41,
+      46
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      47,
+      48
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2022-08 Tuesday O",
+     "pages": [
+      49,
+      86
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: November 26 and 30, December 1 and 2, 2022; Totaling $177,658.26 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carrie",
+     "pages": [
+      87,
+      89
+     ],
+     "papers": [
+      88,
+      89
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this part of our meeting will be closed to the public as authorized by Section 239(3)(b) and Section 239(2)(b) of the Municipal Act, 2001, c. 25, for considerat",
+     "pages": [
+      90,
+      91
+     ],
+     "papers": [
+      91,
+      91
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-11-15": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Council-Agenda-Package-November-15-2022__3c8bf8b2.pdf",
+   "pages": 67,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 4, 2022 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      2
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2022-46",
+     "title": "to confirm the proceedings of Council at its meeting held on October 4, 2022. Read the first, second and third time and passed this 4° day of October, 2022. Car",
+     "pages": [
+      3,
+      3
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 25, 2022 A Special meeting of the Township of Nipissing Council was held",
+     "pages": [
+      4,
+      4
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      5,
+      7
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Powassan Seat Public Library Library Board Minutes September 26, 2022 @ 6 pm In-person: Tina Martin, Bernadette Kerr, St",
+     "pages": [
+      8,
+      9
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2022-09 Tuesday S",
+     "pages": [
+      10,
+      63
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: October 13, 14, 18, 21 and 26; November 3 and 10, 2022; Totaling $666,248.67 be approved. For Against PIPER BUTLER FOOTE KIRKEY",
+     "pages": [
+      64,
+      67
+     ],
+     "papers": [
+      65,
+      67
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-10-04": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/October-4-2022-Agenda-Package__e2dcc196.pdf",
+   "pages": 25,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 20, 2022 A regular meeting of the Township of Nipissing Council was hel",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      4,
+      9
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "The Golden Sunshine Municipal Non-Profit Housing Corporation Minutes of the Board of Directors Meeting 2022-08 Tuesday A",
+     "pages": [
+      10,
+      15
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Nipissing Township Museum Board Meeting Minutes September 7, 2022 7 p.m., Nipissing Township Community Centre Present: B",
+     "pages": [
+      16,
+      17
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: September 23 and 28; October 3, 2022; Totaling $261,830.49 be approved. For Against PIPER KIRKEY MARCHANT MOORE SCOTT Carried M",
+     "pages": [
+      18,
+      25
+     ],
+     "papers": [
+      19,
+      25
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-09-20": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/September-20-Agenda-Package__3d69c8d5.pdf",
+   "pages": 30,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, September 6, 2022 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2022-44",
+     "title": "to Amend Zoning By-law 2020-20 for the Removal of a Holding (H) Symbol, as amended” WHEREAS the Corporation of the Township of Nipissing has received an applica",
+     "pages": [
+      4,
+      10
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2022-42",
+     "title": "to regulate the keeping and registration of dogs within the Township of Nipissing. WHEREAS Section 10(1) of the Municipal Act, S.O. 2001, c. 25, as amended, aut",
+     "pages": [
+      11,
+      24
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Council approved the purchase of a Tandem Truck following an approved tendering process, Resolution R2021-192; AND WHEREAS Council approved the method of purcha",
+     "pages": [
+      25,
+      25
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: September 7, 15 and 16, 2022; Totaling $196,640.29 be approved. For Against PIPER KIRKEY MARCHANT MOORE SCOTT Carried Mayor: TO",
+     "pages": [
+      26,
+      30
+     ],
+     "papers": [
+      27,
+      30
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-09-06": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/September-6-Council-Meeting-Package__718ba3d6.pdf",
+   "pages": 51,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, August 16, 2022 A regular meeting of the Township of Nipissing Council was held o",
+     "pages": [
+      2,
+      12
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2022-41",
+     "title": "to Amend Zoning By-law 2020-20, as amended” WHEREAS the Corporation of the Township of Nipissing has initiated an application to amend Zoning By-law 2020-20 as ",
+     "pages": [
+      13,
+      14
+     ]
+    },
+    {
+     "kind": "bylaw",
+     "number": "2022-42",
+     "title": "to regulate the keeping and registration of dogs within the Township of Nipissing. WHEREAS Section 10(1) of the Municipal Act, S.O. 2001, c. 25, as amended, aut",
+     "pages": [
+      15,
+      31
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the instances of motor vehicle collisions involving wildlife on Highway 522 have been increasing; AND WHEREAS the brushing and removal of trees and shrubs along",
+     "pages": [
+      32,
+      32
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      33,
+      45
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: August 18, 19 and 30; September 1, 2022; Totaling $439,021.44 be approved. For Against PIPER KIRKEY MARCHANT MOORE SCOTT Carrie",
+     "pages": [
+      46,
+      51
+     ],
+     "papers": [
+      47,
+      51
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
+  },
+  "2022-08-16": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/August-16-Council-Package__a90a09f5.pdf",
+   "pages": 46,
+   "items": [
+    {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, July 12, 2022 A regular meeting of the Township of Nipissing Council was held on",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "this Council does approve “in principle” the Application of Andrea Dickinson and Tracy Duggan by Paul Goodridge, Agent on behalf of owners, to purchase the Shor",
+     "pages": [
+      4,
+      5
+     ],
+     "papers": [
+      5,
+      5
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "Hydro One performed line clearing brushing in the Township of Nipissing within the last few years; AND WHEREAS power outages as a result of down lines and trees",
+     "pages": [
+      6,
+      6
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we authorize an additional salary grid step for staff performing duties outside of position descriptions as a result of unexpected staff shortages and workload.",
+     "pages": [
+      7,
+      17
+     ],
+     "papers": [
+      8,
+      17
+     ]
+    },
+    {
+     "kind": "correspondence",
+     "title": "Correspondence",
+     "pages": [
+      18,
+      20
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Nipissing Township Museum Board Meeting Minutes June 1, 2022 7 p.m., Nipissing Township Community Centre Present: Liz Mo",
+     "pages": [
+      21,
+      22
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Nipissing Township Museum Board Meeting Minutes July 6, 2022 7 p.m., Nipissing Township Community Centre Present: Liz Mo",
+     "pages": [
+      23,
+      37
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: July 13 and 21, August 4 and 11, 2022; Totaling $580,885.30 be approved. For Against PIPER KIRKEY MARCHANT MOORE scoTT Carried ",
+     "pages": [
+      38,
+      46
+     ],
+     "papers": [
+      39,
+      46
      ]
     }
    ],

@@ -34,6 +34,7 @@ a by-law at the meeting, the minutes record it; the site says so.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -91,8 +92,13 @@ def have_tesseract() -> bool:
 
 def ocr_png(png: bytes) -> str:
     try:
+        # One thread per tesseract: several run side by side, and each one
+        # grabbing every core (its default) made pages crawl and time out on
+        # GitHub's 2-core runners (a 121-page package took 27 minutes and
+        # came back nearly empty).
         r = subprocess.run(["tesseract", "stdin", "stdout", "--psm", "3"],
-                           input=png, capture_output=True, timeout=60)
+                           input=png, capture_output=True, timeout=60,
+                           env={**os.environ, "OMP_THREAD_LIMIT": "1"})
         return r.stdout.decode("utf-8", "ignore")
     except Exception:
         return ""

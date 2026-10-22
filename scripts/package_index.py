@@ -70,7 +70,7 @@ def page_texts(pdf: Path, ocr: bool) -> List[str]:
             texts.append(None)
             jobs.append((i, page.get_pixmap(dpi=150, colorspace=pymupdf.csGRAY).tobytes("png")))
     if jobs:
-        with ThreadPoolExecutor(4) as ex:
+        with ThreadPoolExecutor(max(2, __import__('os').cpu_count() or 2)) as ex:
             for (i, _), t in zip(jobs, ex.map(lambda j: pe.ocr_png(j[1]), jobs)):
                 texts[i] = t
     return [t or "" for t in texts]
@@ -89,9 +89,13 @@ def report_fields(text: str) -> Dict[str, str]:
     if m:
         out["title"] = one_line(m.group(1))[:160]
     if "title" not in out:      # "STAFF REPORT" then the title on its own line
-        m = re.search(r"(?:STAFF\s+REPORT|REPORT\s+TO\s+COUNCIL)\s*\n+\s*([^\n]{8,160})", t, re.I)
+        m = re.search(r"(?:STAFF\s+REPORT|REPORT\s+TO\s+COUNCIL)[ \t|:.\-—]*\n+\s*([^\n]{6,160})", t, re.I)
         if m and not re.match(r"\s*(From|Date|To|Re)\s*:", m.group(1), re.I):
-            out["title"] = one_line(m.group(1))
+            out["title"] = one_line(m.group(1)).strip(" |")
+    if "title" not in out:      # "2023 Budget Update — Staff Report — Page 2" / "Page 2 - Staff Report - X"
+        m = re.search(r"^\W*(?:Page\s+\d+\s*[-—–]\s*Staff\s+Report\s*[-—–]\s*([^\n]{4,120})|([^\n]{4,120}?)\s*[-—–]\s*Staff\s+Report\s*[-—–]\s*Page)", t, re.I | re.M)
+        if m:
+            out["title"] = one_line(m.group(1) or m.group(2))
     m = re.search(r"\bFrom\s*:\s*(.+?)(?:\n\s*(?:To|Re|Date|Subject)\s*:|\n\s*\n)", t, re.S | re.I)
     if m:
         who = re.split(r"The Corporation|Telephone|www\.|\d{3}-\d{3}|\b(?:Re|Date|To|Subject)\s*:", m.group(1), flags=re.I)[0]
@@ -102,13 +106,28 @@ def report_fields(text: str) -> Dict[str, str]:
     return out
 
 
+def tidy_title(t: str) -> str:
+    """Drop what runs on from the next heading: "X BACKGROUND/OVERVIEW", "X Dear Council,"."""
+    t = re.split(r"\s+(?:BACKGROUN\w*|OVERVIEW|ISSUE\s*:|PURPOSE\s*:?|Dear\s+Council|Date\s*:|-{3,})", t or "")[0]
+    return t.strip(" |:-—.")
+
+
 def classify(text: str, first: bool) -> Optional[Dict[str, Any]]:
     """A new document starting on this page, or None (the page continues the last one)."""
     top = pe._fix_digits(text[:700])
     flat = one_line(top)
+    # "Page 2 - Staff Report - NOHFC Application": a report's later page.
+    if re.match(r"\W{0,10}Page\s+\d+\b", flat) or re.search(r"Staff\s+Report\s*[-—–]\s*Page\s+\d", flat[:120], re.I):
+        return None
+    # The agenda lists "Staff Reports." as an item; it is not one.
+    if first and re.search(r"\bAGENDA\b", flat[:500]):
+        return {"kind": "agenda", "title": "Agenda"}
     if REPORT_RE.search(flat[:500]) or (MEMO_RE.search(flat[:600]) and re.search(r"\bFrom\s*:", flat[:600])
                                        and re.search(r"\bDate\s*:", flat[:600]) and not re.search(r"\bSent\s*:", flat[:600])):
-        return {"kind": "report", **report_fields(text)}
+        f = report_fields(text)
+        if f.get("title"):
+            f["title"] = tidy_title(f["title"])
+        return {"kind": "report", **f}
     # The township's own draft resolutions (other councils' resolutions in
     # the correspondence are part of the correspondence).
     if RES_RE.search(flat[:400]) and re.search(r"\bDATE\s*:", flat[:400], re.I) \
@@ -199,6 +218,12 @@ def main() -> None:
                 print(f"  {m['date']}: package not available")
                 continue
             pages = page_texts(dest, ocr)
+            blank = sum(1 for t in pages if len(t.strip()) < 40)
+            if blank > len(pages) * 0.3:
+                # OCR timed out or failed on many pages: don't file a half-read
+                # package as done; it's tried again next run.
+                print(f"  {m['date']}: {blank} of {len(pages)} pages unreadable — will retry")
+                continue
             if not any(len(p.strip()) > 40 for p in pages):
                 print(f"  {m['date']}: no text (OCR unavailable?) — later")
                 continue
