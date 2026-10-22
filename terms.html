@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022f">
+<link rel="stylesheet" href="shared.css?v=20261022g">
 </head>
 <body>
 
@@ -67,7 +67,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022f"></script>
+<script src="shared.js?v=20261022g"></script>
 <script>
 const CLOSED_REASONS = {
   '2a': 'Security of municipal property', '2b': 'Personal matters about an identifiable person',
@@ -153,9 +153,11 @@ function stats(t){
 function termHtml(t){
   const s = stats(t);
   const live = t.start <= todayIso && todayIso <= t.end;
+  const hasRecords = t.records !== false;
   const parts = [];
+  if (!hasRecords) parts.push(`<p class="section-note">${escHtml(fmt(t.start))} to ${escHtml(fmt(t.end))}. This archive’s meeting records begin in 2022, so for this term it shows the election and the changes on council.</p>`);
 
-  parts.push(`<section class="filed" aria-labelledby="glance">
+  if (hasRecords) parts.push(`<section class="filed" aria-labelledby="glance">
     <h2 class="filed-tab" id="glance">At a glance</h2>
     <div class="filed-body">
       <p class="term-dates">${escHtml(fmt(t.start))} to ${escHtml(fmt(t.end))}${live ? ', in progress' : ''}${t.note ? `. ${escHtml(t.note)}` : ''}</p>
@@ -204,7 +206,7 @@ function termHtml(t){
           <span class="vote-num">${n(c.votes)}</span>
           <span class="vote-result">${c.elected ? 'Elected' : ''}</span>
         </li>`).join('')}</ol>
-      ${e.source ? `<p class="docs-key">Source: <a href="${escHtml(e.source.url)}" target="_blank" rel="noopener">${escHtml(e.source.label)}</a></p>` : ''}
+      ${e.source ? `<p class="docs-key">Source: ${e.source.url ? `<a href="${escHtml(e.source.url)}" target="_blank" rel="noopener">${escHtml(e.source.label)}</a>` : escHtml(e.source.label)}</p>` : ''}
     </section>`);
   }
 
@@ -213,9 +215,9 @@ function termHtml(t){
       <h2 class="section-title" id="changes">How council changed</h2>
       <div class="split">
         <ol class="history wide">${t.changes.map(c => `
-          <li><span class="h-num">${escHtml(fmt(c.date))}</span>
+          <li><span class="h-num">${c.date ? escHtml(fmt(c.date)) : 'During the term'}</span>
             <p class="h-title" style="color:var(--ink)">${escHtml(c.text)}</p>
-            <div class="h-links">${(c.records || []).map(r => `<a href="${recordHref(r)}">${escHtml(recordLabel(r))}</a>`).join('')}${c.meeting ? `<a href="meeting-detail.html?date=${encodeURIComponent(c.meeting)}&body=council">The meeting</a>` : ''}</div>
+            <div class="h-links">${(c.records || []).map(r => `<a href="${recordHref(r)}">${escHtml(recordLabel(r))}</a>`).join('')}${c.meeting ? `<a href="meeting-detail.html?date=${encodeURIComponent(c.meeting)}&body=council">The meeting</a>` : ''}${c.source ? `<a href="${escHtml(c.source.url)}" target="_blank" rel="noopener">${escHtml(c.source.label)}</a>` : ''}</div>
           </li>`).join('')}
         </ol>
         ${(t.council_at_end || []).length ? `<aside class="narrow side-card"><h3 class="side-title">Council ${live ? 'now' : 'at the end of the term'}</h3>
@@ -248,6 +250,8 @@ function termHtml(t){
       </div>
     </section>`);
   }
+
+  if (!hasRecords) return parts.join('');
 
   parts.push(`<section class="term-section" aria-labelledby="not-carried-title" id="not-carried">
     <h2 class="section-title" id="not-carried-title">Motions that didn’t carry</h2>
