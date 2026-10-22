@@ -78,9 +78,16 @@ def unique_extra_docs(docs: List[Dict[str, str]]) -> List[Dict[str, str]]:
         if not url:
             continue
         key = (label, url)
+        # Keep what the archive learned about a document (its kept copy, a
+        # copy someone provided, pages cut from a package) across re-scrapes.
+        extra = {k: v for k, v in d.items() if k not in ("label", "url") and v}
         if key not in seen:
             seen.add(key)
-            out.append({"label": label, "url": url})
+            out.append({"label": label, "url": url, **extra})
+        else:
+            prev = next(x for x in out if (x["label"], x["url"]) == key)
+            for k, v in extra.items():
+                prev.setdefault(k, v)
     return out
 
 
@@ -118,8 +125,62 @@ def sanitize_extra_docs(meetings: List[Dict[str, Any]]) -> None:
                 continue
             if label.lower() in GENERIC_EXTRA_LABELS:
                 continue
-            cleaned.append({"label": label or "Document", "url": url})
+            keep = {"label": label or "Document", "url": url}
+            for k in ("archived", "provided", "gone"):      # keep what the archive learned
+                if d.get(k):
+                    keep[k] = d[k]
+            cleaned.append(keep)
         m["extra_docs"] = cleaned
+    _one_meeting_per_document(meetings)
+
+
+def _one_meeting_per_document(meetings: List[Dict[str, Any]]) -> None:
+    """A document listed under several meetings belongs to one of them.
+
+    The township's page lists some documents (budget presentations, capital
+    forecasts) both under their meeting and in a block the scraper reads as
+    the first meeting of the year, so Jan 2, 2024 showed April's budget.
+    When a file's upload folder (/uploads/2024/04/) is known, it stays only
+    on the meeting nearest that month; the copy kept by the archive moves
+    with it. Documents listed under a single meeting are left alone.
+    """
+    from datetime import date as _date
+    # Grouped by file name: the township re-uploaded many files under a new
+    # folder in 2026 (/uploads/2026/03/X.pdf became /uploads/2026/05/X.pdf).
+    def name_of(url: str) -> str:
+        n = url.rsplit("/", 1)[-1].lower()
+        return re.sub(r"-\d(?=\.pdf$)", "", n)
+    where: Dict[str, List[Dict[str, Any]]] = {}
+    for m in meetings:
+        for d in m.get("extra_docs") or []:
+            group = where.setdefault(name_of(d["url"]), [])
+            if not any(x is m for x in group):
+                group.append(m)
+    for name, ms in where.items():
+        urls = sorted({d["url"] for m in ms for d in m["extra_docs"] if name_of(d["url"]) == name})
+        months = sorted(f"{a}-{b}" for u in urls for a, b in re.findall(r"/uploads/(20\d\d)/(\d\d)/", u))
+        if len(ms) < 2 or not months:
+            continue
+        mid = _date(int(months[0][:4]), int(months[0][5:]), 15)     # first upload
+
+        def gap(m: Dict[str, Any]) -> int:
+            try:
+                return abs((_date.fromisoformat(m["date"][:10]) - mid).days)
+            except Exception:
+                return 10 ** 6
+        best = min(ms, key=gap)
+        learned = {}
+        for m in ms:
+            for d in m["extra_docs"]:
+                if name_of(d["url"]) == name:
+                    learned.update({k: d[k] for k in ("archived", "provided") if d.get(k)})
+        for m in ms:
+            if m is best:
+                for d in m["extra_docs"]:
+                    if name_of(d["url"]) == name:
+                        d.update({k: v for k, v in learned.items() if not d.get(k)})
+            else:
+                m["extra_docs"] = [d for d in m["extra_docs"] if name_of(d["url"]) != name]
 
 
 def flags_from_context(text: str) -> Tuple[str, bool]:

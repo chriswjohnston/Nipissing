@@ -146,7 +146,7 @@ def main() -> None:
     data = load(OUT, {})
     data.setdefault("_about", "Financial documents kept by the archive (built daily by scripts/financials.py) "
                               "and the figures the Financials page charts (entered by hand; every figure names its source).")
-    docs: Dict[str, Dict[str, Any]] = {d["url"]: d for d in data.get("documents", [])}
+    docs: Dict[str, Dict[str, Any]] = {(d.get("url") or d.get("archived")): d for d in data.get("documents", [])}
     state = load(STATE, {})
 
     def add(url: str, title: str, **extra) -> Dict[str, Any]:
@@ -222,6 +222,22 @@ def main() -> None:
                         continue
             if state.get(url, {}).get("outcome") in ("notfound", "notpdf"):
                 d["gone"] = True
+    # Financial schedules attached to by-laws (the asset management plan as
+    # adopted by By-law 2025-32), and plans that are financial in nature.
+    for b in load(ROOT / "data" / "canonical" / "bylaws.json", {"bylaws": []}).get("bylaws", []):
+        for doc in b.get("extra_docs") or []:
+            if doc.get("archived") and FIN_RE.search(doc.get("label") or "") and not re.match(r"Earlier", doc.get("label") or ""):
+                d = docs.setdefault(doc["url"], {"url": doc["url"], "title": doc.get("label"), "kind": kind_of(doc.get("label") or "", doc["url"]),
+                                                 "year": year_of(doc.get("label") or "", "") or b.get("year"), "first_seen": TODAY})
+                d.update({"archived": doc["archived"], "bylaw": b["number"]})
+    for plan in load(ROOT / "data" / "canonical" / "plans.json", {"plans": []}).get("plans", []):
+        if plan.get("kind") == "Asset management":
+            d = docs.setdefault(plan["url"], {"url": plan["url"], "title": plan.get("title"), "kind": "Asset management plan",
+                                              "year": plan.get("from"), "first_seen": TODAY})
+            for k in ("archived", "as_adopted"):
+                if plan.get(k):
+                    d[k] = plan[k]
+
     # Copy recovered files back onto the meetings, so meeting pages link them too.
     for m in meetings.get("meetings", []):
         for doc in m.get("extra_docs") or []:

@@ -608,6 +608,41 @@ function decisionRowHtml(d, q = '') {
   </li>`;
 }
 
+// A record page's own description, for search results and link previews.
+function setDescription(text) {
+  const t = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!t) return;
+  let m = document.querySelector('meta[name="description"]');
+  if (!m) { m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
+  m.content = t.length > 300 ? t.slice(0, 297).replace(/\s+\S*$/, '') + '…' : t;
+}
+
+// ── Resolutions that name other resolutions ────────────────────────────
+// "rescinds Resolution R2026-09", "replacing the Policy approved by
+// Resolution R2019-130". Council rarely cites earlier decisions, so these
+// links are few, but each is certain: it's council's own wording.
+const RES_REF_RE = /\bR\s?(\d{4})\s?-\s?(\d{1,3})\b/g;
+function resolutionRefs(list) {
+  const norm = (y, n) => `R${y}-${n}`;
+  const known = new Map(list.map(r => [String(r.number).toUpperCase(), r]));
+  const find = (y, n) => known.get(norm(y, n)) || known.get(norm(y, n.padStart(3, '0'))) || known.get(norm(y, String(Number(n))));
+  const out = new Map();                       // number -> { refersTo: [...], referredBy: [...] }
+  const slot = k => out.get(k) || (out.set(k, { refersTo: [], referredBy: [] }), out.get(k));
+  for (const r of list) {
+    const text = r.motion_text || '';
+    for (const m of text.matchAll(RES_REF_RE)) {
+      const t = find(m[1], m[2]);
+      const label = t ? t.number : norm(m[1], m[2]);
+      if (label === r.number) continue;
+      const before = text.slice(Math.max(0, m.index - 70), m.index);
+      const verb = /rescind/i.test(before) ? 'rescinds' : /replac/i.test(before) ? 'replaces' : /amend/i.test(before) ? 'amends' : 'refers to';
+      if (!slot(r.number).refersTo.some(x => x.number === label)) slot(r.number).refersTo.push({ number: label, verb, found: !!t, rec: t });
+      if (t && !slot(t.number).referredBy.some(x => x.number === r.number)) slot(t.number).referredBy.push({ number: r.number, verb, rec: r });
+    }
+  }
+  return out;
+}
+
 // ── Amendments, found from by-law titles ───────────────────────────────
 // "amend By-law 2021-50", "Amend Zoning By-Law Number 2020-20", "Amend BL 1088".
 const AMEND_RE = /\bamend(?:s|ing)?\b[^.]{0,80}?\b(?:by-?law|bl)\s*(?:no\.?|number|#)?\s*(\d{4}-\d{1,3}|\d{3,4})\b/i;

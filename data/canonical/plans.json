@@ -1,0 +1,77 @@
+{
+  "_about": "Plans listed on the township's Strategies & Plans page, copied daily by scripts/archive_plans.py. listed=false means the township has since removed it; the copy kept here stays.",
+  "plans": [
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2025-Accessibility-Plan-Review-Final.pdf",
+      "first_seen": "2026-10-22",
+      "title": "2025-2029 Multi-Year Accessibility Plan 2025 Compliance Report",
+      "kind": "Accessibility",
+      "from": 2025,
+      "to": 2029,
+      "listed": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Twp-of-Nipissing-2025-Asset-Management-Plan-Final.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Township of Nipissing Asset Management Plan, 2025 (Final)",
+      "kind": "Asset management",
+      "from": 2025,
+      "to": 2026,
+      "listed": true,
+      "archived": "files/archive/financial/2026/Twp-of-Nipissing-2025-Asset-Management-Plan-Final__a23f3ad5.pdf",
+      "provided": "2026-10-22",
+      "as_adopted": {
+        "archived": "files/archive/financial/2025/2025-Asset-Management-Plan-as-adopted-By-law-2025-32.pdf",
+        "bylaw": "2025-32",
+        "note": "The version council adopted on November 18, 2025 includes Appendix B (asset inventory details), which the posted version leaves out."
+      }
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Strategic-Asset-Management-Policy-2023.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Strategic Asset Management Policy 2023",
+      "kind": "Asset management",
+      "from": 2023,
+      "to": 2026,
+      "listed": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Nipissing-Asset-Management-Plan-Final-2017.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Township of Nipissing Asset Management Plan, 2017 (Final)",
+      "kind": "Asset management",
+      "from": 2017,
+      "to": 2026,
+      "listed": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/THE-CSWB-PLAN-updated-August-2024.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Community Safety and Well-Being Plan Regional Report",
+      "kind": "Community safety",
+      "from": 2024,
+      "to": 2026,
+      "listed": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Conservation-and-Demand-Management-Plan-2024-2029.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Conservation and Demand Management Plan 2024-2029",
+      "kind": "Energy",
+      "from": 2024,
+      "to": 2029,
+      "listed": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Strategic-Plan-2023-2026.pdf",
+      "first_seen": "2026-10-22",
+      "title": "Strategic Plan 2023-2026",
+      "kind": "Strategic plan",
+      "from": 2023,
+      "to": 2026,
+      "listed": true,
+      "archived": "files/archive/terms/2022/Strategic-Plan-2023-2026__0b30fd0d.pdf"
+    }
+  ],
+  "checked": "2026-10-22"
+}
