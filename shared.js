@@ -493,6 +493,8 @@ function operativeText(text) {
   const parts = t.split(/\b(?:NOW\s+THEREFORE(?:\s+BE\s+IT\s+RESOLVED)?|BE\s+IT\s+RESOLVED)\b[,:]?\s*/i);
   let op = parts.length > 1 ? parts[parts.length - 1] : t;
   op = op.replace(/^(?:that|THAT)\s+/, '').trim();
+  // The outcome and any note after it ("Defeated. Ed Veldboom left the meeting.")
+  op = op.replace(/\s+(?:Carried|Defeated|Deferred|Lost|Withdrawn|CARRIED|DEFEATED|DEFERRED)(?:\.|\s*$)[\s\S]*$/, '').trim();
   return op ? op.charAt(0).toUpperCase() + op.slice(1) : t;
 }
 
@@ -549,6 +551,7 @@ function buildDecisions(bylaws, resolutions) {
   const passedBy = new Map();
   const out = [];
   for (const r of resolutions) {
+    if (r.fragment) continue;   // piece of another motion, split off by an old parser
     const num = r.bylaw_number && String(r.bylaw_number);
     const text = r.motion_text || r.title || '';
     // Fold in only the resolution that passes the by-law. One that merely

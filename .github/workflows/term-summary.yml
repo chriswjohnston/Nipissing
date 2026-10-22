@@ -1,0 +1,40 @@
+name: Term summary
+# Writes the yearly summary of the current council term (terms.html):
+# an overview and the term's key decisions, by Claude from the records.
+# Counts on the page update daily on their own; this only refreshes the
+# written summary. Runs every January 15, or by hand from the Actions tab.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 11 15 1 *"
+permissions:
+  contents: write
+concurrency:
+  group: update-records          # never alongside the daily update
+  cancel-in-progress: false
+jobs:
+  term-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pymupdf
+      - name: Write term summary
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/term_summary.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/canonical/terms.json docs/files/archive || true
+          git diff --cached --quiet && { echo "No changes"; exit 0; }
+          git commit -m "Term summary $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push
