@@ -465,28 +465,48 @@
       "year": 2026,
       "title": "set Tax Ratios for Municipal Purposes for the year 2026",
       "date_passed": "2026-03-17",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-11.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-03-17",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-Mar-17-2026.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+      "extracted_pdf": "files/bylaws/2026-11.pdf",
+      "extracted_text": "files/bylaws/text/2026-11.txt",
+      "extracted_from": {
+        "meeting_date": "2026-03-17",
+        "pages": [
+          11,
+          11
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-10",
       "year": 2026,
       "title": "provide for the adoption of the current estimates and tax rates, and to further provide for penalty and interest in",
       "date_passed": "2026-03-17",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-10.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2026-03-17",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-Mar-17-2026.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+      "extracted_pdf": "files/bylaws/2026-10.pdf",
+      "extracted_text": "files/bylaws/text/2026-10.txt",
+      "extracted_from": {
+        "meeting_date": "2026-03-17",
+        "pages": [
+          6,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-09",
@@ -535,14 +555,24 @@
       "year": 2026,
       "title": "enter into a Municipal Forest Fire Management Agreement",
       "date_passed": "2026-02-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-06.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-02-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-February-3-2026.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+      "extracted_pdf": "files/bylaws/2026-06.pdf",
+      "extracted_text": "files/bylaws/text/2026-06.txt",
+      "extracted_from": {
+        "meeting_date": "2026-02-03",
+        "pages": [
+          14,
+          14
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-05",
@@ -563,14 +593,24 @@
       "year": 2026,
       "title": "amend Consolidated By-Law Number 2021-50, to regulate the parking of vehicles within the Corporation of the Township of",
       "date_passed": "2026-02-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-04.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2026-02-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-February-3-2026.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+      "extracted_pdf": "files/bylaws/2026-04.pdf",
+      "extracted_text": "files/bylaws/text/2026-04.txt",
+      "extracted_from": {
+        "meeting_date": "2026-02-03",
+        "pages": [
+          12,
+          13
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-03",
@@ -591,14 +631,24 @@
       "year": 2026,
       "title": "provide for an Interim Tax Levy",
       "date_passed": "2026-01-06",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-02.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2026-01-06",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-January-6-2026.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf",
+      "extracted_pdf": "files/bylaws/2026-02.pdf",
+      "extracted_text": "files/bylaws/text/2026-02.txt",
+      "extracted_from": {
+        "meeting_date": "2026-01-06",
+        "pages": [
+          12,
+          12
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-01",
@@ -633,14 +683,24 @@
       "year": 2025,
       "title": "authorize temporary borrowing from time to time to meet current expenditures during the fiscal year ending December 31, 2026",
       "date_passed": "2025-12-16",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-39.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2025-12-16",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-December-16-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-16-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-16-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-39.pdf",
+      "extracted_text": "files/bylaws/text/2025-39.txt",
+      "extracted_from": {
+        "meeting_date": "2025-12-16",
+        "pages": [
+          13,
+          14
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-38",
@@ -656,7 +716,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-December-16-2025.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-16-2025.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2025/2025-38-Appoint-Committee-of-Adjustment__3e54c6ef.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2025/2025-38-Appoint-Committee-of-Adjustment__3e54c6ef.pdf",
+      "extracted_pdf": "files/bylaws/2025-38.pdf",
+      "extracted_text": "files/bylaws/text/2025-38.txt",
+      "extracted_from": {
+        "meeting_date": "2025-12-16",
+        "pages": [
+          11,
+          11
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-37",
@@ -677,42 +747,72 @@
       "year": 2025,
       "title": "amend the Remuneration Schedule in the Township of Nipissing Pay Equity Plan",
       "date_passed": "2025-12-02",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-36.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2025-12-02",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-December-2-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-36.pdf",
+      "extracted_text": "files/bylaws/text/2025-36.txt",
+      "extracted_from": {
+        "meeting_date": "2025-12-02",
+        "pages": [
+          29,
+          29
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-35",
       "year": 2025,
       "title": "establish the remuneration and payment of expenses to members of Council",
       "date_passed": "2025-12-02",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-35.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by S. Kirkey",
       "meeting_date": "2025-12-02",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-December-2-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-35.pdf",
+      "extracted_text": "files/bylaws/text/2025-35.txt",
+      "extracted_from": {
+        "meeting_date": "2025-12-02",
+        "pages": [
+          26,
+          26
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-34",
       "year": 2025,
       "title": "appoint an Integrity Commissioner for the Township of Nipissing",
       "date_passed": "2025-12-02",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-34.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Foote",
       "meeting_date": "2025-12-02",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-December-2-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-December-2-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-34.pdf",
+      "extracted_text": "files/bylaws/text/2025-34.txt",
+      "extracted_from": {
+        "meeting_date": "2025-12-02",
+        "pages": [
+          24,
+          24
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-33",
@@ -733,14 +833,24 @@
       "year": 2025,
       "title": "adopt an Asset Management Plan for the Township of Nipissing",
       "date_passed": "2025-11-18",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-32.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2025-11-18",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-November-18-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-November-18-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-November-18-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-32.pdf",
+      "extracted_text": "files/bylaws/text/2025-32.txt",
+      "extracted_from": {
+        "meeting_date": "2025-11-18",
+        "pages": [
+          51,
+          51
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-31",
@@ -784,7 +894,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-October-7-2025.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-October-7-2025.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-29__af668475.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-29__af668475.pdf",
+      "extracted_pdf": "files/bylaws/2025-29.pdf",
+      "extracted_text": "files/bylaws/text/2025-29.txt",
+      "extracted_from": {
+        "meeting_date": "2025-10-07",
+        "pages": [
+          31,
+          32
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-28",
@@ -800,21 +920,41 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-October-7-2025.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-October-7-2025.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-28__4d6c2b59.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-28__4d6c2b59.pdf",
+      "extracted_pdf": "files/bylaws/2025-28.pdf",
+      "extracted_text": "files/bylaws/text/2025-28.txt",
+      "extracted_from": {
+        "meeting_date": "2025-10-07",
+        "pages": [
+          25,
+          26
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-27",
       "year": 2025,
       "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Lot 3, Concession 19 designated as Part 1 on Plan 42R22637, in the Township of Nipissing, District of Parry Sound",
       "date_passed": "2025-10-07",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-27.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2025-10-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-October-7-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-October-7-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-October-7-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-27.pdf",
+      "extracted_text": "files/bylaws/text/2025-27.txt",
+      "extracted_from": {
+        "meeting_date": "2025-10-07",
+        "pages": [
+          19,
+          19
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-26",
@@ -902,7 +1042,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-July-15-2025.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-July-15-2025.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-21-Special-Zone-21-22-Ponderosa-Road__48891a51.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-21-Special-Zone-21-22-Ponderosa-Road__48891a51.pdf",
+      "extracted_pdf": "files/bylaws/2025-21.pdf",
+      "extracted_text": "files/bylaws/text/2025-21.txt",
+      "extracted_from": {
+        "meeting_date": "2025-07-15",
+        "pages": [
+          23,
+          25
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-20",
@@ -965,14 +1115,24 @@
       "year": 2025,
       "title": "Amend By-Law Number 2023-30, cited as the “Trailer Licence By-Law” to correct wording and by-law references",
       "date_passed": "2025-05-13",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-16.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "pending",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2025-05-13",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/May-13-Council-Agenda-Package-updated-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-May-13-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-May-13-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-16.pdf",
+      "extracted_text": "files/bylaws/text/2025-16.txt",
+      "extracted_from": {
+        "meeting_date": "2025-05-13",
+        "pages": [
+          19,
+          19
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-15",
@@ -993,14 +1153,24 @@
       "year": 2025,
       "title": "set tax ratios for municipal purposes for the Year 2025",
       "date_passed": "2025-04-08",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-14.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "pending",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2025-04-08",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-April-8-2025-updated-.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-April-8-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-April-8-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-14.pdf",
+      "extracted_text": "files/bylaws/text/2025-14.txt",
+      "extracted_from": {
+        "meeting_date": "2025-04-08",
+        "pages": [
+          14,
+          14
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-13",
@@ -1035,14 +1205,24 @@
       "year": 2025,
       "title": "appoint an Area Weed Inspector for the Corporation of the Township of Nipissing",
       "date_passed": "2025-03-18",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-11.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "pending",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2025-03-18",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/Agenda-Package-March-18-2025.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-March-18-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-March-18-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-11.pdf",
+      "extracted_text": "files/bylaws/text/2025-11.txt",
+      "extracted_from": {
+        "meeting_date": "2025-03-18",
+        "pages": [
+          8,
+          8
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-10",
@@ -1077,14 +1257,24 @@
       "year": 2025,
       "title": "confirm the proceedings of Council at its meeting held on February 4, 2025",
       "date_passed": "2025-02-04",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-08.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2025-02-04",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/February-4-2025-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-February-4-2025.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-February-4-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-08.pdf",
+      "extracted_text": "files/bylaws/text/2025-08.txt",
+      "extracted_from": {
+        "meeting_date": "2025-02-04",
+        "pages": [
+          46,
+          46
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-07",
@@ -1114,7 +1304,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/January-21-2025-Council-Agenda-Package.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2025/files/Minutes-January-21-2025-1.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-06-Special-Zone-20-707-Sunset-Cove-Road__e37975c9.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2025/By-Law-2025-06-Special-Zone-20-707-Sunset-Cove-Road__e37975c9.pdf",
+      "extracted_pdf": "files/bylaws/2025-06.pdf",
+      "extracted_text": "files/bylaws/text/2025-06.txt",
+      "extracted_from": {
+        "meeting_date": "2025-01-21",
+        "pages": [
+          20,
+          20
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-05",
@@ -1135,56 +1335,96 @@
       "year": 2025,
       "title": "appoint an auditor licensed under the Public Accountancy Act for the Township of Nipissing",
       "date_passed": "2025-01-07",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-04.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/January-7-2025-Council-Package.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-04.pdf",
+      "extracted_text": "files/bylaws/text/2025-04.txt",
+      "extracted_from": {
+        "meeting_date": "2025-01-07",
+        "pages": [
+          11,
+          11
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-03",
       "year": 2025,
       "title": "provide for an Interim Tax Levy",
       "date_passed": "2025-01-07",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-03.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2025-01-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/January-7-2025-Council-Package.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-03.pdf",
+      "extracted_text": "files/bylaws/text/2025-03.txt",
+      "extracted_from": {
+        "meeting_date": "2025-01-07",
+        "pages": [
+          10,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-02",
       "year": 2025,
       "title": "authorize temporary borrowing from time to time to meet current expenditures during the fiscal year ending December 31,",
       "date_passed": "2025-01-07",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-02.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/January-7-2025-Council-Package.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-02.pdf",
+      "extracted_text": "files/bylaws/text/2025-02.txt",
+      "extracted_from": {
+        "meeting_date": "2025-01-07",
+        "pages": [
+          8,
+          9
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2025-01",
       "year": 2025,
       "title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
       "date_passed": "2025-01-07",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2025-01.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2025/files/January-7-2025-Council-Package.pdf",
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "extracted_pdf": "files/bylaws/2025-01.pdf",
+      "extracted_text": "files/bylaws/text/2025-01.txt",
+      "extracted_from": {
+        "meeting_date": "2025-01-07",
+        "pages": [
+          7,
+          7
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-60",
@@ -1247,28 +1487,48 @@
       "year": 2024,
       "title": "enter into an Agreement for a Municipal Facilities Maintenance Contract for the Township of Nipissing",
       "date_passed": "2024-12-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-56.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2024-12-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/December-3-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-56.pdf",
+      "extracted_text": "files/bylaws/text/2024-56.txt",
+      "extracted_from": {
+        "meeting_date": "2024-12-03",
+        "pages": [
+          15,
+          15
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-55",
       "year": 2024,
       "title": "amend the Renumeration Schedule in the Township of Nipissing Pay Equity Plan",
       "date_passed": "2024-12-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-55.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-12-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/December-3-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-55.pdf",
+      "extracted_text": "files/bylaws/text/2024-55.txt",
+      "extracted_from": {
+        "meeting_date": "2024-12-03",
+        "pages": [
+          14,
+          14
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-54",
@@ -1289,28 +1549,48 @@
       "year": 2024,
       "title": "appoint a Deputy Mayor. Shelly Foote is appointed the Deputy Mayor of the Township of Nipissing effective immediately",
       "date_passed": "2024-12-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-53.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-12-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/December-3-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-53.pdf",
+      "extracted_text": "files/bylaws/text/2024-53.txt",
+      "extracted_from": {
+        "meeting_date": "2024-12-03",
+        "pages": [
+          3,
+          3
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-52",
       "year": 2024,
       "title": "appoint a Mayor. Dave Yemm is appointed the Mayor of the Township of Nipissing effective immediately",
       "date_passed": "2024-12-03",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-52.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2024-12-03",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/December-3-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-3-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-52.pdf",
+      "extracted_text": "files/bylaws/text/2024-52.txt",
+      "extracted_from": {
+        "meeting_date": "2024-12-03",
+        "pages": [
+          2,
+          2
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-51",
@@ -1382,7 +1662,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/October-22-2024-Council-Agenda-Package.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-October-22-2024.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2024/By-Law-2024-47-Special-Zone-19-Spanner-Island__eefd6435.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2024/By-Law-2024-47-Special-Zone-19-Spanner-Island__eefd6435.pdf",
+      "extracted_pdf": "files/bylaws/2024-47.pdf",
+      "extracted_text": "files/bylaws/text/2024-47.txt",
+      "extracted_from": {
+        "meeting_date": "2024-10-22",
+        "pages": [
+          9,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-46",
@@ -1423,21 +1713,41 @@
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2024-45-amend-2021-58-Landfill-Establish-and-Regulate.pdf",
           "archived": "files/archive/bylaws/2024/2024-45-amend-2021-58-Landfill-Establish-and-Regulate__2f3302e7.pdf"
         }
-      ]
+      ],
+      "extracted_pdf": "files/bylaws/2024-45.pdf",
+      "extracted_text": "files/bylaws/text/2024-45.txt",
+      "extracted_from": {
+        "meeting_date": "2024-10-01",
+        "pages": [
+          7,
+          7
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-44",
       "year": 2024,
       "title": "appoint a Deputy Treasurer-Office Assistant for the Township of Nipissing",
       "date_passed": "2024-10-01",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-44.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by D. Yemm",
       "meeting_date": "2024-10-01",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/October-1-2024-Council-Agenda-Package-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-October-1-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-October-1-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-44.pdf",
+      "extracted_text": "files/bylaws/text/2024-44.txt",
+      "extracted_from": {
+        "meeting_date": "2024-10-01",
+        "pages": [
+          2,
+          2
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-43",
@@ -1472,14 +1782,24 @@
       "year": 2024,
       "title": "adopt Municipal Position Descriptions for municipal staff positions for the Township of Nipissing",
       "date_passed": "2024-09-17",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-41.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2024-09-17",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/Septrmber-17-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-September-17-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-September-17-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-41.pdf",
+      "extracted_text": "files/bylaws/text/2024-41.txt",
+      "extracted_from": {
+        "meeting_date": "2024-09-17",
+        "pages": [
+          16,
+          34
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-40",
@@ -1530,14 +1850,24 @@
       "year": 2024,
       "title": "adopt a policy to establish procedures and practices for the investment of municipal funds",
       "date_passed": "2024-08-13",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-37.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-08-13",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/Council-Agenda-Package-August-13-2024-1.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-August-13-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-August-13-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-37.pdf",
+      "extracted_text": "files/bylaws/text/2024-37.txt",
+      "extracted_from": {
+        "meeting_date": "2024-08-13",
+        "pages": [
+          5,
+          27
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-36",
@@ -1558,14 +1888,24 @@
       "year": 2024,
       "title": "enter into a Municipal Funding Agreement in order to access the Canada Community-Building Fund",
       "date_passed": "2024-07-16",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-35.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-07-16",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/July-16-2024-Council-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-July-16-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-July-16-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-35.pdf",
+      "extracted_text": "files/bylaws/text/2024-35.txt",
+      "extracted_from": {
+        "meeting_date": "2024-07-16",
+        "pages": [
+          19,
+          19
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-34",
@@ -1581,7 +1921,17 @@
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/July-16-2024-Council-Package.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-July-16-2024.pdf",
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2024/By-Law-2024-34__80b2a7fb.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2024/By-Law-2024-34__80b2a7fb.pdf",
+      "extracted_pdf": "files/bylaws/2024-34.pdf",
+      "extracted_text": "files/bylaws/text/2024-34.txt",
+      "extracted_from": {
+        "meeting_date": "2024-07-16",
+        "pages": [
+          9,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-33",
@@ -1611,7 +1961,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2024/2024-33-User-Fees__35803755.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2024/2024-33-User-Fees__35803755.pdf",
+      "extracted_pdf": "files/bylaws/2024-33.pdf",
+      "extracted_text": "files/bylaws/text/2024-33.txt",
+      "extracted_from": {
+        "meeting_date": "2024-07-16",
+        "pages": [
+          4,
+          8
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-32",
@@ -1632,28 +1992,48 @@
       "year": 2024,
       "title": "confirm the proceedings of Council at its meeting held on June 4, 2024. Carried",
       "date_passed": "2024-06-04",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-31.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2024-06-04",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/June-4-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-June-4-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-June-4-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-31.pdf",
+      "extracted_text": "files/bylaws/text/2024-31.txt",
+      "extracted_from": {
+        "meeting_date": "2024-06-04",
+        "pages": [
+          27,
+          27
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-30",
       "year": 2024,
       "title": "authorize the entering into and execution of an Automatic Aid Agreement between the Township of Nipissing and the Municipality of Powassan",
       "date_passed": "2024-06-04",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-30.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2024-06-04",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/June-4-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-June-4-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-June-4-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-30.pdf",
+      "extracted_text": "files/bylaws/text/2024-30.txt",
+      "extracted_from": {
+        "meeting_date": "2024-06-04",
+        "pages": [
+          9,
+          9
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-29",
@@ -1702,28 +2082,48 @@
       "year": 2024,
       "title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
       "date_passed": "2024-05-14",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-26.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2024-05-14",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/May-14-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-May-14-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-May-14-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-26.pdf",
+      "extracted_text": "files/bylaws/text/2024-26.txt",
+      "extracted_from": {
+        "meeting_date": "2024-05-14",
+        "pages": [
+          39,
+          39
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-25",
       "year": 2024,
       "title": "adopt the Municipal Position Descriptions for municipal staff positions for the Township of Nipissing",
       "date_passed": "2024-05-14",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-25.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by D. Yemm",
       "meeting_date": "2024-05-14",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/May-14-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-May-14-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-May-14-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-25.pdf",
+      "extracted_text": "files/bylaws/text/2024-25.txt",
+      "extracted_from": {
+        "meeting_date": "2024-05-14",
+        "pages": [
+          15,
+          38
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-24",
@@ -2027,7 +2427,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2024/2024-07-1__add0a283.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2024/2024-07-1__add0a283.pdf",
+      "extracted_pdf": "files/bylaws/2024-07.pdf",
+      "extracted_text": "files/bylaws/text/2024-07.txt",
+      "extracted_from": {
+        "meeting_date": "2024-02-06",
+        "pages": [
+          4,
+          8
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-06",
@@ -2092,28 +2502,48 @@
       "year": 2024,
       "title": "appoint an Emergency Management Program Committee for the Township of Nipissing",
       "date_passed": "2024-01-02",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-02.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by D. Yemm, Seconded by T. Butler",
       "meeting_date": "2024-01-02",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/January-2-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-January-2-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-January-2-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-02.pdf",
+      "extracted_text": "files/bylaws/text/2024-02.txt",
+      "extracted_from": {
+        "meeting_date": "2024-01-02",
+        "pages": [
+          11,
+          11
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2024-01",
       "year": 2024,
       "title": "provide for an Interim Tax Levy",
       "date_passed": "2024-01-02",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-01.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": null,
       "meeting_date": "2024-01-02",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/January-2-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-January-2-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-January-2-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-01.pdf",
+      "extracted_text": "files/bylaws/text/2024-01.txt",
+      "extracted_from": {
+        "meeting_date": "2024-01-02",
+        "pages": [
+          10,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2023-51",
@@ -2204,14 +2634,24 @@
       "year": 2023,
       "title": "authorize temporary borrowing from time to time to meet current expenditures during the fiscal year ending December 31, 2024",
       "date_passed": "2023-12-05",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2023-45.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by S. Foote",
       "meeting_date": "2023-12-05",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2023/12/Council-Package-December-5-2023.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-December-5-2023.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-December-5-2023.pdf",
+      "extracted_pdf": "files/bylaws/2023-45.pdf",
+      "extracted_text": "files/bylaws/text/2023-45.txt",
+      "extracted_from": {
+        "meeting_date": "2023-12-05",
+        "pages": [
+          19,
+          20
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2023-44",
@@ -2344,14 +2784,24 @@
       "year": 2023,
       "title": "deem part of Registered Plan 42M592 in the Township of Nipissing not to be a part of a Registered Plan of Subdivision for the purposes of Section 50(4) of the Planning Act",
       "date_passed": "2023-07-11",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2023-35.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by D. Yemm, Seconded by T. Butler",
       "meeting_date": "2023-07-11",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2023/07/July-11-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-July-11-2023.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2023/files/Minutes-July-11-2023.pdf",
+      "extracted_pdf": "files/bylaws/2023-35.pdf",
+      "extracted_text": "files/bylaws/text/2023-35.txt",
+      "extracted_from": {
+        "meeting_date": "2023-07-11",
+        "pages": [
+          10,
+          10
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2023-34",
@@ -2602,7 +3052,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2023/2023-21__e34d4c2f.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2023/2023-21__e34d4c2f.pdf",
+      "extracted_pdf": "files/bylaws/2023-21.pdf",
+      "extracted_text": "files/bylaws/text/2023-21.txt",
+      "extracted_from": {
+        "meeting_date": "2023-03-21",
+        "pages": [
+          4,
+          12
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2023-20",
@@ -2694,7 +3154,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2023/2023-15__efb7eae8.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2023/2023-15__efb7eae8.pdf",
+      "extracted_pdf": "files/bylaws/2023-15.pdf",
+      "extracted_text": "files/bylaws/text/2023-15.txt",
+      "extracted_from": {
+        "meeting_date": "2023-02-21",
+        "pages": [
+          15,
+          34
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2023-14",
@@ -3246,7 +3716,17 @@
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/09/Minutes-September-20-2022.pdf",
       "summary": null,
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2022/Removal-of-Holding-H-Symbol-2675-Highway-654__1f111dab.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2022/Removal-of-Holding-H-Symbol-2675-Highway-654__1f111dab.pdf",
+      "extracted_pdf": "files/bylaws/2022-44.pdf",
+      "extracted_text": "files/bylaws/text/2022-44.txt",
+      "extracted_from": {
+        "meeting_date": "2022-09-20",
+        "pages": [
+          4,
+          5
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2022-43",
@@ -3300,7 +3780,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2022/2022-42__25322325.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2022/2022-42__25322325.pdf",
+      "extracted_pdf": "files/bylaws/2022-42.pdf",
+      "extracted_text": "files/bylaws/text/2022-42.txt",
+      "extracted_from": {
+        "meeting_date": "2022-09-20",
+        "pages": [
+          11,
+          19
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2022-41",
@@ -3317,14 +3807,24 @@
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/09/Minutes-September-6-2022.pdf",
       "summary": null,
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2022/ZBA-2022-41-Duncan-Lake__57acb82f.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2022/ZBA-2022-41-Duncan-Lake__57acb82f.pdf",
+      "extracted_pdf": "files/bylaws/2022-41.pdf",
+      "extracted_text": "files/bylaws/text/2022-41.txt",
+      "extracted_from": {
+        "meeting_date": "2022-09-06",
+        "pages": [
+          13,
+          14
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2022-40",
       "year": 2022,
       "title": "adopt Amendment No. 1 to the Official Plan for the Township of Nipissing",
       "date_passed": "2022-09-06",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2022-40.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -3332,7 +3832,17 @@
       "meeting_date": "2022-09-06",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2022/09/September-6-Council-Meeting-Package.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/09/Minutes-September-6-2022.pdf",
-      "summary": null
+      "summary": null,
+      "extracted_pdf": "files/bylaws/2022-40.pdf",
+      "extracted_text": "files/bylaws/text/2022-40.txt",
+      "extracted_from": {
+        "meeting_date": "2022-09-06",
+        "pages": [
+          5,
+          6
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2022-39",
@@ -3374,7 +3884,17 @@
         }
       ],
       "pdf_source": "township_site",
-      "pdf_url_archived": "files/archive/bylaws/2022/2022-38__63f3d245.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2022/2022-38__63f3d245.pdf",
+      "extracted_pdf": "files/bylaws/2022-38.pdf",
+      "extracted_text": "files/bylaws/text/2022-38.txt",
+      "extracted_from": {
+        "meeting_date": "2022-08-16",
+        "pages": [
+          8,
+          17
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2022-34",
