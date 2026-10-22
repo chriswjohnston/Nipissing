@@ -262,6 +262,9 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .doc-gone{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;min-height:48px;padding:10px 14px;border:1px dashed var(--rule);border-radius:var(--radius);color:var(--muted)}
 .docs-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule-soft)}
 .docs-section-title{font-size:15px;font-weight:700;margin-bottom:10px}
+.docs-section:first-child{margin-top:0;padding-top:0;border-top:0}
+.meta-value a{text-decoration:none}
+.meta-value a:hover{text-decoration:underline}
 .docs-key{font-size:13.5px;color:var(--muted);margin-top:12px}
 
 /* Summaries (meeting detail) */
