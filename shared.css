@@ -334,7 +334,6 @@ a.amend-mark:hover{text-decoration:underline}
 .prose{font-family:var(--serif);font-size:18px;line-height:1.75;max-width:68ch}
 .prose h2{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.25;margin:40px 0 10px}
 .prose h2:first-child{margin-top:0}
-.prose h3{font-family:var(--sans);font-size:17px;font-weight:700;margin:22px 0 4px}
 .prose p{margin:12px 0}
 .prose ul{margin:12px 0 12px 24px}
 .prose li{margin:6px 0}
