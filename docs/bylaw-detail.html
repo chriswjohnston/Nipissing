@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022k">
+<link rel="stylesheet" href="shared.css?v=20261022l">
 </head>
 <body>
 
@@ -113,7 +113,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022k"></script>
+<script src="shared.js?v=20261022l"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -266,10 +266,11 @@ async function init(){
     const cons = (await (await fetch('data/canonical/consolidations.json', {cache: 'no-cache'})).json()).consolidations || {};
     const law = Object.values(cons).find(l => l.principal === bylaw.number || (l.amendments || []).includes(bylaw.number));
     if (law && !bylaw.repealed_by) {
-      const role = law.principal === bylaw.number
-        ? `This by-law has been amended ${law.amendments.length} time${law.amendments.length === 1 ? '' : 's'}.`
-        : `This by-law amends ${law.name} (By-law ${law.principal}).`;
-      banner.textContent = `${role} Read ${law.name} as it stands today, with every change applied.`;
+      const n = (law.amendments || []).length;
+      banner.textContent = law.principal !== bylaw.number
+        ? `This by-law amends ${law.name} (By-law ${law.principal}). Read ${law.name} as it stands today, with every change applied.`
+        : n ? `This by-law has been amended ${n} time${n === 1 ? '' : 's'}. Read ${law.name} as it stands today, with every change applied.`
+        : `This by-law is in effect as ${law.name}. Read what it does and its full text.`;
       banner.href = `law.html?id=${encodeURIComponent(law.id)}`;
       banner.style.display = 'block';
     }
@@ -316,11 +317,15 @@ async function init(){
   const mtg = sourceMeeting(bylaw);
   const minutes = docUrl(mtg, 'minutes') || bylaw.minutes_url;
   const pkg = docUrl(mtg, 'package') || bylaw.agenda_package_url;
-  // "Earlier upload" entries are the same by-law re-uploaded to the township's
-  // site (a re-scan, or a copy missing its schedules). They stay in the
-  // archive data but add nothing for a reader, so they aren't listed.
+  // "Earlier upload" / "Earlier version" entries are the same by-law under an
+  // older file name on the township's site (a re-scan, a copy missing its
+  // schedules, or the file before the 2026 relaunch). The by-law above is
+  // the copy to read, so they stay in the archive data but aren't listed.
+  // An earlier township consolidation is a different document: listed when
+  // a copy was kept, left out when the township removed it first.
   (bylaw.extra_docs || []).forEach(d => {
-    if (!d || !d.url || /^Earlier upload/i.test(d.label || '')) return;
+    if (!d || !d.url || /^Earlier (upload|version)/i.test(d.label || '')) return;
+    if (/^Earlier township consolidation/i.test(d.label || '') && !d.archived) return;
     // Removed by the township, and no copy survives anywhere: say so
     // instead of offering a dead link.
     if (d.gone && !d.archived) {

@@ -211,7 +211,7 @@
       "year": 2026,
       "title": "amend Procedure By-Law 2022-34",
       "date_passed": "2026-06-16",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-26.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -219,7 +219,17 @@
       "meeting_date": "2026-06-16",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Agenda-Package-June-16-2026.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/06/Minutes-June-16-2026.pdf",
-      "summary": null
+      "summary": null,
+      "extracted_pdf": "files/bylaws/2026-26.pdf",
+      "extracted_text": "files/bylaws/text/2026-26.txt",
+      "extracted_from": {
+        "meeting_date": "2026-06-16",
+        "pages": [
+          19,
+          19
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-25",
@@ -324,7 +334,17 @@
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-20-User-Fees-1.pdf",
           "archived": "files/archive/bylaws/2026/2026-20-User-Fees-1__e01de582.pdf"
         }
-      ]
+      ],
+      "extracted_pdf": "files/bylaws/2026-20.pdf",
+      "extracted_text": "files/bylaws/text/2026-20.txt",
+      "extracted_from": {
+        "meeting_date": "2026-05-05",
+        "pages": [
+          9,
+          13
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-19",
@@ -352,7 +372,17 @@
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/2026-19-Fishing-from-Public-Beaches-Bylaw-1.pdf",
           "archived": "files/archive/bylaws/2026/2026-19-Fishing-from-Public-Beaches-Bylaw-1__a0c1a7fb.pdf"
         }
-      ]
+      ],
+      "extracted_pdf": "files/bylaws/2026-19.pdf",
+      "extracted_text": "files/bylaws/text/2026-19.txt",
+      "extracted_from": {
+        "meeting_date": "2026-05-05",
+        "pages": [
+          4,
+          6
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-18",
@@ -374,7 +404,7 @@
       "year": 2026,
       "title": "appoint a Compliance Audit Committee under the Municipal Elections Act for the Corporation of the Township of Nipissing",
       "date_passed": "2026-04-21",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2026-17.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
@@ -382,7 +412,17 @@
       "meeting_date": "2026-04-21",
       "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Agenda-Package-April-21-2026.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/04/Minutes-April-21-2026.pdf",
-      "summary": null
+      "summary": null,
+      "extracted_pdf": "files/bylaws/2026-17.pdf",
+      "extracted_text": "files/bylaws/text/2026-17.txt",
+      "extracted_from": {
+        "meeting_date": "2026-04-21",
+        "pages": [
+          17,
+          18
+        ],
+        "method": "ocr"
+      }
     },
     {
       "number": "2026-16",

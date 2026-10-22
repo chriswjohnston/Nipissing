@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022k">
+<link rel="stylesheet" href="shared.css?v=20261022l">
 </head>
 <body>
 
@@ -67,7 +67,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022k"></script>
+<script src="shared.js?v=20261022l"></script>
 <script>
 const CLOSED_REASONS = {
   '2a': 'Security of municipal property', '2b': 'Personal matters about an identifiable person',
@@ -94,10 +94,33 @@ const todayIso = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).t
 async function init(){
   await loadAllData();
   try { TERMS = (await (await fetch('data/canonical/terms.json', {cache: 'no-cache'})).json()).terms || []; } catch { TERMS = []; }
+  TERMS = withNextTerm(TERMS);
   document.getElementById('loading').hidden = true;
   const want = new URL(location.href).searchParams.get('id');
   const current = TERMS.find(t => t.start <= todayIso && todayIso <= t.end) || TERMS.find(t => !t.upcoming);
   show((TERMS.find(t => t.id === want) || current || TERMS[0]).id);
+}
+
+// A term is "next" until the day it starts, whatever the data says, so the
+// tabs move on by themselves on November 15. Once the newest term in
+// terms.json has started, the one after it is added here (start Nov 15,
+// election on the fourth Monday of October, as the Municipal Elections Act
+// sets), so there is always a "next" tab. terms.json only needs the facts:
+// results, changes and the plan, added by hand.
+function fourthMondayOfOctober(y){
+  const first = new Date(y, 9, 1).getDay();
+  return `${y}-10-${String(1 + ((8 - first) % 7) + 21).padStart(2, '0')}`;
+}
+function withNextTerm(list){
+  list = list.map(t => ({...t, upcoming: todayIso < t.start}));
+  let newest = [...list].sort((a, b) => b.start.localeCompare(a.start))[0];
+  while (newest && !newest.upcoming) {
+    const y = Number(newest.end.slice(0, 4));
+    newest = { id: `${y}-${y + 4}`, label: `${y}–${y + 4} Council`, start: `${y}-11-15`, end: `${y + 4}-11-14`,
+      upcoming: todayIso < `${y}-11-15`, election: { date: fourthMondayOfOctober(y), note: 'Results will be added after the election.' } };
+    list.unshift(newest);
+  }
+  return list.sort((a, b) => b.start.localeCompare(a.start));
 }
 
 function show(id){
@@ -114,7 +137,27 @@ function show(id){
 function upcomingHtml(t){
   return `<section class="filed"><h2 class="filed-tab">${escHtml(t.label)}</h2><div class="filed-body prose">
     <p>The municipal election is on ${escHtml(fmt(t.election.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}. The new council’s term begins ${escHtml(fmt(t.start))}.</p>
-    <p>${escHtml(t.election.note || '')}</p></div></section>`;
+    ${(t.election.council || []).length ? '' : `<p>${escHtml(t.election.note || '')}</p>`}</div></section>
+    ${(t.election.council || []).length ? electionHtml(t.election) : ''}`;
+}
+
+function electionHtml(e){
+  const max = Math.max(...(e.council || []).map(c => c.votes || 0), 1);
+  const turnout = e.voters ? ` ${n(e.voters)} of ${n(e.eligible_voters)} eligible voters cast a ballot, a turnout of ${e.turnout_pct}%.` : '';
+  return `<section class="term-section" aria-labelledby="election">
+      <h2 class="section-title" id="election">The election</h2>
+      <p class="section-note">${escHtml(fmt(e.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}.${turnout}${e.vote_method ? ` ${escHtml(e.vote_method)}.` : ''}</p>
+      <p class="mayor-line"><span class="sub-title">Mayor</span>${(e.head_of_council || []).map(c => `<span><strong>${escHtml(c.name)}</strong>, ${c.acclaimed ? 'acclaimed' : `${n(c.votes)} votes`}${c.incumbent ? ' (incumbent)' : ''}</span>`).join('')}</p>
+      <h3 class="sub-title">Council, ${e.seats} seats</h3>
+      <ol class="vote-list">${(e.council || []).map(c => `
+        <li class="${c.elected ? 'is-elected' : ''}">
+          <span class="vote-name">${escHtml(c.name)}${c.incumbent ? '<span class="vote-tag">Incumbent</span>' : ''}</span>
+          <span class="vote-bar" aria-hidden="true"><span style="width:${Math.round((c.votes / max) * 100)}%"></span></span>
+          <span class="vote-num">${n(c.votes)}</span>
+          <span class="vote-result">${c.elected ? 'Elected' : ''}</span>
+        </li>`).join('')}</ol>
+      ${e.source ? `<p class="docs-key">Source: ${e.source.url ? `<a href="${escHtml(e.source.url)}" target="_blank" rel="noopener">${escHtml(e.source.label)}</a>` : escHtml(e.source.label)}</p>` : ''}
+    </section>`;
 }
 
 function stats(t){
@@ -191,24 +234,7 @@ function termHtml(t){
     </section>`);
   }
 
-  if (t.election) {
-    const e = t.election;
-    const max = Math.max(...(e.council || []).map(c => c.votes || 0), 1);
-    parts.push(`<section class="term-section" aria-labelledby="election">
-      <h2 class="section-title" id="election">The election</h2>
-      <p class="section-note">${escHtml(fmt(e.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}. ${n(e.voters)} of ${n(e.eligible_voters)} eligible voters cast a ballot, a turnout of ${e.turnout_pct}%. ${escHtml(e.vote_method || '')}.</p>
-      <p class="mayor-line"><span class="sub-title">Mayor</span>${(e.head_of_council || []).map(c => `<span><strong>${escHtml(c.name)}</strong>, ${c.acclaimed ? 'acclaimed' : `${n(c.votes)} votes`}${c.incumbent ? ' (incumbent)' : ''}</span>`).join('')}</p>
-      <h3 class="sub-title">Council, ${e.seats} seats</h3>
-      <ol class="vote-list">${(e.council || []).map(c => `
-        <li class="${c.elected ? 'is-elected' : ''}">
-          <span class="vote-name">${escHtml(c.name)}${c.incumbent ? '<span class="vote-tag">Incumbent</span>' : ''}</span>
-          <span class="vote-bar" aria-hidden="true"><span style="width:${Math.round((c.votes / max) * 100)}%"></span></span>
-          <span class="vote-num">${n(c.votes)}</span>
-          <span class="vote-result">${c.elected ? 'Elected' : ''}</span>
-        </li>`).join('')}</ol>
-      ${e.source ? `<p class="docs-key">Source: ${e.source.url ? `<a href="${escHtml(e.source.url)}" target="_blank" rel="noopener">${escHtml(e.source.label)}</a>` : escHtml(e.source.label)}</p>` : ''}
-    </section>`);
-  }
+  if (t.election && (t.election.council || []).length) parts.push(electionHtml(t.election));
 
   if ((t.changes || []).length) {
     parts.push(`<section class="term-section" aria-labelledby="changes">

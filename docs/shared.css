@@ -295,6 +295,13 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .amend-mark.deleted{color:var(--warn);background:var(--warn-tint);border-color:var(--warn-rule)}
 .amend-mark.unclear{color:var(--special);background:var(--special-tint);border-color:var(--special-rule)}
 a.amend-mark:hover{text-decoration:underline}
+.law-note-extra{display:block;margin-top:8px;color:var(--ink-2)}
+.law-outline{list-style:none;margin:0;padding:0;counter-reset:part}
+.law-outline li{display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:6px 24px;padding:14px 0;border-top:1px solid var(--rule);font-size:16px;line-height:1.5}
+.law-outline li:first-child{border-top:0}
+.law-outline strong{font-family:var(--serif);font-weight:600;color:var(--ink)}
+.law-outline span{color:var(--ink-2)}
+@media (max-width:640px){.law-outline li{grid-template-columns:1fr}}
 .law-reader-notes{margin-top:32px;padding-top:20px;border-top:1px solid var(--rule)}
 .law-reader-notes ul{margin:6px 0 0 20px;color:var(--ink-2)}
 .law-reader-notes li{margin:6px 0}
