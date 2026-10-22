@@ -362,20 +362,22 @@ a.amend-mark:hover{text-decoration:underline}
 .find-law{display:flex;flex-direction:column;gap:6px;max-width:520px;margin-top:28px}
 
 /* ── Decisions ─────────────────────────────────────────────────────── */
-.decision-groups{display:flex;flex-direction:column;gap:44px}
-.decision-group-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:10px}
-.decision-group-head h2{font-family:var(--serif);font-size:26px;font-weight:600}
-.decision-group-head .group-note{margin-left:auto;color:var(--muted);font-size:14.5px}
+.decision-groups{display:flex;flex-direction:column;gap:48px}
+.decision-group-head{margin-bottom:12px}
+.decision-group-head h2{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.2}
+.decision-group-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;margin-top:4px;font-size:15px}
+.decision-group-sub a{font-weight:600;text-decoration:none}
+.decision-group-sub a:hover{text-decoration:underline}
+.group-note{color:var(--muted)}
 .decision-list{list-style:none;border-top:2px solid var(--ink)}
-.decision-row{display:grid;grid-template-columns:136px minmax(0,1fr) 190px;gap:4px 20px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.decision-row{display:grid;grid-template-columns:136px minmax(0,1fr);gap:4px 24px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline}
 .decision-num{font-weight:600;text-decoration:none;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
 .decision-num:hover{text-decoration:underline}
 .decision-main{min-width:0}
-.decision-text{max-width:76ch}
 .decision-main .status-pill{margin-left:8px}
-.decision-meta{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:4px;font-size:14.5px;color:var(--muted)}
+.decision-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 18px;margin-top:6px;font-size:14.5px;color:var(--muted)}
 .decision-meta a{font-weight:600}
-.decision-kind{font-size:14.5px;color:var(--muted)}
+.decision-kind{color:var(--muted)}
 .decision-row.is-routine .decision-text{color:var(--ink-2)}
 .routine-toggle{display:flex;align-items:center;gap:10px;font-size:15px;min-height:32px;cursor:pointer}
 .routine-toggle input{width:20px;height:20px;accent-color:var(--ledger)}
@@ -427,7 +429,6 @@ a.amend-mark:hover{text-decoration:underline}
   .filed-body{padding:20px}
   .record-row{grid-template-columns:minmax(0,1fr)}
   .decision-row{grid-template-columns:minmax(0,1fr)}
-  .decision-kind{order:-1}
   .law-row{grid-template-columns:minmax(0,1fr)}
   .law-row-num{text-align:left}
   .record-date{font-size:14.5px;color:var(--muted)}
