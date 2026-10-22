@@ -153,10 +153,10 @@ function meetingDateObj(meeting){
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
+// Past meetings for the list. Cancelled and postponed meetings stay in,
+// with their badge, so the record shows they were scheduled.
 function isPastMeeting(meeting){
-  if(meeting.cancelled) return false;
   if(meeting.rescheduled) return false;
-  if(meeting.postponed) return false;
   const d = meetingDateObj(meeting);
   if(!d) return false;
   return d < today;
