@@ -3,307 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meeting — Nipissing Township Public Records</title>
-
+<title>Meeting — Nipissing Public Record</title>
+<meta name="description" content="Agenda, minutes, video and a plain-language summary of this meeting.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-.meeting-hero{
-  background:var(--blue);
-  color:#fff;
-  padding:2rem 0 2.2rem;
-  margin-bottom:1.5rem;
-}
-
-.hero-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:0 2rem;
-}
-
-.back-link{
-  display:inline-block;
-  margin-bottom:.8rem;
-  color:#dbe7f3;
-  text-decoration:none;
-  font-size:.9rem;
-}
-
-.back-link:hover{
-  text-decoration:underline;
-}
-
-.hero-kicker{
-  font-size:.7rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  opacity:.75;
-  margin-bottom:.25rem;
-}
-
-.hero-title{
-  font-size:2rem;
-  font-weight:600;
-  line-height:1.2;
-  margin:0;
-  color:#fff;
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5rem;
-  margin-top:1rem;
-}
-
-.hero-btn{
-  display:inline-block;
-  padding:.45rem .7rem;
-  border:1px solid rgba(255,255,255,.35);
-  border-radius:8px;
-  font-size:.8rem;
-  text-decoration:none;
-  color:#fff;
-  background:rgba(255,255,255,.08);
-}
-
-.hero-btn:hover{
-  background:rgba(255,255,255,.18);
-}
-
-.detail-wrap{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  gap:2rem;
-  max-width:1240px;
-  margin:2rem auto;
-  padding:0 2rem;
-}
-
-@media(max-width:900px){
-  .detail-wrap{grid-template-columns:1fr}
-}
-
-.summary-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.5rem;
-}
-
-.summary-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.summary-body{
-  font-size:.95rem;
-  line-height:1.75;
-  color:var(--ink);
-}
-
-.summary-body h1,
-.summary-body h2,
-.summary-body h3,
-.summary-body h4{
-  color:var(--ink);
-  margin:1rem 0 .6rem;
-  line-height:1.25;
-}
-
-.summary-body h1{font-size:1.65rem}
-.summary-body h2{font-size:1.35rem}
-.summary-body h3{font-size:1.05rem}
-.summary-body h4{font-size:.95rem}
-
-.summary-body p{
-  margin:.65rem 0;
-}
-
-.summary-body ul{
-  margin:.65rem 0 .9rem 1.25rem;
-}
-
-.summary-body li{
-  margin:.3rem 0;
-}
-
-.summary-body hr{
-  border:none;
-  border-top:1px solid var(--rule);
-  margin:1rem 0;
-}
-
-.side-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.2rem;
-  margin-bottom:1rem;
-}
-
-.side-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.meta-row{
-  margin-bottom:.9rem;
-  padding-bottom:.9rem;
-  border-bottom:1px solid var(--rule);
-}
-
-.meta-row:last-child{
-  margin-bottom:0;
-  padding-bottom:0;
-  border-bottom:none;
-}
-
-.meta-label{
-  font-size:.68rem;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  letter-spacing:.05em;
-  margin-bottom:.25rem;
-}
-
-.meta-value{
-  font-size:.95rem;
-  font-weight:600;
-  color:var(--ink);
-}
-
-.docs-section{
-  margin-top:1rem;
-  padding-top:1rem;
-  border-top:1px solid var(--rule);
-}
-
-.docs-section-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.6rem;
-}
-
-.docs-stack{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-
-.doc-link{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  padding:.7rem .8rem;
-  border:1px solid var(--rule);
-  border-radius:10px;
-  text-decoration:none;
-  color:var(--ink);
-  font-size:.88rem;
-  font-weight:500;
-  background:var(--white);
-  transition:.15s;
-}
-
-.doc-link:hover{
-  background:var(--blue-lt);
-  border-color:var(--blue);
-}
-
-.doc-link svg{
-  width:16px;
-  height:16px;
-  flex-shrink:0;
-}
-
-.empty-note{
-  color:var(--ink-4);
-  font-size:.9rem;
-  font-style:italic;
-}
-</style>
 </head>
-
 <body>
 
-<nav>
-  <nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Meetings</a></li>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings" aria-current="page">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <a href="council.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All meetings</a>
+    <p class="page-kicker" id="hero-kicker"></p>
+    <h1 id="hero-title"></h1>
+    <p class="page-lede" id="hero-sub"></p>
+    <div class="page-actions" id="hero-actions"></div>
+  </div>
+
+  <div class="wrap detail-wrap">
+    <section class="filed" aria-labelledby="summary-tab">
+      <h2 class="filed-tab" id="summary-tab">Summary</h2>
+      <div class="filed-body">
+        <div class="summary-body" id="summary-content"></div>
+        <p class="ai-note">Written by AI from the minutes. The minutes are the official record.</p>
+      </div>
+    </section>
+
+    <aside class="detail-side">
+      <section class="side-card" aria-labelledby="docs-title">
+        <h2 class="side-title" id="docs-title">Documents</h2>
+        <div class="docs-stack" id="main-docs"></div>
+        <div id="extra-docs-wrap"></div>
+        <p class="docs-key">“Copy kept” means this archive holds its own copy, so the link keeps working if the township removes the original.</p>
+      </section>
+      <section class="side-card" aria-labelledby="details-title">
+        <h2 class="side-title" id="details-title">Details</h2>
+        <div class="meta-row"><span class="meta-label">Council or board</span><span class="meta-value" id="meta-body"></span></div>
+        <div class="meta-row"><span class="meta-label">Date</span><span class="meta-value" id="meta-date"></span></div>
+        <div class="meta-row"><span class="meta-label">Meeting type</span><span class="meta-value" id="meta-type"></span></div>
+        <span id="meta-year" hidden></span>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
     </ul>
   </div>
-</nav>
-
-<section class="meeting-hero">
-  <div class="hero-inner">
-    <a href="council.html" class="back-link">← Back to Meetings</a>
-    <div class="hero-kicker" id="hero-kicker"></div>
-    <h1 class="hero-title" id="hero-title"></h1>
-    <div class="hero-actions" id="hero-actions"></div>
-  </div>
-</section>
-
-<main class="detail-wrap">
-
-  <div>
-    <div class="summary-card">
-      <div class="summary-title">Summary</div>
-      <div class="summary-body" id="summary-content"></div>
-    </div>
-  </div>
-
-  <div>
-    <div class="side-card">
-      <div class="side-title">Meeting Details</div>
-
-      <div class="meta-row">
-        <div class="meta-label">Date</div>
-        <div class="meta-value" id="meta-date"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Type</div>
-        <div class="meta-value" id="meta-type"></div>
-      </div>
-
-      <div class="meta-row">
-        <div class="meta-label">Year</div>
-        <div class="meta-value" id="meta-year"></div>
-      </div>
-    </div>
-
-    <div class="side-card">
-      <div class="side-title">Documents &amp; Links</div>
-      <div class="docs-stack" id="main-docs"></div>
-      <div id="extra-docs-wrap"></div>
-    </div>
-  </div>
-
-</main>
+</footer>
 
 <script src="shared.js"></script>
 
@@ -332,11 +117,12 @@ function icon(){
 }
 
 function buildDoc(label, url){
-  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="doc-link">${icon()}<span>${esc(label)}</span></a>`;
+  return docLinkHtml(label, url);
 }
 
-function buildHeroBtn(label, url){
-  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="hero-btn">${esc(label)}</a>`;
+function buildHeroBtn(label, url, primary){
+  const kept = isKeptUrl(url) ? keptStamp() : '';
+  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="btn${primary ? ' btn-primary' : ''}">${esc(label)}</a>`;
 }
 
 function inlineMarkdown(text){
@@ -348,7 +134,7 @@ function inlineMarkdown(text){
 
 function renderSummaryMarkdown(md){
   if(!md || !String(md).trim()){
-    return '<p class="empty-note">No summary available.</p>';
+    return '<p class="empty-note">No summary yet. One is added once the minutes are posted.</p>';
   }
 
   const lines = String(md).replace(/\r\n/g, '\n').split('\n');
@@ -431,7 +217,10 @@ async function init(){
     || candidates[0];
 
   if(!meeting){
-    document.body.innerHTML = '<p style="padding:2rem">Meeting not found</p>';
+    document.getElementById('hero-title').textContent = 'Meeting not found';
+    document.getElementById('hero-kicker').textContent = '';
+    document.querySelector('.detail-wrap').innerHTML =
+      '<div class="state-msg"><strong>We couldn’t find that meeting.</strong><p>It may have been listed under another date. <a href="council.html">Browse all meetings</a>.</p></div>';
     return;
   }
 
@@ -440,11 +229,18 @@ async function init(){
   const typeLabel = (meeting.meeting_type && meeting.meeting_type !== 'Board')
     ? meeting.meeting_type : '';
 
-  document.getElementById('hero-kicker').textContent =
-    (typeLabel ? `${typeLabel} · ` : '') + bodyLabel;
+  const kicker = document.getElementById('hero-kicker');
+  kicker.textContent = bodyLabel;
+  kicker.classList.add(bodyColorClass(meeting));
+  const badge = meetingBadge(meeting);
+  if(badge) kicker.insertAdjacentHTML('beforeend', ` <span class="meeting-badge ${badge.cls}">${badge.text}</span>`);
 
-  document.getElementById('hero-title').textContent =
-    meeting.display_date || meeting.date;
+  const when = new Date(`${meeting.date}T00:00:00`);
+  document.getElementById('hero-title').textContent = Number.isNaN(when.getTime())
+    ? (meeting.display_date || meeting.date)
+    : when.toLocaleDateString('en-CA', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+  document.getElementById('hero-sub').textContent = typeLabel ? `${typeLabel} meeting` : '';
+  document.title = `${bodyLabel}, ${meeting.display_date || meeting.date} — Nipissing Public Record`;
 
   // Resolve each document once (archived-first, with the live URL as fallback).
   // Agendas are only surfaced from 2026 on.
@@ -453,31 +249,30 @@ async function init(){
   const packageUrl = docUrl(meeting, 'package');
 
   const actions = [];
-  if(agendaUrl) actions.push(buildHeroBtn('Agenda', agendaUrl));
-  if(minutesUrl) actions.push(buildHeroBtn('Minutes', minutesUrl));
-  if(packageUrl) actions.push(buildHeroBtn('Agenda Package', packageUrl));
-  if(meeting.video_url) actions.push(buildHeroBtn('Video Recording', meeting.video_url));
+  if(minutesUrl) actions.push(buildHeroBtn('Read the minutes', minutesUrl, true));
+  if(meeting.video_url) actions.push(buildHeroBtn('Watch the video', meeting.video_url, !minutesUrl));
   document.getElementById('hero-actions').innerHTML = actions.join('');
 
   document.getElementById('summary-content').innerHTML = renderSummaryMarkdown(meeting.summary);
   document.getElementById('meta-date').textContent = meeting.display_date || '';
-  document.getElementById('meta-type').textContent = meeting.meeting_type || 'Meeting';
+  document.getElementById('meta-type').textContent = meeting.meeting_type && meeting.meeting_type !== 'Board' ? meeting.meeting_type : 'Regular';
+  document.getElementById('meta-body').textContent = bodyLabel;
   document.getElementById('meta-year').textContent = meeting.year || '';
 
   const main = [];
   if(agendaUrl) main.push(buildDoc('Agenda', agendaUrl));
   if(minutesUrl) main.push(buildDoc('Minutes', minutesUrl));
-  if(packageUrl) main.push(buildDoc('Agenda Package', packageUrl));
-  if(meeting.video_url) main.push(buildDoc('Video Recording', meeting.video_url));
+  if(packageUrl) main.push(buildDoc('Agenda package', packageUrl));
+  if(meeting.video_url) main.push(buildDoc('Video', meeting.video_url));
 
   document.getElementById('main-docs').innerHTML =
-    main.length ? main.join('') : '<p class="empty-note">No primary documents available.</p>';
+    main.length ? main.join('') : '<p class="empty-note">The township hasn’t posted documents for this meeting yet.</p>';
 
   const extra = meeting.extra_docs || [];
   if(extra.length){
     document.getElementById('extra-docs-wrap').innerHTML = `
       <div class="docs-section">
-        <div class="docs-section-title">Additional Files</div>
+        <div class="docs-section-title">Other files</div>
         <div class="docs-stack">
           ${extra.map(d => buildDoc(d.label, extraDocUrl(d))).join('')}
         </div>

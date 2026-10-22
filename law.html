@@ -3,400 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>By-Law (as amended) — Nipissing Township Public Records</title>
+<title>Law as amended — Nipissing Public Record</title>
+<meta name="description" content="A Township of Nipissing by-law with all its amendments applied, so you can read the law as it stands.">
+<meta name="theme-color" content="#1E4B3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-
-<style>
-.detail-wrap{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  gap:2rem;
-  max-width:1240px;
-  margin:2rem auto;
-  padding:0 2rem;
-}
-
-@media(max-width:900px){
-  .detail-wrap{grid-template-columns:1fr}
-}
-
-.detail-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.5rem;
-}
-
-.detail-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.bylaw-page-header{
-  background:#1f5682;
-  color:#fff;
-  padding:32px 0 40px;
-  border-bottom:3px solid #c69214;
-}
-
-.bylaw-page-header .header-inner{
-  max-width:1240px;
-  margin:0 auto;
-  padding:0 2rem;
-}
-
-.bylaw-page-header .back-link{
-  display:inline-block;
-  margin-bottom:12px;
-  color:rgba(255,255,255,0.92);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-}
-
-.bylaw-page-header .back-link:hover{
-  text-decoration:underline;
-}
-
-.bylaw-page-header .header-meta{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  flex-wrap:wrap;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.88);
-  margin-bottom:8px;
-  opacity:1;
-}
-
-.bylaw-page-header .header-title{
-  font-size:36px;
-  line-height:1.1;
-  margin:0 0 8px;
-  color:#fff;
-  font-weight:700;
-}
-
-.bylaw-page-header .header-subtitle{
-  font-size:18px;
-  line-height:1.5;
-  color:rgba(255,255,255,0.95);
-  margin-bottom:16px;
-  max-width:920px;
-  opacity:1;
-}
-
-.bylaw-page-header .header-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.bylaw-page-header .header-actions a{
-  display:inline-flex;
-  align-items:center;
-  padding:10px 14px;
-  border:1px solid rgba(255,255,255,0.45);
-  border-radius:10px;
-  color:#fff;
-  text-decoration:none;
-  background:rgba(255,255,255,0.06);
-  font-weight:500;
-}
-
-.bylaw-page-header .header-actions a:hover{
-  background:rgba(255,255,255,0.12);
-}
-
-.bylaw-page-header .header-status{
-  color:rgba(255,255,255,0.92);
-}
-
-.bylaw-icon{
-  width:48px;
-  height:48px;
-  border-radius:10px;
-  background:var(--blue-lt);
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-}
-
-.bylaw-icon svg{
-  width:22px;
-  height:22px;
-}
-
-.bylaw-meta{
-  min-width:0;
-}
-
-.bylaw-number{
-  font-size:.74rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--blue);
-  margin-bottom:.35rem;
-}
-
-.bylaw-name{
-  font-family:var(--font-display, Georgia, serif);
-  font-size:1.65rem;
-  line-height:1.25;
-  color:var(--ink);
-  margin:0 0 .55rem 0;
-}
-
-.bylaw-subtitle{
-  color:var(--ink-3);
-  font-size:.98rem;
-  line-height:1.6;
-  margin-bottom:.9rem;
-}
-
-.meta-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.45rem;
-}
-
-.meta-pill{
-  display:inline-flex;
-  align-items:center;
-  padding:.25rem .55rem;
-  border-radius:8px;
-  border:1px solid var(--rule);
-  background:var(--page);
-  font-size:.78rem;
-  color:var(--ink-3);
-}
-
-.status-pill{
-  font-weight:600;
-}
-
-.status-approved{
-  background:#e8f5ea;
-  border-color:#cde7d3;
-  color:#22743d;
-}
-
-.status-pending{
-  background:#fff6e2;
-  border-color:#ecdca9;
-  color:#9a6d00;
-}
-
-.status-defeated{
-  background:#fdeaea;
-  border-color:#efc8c8;
-  color:#b42318;
-}
-
-.content-block{
-  margin-top:1.25rem;
-}
-
-.content-block h3{
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin:0 0 .65rem 0;
-}
-
-.content-block p{
-  margin:.55rem 0;
-  line-height:1.7;
-  color:var(--ink);
-}
-
-.side-card{
-  background:var(--white);
-  border:1px solid var(--rule);
-  border-radius:14px;
-  padding:1.2rem;
-  margin-bottom:1rem;
-}
-
-.side-title{
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:.9rem;
-}
-
-.meta-row{
-  margin-bottom:.9rem;
-  padding-bottom:.9rem;
-  border-bottom:1px solid var(--rule);
-}
-
-.meta-row:last-child{
-  margin-bottom:0;
-  padding-bottom:0;
-  border-bottom:none;
-}
-
-.meta-label{
-  font-size:.68rem;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  letter-spacing:.05em;
-  margin-bottom:.25rem;
-}
-
-.meta-value{
-  font-size:.95rem;
-  font-weight:600;
-  color:var(--ink);
-}
-
-.docs-stack{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-
-.doc-link{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  padding:.7rem .8rem;
-  border:1px solid var(--rule);
-  border-radius:10px;
-  text-decoration:none;
-  color:var(--ink);
-  font-size:.88rem;
-  font-weight:500;
-  background:var(--white);
-  transition:.15s;
-}
-
-.doc-link:hover{
-  background:var(--blue-lt);
-  border-color:var(--blue);
-}
-
-.doc-link svg{
-  width:16px;
-  height:16px;
-  flex-shrink:0;
-}
-
-.empty-note{
-  color:var(--ink-4);
-  font-size:.9rem;
-  font-style:italic;
-}
-
-/* law.html: one page per law, consolidated */
-.law-notice{background:#fff8e6;border:1px solid #f1d9a6;border-radius:10px;padding:.8rem 1rem;font-size:.85rem;color:#5c4a12;margin:0 0 1.2rem}
-.law-text{font-family:'Source Serif 4',serif;font-size:.98rem;line-height:1.65;color:var(--ink)}
-.law-text h1,.law-text h2,.law-text h3,.law-text h4{font-family:inherit;line-height:1.3;margin:1.4rem 0 .5rem}
-.law-text h1{font-size:1.35rem}.law-text h2{font-size:1.18rem}.law-text h3{font-size:1.04rem}.law-text h4{font-size:.98rem}
-.law-text p{margin:.5rem 0}
-.law-text ul,.law-text ol{margin:.4rem 0 .4rem 1.3rem}
-.law-text table{border-collapse:collapse;width:100%;margin:.8rem 0;font-family:'DM Sans',sans-serif;font-size:.82rem}
-.law-text th,.law-text td{border:1px solid var(--rule);padding:.35rem .5rem;text-align:left;vertical-align:top}
-.law-text th{background:var(--page)}
-.law-table-wrap{overflow-x:auto}
-.amend-mark{display:inline-flex;gap:.35rem;align-items:center;margin:.1rem 0 .6rem;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:600;padding:.15rem .55rem;border-radius:999px;text-decoration:none;border:1px solid}
-.amend-mark.amended{color:#1c4fd7;background:#eef3ff;border-color:#cddbff}
-.amend-mark.deleted{color:#9b2c2c;background:#fdeeee;border-color:#f3c9c9}
-.law-reader-notes{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border, #e2e8f0);font-size:.9rem;color:var(--text-muted, #5b6472)}
-.law-reader-notes ul{margin:.4rem 0 0;padding-left:1.1rem}
-.law-reader-notes li{margin:.25rem 0}
-.amend-mark.unclear{color:#7a4b00;background:#fff4dc;border-color:#f1d9a6}
-.history{list-style:none;margin:0;padding:0}
-.history li{position:relative;padding:0 0 1rem 1.1rem;border-left:2px solid var(--rule)}
-.history li:last-child{padding-bottom:0}
-.history li::before{content:"";position:absolute;left:-6px;top:.3rem;width:10px;height:10px;border-radius:50%;background:#1f5682}
-.history .h-num{font-weight:700;font-size:.85rem}
-.history .h-date{color:var(--ink-4);font-size:.75rem;margin-left:.35rem}
-.history .h-title{font-size:.82rem;color:var(--ink-3);margin:.15rem 0 .3rem}
-.history .h-links a{font-size:.75rem;margin-right:.6rem}
-.change-list{margin:0;padding-left:1.1rem;font-size:.82rem;color:var(--ink-2)}
-.change-list li{margin-bottom:.4rem}
-</style>
 </head>
-
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <div class="nav-brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div class="nav-brand-text">Nipissing Township <span>Public Records</span></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M4 7l2-3h5l2 3"/><path d="M8 12h8M8 16h5"/></svg></span>
+      <span class="brand-text">
+        <span class="brand-name">Nipissing Public Record</span>
+        <span class="brand-sub">An independent archive of township and board records</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bylaws.html" class="active">By-Laws &amp; Resolutions</a></li>
-      <li><a href="council.html">Meetings</a></li>
-    </ul>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="council.html" data-nav="meetings">Meetings</a></li>
+        <li><a href="bylaws.html" data-nav="laws" aria-current="page">Laws</a></li>
+        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="about.html" data-nav="about">About the record</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<section class="bylaw-page-header">
-  <div class="header-inner">
-    <a href="bylaws.html" class="back-link">← Back to By-Laws</a>
-    
-    <h1 class="header-title" id="bylaw-header-number"></h1>
-
-  </div>
-</section>
-
-<main class="detail-wrap">
-  <div>
-    <div class="detail-card">
-      <div class="detail-title">The law today</div>
-      <h1 class="bylaw-name" id="law-name"></h1>
-      <div class="bylaw-subtitle" id="law-subtitle"></div>
-      <div class="content-block" id="law-summary-block" style="display:none">
-        <h3>What it does</h3>
-        <p id="law-summary"></p>
-      </div>
-    </div>
-
-    <div class="detail-card" style="margin-top:1.25rem">
-      <div class="detail-title">How it reads today</div>
-      <div class="law-notice" id="law-notice"></div>
-      <div class="law-text" id="law-text"></div>
-      <div class="law-reader-notes" id="reader-notes" style="display:none">
-        <div class="side-title">About this version</div>
-        <ul id="law-reader-notes"></ul>
-      </div>
-    </div>
+<main id="main">
+  <div class="wrap page-head">
+    <a href="bylaws.html?type=bylaw" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All laws</a>
+    <p class="page-kicker">The law as it stands</p>
+    <h1 id="law-name"></h1>
+    <p class="page-lede" id="law-subtitle"></p>
   </div>
 
-  <div>
-    <div class="side-card">
-      <div class="side-title">History</div>
-      <ol class="history" id="law-history"></ol>
+  <div class="wrap detail-wrap">
+    <div>
+      <section class="filed" id="law-summary-block" style="display:none;margin-bottom:24px" aria-labelledby="law-sum-tab">
+        <h2 class="filed-tab" id="law-sum-tab">What it does</h2>
+        <div class="filed-body content-block" style="margin-top:0"><p id="law-summary"></p></div>
+      </section>
+      <section class="filed" aria-labelledby="law-text-tab">
+        <h2 class="filed-tab" id="law-text-tab">How it reads today</h2>
+        <div class="filed-body">
+          <div class="law-notice" id="law-notice"></div>
+          <div class="law-text" id="law-text"></div>
+          <div class="law-reader-notes" id="reader-notes" style="display:none">
+            <h3 class="side-title">About this version</h3>
+            <ul id="law-reader-notes"></ul>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="side-card" id="changes-card" style="display:none">
-      <div class="side-title">What the amendments changed</div>
-      <ul class="change-list" id="law-changes"></ul>
-    </div>
+
+    <aside class="detail-side">
+      <section class="side-card" aria-labelledby="hist-title">
+        <h2 class="side-title" id="hist-title">History</h2>
+        <ol class="history" id="law-history"></ol>
+      </section>
+      <section class="side-card" id="changes-card" style="display:none" aria-labelledby="chg-title">
+        <h2 class="side-title" id="chg-title">What the amendments changed</h2>
+        <ul class="change-list" id="law-changes"></ul>
+      </section>
+    </aside>
   </div>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="footer-about">
+      <p class="footer-name">Nipissing Public Record</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">How the record is kept</a></li>
+      <li><a href="about.html#missing">Report a missing document</a></li>
+      <li><a href="https://nipissingtownship.com" target="_blank" rel="noopener">Township of Nipissing website</a></li>
+      <li><a href="https://github.com/chriswjohnston/Nipissing" target="_blank" rel="noopener">Source code on GitHub</a></li>
+    </ul>
+  </div>
+</footer>
 
 <script src="shared.js"></script>
 <script>
@@ -466,16 +162,15 @@ async function init(){
   let data = { consolidations: {} };
   try { data = await (await fetch('data/canonical/consolidations.json', {cache: 'no-cache'})).json(); } catch(e) {}
   const law = (data.consolidations || {})[id];
-  if(!law){ document.querySelector('main').innerHTML = '<p style="padding:2rem">Law not found.</p>'; return; }
+  if(!law){ document.getElementById('law-name').textContent = 'Law not found'; document.querySelector('.detail-wrap').innerHTML = '<div class="state-msg"><strong>We couldn’t find that law.</strong><p><a href="bylaws.html?type=bylaw">See the laws in force</a>.</p></div>'; return; }
 
   const byNum = Object.fromEntries(BYLAWS.map(b => [String(b.number), b]));
   const p = byNum[law.principal] || {};
   const amends = (law.amendments || []).map(n => byNum[n] || { number: n });
 
-  document.title = `${law.name} — Nipissing Township Public Records`;
-  document.getElementById('bylaw-header-number').textContent = law.name;
+  document.title = `${law.name} — Nipissing Public Record`;
   document.getElementById('law-name').textContent = law.name;
-  const aka = (law.also_known_as || []).length ? ` · also cited as ${law.also_known_as.join(', ')}` : '';
+  const aka = (law.also_known_as || []).length ? `. Also cited as ${law.also_known_as.join(', ')}` : '';
   document.getElementById('law-subtitle').textContent =
     `By-law ${law.principal}` + (amends.length ? `, as amended by ${amends.map(a => a.number).join(' and ')}` : '') + aka;
 
@@ -500,7 +195,7 @@ async function init(){
   document.getElementById('law-history').innerHTML = hist.map(({ b, role }) => {
     const pdf = archivedUrl(b.pdf_url_archived || b.pdf_url);
     const when = b.date_passed || b.meeting_date;
-    return `<li><div><span class="h-num">${esc(role)}: ${esc(b.number)}</span>${when ? `<span class="h-date">${esc(fmt(when))}</span>` : ''}</div>
+    return `<li><div><span class="h-num">${esc(role)}, ${esc(b.number)}</span>${when ? `<span class="h-date">${esc(fmt(when))}</span>` : ''}</div>
       <div class="h-title">${esc(b.common_name || b.title || '')}</div>
       <div class="h-links"><a href="bylaw-detail.html?id=${encodeURIComponent(b.number)}">Details</a>${pdf ? `<a href="${esc(pdf)}" target="_blank" rel="noopener">PDF</a>` : ''}</div></li>`;
   }).join('');
@@ -508,7 +203,7 @@ async function init(){
   if((law.changes || []).length){
     document.getElementById('changes-card').style.display = '';
     document.getElementById('law-changes').innerHTML = law.changes.map(c =>
-      `<li><strong>${esc(c.bylaw)}</strong>${c.where ? ` — ${esc(c.where)}` : ''}: ${esc(c.change)}</li>`).join('');
+      `<li><strong>${esc(c.bylaw)}</strong>${c.where ? `, ${esc(c.where)}` : ''}: ${esc(c.change)}</li>`).join('');
   }
   // Short notes for readers only; the AI's technical review notes stay in the data.
   if((law.reader_notes || []).length){

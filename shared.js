@@ -126,17 +126,68 @@ function meetingTagClass(meeting) {
   return 'tag';
 }
 
+// Links to a meeting's documents for list rows. Plain text links; the
+// "Copy kept" stamp is shown on detail pages where there is room for it.
 function meetingDocPills(meeting) {
   const pills = [];
-  if (showAgenda(meeting)) {
-    pills.push(`<a href="${escHtml(docUrl(meeting, 'agenda'))}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Agenda</a>`);
-  }
+  const link = (label, url) => `<a href="${escHtml(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${label}</a>`;
+  if (showAgenda(meeting)) pills.push(link('Agenda', docUrl(meeting, 'agenda')));
   const mu = docUrl(meeting, 'minutes');
-  if (mu) pills.push(`<a href="${escHtml(mu)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Minutes</a>`);
+  if (mu) pills.push(link('Minutes', mu));
   const pu = docUrl(meeting, 'package');
-  if (pu) pills.push(`<a href="${escHtml(pu)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Package</a>`);
-  if (meeting?.video_url) pills.push(`<a href="${escHtml(meeting.video_url)}" target="_blank" rel="noopener" class="tag" onclick="event.stopPropagation()">Video</a>`);
+  if (pu) pills.push(link('Package', pu));
+  if (meeting?.video_url) pills.push(link('Video', meeting.video_url));
   return pills.join('');
+}
+
+// A link resolves to our own copy when it points into the repo (docs/...)
+// or at a GitHub Release asset; anything else is the township's original.
+function isKeptUrl(url) {
+  const u = String(url || '');
+  return /^docs\//.test(u) || /^https?:\/\/github\.com\/[^/]+\/[^/]+\/releases\//i.test(u);
+}
+
+const ICON_DOC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
+const ICON_VIDEO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>';
+const ICON_PAGE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>';
+const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
+
+function keptStamp() {
+  return `<span class="stamp" title="A copy is kept in this archive, so the link keeps working if the township removes the original.">${ICON_CHECK}Copy kept</span>`;
+}
+
+// One document link for detail pages. internal = a page on this site.
+function docLinkHtml(label, href, opts = {}) {
+  if (!href) return '';
+  const internal = !!opts.internal;
+  const video = /youtu\.?be/i.test(href);
+  let note = '';
+  if (!internal) {
+    if (isKeptUrl(href)) note = keptStamp();
+    else if (video) note = '<span class="source-note">YouTube</span>';
+    else if (/nipissingtownship\.com/i.test(href)) note = '<span class="source-note">Township site</span>';
+  }
+  const icon = internal ? ICON_PAGE : (video ? ICON_VIDEO : ICON_DOC);
+  const target = internal ? '' : ' target="_blank" rel="noopener"';
+  return `<a href="${escHtml(href)}"${target} class="doc-link">${icon}<span class="doc-label">${escHtml(label)}</span>${note}</a>`;
+}
+
+// Lead decisions from an AI summary: the bullets under "Key Decisions".
+function keyDecisions(summary, max = 5) {
+  const lines = String(summary || '').replace(/\r\n/g, '\n').split('\n');
+  const out = [];
+  let inSection = false;
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (/^#{1,4}\s+/.test(line)) {
+      if (inSection && out.length) break;
+      inSection = /key decisions/i.test(line);
+      continue;
+    }
+    if (inSection && /^[-*•]\s+/.test(line)) out.push(line.replace(/^[-*•]\s+/, '').replace(/\*\*(.+?)\*\*/g, '$1'));
+    if (out.length >= max) break;
+  }
+  return out;
 }
 
 // Official names, used as each meeting card's title and on the detail page.
@@ -183,30 +234,15 @@ function bodyColorClass(meeting) {
 function meetingCard(meeting, q = '') {
   const href = primaryMeetingUrl(meeting);
   const badge = meetingBadge(meeting);
-
+  const docs = meetingDocPills(meeting);
   return `
-  <article class="result-card meeting-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
-
-    <div class="result-icon ri-meeting">
-      📅
+  <article class="record-row meeting-card" onclick="window.location='${escHtml(href)}'">
+    <span class="record-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
+    <div class="record-main">
+      <a class="record-title ${bodyColorClass(meeting)}" href="${escHtml(href)}">${highlight(officialName(meeting), q)}</a>${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
+      <div class="record-docs">${docs || '<span class="waiting">No documents posted yet</span>'}</div>
     </div>
-
-    <div class="result-body">
-
-      <div class="result-meta">
-        <span class="meeting-heading">
-          <span class="result-title meeting-name ${bodyColorClass(meeting)}">${highlight(officialName(meeting), q)}</span>${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
-        </span>
-        <span class="result-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
-      </div>
-
-      <div class="result-tags">
-        ${meetingDocPills(meeting)}
-      </div>
-
-    </div>
-  </article>
-`;
+  </article>`;
 }
 
 function bylawStatusClass(status) {
@@ -216,75 +252,44 @@ function bylawStatusClass(status) {
   return 'status-pill status-pending';
 }
 
+function sentenceCase(t) {
+  const s = String(t || '');
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+}
+
 function bylawCard(bylaw, q = '') {
   const href = `bylaw-detail.html?id=${encodeURIComponent(bylaw?.number || '')}`;
-  const title = bylaw?.title || `By-Law ${bylaw?.number || ''}`;
+  const title = bylaw?.common_name || sentenceCase(bylaw?.title) || '';
   const dateText = bylaw?.date_passed
     ? fmtDate(bylaw.date_passed)
     : (bylaw?.meeting_date ? fmtDate(bylaw.meeting_date) : (bylaw?.year || ''));
-
+  const status = String(bylaw?.status || '').toLowerCase();
+  // "Approved" is the normal case; only flag the exceptions.
+  const pill = status && status !== 'approved' ? `<span class="${bylawStatusClass(status)}">${escHtml(status)}</span>` : '';
   return `
-  <article class="result-card bylaw-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
-    
-    <div class="result-icon ri-bylaw">📄</div>
-
-    <div class="result-body">
-
-      <div class="result-meta">
-        <span class="result-type rt-bylaw">BY-LAW</span>
-        <span class="result-num">${escHtml(bylaw.number)}</span>
-        <span class="result-date">${escHtml(dateText)}</span>
-      </div>
-
-      <div class="result-title">
-        ${highlight(title, q)}
-      </div>
-
-      <div class="result-tags">
-        <span class="${bylawStatusClass(bylaw.status)}">${escHtml(bylaw.status)}</span>
-      </div>
-
+  <article class="record-row bylaw-card" onclick="window.location='${escHtml(href)}'">
+    <span class="record-date">${escHtml(dateText)}</span>
+    <div class="record-main">
+      <a class="record-title num" href="${escHtml(href)}">By-law ${highlight(bylaw.number, q)}</a>${pill}
+      ${title ? `<span class="record-text">${highlight(title, q)}</span>` : ''}
     </div>
-  </article>
-`;
+  </article>`;
 }
 
 function resolutionCard(resolution, q = '') {
   const href = `resolution-detail.html?id=${encodeURIComponent(resolution?.number || '')}`;
-  const title = resolution?.title || resolution?.motion_text || resolution?.number || 'Resolution';
+  const title = resolution?.title || resolution?.motion_text || '';
   const dateText = resolution?.meeting_date ? fmtDate(resolution.meeting_date) : '';
-
+  const meetingHref = `meeting-detail.html?date=${encodeURIComponent(resolution?.meeting_date || '')}&body=council`;
   return `
-  <article class="result-card resolution-card" onclick="window.location='${escHtml(href)}'" style="cursor:pointer;">
-    
-    <div class="result-icon ri-resolution">🧾</div>
-
-    <div class="result-body">
-
-      <div class="result-meta">
-        <span class="result-type rt-resolution">RESOLUTION</span>
-        <span class="result-num">${escHtml(resolution?.number || 'Resolution')}</span>
-        <span class="result-date">
-          ${
-            dateText
-              ? `<a class="result-date-link" href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date || '')}&body=council" onclick="event.stopPropagation()">${escHtml(dateText)}</a>`
-              : ''
-          }
-        </span>
-      </div>
-
-      <div class="result-title">
-        ${highlight(title, q)}
-      </div>
-
-      <div class="result-tags">
-        <span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
-        ${resolution?.bylaw_number ? `<span class="result-linkage">By-Law ${escHtml(resolution.bylaw_number)}</span>` : ''}
-      </div>
-
+  <article class="record-row resolution-card" onclick="window.location='${escHtml(href)}'">
+    <span class="record-date">${dateText ? `<a href="${escHtml(meetingHref)}" onclick="event.stopPropagation()">${escHtml(dateText)}</a>` : ''}</span>
+    <div class="record-main">
+      <a class="record-title num" href="${escHtml(href)}">Resolution ${highlight(resolution?.number || '', q)}</a><span class="${bylawStatusClass(resolution?.status)}">${escHtml(resolution?.status || 'unknown')}</span>
+      ${title ? `<span class="record-text record-text-clamp">${highlight(title, q)}</span>` : ''}
+      ${resolution?.bylaw_number ? `<div class="record-meta"><a href="bylaw-detail.html?id=${encodeURIComponent(resolution.bylaw_number)}" onclick="event.stopPropagation()">By-law ${escHtml(resolution.bylaw_number)}</a></div>` : ''}
     </div>
-  </article>
-`;
+  </article>`;
 }
 
 function scoreItem(item, q) {
@@ -432,4 +437,46 @@ async function loadAllData() {
     resolutionsPayload?.last_updated ||
     boardsPayload?.last_updated ||
     '';
+}
+
+
+// ── Site chrome ────────────────────────────────────────────────────────
+// Mobile menu toggle for the shared header.
+document.addEventListener('click', e => {
+  const btn = e.target.closest && e.target.closest('.nav-toggle');
+  if (!btn) return;
+  const nav = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!nav) return;
+  const open = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+// Laws assembled with their amendments (consolidations.json), newest change first.
+async function loadLaws() {
+  try {
+    const res = await fetch('data/canonical/consolidations.json', { cache: 'no-cache' });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Object.entries(data.consolidations || {}).map(([id, law]) => ({ id, ...law }));
+  } catch { return []; }
+}
+
+function lawCardHtml(law) {
+  const byNum = Object.fromEntries(BYLAWS.map(b => [String(b.number), b]));
+  const amends = law.amendments || [];
+  const years = [law.principal, ...amends]
+    .map(n => byNum[n]?.date_passed || byNum[n]?.meeting_date || '')
+    .filter(Boolean).sort();
+  const last = years.length ? years[years.length - 1].slice(0, 4) : '';
+  const basis = `By-law ${law.principal}` + (amends.length
+    ? `, amended by ${amends.length === 1 ? amends[0] : amends.slice(0, -1).join(', ') + ' and ' + amends[amends.length - 1]}`
+    : '');
+  const note = law.consolidated_markdown
+    ? `Unofficial consolidation${last ? `, last amended ${last}` : ''}`
+    : 'Being assembled; the original documents are linked';
+  return `<a class="law-card" href="law.html?id=${encodeURIComponent(law.id)}">
+    <span class="law-card-name">${escHtml(law.name || law.id)}</span>
+    <span class="law-card-basis">${escHtml(basis)}</span>
+    <span class="law-card-note">${escHtml(note)}</span>
+  </a>`;
 }
