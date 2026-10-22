@@ -1,0 +1,139 @@
+{
+  "_about": "One entry per council term for terms.html. Counts on the page (meetings, resolutions, by-laws, closed sessions, defeated and deferred motions) are computed every day from the meeting and resolution records. Everything here is entered by hand from the sources named, except 'summary', which scripts/term_summary.py writes once a year (and on demand) with Claude, from the term's records. Strategic plan 'status' is condensed from the township's own report; 'state' is this archive's reading of it.",
+  "terms": [
+    {
+      "id": "2026-2030",
+      "label": "2026–2030 Council",
+      "start": "2026-11-15",
+      "end": "2030-11-14",
+      "upcoming": true,
+      "election": {
+        "date": "2026-10-26",
+        "note": "Results will be added after the election."
+      }
+    },
+    {
+      "id": "2022-2026",
+      "label": "2022–2026 Council",
+      "start": "2022-11-15",
+      "end": "2026-11-14",
+      "election": {
+        "date": "2022-10-24",
+        "source": { "label": "AMO 2022 Ontario Municipal Elections", "url": "https://elections2022.amo.on.ca/web/en/municipal/10565" },
+        "eligible_voters": 2806,
+        "voters": 659,
+        "turnout_pct": 23.49,
+        "vote_method": "Paper ballot (magnifying sheets available)",
+        "head_of_council": [
+          { "name": "Tom Piper", "acclaimed": true, "elected": true, "incumbent": true }
+        ],
+        "council": [
+          { "name": "Dave Yemm", "votes": 486, "elected": true, "incumbent": false },
+          { "name": "Shelly Foote", "votes": 288, "elected": true, "incumbent": false },
+          { "name": "Stephen Kirkey", "votes": 216, "elected": true, "incumbent": true },
+          { "name": "Thomas Butler", "votes": 173, "elected": true, "incumbent": false },
+          { "name": "Shawn Hughes", "votes": 169, "elected": false, "incumbent": false },
+          { "name": "Joseph Bell", "votes": 151, "elected": false, "incumbent": false },
+          { "name": "Thomas Marchant", "votes": 128, "elected": false, "incumbent": true },
+          { "name": "James Scott", "votes": 117, "elected": false, "incumbent": true },
+          { "name": "Chris Johnston", "votes": 73, "elected": false, "incumbent": false }
+        ],
+        "seats": 4
+      },
+      "council_at_end": [
+        { "role": "Mayor", "name": "Dave Yemm" },
+        { "role": "Deputy Mayor", "name": "Shelly Foote" },
+        { "role": "Councillor", "name": "Stephen Kirkey" },
+        { "role": "Councillor", "name": "James Scott" },
+        { "role": "Councillor", "name": "Lisa Chalapenko" }
+      ],
+      "changes": [
+        { "date": "2022-11-15", "text": "Council took the Declaration of Office and was sworn in. A Deputy Mayor was appointed by By-law 2022-49; the minutes don’t name who.", "records": ["2022-49"], "meeting": "2022-11-15" },
+        { "date": "2024-04-16", "text": "Councillor Tom Butler resigned. Council declared the seat vacant and chose to fill it by appointment.", "records": ["R2024-090"], "meeting": "2024-04-16" },
+        { "date": "2024-05-09", "text": "James M. Scott was appointed Councillor at a special meeting, chosen by council vote from eight applicants.", "records": ["2024-20"], "meeting": "2024-05-09" },
+        { "date": "2024-11-12", "text": "Mayor Tom Piper announced his resignation, effective November 30, 2024.", "records": [], "meeting": "2024-11-12" },
+        { "date": "2024-12-03", "text": "Dave Yemm was appointed Mayor and Shelly Foote Deputy Mayor. Council declared Mayor Yemm’s former councillor seat vacant.", "records": ["2024-52", "2024-53", "R2024-230"], "meeting": "2024-12-03" },
+        { "date": "2024-12-19", "text": "Lisa Chalapenko was appointed Councillor at a special meeting, chosen by council vote after several rounds.", "records": ["2024-59"], "meeting": "2024-12-19" }
+      ],
+      "strategic_plan": {
+        "title": "Strategic Plan 2023–2026",
+        "adopted": "2023-11-14",
+        "adopted_by": "R2023-208",
+        "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Strategic-Plan-2023-2026.pdf",
+        "development": "Prepared after Town Hall meetings, community input and council direction.",
+        "report": {
+          "title": "2023–2026 Strategic Plan Final Update",
+          "date": "2026-10-20",
+          "meeting": "2026-10-20",
+          "pages": "18–22 of the agenda package",
+          "page": 18
+        },
+        "areas": [
+          {
+            "name": "Effective and efficient municipal services",
+            "items": [
+              { "objective": "Asset management planning", "action": "Road Needs Study", "target": "By the end of 2023", "status": "Completed in 2023, adopted in 2024.", "state": "Done" },
+              { "objective": "Asset management planning", "action": "Asset Management Plan update", "target": "By the end of 2023", "status": "Completed in 2025, adopted in December 2025.", "state": "Done" },
+              { "objective": "Asset management planning", "action": "10-year capital forecast", "target": "Started in 2023", "status": "In use since 2023.", "state": "Done" },
+              { "objective": "Levels of service", "action": "Service delivery review", "target": "2024–2025", "status": "Reviewed in-house using a community survey.", "state": "Done" },
+              { "objective": "Operational review", "action": "Operational review", "target": "RFP in 2024", "status": "Not moved forward.", "state": "Not pursued" },
+              { "objective": "Operational review", "action": "Human resources policy review: market compensation study and pay equity review", "target": "RFP in 2024", "status": "Completed in 2024.", "state": "Done" },
+              { "objective": "Waste diversion and landfill management", "action": "Expansion request for the Bear Creek landfill to the Ministry of the Environment", "target": "In progress 2023", "status": "Application submitted and in progress.", "state": "In progress" },
+              { "objective": "Waste diversion and landfill management", "action": "Expansion request for the Wolfe Lake landfill", "target": "2025–2026", "status": "To be submitted once the Bear Creek application is completed and adopted.", "state": "Not started" },
+              { "objective": "Waste diversion and landfill management", "action": "Transfer of recycling services to the provincial authority", "target": "October 2025", "status": "Transition complete; the province manages recycling collection.", "state": "Done" },
+              { "objective": "Communication with residents", "action": "Communication strategy", "target": "2024", "status": "Approved April 2, 2024, Resolution R2024-77.", "state": "Done" },
+              { "objective": "Communication with residents", "action": "Website updates and improvements", "target": "2023 and ongoing", "status": "Transition completed in 2026, with continued updates.", "state": "Done" }
+            ]
+          },
+          {
+            "name": "Local historical and natural heritage features",
+            "items": [
+              { "objective": "Strategic planning for the Township Museum", "action": "Museum strategic planning document", "target": "2024", "status": "Adopted November 14, 2023.", "state": "Done" },
+              { "objective": "Strategic planning for the Township Museum", "action": "Cataloguing software for the museum collection", "target": "2024 budget", "status": "Past Perfect purchased in 2024; cataloguing in progress.", "state": "In progress" },
+              { "objective": "Strategic planning for the Township Museum", "action": "Consistent leadership and management of the museum", "target": "2024", "status": "Operational guidelines adopted October 4, 2023.", "state": "Done" },
+              { "objective": "Official Plan updates", "action": "Update the Official Plan for the Provincial Policy Statement and Planning Act", "target": "Update to begin 2027", "status": "To begin in late 2027 with the new term of council.", "state": "Deferred" },
+              { "objective": "Official Plan updates", "action": "Work with Indigenous groups so significant areas are protected during development or sale", "target": "Immediately", "status": "In progress.", "state": "In progress" },
+              { "objective": "Official Plan updates", "action": "Consult the Ontario Heritage Trust on areas of significance", "target": "Immediately", "status": "To begin with the Official Plan update.", "state": "Deferred" },
+              { "objective": "Zoning By-law updates", "action": "Update the Zoning By-law to follow the new Official Plan", "target": "After the Official Plan is approved", "status": "Waiting on the Official Plan update.", "state": "Deferred" }
+            ]
+          },
+          {
+            "name": "Sustainable community growth and prosperity",
+            "items": [
+              { "objective": "Property standards", "action": "Licensing model for short-term rentals, including noise and disruption enforcement", "target": "2023 and ongoing", "status": "Staff report received January 10, 2024; investigation of a noise by-law directed; pending.", "state": "Pending" },
+              { "objective": "Property standards", "action": "Investigate a property standards policy or clean yard by-law", "target": "2024–2025", "status": "No further direction provided; item pending.", "state": "Pending" },
+              { "objective": "Housing", "action": "Support growth and development of municipal lands within the Official Plan and Zoning By-law", "target": "Immediate and ongoing", "status": "No status given in the report.", "state": "Ongoing" },
+              { "objective": "Support local business and industry", "action": "Improve the local business directory on the township website", "target": "2023–2024", "status": "New website in 2026 with a new business directory.", "state": "Done" },
+              { "objective": "Support local business and industry", "action": "Education materials on home-based industry rules in the Zoning By-law", "target": "2024", "status": "Provided as requested.", "state": "Done" },
+              { "objective": "Support local business and industry", "action": "Continue to defer development charges for new buildings", "target": "Immediate and ongoing", "status": "No development charges are charged in the township.", "state": "Ongoing" },
+              { "objective": "Resident safety and well-being", "action": "Work with the OPP on speeding, including radar speed signs and education", "target": "2023 and ongoing", "status": "Two more radar speed units approved in the 2026 budget; information sharing ongoing.", "state": "Ongoing" },
+              { "objective": "Resident safety and well-being", "action": "Update the Community Safety and Well-Being Plan with partners", "target": "Annually", "status": "Work continues with partners.", "state": "Ongoing" },
+              { "objective": "Resident safety and well-being", "action": "Community risk assessment", "target": "2024", "status": "Completed July 16, 2024; adopted by Resolution R2024-150.", "state": "Done" }
+            ]
+          },
+          {
+            "name": "Maintaining “life the way it should be”",
+            "items": [
+              { "objective": "Community facilities for recreation", "action": "Recreation facilities strategic planning document", "target": "2024", "status": "Completed December 2, 2024; approved by Recreation Committee motion 2024-36.", "state": "Done" },
+              { "objective": "Community facilities for recreation", "action": "Recreation survey for resident input", "target": "Immediate and ongoing", "status": "Included in the community survey.", "state": "Done" },
+              { "objective": "Community facilities for recreation", "action": "Improvements to the outdoor rink and Heritage Park", "target": "2024–2025", "status": "New boards, lighting upgrade and new chips at the playground.", "state": "Done" },
+              { "objective": "Water access", "action": "Repairs to Chapman’s Landing dock", "target": "2023–2024", "status": "Deferred to 2027.", "state": "Deferred" },
+              { "objective": "Water access", "action": "Upgrades at the McQuaby Lake boat launch, including parking", "target": "2024–2025", "status": "Deferred to a future date; blocks removed so the launch is safe and usable.", "state": "Deferred" },
+              { "objective": "Water access", "action": "Maintain and improve the Lake Nipissing and Wolfe Lake beaches", "target": "Immediate and ongoing", "status": "Beaches maintained; in-water work needs Ministry of Environment approval and was not done.", "state": "Partly done" },
+              { "objective": "Volunteerism", "action": "Promote volunteering and programming with local partners", "target": "Immediate and ongoing", "status": "Advertising for local partners ongoing, including the Commanda Museum and 250 Clark.", "state": "Ongoing" },
+              { "objective": "Volunteerism", "action": "Volunteer network for all programming", "target": "2023–2024", "status": "Volunteer list developed for recreation programming; thank-you gifts given to volunteers this term.", "state": "Done" }
+            ]
+          }
+        ]
+      },
+      "summary": null
+    },
+    {
+      "id": "2018-2022",
+      "label": "2018–2022 Council",
+      "start": "2018-12-01",
+      "end": "2022-11-14",
+      "note": "This archive’s records begin in 2022, so this term is only partly covered."
+    }
+  ]
+}
