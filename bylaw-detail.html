@@ -199,8 +199,12 @@ async function init(){
   const formal = (bylaw.title && bylaw.title !== bylaw.common_name) ? bylaw.title : '';
   const heading = bylaw.common_name || sentence(formal) || `By-law ${bylaw.number}`;
   let subtitle = '';
-  if (bylaw.common_name && formal) {
+  const plain = t => String(t || '').toLowerCase().replace(/by-?law/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  if (bylaw.common_name && formal && /^(?:to\s+)?[a-z]/.test(formal)) {
+    // Minutes wording is an action ("regulate the keeping of dogs").
     subtitle = `Being a by-law to ${formal.replace(/^to\s+/i, '')}`;
+  } else if (bylaw.common_name && formal && !plain(formal).includes(plain(bylaw.common_name))) {
+    subtitle = formal;              // a different name, shown as it is
   } else {
     const bits = [];
     if (bylaw.date_passed) bits.push(`Passed ${fmtDate(bylaw.date_passed)}`);
