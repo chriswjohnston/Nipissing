@@ -30,6 +30,8 @@ from archive import ARCHIVE_MIN_YEAR, is_township_pdf, store_bytes_in_repo
 
 ROOT = Path(__file__).resolve().parents[1]
 MEETINGS_FILE = ROOT / "data" / "canonical" / "meetings.json"
+BYLAWS_FILE = ROOT / "data" / "canonical" / "bylaws.json"
+MISSES_FILE = ROOT / "data" / "runtime" / "archive_misses.json"
 BOARDS_FILE = ROOT / "data" / "canonical" / "boards.json"
 STATE_FILE = ROOT / "data" / "runtime" / "recovery.json"
 BUDGET_SECONDS = 10 * 60
@@ -86,6 +88,48 @@ def main() -> None:
                 print(f"  recovered {cat} {m['date']}")
         else:
             print(f"  not in Wayback ({outcome}): {cat} {m['date']}")
+
+    # By-law documents the township removed before we kept a copy: the
+    # by-law itself and its other files (earlier versions, consolidations).
+    # Found in Wayback -> archived like any other copy. Not there either,
+    # and a live 404 on record -> marked gone, so the page doesn't offer a
+    # dead link. Nothing is deleted from the data.
+    bylaws_payload = load(BYLAWS_FILE, {"bylaws": []})
+    misses = set(load(MISSES_FILE, []))
+    bl_changed = 0
+    for b in bylaws_payload.get("bylaws", []):
+        year = int(b.get("year") or 0) or None
+        docs = [d for d in (b.get("extra_docs") or []) if d.get("url") and not d.get("archived") and not d.get("gone")]
+        if b.get("pdf_url") and not b.get("pdf_url_archived") and is_township_pdf(b["pdf_url"]) and b["pdf_url"] in misses:
+            docs.append(b)                       # the main document itself
+        for d in docs:
+            url = d.get("url") or d.get("pdf_url")
+            if not is_township_pdf(url):
+                continue
+            prev = state.get(url, {}).get("outcome")
+            if prev not in ("recovered", "notfound", "notpdf"):
+                if time.monotonic() > deadline:
+                    break
+                data, outcome = ds.wayback_fetch(url, "2")
+                prev = "recovered" if data else outcome
+                state[url] = {"outcome": prev, "checked": TODAY}
+                if data:
+                    got = store_bytes_in_repo(url, "bylaws", year, data)
+                    if got:
+                        if d is b:
+                            b["pdf_url_archived"] = got
+                        else:
+                            d["archived"] = got
+                        recovered += 1
+                        bl_changed += 1
+                        print(f"  recovered by-law {b.get('number')}: {url.rsplit('/', 1)[-1]}")
+                    continue
+            if prev in ("notfound", "notpdf") and url in misses and d is not b:
+                d["gone"] = True
+                bl_changed += 1
+                print(f"  gone: by-law {b.get('number')}: {url.rsplit('/', 1)[-1]}")
+    if bl_changed:
+        BYLAWS_FILE.write_text(json.dumps(bylaws_payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
     if changed:
         MEETINGS_FILE.write_text(json.dumps(meetings_payload, indent=2, ensure_ascii=False),
