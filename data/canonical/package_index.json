@@ -7751,6 +7751,99 @@
    ],
    "version": 1,
    "read": "2026-10-22"
+  },
+  "2023-11-14": {
+   "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/November-14-2023-Council-Agenda-Package__aaad42cd.pdf",
+   "pages": 121,
+   "items": [
+    {
+     "kind": "other",
+     "pages": [
+      1,
+      1
+     ],
+     "title": "Townshi The Corporation of the Township of Nipissing 45 Beatty Street NIPISSING Nipissing ON POH 1W"
+    },
+    {
+     "kind": "minutes",
+     "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, October 17, 2023 A regular meeting of the Township of Nipissing Council was held",
+     "pages": [
+      2,
+      3
+     ]
+    },
+    {
+     "kind": "report",
+     "pages": [
+      4,
+      16
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "we direct municipal staff to research and prepare a draft Bag Limit Program for the Township of Nipissing landfill sites for potential implementation in 2024. F",
+     "pages": [
+      17,
+      17
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "Final Draft Strategic Plan 2023-2026 BACKGROUND/OVERVIEW",
+     "from": "Kris Croskery-Hodgins, Municipal Administrator",
+     "date": "November 7, 2023",
+     "pages": [
+      18,
+      36
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the Income Tax Act provides for a $3,000 volunteer firefighter and volunteer search and rescue tax credit; AND WHEREAS volunteer firefighters are providing a va",
+     "pages": [
+      37,
+      40
+     ],
+     "papers": [
+      38,
+      40
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the NFPA standard for Self Contained Breathing Apparatus (SCBA) units is changing in 2024 and 2025; AND WHEREAS the Capital Forecast for Fire Department equipme",
+     "pages": [
+      41,
+      78
+     ],
+     "papers": [
+      42,
+      78
+     ]
+    },
+    {
+     "kind": "minutes",
+     "title": "Minutes of the Board of Directors Meeting 2023-10 Tuesday September 19, 2023 A regular meeting of the Golden Sunshine Mu",
+     "pages": [
+      79,
+      120
+     ]
+    },
+    {
+     "kind": "resolution",
+     "number": null,
+     "title": "the statement of accounts dated: October 27 and 28; November 8, 2023; Totaling $155,997.02 be approved. For Against PIPER BUTLER FOOTE KIRKEY YEMM Carried Mayor",
+     "pages": [
+      121,
+      121
+     ]
+    }
+   ],
+   "version": 1,
+   "read": "2026-10-22"
   }
  }
 }
