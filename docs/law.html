@@ -42,11 +42,27 @@
 
 <main id="main">
   <div class="wrap page-head">
-    <a href="laws.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All laws</a>
+    <a href="laws.html" class="back-link" id="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All laws</a>
     <p class="page-kicker">The law as it stands</p>
     <h1 id="law-name"></h1>
     <p class="page-lede" id="law-subtitle"></p>
   </div>
+<script>
+// Lead back to wherever the reader came from: the Laws page (to the same
+// topic) when they arrived from it, otherwise the default above.
+(function(){
+  var p = new URLSearchParams(location.search);
+  if (p.get('from') !== 'laws') return;
+  var a = document.getElementById('back-link');
+  var topic = (p.get('topic') || '').replace(/[^\w-]/g, '');
+  a.setAttribute('href', 'laws.html' + (topic ? '#topic-' + topic : ''));
+  a.lastChild.textContent = 'All laws';
+  document.querySelectorAll('[data-nav]').forEach(function(n){ n.removeAttribute('aria-current'); });
+  var nav = document.querySelector('[data-nav="laws"]');
+  if (nav) nav.setAttribute('aria-current', 'page');
+})();
+</script>
+
 
   <div class="wrap detail-wrap">
     <div>
