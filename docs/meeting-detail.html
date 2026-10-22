@@ -31,8 +31,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="council.html" data-nav="meetings" aria-current="page">Meetings</a></li>
-        <li><a href="bylaws.html" data-nav="laws">Laws</a></li>
-        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="laws.html" data-nav="laws">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions">Decisions</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -55,6 +55,15 @@
         <div class="summary-body" id="summary-content"></div>
         <p class="ai-note">Written by AI from the minutes. The minutes are the official record.</p>
       </div>
+      <section id="decisions-section" hidden aria-labelledby="dec-title" style="margin-top:40px">
+        <h2 class="section-title" id="dec-title">Decisions at this meeting</h2>
+        <p class="section-note">In council’s own words, from the minutes.</p>
+        <ol class="decision-list" id="decision-list"></ol>
+        <details class="routine-details" id="routine-wrap" hidden>
+          <summary id="routine-summary"></summary>
+          <ol class="decision-list" id="routine-list"></ol>
+        </details>
+      </section>
     </section>
 
     <aside class="detail-side">
@@ -267,6 +276,21 @@ async function init(){
 
   document.getElementById('main-docs').innerHTML =
     main.length ? main.join('') : '<p class="empty-note">The township hasn’t posted documents for this meeting yet.</p>';
+
+  // Council decisions made at this meeting (resolutions and by-laws).
+  if((meeting.body_id || 'council') === 'council'){
+    const all = buildDecisions(BYLAWS, RESOLUTIONS).filter(d => d.date === meeting.date);
+    const main = all.filter(d => !d.routine), routine = all.filter(d => d.routine);
+    if(all.length){
+      document.getElementById('decision-list').innerHTML = main.map(d => decisionRowHtml(d)).join('');
+      if(routine.length){
+        document.getElementById('routine-summary').textContent = `${routine.length} routine item${routine.length === 1 ? '' : 's'}: minutes, correspondence, adjournment`;
+        document.getElementById('routine-list').innerHTML = routine.map(d => decisionRowHtml(d)).join('');
+        document.getElementById('routine-wrap').hidden = false;
+      }
+      document.getElementById('decisions-section').hidden = false;
+    }
+  }
 
   const extra = meeting.extra_docs || [];
   if(extra.length){

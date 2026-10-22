@@ -31,8 +31,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="council.html" data-nav="meetings">Meetings</a></li>
-        <li><a href="bylaws.html" data-nav="laws" aria-current="page">Laws</a></li>
-        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="laws.html" data-nav="laws" aria-current="page">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions">Decisions</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -41,7 +41,7 @@
 
 <main id="main">
   <div class="wrap page-head">
-    <a href="bylaws.html?type=bylaw" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All laws</a>
+    <a href="laws.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All laws</a>
     <p class="page-kicker">The law as it stands</p>
     <h1 id="law-name"></h1>
     <p class="page-lede" id="law-subtitle"></p>
@@ -162,7 +162,7 @@ async function init(){
   let data = { consolidations: {} };
   try { data = await (await fetch('data/canonical/consolidations.json', {cache: 'no-cache'})).json(); } catch(e) {}
   const law = (data.consolidations || {})[id];
-  if(!law){ document.getElementById('law-name').textContent = 'Law not found'; document.querySelector('.detail-wrap').innerHTML = '<div class="state-msg"><strong>We couldn’t find that law.</strong><p><a href="bylaws.html?type=bylaw">See the laws in force</a>.</p></div>'; return; }
+  if(!law){ document.getElementById('law-name').textContent = 'Law not found'; document.querySelector('.detail-wrap').innerHTML = '<div class="state-msg"><strong>We couldn’t find that law.</strong><p><a href="laws.html">See the laws in effect</a>.</p></div>'; return; }
 
   const byNum = Object.fromEntries(BYLAWS.map(b => [String(b.number), b]));
   const p = byNum[law.principal] || {};

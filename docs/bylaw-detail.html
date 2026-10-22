@@ -31,8 +31,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="council.html" data-nav="meetings">Meetings</a></li>
-        <li><a href="bylaws.html" data-nav="laws" aria-current="page">Laws</a></li>
-        <li><a href="bylaws.html?type=resolution" data-nav="decisions">Decisions</a></li>
+        <li><a href="laws.html" data-nav="laws">Laws</a></li>
+        <li><a href="decisions.html" data-nav="decisions" aria-current="page">Decisions</a></li>
         <li><a href="about.html" data-nav="about">About the record</a></li>
       </ul>
     </nav>
@@ -41,7 +41,7 @@
 
 <main id="main">
   <div class="wrap page-head">
-    <a href="bylaws.html?type=bylaw" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All by-laws</a>
+    <a href="decisions.html?show=bylaws" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All by-laws</a>
     <p class="page-kicker" id="bylaw-number"></p>
     <h1 id="bylaw-title"></h1>
     <p class="page-lede" id="bylaw-subtitle"></p>
@@ -65,6 +65,10 @@
     </div>
 
     <aside class="detail-side">
+      <section class="side-card" id="amend-card" hidden aria-labelledby="bl-amend">
+        <h2 class="side-title" id="bl-amend">Changes</h2>
+        <ul class="mini-list" id="amend-list"></ul>
+      </section>
       <section class="side-card" aria-labelledby="bl-details">
         <h2 class="side-title" id="bl-details">Details</h2>
         <div class="meta-row"><span class="meta-label">Number</span><span class="meta-value num" id="meta-number"></span></div>
@@ -159,7 +163,7 @@ async function init(){
   if(!bylaw){
     document.getElementById('bylaw-title').textContent = 'By-law not found';
     document.querySelector('.detail-wrap').innerHTML =
-      '<div class="state-msg"><strong>We couldn’t find that by-law number.</strong><p><a href="bylaws.html?type=bylaw">Browse all by-laws</a> or search by title.</p></div>';
+      '<div class="state-msg"><strong>We couldn’t find that by-law number.</strong><p><a href="decisions.html?show=bylaws">Browse all by-laws</a> or search by title.</p></div>';
     return;
   }
 
@@ -234,6 +238,26 @@ async function init(){
       banner.style.display = 'block';
     }
   } catch (e) { /* no consolidations yet */ }
+
+  // Amendments, found from by-law titles (shared.js), plus the law it belongs to.
+  try {
+    const cons = await loadLaws();
+    const amends = amendmentIndex(BYLAWS, cons).get(String(bylaw.number)) || [];
+    const target = amendsTarget(bylaw);
+    let inEffect = null;
+    try {
+      const list = await (await fetch('data/canonical/laws_in_effect.json', {cache: 'no-cache'})).json();
+      for (const t of list.topics || []) for (const l of t.laws || []) if (String(l.bylaw) === String(bylaw.number)) inEffect = l.name;
+    } catch (e) {}
+    const items = [];
+    if (inEffect && bylaw.status !== 'repealed') items.push(`<li><a href="laws.html">Law in effect</a><span>${esc(inEffect)}</span></li>`);
+    if (target) items.push(`<li><a href="bylaw-detail.html?id=${encodeURIComponent(target)}">Amends By-law ${esc(target)}</a></li>`);
+    amends.forEach(a => items.push(`<li><a href="bylaw-detail.html?id=${encodeURIComponent(a.number)}">Amended by ${esc(a.number)}</a>${(a.date_passed || a.meeting_date) ? `<span>${esc(fmtDate(a.date_passed || a.meeting_date))}</span>` : ''}</li>`));
+    if (items.length) {
+      document.getElementById('amend-list').innerHTML = items.join('');
+      document.getElementById('amend-card').hidden = false;
+    }
+  } catch (e) {}
 
   if(bylaw.summary){
     document.getElementById('summary-block').style.display = '';
