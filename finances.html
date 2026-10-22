@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022p">
+<link rel="stylesheet" href="shared.css?v=20261022q">
 </head>
 <body>
 
@@ -149,7 +149,7 @@
         <h2 class="filed-tab" id="doc-tab">Documents</h2>
         <div class="filed-body">
           <h3 class="fin-h">Every financial document, by year</h3>
-          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears.</p>
+          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears. For documents the township removed before a copy was kept, web archives are searched daily; if you have one, <a href="https://github.com/chriswjohnston/Nipissing/tree/main/inbox" target="_blank" rel="noopener">add it to the inbox</a>.</p>
           <div id="doc-shelf"></div>
         </div>
       </section>
@@ -178,7 +178,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022p"></script>
+<script src="shared.js?v=20261022q"></script>
 <script>
 // ── formatting ──────────────────────────────────────────────────────────
 const money = (v, short = true) => {
@@ -373,7 +373,7 @@ async function init(){
   }
 
   // ── documents shelf
-  const docs = (F.documents || []).filter(d => d.archived || d.url);
+  const docs = (F.documents || []).filter(d => (d.archived || d.url) && !d.same_as);
   const byYear = {};
   docs.forEach(d => (byYear[d.year || 'Undated'] ||= []).push(d));
   document.getElementById('doc-shelf').innerHTML = `<ol class="fin-shelf">${Object.keys(byYear).sort().reverse().map(y => `
@@ -381,7 +381,7 @@ async function init(){
       const href = d.archived ? archivedUrl(d.archived) : null;
       const title = d.title || d.kind;
       return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a> ${keptStamp()}`
-        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
+        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed; no copy found' : d.removed ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
     }).join('')}</ul></li>`).join('')}</ol>`;
 }
 
