@@ -209,8 +209,11 @@ def main() -> None:
                     d["recovered_from"] = same
                     print(f"  recovered (re-uploaded): {d['title']}")
                     continue
-            # The Wayback Machine, once per URL while recovery runs.
-            if ds.recovery_active() and is_township_pdf(url) and url not in state and time.monotonic() < deadline:
+            # The Wayback Machine while recovery runs: once per URL, and again
+            # (at most daily) when it couldn't be reached, which is common.
+            tried = state.get(url, {})
+            retry = tried.get("outcome") == "error" and tried.get("checked") != TODAY
+            if ds.recovery_active() and is_township_pdf(url) and (not tried or retry) and time.monotonic() < deadline:
                 data_bytes, outcome = ds.wayback_fetch(url, "2")
                 state[url] = {"outcome": "recovered" if data_bytes else outcome, "checked": TODAY}
                 if data_bytes:
@@ -238,6 +241,11 @@ def main() -> None:
                 if plan.get(k):
                     d[k] = plan[k]
 
+    # A draft of a by-law isn't a financial record of its own: the passed
+    # by-law is on its by-law page (the 2026 user fee by-law is 2026-20).
+    for k in [k for k, d in docs.items() if re.search(r"\bdraft\b.*\bby-?\s?law\b", d.get("title") or "", re.I)]:
+        del docs[k]
+    same_files(docs)
     # Copy recovered files back onto the meetings, so meeting pages link them too.
     for m in meetings.get("meetings", []):
         for doc in m.get("extra_docs") or []:
@@ -251,6 +259,11 @@ def main() -> None:
     # 4. The FIR: one small file per year with Nipissing's rows only.
     fir_years(deadline)
 
+    misses = set(load(ROOT / "data" / "runtime" / "archive_misses.json", []))
+    for d in docs.values():
+        if not d.get("archived") and d.get("url") in misses:
+            d["removed"] = True          # the township's address now returns "not found"
+    link_bylaws(docs)
     data["documents"] = sorted(docs.values(), key=lambda d: (-(d.get("year") or 0), d.get("kind", ""), d.get("title", "")))
     data["fir_years"] = sorted(int(p.stem) for p in FIR_DIR.glob("*.csv")) if FIR_DIR.exists() else []
     data["updated"] = TODAY
@@ -259,6 +272,79 @@ def main() -> None:
     STATE.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
     kept = sum(1 for d in docs.values() if d.get("archived"))
     print(f"  {len(docs)} financial documents, {kept} kept, {sum(1 for d in docs.values() if d.get('gone'))} gone")
+
+
+def file_key(url: str) -> str:
+    """The same file under another folder or a "-1" copy name: one document."""
+    u = urlparse(url or "")
+    n = unquote(Path(u.path).name).lower()
+    # pages cut from a package (#page=52) are separate documents
+    return re.sub(r"(?:-\d)?\.pdf$", "", n) + (f"#{u.fragment}" if u.fragment else "")
+
+
+def same_files(docs: Dict[str, Dict[str, Any]]) -> None:
+    """A document listed without a copy whose file the township re-uploaded
+    elsewhere (2026/04/X.pdf became 2026/05/X.pdf) points at the kept copy."""
+    kept = {}
+    for d in docs.values():
+        if d.get("archived") and d.get("url"):
+            kept.setdefault(file_key(d["url"]), d)
+    for d in docs.values():
+        if d.get("url") and not d.get("archived"):
+            twin = kept.get(file_key(d["url"]))
+            if twin and twin is not d:
+                d["same_as"] = twin["url"]
+                d["archived"] = twin["archived"]
+                d.pop("gone", None)
+    # Two copies of one file both kept (X.pdf and X-1.pdf): list one.
+    seen: Dict[str, Dict[str, Any]] = {}
+    for d in sorted(docs.values(), key=lambda d: (d.get("first_seen", ""), d.get("url", ""))):
+        if d.get("archived") and d.get("url") and not d.get("same_as"):
+            k = file_key(d["url"])
+            if k in seen:
+                d["same_as"] = seen[k]["url"]
+            else:
+                seen[k] = d
+
+
+def link_bylaws(docs: Dict[str, Dict[str, Any]]) -> None:
+    """A kept PDF that is itself a by-law ("BY-LAW NUMBER 2025-13" at the top
+    of its first page, read by OCR when scanned) is that by-law's document:
+    the 2025 tax-rate by-law sits on the township's tax page as
+    TAX-RATE-BY-LAW-2025.pdf, a name nothing else would match."""
+    import pymupdf
+    import package_extract as pe
+    path = ROOT / "data" / "canonical" / "bylaws.json"
+    payload = load(path, {"bylaws": []})
+    by_num = {b["number"]: b for b in payload["bylaws"]}
+    changed = False
+    for d in docs.values():
+        if not d.get("archived") or d.get("bylaw_checked") or d.get("same_as"):
+            continue
+        f = ROOT / "docs" / d["archived"]
+        if not f.exists():
+            continue
+        d["bylaw_checked"] = True
+        try:
+            doc = pymupdf.open(f)
+            text = doc[0].get_text()
+            if len(text.strip()) < 40 and pe.have_tesseract():
+                text = pe.ocr_png(doc[0].get_pixmap(dpi=200).tobytes("png"))
+        except Exception:
+            continue
+        m = re.search(r"BY-?\s?LAW\s+(?:NO\.?|NUMBER)\s*(\d{4})\s?-\s?(\d{1,3})", re.sub(r"\s+", " ", text)[:400], re.I)
+        if not m:
+            continue
+        num = f"{m.group(1)}-{int(m.group(2)):02d}"
+        d["bylaw"] = num
+        b = by_num.get(num)
+        if b and not (b.get("pdf_url_archived") or (b.get("pdf_url") and not str(b["pdf_url"]).startswith("files/bylaws/"))):
+            b["pdf_url"] = d["url"]
+            b["pdf_url_archived"] = d["archived"]
+            changed = True
+            print(f"  by-law {num}: its document is {d['url'].rsplit('/', 1)[-1]}")
+    if changed:
+        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def fir_years(deadline: float) -> None:

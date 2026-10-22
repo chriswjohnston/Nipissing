@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022p">
+<link rel="stylesheet" href="shared.css?v=20261022r">
 </head>
 <body>
 
@@ -55,18 +55,11 @@
       <section class="filed fin-section" aria-labelledby="tax-tab">
         <h2 class="filed-tab" id="tax-tab">Property taxes</h2>
         <div class="filed-body">
-          <div class="fin-split">
-            <div>
-              <h3 class="fin-h">What the township raised from property taxes</h3>
-              <p class="fin-sub">The township’s share of the tax bill, before school taxes, each year since 2009.</p>
-              <div class="fin-chart" id="chart-tax"></div>
-              <p class="fin-legend"><span class="key key-actual"></span>From the township’s financial return <span class="key key-plan"></span>Budget</p>
-            </div>
-            <div class="fin-notes">
-              <h3 class="fin-h4">Reading this chart</h3>
-              <ul id="tax-notes"></ul>
-            </div>
-          </div>
+          <h3 class="fin-h">What the township raised from property taxes</h3>
+          <p class="fin-sub">The township’s share of the tax bill, before school taxes, each year since 2009.</p>
+          <div class="fin-chart" id="chart-tax"></div>
+          <p class="fin-legend"><span class="key key-actual"></span>From the township’s financial return <span class="key key-plan"></span>Budget</p>
+          <ul class="fin-notes-row" id="tax-notes" aria-label="Reading this chart"></ul>
           <h3 class="fin-h4" style="margin-top:28px">Each year’s budget, and a typical home</h3>
           <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Budgets and a typical home’s township tax">
             <table class="fin-table" id="budget-table"></table>
@@ -96,19 +89,14 @@
       <section class="filed fin-section" aria-labelledby="staff-tab">
         <h2 class="filed-tab" id="staff-tab">Staff pay</h2>
         <div class="filed-body">
-          <div class="fin-split">
-            <div>
-              <h3 class="fin-h">Salaries, wages and benefits</h3>
-              <p class="fin-sub">Everyone the township employs. Council pay is set separately.</p>
-              <div class="fin-chart" id="chart-salaries"></div>
-              <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Staff pay by year"><table class="fin-table compact" id="staff-table"></table></div>
-            </div>
-            <div class="fin-notes">
-              <h3 class="fin-h4">The decisions behind it</h3>
-              <ol class="fin-bylaws" id="pay-bylaws"></ol>
-              <p class="fin-small">Each pay-grid by-law amends the pay equity plan, but the township posts it without Schedule A, the grid itself. <a href="decisions.html?q=remuneration">Council pay by-laws</a> are passed each December.</p>
-            </div>
-          </div>
+          <h3 class="fin-h">Salaries, wages and benefits</h3>
+          <p class="fin-sub">Everyone the township employs. Council pay is set separately.</p>
+          <div class="fin-chart" id="chart-salaries"></div>
+          <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Staff pay by year" style="margin-top:16px"><table class="fin-table compact" id="staff-table"></table></div>
+          <p class="fin-small">Positions are the township’s own count of funded jobs in its return to the Province, not audited. Volunteer firefighters aren’t counted.</p>
+          <h3 class="fin-h4" style="margin-top:24px">The decisions behind it</h3>
+          <ol class="fin-bylaws row" id="pay-bylaws"></ol>
+          <p class="fin-small">Each pay-grid by-law amends the pay equity plan, but the township posts it without Schedule A, the grid itself. <a href="decisions.html?q=remuneration">Council pay by-laws</a> are passed each December.</p>
         </div>
       </section>
 
@@ -129,19 +117,13 @@
       <section class="filed fin-section" aria-labelledby="save-tab">
         <h2 class="filed-tab" id="save-tab">Savings and debt</h2>
         <div class="filed-body">
-          <div class="fin-split even">
-            <div>
-              <h3 class="fin-h">Reserves and debt at year end</h3>
-              <p class="fin-legend"><span class="key key-actual"></span>Reserves (money set aside) <span class="key key-debt"></span>Long-term debt</p>
-              <div class="fin-chart" id="chart-reserves"></div>
-            </div>
-            <div>
-              <h3 class="fin-h">Against similar municipalities nearby</h3>
-              <p class="fin-sub" id="comp-sub"></p>
-              <div id="comparators"></div>
-              <p class="docs-key" id="comp-source"></p>
-            </div>
-          </div>
+          <h3 class="fin-h">Reserves and debt at year end</h3>
+          <p class="fin-legend"><span class="key key-actual"></span>Reserves (money set aside) <span class="key key-debt"></span>Long-term debt</p>
+          <div class="fin-chart" id="chart-reserves"></div>
+          <h3 class="fin-h" style="margin-top:32px">Against similar municipalities nearby</h3>
+          <p class="fin-sub" id="comp-sub"></p>
+          <div class="fin-strips" id="comparators"></div>
+          <p class="docs-key" id="comp-source"></p>
         </div>
       </section>
 
@@ -149,7 +131,7 @@
         <h2 class="filed-tab" id="doc-tab">Documents</h2>
         <div class="filed-body">
           <h3 class="fin-h">Every financial document, by year</h3>
-          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears.</p>
+          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears. For documents the township removed before a copy was kept, web archives are searched daily; if you have one, <a href="https://github.com/chriswjohnston/Nipissing/tree/main/inbox" target="_blank" rel="noopener">add it to the inbox</a>.</p>
           <div id="doc-shelf"></div>
         </div>
       </section>
@@ -157,8 +139,13 @@
       <section class="fin-method" aria-label="About these figures">
         <div><h3 class="fin-h4">Where the numbers come from</h3><p>The Financial Information Return each municipality files with the Province, built from its audited statements, on the same form every year. Budgets come from the presentations to council. <a id="fir-link" href="#">The Province’s open data</a>.</p></div>
         <div><h3 class="fin-h4">What “spent” leaves out</h3><p>An accounting charge for the future cost of closing the landfill and other assets ($1.31M in 2025). The audited statements report it; it isn’t money spent that year.</p></div>
+        <div><h3 class="fin-h4">How sure these figures are</h3><p>Money figures come from statements audited every year (BDO to 2013, KPMG since) and filed with the Province over the treasurer’s signature; they match the audited statements where we hold both. Staff counts are the township’s own, not audited. <a href="#returns">Each year’s return</a>.</p></div>
         <div><h3 class="fin-h4">If a number looks wrong</h3><p>Figures are copied, not calculated by the township for this page. <a href="https://github.com/chriswjohnston/Nipissing/issues/new?title=Finances%3A+" target="_blank" rel="noopener">Report it</a> and it will be checked against the source.</p></div>
       </section>
+      <details class="routine-details fin-returns" id="returns">
+        <summary>Each year’s return: when it was filed, and who audited it</summary>
+        <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Each year's financial return"><table class="fin-table compact" id="returns-table"></table></div>
+      </details>
     </div>
   </div>
 </main>
@@ -178,7 +165,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022p"></script>
+<script src="shared.js?v=20261022r"></script>
 <script>
 // ── formatting ──────────────────────────────────────────────────────────
 const money = (v, short = true) => {
@@ -300,7 +287,7 @@ async function init(){
 
   // ── taxes
   const wt = widthOf('chart-tax'), roomy = wt >= 520;
-  const taxBars = years.map(y => ({ label: y, value: Y[y].property_tax, showValue: y === first || (roomy && (y === last || y === '2020')) || (!nextBudget && y === last) }));
+  const taxBars = years.map(y => ({ label: y, value: Y[y].property_tax, showValue: y === first || (roomy && y === '2020') || (!nextBudget && y === last) }));
   if (nextBudget) taxBars.push({ label: `${nextBudget.year}`, value: nextBudget.levy, kind: 'plan', showValue: true, title: `${nextBudget.year} budget: ${money(nextBudget.levy, false)}` });
   document.getElementById('chart-tax').innerHTML = columnChart(taxBars, { width: wt, labelEvery: every(wt), ariaLabel: `Property taxes raised, ${first} to ${nextBudget ? nextBudget.year : last}` });
   const avg = (a, b, n) => ((Math.pow(b / a, 1 / n) - 1) * 100).toFixed(1);
@@ -308,7 +295,7 @@ async function init(){
   document.getElementById('tax-notes').innerHTML = [
     `<li><strong>The total grows faster than any one bill.</strong> New homes add to the total even when the rate stays the same. The township’s auditor put growth since 2022 at 7.4% a year, 2.7 points of it from new assessment.</li>`,
     Y[n10] ? `<li><strong>Over ten years</strong> (${n10} to ${last}) the total grew ${avg(Y[n10].property_tax, L.property_tax, 10)}% a year on average.</li>` : '',
-    `<li><strong>The budget table below</strong> shows what each year’s increase meant for a typical home.</li>`,
+    `<li><strong>What it meant for a typical home:</strong> each year’s budget, in the table below.</li>`,
   ].join('');
   document.getElementById('budget-table').innerHTML = `<thead><tr><th scope="col">Year</th><th scope="col">Taxes to raise (budget)</th><th scope="col">Increase</th><th scope="col">Typical home</th><th scope="col">Its increase</th><th scope="col">Sources</th></tr></thead><tbody>` +
     budgets.map(b => `<tr><td>${b.year}</td><td>${money(b.levy, false)}</td><td>+${b.levy_change_pct}%</td>
@@ -337,7 +324,7 @@ async function init(){
   const ws = widthOf('chart-salaries');
   document.getElementById('chart-salaries').innerHTML = columnChart(years.map(y => ({ label: y, value: Y[y].salaries, showValue: y === first || y === last })),
     { width: ws, labelEvery: every(ws), ariaLabel: `Salaries, wages and benefits, ${first} to ${last}` });
-  const sy = years.filter((y, i) => i % 2 === 0 || y === last);
+  const sy = years.filter((y, i) => (years.length - 1 - i) % 2 === 0);   // every other year, ending on the latest
   document.getElementById('staff-table').innerHTML = `<thead><tr><th scope="col">Year</th>${sy.map(y => `<th scope="col">${y}</th>`).join('')}</tr></thead><tbody>
     <tr><th scope="row">Share of spending</th>${sy.map(y => `<td>${(Y[y].salaries / Y[y].spent * 100).toFixed(0)}%</td>`).join('')}</tr>
     <tr><th scope="row">Full-time positions</th>${sy.map(y => `<td>${Y[y].full_time ?? '—'}</td>`).join('')}</tr></tbody>`;
@@ -363,7 +350,7 @@ async function init(){
 
   // ── reserves and debt
   const wr = widthOf('chart-reserves');
-  document.getElementById('chart-reserves').innerHTML = columnChart(null, { labelEvery: every(wr), width: wr, height: 300, ariaLabel: 'Reserves and long-term debt by year',
+  document.getElementById('chart-reserves').innerHTML = columnChart(null, { labelEvery: every(wr), width: wr, height: 280, ariaLabel: 'Reserves and long-term debt by year',
     groups: years.map(y => ({ label: y, bars: [{ value: Y[y].reserves || 0, title: `${y} reserves: ${money(Y[y].reserves, false)}` }, { value: Y[y].debt || 0, kind: 'debt', title: `${y} long-term debt: ${money(Y[y].debt, false)}` }] })) });
   const C = F.comparators;
   if (C) {
@@ -372,8 +359,14 @@ async function init(){
     document.getElementById('comp-source').innerHTML = `Source: <a href="${esc(archivedUrl(C.source.doc))}#page=${C.source.page}" target="_blank" rel="noopener">${esc(C.source.label)}</a>.`;
   }
 
+  // ── each year's return
+  const when = t => { if (!t) return '—'; const d = new Date(/^\d{2}\/\d{2}\/\d{4}$/.test(t) ? t.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$1-$2') + 'T00:00:00' : /^\d{4}-\d{2}-\d{2}$/.test(t) ? t + 'T00:00:00' : t);
+    return Number.isNaN(d.getTime()) ? t : d.toLocaleDateString('en-CA', {month: 'short', day: 'numeric', year: 'numeric'}); };
+  document.getElementById('returns-table').innerHTML = `<thead><tr><th scope="col">Year</th><th scope="col">Filed</th><th scope="col">Treasurer</th><th scope="col">Auditor</th></tr></thead><tbody>` +
+    years.slice().reverse().map(y => { const f = Y[y].filed || {}; return `<tr><td>${y}</td><td>${esc(when(f.date))}</td><td>${esc((f.treasurer || '—').replace(/^[A-Z' -]+$/, w => w.toLowerCase().replace(/(^|[\s-])\w/g, c => c.toUpperCase())))}</td><td>${esc([f.auditor, f.audit_firm].filter(Boolean).join(', ') || '—')}</td></tr>`; }).join('') + '</tbody>';
+
   // ── documents shelf
-  const docs = (F.documents || []).filter(d => d.archived || d.url);
+  const docs = (F.documents || []).filter(d => (d.archived || d.url) && !d.same_as);
   const byYear = {};
   docs.forEach(d => (byYear[d.year || 'Undated'] ||= []).push(d));
   document.getElementById('doc-shelf').innerHTML = `<ol class="fin-shelf">${Object.keys(byYear).sort().reverse().map(y => `
@@ -381,7 +374,7 @@ async function init(){
       const href = d.archived ? archivedUrl(d.archived) : null;
       const title = d.title || d.kind;
       return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a> ${keptStamp()}`
-        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
+        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed; no copy found' : d.removed ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
     }).join('')}</ul></li>`).join('')}</ol>`;
 }
 

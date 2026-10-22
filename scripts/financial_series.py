@@ -76,7 +76,9 @@ def num(v: str):
 def main() -> None:
     years: Dict[str, Dict] = {}
     for f in sorted(FIR_DIR.glob("*.csv")):
-        rows = {r["SLC"]: r["AMOUNT"] for r in csv.DictReader(f.open(encoding="utf-8"))}
+        raw = list(csv.DictReader(f.open(encoding="utf-8")))
+        rows = {r["SLC"]: r["AMOUNT"] for r in raw}
+        text = {r["SLC"]: (r["VALUE_TEXT"] or "").strip() for r in raw}
         y = {k: num(rows.get(slc, "")) for k, (slc, _) in LINES.items()}
         # Money that went out the door: total expenses less the accounting charge
         # for future landfill/asset retirement costs (reported from 2023).
@@ -86,6 +88,11 @@ def main() -> None:
         y["grants_total"] = sum(g)
         y["grants_other_provincial"] = (y["prov_operating"] or 0) - (y["ompf"] or 0) + (y["ont_conditional"] or 0) + (y["ont_capital"] or 0)
         y["grants_federal"] = (y["can_conditional"] or 0) + (y["can_capital"] or 0) + (y["gas_tax"] or 0)
+        # Who signed it, who audited it, when it was filed (Schedule 02).
+        y["filed"] = {"date": text.get("slc.02X.L0094.C01.02") or None,
+                      "treasurer": text.get("slc.02X.L0090.C01.02") or None,
+                      "auditor": text.get("slc.02X.L0091.C01.02") or None,
+                      "audit_firm": text.get("slc.02X.L0092.C01.02") or None}
         years[f.stem] = {k: v for k, v in y.items() if v is not None}
     out = {
         "_about": "Township of Nipissing figures by year from the Province's Financial Information Return (FIR), "
