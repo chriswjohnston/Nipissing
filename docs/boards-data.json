@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-10-22",
   "source": "board pages",
   "boards": [
     {
@@ -10727,7 +10727,7 @@
               "archived": "files/archive/boards/healthunit/healthunit/2026/boh-2026-09-23-medical-officer-of-health-report-to-board-of-health__d682ef45.pdf"
             }
           ],
-          "summary": null,
+          "summary": "# Health Unit Meeting Summary\n\n**Sep 23, 2026**\n\n## Key Decisions\n- Approved the September 23, 2026 meeting agenda\n- Approved the minutes from the June 24, 2026 Board of Health meeting\n- Received and reviewed the second quarter financial statements for information\n- Received and reviewed second quarter expenses for the Medical Officer of Health/Executive Officer\n- Received and reviewed second quarter Board of Health expenses\n\n## Main Topics\n- **Strategic Plan Update**: Staff presented progress on the 2024–2027 Strategic Plan, focusing on three priority areas: Organizational Well-Being, fostering Mino-Bimaadiziwin (the good life) with Indigenous partners and communities, and developing relationships with community partners to advance shared goals\n- **Medical Officer of Health Report**: The Board received the regular report from the Medical Officer of Health for information and discussion\n- **Financial Review**: The Board reviewed second quarter financial statements and expense reports for both the Medical Officer of Health and the Board itself\n\n## Notable Items\n- The meeting was held in a hybrid format with members attending both in person at the Nipissing Room in North Bay and virtually via Teams\n- No conflicts of interest were declared by Board members\n- No items were brought forward under Business Arising or Board Committee Reports\n\n---\n*Next regular meeting: October 7, 2026 (time and location to be confirmed)*",
           "events": [],
           "cancelled": false,
           "rescheduled": false,
@@ -12906,7 +12906,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-10-21",
+      "members_checked": "2026-10-22",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
@@ -13998,7 +13998,8 @@
           "title": "Recreation Committee",
           "source_kind": "board",
           "extra_docs": [],
-          "video_url": "https://www.youtube.com/watch?v=7RQzEB_89gg"
+          "video_url": "https://www.youtube.com/watch?v=7RQzEB_89gg",
+          "minutes_archived": "files/archive/boards/recreation/2025/Recreation-Minutes-October-6-2025__5b3bfffd.pdf"
         },
         {
           "date": "2025-09-15",
