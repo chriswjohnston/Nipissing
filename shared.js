@@ -503,6 +503,7 @@ const ROUTINE_RULES = [
   /\b(?:meeting|council)\s+(?:be\s+|is\s+)?adjourn/i,
   /^(?:that\s+)?(?:we|council)\s+receives?\s+(?:the\s+)?[\w\s,.-]{0,80}(?:report|correspondence|minutes|presentation|delegation|letter|update)s?\b[^.]{0,40}(?:as\s+presented|for\s+information)/i,
   /^(?:that\s+)?(?:we|council)\s+receives?\s+the\s+correspondence/i,
+  /^(?:that\s+)?(?:we|council)\s+(?:receives?|accepts?)\s+the\s+correspondence/i,
   /\bconfirm\s+the\s+proceedings\s+of\s+council\b/i,
 ];
 
@@ -514,7 +515,10 @@ function isRoutineText(text) {
 const KIND_RULES = [
   ['Bills paid', /statement\s+of\s+accounts|accounts\s+payable|\baccounts\b[^.]{0,80}\bbe\s+approved/i],
   ['Closed sessions', /closed\s+to\s+the\s+public|closed\s+session|in[-\s]camera|resume\s+to\s+an?\s+open|reconvene|rise\s+from|section\s+239/i],
-  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Support for other councils', /\bsupports?\s+(?:the\s+)?(?:[\w’'.,&\s-]{0,120})?(?:resolution|motion|submission|appeal)\b|\bendorses?\s+(?:the\s+)?[\w’'.,&\s-]{0,80}resolution/i],
+  ['Newsletters', /\bnewsletter/i],
+  ['Conference attendance', /\b(?:attend|attendance|registration)\b[^.]{0,200}\b(?:conference|convention|meeting|association|symposium|workshop|seminar|summit|AGM)\b|\bconference\b|\bconvention\b/i],
+  ['Grants', /\bgrant\b|\bfunding\s+(?:application|program|stream)|\bapplication\s+(?:to|for)\s+(?:the\s+)?[\w\s,&-]{0,60}(?:fund|program|stream)\b/i],
   ['Appointments', /\bappoint|\bresignation\b|\bhire\b|\bhiring\b|\broster\b|\bintegrity\s+commissioner\b|\bremuneration\b|\bposition\s+description/i],
   ['Zoning and land', /\bzoning\b|\brezon|holding\s*\(?h\)?\s*symbol|stop\s+up|road\s+allowance|sale\s+of\s+land|\bconvey|\bseverance|minor\s+variance|consent\s+application|part\s+of\s+lot|\bplan\s+42r|\bdeeming\b|site\s+plan/i],
   ['Agreements', /\bagreement\b|memorandum\s+of\s+understanding|\bMOU\b|\benter\s+into\b|\bcontract\b/i],
@@ -525,14 +529,18 @@ const KIND_RULES = [
 ];
 
 function decisionKind(text) {
-  const t = String(text || '');
-  for (const [kind, re] of KIND_RULES) if (re.test(t)) return kind;
+  // Council's operative words decide first; the WHEREAS background only
+  // when those say nothing (it often mentions grants, budgets, other bodies).
+  const full = String(text || '');
+  for (const t of [operativeText(full), full]) {
+    for (const [kind, re] of KIND_RULES) if (re.test(t)) return kind;
+  }
   return 'Other';
 }
 
 const DECISION_KINDS = ['Spending and contracts', 'Bills paid', 'Zoning and land', 'Agreements',
-  'Appointments', 'Taxes and budget', 'Laws and policies', 'Support for other councils',
-  'Closed sessions', 'Other'];
+  'Appointments', 'Taxes and budget', 'Laws and policies', 'Grants', 'Newsletters',
+  'Conference attendance', 'Support for other councils', 'Closed sessions', 'Other'];
 
 // One list of decisions. Each by-law appears once; the resolution that
 // passed it is folded in (passedBy). Returns newest first.
