@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022n">
+<link rel="stylesheet" href="shared.css?v=20261022o">
 </head>
 <body class="law-page">
 
@@ -107,7 +107,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer-inner">
     <div class="footer-about">
-      <p class="footer-name">Nipissing Public Record</p>
+      <h2 class="footer-name">Nipissing Public Record</h2>
       <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
     <ul class="footer-links">
@@ -119,7 +119,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022n"></script>
+<script src="shared.js?v=20261022o"></script>
 <script>
 function getParam(n){ return new URL(window.location.href).searchParams.get(n); }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
@@ -150,13 +150,16 @@ function marker(line){
 }
 function renderLaw(md){
   const lines = String(md || '').replace(/\r\n/g, '\n').split('\n');
-  let html = '', list = null, table = [];
+  let html = '', list = null, table = [], tableNo = 0;
   const flushList = () => { if(list){ html += `</${list}>`; list = null; } };
   const flushTable = () => {
     if(!table.length) return;
     const rows = table.filter(r => !/^\s*\|?\s*:?-{2,}/.test(r)).map(r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()));
-    html += '<div class="law-table-wrap"><table>' + rows.map((r, i) =>
-      '<tr>' + r.map(c => i === 0 ? `<th>${inline(c)}</th>` : `<td>${inline(c)}</td>`).join('') + '</tr>').join('') + '</table></div>';
+    tableNo += 1;
+    // Each table scrolls sideways on a phone, so it's a named, focusable region;
+    // an empty header cell is a plain cell (no empty header for screen readers).
+    html += `<div class="law-table-wrap" tabindex="0" role="region" aria-label="Table ${tableNo}${rows[0] && rows[0][0] ? `: ${esc(rows[0][0]).slice(0, 60)}` : ''}"><table>` + rows.map((r, i) =>
+      '<tr>' + r.map(c => i === 0 && c ? `<th scope="col">${inline(c)}</th>` : `<td>${inline(c)}</td>`).join('') + '</tr>').join('') + '</table></div>';
     table = [];
   };
   for(const raw of lines){

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022n">
+<link rel="stylesheet" href="shared.css?v=20261022o">
 </head>
 <body>
 
@@ -55,7 +55,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer-inner">
     <div class="footer-about">
-      <p class="footer-name">Nipissing Public Record</p>
+      <h2 class="footer-name">Nipissing Public Record</h2>
       <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
     </div>
     <ul class="footer-links">
@@ -67,7 +67,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022n"></script>
+<script src="shared.js?v=20261022o"></script>
 <script>
 const CLOSED_REASONS = {
   '2a': 'Security of municipal property', '2b': 'Personal matters about an identifiable person',
@@ -207,12 +207,12 @@ function termHtml(t){
     <div class="filed-body">
       <p class="term-dates">${escHtml(fmt(t.start))} to ${escHtml(fmt(t.end))}${live ? ', in progress' : ''}${t.note ? `. ${escHtml(t.note)}` : ''}</p>
       <dl class="glance-grid">
-        <div><dt>Council meetings</dt><dd>${n(s.meetings)}</dd><span>${n(s.regular)} regular, ${n(s.special)} special</span></div>
-        <div><dt>Resolutions carried</dt><dd>${n(s.byStatus.carried || 0)}</dd><span>of ${n(s.resolutions)} voted on</span></div>
-        <div><dt>Defeated</dt><dd>${n(s.byStatus.defeated || 0)}</dd><span><a href="#not-carried">See which</a></span></div>
-        <div><dt>Deferred</dt><dd>${n((s.byStatus.deferred || 0) + (s.byStatus.tabled || 0))}</dd><span><a href="#not-carried">See which</a></span></div>
-        <div><dt>Closed sessions</dt><dd>${n(s.closed)}</dd><span><a href="#closed">Why council met in private</a></span></div>
-        <div><dt>By-laws passed</dt><dd>${n(s.bylaws)}</dd><span>${n(s.confirming)} of them confirm a meeting’s proceedings</span></div>
+        <div><dt>Council meetings</dt><dd>${n(s.meetings)}</dd><dd class="glance-note">${n(s.regular)} regular, ${n(s.special)} special</dd></div>
+        <div><dt>Resolutions carried</dt><dd>${n(s.byStatus.carried || 0)}</dd><dd class="glance-note">of ${n(s.resolutions)} voted on</dd></div>
+        <div><dt>Defeated</dt><dd>${n(s.byStatus.defeated || 0)}</dd><dd class="glance-note"><a href="#not-carried">See which</a></dd></div>
+        <div><dt>Deferred</dt><dd>${n((s.byStatus.deferred || 0) + (s.byStatus.tabled || 0))}</dd><dd class="glance-note"><a href="#not-carried">See which</a></dd></div>
+        <div><dt>Closed sessions</dt><dd>${n(s.closed)}</dd><dd class="glance-note"><a href="#closed">Why council met in private</a></dd></div>
+        <div><dt>By-laws passed</dt><dd>${n(s.bylaws)}</dd><dd class="glance-note">${n(s.confirming)} of them confirm a meeting’s proceedings</dd></div>
       </dl>
       <p class="docs-key">Counted every day from the minutes. ${s.byStatus.unknown ? `${n(s.byStatus.unknown)} resolutions have no recorded outcome. ` : ''}${live ? 'The term is still under way, so these will grow.' : ''}</p>
     </div>
@@ -248,8 +248,8 @@ function termHtml(t){
             <div class="h-links">${(c.records || []).map(r => `<a href="${recordHref(r)}">${escHtml(recordLabel(r))}</a>`).join('')}${c.meeting ? `<a href="meeting-detail.html?date=${encodeURIComponent(c.meeting)}&body=council">The meeting</a>` : ''}${c.source ? `<a href="${escHtml(c.source.url)}" target="_blank" rel="noopener">${escHtml(c.source.label)}</a>` : ''}</div>
           </li>`).join('')}
         </ol>
-        ${(t.council_at_end || []).length ? `<aside class="narrow side-card"><h3 class="side-title">Council ${live ? 'now' : 'at the end of the term'}</h3>
-          <ul class="mini-list">${t.council_at_end.map(m => `<li><strong>${escHtml(m.name)}</strong><span>${escHtml(m.role)}</span></li>`).join('')}</ul></aside>` : ''}
+        ${(t.council_at_end || []).length ? `<div class="narrow side-card"><h3 class="side-title">Council ${live ? 'now' : 'at the end of the term'}</h3>
+          <ul class="mini-list">${t.council_at_end.map(m => `<li><strong>${escHtml(m.name)}</strong><span>${escHtml(m.role)}</span></li>`).join('')}</ul></div>` : ''}
       </div>
     </section>`);
   }

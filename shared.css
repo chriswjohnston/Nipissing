@@ -209,10 +209,10 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .latest{display:flex;flex-wrap:wrap;gap:32px 48px}
 .latest-side{flex:1 1 260px;min-width:0}
 .latest-main{flex:999 1 460px;min-width:0}
-.latest-date{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.1}
+.latest-date{margin:0;font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.1}
 .latest-sub{color:var(--muted);margin:4px 0 18px}
 .latest-body{font-size:18px;font-weight:700;margin-bottom:14px}
-.latest-main h3{font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:14px}
+.latest-main h3,.latest-main h4{font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:14px}
 .key-decisions{padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:17px;max-width:66ch}
 .ai-note{font-size:14px;color:var(--muted);margin-top:20px;max-width:66ch}
 
@@ -318,7 +318,7 @@ a.amend-mark:hover{text-decoration:underline}
 
 /* ── Meetings: this month panel ────────────────────────────────────── */
 .month-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
-.month-title{font-family:var(--serif);font-size:22px;font-weight:600}
+.month-title{margin:0;font-family:var(--serif);font-size:22px;font-weight:600}
 .calendar-arrow{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);cursor:pointer}
 .calendar-arrow:hover{border-color:var(--ledger);background:var(--ledger-tint)}
 .calendar-arrow svg{width:18px;height:18px}
@@ -407,7 +407,7 @@ a.amend-mark:hover{text-decoration:underline}
 .glance-grid > div{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding-top:10px}
 .glance-grid dt{font-weight:600;color:var(--ink-2);font-size:15px}
 .glance-grid dd{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.15;font-variant-numeric:lining-nums tabular-nums}
-.glance-grid span{font-size:14px;color:var(--muted)}
+.glance-grid span,.glance-grid .glance-note{font-family:var(--sans);font-size:14px;font-weight:400;line-height:1.4;color:var(--muted)}
 .glance-grid a{font-weight:600}
 .term-section .section-title{margin-bottom:10px}
 .term-overview{font-family:var(--serif);font-size:19px;line-height:1.7;max-width:70ch;margin-bottom:20px}
@@ -456,7 +456,7 @@ a.amend-mark:hover{text-decoration:underline}
 .site-footer{background:var(--ledger);color:#E9F0EC;margin-top:24px}
 .site-footer-inner{display:flex;flex-wrap:wrap;gap:32px 64px;padding-top:48px;padding-bottom:48px}
 .footer-about{flex:2 1 380px;min-width:0}
-.footer-name{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
+.footer-name{margin-top:0;font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-bottom:8px}
 .footer-about p{max-width:58ch}
 .footer-links{flex:1 1 200px;list-style:none;display:flex;flex-direction:column;gap:10px}
 .site-footer a{color:#fff}
