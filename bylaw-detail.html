@@ -282,7 +282,13 @@ async function init(){
   const pkg = docUrl(mtg, 'package') || bylaw.agenda_package_url;
   if(minutes) links.push(docLink('Minutes', minutes));
   if(pkg) links.push(docLink('Agenda package', pkg));
-  (bylaw.extra_docs || []).forEach(d => { if (d && d.url) links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url))); });
+  // "Earlier upload" entries are the same by-law re-uploaded to the township's
+  // site (a re-scan, or a copy missing its schedules). They stay in the
+  // archive data but add nothing for a reader, so they aren't listed.
+  (bylaw.extra_docs || []).forEach(d => {
+    if (!d || !d.url || /^Earlier upload/i.test(d.label || '')) return;
+    links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url)));
+  });
   if(bylaw.meeting_date){
     links.push(docLink(
       'The meeting it was passed at',

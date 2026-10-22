@@ -34,6 +34,7 @@ import pymupdf as fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 
+import bylaw_dates
 import bylaw_sources
 import inventory_bylaws
 import package_extract
@@ -1014,6 +1015,14 @@ def main() -> None:
 
     # Mirror township-hosted by-law PDFs into the archive before saving.
     archive_bylaw_pdfs(final_bylaws)
+
+    # By-laws from the township's by-laws page come without a date; read the
+    # "passed this ... day of ..." line from the archived PDF (OCR for scans).
+    print("\n═══ Step 4b: Passing dates from by-law PDFs ═══")
+    try:
+        print(f"  {bylaw_dates.fill(final_bylaws)}")
+    except Exception as e:
+        print(f"  ✗ date reading failed ({e}) — dates left as they were")
 
     # Step 5: council term stats — fully automatic, no manual updates needed
     write_term_stats(final_resolutions, meetings)
