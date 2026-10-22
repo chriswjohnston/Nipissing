@@ -142,7 +142,24 @@ def archive_plan(term: Dict[str, Any]) -> None:
         print(f"  strategic plan not archived ({e})")
 
 
+def archive_all() -> None:
+    """Save a copy of every term's strategic plan (runs daily, no AI)."""
+    data = load(TERMS, {"terms": []})
+    before = json.dumps(data)
+    for term in data.get("terms", []):
+        if (term.get("strategic_plan") or {}).get("url"):
+            archive_plan(term)
+    if json.dumps(data) != before:
+        TERMS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print("  terms.json updated with archived copies")
+    else:
+        print("  strategic plans already archived")
+
+
 def main() -> None:
+    if "--archive-only" in sys.argv:
+        archive_all()
+        return
     data = load(TERMS, {"terms": []})
     today = date.today()
     force = "--force" in sys.argv
@@ -156,6 +173,8 @@ def main() -> None:
         print(f"\n═══ {term['label']} ═══")
         archive_plan(term)
         changed = True
+        # Keep the archived copy even if the summary step below fails.
+        TERMS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         if not API_KEY:
             print("  no ANTHROPIC_API_KEY; summary not written")
             continue
@@ -164,8 +183,12 @@ def main() -> None:
             print("  no decisions in range")
             continue
         through = min(today.isoformat(), term["end"])
-        out = call_claude(PROMPT.format(label=term["label"], start=term["start"], end=term["end"], through=through,
-                                        decisions="\n".join(rec["decisions"]), summaries="\n\n".join(rec["summaries"])))
+        try:
+            out = call_claude(PROMPT.format(label=term["label"], start=term["start"], end=term["end"], through=through,
+                                            decisions="\n".join(rec["decisions"]), summaries="\n\n".join(rec["summaries"])))
+        except Exception as e:
+            print(f"  ✗ summary not written ({e}); previous summary kept")
+            continue
         items = []
         for k in out.get("key_decisions") or []:
             recs = [str(x).replace("By-law ", "").strip() for x in k.get("records") or []]
