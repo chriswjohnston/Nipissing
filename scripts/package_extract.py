@@ -367,7 +367,7 @@ def apply(state: Dict[str, Any], bylaws: List[Dict[str, Any]]) -> int:
     found = {}
     for d, entry in state.items():
         for num, info in (entry.get("bylaws") or {}).items():
-            found[num] = dict(info, meeting_date=d)
+            found[num] = dict(info, meeting_date=d.split("#")[0])   # "<date>#index": found by package_index.py
     n = 0
     for b in bylaws:
         num = norm_number(b.get("number", ""))
@@ -390,6 +390,8 @@ def apply(state: Dict[str, Any], bylaws: List[Dict[str, Any]]) -> int:
         b["extracted_text"] = info["text"]
         b["extracted_from"] = {"meeting_date": info["meeting_date"], "pages": info["pages"],
                                "method": info["method"]}
+        if info.get("presented"):
+            b["extracted_from"]["presented"] = info["presented"]
         pdf = b.get("pdf_url") or ""
         if not pdf or pdf.startswith("files/bylaws/"):
             b["pdf_url"] = info["pdf"]

@@ -1589,14 +1589,25 @@
       "year": 2024,
       "title": "establish the remuneration and payment of expenses to members of Council",
       "date_passed": "2024-12-17",
-      "pdf_url": null,
+      "pdf_url": "files/bylaws/2024-54.pdf",
       "page_url": null,
       "source": "minutes",
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2024-12-17",
       "agenda_package_url": "https://council.chriswjohnston.ca/2024/files/December-17-2024-Council-Agenda-Package.pdf",
-      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-17-2024.pdf"
+      "minutes_url": "https://council.chriswjohnston.ca/2024/files/Minutes-December-17-2024.pdf",
+      "extracted_pdf": "files/bylaws/2024-54.pdf",
+      "extracted_text": "files/bylaws/text/2024-54.txt",
+      "extracted_from": {
+        "meeting_date": "2024-12-03",
+        "pages": [
+          12,
+          13
+        ],
+        "method": "index",
+        "presented": "2024-12-03"
+      }
     },
     {
       "number": "2024-53",

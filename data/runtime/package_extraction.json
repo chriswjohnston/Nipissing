@@ -1083,6 +1083,21 @@
     ],
     "version": 2
   },
+  "2024-12-03#index": {
+    "bylaws": {
+      "2024-54": {
+        "method": "index",
+        "pages": [
+          12,
+          13
+        ],
+        "pdf": "files/bylaws/2024-54.pdf",
+        "presented": "2024-12-03",
+        "text": "files/bylaws/text/2024-54.txt"
+      }
+    },
+    "status": "done"
+  },
   "2024-12-17": {
     "bylaws": {},
     "checked": "2026-10-22",

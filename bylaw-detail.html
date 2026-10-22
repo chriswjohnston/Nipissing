@@ -311,7 +311,9 @@ async function init(){
   const isExtract = ex && bylaw.extracted_pdf && bylaw.pdf_url === bylaw.extracted_pdf;
   if(pdf){
     const pages = ex && ex.pages ? (ex.pages[0] === ex.pages[1] ? `p. ${ex.pages[0]}` : `pp. ${ex.pages[0]}–${ex.pages[1]}`) : '';
-    links.push(docLink(isExtract ? `By-law, from the agenda package (${pages})` : 'By-law', pdf));
+    const earlier = ex && ex.presented && ex.presented !== bylaw.meeting_date
+      ? `, as presented ${fmtDate(ex.presented)}` : '';
+    links.push(docLink(isExtract ? `By-law, from the agenda package${earlier} (${pages})` : 'By-law', pdf));
   } else if(bylaw.extracted_pdf){
     links.push(docLink('By-law, from the agenda package', archivedUrl(bylaw.extracted_pdf)));
   }

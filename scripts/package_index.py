@@ -136,7 +136,11 @@ def classify(text: str, first: bool) -> Optional[Dict[str, Any]]:
         return {"kind": "resolution", "number": f"R{m.group(1)}-{m.group(2)}" if m else None,
                 "title": one_line(re.split(r"\bTHAT\b|\bWHEREAS\b", flat, maxsplit=1, flags=re.I)[-1])[:160] if re.search(r"\bTHAT\b|\bWHEREAS\b", flat, re.I) else ""}
     m = BYLAW_RE.search(flat[:300])
-    if m and BEING_RE.search(flat[:600]):
+    # A by-law's own first page, not minutes that say "we pass By-Law No. ...":
+    # minutes' later pages start "Minutes — February 6, 2024 - Page 3".
+    minutes_page = re.search(r"Minutes\b.{0,40}\bPage\s+\d", flat[:90], re.I)
+    passing = m and re.search(r"pass(?:ed)?\s+(?:the\s+)?$", flat[max(0, m.start() - 12):m.start()], re.I)
+    if m and BEING_RE.search(flat[:600]) and not minutes_page and not passing:
         return {"kind": "bylaw", "number": f"{m.group(1)}-{int(m.group(2)):02d}",
                 "title": one_line(re.split(BEING_RE, flat, maxsplit=1)[-1])[:160]}
     if CORR_RE.search(flat[:300]):
@@ -185,7 +189,61 @@ def resegment() -> None:
     print(f"  re-filed {len(index.get('packages', {}))} packages")
 
 
+def fill_missing_bylaws(index: Dict[str, Any]) -> int:
+    """A by-law with no copy of its own, found in another meeting's package.
+
+    Package extraction looks for a by-law in the package of the meeting
+    that passed it. Some were presented earlier: By-law 2024-54 (council
+    pay, with its Schedule A) was in the December 3, 2024 package and passed
+    December 17. The index knows where every by-law in every package is, so
+    those pages are cut out and attached, noted as the version presented to
+    council on that date. Filed in package_extraction.json under
+    "<date>#index", which apply() reads like any other extract.
+    """
+    bylaws_path = CANON / "bylaws.json"
+    payload = json.loads(bylaws_path.read_text(encoding="utf-8"))
+    need = {b["number"]: b for b in payload["bylaws"]
+            if not (b.get("pdf_url") or b.get("pdf_url_archived") or b.get("extracted_pdf"))}
+    state = json.loads(pe.STATE_FILE.read_text(encoding="utf-8")) if pe.STATE_FILE.exists() else {}
+    meetings = {m["date"]: m for m in json.loads((CANON / "meetings.json").read_text(encoding="utf-8"))["meetings"]}
+    found = 0
+    with tempfile.TemporaryDirectory() as tmp:
+        for d, entry in sorted(index.get("packages", {}).items()):
+            items = [i for i in entry.get("items", []) if i["kind"] == "bylaw" and i.get("number") in need]
+            if not items or d not in meetings:
+                continue
+            pdf = Path(tmp) / f"{d}.pdf"
+            if not pe.fetch_package(pe.package_source(meetings[d]), pdf):
+                continue
+            import pymupdf
+            doc = pymupdf.open(pdf)
+            pages = gzip.open(TEXT_DIR / f"{d}.txt.gz", "rt", encoding="utf-8").read().split("\f") if (TEXT_DIR / f"{d}.txt.gz").exists() else []
+            for it in items:
+                n = it["number"]
+                a, b = it["pages"]
+                out = pymupdf.open()
+                out.insert_pdf(doc, from_page=a - 1, to_page=b - 1)
+                pe.OUT_DIR.mkdir(parents=True, exist_ok=True)
+                pe.TEXT_DIR.mkdir(parents=True, exist_ok=True)
+                out.save(pe.OUT_DIR / f"{n}.pdf", garbage=3, deflate=True)
+                (pe.TEXT_DIR / f"{n}.txt").write_text("\n\n".join(pages[a - 1:b]), encoding="utf-8")
+                state.setdefault(f"{d}#index", {"status": "done", "bylaws": {}})["bylaws"][n] = {
+                    "pdf": f"files/bylaws/{n}.pdf", "text": f"files/bylaws/text/{n}.txt",
+                    "pages": [a, b], "method": "index", "presented": d}
+                need.pop(n)
+                found += 1
+                print(f"  by-law {n}: found in the {d} package, pp. {a}-{b}")
+    if found:
+        pe.STATE_FILE.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
+        pe.apply(state, payload["bylaws"])
+        bylaws_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    return found
+
+
 def main() -> None:
+    if "--fill-bylaws" in sys.argv:
+        fill_missing_bylaws(json.loads(OUT.read_text(encoding="utf-8")))
+        return
     if "--resegment" in sys.argv:
         resegment()
         return
@@ -237,6 +295,10 @@ def main() -> None:
                   f"in {time.monotonic() - t0:.0f}s" + "".join(f"\n      report p{r['pages'][0]}: {r.get('title', '?')}" for r in reports))
             OUT.write_text(json.dumps(index, indent=1, ensure_ascii=False), encoding="utf-8")
     OUT.write_text(json.dumps(index, indent=1, ensure_ascii=False), encoding="utf-8")
+    try:
+        fill_missing_bylaws(index)
+    except Exception as e:
+        print(f"  filling missing by-laws failed: {e}")
 
 
 if __name__ == "__main__":
