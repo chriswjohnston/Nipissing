@@ -49,7 +49,7 @@ jobs:
             township_up=0
             echo "::warning title=Township website unreachable::Skipping update_meetings, update_bylaws, update_adjustment and update_boards this run; stored data kept. They resume automatically when the site is back."
           fi
-          for s in update_meetings import_documents financials recover_documents generate_summaries update_bylaws consolidate_bylaws \
+          for s in update_meetings import_documents financials recover_documents generate_summaries update_bylaws package_index consolidate_bylaws \
                    update_adjustment update_boards update_library update_healthunit \
                    update_dnssab attach_videos doc_tidy archive_plans check_freshness audit_site build_sitemap; do
             case "$s" in
@@ -85,7 +85,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/canonical data/runtime data/financial docs/files inbox sitemap.xml robots.txt
+          git add -A data/canonical data/runtime data/financial data/packages docs/files inbox sitemap.xml robots.txt
           git diff --cached --quiet || git commit -m "Auto-update canonical records"
           git pull --rebase origin main
           git push

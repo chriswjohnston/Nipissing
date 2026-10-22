@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022m">
+<link rel="stylesheet" href="shared.css?v=20261022n">
 </head>
 <body>
 
@@ -97,7 +97,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022m"></script>
+<script src="shared.js?v=20261022n"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -229,6 +229,18 @@ async function init(){
 
   document.getElementById('doc-links').innerHTML =
     links.join('') + meetingGroup(resolution.meeting_date, minutes, pkg);
+
+  // The draft in the agenda package, and the papers that came with it.
+  try {
+    const idx = (await (await fetch('data/canonical/package_index.json', {cache: 'no-cache'})).json()).packages || {};
+    const it = (idx[resolution.meeting_date]?.items || []).find(i => i.kind === 'resolution' && i.number === resolution.number);
+    if (it && pkg) {
+      const span = it.papers ? (it.papers[0] === it.papers[1] ? `p. ${it.papers[0]}` : `pp. ${it.papers[0]}–${it.papers[1]}`) : '';
+      document.getElementById('doc-links').insertAdjacentHTML('afterbegin',
+        docLink(it.papers ? `The papers council had (agenda package, ${span})` : `The draft in the agenda package (p. ${it.pages[0]})`,
+          `${pkg}#page=${(it.papers || it.pages)[0]}`));
+    }
+  } catch (e) { /* no index yet */ }
 
   // Decisions that name this one, or that this one names.
   const refs = resolutionRefs(RESOLUTIONS).get(resolution.number);
