@@ -111,7 +111,9 @@ async function init(){
       if (a) notes.push(a + (c?.consolidated_markdown ? '. Shown with the changes applied' : ''));
       return {
         name: l.name, num: String(l.bylaw), note: notes.join('. '),
-        href: c ? `law.html?id=${encodeURIComponent(c.id)}` : `bylaw-detail.html?id=${encodeURIComponent(l.bylaw)}`,
+        // from=laws lets the page lead back here, to this topic.
+        href: (c ? `law.html?id=${encodeURIComponent(c.id)}` : `bylaw-detail.html?id=${encodeURIComponent(l.bylaw)}`)
+          + `&from=laws&topic=${encodeURIComponent(t.id)}`,
         hay: normText(`${l.name} ${l.bylaw} ${b.title || ''} ${b.common_name || ''} ${t.name}`),
       };
     }).filter(Boolean);
@@ -121,6 +123,12 @@ async function init(){
 
   document.getElementById('loading').hidden = true;
   render('');
+  // Returning from a law (laws.html#topic-roads): the list is drawn after
+  // the data loads, so jump to the topic now that it exists.
+  if (location.hash) {
+    const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el) el.scrollIntoView();
+  }
 
   const repealed = BYLAWS.filter(b => String(b.status || '').toLowerCase() === 'repealed');
   if (repealed.length) {
