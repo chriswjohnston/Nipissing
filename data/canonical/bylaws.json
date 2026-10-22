@@ -4129,7 +4129,7 @@
       "meeting_date": null,
       "agenda_package_url": null,
       "minutes_url": null,
-      "common_name": "Unauthorized Disposal of Waste",
+      "common_name": "Landfill and waste disposal",
       "categories": [
         "Provincial Offenses By-Laws",
         "Roads & Landfill By-Laws"
@@ -4143,7 +4143,10 @@
         }
       ],
       "pdf_url_archived": "files/archive/bylaws/2021/2021-58__a16b8d59.pdf",
-      "date_passed_source": "pdf"
+      "date_passed_source": "pdf",
+      "repeals": [
+        "2020-27"
+      ]
     },
     {
       "number": "2021-57",
@@ -4419,7 +4422,7 @@
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2020/06/2020-27-LandfillByLaw.pdf",
       "page_url": null,
       "source": "bylaws_page",
-      "status": "approved",
+      "status": "repealed",
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
@@ -4431,7 +4434,8 @@
         "Tipping fees apply to construction debris and large loads",
         "Seasonal hours of operation posted at the site",
         "Illegal dumping subject to fines and cleanup costs"
-      ]
+      ],
+      "repealed_by": "2021-58"
     },
     {
       "number": "2020-20",

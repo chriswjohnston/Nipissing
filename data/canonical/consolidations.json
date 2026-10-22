@@ -121,7 +121,7 @@
     },
     "unauthorized-disposal-of-waste": {
       "id": "unauthorized-disposal-of-waste",
-      "name": "Unauthorized Disposal of Waste",
+      "name": "Landfill and waste disposal",
       "also_known_as": [],
       "principal": "2021-58",
       "amendments": [
@@ -587,17 +587,6 @@
       "generated": "2026-10-22",
       "model": "claude-sonnet-5-5",
       "input_hash": "79f6addef60bc2836a0aedbc6122a860b5071931db996b999e7a71a13d3d7ab7"
-    },
-    "law-2020-27": {
-      "id": "law-2020-27",
-      "name": "Landfill",
-      "also_known_as": [],
-      "principal": "2020-27",
-      "amendments": [],
-      "missing_text": [
-        "2020-27"
-      ],
-      "auto": true
     },
     "law-2020-20": {
       "id": "law-2020-20",

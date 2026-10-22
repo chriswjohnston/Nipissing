@@ -28,12 +28,16 @@
     },
     {
       "id": "unauthorized-disposal-of-waste",
-      "name": "Unauthorized Disposal of Waste",
+      "name": "Landfill and waste disposal",
       "principal": "2021-58",
       "amendments": [
         "2024-45"
       ],
-      "consolidate": true
+      "consolidate": true,
+      "also_known_as": [
+        "Landfill By-law",
+        "Unauthorized Disposal of Waste"
+      ]
     },
     {
       "id": "parking",
