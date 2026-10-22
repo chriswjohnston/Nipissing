@@ -444,9 +444,120 @@
               }
             ]
           }
-        ]
+        ],
+        "archived": "files/archive/terms/2022/Strategic-Plan-2023-2026__0b30fd0d.pdf"
       },
-      "summary": null
+      "summary": {
+        "overview": "Council's decisions in this term were mostly about roads, culverts, bridges and landfill capacity. Council also decided on annual budgets, equipment purchases, fire department equipment and grant applications. It dealt with changes in council membership and set policies on procedures and purchasing. It supported many resolutions from other municipalities on provincial and federal matters.",
+        "key_decisions": [
+          {
+            "title": "Landfill expansion request and compactor purchase",
+            "text": "On March 21, 2023, council adopted the 2023 budget and capital forecast. It asked Pinchin to request an expansion of the Bear Creek Landfill, and it approved buying a reconditioned compactor for $250,000 before taxes to extend landfill capacity.",
+            "records": [
+              "2023-23",
+              "R2023-074",
+              "R2023-076",
+              "R2023-077"
+            ],
+            "date": "2023-03-21"
+          },
+          {
+            "title": "Strategic Plan 2023-2026 approved",
+            "text": "On November 14, 2023, council approved the Township's Strategic Plan for 2023 to 2026.",
+            "records": [
+              "R2023-208"
+            ],
+            "date": "2023-11-14"
+          },
+          {
+            "title": "Breathing apparatus units bought for fire department",
+            "text": "On December 19, 2023, council accepted the TransCanada Safety proposal for self-contained breathing apparatus units and supplies. The cost was $138,512.79 before taxes, with delivery in 2024.",
+            "records": [
+              "R2023-239"
+            ],
+            "date": "2023-12-19"
+          },
+          {
+            "title": "Bear Creek Culvert relining approved",
+            "text": "On April 2, 2024, council approved relining Bear Creek Culvert #1 before the 2024 budget was adopted. Evidence showed the culvert was close to failing and sinkholes had appeared.",
+            "records": [
+              "R2024-072"
+            ],
+            "date": "2024-04-02"
+          },
+          {
+            "title": "Hummel Bridge replacement option supported",
+            "text": "On June 4, 2024, after an engineer recommended closing the Hummel Bridge to vehicles, council supported replacing the structure. The estimated cost was $3,200,000. The resolution was sent to the Municipality of Powassan.",
+            "records": [
+              "R2024-128"
+            ],
+            "date": "2024-06-04"
+          },
+          {
+            "title": "Blue Box depot agreement signed",
+            "text": "On October 1, 2024, council authorized the Mayor and Municipal Administrator to sign an agreement with Circular Materials Ontario. The agreement moves Blue Box depot operations to the Township.",
+            "records": [
+              "R2024-198"
+            ],
+            "date": "2024-10-01"
+          },
+          {
+            "title": "New Mayor and Deputy Mayor appointed",
+            "text": "On December 3, 2024, council appointed Dave Yemm as Mayor and Shelly Foote as Deputy Mayor, effective immediately.",
+            "records": [
+              "2024-52",
+              "2024-53"
+            ],
+            "date": "2024-12-03"
+          },
+          {
+            "title": "2025 budget adopted and Stone Cutter's culvert pipe bought",
+            "text": "On April 8, 2025, council adopted the 2025 estimates and tax rates. It also approved a multi-plate culvert quote of $192,373.50 plus taxes for the Stone Cutter's Road project.",
+            "records": [
+              "2025-13",
+              "R2025-072"
+            ],
+            "date": "2025-04-08"
+          },
+          {
+            "title": "Stone Cutter's culvert awarded; Bear Creek deferred",
+            "text": "On June 24, 2025, council awarded the Stone Cutter's Road culvert replacement for $468,870.90. It deferred the Bear Creek Culvert project to 2026. It used that project's $700,000 budget for the Stone Cutter's overrun and the unbudgeted South River Road culvert.",
+            "records": [
+              "R2025-118"
+            ],
+            "date": "2025-06-24"
+          },
+          {
+            "title": "Finance software switched to MuniSoft",
+            "text": "On September 2, 2025, council ended its TownSuite service agreement effective December 31, 2025. It accepted a MuniSoft quote of $25,860 for software and $10,750 for conversion, paid from the Modernization Grant reserve.",
+            "records": [
+              "R2025-153"
+            ],
+            "date": "2025-09-02"
+          },
+          {
+            "title": "New grader purchase and financing approved",
+            "text": "On February 17, 2026, council accepted the Brandt Tractor tender for a new John Deere grader plus an extended warranty. The total of $617,000 will be financed through a five-year loan from RBC.",
+            "records": [
+              "R2026-41"
+            ],
+            "date": "2026-02-17"
+          },
+          {
+            "title": "Bear Creek bridge awarded; landfill card delayed",
+            "text": "On April 7, 2026, council awarded the Bear Creek modular bridge and abutment tender to Northern Mat & Bridge, funded in part by a Health and Safety Water Stream grant. It also moved the start of the electronic landfill card system to September 30, 2026.",
+            "records": [
+              "R2026-74",
+              "R2026-77"
+            ],
+            "date": "2026-04-07"
+          }
+        ],
+        "generated": "2026-10-22",
+        "records_through": "2026-10-22",
+        "model": "claude-sonnet-5-5",
+        "prompt_version": 1
+      }
     },
     {
       "id": "2018-2022",
