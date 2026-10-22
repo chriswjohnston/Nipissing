@@ -4054,8 +4054,8 @@
     {
       "number": "2015-23",
       "year": 2015,
-      "title": "Amend BL 1088 – Off Road Vehicles on Municipal Roads",
-      "date_passed": null,
+      "title": "Permit the Operation of Off Road Vehicles on Highways",
+      "date_passed": "2015-07-14",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2015-23.pdf",
       "page_url": "https://nipissingtownship.com/municipal-information/by-laws/2015-23-amend-bl-1088-off-road-vehicles-on-municipal-roads/",
       "source": "bylaws_page",
@@ -4076,6 +4076,9 @@
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2015-23-Off-Road-Vehicles-on-municipal-roads.pdf",
           "archived": "files/archive/bylaws/2015/2015-23-Off-Road-Vehicles-on-municipal-roads__95449da7.pdf"
         }
+      ],
+      "repeals": [
+        "1088"
       ]
     },
     {
@@ -4191,11 +4194,13 @@
       "pdf_url": null,
       "page_url": "https://nipissingtownship.com/municipal-information/by-laws/1088-off-road-vehicle-atv-vehicles/",
       "source": "bylaws_page",
-      "status": "approved",
+      "status": "repealed",
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "repealed_by": "2015-23",
+      "repealed_date": "2015-07-14"
     }
   ]
 }

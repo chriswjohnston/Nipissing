@@ -249,6 +249,7 @@ function bylawStatusClass(status) {
   const s = String(status || '').toLowerCase();
   if (s === 'approved' || s === 'carried') return 'status-pill status-approved';
   if (s === 'defeated') return 'status-pill status-defeated';
+  if (s === 'repealed') return 'status-pill status-repealed';
   return 'status-pill status-pending';
 }
 
