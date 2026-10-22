@@ -34,6 +34,21 @@
     "status": "seeded",
     "targets": []
   },
+  "2026-04-07": {
+    "bylaws": {},
+    "checked": "2026-10-22",
+    "missing": [
+      "2026-13",
+      "2026-14"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-April-7-2026__4422d429.pdf",
+    "status": "done",
+    "targets": [
+      "2026-13",
+      "2026-14"
+    ],
+    "version": 2
+  },
   "2026-04-21": {
     "bylaws": {},
     "checked": "2026-10-21",
