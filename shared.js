@@ -240,7 +240,7 @@ function meetingCard(meeting, q = '') {
     <span class="record-date">${escHtml(meeting.display_date || fmtDate(meeting.date))}</span>
     <div class="record-main">
       <a class="record-title ${bodyColorClass(meeting)}" href="${escHtml(href)}">${highlight(officialName(meeting), q)}</a>${badge ? `<span class="meeting-badge ${badge.cls}">${badge.text}</span>` : ''}
-      <div class="record-docs">${docs || '<span class="waiting">No documents posted yet</span>'}</div>
+      ${docs ? `<div class="record-docs">${docs}</div>` : (badge ? '' : '<div class="record-docs"><span class="waiting">No documents posted yet</span></div>')}
     </div>
   </article>`;
 }
