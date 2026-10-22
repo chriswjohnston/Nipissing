@@ -550,13 +550,17 @@ function buildDecisions(bylaws, resolutions) {
   const out = [];
   for (const r of resolutions) {
     const num = r.bylaw_number && String(r.bylaw_number);
-    if (num && byNum.has(num)) { passedBy.set(num, r); continue; }
     const text = r.motion_text || r.title || '';
+    // Fold in only the resolution that passes the by-law. One that merely
+    // mentions a by-law ("Procurement By-Law 2020-51 was not followed")
+    // stays a decision of its own.
+    if (num && byNum.has(num) && /\bpass(?:es|ed)?\s+(?:the\s+)?by-?law\b/i.test(text)) { passedBy.set(num, r); continue; }
     const op = operativeText(text);
     out.push({
       type: 'resolution', id: r.number, date: String(r.meeting_date || '').slice(0, 10),
       text: op, full: text, status: String(r.status || '').toLowerCase(),
       routine: isRoutineText(op) || isRoutineText(text), kind: decisionKind(text),
+      refersTo: num && byNum.has(num) ? num : '',
       href: `resolution-detail.html?id=${encodeURIComponent(r.number)}`, rec: r,
     });
   }
@@ -585,6 +589,7 @@ function decisionRowHtml(d, q = '') {
     ? `<span class="${bylawStatusClass(d.status)}">${escHtml(d.status)}</span>` : '';
   const meta = [`<span class="decision-kind">${escHtml(d.routine ? 'Routine' : d.kind)}</span>`];
   if (d.lawLink) meta.push(`<a href="${escHtml(d.lawLink.href)}">${escHtml(d.lawLink.label)}</a>`);
+  if (d.refersTo) meta.push(`<span>Refers to <a href="bylaw-detail.html?id=${encodeURIComponent(d.refersTo)}">By-law ${escHtml(d.refersTo)}</a></span>`);
   if (d.passedBy) meta.push(`<span>Passed by <a href="resolution-detail.html?id=${encodeURIComponent(d.passedBy)}">${escHtml(d.passedBy)}</a></span>`);
   return `<li class="decision-row${d.routine ? ' is-routine' : ''}">
     <a class="decision-num" href="${escHtml(d.href)}">${highlight(label, q)}</a>
