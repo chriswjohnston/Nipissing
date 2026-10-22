@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022l">
+<link rel="stylesheet" href="shared.css?v=20261022m">
 </head>
 <body>
 
@@ -67,7 +67,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022l"></script>
+<script src="shared.js?v=20261022m"></script>
 <script>
 const CLOSED_REASONS = {
   '2a': 'Security of municipal property', '2b': 'Personal matters about an identifiable person',
@@ -82,6 +82,7 @@ const STATE_CLASS = { 'Done': 'st-done', 'In progress': 'st-progress', 'Ongoing'
   'Pending': 'st-hold', 'Deferred': 'st-hold', 'Not started': 'st-hold', 'Not pursued': 'st-no' };
 
 let TERMS = [];
+let PLANS = [];   // plans.json: the township's Strategies & Plans page, kept daily
 const fmt = (iso, o = {month: 'long', day: 'numeric', year: 'numeric'}) => {
   const d = new Date(`${String(iso).slice(0, 10)}T00:00:00`);
   return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('en-CA', o);
@@ -95,6 +96,7 @@ async function init(){
   await loadAllData();
   try { TERMS = (await (await fetch('data/canonical/terms.json', {cache: 'no-cache'})).json()).terms || []; } catch { TERMS = []; }
   TERMS = withNextTerm(TERMS);
+  try { PLANS = (await (await fetch('data/canonical/plans.json', {cache: 'no-cache'})).json()).plans || []; } catch { PLANS = []; }
   document.getElementById('loading').hidden = true;
   const want = new URL(location.href).searchParams.get('id');
   const current = TERMS.find(t => t.start <= todayIso && todayIso <= t.end) || TERMS.find(t => !t.upcoming);
@@ -253,6 +255,20 @@ function termHtml(t){
   }
 
   const plan = t.strategic_plan;
+  // No plan written up for this term yet: one the township has posted
+  // (found daily on its Strategies & Plans page) shows on its own.
+  const posted = !plan && PLANS.find(p => p.kind === 'Strategic plan' && p.from &&
+    Number(t.start.slice(0, 4)) <= p.from && p.from <= Number(t.end.slice(0, 4)));
+  if (posted) {
+    parts.push(`<section class="filed" aria-labelledby="plan">
+      <h2 class="filed-tab" id="plan">The strategic plan</h2>
+      <div class="filed-body">
+        <h3 class="plan-title">${escHtml(posted.title)}</h3>
+        <p class="plan-links"><a href="${escHtml(posted.archived ? archivedUrl(posted.archived) : posted.url)}" target="_blank" rel="noopener">Read the plan</a></p>
+        <p class="docs-key">Posted by the township; a copy is kept here. How far each action has got is added when staff report on it to council.</p>
+      </div>
+    </section>`);
+  }
   if (plan) {
     const items = plan.areas.flatMap(a => a.items);
     const counts = {}; items.forEach(i => counts[i.state] = (counts[i.state] || 0) + 1);

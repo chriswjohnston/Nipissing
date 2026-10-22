@@ -36,11 +36,11 @@ def copy_site_files() -> None:
             shutil.copy2(file, DOCS / file.name)
             copied.append(file.name)
 
-    # Also copy CNAME if present
-    cname = ROOT / "CNAME"
-    if cname.exists():
-        shutil.copy2(cname, DOCS / "CNAME")
-        copied.append("CNAME")
+    # Also CNAME, and the sitemap and robots.txt (scripts/build_sitemap.py)
+    for name in ("CNAME", "sitemap.xml", "robots.txt"):
+        if (ROOT / name).exists():
+            shutil.copy2(ROOT / name, DOCS / name)
+            copied.append(name)
 
     print(f"Copied {len(copied)} site file(s) to {DOCS}: {', '.join(sorted(copied))}")
 

@@ -890,7 +890,21 @@
           51
         ],
         "method": "ocr"
-      }
+      },
+      "extra_docs": [
+        {
+          "label": "Schedule: 2025 Asset Management Plan, as adopted (pp. 52–114 of the agenda package, includes Appendix B)",
+          "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=52",
+          "archived": "files/archive/financial/2025/2025-Asset-Management-Plan-as-adopted-By-law-2025-32.pdf",
+          "from_package": {
+            "meeting_date": "2025-11-18",
+            "pages": [
+              52,
+              114
+            ]
+          }
+        }
+      ]
     },
     {
       "number": "2025-31",

@@ -1,0 +1,35 @@
+name: File inbox documents
+# Upload PDFs to inbox/ on GitHub and they're filed within minutes:
+# matched to the meeting, by-law or financial document they belong to.
+on:
+  push:
+    branches: [main]
+    paths: ["inbox/**.pdf", "inbox/**.PDF"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-records          # never at the same time as the daily update
+  cancel-in-progress: false
+jobs:
+  file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4 pymupdf
+      - name: File the documents
+        run: |
+          python scripts/import_documents.py
+          python scripts/financials.py || echo "::warning::financials.py failed; the files are filed, the Finances list updates tomorrow"
+          python scripts/validate_data.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/canonical data/runtime data/financial docs/files inbox
+          git diff --cached --quiet || git commit -m "File documents from the inbox"
+          git pull --rebase origin main
+          git push
