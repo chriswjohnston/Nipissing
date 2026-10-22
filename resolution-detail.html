@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022j">
+<link rel="stylesheet" href="shared.css?v=20261022k">
 </head>
 <body>
 
@@ -92,7 +92,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022j"></script>
+<script src="shared.js?v=20261022k"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -147,6 +147,20 @@ function sourceMeeting(rec){
       || sameDay[0] || null;
 }
 
+// The meeting's own documents, grouped under a heading that links to it.
+function meetingGroup(date, minutes, pkg){
+  if(!date && !minutes && !pkg) return '';
+  const d = new Date(`${String(date).slice(0, 10)}T00:00:00`);
+  const when = date && !Number.isNaN(d.getTime())
+    ? d.toLocaleDateString('en-CA', {month:'long', day:'numeric', year:'numeric'}) : '';
+  const head = date
+    ? `<a href="meeting-detail.html?date=${encodeURIComponent(String(date).slice(0, 10))}&body=council">council meeting${when ? ` of ${esc(when)}` : ''}</a>`
+    : 'council meeting';
+  const items = [minutes && docLink('Minutes', minutes), pkg && docLink('Agenda package', pkg)].filter(Boolean);
+  return `<div class="docs-section"><p class="docs-section-title">From the ${head}</p>
+    ${items.length ? `<div class="docs-stack">${items.join('')}</div>` : '<p class="empty-note">The minutes and agenda package for this meeting aren’t available.</p>'}</div>`;
+}
+
 function docLink(label, href, icon = 'doc'){
   return docLinkHtml(label, href, { internal: icon === 'calendar' });
 }
@@ -199,15 +213,6 @@ async function init(){
   const minutes = docUrl(mtg, 'minutes') || resolution.minutes_url;
   const pkg = docUrl(mtg, 'package') || resolution.agenda_package_url;
   if(pdf) links.push(docLink('Resolution', pdf));
-  if(minutes) links.push(docLink('Minutes', minutes));
-  if(pkg) links.push(docLink('Agenda package', pkg));
-  if(resolution.meeting_date){
-    links.push(docLink(
-      'The meeting',
-      `meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date)}&body=council`,
-      'calendar'
-    ));
-  }
   if(resolution.bylaw_number){
     links.push(docLink(
       `By-law ${resolution.bylaw_number}`,
@@ -217,7 +222,11 @@ async function init(){
   }
 
   document.getElementById('doc-links').innerHTML =
-    links.length ? links.join('') : '<p class="empty-note">No documents have been found for this resolution.</p>';
+    links.join('') + meetingGroup(resolution.meeting_date, minutes, pkg);
+  if(resolution.meeting_date){
+    document.getElementById('meta-meeting-date').innerHTML =
+      `<a href="meeting-detail.html?date=${encodeURIComponent(resolution.meeting_date)}&body=council">${esc(fmtDate(resolution.meeting_date))}</a>`;
+  }
 }
 
 init();

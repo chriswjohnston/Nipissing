@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022j">
+<link rel="stylesheet" href="shared.css?v=20261022k">
 </head>
 <body>
 
@@ -91,6 +91,7 @@
         <div class="meta-row"><span class="meta-label">Number</span><span class="meta-value num" id="meta-number"></span></div>
         <div class="meta-row"><span class="meta-label">Year</span><span class="meta-value num" id="meta-year"></span></div>
         <div class="meta-row"><span class="meta-label">Date passed</span><span class="meta-value" id="meta-date-passed"></span></div>
+        <div class="meta-row" id="meta-meeting-row" hidden><span class="meta-label">Passed at</span><span class="meta-value" id="meta-meeting"></span></div>
         <div class="meta-row"><span class="meta-label">Status</span><span class="meta-value" id="meta-status" style="text-transform:capitalize"></span></div>
       </section>
     </aside>
@@ -112,7 +113,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022j"></script>
+<script src="shared.js?v=20261022k"></script>
 <script>
 function getParam(name){
   const url = new URL(window.location.href);
@@ -165,6 +166,20 @@ function sourceMeeting(rec){
   return sameDay.find(m => rec.minutes_url && m.minutes_url === rec.minutes_url)
       || sameDay.find(m => rec.agenda_package_url && m.package_url === rec.agenda_package_url)
       || sameDay[0] || null;
+}
+
+// The meeting's own documents, grouped under a heading that links to it.
+function meetingGroup(date, minutes, pkg){
+  if(!date && !minutes && !pkg) return '';
+  const d = new Date(`${String(date).slice(0, 10)}T00:00:00`);
+  const when = date && !Number.isNaN(d.getTime())
+    ? d.toLocaleDateString('en-CA', {month:'long', day:'numeric', year:'numeric'}) : '';
+  const head = date
+    ? `<a href="meeting-detail.html?date=${encodeURIComponent(String(date).slice(0, 10))}&body=council">council meeting${when ? ` of ${esc(when)}` : ''}</a>`
+    : 'council meeting';
+  const items = [minutes && docLink('Minutes', minutes), pkg && docLink('Agenda package', pkg)].filter(Boolean);
+  return `<div class="docs-section"><p class="docs-section-title">From the ${head}</p>
+    ${items.length ? `<div class="docs-stack">${items.join('')}</div>` : '<p class="empty-note">The minutes and agenda package for this meeting aren’t available.</p>'}</div>`;
 }
 
 function docLink(label, href, icon = 'doc'){
@@ -301,8 +316,6 @@ async function init(){
   const mtg = sourceMeeting(bylaw);
   const minutes = docUrl(mtg, 'minutes') || bylaw.minutes_url;
   const pkg = docUrl(mtg, 'package') || bylaw.agenda_package_url;
-  if(minutes) links.push(docLink('Minutes', minutes));
-  if(pkg) links.push(docLink('Agenda package', pkg));
   // "Earlier upload" entries are the same by-law re-uploaded to the township's
   // site (a re-scan, or a copy missing its schedules). They stay in the
   // archive data but add nothing for a reader, so they aren't listed.
@@ -316,18 +329,16 @@ async function init(){
     }
     links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url)));
   });
-  if(bylaw.meeting_date){
-    links.push(docLink(
-      'The meeting it was passed at',
-      `meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date)}&body=council`,
-      'calendar'
-    ));
-  }
-
   document.getElementById('doc-links').innerHTML =
     (links.length ? links.join('') : '<p class="empty-note">No document has been found for this by-law yet.</p>') +
     (isExtract ? '<p class="docs-key">Taken from the agenda package: the version presented to council. ' +
-      'Any change made at the meeting is recorded in the minutes.</p>' : '');
+      'Any change made at the meeting is recorded in the minutes.</p>' : '') +
+    meetingGroup(bylaw.meeting_date, minutes, pkg);
+  if(bylaw.meeting_date){
+    document.getElementById('meta-meeting').innerHTML =
+      `<a href="meeting-detail.html?date=${encodeURIComponent(bylaw.meeting_date)}&body=council">Council, ${esc(fmtDate(bylaw.meeting_date))}</a>`;
+    document.getElementById('meta-meeting-row').hidden = false;
+  }
 }
 
 init();
