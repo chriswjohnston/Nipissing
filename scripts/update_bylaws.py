@@ -822,6 +822,33 @@ def parse_all_minutes(
 # Merge logic (unchanged from original)
 # ─────────────────────────────────────────────────────────────────────
 
+# The first version of this archive lived at council.chriswjohnston.ca, and
+# records parsed then point their minutes and package at that address. Point
+# them at the meeting's own document instead (the page shows our kept copy).
+OLD_HOST = "chriswjohnston.ca"
+LINK_FIELDS = {"minutes_url": "minutes_url", "agenda_package_url": "package_url"}
+
+
+def repoint_old_links(records: List[Dict[str, Any]], meetings: List[Dict[str, Any]]) -> int:
+    by_day: Dict[str, List[Dict[str, Any]]] = {}
+    for m in meetings:
+        by_day.setdefault(str(m.get("date") or "")[:10], []).append(m)
+    changed = 0
+    for r in records:
+        day = by_day.get(str(r.get("meeting_date") or "")[:10], [])
+        for field, mfield in LINK_FIELDS.items():
+            old = r.get(field) or ""
+            if OLD_HOST not in old:
+                continue
+            name = old.rsplit("/", 1)[-1].lower()
+            urls = [m.get(mfield) for m in day if m.get(mfield)]
+            new = next((u for u in urls if u.rsplit("/", 1)[-1].lower() == name), None) \
+                or (urls[0] if len(urls) == 1 else None)
+            r[field] = new
+            changed += 1
+    return changed
+
+
 def merge_bylaw(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]:
     out = deepcopy(existing)
     for key in (
@@ -1014,6 +1041,9 @@ def main() -> None:
 
     final_bylaws      = merge_bylaws(existing_bylaws, [page_bylaws, minutes_bylaws])
     final_resolutions = merge_resolutions(existing_resolutions, minutes_resolutions)
+    n = repoint_old_links(final_bylaws, meetings) + repoint_old_links(final_resolutions, meetings)
+    if n:
+        print(f"Old-address links repointed: {n}")
 
     # Primary source: the township website. Sweep every PDF on the site and
     # make the township's own file each by-law's main document; add by-laws
