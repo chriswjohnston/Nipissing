@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-22",
+  "checked": "2026-10-23",
   "site_pdfs_scanned": 533,
   "bylaws": {
     "1088": {
@@ -802,7 +802,7 @@
     },
     "2021-58": {
       "in_archive": true,
-      "archive_title": "Unauthorized Disposal of Waste",
+      "archive_title": "Landfill and waste disposal",
       "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-58.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
@@ -2502,7 +2502,7 @@
     "2024-54": {
       "in_archive": true,
       "archive_title": "establish the remuneration and payment of expenses to members of Council",
-      "archive_pdf": null,
+      "archive_pdf": "files/bylaws/2024-54.pdf",
       "archive_source": "minutes",
       "site_files": []
     },
@@ -2651,7 +2651,7 @@
     "2025-13": {
       "in_archive": true,
       "archive_title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in default of payment thereof for 2025",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/TAX-RATE-BY-LAW-2025.pdf",
       "archive_source": "minutes",
       "site_files": []
     },
@@ -2990,7 +2990,7 @@
     "2026-10": {
       "in_archive": true,
       "archive_title": "provide for the adoption of the current estimates and tax rates, and to further provide for penalty and interest in",
-      "archive_pdf": "files/bylaws/2026-10.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr-1.pdf",
       "archive_source": "minutes",
       "site_files": []
     },

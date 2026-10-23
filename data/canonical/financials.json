@@ -301,7 +301,8 @@
       ],
       "removed": true,
       "archived": "files/archive/financial/2024/Township-of-Nipissing-Financial-Statement-Presentation-2023-1__14c1cc66.pdf",
-      "provided": "2026-10-22"
+      "provided": "2026-10-22",
+      "bylaw_checked": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2023/03/2023-Budget-Report.pdf",
@@ -335,7 +336,8 @@
       ],
       "removed": true,
       "archived": "files/archive/financial/2024/KPMG-Financial-Indicator-Presentation__25581ef2.pdf",
-      "provided": "2026-10-22"
+      "provided": "2026-10-22",
+      "bylaw_checked": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2022/12/2022-Budget-Report.pdf",
@@ -400,7 +402,7 @@
     2024,
     2025
   ],
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "budgets": [
     {
       "year": 2026,

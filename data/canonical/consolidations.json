@@ -122,7 +122,10 @@
     "unauthorized-disposal-of-waste": {
       "id": "unauthorized-disposal-of-waste",
       "name": "Landfill and waste disposal",
-      "also_known_as": [],
+      "also_known_as": [
+        "Landfill By-law",
+        "Unauthorized Disposal of Waste"
+      ],
       "principal": "2021-58",
       "amendments": [
         "2024-45"
