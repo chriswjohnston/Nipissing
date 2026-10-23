@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=20261022r">
+<link rel="stylesheet" href="shared.css?v=5e7bdabf0f">
 </head>
 <body>
 
@@ -187,7 +187,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=20261022r"></script>
+<script src="shared.js?v=934b8e0e1b"></script>
 <script>
 // ── formatting ──────────────────────────────────────────────────────────
 const money = (v, short = true) => {
@@ -198,7 +198,6 @@ const money = (v, short = true) => {
   return `${s}$${Math.round(a).toLocaleString('en-CA')}`;
 };
 const pct = (a, b) => `${b >= a ? '+' : '−'}${Math.abs((b / a - 1) * 100).toFixed(0)}%`;
-const esc = s => escHtml(String(s ?? ''));
 // Draw at the container's own width so labels stay readable on a phone.
 const widthOf = id => Math.max(320, Math.round(document.getElementById(id).clientWidth || 760));
 const every = w => w < 520 ? 4 : 2;

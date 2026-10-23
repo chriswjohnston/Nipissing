@@ -678,3 +678,38 @@ function amendedNote(list) {
   const last = (list[n - 1].date_passed || list[n - 1].meeting_date || '').slice(0, 4);
   return n === 1 ? `Amended once${last ? `, in ${last}` : ''}` : `Amended ${times}${last ? `, most recently in ${last}` : ''}`;
 }
+
+// ── Page helpers shared by the detail pages ──
+function getParam(name) {
+  return new URL(window.location.href).searchParams.get(name);
+}
+const esc = escHtml;
+
+// The council meeting a by-law or resolution came from, so its minutes and
+// agenda package can use our kept copies (the township deletes originals).
+// Reads the page's MEETINGS list.
+function sourceMeeting(rec){
+  const day = String(rec.meeting_date || '').slice(0, 10);
+  if (!day) return null;
+  const sameDay = MEETINGS.filter(m => m.date === day);
+  return sameDay.find(m => rec.minutes_url && m.minutes_url === rec.minutes_url)
+      || sameDay.find(m => rec.agenda_package_url && m.package_url === rec.agenda_package_url)
+      || sameDay[0] || null;
+}
+
+function meetingGroup(date, minutes, pkg){
+  if(!date && !minutes && !pkg) return '';
+  const d = new Date(`${String(date).slice(0, 10)}T00:00:00`);
+  const when = date && !Number.isNaN(d.getTime())
+    ? d.toLocaleDateString('en-CA', {month:'long', day:'numeric', year:'numeric'}) : '';
+  const head = date
+    ? `<a href="meeting-detail.html?date=${encodeURIComponent(String(date).slice(0, 10))}&body=council">council meeting${when ? ` of ${esc(when)}` : ''}</a>`
+    : 'council meeting';
+  const items = [minutes && docLink('Minutes', minutes), pkg && docLink('Agenda package', pkg)].filter(Boolean);
+  return `<div class="docs-section"><p class="docs-section-title">From the ${head}</p>
+    ${items.length ? `<div class="docs-stack">${items.join('')}</div>` : '<p class="empty-note">The minutes and agenda package for this meeting aren’t available.</p>'}</div>`;
+}
+
+function docLink(label, href, icon = 'doc'){
+  return docLinkHtml(label, href, { internal: icon === 'calendar' });
+}
