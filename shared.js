@@ -380,27 +380,19 @@ function flattenBoards(boardsPayload) {
 
 async function loadAllData() {
   const meetingsPayload = await fetchJsonCandidates([
-    'data/canonical/meetings.json',
-    'docs/data/meetings.json',
-    'council-data.json'
+    'data/canonical/meetings.json'
   ]) || { meetings: [] };
 
   const bylawsPayload = await fetchJsonCandidates([
-    'data/canonical/bylaws.json',
-    'docs/data/bylaws.json',
-    'bylaws-data.json'
+    'data/canonical/bylaws.json'
   ]) || { bylaws: [] };
 
   const resolutionsPayload = await fetchJsonCandidates([
-    'data/canonical/resolutions.json',
-    'docs/data/resolutions.json',
-    'resolutions-data.json'
+    'data/canonical/resolutions.json'
   ]) || { resolutions: [] };
 
   const boardsPayload = await fetchJsonCandidates([
-    'data/canonical/boards.json',
-    'docs/data/boards.json',
-    'boards-data.json'
+    'data/canonical/boards.json'
   ]) || { boards: [] };
 
   MEETINGS = Array.isArray(meetingsPayload?.meetings)
