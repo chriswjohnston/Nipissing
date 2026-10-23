@@ -826,7 +826,7 @@
         "meeting_date": "2025-12-02",
         "pages": [
           26,
-          26
+          27
         ],
         "method": "ocr"
       }
@@ -1367,7 +1367,7 @@
         "meeting_date": "2025-01-21",
         "pages": [
           20,
-          20
+          21
         ],
         "method": "ocr"
       }
@@ -3854,7 +3854,7 @@
         "meeting_date": "2022-09-20",
         "pages": [
           11,
-          19
+          23
         ],
         "method": "ocr"
       }
