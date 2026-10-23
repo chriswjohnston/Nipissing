@@ -2,16 +2,6 @@
   "_about": "Financial documents kept by the archive (built daily by scripts/financials.py) and the figures the Financials page charts (entered by hand; every figure names its source).",
   "documents": [
     {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Financial-Statement-Candidate.pdf",
-      "title": "Financial Statement Candidate",
-      "kind": "Audited financial statements",
-      "year": 2026,
-      "first_seen": "2026-10-22",
-      "uploaded": "2026-05-19",
-      "archived": "files/archive/financial/2026/Financial-Statement-Candidate__56e4a87c.pdf",
-      "bylaw_checked": true
-    },
-    {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Township-of-Nipissing-2026-Budget-Draft-presentation.pdf",
       "title": "2026 Budget Draft Presentation",
       "kind": "Budget",
@@ -23,28 +13,6 @@
       "archived": "files/archive/meetings/2026/Township-of-Nipissing-2026-Budget-Draft-presentation__82d8ae95.pdf",
       "uploaded": "2026-05-19",
       "bylaw_checked": true
-    },
-    {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr-1.pdf",
-      "title": "2026 Tax Rate By-Law",
-      "kind": "Budget",
-      "year": 2026,
-      "first_seen": "2026-10-22",
-      "found_on": "https://nipissingtownship.com/financial/tax-information/",
-      "archived": "files/archive/financial/2026/2026-Tax-Rates-and-Budget-Appr-1__f390f6f0.pdf",
-      "uploaded": "2026-05-11",
-      "bylaw_checked": true,
-      "bylaw": "2026-10"
-    },
-    {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr.pdf",
-      "title": "2026-Tax-Rates-and-Budget-Appr",
-      "kind": "Budget",
-      "year": 2026,
-      "first_seen": "2026-10-22",
-      "uploaded": "2026-05-11",
-      "archived": "files/archive/financial/2026/2026-Tax-Rates-and-Budget-Appr__d9099d43.pdf",
-      "same_as": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr-1.pdf"
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Capital-Forecast.pdf",
@@ -68,6 +36,28 @@
       "found_on": "https://nipissingtownship.com/financial/tax-information/",
       "archived": "files/archive/financial/2026/Collections-Policy__cc51bd1b.pdf",
       "bylaw_checked": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr-1.pdf",
+      "title": "2026 Tax Rate By-Law",
+      "kind": "Tax rates",
+      "year": 2026,
+      "first_seen": "2026-10-22",
+      "found_on": "https://nipissingtownship.com/financial/tax-information/",
+      "archived": "files/archive/financial/2026/2026-Tax-Rates-and-Budget-Appr-1__f390f6f0.pdf",
+      "uploaded": "2026-05-11",
+      "bylaw_checked": true,
+      "bylaw": "2026-10"
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr.pdf",
+      "title": "2026-Tax-Rates-and-Budget-Appr",
+      "kind": "Tax rates",
+      "year": 2026,
+      "first_seen": "2026-10-22",
+      "uploaded": "2026-05-11",
+      "archived": "files/archive/financial/2026/2026-Tax-Rates-and-Budget-Appr__d9099d43.pdf",
+      "same_as": "https://nipissingtownship.com/wp-content/uploads/2026/05/2026-Tax-Rates-and-Budget-Appr-1.pdf"
     },
     {
       "url": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-18-2025__50de1a6b.pdf#page=52",
@@ -117,7 +107,7 @@
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2025-12-31-Township-of-Nipissing-FS-Mar-2-drafts.pdf",
-      "title": "2025 Financial Statement – KPMG (draft",
+      "title": "2025 Financial Statement – KPMG (draft)",
       "kind": "Audited financial statements",
       "year": 2025,
       "first_seen": "2026-10-22",
@@ -257,19 +247,6 @@
       "bylaw_checked": true
     },
     {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/KPMG-Financial-Indicator-Presentation.pdf",
-      "title": "KPMG Financial Indicator Presentation",
-      "kind": "Auditor’s presentation",
-      "year": 2024,
-      "first_seen": "2026-10-22",
-      "meetings": [
-        "2023-03-07"
-      ],
-      "removed": true,
-      "archived": "files/archive/financial/2024/KPMG-Financial-Indicator-Presentation__25581ef2.pdf",
-      "provided": "2026-10-22"
-    },
-    {
       "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Township-of-Nipissing-2024-Budget-Draft-presentation.pdf",
       "title": "2024 Budget Draft Presentation",
       "kind": "Budget",
@@ -348,15 +325,17 @@
       "bylaw_checked": true
     },
     {
-      "url": "https://nipissingtownship.com/wp-content/uploads/2022/06/Township-of-Nipissing-Financial-Analysis-Council-Presentation.pdf",
-      "title": "Township of Nipissing Financial Analysis",
+      "url": "https://nipissingtownship.com/wp-content/uploads/2024/02/KPMG-Financial-Indicator-Presentation.pdf",
+      "title": "KPMG Financial Indicator Presentation",
       "kind": "Auditor’s presentation",
       "year": 2022,
       "first_seen": "2026-10-22",
       "meetings": [
-        "2022-06-07"
+        "2023-03-07"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2024/KPMG-Financial-Indicator-Presentation__25581ef2.pdf",
+      "provided": "2026-10-22"
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2022/12/2022-Budget-Report.pdf",
@@ -379,6 +358,17 @@
       "archived": "files/archive/financial/2021/2021-Audited-Financial-Statements__a6e19921.pdf",
       "uploaded": "2026-05-21",
       "bylaw_checked": true
+    },
+    {
+      "url": "https://nipissingtownship.com/wp-content/uploads/2022/06/Township-of-Nipissing-Financial-Analysis-Council-Presentation.pdf",
+      "title": "Township of Nipissing Financial Analysis",
+      "kind": "Auditor’s presentation",
+      "year": 2021,
+      "first_seen": "2026-10-22",
+      "meetings": [
+        "2022-06-07"
+      ],
+      "removed": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Nipissing-Asset-Management-Plan-Final-2017.pdf",

@@ -49,7 +49,7 @@ jobs:
             township_up=0
             echo "::warning title=Township website unreachable::Skipping update_meetings, update_bylaws, update_adjustment and update_boards this run; stored data kept. They resume automatically when the site is back."
           fi
-          for s in update_meetings import_documents financials financial_series recover_documents generate_summaries update_bylaws package_index consolidate_bylaws \
+          for s in update_meetings import_documents financials financial_series recover_documents generate_summaries update_bylaws package_index staff_reports consolidate_bylaws \
                    update_adjustment update_boards update_library update_healthunit \
                    update_dnssab attach_videos doc_tidy archive_plans check_freshness audit_site build_sitemap; do
             case "$s" in

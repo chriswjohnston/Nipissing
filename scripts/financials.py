@@ -86,6 +86,8 @@ def kind_of(title: str, url: str) -> str:
         return "Audited financial statements"
     if re.search(r"capital", t):
         return "Capital budget and forecast"
+    if re.search(r"tax.rate|tax-rate|levy", t):
+        return "Tax rates"
     if re.search(r"budget", t):
         return "Budget"
     if re.search(r"kpmg|financial.(?:indicator|analysis|overview)|statement.presentation", t):
@@ -264,6 +266,7 @@ def main() -> None:
         if not d.get("archived") and d.get("url") in misses:
             d["removed"] = True          # the township's address now returns "not found"
     link_bylaws(docs)
+    tidy(docs)
     data["documents"] = sorted(docs.values(), key=lambda d: (-(d.get("year") or 0), d.get("kind", ""), d.get("title", "")))
     data["fir_years"] = sorted(int(p.stem) for p in FIR_DIR.glob("*.csv")) if FIR_DIR.exists() else []
     data["updated"] = TODAY
@@ -280,6 +283,25 @@ def file_key(url: str) -> str:
     n = unquote(Path(u.path).name).lower()
     # pages cut from a package (#page=52) are separate documents
     return re.sub(r"(?:-\d)?\.pdf$", "", n) + (f"#{u.fragment}" if u.fragment else "")
+
+
+# Not the township's finances: a candidate's campaign financial statement form.
+NOT_FINANCIAL = re.compile(r"candidate", re.I)
+
+
+def tidy(docs: Dict[str, Dict[str, Any]]) -> None:
+    for key in [k for k, d in docs.items() if NOT_FINANCIAL.search(f"{d.get('title', '')} {d.get('url', '')}")]:
+        del docs[key]
+    for d in docs.values():
+        d["kind"] = kind_of(d.get("title") or "", d.get("url") or "") if d.get("kind") in ("Budget", "Other financial document") else d.get("kind")
+        t = d.get("title") or ""
+        # An auditor's presentation with no year in its name is about the year
+        # before the spring meeting it was presented at.
+        if d.get("kind") == "Auditor’s presentation" and d.get("meetings") and not re.search(r"\b20\d\d\b", t):
+            m = d["meetings"][0]
+            d["year"] = int(m[:4]) - (1 if int(m[5:7]) <= 6 else 0)
+        if t.count("(") > t.count(")"):          # "2025 Financial Statement – KPMG (draft"
+            d["title"] = t + ")"
 
 
 def same_files(docs: Dict[str, Dict[str, Any]]) -> None:

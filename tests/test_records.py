@@ -61,6 +61,20 @@ class Segment(unittest.TestCase):
         self.assertTrue(all(i["pages"][0] <= i["pages"][1] for i in items))
 
 
+class ReportHeaders(unittest.TestCase):
+    def test_column_layout(self):
+        """Scanned memo headers read as a column of labels, then the values."""
+        items = [i for i in package_index.segment(package_pages("2026-10-20")) if i["kind"] == "report"]
+        got = [(i["pages"][0], i.get("title"), i.get("from")) for i in items]
+        self.assertIn((17, "Chapman's Landing Dock", "Dan Macinnis, Operations Superintendent"), got)
+        self.assertIn((16, "Year-End Report on Capital Projects", "Dan Macinnis"), got)
+        self.assertIn((18, "2023-2026 Strategic Plan Final Update", None), got)
+
+    def test_running_heads_continue_the_report(self):
+        items = [i for i in package_index.segment(package_pages("2024-03-05")) if i["kind"] == "report"]
+        self.assertIn([11, 16], [i["pages"] for i in items])     # Blue Box Program Transition, pages 2-6
+
+
 MINUTES = """
 R2025-101 A. Smith, B. Jones: That the minutes of the regular meeting be adopted. Carried.
 R2025-102 A. Smith, B. Jones: That council approve the purchase as approved by

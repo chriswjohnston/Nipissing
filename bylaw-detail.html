@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=5e7bdabf0f">
+<link rel="stylesheet" href="shared.css?v=7e74066526">
 </head>
 <body>
 
@@ -77,7 +77,6 @@
         <h2 class="filed-tab" id="bl-docs-tab">Documents</h2>
         <div class="filed-body">
           <div class="docs-stack" id="doc-links"></div>
-          <p class="docs-key">“Copy kept” means this archive holds its own copy, so the link keeps working if the township removes the original.</p>
         </div>
       </section>
     </div>
@@ -103,7 +102,7 @@
   <div class="wrap site-footer-inner">
     <div class="footer-about">
       <h2 class="footer-name">Nipissing Public Record</h2>
-      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources and a copy of each is kept here.</p>
     </div>
     <ul class="footer-links">
       <li><a href="about.html">How the record is kept</a></li>
@@ -114,7 +113,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=934b8e0e1b"></script>
+<script src="shared.js?v=dcca7bc088"></script>
 <script>
 
 
@@ -268,12 +267,8 @@ async function init(){
   (bylaw.extra_docs || []).forEach(d => {
     if (!d || !d.url || /^Earlier (upload|version)/i.test(d.label || '')) return;
     if (/^Earlier township consolidation/i.test(d.label || '') && !d.archived) return;
-    // Removed by the township, and no copy survives anywhere: say so
-    // instead of offering a dead link.
-    if (d.gone && !d.archived) {
-      links.push(`<p class="doc-gone"><span class="doc-label">${esc(d.label || 'Document')}</span><span class="source-note">Removed by the township; no copy survives</span></p>`);
-      return;
-    }
+    // No copy survives anywhere: leave it out rather than offer a dead link.
+    if (d.gone && !d.archived) return;
     links.push(docLink(d.label || 'Document', archivedUrl(d.archived || d.url)));
   });
   document.getElementById('doc-links').innerHTML =

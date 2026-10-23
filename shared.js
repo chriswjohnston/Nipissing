@@ -126,8 +126,7 @@ function meetingTagClass(meeting) {
   return 'tag';
 }
 
-// Links to a meeting's documents for list rows. Plain text links; the
-// "Copy kept" stamp is shown on detail pages where there is room for it.
+// Links to a meeting's documents for list rows. Plain text links.
 function meetingDocPills(meeting) {
   const pills = [];
   const link = (label, url) => `<a href="${escHtml(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${label}</a>`;
@@ -140,21 +139,10 @@ function meetingDocPills(meeting) {
   return pills.join('');
 }
 
-// A link resolves to our own copy when it points into the repo (docs/...)
-// or at a GitHub Release asset; anything else is the township's original.
-function isKeptUrl(url) {
-  const u = String(url || '');
-  return /^docs\//.test(u) || /^https?:\/\/github\.com\/[^/]+\/[^/]+\/releases\//i.test(u);
-}
 
 const ICON_DOC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
 const ICON_VIDEO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>';
 const ICON_PAGE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>';
-const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
-
-function keptStamp() {
-  return `<span class="stamp" title="A copy is kept in this archive, so the link keeps working if the township removes the original.">${ICON_CHECK}Copy kept</span>`;
-}
 
 // One document link for detail pages. internal = a page on this site.
 function docLinkHtml(label, href, opts = {}) {
@@ -163,9 +151,7 @@ function docLinkHtml(label, href, opts = {}) {
   const video = /youtu\.?be/i.test(href);
   let note = '';
   if (!internal) {
-    if (isKeptUrl(href)) note = keptStamp();
-    else if (video) note = '<span class="source-note">YouTube</span>';
-    else if (/nipissingtownship\.com/i.test(href)) note = '<span class="source-note">Township site</span>';
+    if (video) note = '<span class="source-note">YouTube</span>';
   }
   const icon = internal ? ICON_PAGE : (video ? ICON_VIDEO : ICON_DOC);
   const target = internal ? '' : ' target="_blank" rel="noopener"';
