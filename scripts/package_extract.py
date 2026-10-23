@@ -204,7 +204,14 @@ def find_ranges(tops: List[str], full, targets: List[str]) -> Dict[str, Tuple[in
                 break                                   # next by-law starts here
             if NEW_DOC_RE.search(top[:400]) and not mentions_self:
                 break                                   # next report/minutes/etc.
-            if signed and not (SCHEDULE_RE.search(top[:400]) or mentions_self):
+            if RESOLUTION_RE.search(top[:400]) and re.search(r"\bRESOLUTION\b", top[:400]):
+                break                                   # the next draft resolution
+            # A schedule often carries its label at the foot of the page
+            # ("Schedule “A” to By-Law Number 2025-35"), not the top: the
+            # council pay table was cut off by looking only at the top.
+            labelled = re.search(r"(?:schedule|appendix)\W{0,6}\w?\W{0,6}to\s+by-?\s?law\s+(?:no\.?|number)?\s*"
+                                 + re.escape(target).replace("\\-", r"\s?-\s?"), _fix_digits(full(j)), re.I)
+            if signed and not (SCHEDULE_RE.search(top[:400]) or mentions_self or labelled):
                 break                                   # past the signing page
             end = j
             if SIGNED_RE.search(full(j)):

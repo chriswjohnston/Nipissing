@@ -562,5 +562,41 @@
       "2023-49",
       "2022-58"
     ]
+  },
+  "council_pay": {
+    "schedule": {
+      "bylaw": "2025-35",
+      "label": "Schedule A to By-law 2025-35, December 2, 2025",
+      "doc": "files/bylaws/2025-35.pdf",
+      "page": 2
+    },
+    "years": [
+      {
+        "year": 2022,
+        "mayor": 14401,
+        "councillor": 9601
+      },
+      {
+        "year": 2023,
+        "mayor": 14401,
+        "councillor": 9601
+      },
+      {
+        "year": 2024,
+        "mayor": 14689,
+        "councillor": 9793
+      },
+      {
+        "year": 2025,
+        "mayor": 14836,
+        "councillor": 9891
+      },
+      {
+        "year": 2026,
+        "mayor": 15132,
+        "councillor": 10088
+      }
+    ],
+    "note": "By-law 2024-54’s schedule, passed a year earlier, set 2025 at $14,983 for the mayor and $9,990 per councillor (a 2% increase); the 2025-35 schedule shows $14,836 and $9,891 for 2025."
   }
 }

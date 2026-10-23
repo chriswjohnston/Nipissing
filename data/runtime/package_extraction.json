@@ -63,7 +63,7 @@
         "method": "ocr",
         "pages": [
           11,
-          19
+          23
         ],
         "pdf": "files/bylaws/2022-42.pdf",
         "text": "files/bylaws/text/2022-42.txt"
@@ -1183,7 +1183,7 @@
         "method": "ocr",
         "pages": [
           20,
-          20
+          21
         ],
         "pdf": "files/bylaws/2025-06.pdf",
         "text": "files/bylaws/text/2025-06.txt"
@@ -1522,7 +1522,7 @@
         "method": "ocr",
         "pages": [
           26,
-          26
+          27
         ],
         "pdf": "files/bylaws/2025-35.pdf",
         "text": "files/bylaws/text/2025-35.txt"

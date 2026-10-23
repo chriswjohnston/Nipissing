@@ -44,7 +44,7 @@
 <main id="main">
   <div class="wrap page-head">
     <h1>Finances</h1>
-    <p class="page-lede">Where the township’s money comes from and where it goes, every year since 2009. Figures come from the financial return the township files with the Province each year, built from its audited statements. Every budget, audited statement and capital forecast is kept here, because the township removes older ones from its site.</p>
+    <p class="page-lede fin-lede">Where the township’s money comes from and where it goes, every year since 2009. Figures come from the financial return the township files with the Province each year, built from its audited statements. Every budget, audited statement and capital forecast is kept here, because the township removes older ones from its site.</p>
   </div>
 
   <div class="wrap">
@@ -55,11 +55,18 @@
       <section class="filed fin-section" aria-labelledby="tax-tab">
         <h2 class="filed-tab" id="tax-tab">Property taxes</h2>
         <div class="filed-body">
-          <h3 class="fin-h">What the township raised from property taxes</h3>
-          <p class="fin-sub">The township’s share of the tax bill, before school taxes, each year since 2009.</p>
-          <div class="fin-chart" id="chart-tax"></div>
-          <p class="fin-legend"><span class="key key-actual"></span>From the township’s financial return <span class="key key-plan"></span>Budget</p>
-          <ul class="fin-notes-row" id="tax-notes" aria-label="Reading this chart"></ul>
+          <div class="fin-split">
+            <div>
+              <h3 class="fin-h">What the township raised from property taxes</h3>
+              <p class="fin-sub">The township’s share of the tax bill, before school taxes, each year since 2009.</p>
+              <div class="fin-chart" id="chart-tax"></div>
+              <p class="fin-legend"><span class="key key-actual"></span>From the township’s financial return <span class="key key-plan"></span>Budget</p>
+            </div>
+            <div class="fin-notes">
+              <h3 class="fin-h4">Reading this chart</h3>
+              <ul id="tax-notes"></ul>
+            </div>
+          </div>
           <h3 class="fin-h4" style="margin-top:28px">Each year’s budget, and a typical home</h3>
           <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Budgets and a typical home’s township tax">
             <table class="fin-table" id="budget-table"></table>
@@ -89,14 +96,23 @@
       <section class="filed fin-section" aria-labelledby="staff-tab">
         <h2 class="filed-tab" id="staff-tab">Staff pay</h2>
         <div class="filed-body">
-          <h3 class="fin-h">Salaries, wages and benefits</h3>
-          <p class="fin-sub">Everyone the township employs. Council pay is set separately.</p>
-          <div class="fin-chart" id="chart-salaries"></div>
-          <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Staff pay by year" style="margin-top:16px"><table class="fin-table compact" id="staff-table"></table></div>
-          <p class="fin-small">Positions are the township’s own count of funded jobs in its return to the Province, not audited. Volunteer firefighters aren’t counted.</p>
-          <h3 class="fin-h4" style="margin-top:24px">The decisions behind it</h3>
-          <ol class="fin-bylaws row" id="pay-bylaws"></ol>
-          <p class="fin-small">Each pay-grid by-law amends the pay equity plan, but the township posts it without Schedule A, the grid itself. <a href="decisions.html?q=remuneration">Council pay by-laws</a> are passed each December.</p>
+          <div class="fin-split">
+            <div>
+              <h3 class="fin-h">Salaries, wages and benefits</h3>
+              <p class="fin-sub">Everyone the township employs. Council pay is set separately.</p>
+              <div class="fin-chart" id="chart-salaries"></div>
+              <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Staff pay by year"><table class="fin-table compact" id="staff-table"></table></div>
+              <p class="fin-small">Positions are the township’s own count of funded jobs in its return to the Province, not audited. Volunteer firefighters aren’t counted.</p>
+            </div>
+            <div class="fin-notes">
+              <h3 class="fin-h4">The decisions behind it</h3>
+              <ol class="fin-bylaws" id="pay-bylaws"></ol>
+              <h3 class="fin-h4" style="margin-top:22px">Council pay</h3>
+              <div class="fin-table-wrap" tabindex="0" role="region" aria-label="Council pay by year"><table class="fin-table compact" id="council-pay"></table></div>
+              <p class="fin-small" id="council-pay-note"></p>
+              <p class="fin-small">Each pay-grid by-law amends the pay equity plan, but the township posts it without Schedule A, the grid itself. <a href="decisions.html?q=remuneration">Council pay by-laws</a> are passed each December.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -117,13 +133,19 @@
       <section class="filed fin-section" aria-labelledby="save-tab">
         <h2 class="filed-tab" id="save-tab">Savings and debt</h2>
         <div class="filed-body">
-          <h3 class="fin-h">Reserves and debt at year end</h3>
-          <p class="fin-legend"><span class="key key-actual"></span>Reserves (money set aside) <span class="key key-debt"></span>Long-term debt</p>
-          <div class="fin-chart" id="chart-reserves"></div>
-          <h3 class="fin-h" style="margin-top:32px">Against similar municipalities nearby</h3>
-          <p class="fin-sub" id="comp-sub"></p>
-          <div class="fin-strips" id="comparators"></div>
-          <p class="docs-key" id="comp-source"></p>
+          <div class="fin-split even">
+            <div>
+              <h3 class="fin-h">Reserves and debt at year end</h3>
+              <p class="fin-legend"><span class="key key-actual"></span>Reserves (money set aside) <span class="key key-debt"></span>Long-term debt</p>
+              <div class="fin-chart" id="chart-reserves"></div>
+            </div>
+            <div>
+              <h3 class="fin-h">Against similar municipalities nearby</h3>
+              <p class="fin-sub" id="comp-sub"></p>
+              <div id="comparators"></div>
+              <p class="docs-key" id="comp-source"></p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -295,7 +317,7 @@ async function init(){
   document.getElementById('tax-notes').innerHTML = [
     `<li><strong>The total grows faster than any one bill.</strong> New homes add to the total even when the rate stays the same. The township’s auditor put growth since 2022 at 7.4% a year, 2.7 points of it from new assessment.</li>`,
     Y[n10] ? `<li><strong>Over ten years</strong> (${n10} to ${last}) the total grew ${avg(Y[n10].property_tax, L.property_tax, 10)}% a year on average.</li>` : '',
-    `<li><strong>What it meant for a typical home:</strong> each year’s budget, in the table below.</li>`,
+    `<li><strong>The budget table below</strong> shows what each year’s increase meant for a typical home.</li>`,
   ].join('');
   document.getElementById('budget-table').innerHTML = `<thead><tr><th scope="col">Year</th><th scope="col">Taxes to raise (budget)</th><th scope="col">Increase</th><th scope="col">Typical home</th><th scope="col">Its increase</th><th scope="col">Sources</th></tr></thead><tbody>` +
     budgets.map(b => `<tr><td>${b.year}</td><td>${money(b.levy, false)}</td><td>+${b.levy_change_pct}%</td>
@@ -324,7 +346,7 @@ async function init(){
   const ws = widthOf('chart-salaries');
   document.getElementById('chart-salaries').innerHTML = columnChart(years.map(y => ({ label: y, value: Y[y].salaries, showValue: y === first || y === last })),
     { width: ws, labelEvery: every(ws), ariaLabel: `Salaries, wages and benefits, ${first} to ${last}` });
-  const sy = years.filter((y, i) => (years.length - 1 - i) % 2 === 0);   // every other year, ending on the latest
+  const sy = years.filter((y, i) => i % 2 === 0 || y === last);
   document.getElementById('staff-table').innerHTML = `<thead><tr><th scope="col">Year</th>${sy.map(y => `<th scope="col">${y}</th>`).join('')}</tr></thead><tbody>
     <tr><th scope="row">Share of spending</th>${sy.map(y => `<td>${(Y[y].salaries / Y[y].spent * 100).toFixed(0)}%</td>`).join('')}</tr>
     <tr><th scope="row">Full-time positions</th>${sy.map(y => `<td>${Y[y].full_time ?? '—'}</td>`).join('')}</tr></tbody>`;
@@ -335,6 +357,13 @@ async function init(){
     const d = b.date_passed || b.meeting_date;
     return `<li><a href="bylaw-detail.html?id=${encodeURIComponent(n)}">By-law ${esc(n)}</a><span>Pay grid ${(b.title || '').toLowerCase().includes('amend') ? 'updated' : 'set'}${d ? `, ${new Date(d + 'T00:00:00').toLocaleDateString('en-CA', {month: 'long', year: 'numeric'})}` : ''}</span></li>`;
   }).join('');
+
+  const CP = F.council_pay;
+  if (CP) {
+    document.getElementById('council-pay').innerHTML = `<thead><tr><th scope="col">From Jan 1</th><th scope="col">Mayor</th><th scope="col">Each councillor</th></tr></thead><tbody>` +
+      CP.years.slice().reverse().map(r => `<tr><td>${r.year}</td><td>${money(r.mayor, false)}</td><td>${money(r.councillor, false)}</td></tr>`).join('') + '</tbody>';
+    document.getElementById('council-pay-note').innerHTML = `From <a href="bylaw-detail.html?id=${encodeURIComponent(CP.schedule.bylaw)}">${esc(CP.schedule.label)}</a>. ${esc(CP.note || '')}`;
+  }
 
   // ── grants
   const GS = [
@@ -350,7 +379,7 @@ async function init(){
 
   // ── reserves and debt
   const wr = widthOf('chart-reserves');
-  document.getElementById('chart-reserves').innerHTML = columnChart(null, { labelEvery: every(wr), width: wr, height: 280, ariaLabel: 'Reserves and long-term debt by year',
+  document.getElementById('chart-reserves').innerHTML = columnChart(null, { labelEvery: every(wr), width: wr, height: 300, ariaLabel: 'Reserves and long-term debt by year',
     groups: years.map(y => ({ label: y, bars: [{ value: Y[y].reserves || 0, title: `${y} reserves: ${money(Y[y].reserves, false)}` }, { value: Y[y].debt || 0, kind: 'debt', title: `${y} long-term debt: ${money(Y[y].debt, false)}` }] })) });
   const C = F.comparators;
   if (C) {
