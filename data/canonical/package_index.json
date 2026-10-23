@@ -58,6 +58,7 @@
     },
     {
      "kind": "report",
+     "title": "Landfill",
      "from": "Dan Macinnis",
      "date": "October 20, 2026",
      "pages": [
@@ -67,8 +68,9 @@
     },
     {
      "kind": "report",
+     "from": "Dan Macinnis",
+     "date": "October 6, 2026",
      "title": "Year-End Report on Capital Projects",
-     "from": "",
      "pages": [
       16,
       16
@@ -76,10 +78,19 @@
     },
     {
      "kind": "report",
-     "title": "Background: October 6, 2026 Dan Macinnis, Operations Superintendent Chapman's Landing Dock The Corporation of the Township of Nipissing 45 Beatty Street Nipissi",
-     "from": "",
+     "title": "Chapman's Landing Dock",
+     "from": "Dan Macinnis, Operations Superintendent",
+     "date": "October 6, 2026",
      "pages": [
       17,
+      17
+     ]
+    },
+    {
+     "kind": "report",
+     "title": "2023-2026 Strategic Plan Final Update",
+     "pages": [
+      18,
       22
      ]
     },
@@ -246,12 +257,12 @@
    "pages": 24,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oF zs The Corporation of the Township of Nipissing PI IN 5 Beatty Street wm Ss -) Nipissin"
+     ]
     },
     {
      "kind": "minutes",
@@ -448,8 +459,9 @@
      ]
     },
     {
-     "kind": "report",
-     "date": "August 20, 2026",
+     "kind": "resolution",
+     "number": "R2026-174",
+     "title": "Council receives and accepts the Staff Report provided by the Municipal Administrator-Clerk-Treasurer on the Reserves and Transfers for the recent purchase of a",
      "pages": [
       4,
       4
@@ -997,12 +1009,12 @@
    "pages": 53,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "ip The Corporation of the Township of Nipissi: T hip of P ship ipissing NIPISSING 45 Beatty Street"
+     ]
     },
     {
      "kind": "minutes",
@@ -1069,12 +1081,12 @@
    "pages": 59,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oF The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street eon stra, Nipis"
+     ]
     },
     {
      "kind": "minutes",
@@ -2300,12 +2312,12 @@
    "pages": 80,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township of” The Corporation of the Township of Nipissing emnnic 45 Beatty Street NIPISSIN we Nipis"
+     ]
     },
     {
      "kind": "minutes",
@@ -3754,25 +3766,18 @@
    "pages": 71,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "The Corporation of the Township of Nipissing 45 Beatty Street NIPISSING | Nipissing ON POH 1WO “Lif"
+     ]
     },
     {
      "kind": "minutes",
      "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, May 13, 2025 A regular meeting of the Township of Nipissing Council was held on T",
      "pages": [
       2,
-      2
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      3,
       4
      ]
     },
@@ -3831,8 +3836,9 @@
      ]
     },
     {
-     "kind": "report",
-     "date": "May 27, 2025",
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive the Staff Report submitted by the Operations Superintendent and the Municipal Administrator regarding the studies required to prepare for the Hummel ",
      "pages": [
       17,
       17
@@ -3983,9 +3989,9 @@
      ]
     },
     {
-     "kind": "report",
-     "title": "For Against",
-     "date": "May 13, 2025",
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive the 2025 Landfill Update and accompanying Staff Report. For Against CHALAPENKO FOOTE KIRKEY SCOTT YEMM Carried Mayor: Dave Yemm",
      "pages": [
       17,
       17
@@ -4069,10 +4075,18 @@
    "pages": 36,
    "items": [
     {
+     "kind": "agenda",
+     "title": "Agenda",
+     "pages": [
+      1,
+      1
+     ]
+    },
+    {
      "kind": "report",
      "title": "Additional Fire Protection Grant Funding Available",
      "pages": [
-      1,
+      2,
       2
      ]
     },
@@ -4380,16 +4394,8 @@
      "title": "MINUTES Township of Nipissing Cemetery Committee February 10, 2025 The Nipissing Township Cemetery Committee met on Mond",
      "pages": [
       10,
-      10
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      11,
       12
-     ],
-     "date": "February 18, 2025"
+     ]
     },
     {
      "kind": "resolution",
@@ -4477,12 +4483,12 @@
    "pages": 47,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township o The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street q Nipissing ON P"
+     ]
     },
     {
      "kind": "resolution",
@@ -4718,12 +4724,12 @@
    "pages": 39,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township o; 4 The Corporation of the Township of Nipissing NIPISSING 45 Beatty Street Nipissing ON P"
+     ]
     },
     {
      "kind": "minutes",
@@ -5182,12 +5188,12 @@
    "pages": 41,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       8
-     ],
-     "date": "October 22, 2024"
+     ]
     },
     {
      "kind": "bylaw",
@@ -5314,20 +5320,6 @@
      "date": "September 23, 2024",
      "pages": [
       3,
-      3
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      4,
-      4
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      5,
       6
      ]
     },
@@ -5901,25 +5893,18 @@
    "pages": 22,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oF al The Corporation of the Township of Nipissing 1 1 45 Beatty Street NIPISS NG . Nipiss"
+     ]
     },
     {
      "kind": "minutes",
      "title": "MINUTES TOWNSHIP OF NIPISSING Tuesday, June 4, 2024 A regular meeting of the Township of Nipissing Council was held on T",
      "pages": [
       2,
-      2
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      3,
       3
      ]
     },
@@ -6067,13 +6052,6 @@
      "date": "May 28, 2024",
      "pages": [
       15,
-      15
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      16,
       16
      ]
     },
@@ -6459,12 +6437,12 @@
    "pages": 35,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "oer = The Corporation of the Township of Nipissing Township « ae $ NIPISSING eatty Street aie Nipi"
+     ]
     },
     {
      "kind": "minutes",
@@ -6653,16 +6631,18 @@
      ]
     },
     {
-     "kind": "report",
-     "date": "March 19, 2024",
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive Staff Report — Proposed Town Hall Meeting; AND THAT we accept recommendations: A. In keeping with Council scheduling, a Town Hall meeting to be held ",
      "pages": [
       4,
       4
      ]
     },
     {
-     "kind": "report",
-     "date": "March 19, 2024",
+     "kind": "resolution",
+     "number": null,
+     "title": "we receive Staff Report — Parking Concerns along Birchgrove Drive; AND THAT we accept recommendations: 1. Change the parking lot to Daytime Only parking with a ",
      "pages": [
       5,
       5
@@ -6703,7 +6683,8 @@
    "pages": 35,
    "items": [
     {
-     "kind": "report",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
@@ -6724,13 +6705,6 @@
      "date": "February 27, 2024",
      "pages": [
       5,
-      5
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      6,
       6
      ]
     },
@@ -6741,13 +6715,6 @@
      "date": "February 22, 2024",
      "pages": [
       7,
-      7
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      8,
       8
      ]
     },
@@ -6758,13 +6725,6 @@
      "date": "February 22, 2024",
      "pages": [
       9,
-      9
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      10,
       10
      ]
     },
@@ -6775,27 +6735,6 @@
      "date": "February 27, 2024",
      "pages": [
       11,
-      11
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      12,
-      12
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      13,
-      13
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      14,
       16
      ]
     },
@@ -7082,12 +7021,12 @@
    "pages": 30,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Townshi The Corporation of the Township of Nipissing NIPISSING __ 45 Beatty Street waves Nipissing"
+     ]
     },
     {
      "kind": "minutes",
@@ -7155,20 +7094,6 @@
      "date": "January 5, 2024",
      "pages": [
       2,
-      2
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      3,
-      3
-     ]
-    },
-    {
-     "kind": "report",
-     "pages": [
-      4,
       4
      ]
     }
@@ -7276,12 +7201,12 @@
    "pages": 49,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township oan The Corporation of the Township of Nipissing NIPISSING _ 45 Beatty Street er Nipissing"
+     ]
     },
     {
      "kind": "minutes",
@@ -8339,12 +8264,12 @@
    "pages": 33,
    "items": [
     {
-     "kind": "other",
+     "kind": "agenda",
+     "title": "Agenda",
      "pages": [
       1,
       1
-     ],
-     "title": "Township of The Corporation of the Township of Nipissing NIPISSING ___ 45 Beatty Street athe Nipiss"
+     ]
     },
     {
      "kind": "minutes",
@@ -9453,7 +9378,7 @@
     },
     {
      "kind": "report",
-     "title": "December 6, 2022",
+     "title": "Election Accessibility Report",
      "pages": [
       47,
       50

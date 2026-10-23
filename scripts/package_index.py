@@ -80,29 +80,78 @@ def one_line(s: str) -> str:
     return re.sub(r"\s+", " ", s or "").strip()
 
 
+LABEL_LINE = re.compile(r"^\s*(Date|From|Re|To|Subject|Background|Purpose)\s*:\s*$", re.I)
+DATE_TXT = r"[A-Z][a-z]+\.?\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4}"
+
+
+def column_fields(text: str) -> Dict[str, str]:
+    """Scans often read a memo header as a column of labels, then a column of
+    values: "Date:\nFrom:\nRe:\nBackground:\nOctober 6, 2026\nDan Macinnis\nChapman's
+    Landing Dock". Pair them up in order (Background/Purpose take no one-line value)."""
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if not LABEL_LINE.match(line):
+            continue
+        labels = []
+        j = i
+        while j < len(lines) and LABEL_LINE.match(lines[j]):
+            labels.append(LABEL_LINE.match(lines[j]).group(1).lower())
+            j += 1
+        labels = [l for l in labels if l not in ("background", "purpose")]
+        if len(labels) < 2:
+            continue
+        values = [l.strip() for l in lines[j:j + 12] if l.strip()][:len(labels)]
+        if any(v.endswith(":") for v in values):
+            return {}
+        return {lab: val for lab, val in zip(labels, values)}
+    return {}
+
+
 def report_fields(text: str) -> Dict[str, str]:
     t = re.sub(r"[ \t]+", " ", text)
     out = {}
+    col = column_fields(t)
+    if col.get("re") or col.get("subject"):
+        out["title"] = one_line(col.get("re") or col.get("subject"))[:160]
+    if col.get("from"):
+        out["from"] = one_line(col["from"])[:120]
+    m = re.match(DATE_TXT, col.get("date", ""))
+    if m:
+        out["date"] = re.sub(r"(\d)(?:st|nd|rd|th)", r"\1", m.group(0))
+    if "title" in out and "from" in out:
+        return out
     m = re.search(r"\bRe\s*:\s*(.+?)(?:\n\s*\n|\n(?=[A-Z][a-z]+:)|Background|Purpose|Summary|$)", t, re.S)
     if not m:
         m = re.search(r"\bSubject\s*:\s*(.+?)(?:\n\s*\n|$)", t, re.S)
-    if m:
+    if m and "title" not in out:
         out["title"] = one_line(m.group(1))[:160]
+    if "title" not in out:      # "STAFF REPORT ON LANDFILL"
+        m = re.search(r"STAFF\s+REPORT\s+ON\s+([A-Z][A-Za-z &,'-]{3,60})\s*$", t, re.M)
+        if m:
+            out["title"] = m.group(1).strip().capitalize()
+    if "title" not in out:      # "Election Accessibility Report to Council"
+        m = re.search(r"^\s*([A-Z][\w ,&'’-]{4,80}?)\s+Report\s+to\s+Council\s*$", t, re.M)
+        if m and not re.match(r"(Township|The Corporation)", m.group(1)):
+            out["title"] = one_line(m.group(1)) + " Report"
     if "title" not in out:      # "STAFF REPORT" then the title on its own line
         m = re.search(r"(?:STAFF\s+REPORT|REPORT\s+TO\s+COUNCIL)[ \t|:.\-—]*\n+\s*([^\n]{6,160})", t, re.I)
-        if m and not re.match(r"\s*(From|Date|To|Re)\s*:", m.group(1), re.I):
+        if m and not re.match(r"\s*(From|Date|To|Re)\s*:", m.group(1), re.I) and not re.match(DATE_TXT, m.group(1).strip()):
             out["title"] = one_line(m.group(1)).strip(" |")
+    if "title" not in out:      # "STAFF REPORT / FROM: … / DATE: … / Bear Creek Culvert Failure"
+        m = re.search(r"\bDate\s*:[^\n]*\n\s*(?:\n\s*)*([A-Z][^\n:]{5,80})\s*\n", t)
+        if m and not re.match(DATE_TXT, m.group(1)) and not re.search(r"Township|Corporation|Telephone|www\.", m.group(1)):
+            out["title"] = one_line(m.group(1))
     if "title" not in out:      # "2023 Budget Update — Staff Report — Page 2" / "Page 2 - Staff Report - X"
         m = re.search(r"^\W*(?:Page\s+\d+\s*[-—–]\s*Staff\s+Report\s*[-—–]\s*([^\n]{4,120})|([^\n]{4,120}?)\s*[-—–]\s*Staff\s+Report\s*[-—–]\s*Page)", t, re.I | re.M)
         if m:
             out["title"] = one_line(m.group(1) or m.group(2))
     m = re.search(r"\bFrom\s*:\s*(.+?)(?:\n\s*(?:To|Re|Date|Subject)\s*:|\n\s*\n)", t, re.S | re.I)
-    if m:
+    if m and "from" not in out:
         who = re.split(r"The Corporation|Telephone|www\.|\d{3}-\d{3}|\b(?:Re|Date|To|Subject)\s*:", m.group(1), flags=re.I)[0]
         out["from"] = one_line(who).strip(" ,;")[:120]
-    m = re.search(r"\bDate\s*:\s*([A-Z][a-z]+\.?\s+\d{1,2},?\s+\d{4})", t, re.I)
-    if m:
-        out["date"] = one_line(m.group(1))
+    m = re.search(r"\bDate\s*:\s*(" + DATE_TXT + ")", t, re.I)
+    if m and "date" not in out:
+        out["date"] = re.sub(r"(\d)(?:st|nd|rd|th)", r"\1", one_line(m.group(1)))
     return out
 
 
@@ -119,10 +168,23 @@ def classify(text: str, first: bool) -> Optional[Dict[str, Any]]:
     # "Page 2 - Staff Report - NOHFC Application": a report's later page.
     if re.match(r"\W{0,10}Page\s+\d+\b", flat) or re.search(r"Staff\s+Report\s*[-—–]\s*Page\s+\d", flat[:120], re.I):
         return None
-    # The agenda lists "Staff Reports." as an item; it is not one.
-    if first and re.search(r"\bAGENDA\b", flat[:500]):
+    # Later pages carry a running head: "Staff Report — Beach and Lake Access —
+    # February 22, 2024 — page 2", "Minutes — May 13, 2025 — Page 2".
+    if re.search(r"\b(?:Staff\s+Report|Minutes)\b.{0,120}?\bPage\s+(?:[2-9]|\d\d)\b", flat[:170], re.I):
+        return None
+    # The agenda lists "Staff Reports." as an item; it is not one. Some agendas
+    # never say "agenda": they start with the start time and pecuniary interest.
+    if first and (re.search(r"\bAGENDA\b", flat[:500])
+                  or re.search(r"START\s+TIME|Disclosure\s+of\s+pecuniary", flat[:900], re.I)):
         return {"kind": "agenda", "title": "Agenda"}
-    if REPORT_RE.search(flat[:500]) or (MEMO_RE.search(flat[:600]) and re.search(r"\bFrom\s*:", flat[:600])
+    # A draft resolution that receives a staff report is still a resolution.
+    draft_res = (re.search(r"\bRESOLUTION\b", flat[:400]) and re.search(r"\bDATE\s*:", flat[:400], re.I)
+                 and re.search(r"\bNUMBER\s*[:.]", flat[:500], re.I) and re.search(r"\bMoved\s+by\b", flat[:700], re.I))
+    # "2023-2026 Strategic Plan Final Update": a status table with no memo header.
+    sp = re.match(r"\W{0,10}((?:\d{4}\s*[-–]\s*\d{4}\s+)?Strategic\s+Plan\b[^.]{0,40}?\b(?:Update|Report|Status)\b)", flat)
+    if sp:
+        return {"kind": "report", "title": one_line(sp.group(1))}
+    if not draft_res and REPORT_RE.search(flat[:500]) or not draft_res and (MEMO_RE.search(flat[:600]) and re.search(r"\bFrom\s*:", flat[:600])
                                        and re.search(r"\bDate\s*:", flat[:600]) and not re.search(r"\bSent\s*:", flat[:600])):
         f = report_fields(text)
         if f.get("title"):

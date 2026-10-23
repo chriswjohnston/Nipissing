@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=5e7bdabf0f">
+<link rel="stylesheet" href="shared.css?v=7e74066526">
 </head>
 <body>
 
@@ -82,7 +82,6 @@
         <h2 class="side-title" id="docs-title">Documents</h2>
         <div class="docs-stack" id="main-docs"></div>
         <div id="extra-docs-wrap"></div>
-        <p class="docs-key">“Copy kept” means this archive holds its own copy, so the link keeps working if the township removes the original.</p>
       </section>
       <section class="side-card" aria-labelledby="details-title">
         <h2 class="side-title" id="details-title">Details</h2>
@@ -99,7 +98,7 @@
   <div class="wrap site-footer-inner">
     <div class="footer-about">
       <h2 class="footer-name">Nipissing Public Record</h2>
-      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources and a copy of each is kept here.</p>
     </div>
     <ul class="footer-links">
       <li><a href="about.html">How the record is kept</a></li>
@@ -110,7 +109,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=934b8e0e1b"></script>
+<script src="shared.js?v=dcca7bc088"></script>
 
 <script>
 
@@ -128,7 +127,6 @@ function buildDoc(label, url){
 }
 
 function buildHeroBtn(label, url, primary){
-  const kept = isKeptUrl(url) ? keptStamp() : '';
   return `<a href="${esc(url)}" target="_blank" rel="noopener" class="btn${primary ? ' btn-primary' : ''}">${esc(label)}</a>`;
 }
 
@@ -298,9 +296,21 @@ async function init(){
       const at = n => `${packageUrl}#page=${n}`;
       const pages = it => it.pages[0] === it.pages[1] ? `p. ${it.pages[0]}` : `pp. ${it.pages[0]}–${it.pages[1]}`;
       const reports = pk.items.filter(i => i.kind === 'report');
-      document.getElementById('package-reports').innerHTML = reports.length ? `<ol class="report-list">${reports.map(r => `
-        <li><a class="report-title" href="${escHtml(at(r.pages[0]))}" target="_blank" rel="noopener">${escHtml(r.title || 'Staff report')}</a>
-          <span class="report-meta">Staff report${r.from ? `, from ${escHtml(r.from)}` : ''} · ${pages(r)}</span></li>`).join('')}</ol>` : '<p class="section-note">No staff reports in this package.</p>';
+      let cuts = {};
+      try { cuts = (await (await fetch('data/canonical/staff_reports.json', {cache: 'no-cache'})).json()).reports || {}; } catch (e) { /* none yet */ }
+      const reportHtml = r => {
+        const cut = cuts[`${meeting.date}#${r.pages[0]}-${r.pages[1]}`];
+        const href = cut ? archivedUrl(cut.file) : at(r.pages[0]);
+        const title = r.title || (r.from ? `Report from ${r.from}` : 'Staff report');
+        const len = cut ? `${cut.pages} page${cut.pages === 1 ? '' : 's'}` : pages(r);
+        const meta = [r.from && r.title ? `From ${escHtml(r.from)}` : '', r.date ? escHtml(r.date) : '', len,
+          cut ? `<a href="${escHtml(at(r.pages[0]))}" target="_blank" rel="noopener">in the agenda package, ${pages(r)}</a>` : ''].filter(Boolean);
+        return `<li><a class="report-title" href="${escHtml(href)}" target="_blank" rel="noopener">${escHtml(title)}</a>
+          <span class="report-meta">${meta.join(' · ')}</span></li>`;
+      };
+      document.getElementById('package-reports').innerHTML = reports.length
+        ? `<h3 class="pkg-sub">Staff reports</h3><ol class="report-list">${reports.map(reportHtml).join('')}</ol>`
+        : '<p class="section-note">No staff reports in this package.</p>';
       const KIND = { resolution: 'Draft resolution', bylaw: 'By-law', minutes: 'Minutes', correspondence: 'Correspondence', agenda: 'Agenda', other: 'Other' };
       const rest = pk.items.filter(i => i.kind !== 'report');
       document.getElementById('package-more-summary').textContent = `Everything else in the package: ${rest.length} item${rest.length === 1 ? '' : 's'}, ${pk.pages} pages`;

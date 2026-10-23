@@ -1,0 +1,337 @@
+{
+ "_about": "Staff reports cut out of agenda packages (scripts/staff_reports.py). Key: <meeting date>#<first page>-<last page> in the package.",
+ "reports": {
+  "2026-10-20#15-15": {
+   "file": "files/archive/reports/2026/2026-10-20_p15-15_Landfill.pdf",
+   "pages": 1
+  },
+  "2026-10-20#16-16": {
+   "file": "files/archive/reports/2026/2026-10-20_p16-16_Year-End-Report-on-Capital-Projects.pdf",
+   "pages": 1
+  },
+  "2026-10-20#17-17": {
+   "file": "files/archive/reports/2026/2026-10-20_p17-17_Chapman-s-Landing-Dock.pdf",
+   "pages": 1
+  },
+  "2026-10-20#18-22": {
+   "file": "files/archive/reports/2026/2026-10-20_p18-22_2023-2026-Strategic-Plan-Final-Update.pdf",
+   "pages": 5
+  },
+  "2026-08-20#2-3": {
+   "file": "files/archive/reports/2026/2026-08-20_p2-3_Reserve-Accounts-and-Transfers.pdf",
+   "pages": 2
+  },
+  "2026-08-11#2-2": {
+   "file": "files/archive/reports/2026/2026-08-11_p2-2_Update-on-Electronic-Landfill-Card-Transition.pdf",
+   "pages": 1
+  },
+  "2026-07-14#13-16": {
+   "file": "files/archive/reports/2026/2026-07-14_p13-16_Asset-Management-Annual-Review-for-Council.pdf",
+   "pages": 4
+  },
+  "2026-06-16#10-10": {
+   "file": "files/archive/reports/2026/2026-06-16_p10-10_Bear-Creek-Bridge-and-Abutment-Construction-NIP-PW-10-2026-I.pdf",
+   "pages": 1
+  },
+  "2026-04-07#11-13": {
+   "file": "files/archive/reports/2026/2026-04-07_p11-13_Tender-NIP-PW-07-2026-Modular-Bridge-Concrete-Abutment-Bear.pdf",
+   "pages": 3
+  },
+  "2026-04-07#17-18": {
+   "file": "files/archive/reports/2026/2026-04-07_p17-18_Landfill-Electronic-Swipe-Card-Program-Update.pdf",
+   "pages": 2
+  },
+  "2026-03-17#2-3": {
+   "file": "files/archive/reports/2026/2026-03-17_p2-3_Lake-Nipissing-Water-Levels-and-2026-Spring-Outlook.pdf",
+   "pages": 2
+  },
+  "2026-02-17#13-31": {
+   "file": "files/archive/reports/2026/2026-02-17_p13-31_2025-Activity-Report.pdf",
+   "pages": 19
+  },
+  "2026-02-17#33-37": {
+   "file": "files/archive/reports/2026/2026-02-17_p33-37_Strengthening-Ontario-s-Blue-Box-Program-Extending-Producer.pdf",
+   "pages": 5
+  },
+  "2026-01-20#7-16": {
+   "file": "files/archive/reports/2026/2026-01-20_p7-16_Website.pdf",
+   "pages": 10
+  },
+  "2026-01-20#21-21": {
+   "file": "files/archive/reports/2026/2026-01-20_p21-21_Proposed-Amendments-to-Consolidated-Parking-By-Law-2021-50.pdf",
+   "pages": 1
+  },
+  "2026-01-06#7-7": {
+   "file": "files/archive/reports/2026/2026-01-06_p7-7_Employee-Benefit-Package-Renewal.pdf",
+   "pages": 1
+  },
+  "2026-01-06#9-11": {
+   "file": "files/archive/reports/2026/2026-01-06_p9-11_Landfill-Entry-Permits.pdf",
+   "pages": 3
+  },
+  "2026-01-06#17-69": {
+   "file": "files/archive/reports/2026/2026-01-06_p17-69_Bill-27-Resource-Management-and-Safety-Act-2025-Approved-ame.pdf",
+   "pages": 53
+  },
+  "2025-12-02#6-8": {
+   "file": "files/archive/reports/2025/2025-12-02_p6-8_2026-Municipal-Election-Voting-Method.pdf",
+   "pages": 3
+  },
+  "2025-12-02#13-16": {
+   "file": "files/archive/reports/2025/2025-12-02_p13-16_Winter-Walking-Program-at-South-Shore-Education-Centre.pdf",
+   "pages": 4
+  },
+  "2025-11-18#15-16": {
+   "file": "files/archive/reports/2025/2025-11-18_p15-16_Community-Centre-Fire-Station-1-Well-Water-Assessment-and-Re.pdf",
+   "pages": 2
+  },
+  "2025-11-18#25-27": {
+   "file": "files/archive/reports/2025/2025-11-18_p25-27_Circular-Materials-Change-Order-1.pdf",
+   "pages": 3
+  },
+  "2025-11-18#48-49": {
+   "file": "files/archive/reports/2025/2025-11-18_p48-49_Asset-Management-Plan-Public-Comment.pdf",
+   "pages": 2
+  },
+  "2025-10-07#14-17": {
+   "file": "files/archive/reports/2025/2025-10-07_p14-17_Recycling-Transition-Circular-Materials.pdf",
+   "pages": 4
+  },
+  "2025-09-02#7-8": {
+   "file": "files/archive/reports/2025/2025-09-02_p7-8_Municipal-Software-Conversion-Update.pdf",
+   "pages": 2
+  },
+  "2025-09-02#10-11": {
+   "file": "files/archive/reports/2025/2025-09-02_p10-11_Stone-Cutter-s-Culvert-Project-Completion.pdf",
+   "pages": 2
+  },
+  "2025-09-02#13-13": {
+   "file": "files/archive/reports/2025/2025-09-02_p13-13_District-of-Parry-Sound-Social-Services-Partnership-for-Comm.pdf",
+   "pages": 1
+  },
+  "2025-07-15#10-21": {
+   "file": "files/archive/reports/2025/2025-07-15_p10-21_Request-for-Repairs-to-Ruth-Haven-Drive.pdf",
+   "pages": 12
+  },
+  "2025-06-24#4-8": {
+   "file": "files/archive/reports/2025/2025-06-24_p4-8_Tender-Results-and-Project-Recommendations-Stone-Cutter-s-Ro.pdf",
+   "pages": 5
+  },
+  "2025-06-10#5-6": {
+   "file": "files/archive/reports/2025/2025-06-10_p5-6_Comments-on-Bill-17-Protect-Ontario-by-Building-Faster-and-S.pdf",
+   "pages": 2
+  },
+  "2025-06-10#35-60": {
+   "file": "files/archive/reports/2025/2025-06-10_p35-60_Introduction-of-Bill-27-the-Resource-Management-Safety-Act-2.pdf",
+   "pages": 26
+  },
+  "2025-05-27#15-16": {
+   "file": "files/archive/reports/2025/2025-05-27_p15-16_Studies-Required-to-prepare-for-the-Hummel-Bridge-Replacemen.pdf",
+   "pages": 2
+  },
+  "2025-04-08#2-2": {
+   "file": "files/archive/reports/2025/2025-04-08_p2-2_Additional-Fire-Protection-Grant-Funding-Available.pdf",
+   "pages": 1
+  },
+  "2025-03-18#4-5": {
+   "file": "files/archive/reports/2025/2025-03-18_p4-5_staff-report.pdf",
+   "pages": 2
+  },
+  "2025-02-04#6-9": {
+   "file": "files/archive/reports/2025/2025-02-04_p6-9_Volunteer-Appreciation-Historical-Data.pdf",
+   "pages": 4
+  },
+  "2024-10-22#14-32": {
+   "file": "files/archive/reports/2024/2024-10-22_p14-32_Overview-of-the-New-Provincial-Planning-Statement-2024.pdf",
+   "pages": 19
+  },
+  "2024-10-01#3-6": {
+   "file": "files/archive/reports/2024/2024-10-01_p3-6_Landfill-Proposal-Service-Updates-Follow-up.pdf",
+   "pages": 4
+  },
+  "2024-10-01#12-12": {
+   "file": "files/archive/reports/2024/2024-10-01_p12-12_Circular-Materials-Depot-Operations-Agreement.pdf",
+   "pages": 1
+  },
+  "2024-10-01#14-14": {
+   "file": "files/archive/reports/2024/2024-10-01_p14-14_Request-FOR-REPORT-FILE-NO-115383.pdf",
+   "pages": 1
+  },
+  "2024-09-17#11-22": {
+   "file": "files/archive/reports/2024/2024-09-17_p11-22_Adding-a-Deputy-Treasurer-to-the-Administration-Team.pdf",
+   "pages": 12
+  },
+  "2024-08-13#28-29": {
+   "file": "files/archive/reports/2024/2024-08-13_p28-29_Service-Delivery-Enhancements.pdf",
+   "pages": 2
+  },
+  "2024-08-13#30-36": {
+   "file": "files/archive/reports/2024/2024-08-13_p30-36_Website-and-Social-Media-Updates.pdf",
+   "pages": 7
+  },
+  "2024-07-16#43-44": {
+   "file": "files/archive/reports/2024/2024-07-16_p43-44_Boat-Ramp.pdf",
+   "pages": 2
+  },
+  "2024-07-16#45-48": {
+   "file": "files/archive/reports/2024/2024-07-16_p45-48_Review-of-Investment-of-Municipal-Funds-Policy.pdf",
+   "pages": 4
+  },
+  "2024-06-18#5-11": {
+   "file": "files/archive/reports/2024/2024-06-18_p5-11_Review-of-User-Fee-Policy-and-Current-User-Fees.pdf",
+   "pages": 7
+  },
+  "2024-06-04#15-16": {
+   "file": "files/archive/reports/2024/2024-06-04_p15-16_Decomissioning-of-SCBA-Units.pdf",
+   "pages": 2
+  },
+  "2024-04-02#6-6": {
+   "file": "files/archive/reports/2024/2024-04-02_p6-6_staff-report.pdf",
+   "pages": 1
+  },
+  "2024-04-02#18-18": {
+   "file": "files/archive/reports/2024/2024-04-02_p18-18_Final-Draft-Communications-Strategy-Policy.pdf",
+   "pages": 1
+  },
+  "2024-04-02#28-31": {
+   "file": "files/archive/reports/2024/2024-04-02_p28-31_Final-Draft-Human-Resources-Policy-Procedures-Manual.pdf",
+   "pages": 4
+  },
+  "2024-03-05#5-6": {
+   "file": "files/archive/reports/2024/2024-03-05_p5-6_Proposed-Town-Hall-Meeting.pdf",
+   "pages": 2
+  },
+  "2024-03-05#7-8": {
+   "file": "files/archive/reports/2024/2024-03-05_p7-8_Investigation-Results-Non-Compliant-Zoning-Uses-of-Link-s-Be.pdf",
+   "pages": 2
+  },
+  "2024-03-05#9-10": {
+   "file": "files/archive/reports/2024/2024-03-05_p9-10_Parking-Concerns-along-Birchgrove-Drive.pdf",
+   "pages": 2
+  },
+  "2024-03-05#11-16": {
+   "file": "files/archive/reports/2024/2024-03-05_p11-16_Blue-Box-Program-Transition-to-Full-Producer-Responsibility.pdf",
+   "pages": 6
+  },
+  "2024-01-16#13-14": {
+   "file": "files/archive/reports/2024/2024-01-16_p13-14_Foundation-Repair-RFQ-2023-01-Results.pdf",
+   "pages": 2
+  },
+  "2024-01-10#2-4": {
+   "file": "files/archive/reports/2024/2024-01-10_p2-4_Short-Term-Accommodations-Regulation-Options.pdf",
+   "pages": 3
+  },
+  "2023-12-19#14-15": {
+   "file": "files/archive/reports/2023/2023-12-19_p14-15_SCBA-RFP-Results.pdf",
+   "pages": 2
+  },
+  "2023-12-19#23-23": {
+   "file": "files/archive/reports/2023/2023-12-19_p23-23_Shared-Service-Agreement-for-Building-Related-Services.pdf",
+   "pages": 1
+  },
+  "2023-12-05#10-11": {
+   "file": "files/archive/reports/2023/2023-12-05_p10-11_Human-Resources-RFP-Results.pdf",
+   "pages": 2
+  },
+  "2023-12-05#89-97": {
+   "file": "files/archive/reports/2023/2023-12-05_p89-97_Supporting-Documentation-re-Petition-and-Formal-Request-to-C.pdf",
+   "pages": 9
+  },
+  "2023-12-05#98-101": {
+   "file": "files/archive/reports/2023/2023-12-05_p98-101_Request-for-Additional-Road-Signage.pdf",
+   "pages": 4
+  },
+  "2023-11-14#4-16": {
+   "file": "files/archive/reports/2023/2023-11-14_p4-16_LANDFILL-STATUS-2023.pdf",
+   "pages": 13
+  },
+  "2023-11-14#18-36": {
+   "file": "files/archive/reports/2023/2023-11-14_p18-36_Final-Draft-Strategic-Plan-2023-2026.pdf",
+   "pages": 19
+  },
+  "2023-10-17#8-8": {
+   "file": "files/archive/reports/2023/2023-10-17_p8-8_RFP-Human-Resources-Consultant-Compensation-Pay-Equity-and-P.pdf",
+   "pages": 1
+  },
+  "2023-09-19#25-28": {
+   "file": "files/archive/reports/2023/2023-09-19_p25-28_2023-Budget-Update.pdf",
+   "pages": 4
+  },
+  "2023-09-19#55-58": {
+   "file": "files/archive/reports/2023/2023-09-19_p55-58_Recommendation-to-address-Ontario-s-Mental-Health-Addictions.pdf",
+   "pages": 4
+  },
+  "2023-09-19#59-62": {
+   "file": "files/archive/reports/2023/2023-09-19_p59-62_Provincial-Grant-Provided-to-Northern-Ontario-Health-Units.pdf",
+   "pages": 4
+  },
+  "2023-09-19#63-71": {
+   "file": "files/archive/reports/2023/2023-09-19_p63-71_School-Board-Trustee-Elections-in-2026.pdf",
+   "pages": 9
+  },
+  "2023-09-05#15-19": {
+   "file": "files/archive/reports/2023/2023-09-05_p15-19_Request-for-Additional-Road-Signage.pdf",
+   "pages": 5
+  },
+  "2023-09-05#20-21": {
+   "file": "files/archive/reports/2023/2023-09-05_p20-21_Office-Assistant-Position-update.pdf",
+   "pages": 2
+  },
+  "2023-08-15#13-23": {
+   "file": "files/archive/reports/2023/2023-08-15_p13-23_Food-Cycler-Review.pdf",
+   "pages": 11
+  },
+  "2023-08-15#24-28": {
+   "file": "files/archive/reports/2023/2023-08-15_p24-28_Request-for-Additional-Road-Signage.pdf",
+   "pages": 5
+  },
+  "2023-06-06#4-4": {
+   "file": "files/archive/reports/2023/2023-06-06_p4-4_Road-Needs-Study-RFP.pdf",
+   "pages": 1
+  },
+  "2023-05-16#7-69": {
+   "file": "files/archive/reports/2023/2023-05-16_p7-69_May-16-2023.pdf",
+   "pages": 63
+  },
+  "2023-05-02#36-48": {
+   "file": "files/archive/reports/2023/2023-05-02_p36-48_Trailer-Licencing-By-Law-Update.pdf",
+   "pages": 13
+  },
+  "2023-04-04#16-17": {
+   "file": "files/archive/reports/2023/2023-04-04_p16-17_NOHFC-Intern-Application-Workforce-Development-Stream.pdf",
+   "pages": 2
+  },
+  "2023-01-17#21-40": {
+   "file": "files/archive/reports/2023/2023-01-17_p21-40_Updates-to-Committee-Board-By-Laws.pdf",
+   "pages": 20
+  },
+  "2023-01-03#5-9": {
+   "file": "files/archive/reports/2023/2023-01-03_p5-9_Reconsideration-of-Shore-Road-Allowance-Closure-and-Sale-Dug.pdf",
+   "pages": 5
+  },
+  "2023-01-03#21-43": {
+   "file": "files/archive/reports/2023/2023-01-03_p21-43_Updates-to-Required-By-Laws.pdf",
+   "pages": 23
+  },
+  "2022-12-20#10-12": {
+   "file": "files/archive/reports/2022/2022-12-20_p10-12_Shore-Road-Allowance-Application-Dickinson-Duggan-Birchgrove.pdf",
+   "pages": 3
+  },
+  "2022-12-20#15-18": {
+   "file": "files/archive/reports/2022/2022-12-20_p15-18_Response-to-Dickinson-and-Duggan-Land-Swap-Request.pdf",
+   "pages": 4
+  },
+  "2022-12-06#14-25": {
+   "file": "files/archive/reports/2022/2022-12-06_p14-25_Boundary-Road-Agreement-Renewal-with-Municipality-of-Calland.pdf",
+   "pages": 12
+  },
+  "2022-12-06#26-32": {
+   "file": "files/archive/reports/2022/2022-12-06_p26-32_Shared-Service-Agreement-for-CBO-Services.pdf",
+   "pages": 7
+  },
+  "2022-12-20#47-50": {
+   "file": "files/archive/reports/2022/2022-12-20_p47-50_Election-Accessibility-Report.pdf",
+   "pages": 4
+  }
+ }
+}

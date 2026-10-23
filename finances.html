@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=5e7bdabf0f">
+<link rel="stylesheet" href="shared.css?v=7e74066526">
 </head>
 <body>
 
@@ -153,7 +153,7 @@
         <h2 class="filed-tab" id="doc-tab">Documents</h2>
         <div class="filed-body">
           <h3 class="fin-h">Every financial document, by year</h3>
-          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears. For documents the township removed before a copy was kept, web archives are searched daily; if you have one, <a href="https://github.com/chriswjohnston/Nipissing/tree/main/inbox" target="_blank" rel="noopener">add it to the inbox</a>.</p>
+          <p class="fin-sub">Checked every day: the township’s financial pages, its media library and every meeting’s documents. Anything new is copied the day it appears. Have one that isn’t here? <a href="https://github.com/chriswjohnston/Nipissing/tree/main/inbox" target="_blank" rel="noopener">Add it to the inbox</a>.</p>
           <div id="doc-shelf"></div>
         </div>
       </section>
@@ -176,7 +176,7 @@
   <div class="wrap site-footer-inner">
     <div class="footer-about">
       <h2 class="footer-name">Nipissing Public Record</h2>
-      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources; where a copy is kept here it is marked “Copy kept”.</p>
+      <p>An independent archive, not run by or affiliated with the Township of Nipissing. Documents are copied from public sources and a copy of each is kept here.</p>
     </div>
     <ul class="footer-links">
       <li><a href="about.html">How the record is kept</a></li>
@@ -187,7 +187,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=934b8e0e1b"></script>
+<script src="shared.js?v=dcca7bc088"></script>
 <script>
 // ── formatting ──────────────────────────────────────────────────────────
 const money = (v, short = true) => {
@@ -393,17 +393,38 @@ async function init(){
   document.getElementById('returns-table').innerHTML = `<thead><tr><th scope="col">Year</th><th scope="col">Filed</th><th scope="col">Treasurer</th><th scope="col">Auditor</th></tr></thead><tbody>` +
     years.slice().reverse().map(y => { const f = Y[y].filed || {}; return `<tr><td>${y}</td><td>${esc(when(f.date))}</td><td>${esc((f.treasurer || '—').replace(/^[A-Z' -]+$/, w => w.toLowerCase().replace(/(^|[\s-])\w/g, c => c.toUpperCase())))}</td><td>${esc([f.auditor, f.audit_firm].filter(Boolean).join(', ') || '—')}</td></tr>`; }).join('') + '</tbody>';
 
-  // ── documents shelf
-  const docs = (F.documents || []).filter(d => (d.archived || d.url) && !d.same_as);
-  const byYear = {};
-  docs.forEach(d => (byYear[d.year || 'Undated'] ||= []).push(d));
-  document.getElementById('doc-shelf').innerHTML = `<ol class="fin-shelf">${Object.keys(byYear).sort().reverse().map(y => `
-    <li><span class="fs-year">${esc(y)}</span><ul>${byYear[y].sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind)).map(d => {
-      const href = d.archived ? archivedUrl(d.archived) : null;
-      const title = d.title || d.kind;
-      return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a> ${keptStamp()}`
-        : `<span class="fs-gone-title">${esc(title)}</span> <span class="stamp stamp-gone">${d.gone ? 'Removed; no copy found' : d.removed ? 'Removed by the township' : 'Not yet saved'}</span>`}<span class="fs-kind">${esc(d.kind || '')}${d.meetings?.length ? ` · <a href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council">the meeting</a>` : ''}</span></li>`;
-    }).join('')}</ul></li>`).join('')}</ol>`;
+  // ── documents: one row per kind, one column per year, so each series reads as a timeline
+  const docs = (F.documents || []).filter(d => d.archived && !d.same_as && d.year);
+  const ROW = { 'Auditor’s presentation': 'Auditor’s presentations', 'Budget': 'Budgets', 'Capital budget and forecast': 'Capital forecasts',
+    'Asset management plan': 'Asset management', 'Policy': 'Policies', 'Other financial document': 'Other' };
+  const kinds = KIND_ORDER.filter(k => docs.some(d => d.kind === k));
+  const ys = docs.map(d => +d.year);
+  const cols = [];
+  for (let y = Math.max(...ys); y >= Math.min(...ys); y--) cols.push(y);
+  // A short name for the link inside its cell; the full title is its accessible name.
+  const short = d => {
+    const t = d.title || '';
+    if (/draft/i.test(t) && /statement/i.test(t)) return 'Draft statements';
+    if (/analysis|indicator/i.test(t)) return 'Financial analysis';
+    if (/overview|presentation|by KPMG/i.test(t) && d.kind === 'Auditor’s presentation') return 'Statements presentation';
+    if (/as adopted/i.test(t)) return 'Plan as adopted, with Appendix B';
+    if (/policy/i.test(t)) return 'Policy';
+    if (/comparative/i.test(t)) return 'Comparison report';
+    if (/expenses/i.test(t)) return 'Pay and expenses';
+    if (d.kind === 'Budget') return /final/i.test(t) ? 'Final draft' : /draft/i.test(t) ? 'Draft' : 'Budget';
+    return { 'Audited financial statements': 'Statements', 'Capital budget and forecast': 'Forecast', 'Tax rates': 'Tax rate by-law',
+      'Asset management plan': 'Plan' }[d.kind] || t;
+  };
+  const cell = (k, y) => {
+    const here = docs.filter(d => d.kind === k && +d.year === y);
+    if (!here.length) return '<td class="fd-empty"><span aria-hidden="true">·</span><span class="visually-hidden">None</span></td>';
+    return `<td><ul>${here.map(d => `<li><a href="${esc(archivedUrl(d.archived))}" target="_blank" rel="noopener" title="${esc(d.title)}" aria-label="${esc(d.title)}">${esc(short(d))}</a>${
+      d.meetings?.length ? `<a class="fd-meet" href="meeting-detail.html?date=${encodeURIComponent(d.meetings[0])}&body=council" aria-label="The meeting it was presented at, ${esc(fmtDate(d.meetings[0]))}">${esc(fmtDate(d.meetings[0]).replace(/, \d{4}$/, ''))}</a>` : ''}</li>`).join('')}</ul></td>`;
+  };
+  document.getElementById('doc-shelf').innerHTML = `<div class="fin-scroll" role="region" aria-label="Financial documents by year" tabindex="0">
+    <table class="fin-docs"><thead><tr><th scope="col"><span class="visually-hidden">Document</span></th>${cols.map(y => `<th scope="col">${y}</th>`).join('')}</tr></thead>
+    <tbody>${kinds.map(k => `<tr><th scope="row">${esc(ROW[k] || k)}</th>${cols.map(y => cell(k, y)).join('')}</tr>`).join('')}</tbody></table></div>
+    <p class="fin-small">Years are the year each document is about: the 2025 statements were presented in 2026. Dates under a link are the council meeting it was presented at.</p>`;
 }
 
 init();

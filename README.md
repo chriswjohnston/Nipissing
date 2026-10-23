@@ -35,6 +35,7 @@ bump the `?v=` on their `<script>`/`<link>` tags so browsers fetch the new copy.
 
 - `meetings.json`, `resolutions.json`, `bylaws.json`, `boards.json`
 - `package_index.json` — contents of each agenda package (text in `data/packages/<date>.txt.gz`)
+- `staff_reports.json` — each staff report cut out as its own PDF (`docs/files/archive/reports/`)
 - `bylaw_families.json`, `consolidations.json` — laws and their amendments; consolidated texts
 - `laws_in_effect.json` — **hand-edited**: which by-laws are the standing laws, by topic
 - `council_terms.json`, `terms.json` — **hand-edited**: councillors, elections, term notes
@@ -59,7 +60,7 @@ skipped and its stored data kept. In order:
 4. `recover_documents` — finds lost files in the Wayback Machine
 5. `generate_summaries` — meeting summaries
 6. `update_bylaws` — by-laws and resolutions
-7. `package_index`, `consolidate_bylaws` — read packages; build law texts
+7. `package_index`, `staff_reports`, `consolidate_bylaws` — read packages; cut each staff report out as its own PDF; build law texts
 8. `update_adjustment`, `update_boards`, `update_library`, `update_healthunit`, `update_dnssab` — committee and board records
 9. `attach_videos` — YouTube recordings
 10. `doc_tidy`, `archive_plans`, `check_freshness`, `audit_site`, `build_sitemap`

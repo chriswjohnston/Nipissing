@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════════
    Nipissing Public Record — shared design system ("Records office")
 
-   Ledger green for structure, stamp violet for one job only: marking
-   documents we keep a copy of. Literata for reading, Public Sans for
+   Ledger green for structure, stamp violet for focus and amendment
+   marks. Literata for reading, Public Sans for
    the interface. Sections are filed under a folder tab.
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -126,11 +126,7 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .btn:hover{background:var(--ledger-tint);color:var(--ledger-dk)}
 .btn-primary{background:var(--ledger);color:#fff}
 .btn-primary:hover{background:var(--ledger-dk);color:#fff}
-.btn .stamp{margin-left:4px}
 
-/* ── The stamp: a copy of this document is kept here ───────────────── */
-.stamp{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;line-height:1.4;color:var(--stamp);background:var(--stamp-tint);border:1.5px solid var(--stamp);border-radius:3px;padding:0 7px;white-space:nowrap}
-.stamp svg{width:12px;height:12px}
 .source-note{font-size:13px;color:var(--muted);font-weight:500;white-space:nowrap}
 
 /* ── Badges and statuses ───────────────────────────────────────────── */
@@ -253,13 +249,12 @@ mark,.hl{background:#FBEA9C;color:var(--ink);border-radius:2px;padding:0 .08em}
 .law-banner-repealed{border-color:var(--rule);background:var(--paper);color:var(--ink)}
 .law-banner:hover{text-decoration:underline;color:var(--ledger-dk)}
 
-/* Document links, with the stamp when we keep the copy */
+/* Document links */
 .docs-stack{display:flex;flex-direction:column;gap:8px}
 .doc-link{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 14px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-weight:600;text-decoration:none}
 .doc-link:hover{border-color:var(--ledger);background:var(--ledger-tint);color:var(--ink)}
 .doc-link > svg{width:18px;height:18px;flex-shrink:0;color:var(--muted)}
 .doc-link .doc-label{flex:1;min-width:0}
-.doc-gone{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;min-height:48px;padding:10px 14px;border:1px dashed var(--rule);border-radius:var(--radius);color:var(--muted)}
 .docs-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule-soft)}
 .docs-section-title{font-size:15px;font-weight:700;margin-bottom:10px}
 .docs-section:first-child{margin-top:0;padding-top:0;border-top:0}
@@ -512,6 +507,8 @@ a.amend-mark:hover{text-decoration:underline}
 .report-title{display:block;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);text-decoration:none}
 .report-title:hover{text-decoration:underline}
 .report-meta{display:block;font-size:14.5px;color:var(--muted)}
+.report-meta a{color:var(--muted)}
+.pkg-sub{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px}
 .pkg-list{list-style:none;margin:8px 0 0;padding:0}
 .pkg-list li{display:grid;grid-template-columns:150px 1fr;gap:2px 14px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .pkg-kind{font-weight:600;color:var(--ink-2)}
@@ -551,6 +548,17 @@ a.amend-mark:hover{text-decoration:underline}
 .key-actual{background:var(--ledger)}.key-plan{background:var(--ledger-tint);border:1.5px solid var(--ledger)}.key-debt{background:#C4522A}
 .key.g1{background:#2a78d6}.key.g2{background:#eb6834}.key.g3{background:#1baf7a}
 .fin-table-wrap{overflow-x:auto;margin-top:8px}
+.fin-scroll{overflow-x:auto;margin-top:8px;border-top:2px solid var(--ink)}
+.fin-docs{border-collapse:collapse;min-width:100%;font-size:14.5px}
+.fin-docs th,.fin-docs td{padding:10px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.fin-docs thead th{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink)}
+.fin-docs tbody th{font-weight:600;color:var(--ink-2);min-width:150px}
+.fin-docs ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;min-width:120px}
+.fin-docs a{font-weight:600;display:inline-block;min-height:24px;padding:2px 0}
+.fin-docs .fd-meet{display:block;width:max-content;font-weight:400;font-size:13px;color:var(--muted)}
+.fin-docs .fd-empty{color:var(--rule)}
+.fin-docs tbody th,.fin-docs thead th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+@media (max-width:560px){.fin-docs tbody th{min-width:108px;max-width:120px}}
 .fin-table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
 .fin-table th,.fin-table td{padding:9px 10px;border-bottom:1px solid var(--rule);text-align:left;white-space:nowrap}
 .fin-table thead th{border-bottom:2px solid var(--ink);color:var(--ink-2);font-weight:600}
@@ -580,20 +588,11 @@ a.amend-mark:hover{text-decoration:underline}
 @media (max-width:820px){.fin-notes-row{grid-template-columns:1fr}}
 .fin-bylaws li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .fin-bylaws a{font-weight:600}.fin-bylaws span{display:block;color:var(--ink-2)}
-.fin-shelf{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-.fin-shelf>li{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
-.fs-year{font-family:var(--serif);font-size:20px;font-weight:600}
-.fin-shelf ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-.fin-shelf ul li{font-size:15px}
-.fin-shelf ul a{font-weight:600}
-.fs-kind{display:block;font-size:13.5px;color:var(--muted)}
-.fs-gone-title{color:var(--ink-2)}
-.stamp-gone{color:var(--warn);background:var(--warn-tint);border-color:var(--warn-rule)}
 .fin-method{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:28px 0 20px;border-top:2px solid var(--ink)}
 .fin-returns{margin:0 0 64px}
 .fin-method p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.55}
 @media (max-width:980px){.fin-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.fin-split,.fin-split.even{grid-template-columns:1fr}.fin-method{grid-template-columns:1fr}}
-@media (max-width:560px){.fin-tiles{grid-template-columns:1fr}.fin-hbars li{grid-template-columns:1fr 104px}.hb-track{grid-column:1/-1;grid-row:2}.fin-shelf>li{grid-template-columns:1fr}}
+@media (max-width:560px){.fin-tiles{grid-template-columns:1fr}.fin-hbars li{grid-template-columns:1fr 104px}.hb-track{grid-column:1/-1;grid-row:2}}
 .print-only{display:none}
 .print-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;font:inherit;font-size:15px;font-weight:600;color:var(--ledger-dk);background:var(--surface);border:1.5px solid var(--ledger);border-radius:var(--radius);cursor:pointer}
 .print-btn svg{width:18px;height:18px}
