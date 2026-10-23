@@ -1,0 +1,29 @@
+name: Checks
+# Runs on every pull request: the document-reading tests, the shared.js
+# checks, the data validation, and that pages load the current shared files.
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install requests beautifulsoup4 pdfminer.six pymupdf
+      - name: Document-reading tests
+        run: python -m unittest discover tests -v
+      - name: shared.js checks
+        run: node tests/test_shared.mjs
+      - name: Data validation
+        run: python scripts/validate_data.py
+      - name: Pages load the current shared.css / shared.js
+        run: |
+          if [ -f scripts/stamp_assets.py ]; then python scripts/stamp_assets.py --check; fi

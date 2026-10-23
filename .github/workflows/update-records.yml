@@ -65,6 +65,8 @@ jobs:
             echo "::endgroup::"
           done
           echo "FAILED_UPDATERS=${failed# }" >> "$GITHUB_ENV"
+          # Keep each page's shared.css/shared.js ?v= in step with the files.
+          if [ -f scripts/stamp_assets.py ]; then python scripts/stamp_assets.py; fi
           python scripts/validate_data.py
       - name: Show canonical data counts
         run: |
@@ -87,7 +89,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Only paths that exist: a missing one (data/financial before the
           # first FIR download) makes git add fail and loses the whole run.
-          for p in data/canonical data/runtime data/financial data/packages docs/files inbox sitemap.xml robots.txt; do
+          for p in data/canonical data/runtime data/financial data/packages docs/files inbox sitemap.xml robots.txt *.html; do
             [ -e "$p" ] && git add -A -- "$p"
           done
           git diff --cached --quiet || git commit -m "Auto-update canonical records"
