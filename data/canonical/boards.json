@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "source": "board pages",
   "boards": [
     {
@@ -12907,7 +12907,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-10-23",
+      "members_checked": "2026-10-24",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
@@ -13231,7 +13231,8 @@
           "title": "Museum Board",
           "source_kind": "board",
           "extra_docs": [],
-          "video_url": "https://www.youtube.com/watch?v=S6ck2DbFeBk"
+          "video_url": "https://www.youtube.com/watch?v=S6ck2DbFeBk",
+          "minutes_archived": "files/archive/boards/museum/2025/Museum-Boad-Minutes-September-3-2025__1354a0e1.pdf"
         },
         {
           "date": "2025-08-06",
