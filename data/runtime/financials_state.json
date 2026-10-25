@@ -4,11 +4,11 @@
     "outcome": "recovered"
   },
   "https://nipissingtownship.com/wp-content/uploads/2022/12/2022-Budget-Report.pdf": {
-    "checked": "2026-10-24",
+    "checked": "2026-10-25",
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2023/03/2023-Budget-Report.pdf": {
-    "checked": "2026-10-24",
+    "checked": "2026-10-25",
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2024/02/KPMG-Financial-Indicator-Presentation.pdf": {
@@ -20,11 +20,11 @@
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/03/Township-of-Nipissing-2025-Budget-Draft-presentation.pdf": {
-    "checked": "2026-10-24",
+    "checked": "2026-10-25",
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/10/Township-of-Nipissing-2025-Asset-Management-Plan-1.pdf": {
-    "checked": "2026-10-24",
+    "checked": "2026-10-25",
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2026/04/2025-12-31-Township-of-Nipissing-FS.pdf": {
@@ -32,7 +32,7 @@
     "outcome": "error"
   },
   "https://nipissingtownship.com/wp-content/uploads/2026/04/2026-User-Fee-Draft.pdf": {
-    "checked": "2026-10-24",
-    "outcome": "error"
+    "checked": "2026-10-25",
+    "outcome": "recovered"
   }
 }
