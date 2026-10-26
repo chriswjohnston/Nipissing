@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-25",
+  "checked": "2026-10-26",
   "bodies": {
     "council": {
       "meetings": 213,
@@ -210,19 +210,12 @@
       "meetings": 9,
       "totals": {
         "no_minutes": 1,
-        "no_video": 1,
-        "no_summary": 2
+        "no_video": 1
       },
       "issues": {
         "2024-01-10 Board": {
           "no_minutes": true,
           "no_video": true
-        },
-        "2022-07-11 Board": {
-          "no_summary": true
-        },
-        "2022-02-11 Board": {
-          "no_summary": true
         }
       }
     },
@@ -311,14 +304,8 @@
     },
     "museum": {
       "meetings": 18,
-      "totals": {
-        "no_summary": 1
-      },
-      "issues": {
-        "2025-03-05 Board": {
-          "no_summary": true
-        }
-      }
+      "totals": {},
+      "issues": {}
     },
     "pnc": {
       "meetings": 12,
@@ -338,19 +325,10 @@
     "recreation": {
       "meetings": 32,
       "totals": {
-        "no_summary": 13,
+        "no_summary": 3,
         "no_video": 3
       },
       "issues": {
-        "2025-01-06 Board": {
-          "no_summary": true
-        },
-        "2024-12-02 Board": {
-          "no_summary": true
-        },
-        "2024-11-04 Board": {
-          "no_summary": true
-        },
         "2024-10-07 Board": {
           "no_summary": true
         },
@@ -361,35 +339,18 @@
           "no_summary": true,
           "no_video": true
         },
-        "2024-07-15 Board": {
-          "no_summary": true
-        },
-        "2024-06-03 Board": {
-          "no_summary": true
-        },
         "2024-05-13 Board": {
-          "no_summary": true,
           "no_video": true
-        },
-        "2024-04-15 Board": {
-          "no_summary": true
         },
         "2024-03-04 Board": {
-          "no_summary": true,
           "no_video": true
-        },
-        "2024-02-05 Board": {
-          "no_summary": true
-        },
-        "2024-01-15 Board": {
-          "no_summary": true
         }
       }
     }
   },
   "bylaws": {
     "total": 247,
-    "no_document": 135,
+    "no_document": 134,
     "no_document_by_year": {
       "1088": [
         "1088"
@@ -440,7 +401,6 @@
         "2023-29",
         "2023-31",
         "2023-32",
-        "2023-33",
         "2023-34",
         "2023-36",
         "2023-37",

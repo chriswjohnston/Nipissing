@@ -1,7 +1,7 @@
 {
   "https://nipissingtownship.com/wp-content/uploads/2025/07/CEMETERY-COMMITTEE-MINUTES-July-25-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/02/CEMETERY-COMMITTEE-MINUTES-February-10-2025.pdf": {
     "outcome": "recovered",
@@ -20,32 +20,32 @@
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2024/01/Cemetery-Committee-mintues-July-2022.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2024/01/Cemetery-Committee-minutes-February-11-2022.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/11/Museum-Boad-Minutes-November-5-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/10/Museum-Boad-Minutes-October-1-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/09/Museum-Boad-Minutes-September-3-2025.pdf": {
     "outcome": "recovered",
     "checked": "2026-10-24"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/08/Museum-Boad-Minutes-August-6-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/07/Museum-Board-Minutes-July-2-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/06/Museum-Board-Minutes-June-4-2025.pdf": {
     "outcome": "recovered",
@@ -56,8 +56,8 @@
     "checked": "2026-10-21"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/03/Museum-Board-Minutes-March-5-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/11/Recreation-Minutes-November-17-2025.pdf": {
     "outcome": "recovered",
@@ -68,19 +68,147 @@
     "checked": "2026-10-22"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/09/Recreation-Minutes-September-15-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/06/Recreation-Minutes-June-9-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-25"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/05/Recreation-Minutes-May-12-2025.pdf": {
-    "outcome": "error",
-    "checked": "2026-10-24"
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   },
   "https://nipissingtownship.com/wp-content/uploads/2025/03/Recreation-Minutes-March-3-2025.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2025/03/Recreation-Minutes-February-3-2025-amended.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2025/01/Recreation-Minutes-January-6-2025.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/12/Recreation-Minutes-December-2-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/11/Recreation-Minutes-November-4-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/10/Recreation-Minutes-October-7-2024.pdf": {
     "outcome": "error",
-    "checked": "2026-10-22"
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/09/Recreation-Minutes-September-16-2024.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/09/Recreation-Minutes-August-12-2024.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/07/Recreation-Minutes-July-15-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/06/Recreation-Minutes-June-3-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/05/Recreation-Minutes-May-13-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/04/Recreation-Minutes-April-15-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/04/Recreation-Minutes-March-4-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/02/Recreation-Minutes-February-5-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/01/Recreation-Minutes-January-15-2024.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/07/User-Fee-By-Law-2024-33.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/02/By-law-2024-07-Providing-Public-Notice.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2025/05/2023-Trailer-Licensing-By-Law-Consolidated.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/Code-of-Conduct.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/Social-Media-Policy.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/By-Law-2023-11-Cemetery-Committee.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/ByLaw-2023-09-Recreation-Committee-By-Law.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/2023-Nuisance-Beaver-Amended.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-03-Regulate-Sale-0f-Public-.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-02-Delegation-of-Authority.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/01/By-Law-2023-Accountability-and-Transpare.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/Boundary-Road-Callander.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2025/02/2022-42-Dog-ByLaw.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2023/07/3293945-Corporation-of-the-Township-of-Nipissing-By-Law-August-18-2022.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2024/01/By-Law-No.-2022-23-2.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2021/12/Pushing-Snow-By-Law-2021-63.pdf": {
+    "outcome": "error",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2021/12/By-Law-2021-57-Application-to-Use-Unopen.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
+  },
+  "https://nipissingtownship.com/wp-content/uploads/2026/02/2021-50-Parking-By-Law-Consolidated.pdf": {
+    "outcome": "recovered",
+    "checked": "2026-10-26"
   }
 }

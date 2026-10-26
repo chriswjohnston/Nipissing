@@ -78,7 +78,10 @@
       "meetings": [
         "2025-10-28"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Asset-Management-Plan-1__a0080580.pdf",
+      "recovered_from": "Wayback Machine",
+      "bylaw_checked": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/Twp-of-Nipissing-2025-Asset-Management-Plan-Final.pdf",
@@ -164,7 +167,10 @@
       "meetings": [
         "2025-03-04"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2025/Township-of-Nipissing-2025-Budget-Draft-presentation__c69aa611.pdf",
+      "recovered_from": "Wayback Machine",
+      "bylaw_checked": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Township-of-Nipissing-2025-Budget-Final-presentation.pdf",
@@ -313,7 +319,11 @@
       "meetings": [
         "2023-03-21"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2023/2023-Budget-Report__0e9fd8ae.pdf",
+      "recovered_from": "Wayback Machine",
+      "bylaw_checked": true,
+      "bylaw": "2023-33"
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2022-12-31-Township-of-Nipissing-FS.pdf",
@@ -348,7 +358,10 @@
       "meetings": [
         "2022-12-20"
       ],
-      "removed": true
+      "removed": true,
+      "archived": "files/archive/financial/2022/2022-Budget-Report__909c760b.pdf",
+      "recovered_from": "Wayback Machine",
+      "bylaw_checked": true
     },
     {
       "url": "https://nipissingtownship.com/wp-content/uploads/2026/05/2021-Audited-Financial-Statements.pdf",
@@ -405,7 +418,7 @@
     2024,
     2025
   ],
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "budgets": [
     {
       "year": 2026,

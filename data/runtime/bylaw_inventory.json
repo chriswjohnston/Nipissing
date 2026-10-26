@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-25",
+  "checked": "2026-10-26",
   "site_pdfs_scanned": 533,
   "bylaws": {
     "1088": {
@@ -1852,7 +1852,7 @@
     "2023-33": {
       "in_archive": true,
       "archive_title": "confirm the proceedings of Council at its meeting held on June 6, 2023",
-      "archive_pdf": null,
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2023/03/2023-Budget-Report.pdf",
       "archive_source": "minutes",
       "site_files": []
     },
