@@ -139,7 +139,7 @@ function show(id){
 
 function upcomingHtml(t){
   return `<section class="filed"><h2 class="filed-tab">${escHtml(t.label)}</h2><div class="filed-body prose">
-    <p>The municipal election is on ${escHtml(fmt(t.election.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}. The new council’s term begins ${escHtml(fmt(t.start))}.</p>
+    <p>The municipal election ${todayIso < t.election.date ? 'is' : 'was held'} on ${escHtml(fmt(t.election.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}. The new council’s term begins ${escHtml(fmt(t.start))}.</p>
     ${(t.election.council || []).length ? '' : `<p>${escHtml(t.election.note || '')}</p>`}</div></section>
     ${(t.election.council || []).length ? electionHtml(t.election) : ''}`;
 }
@@ -149,8 +149,8 @@ function electionHtml(e){
   const turnout = e.voters ? ` ${n(e.voters)} of ${n(e.eligible_voters)} eligible voters cast a ballot, a turnout of ${e.turnout_pct}%.` : '';
   return `<section class="term-section" aria-labelledby="election">
       <h2 class="section-title" id="election">The election</h2>
-      <p class="section-note">${escHtml(fmt(e.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}.${turnout}${e.vote_method ? ` ${escHtml(e.vote_method)}.` : ''}</p>
-      <p class="mayor-line"><span class="sub-title">Mayor</span>${(e.head_of_council || []).map(c => `<span><strong>${escHtml(c.name)}</strong>, ${c.acclaimed ? 'acclaimed' : `${n(c.votes)} votes`}${c.incumbent ? ' (incumbent)' : ''}</span>`).join('')}</p>
+      <p class="section-note">${escHtml(fmt(e.date, {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'}))}.${turnout}${e.vote_method ? ` ${escHtml(e.vote_method)}.` : ''}${e.unofficial ? ` <strong>${escHtml(e.unofficial)}</strong>` : ''}</p>
+      <p class="mayor-line"><span class="sub-title">Mayor</span>${(e.head_of_council || []).map(c => `<span>${c.elected ? `<strong>${escHtml(c.name)}</strong>` : escHtml(c.name)}, ${c.acclaimed ? 'acclaimed' : `${n(c.votes)} votes`}${c.incumbent ? ' (incumbent)' : ''}${c.elected && !c.acclaimed ? ' <span class="vote-result">Elected</span>' : ''}</span>`).join('')}</p>
       <h3 class="sub-title">Council, ${e.seats} seats</h3>
       <ol class="vote-list">${(e.council || []).map(c => `
         <li class="${c.elected ? 'is-elected' : ''}">
