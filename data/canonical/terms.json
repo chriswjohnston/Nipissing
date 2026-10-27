@@ -9,7 +9,70 @@
       "upcoming": true,
       "election": {
         "date": "2026-10-26",
-        "note": "Results will be added after the election."
+        "unofficial": "Unofficial results, posted by the Township on election night. The Township certifies the official results on October 27, 2026.",
+        "source": {
+          "label": "Township of Nipissing, Municipal Election Information",
+          "url": "https://nipissingtownship.com/council/municipal-election-information/"
+        },
+          "head_of_council": [
+          {
+            "name": "Dave Yemm",
+            "votes": 655,
+            "elected": true,
+            "incumbent": true
+          },
+          {
+            "name": "Stephen Kirkey",
+            "votes": 152,
+            "elected": false,
+            "incumbent": false
+          }
+        ],
+        "council": [
+          {
+            "name": "Shelly Foote",
+            "votes": 531,
+            "elected": true,
+            "incumbent": true
+          },
+          {
+            "name": "Jake Barton",
+            "votes": 406,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Rod Rennette",
+            "votes": 401,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Shawn Mahoney",
+            "votes": 380,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Lisa Chalapenko",
+            "votes": 308,
+            "elected": false,
+            "incumbent": true
+          },
+          {
+            "name": "Chris Johnston",
+            "votes": 247,
+            "elected": false,
+            "incumbent": false
+          },
+          {
+            "name": "Robby Serson",
+            "votes": 180,
+            "elected": false,
+            "incumbent": false
+          }
+        ],
+        "seats": 4
       }
     },
     {
@@ -573,7 +636,6 @@
         "eligible_voters": 2737,
         "voters": 396,
         "turnout_pct": 14.47,
-        "vote_method": "Paper ballot",
         "head_of_council": [
           {
             "name": "Tom Piper",
