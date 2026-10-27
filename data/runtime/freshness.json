@@ -1,17 +1,17 @@
 {
-  "checked": "2026-10-26",
+  "checked": "2026-10-27",
   "bodies": {
     "adjustment": {
       "last_meeting": "2026-10-06",
       "next_meeting": null,
-      "days_quiet": 20,
+      "days_quiet": 21,
       "limit_days": 150,
       "stale": false
     },
     "cemetery": {
       "last_meeting": "2026-05-20",
       "next_meeting": null,
-      "days_quiet": 159,
+      "days_quiet": 160,
       "limit_days": 400,
       "stale": false
     },
@@ -39,14 +39,14 @@
     "dnssab-finance-and-administration-committee": {
       "last_meeting": "2026-09-23",
       "next_meeting": null,
-      "days_quiet": 33,
+      "days_quiet": 34,
       "limit_days": 365,
       "stale": false
     },
     "dnssab-ndhc": {
       "last_meeting": "2026-10-21",
       "next_meeting": null,
-      "days_quiet": 5,
+      "days_quiet": 6,
       "limit_days": 120,
       "stale": false
     },
@@ -60,14 +60,14 @@
     "healthunit-finance": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 19,
+      "days_quiet": 20,
       "limit_days": 365,
       "stale": false
     },
     "healthunit-personnel": {
       "last_meeting": "2026-06-24",
       "next_meeting": null,
-      "days_quiet": 124,
+      "days_quiet": 125,
       "limit_days": 365,
       "stale": false
     },
@@ -81,7 +81,7 @@
     "museum": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 19,
+      "days_quiet": 20,
       "limit_days": 120,
       "stale": false
     },
