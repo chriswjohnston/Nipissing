@@ -9,12 +9,15 @@
       "upcoming": true,
       "election": {
         "date": "2026-10-26",
-        "unofficial": "Unofficial results, posted by the Township on election night. The Township certifies the official results on October 27, 2026.",
         "source": {
-          "label": "Township of Nipissing, Municipal Election Information",
-          "url": "https://nipissingtownship.com/council/municipal-election-information/"
+          "label": "AMO 2026 Ontario Municipal Elections",
+          "url": "https://elections2026.amo.on.ca/web/en/municipal/10565"
         },
-          "head_of_council": [
+        "eligible_voters": 2855,
+        "voters": 807,
+        "turnout_pct": 28.27,
+        "vote_method": "Paper ballot",
+        "head_of_council": [
           {
             "name": "Dave Yemm",
             "votes": 655,
