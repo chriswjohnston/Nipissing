@@ -9,7 +9,73 @@
       "upcoming": true,
       "election": {
         "date": "2026-10-26",
-        "note": "Results will be added after the election."
+        "source": {
+          "label": "AMO 2026 Ontario Municipal Elections",
+          "url": "https://elections2026.amo.on.ca/web/en/municipal/10565"
+        },
+        "eligible_voters": 2855,
+        "voters": 807,
+        "turnout_pct": 28.27,
+        "vote_method": "Paper ballot",
+        "head_of_council": [
+          {
+            "name": "Dave Yemm",
+            "votes": 655,
+            "elected": true,
+            "incumbent": true
+          },
+          {
+            "name": "Stephen Kirkey",
+            "votes": 152,
+            "elected": false,
+            "incumbent": false
+          }
+        ],
+        "council": [
+          {
+            "name": "Shelly Foote",
+            "votes": 531,
+            "elected": true,
+            "incumbent": true
+          },
+          {
+            "name": "Jake Barton",
+            "votes": 406,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Rod Rennette",
+            "votes": 401,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Shawn Mahoney",
+            "votes": 380,
+            "elected": true,
+            "incumbent": false
+          },
+          {
+            "name": "Lisa Chalapenko",
+            "votes": 308,
+            "elected": false,
+            "incumbent": true
+          },
+          {
+            "name": "Chris Johnston",
+            "votes": 247,
+            "elected": false,
+            "incumbent": false
+          },
+          {
+            "name": "Robby Serson",
+            "votes": 180,
+            "elected": false,
+            "incumbent": false
+          }
+        ],
+        "seats": 4
       }
     },
     {
@@ -573,7 +639,6 @@
         "eligible_voters": 2737,
         "voters": 396,
         "turnout_pct": 14.47,
-        "vote_method": "Paper ballot",
         "head_of_council": [
           {
             "name": "Tom Piper",
