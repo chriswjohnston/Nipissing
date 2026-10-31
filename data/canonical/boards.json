@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-10-31",
   "source": "board pages",
   "boards": [
     {
@@ -814,6 +814,32 @@
           ]
         },
         {
+          "date": "2022-02-08",
+          "display_date": "Feb 8, 2022",
+          "year": 2022,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/02/Minutes-COA-February-9-2022-2.pdf",
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "minutes_archived": "files/archive/boards/adjustment/2022/Minutes-COA-February-9-2022-2__74fd74c1.pdf",
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=qvSRXjQf4RY"
+        },
+        {
           "date": "2021-11-16",
           "display_date": "Nov 16, 2021",
           "year": 2021,
@@ -862,6 +888,31 @@
           "recovered_from_wayback": true,
           "all_agendas": true,
           "video_url": "https://www.youtube.com/watch?v=-mpQHNDMeeo"
+        },
+        {
+          "date": "2021-10-05",
+          "display_date": "Oct 5, 2021",
+          "year": 2021,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-October-5-2021.pdf",
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=ClSA675Av9Q"
         }
       ],
       "page_docs": [
@@ -12935,7 +12986,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-10-30",
+      "members_checked": "2026-10-31",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"

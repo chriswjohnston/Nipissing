@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-30",
+  "checked": "2026-10-31",
   "bodies": {
     "council": {
       "meetings": 213,
@@ -123,10 +123,11 @@
       }
     },
     "adjustment": {
-      "meetings": 27,
+      "meetings": 29,
       "totals": {
         "no_minutes": 18,
-        "no_agenda": 20
+        "no_agenda": 22,
+        "no_summary": 1
       },
       "issues": {
         "2025-09-02 Board": {
@@ -201,10 +202,17 @@
           "no_minutes": true,
           "no_agenda": true
         },
+        "2022-02-08 Board": {
+          "no_agenda": true,
+          "no_summary": true
+        },
         "2021-11-16 Board": {
           "no_agenda": true
         },
         "2021-10-19 Board": {
+          "no_agenda": true
+        },
+        "2021-10-05 Board": {
           "no_agenda": true
         }
       }
