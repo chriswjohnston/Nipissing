@@ -827,42 +827,6 @@
     "wayback_pages_checked": "2026-10-28",
     "snapshot_queue": [
       {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
-        "timestamp": "20250910051211"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
-        "timestamp": "20260308035108"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
-        "timestamp": "20260616185737"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20210927225753"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20220816043632"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20221126230655"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20230925201959"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20240418111639"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
-        "timestamp": "20240714080002"
-      },
-      {
         "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
         "timestamp": "20241009071633"
       },
@@ -1089,10 +1053,31 @@
       {
         "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
         "timestamp": "20250429152113"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+        "timestamp": "20220816043632"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+        "timestamp": "20221126230655"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+        "timestamp": "20230925201959"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+        "timestamp": "20240418111639"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+        "timestamp": "20240714080002"
       }
     ],
     "snapshots_seen": [
       "20210919104959|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
+      "20210927225753|https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
       "20210927230804|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
       "20210927231740|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
       "20220808222354|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
@@ -1105,12 +1090,16 @@
       "20250217203129|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20250523013850|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20250812114655|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
-      "20260207071542|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/"
+      "20250910051211|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
+      "20260207071542|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
+      "20260308035108|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
+      "20260616185737|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/"
     ],
     "snapshot_links": {
       "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-July-13-2021.pdf": "20210927231740",
       "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-of-Adjustment-June-8-2021.pdf": "20210919104959",
-      "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-May-18-2021.pdf": "20210927230804"
+      "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-May-18-2021.pdf": "20210927230804",
+      "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-Aug-17-2021.pdf": "20210927225753"
     }
   }
 }
