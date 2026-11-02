@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-01",
+  "last_updated": "2026-11-02",
   "source": "board pages",
   "boards": [
     {
@@ -838,6 +838,32 @@
           "recovered_from_wayback": true,
           "all_agendas": true,
           "video_url": "https://www.youtube.com/watch?v=qvSRXjQf4RY"
+        },
+        {
+          "date": "2022-01-04",
+          "display_date": "Jan 4, 2022",
+          "year": 2022,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/02/Minutes-COA-January-4-2022.pdf",
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "minutes_archived": "files/archive/boards/adjustment/2022/Minutes-COA-January-4-2022__599f068d.pdf",
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=oLJYR1W5k_Q"
         },
         {
           "date": "2021-11-16",
@@ -12986,7 +13012,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-01",
+      "members_checked": "2026-11-02",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
@@ -13816,7 +13842,7 @@
           "display_date": "Nov 23, 2026",
           "year": 2026,
           "is_future": true,
-          "cancelled": false,
+          "cancelled": true,
           "rescheduled": false,
           "postponed": false,
           "agenda_url": null,
@@ -13843,7 +13869,7 @@
           "rescheduled": false,
           "postponed": false,
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/09/Recreation-Agenda-October-5-2026.pdf",
-          "minutes_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Recreation-Minutes-October-5-2026.pdf",
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
@@ -13856,7 +13882,8 @@
           "source_kind": "board",
           "extra_docs": [],
           "video_url": "https://www.youtube.com/watch?v=5_E1eb6RdxQ",
-          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-October-5-2026__b5b0727b.pdf"
+          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-October-5-2026__b5b0727b.pdf",
+          "minutes_archived": "files/archive/boards/recreation/2026/Recreation-Minutes-October-5-2026__3d56d24c.pdf"
         },
         {
           "date": "2026-09-14",
