@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-02",
+  "checked": "2026-11-03",
   "bodies": {
     "council": {
       "meetings": 213,
@@ -126,8 +126,7 @@
       "meetings": 30,
       "totals": {
         "no_minutes": 18,
-        "no_agenda": 23,
-        "no_summary": 1
+        "no_agenda": 22
       },
       "issues": {
         "2025-09-02 Board": {
@@ -204,10 +203,6 @@
         },
         "2022-02-08 Board": {
           "no_agenda": true
-        },
-        "2022-01-04 Board": {
-          "no_agenda": true,
-          "no_summary": true
         },
         "2021-11-16 Board": {
           "no_agenda": true
@@ -340,13 +335,10 @@
     "recreation": {
       "meetings": 32,
       "totals": {
-        "no_summary": 4,
+        "no_summary": 3,
         "no_video": 3
       },
       "issues": {
-        "2026-10-05 Board": {
-          "no_summary": true
-        },
         "2024-10-07 Board": {
           "no_summary": true
         },
