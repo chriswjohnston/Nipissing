@@ -258,7 +258,16 @@ async function init(){
   if(meeting.video_url) actions.push(buildHeroBtn('Watch the video', meeting.video_url, !minutesUrl));
   document.getElementById('hero-actions').innerHTML = actions.join('');
 
-  document.getElementById('summary-content').innerHTML = renderSummaryMarkdown(meeting.summary);
+  // A cancelled or postponed meeting never gets minutes, so don't promise a summary.
+  const called_off = meeting.cancelled ? 'cancelled' : (meeting.postponed ? 'postponed' : '');
+  const hasSummary = !!(meeting.summary && String(meeting.summary).trim());
+  if(called_off && !hasSummary){
+    document.getElementById('summary-content').innerHTML =
+      `<p class="empty-note">This meeting was ${called_off}, so there are no minutes or summary.</p>`;
+    document.querySelector('.ai-note').hidden = true;
+  } else {
+    document.getElementById('summary-content').innerHTML = renderSummaryMarkdown(meeting.summary);
+  }
   document.getElementById('meta-date').textContent = meeting.display_date || '';
   document.getElementById('meta-type').textContent = meeting.meeting_type && meeting.meeting_type !== 'Board' ? meeting.meeting_type : 'Regular';
   document.getElementById('meta-body').textContent = bodyLabel;
@@ -271,7 +280,10 @@ async function init(){
   if(meeting.video_url) main.push(buildDoc('Video', meeting.video_url));
 
   document.getElementById('main-docs').innerHTML =
-    main.length ? main.join('') : '<p class="empty-note">The township hasn’t posted documents for this meeting yet.</p>';
+    main.length ? main.join('')
+    : (called_off
+        ? `<p class="empty-note">No documents. The meeting was ${called_off}.</p>`
+        : '<p class="empty-note">The township hasn’t posted documents for this meeting yet.</p>');
 
   // Council decisions made at this meeting (resolutions and by-laws).
   if((meeting.body_id || 'council') === 'council'){
