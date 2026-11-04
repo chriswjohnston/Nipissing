@@ -845,102 +845,6 @@
     "wayback_pages_checked": "2026-10-28",
     "snapshot_queue": [
       {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20211203031623"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20220816032621"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20221110103636"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20221209014615"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20230326051926"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20230908124544"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20240227093702"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20241009055914"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20250219073119"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20250523011218"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20250812112932"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20250926200442"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20251107023446"
-      },
-      {
-        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
-        "timestamp": "20260518205450"
-      },
-      {
-        "original": "https://nipissingtownship.com/notice-of-public-hearing-of-application-for-consent-township-of-nipissing-committee-of-adjustment-2/",
-        "timestamp": "20240714080041"
-      },
-      {
-        "original": "https://nipissingtownship.com/notice-of-public-hearing-of-application-for-consent-township-of-nipissing-committee-of-adjustment-6/",
-        "timestamp": "20260617161150"
-      },
-      {
-        "original": "https://nipissingtownship.com/notice-of-public-hearing-of-application-for-minor-variance-committee-of-adjustment/",
-        "timestamp": "20240912202833"
-      },
-      {
-        "original": "https://nipissingtownship.com/notice-of-public-hearingof-application-for-minor-variancetownship-of-nipissingcommittee-of-adjustmentre-an-application-by-property-owners-david-morin-and-emma-jones/",
-        "timestamp": "20260131062832"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20230326064416"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20240227112010"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20240912200553"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20250124204314"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20250623003700"
-      },
-      {
-        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
-        "timestamp": "20250926215150"
-      },
-      {
         "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
         "timestamp": "20251009083229"
       },
@@ -1055,6 +959,26 @@
       {
         "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
         "timestamp": "20210927215049"
+      },
+      {
+        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+        "timestamp": "20211203031623"
+      },
+      {
+        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+        "timestamp": "20220816032621"
+      },
+      {
+        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+        "timestamp": "20250812112932"
+      },
+      {
+        "original": "https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+        "timestamp": "20251107023446"
+      },
+      {
+        "original": "https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
+        "timestamp": "20250926215150"
       }
     ],
     "snapshots_seen": [
@@ -1065,32 +989,157 @@
       "20220808222354|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20220808232945|https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
       "20220816045343|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
+      "20221110103636|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20221126232500|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
+      "20221209014615|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20221209021508|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
+      "20230326051926|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+      "20230326064416|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
+      "20230908124544|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20230925203902|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
       "20231203040259|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
+      "20240227093702|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+      "20240227112010|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
       "20240418114414|https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
+      "20240714080041|https://nipissingtownship.com/notice-of-public-hearing-of-application-for-consent-township-of-nipissing-committee-of-adjustment-2/",
+      "20240912200553|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
+      "20240912202833|https://nipissingtownship.com/notice-of-public-hearing-of-application-for-minor-variance-committee-of-adjustment/",
+      "20241009055914|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20241009072753|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
       "20241109045244|https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
       "20250124202403|https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+      "20250124204314|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
       "20250217203129|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
+      "20250219073119|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+      "20250523011218|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20250523013850|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20250523023831|https://nipissingtownship.com/council-meeting-committee-of-adjustment-meeting-cancelled/",
       "20250623002406|https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+      "20250623003700|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-july-13-2021/",
       "20250623004513|https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
       "20250812114655|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20250910051211|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
+      "20250926200442|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
       "20251009081809|https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
       "20260117134713|https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
+      "20260131062832|https://nipissingtownship.com/notice-of-public-hearingof-application-for-minor-variancetownship-of-nipissingcommittee-of-adjustmentre-an-application-by-property-owners-david-morin-and-emma-jones/",
       "20260207071542|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
       "20260308035108|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
-      "20260616185737|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/"
+      "20260518205450|https://nipissingtownship.com/municipal-information/committee-of-adjustment/",
+      "20260616185737|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-may-18-2021/",
+      "20260617161150|https://nipissingtownship.com/notice-of-public-hearing-of-application-for-consent-township-of-nipissing-committee-of-adjustment-6/"
     ],
     "snapshot_links": {
       "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-July-13-2021.pdf": "20210927231740",
       "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-of-Adjustment-June-8-2021.pdf": "20210919104959",
       "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-May-18-2021.pdf": "20210927230804",
-      "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-Aug-17-2021.pdf": "20210927225753"
+      "https://nipissingtownship.com/wp-content/uploads/2021/08/Committee-Of-Adjustment-Aug-17-2021.pdf": "20210927225753",
+      "https://nipissingtownship.com/wp-content/uploads/2021/09/DOC690.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/09/DOC691.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-October-5-2021.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/10/DOC714.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/10/DOC716.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-October-19-2021.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/11/consentstillar.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/11/mvnoticestillar.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/11/mvagenda.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/11/Minutes-COA-November-16-2021.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/12/Notice-C2022-01-1.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2021/12/January-4-2022-COA-Agenda.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/02/Minutes-COA-January-4-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/02/DOC807.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/02/AGENDA-Feb-8-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/02/Minutes-COA-February-9-2022-2.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/Thompson-MV-Notice-with-survey-sketch-85-Ruth-Haven-Drive.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-15-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/publicnoticea202202-1.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-29-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/05/Minutes-COA-March-29-2022-.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/06/CAO-PUBLIC-NOTICE-A2022-03.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/09/Notice-of-Public-Hearing-Watson-Consent-21-July-2022-002.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-August-16th-2022-COA.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/09/Minutes-COA-February-8-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/09/Notice-of-Public-Hearing-Matthews-Consent.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/10/Minutes-COA-October-4-2022.pdf": "20221110103636",
+      "https://nipissingtownship.com/wp-content/uploads/2022/12/maclachlan.pdf": "20221209014615",
+      "https://nipissingtownship.com/wp-content/uploads/2022/12/AGENDA-December-20-2022-COA.pdf": "20221209014615",
+      "https://nipissingtownship.com/wp-content/uploads/2022/12/Minutes-COA-December-20-2022.pdf": "20230326051926",
+      "https://nipissingtownship.com/wp-content/uploads/2023/05/Notice-of-Public-Hearing-Haufe-Consent-Final-1.pdf": "20230908124544",
+      "https://nipissingtownship.com/wp-content/uploads/2023/05/CAO-PUBLIC-NOTICE-A2023-01.pdf": "20230908124544",
+      "https://nipissingtownship.com/wp-content/uploads/2023/05/Minutes-COA-May-16-2023.pdf": "20230908124544",
+      "https://nipissingtownship.com/wp-content/uploads/2023/09/A2023-02000.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2023/09/AGENDA-September-19th-2023-COA.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-COA-September-19-2023.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-December-19th-2023.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/01/Notice-of-Public-Hearing-White.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/01/Notice-of-Public-Hearing-Gazzola-1.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-February-6-2024-COA.pdf": "20240227093702",
+      "https://nipissingtownship.com/wp-content/uploads/2024/09/Notice-of-Public-Hearing-Wood-Minor-Variance.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/09/AGENDA-September-17-2024-COA.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-September-17-2024.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-16-July-2024-003.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-Lot-Addition-16-July-2024-003.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/07/AGENDA-July-16-2024-COA.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-July-16-2024.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/04/CAO-PUBLIC-NOTICE-A2024-03-1.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Bryant-Consent-22-April-2024-PT.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Reid-Consent-22-April-2024-PT.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-COA-May-14-2024.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/03/Notice-of-Public-Hearing-Schinkel-Consent-Final.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/03/Public-Notice-For-Minor-Variance-A2024-02.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/03/AGENDA-March-19-2024-COA.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-COA-March-19-2024.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-COA-February-7-2024.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2023/12/Consent-Application-C2023-02-118-Chapmans-Landing-Road.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-COA-December-19-2023.pdf": "20241009055914",
+      "https://nipissingtownship.com/wp-content/uploads/2025/01/Dobson-Consent-Notice-of-Public-Hearing-4-February-2025.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2025/01/Holley-Consent-Notice-of-Public-Hearing-4-February-2025.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2025/01/AGENDA-February-4-2025-COA.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2024/12/Marchant-and-Yemm-Consent-Notice-of-Public-Hearing-17-December-2024-002.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2024/12/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2024/12/AGENDA-December-17-2024.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-COA-December-17-2024.pdf": "20250219073119",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-13-May-2025-Final.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/05/AGENDA-May-13-2025-COA.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-29-April-2025-Final.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-29-April-2025.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-29-2025-COA.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/03/Public-Notice-website.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-COA-February-4-2025.pdf": "20250523011218",
+      "https://nipissingtownship.com/wp-content/uploads/2025/08/Giesler-Consent-Notice-of-Public-Hearing-2-September-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/08/AGENDA-September-2-2025-COA.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Notice-of-Public-Hearing-July-15-2025-1.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/07/Attachment-2-Planning-Justification-Supplemental-Report.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/07/Attachment-3-Adams-Consent-Planning-Report-15-July-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/Aultman-Applications-Notice-of-Public-Hearing-15-July-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/07/Aultman-Consent-Planning-Report-15-July-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/AGENDA-July-15-2025-COA.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-COA-July-15-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Notice-of-Public-Hearing-June-24-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Planning-Report-10-June-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/AGENDA-June-24-2025-COA.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/05/Adams-Consent-Notice-of-Public-Hearing-June-10-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/05/AGENDA-June-10-2025-COA.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-COA-June-10-2025-1.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-COA-May-13-2025-.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-COA-April-8-2025.pdf": "20250926200442",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/AGENDA-February-17-2026-COA.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Warman-Consent-Notice-of-Public-Hearing-16-January-2026.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Warman-Consent-Planning-Report-3-February-2026.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/AGENDA-February-3-2026-COA.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-COA-February-3-2026.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Giesler-Consent-Planning-Report-2-September-2025.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-COA-September-2-2025.pdf": "20260518205450",
+      "https://nipissingtownship.com/wp-content/uploads/2026/05/79-and-95-Hinchberger-Consent-Notice-16-June-2026.pdf": "20260617161150"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "source": "https://nipissingtownship.com/by-law/by-laws/",
   "bylaws": [
     {
@@ -4076,7 +4076,8 @@
       "extra_docs": [
         {
           "label": "Earlier version: By-Law-No.-2022-23-2.pdf",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/By-Law-No.-2022-23-2.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2024/01/By-Law-No.-2022-23-2.pdf",
+          "archived": "files/archive/bylaws/2022/By-Law-No.-2022-23-2__efe2b9d1.pdf"
         }
       ],
       "pdf_source": "township_site",
@@ -4131,7 +4132,8 @@
       "extra_docs": [
         {
           "label": "Earlier version: Pushing-Snow-By-Law-2021-63.pdf",
-          "url": "https://nipissingtownship.com/wp-content/uploads/2021/12/Pushing-Snow-By-Law-2021-63.pdf"
+          "url": "https://nipissingtownship.com/wp-content/uploads/2021/12/Pushing-Snow-By-Law-2021-63.pdf",
+          "archived": "files/archive/bylaws/2021/Pushing-Snow-By-Law-2021-63__683350e1.pdf"
         },
         {
           "label": "Earlier upload (2026-05-20): 2021-63-Prohibit-Pushing-Snow-Across-Roads.pdf",
@@ -4447,7 +4449,7 @@
       "number": "2020-27",
       "year": 2020,
       "title": "Landfill By-Law",
-      "date_passed": null,
+      "date_passed": "2020-06-16",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2020/06/2020-27-LandfillByLaw.pdf",
       "page_url": null,
       "source": "bylaws_page",
@@ -4464,7 +4466,9 @@
         "Seasonal hours of operation posted at the site",
         "Illegal dumping subject to fines and cleanup costs"
       ],
-      "repealed_by": "2021-58"
+      "repealed_by": "2021-58",
+      "pdf_url_archived": "files/archive/bylaws/2020/2020-27-LandfillByLaw__ab563356.pdf",
+      "date_passed_source": "pdf"
     },
     {
       "number": "2020-20",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "source": "board pages",
   "boards": [
     {
@@ -13013,7 +13013,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-03",
+      "members_checked": "2026-11-04",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
@@ -13027,7 +13027,7 @@
           "date": "2026-11-04",
           "display_date": "Nov 4, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": true,
           "rescheduled": false,
           "postponed": false,
@@ -14390,7 +14390,7 @@
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
-          "summary": null,
+          "summary": "# Recreation Committee Meeting Summary\n\n**Oct 7, 2024**\n\n## Key Decisions\n- Approved September 16, 2024 meeting minutes\n- Confirmed Teen Dance for October 25th with DJ, fire department decorations, and costume contest\n- Approved Roast Beef Dinner for November 23rd at $25 adult / $15 child tickets\n- Adopted comprehensive 2025 recreation calendar with 12 monthly events\n- Approved strategic planning initiative to develop 5-10 year capital projects forecast for playgrounds, parks, outdoor rink, community centre, fitness centre, and beaches\n\n## Main Topics\n\n**Recent and Upcoming Events:** Movie in the Park drew about 70 attendees and was well-received. A local hardware store donated $120 from popcorn sales. The bottle drive was postponed until after Thanksgiving to capture residents closing cottages.\n\n**Teen Dance Planning:** The October 25th dance will include setup an hour early, Halloween decorations borrowed from the fire department, three committee members supervising, a confirmed DJ, and a canteen with free water and paid snacks.\n\n**Roast Beef Dinner:** Scheduled for November 23rd with ticket sales determining food quantities. Tickets sold at the Township Office and local stores. The Voodoos may help serve (pending their game schedule), and high school students are encouraged to volunteer for community hours. Door prizes and volunteer shirts will be provided.\n\n**2025 Recreation Calendar:** The committee planned a full year of events including winter card games, family skate, spaghetti dinner, Easter scavenger hunt, youth soccer season, Canada Day celebration, music market, and various dances and community celebrations.\n\n## Notable Items\n- Youth Soccer Season runs May 15–June 26 (7 weeks); registration opens March 1st at the Spaghetti Dinner\n- Teen dances will split age groups: ages 10-12 from 6:00–7:30 p.m. and ages 13-16 from 8:00–10:00 p.m.\n- Winter card games drop-in: every second Thursday January 9–March 20, 2:00–4:00 p.m. at Community Centre\n- Strategic planning document will forecast capital projects and needs for the next 5-10 years\n- Roast Beef Dinner tickets: $25 adult, $15 child\n\n---\n*Next regular meeting: November 4, 2024*",
           "events": [],
           "body": "Recreation Committee",
           "body_id": "recreation",
@@ -14398,7 +14398,8 @@
           "title": "Recreation Committee",
           "source_kind": "board",
           "extra_docs": [],
-          "video_url": "https://www.youtube.com/watch?v=m55VqCal1Fo"
+          "video_url": "https://www.youtube.com/watch?v=m55VqCal1Fo",
+          "minutes_archived": "files/archive/boards/recreation/2024/Recreation-Minutes-October-7-2024__17ba01a5.pdf"
         },
         {
           "date": "2024-09-16",
