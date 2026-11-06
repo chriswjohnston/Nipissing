@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-05",
+  "checked": "2026-11-06",
   "bodies": {
     "council": {
       "meetings": 213,
@@ -308,8 +308,14 @@
     },
     "library": {
       "meetings": 21,
-      "totals": {},
-      "issues": {}
+      "totals": {
+        "no_minutes": 1
+      },
+      "issues": {
+        "2026-09-21 Board": {
+          "no_minutes": true
+        }
+      }
     },
     "museum": {
       "meetings": 18,
