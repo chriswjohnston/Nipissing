@@ -623,107 +623,98 @@
       "consolidated_markdown": "",
       "contents": [
         {
-          "part": "Section 1 – Interpretation (1.1 to 1.16)",
-          "about": "Explains how the by-law applies, including that the stricter rule wins, that it covers the whole township, and how holding (H), temporary (T) and special zones work."
+          "part": "Section 1 – Interpretation (1.1–1.16)",
+          "about": "Explains how the by-law applies, where it applies (the whole township), what happens to the earlier zoning by-laws it repeals, and how holding (H), temporary (T) and special (SZ) zone symbols work."
         },
         {
           "part": "Section 2 – Definitions",
-          "about": "Defines the terms used in the by-law, from abattoir to yurt, including lot, yard, setback, dwelling, boathouse and dock."
+          "about": "Defines the terms used in the by-law, from abattoir to yurt, including lot, yard, setback, dwelling types and water's edge."
         },
         {
-          "part": "3.2 to 3.12 – Access, accessory buildings, bed and breakfasts, boathouses, dwellings",
-          "about": "Sets rules for road access, accessory buildings, livestock lot size, bed and breakfasts, boathouses and docks, moving buildings, dwelling units in commercial buildings, one dwelling per lot, and secondary dwelling units."
+          "part": "Section 3 – General Provisions (3.1–3.22)",
+          "about": "Rules that apply in most zones, such as road access, accessory buildings, bed and breakfasts, boathouses and docks, secondary dwelling units, home occupations and industries, flood plain limits, landscaping and loading."
         },
         {
-          "part": "3.13 to 3.21 – Environmental, flood, height, home businesses, ice huts, landscaping",
-          "about": "Covers Environmental Protection zones, hazard and flood lands, height exceptions, home industries and occupations, ice huts and bungalows, the Lake Nipissing flood plain, and landscaping."
+          "part": "Section 3 – Existing buildings and uses (3.23–3.24)",
+          "about": "Says when undersized lots, buildings that do not meet the rules, and uses no longer allowed in the zone can continue, be repaired or be rebuilt."
         },
         {
-          "part": "3.22 to 3.24 – Loading, non-complying lots and non-conforming uses",
-          "about": "Sets loading space rules and explains when existing lots, buildings and uses that don't meet the by-law may continue, be repaired or be rebuilt."
+          "part": "Section 3 – Parking and yards (3.25–3.31)",
+          "about": "Covers occupancy permits, outside storage, parking numbers and layout, driveway and entrance widths, and how far porches, decks and similar parts may project into yards."
         },
         {
-          "part": "3.25 to 3.30 – Occupancy, storage, parking",
-          "about": "Requires an occupancy permit, bans outside storage in front yards, and sets parking numbers, parking area standards, and driveway and ramp widths."
+          "part": "Section 3 – Setbacks and other site rules (3.32–3.48)",
+          "about": "Covers pits and quarries, public uses, 30 m setbacks from water, setbacks from roads, hazard land, site plan control, storage containers, swimming pools, trailers and campers, vegetative buffers and corner visibility."
         },
         {
-          "part": "3.31 to 3.40 – Encroachments, pits, public uses, setbacks, site plan control",
-          "about": "Covers how far porches, decks and similar items may project into yards, pits and quarries, public uses, septic, water and road setbacks, and which areas need site plan control."
+          "part": "Section 4 – Zones (4.1–4.3)",
+          "about": "Lists the zone types and their symbols, says that the zones are shown on Schedule A, and gives rules for reading unclear zone boundaries."
         },
         {
-          "part": "3.41 to 3.48 – Storage containers, pools, trailers, buffers, visibility",
-          "about": "Covers storage containers, swimming pools, temporary construction uses, trailers and motor homes, a 30-metre natural shoreline buffer, and clear sightlines at road corners."
+          "part": "Section 4 – Boathouse and Commercial zones (4.4–4.7)",
+          "about": "Gives permitted uses for the Boathouse (BH), General Commercial (C1), Highway and Tourist (C2) and Resort Commercial (C3) zones."
         },
         {
-          "part": "Section 4.1 to 4.3 – Zones, schedules, zone boundaries",
-          "about": "Lists the zone types and symbols and gives rules for reading zone boundaries on the map."
+          "part": "Section 4 – Environmental, Hazard, Industrial, Open Space and Waste Disposal zones (4.8–4.12, 4.18)",
+          "about": "Gives permitted uses and extra rules for the EP, HAZ, MX (extractive), M1 (general industrial), OS and WD zones, including pit setbacks and a 100 m no-dwelling distance around waste disposal zones."
         },
         {
-          "part": "4.4 to 4.9 – Boathouse, Commercial (C1, C2, C3), Environmental Protection and Hazard zones",
-          "about": "Lists the permitted uses and requirements for each of these zones."
+          "part": "Section 4 – Residential zones (4.13–4.16)",
+          "about": "Gives permitted uses for the Estate (RE), Hamlet (RH), Shoreline (SR) and Limited Service (LSR) residential zones."
         },
         {
-          "part": "4.10 to 4.12 – Industrial (MX, M1) and Open Space zones",
-          "about": "Lists permitted uses for extractive and general industrial and open space zones, plus pit and quarry setbacks in the MX zone."
+          "part": "Section 4 – Rural (RU) Zone (4.17)",
+          "about": "Gives the many permitted farm, rural and residential uses, plus special rules for livestock separation distances, hunt camps, kennels and abattoirs."
         },
         {
-          "part": "4.13 to 4.16 – Residential zones (RE, RH, SR, LSR)",
-          "about": "Lists permitted uses for the estate, hamlet, shoreline and limited service residential zones."
+          "part": "Section 5 – Special Zones (5.1–5.12)",
+          "about": "Sets out 12 site-specific zones that change the normal rules for particular properties, such as a marina, a seasonal trailer park, and a home industry at 4383 Highway 654."
         },
         {
-          "part": "4.17 Rural (RU) Zone and 4.18 Waste Disposal (WD) Zone",
-          "about": "Lists permitted rural uses, with extra rules for livestock distance separation, hunt camps, kennels and abattoirs, and lists waste disposal uses with a 100-metre no-dwelling distance."
+          "part": "Section 6 – Holding Provisions and Temporary Use By-laws (6.1–6.2)",
+          "about": "Explains the (H) holding and (T) temporary symbols. It lists one holding provision (H1, water supply and waste disposal studies); the temporary use table is blank."
         },
         {
-          "part": "Section 5 – Special Zones (5.1 to 5.12)",
-          "about": "Gives site-specific rules for twelve named properties or areas that differ from the standard zones."
+          "part": "Section 7 – Administration (7.1–7.5)",
+          "about": "Covers who enforces the by-law, what a building permit application must include, when the by-law took effect, court remedies, and penalties under the Planning Act."
         },
         {
-          "part": "Section 6 – Holding Provisions and Temporary Use By-laws",
-          "about": "Explains (H) and (T) symbols and lists the one holding provision (H1); the temporary use table is blank."
+          "part": "Schedule A – Zoning Schedule",
+          "about": "Is the township-wide zoning map showing each zone, special, holding and beach areas, and environmental protection lands."
         },
         {
-          "part": "Section 7 – Administration (7.1 to 7.5)",
-          "about": "Covers who administers the by-law, what a building permit application must include, when the by-law takes effect, court remedies and penalties."
-        },
-        {
-          "part": "Schedule B – Zone Requirements Table",
-          "about": "A table of minimum lot frontage and area, maximum lot coverage, minimum yards and maximum height for each zone."
-        },
-        {
-          "part": "Schedule A – Zoning map",
-          "about": "The township map showing every zone, the Environmental Protection areas, beach areas, roads and water bodies."
+          "part": "Schedule B – Performance Standards (Zone Requirements Table)",
+          "about": "Is a table of minimum lot frontage, lot area, maximum lot coverage, minimum yards and maximum height for each zone."
         }
       ],
       "pages": 78,
       "changes": [],
       "already_incorporated": [],
       "uncertainties": [
-        "Page numbers: the table of contents uses the printed page numbers (e.g. Section 3 at p. 23), which are 5 PDF pages behind the PDF page count.",
-        "Table of contents lists Section 7 at p. 70 and 'Schedule B' at p. 72, but the signature page is p. 71 and Schedule A (map) is not listed with a page number. Schedule B appears before Schedule A in the PDF.",
-        "Section 4.1 zone list gives symbols 'CI' and 'MI' (likely typos for C1 and M1). Schedule B includes a Flood Plain (FP) zone that is not listed in Section 4.1 and has no section of its own.",
-        "Section 3.7.1(b) refers to 'Section 3.8 (b)', but 3.8 is 'Buildings to be Moved'. The intended reference is probably 3.7(b).",
-        "Section 3.9(d) points to parking in 'sub-section 3.29'; the parking requirements table is in 3.27, and 3.29 covers parking area standards.",
-        "Section 5.2.4 refers to a 'Commercial, Resort (CR) Zone' (elsewhere C3), and the closing paragraph of 5.2.5 calls SZ 2 a 'Shoreline Residential' special zone, which conflicts with its Commercial, Resort heading.",
-        "Section 5.9.3 gives a passing date of April 17, 2018, which does not match this by-law's date (December 1, 2020), apparently carried over from an earlier by-law.",
-        "Section 4.17.2(a) has two items numbered 'ii)' and a stray 'c' in the MDS I text. Section 4.4.3 runs items a) and b) together. The page 44 visibility triangle text has only item a), with no item b) or diagram.",
-        "The YURT definition on PDF p. 27 shows struck-through text ('circular domed'), a leftover tracked change; it is unclear whether it was meant to be deleted.",
-        "The 'Structure' definition says 'one and 1.9 metres' for fence height, which looks like a drafting error.",
-        "Section 7.3 refers to the Local Planning Appeal Tribunal, now the Ontario Land Tribunal.",
-        "Section 3.24(g) sets June 6, 2000 as the effective date for legal non-conformity, earlier than this by-law's date.",
-        "Section 6.2.1 temporary use table is empty. Section 5.11 (SZ 11) has no permitted uses section and defers to the EP zone.",
-        "The signature lines on the by-law's final page are blank in this copy. The Schedule A map is a small image, so zone labels and beach areas are not reliably legible.",
-        "The 3.27 parking table text for assembly uses is garbled in the PDF text layer."
+        "Section 3.7.1(b) refers to 'Section 3.8 (b)' for the 25% / 23 m shoreline limit. That limit is in 3.7(b), and 3.8 is 'Buildings to be Moved'. This looks like an incorrect cross-reference.",
+        "Section 3.48 (visibility triangles) shows only item (a) on page 44, and the rest of the page is blank. Part (b) or a diagram may be missing from the PDF.",
+        "Section 4.1 prints the C1 and M1 zone symbols as 'CI' and 'MI'. It does not list a Flood Plain (FP) zone, but Schedule B has an FP row. The legend on Schedule A does not show FP either.",
+        "Schedule B (page 72) is listed in the table of contents as 'Schedule B to By-law No. 2020-20' and follows the unnumbered signature page. It has an unlabeled blank column, and its dash entries are ambiguous (for example, no value versus not applicable). The FP row has no matching zone section.",
+        "Section 5.2.4 refers to the 'Commercial, Resort (CR) Zone', which is probably C3. The closing paragraph of 5.2 calls SZ 2 'Shoreline Residential Special Zone No. 2', although the heading says Commercial, Resort. Section 5.2.4 also says 'tourist trails' where 'trailers' is probably meant.",
+        "Section 5.9.3 gives April 17, 2018 as the 'date of the passing of this By-law', which does not match the passing date of 2020-12-01. It was probably carried over from an earlier by-law.",
+        "The YURT definition has a visible strike-through of 'circular domed' (a tracked-change remnant). In the definitions, the end of DWELLING UNIT, SECONDARY runs straight into DWELLING UNIT, ACCESSORY with no break.",
+        "The definition of STRUCTURE reads 'one and 1.9 metres' for the fence height. The intended figure is unclear.",
+        "Section 3.5(a) requires a 6 m landscaped strip next to residential zones, but 3.21(b) and (c) require a 3 m buffer (reducible to 1.5 m). The two sections are not reconciled.",
+        "Section 4.17.2(a) has duplicate numbering (two items marked 'ii'), and a stray 'c' appears in the MDS I text. Section 4.4.1(b) 'Private Open Space Uses' appears cut off across a page break, and 4.4.3 runs items (a) and (b) together.",
+        "Section 3.13 is titled 'Buildings, Structures and Uses in EP Zones' but contains only a ban on in-water shoreline structures. Section 3.31 lists deck projections in a garbled table, so the values should be checked against the source.",
+        "Section 7.3 refers to the Local Planning Appeal Tribunal, which has since been replaced by the Ontario Land Tribunal. The legislative references are as of 2020.",
+        "Schedule A is a 1:40,000 map. Zone labels are very small and could not be fully verified from the text extraction. The temporary use table in 6.2.1 is empty.",
+        "Amending by-laws were not provided, so this description reflects only the original 2020 by-law. Parts of it, such as Schedule B, Section 5 and the definitions, may have been changed."
       ],
       "reader_notes": [
-        "To check your property, find its zone symbol on the Schedule A map. Then read that zone's part of Section 4, the Schedule B table, and the general rules in Section 3.",
-        "Many rules apply near water, including a 30-metre setback from the water's edge, a 30-metre natural buffer, and limits on docks and boathouses (Sections 3.7, 3.37 and 3.47).",
-        "This describes the original 2020 by-law only. It has been amended many times, so check the amending by-laws for current rules, and contact the Township with questions."
+        "This is the original 2020 text only. The by-law has been amended many times since, so check the amendments listed separately before relying on any rule.",
+        "To check a property, find its zone on Schedule A (the map). Then read that zone in Section 4, or Section 5 if it is a special zone. Then read the Schedule B table and the general rules in Section 3.",
+        "Waterfront owners should read the rules on setbacks from water (3.37 and 3.39), the vegetative buffer (3.47), boathouses and docks (3.7), and flood plain limits (3.20)."
       ],
-      "summary": "This is the Township of Nipissing's zoning by-law, passed December 1, 2020. It divides the whole township into zones and sets out what land, buildings and structures may be used for in each zone. It also sets lot sizes, setbacks, heights and other rules, such as shoreline, parking, secondary dwelling and storage container rules. It repealed the township's earlier zoning by-laws.",
-      "generated": "2026-10-22",
+      "summary": "This is the Township of Nipissing's zoning by-law, passed December 1, 2020. It controls how land, buildings and structures can be used anywhere in the township. It divides the township into zones, lists what is allowed in each zone, and sets lot sizes, setbacks and heights. It also has general rules for things like docks and boathouses, parking, secondary dwelling units, and existing buildings that do not meet today's rules. It replaced the township's earlier zoning by-laws.",
+      "generated": "2026-11-08",
       "model": "claude-sonnet-5-5",
-      "input_hash": "a91ff7cd0ab0899426f6d9ed96fac7fe5ecba4a1eea42f847b5b86d81691cf41"
+      "input_hash": "2564088811c33e004afb3b4e55b5679ff5418efa4eb5b986b118adf4245fdb12"
     },
     "law-2017-04": {
       "id": "law-2017-04",

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nipissing.news/</loc><lastmod>2026-11-07</lastmod><priority>1.0</priority></url>
-  <url><loc>https://nipissing.news/council.html</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/laws.html</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/decisions.html</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/finances.html</loc><lastmod>2026-11-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://nipissing.news/terms.html</loc><lastmod>2026-11-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://nipissing.news/</loc><lastmod>2026-11-08</lastmod><priority>1.0</priority></url>
+  <url><loc>https://nipissing.news/council.html</loc><lastmod>2026-11-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/laws.html</loc><lastmod>2026-11-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/decisions.html</loc><lastmod>2026-11-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/finances.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://nipissing.news/terms.html</loc><lastmod>2026-11-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://nipissing.news/about.html</loc><priority>0.5</priority></url>
   <url><loc>https://nipissing.news/law.html?id=minimum-maintenance-standards</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=trailer-licensing</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
@@ -22,7 +22,7 @@
   <url><loc>https://nipissing.news/law.html?id=law-2021-57</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=law-2020-08</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=law-2022-53</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
-  <url><loc>https://nipissing.news/law.html?id=law-2020-20</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+  <url><loc>https://nipissing.news/law.html?id=law-2020-20</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=law-2017-04</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=law-2012-53</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=law-2023-03</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
@@ -260,7 +260,7 @@
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2022-26</loc><priority>0.6</priority></url>
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2022-23</loc><priority>0.6</priority></url>
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2022-10</loc><lastmod>2022-03-15</lastmod><priority>0.6</priority></url>
-  <url><loc>https://nipissing.news/bylaw-detail.html?id=2022-01</loc><priority>0.6</priority></url>
+  <url><loc>https://nipissing.news/bylaw-detail.html?id=2022-01</loc><lastmod>2022-01-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2021-63</loc><lastmod>2021-12-21</lastmod><priority>0.6</priority></url>
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2021-58</loc><lastmod>2021-12-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://nipissing.news/bylaw-detail.html?id=2021-57</loc><lastmod>2021-12-07</lastmod><priority>0.6</priority></url>

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-08",
   "source": "https://nipissingtownship.com/by-law/by-laws/",
   "bylaws": [
     {
@@ -4105,13 +4105,14 @@
       "title": "By-Law 2022-01 (Special Zone 15, 3758 Alsace Road)",
       "status": "approved",
       "source": "township_site",
-      "date_passed": null,
+      "date_passed": "2022-01-04",
       "votes": null,
       "meeting_date": null,
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2026/05/5.14-Special-Zone-No.15-3758-Alsace-Road.pdf",
       "pdf_source": "township_site",
       "page_url": "https://nipissingtownship.com/land-planning/planning/",
-      "pdf_url_archived": "files/archive/bylaws/2022/5.14-Special-Zone-No.15-3758-Alsace-Road__a7a46618.pdf"
+      "pdf_url_archived": "files/archive/bylaws/2022/5.14-Special-Zone-No.15-3758-Alsace-Road__a7a46618.pdf",
+      "date_passed_source": "pdf"
     },
     {
       "number": "2021-63",
