@@ -123,10 +123,11 @@
       }
     },
     "adjustment": {
-      "meetings": 30,
+      "meetings": 31,
       "totals": {
         "no_minutes": 18,
-        "no_agenda": 21
+        "no_agenda": 22,
+        "no_summary": 1
       },
       "issues": {
         "2025-09-02 Board": {
@@ -200,6 +201,10 @@
         "2022-03-29 Board": {
           "no_minutes": true,
           "no_agenda": true
+        },
+        "2022-03-15 Board": {
+          "no_agenda": true,
+          "no_summary": true
         },
         "2021-11-16 Board": {
           "no_agenda": true
@@ -338,13 +343,10 @@
     "recreation": {
       "meetings": 32,
       "totals": {
-        "no_summary": 2,
+        "no_summary": 1,
         "no_video": 3
       },
       "issues": {
-        "2024-09-16 Board": {
-          "no_summary": true
-        },
         "2024-08-12 Board": {
           "no_summary": true,
           "no_video": true

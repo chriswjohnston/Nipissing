@@ -814,6 +814,32 @@
           ]
         },
         {
+          "date": "2022-03-15",
+          "display_date": "Mar 15, 2022",
+          "year": 2022,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf",
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "minutes_archived": "files/archive/boards/adjustment/2022/Minutes-COA-March-15-2022__dc8a23e5.pdf",
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=L-t7pVJuXyw"
+        },
+        {
           "date": "2022-02-08",
           "display_date": "Feb 8, 2022",
           "year": 2022,
@@ -14415,7 +14441,7 @@
           "package_url": null,
           "board_id": "recreation",
           "board_name": "Recreation Committee",
-          "summary": null,
+          "summary": "# Recreation Committee Meeting Summary\n\n**Sep 16, 2024**\n\n## Key Decisions\n- Approved August 12, 2024 meeting minutes\n- Donated Community Centre space on Thursdays at 10 a.m. starting September 19 for the Stay on your Feet Falls Prevention Class (free to participants, provided by East Parry Sound Community Support Services)\n- Approved Chair Yoga Program for 10 weeks starting September 30, 2024 on Mondays at 10 a.m., free to residents, cost $500 from program budget\n- Approved $20 movie pass prize for best costume at Teen Halloween Dance on October 25\n- Discussed planning for Roast Beef Dinner on November 23 with ticket sales October 1 to November 4\n\n## Main Topics\n- **Bottle Drive Fundraiser**: Collected $766 total from Bear Creek Landfill ($291.60 plus $20 donation) and Wolfe Lake Landfill ($454.40) in August/September. Committee seeking volunteers to sort remaining items; high school students can earn Community Involvement hours.\n- **Fall Community Celebration Wrap-up**: Event was well-attended with positive feedback on Reptile Adventure camp, Balloon Art, and Face painting. Committee considering moving vendors to same area and changing date next year to attract more participants and vendors.\n- **Teen Halloween Dance**: Scheduled for October 25 with canteen selling water (free), chips, and candy. DJ accepting song requests via email.\n- **Roast Beef Dinner**: Planned for November 23 with Powassan Voodoos serving. 130 tickets available for sale at local stores and Township office. Committee working with Health Department on permission to smoke roast beef.\n\n## Notable Items\n- Stay on your Feet Class starts September 19, 2024\n- Chair Yoga Program starts September 30, 2024 (no classes October 14 or November 11)\n- Teen Halloween Dance: October 25, 2024\n- Roast Beef Dinner ticket sales: October 1 to November 4, 2024; event November 23, 2024\n- Chair Yoga cost: $500 from Recreation Committee Program Budget 2024\n\n---\n*Next regular meeting: October 7, 2024*",
           "events": [],
           "body": "Recreation Committee",
           "body_id": "recreation",
@@ -14423,7 +14449,8 @@
           "title": "Recreation Committee",
           "source_kind": "board",
           "extra_docs": [],
-          "video_url": "https://www.youtube.com/watch?v=L4IWWHJXEDI"
+          "video_url": "https://www.youtube.com/watch?v=L4IWWHJXEDI",
+          "minutes_archived": "files/archive/boards/recreation/2024/Recreation-Minutes-September-16-2024__77737784.pdf"
         },
         {
           "date": "2024-08-12",
