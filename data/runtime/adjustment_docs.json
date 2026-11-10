@@ -695,16 +695,6 @@
       "date_source": "filename+pdf",
       "archived": "files/archive/boards/adjustment/2022/AGENDA-Feb-8-2022__7360ee71.pdf"
     },
-    "https://nipissingtownship.com/wp-content/uploads/2022/03/Minutes-COA-March-15-2022.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
-    },
-    "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
-    },
     "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf": {
       "status": "gone",
       "checked": "2026-10-21",
@@ -881,6 +871,10 @@
       "checked": "2026-11-08",
       "status": "undated",
       "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-17-2026.pdf": {
+      "status": "not-coa",
+      "checked": "2026-11-10"
     }
   },
   "meta": {
@@ -888,12 +882,12 @@
     "wayback_pages_checked": "2026-11-08",
     "snapshot_queue": [
       {
-        "original": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
-        "timestamp": "20230326065510"
-      },
-      {
         "original": "https://nipissingtownship.com/committee-of-adjustment-august-17-2021/",
         "timestamp": "20250927033953"
+      },
+      {
+        "original": "https://nipissingtownship.com/council-meeting-dates-agendas-minutes/committee-of-adjustment-minutes-july-12-2022/",
+        "timestamp": "20230326065510"
       }
     ],
     "snapshots_seen": [
