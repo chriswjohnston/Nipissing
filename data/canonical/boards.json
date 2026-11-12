@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-11",
+  "last_updated": "2026-11-12",
   "source": "board pages",
   "boards": [
     {
@@ -12641,7 +12641,7 @@
           "external": true,
           "agenda_url": null,
           "minutes_url": null,
-          "package_url": null,
+          "package_url": "https://drive.google.com/file/d/1ocFzMIVFzIfbbKBqxeEXxbCKO5L6f1mf/view",
           "extra_docs": [],
           "summary": null,
           "events": [],
@@ -12649,7 +12649,16 @@
           "rescheduled": false,
           "postponed": false,
           "is_future": true,
-          "video_url": null
+          "video_url": null,
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/library_11OpenAgenda_Package_Nov_2026_copy__1ocFzMIVFz_d13e0e1c.pdf",
+          "drive_files": {
+            "package": {
+              "id": "1ocFzMIVFzIfbbKBqxeEXxbCKO5L6f1mf",
+              "name": "11OpenAgenda Package Nov, 2026 copy.pdf",
+              "posted": "2026-11-12T17:52:02.388Z",
+              "modified": "2026-11-12T17:51:26.114Z"
+            }
+          }
         },
         {
           "date": "2026-10-19",
@@ -13040,7 +13049,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-11",
+      "members_checked": "2026-11-12",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
