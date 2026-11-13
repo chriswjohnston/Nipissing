@@ -902,6 +902,13 @@
       "date": "2022-03-15",
       "date_source": "filename+pdf",
       "archived": "files/archive/boards/adjustment/2022/Minutes-COA-March-15-2022__dc8a23e5.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/02/DOC807.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-13",
+      "status": "undated",
+      "candidates": []
     }
   },
   "meta": {
