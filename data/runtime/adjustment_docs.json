@@ -826,24 +826,12 @@
         "2021-07-13"
       ]
     },
-    "https://nipissingtownship.com/wp-content/uploads/2021/10/DOC714.pdf": {
-      "status": "gone",
-      "confirmed": true,
-      "checked": "2026-11-07",
-      "seen": "20221110"
-    },
     "https://nipissingtownship.com/wp-content/uploads/2021/10/DOC716.pdf": {
       "kind": "extra",
       "source": "wayback 20221110",
       "checked": "2026-11-07",
       "status": "undated",
       "candidates": []
-    },
-    "https://nipissingtownship.com/wp-content/uploads/2021/10/Minutes-COA-October-5-2021.pdf": {
-      "status": "gone",
-      "confirmed": true,
-      "checked": "2026-11-07",
-      "seen": "20211203"
     },
     "https://nipissingtownship.com/wp-content/uploads/2021/11/mvagenda.pdf": {
       "kind": "agenda",
