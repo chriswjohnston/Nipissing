@@ -897,11 +897,17 @@
       "checked": "2026-11-13",
       "status": "undated",
       "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2021/10/Minutes-COA-October-5-2021.pdf": {
+      "status": "gone",
+      "confirmed": true,
+      "checked": "2026-11-15",
+      "seen": "20211203"
     }
   },
   "meta": {
     "wayback_checked": "2026-10-21",
-    "wayback_pages_checked": "2026-11-08",
+    "wayback_pages_checked": "2026-11-15",
     "snapshot_queue": [],
     "snapshots_seen": [
       "20210919104959|https://nipissingtownship.com/committee-agendas-minutes-decisions/committee-of-adjustment-june-8-2021/",
