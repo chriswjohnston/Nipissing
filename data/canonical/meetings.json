@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-15",
+  "last_updated": "2026-11-16",
   "source": "https://nipissingtownship.com/council/council-meeting-dates-agendas-minutes/",
   "meetings": [
     {
@@ -37,13 +37,14 @@
       "meeting_type": "Regular",
       "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-17-2026.pdf",
       "minutes_url": null,
-      "package_url": null,
+      "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-Package-November-17-2026.pdf",
       "extra_docs": [],
       "title": "",
       "video_url": null,
       "summary": null,
       "cancelled": false,
-      "agenda_archived": "files/archive/meetings/2026/Agenda-November-17-2026__f6576e3c.pdf"
+      "agenda_archived": "files/archive/meetings/2026/Agenda-November-17-2026__f6576e3c.pdf",
+      "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-17-2026__569a57b3.pdf"
     },
     {
       "date": "2026-10-20",
