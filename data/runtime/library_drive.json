@@ -217,6 +217,20 @@
       "date": null,
       "archived": null,
       "last_seen": "2026-11-16"
+    },
+    "1ZXISGOnkK8TqLYUP44FTFl9OSTZtwWDE": {
+      "name": "11OpenAgenda Package Nov, 2026 copy.pdf",
+      "kind": "package",
+      "folder": "agenda",
+      "version": "534a6e6dc4b6cc871cf911163a615448",
+      "date": "2026-11-16",
+      "date_source": "pdf",
+      "modified": "2026-11-16T18:41:21.523Z",
+      "created": "2026-11-16T18:45:07.924Z",
+      "archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/library_11OpenAgenda_Package_Nov_2026_copy__1ZXISGOnkK_534a6e6d.pdf",
+      "first_seen": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "history": []
     }
   }
 }

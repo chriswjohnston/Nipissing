@@ -12641,8 +12641,14 @@
           "external": true,
           "agenda_url": null,
           "minutes_url": null,
-          "package_url": "https://drive.google.com/file/d/1ocFzMIVFzIfbbKBqxeEXxbCKO5L6f1mf/view",
-          "extra_docs": [],
+          "package_url": "https://drive.google.com/file/d/1ZXISGOnkK8TqLYUP44FTFl9OSTZtwWDE/view",
+          "extra_docs": [
+            {
+              "label": "11OpenAgenda Package Nov, 2026 copy.pdf",
+              "url": "https://drive.google.com/file/d/1ocFzMIVFzIfbbKBqxeEXxbCKO5L6f1mf/view",
+              "archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/library_11OpenAgenda_Package_Nov_2026_copy__1ocFzMIVFz_d13e0e1c.pdf"
+            }
+          ],
           "summary": null,
           "events": [],
           "cancelled": false,
@@ -12650,13 +12656,13 @@
           "postponed": false,
           "is_future": false,
           "video_url": null,
-          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/library_11OpenAgenda_Package_Nov_2026_copy__1ocFzMIVFz_d13e0e1c.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/library_11OpenAgenda_Package_Nov_2026_copy__1ZXISGOnkK_534a6e6d.pdf",
           "drive_files": {
             "package": {
-              "id": "1ocFzMIVFzIfbbKBqxeEXxbCKO5L6f1mf",
+              "id": "1ZXISGOnkK8TqLYUP44FTFl9OSTZtwWDE",
               "name": "11OpenAgenda Package Nov, 2026 copy.pdf",
-              "posted": "2026-11-12T17:52:02.388Z",
-              "modified": "2026-11-12T17:51:26.114Z"
+              "posted": "2026-11-16T18:45:07.924Z",
+              "modified": "2026-11-16T18:41:21.523Z"
             }
           }
         },
