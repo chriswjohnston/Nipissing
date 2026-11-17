@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css?v=7e74066526">
+<link rel="stylesheet" href="shared.css?v=b91f81c4c4">
 </head>
 <body>
 
@@ -70,7 +70,7 @@
           <button type="button" class="tab-btn" data-body="library" aria-pressed="false">Library Board</button>
           <button type="button" class="tab-btn" data-body="pnc" aria-pressed="false">OPP Detachment Board</button>
           <button type="button" class="tab-btn" data-body="healthunit" aria-pressed="false">Health Unit</button>
-          <button type="button" class="tab-btn" data-body="dnssab" aria-pressed="false">Social Services Board</button>
+          <button type="button" class="tab-btn" data-body="psdssab" aria-pressed="false">Social Services Board</button>
         </div>
       </div>
       <div class="year-row">
@@ -125,7 +125,7 @@
   </div>
 </footer>
 
-<script src="shared.js?v=dcca7bc088"></script>
+<script src="shared.js?v=35655e64b2"></script>
 <script>
 let activeBody = 'all';
 let activeYear = '';
@@ -145,7 +145,7 @@ function bodyBadgeClass(bodyId){
   if(bodyId === 'pnc') return 'mb-pnc';
   if(bodyId === 'adjustment') return 'mb-adjustment';
   if(String(bodyId || '').startsWith('healthunit')) return 'mb-healthunit';
-  if(String(bodyId || '').startsWith('dnssab')) return 'mb-dnssab';
+  if(String(bodyId || '').startsWith('psdssab')) return 'mb-psdssab';
   return 'mb-council';
 }
 
@@ -228,7 +228,7 @@ function filteredPastMeetings(){
   let items = ALL_MEETINGS.filter(isPastMeeting);
 
   if(activeBody !== 'all'){
-    // Joint boards with committees (Health Unit, DNSSAB) filter by group.
+    // Joint boards with committees (Health Unit, PSDSSAB) filter by group.
     items = items.filter(m => (m.group || m.body_id || '').toLowerCase() === activeBody);
   }
 

@@ -66,7 +66,6 @@ TOWNSHIP_HOST = "nipissingtownship.com"
 EXTERNAL_HOSTS = (
     "myhealthunit.ca",                 # North Bay Parry Sound District Health Unit
     "cdn.govstack.com",                # ...its document CDN
-    "pub-dnssab.escribemeetings.com",  # DNSSAB
 )
 
 # Files bigger than this from external hosts go to the Release, not the repo,

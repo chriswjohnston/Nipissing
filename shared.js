@@ -89,7 +89,7 @@ function highlight(text, q) {
 function primaryMeetingUrl(meeting) {
   const date = encodeURIComponent(meeting?.date || '');
   const body = encodeURIComponent(meeting?.body_id || meeting?.board_id || 'council');
-  // A special and a regular meeting of one body can share a date (DNSSAB).
+  // A special and a regular meeting of one body can share a date (PSDSSAB).
   const type = meeting?.source_kind === 'board' && meeting?.meeting_type === 'Special'
     ? '&type=Special' : '';
   return `meeting-detail.html?date=${date}&body=${body}${type}`;
@@ -122,7 +122,7 @@ function meetingTagClass(meeting) {
   if (bodyId === 'pnc') return 'tag tag-pnc';
   if (bodyId === 'adjustment') return 'tag tag-adjustment';
   if (bodyId.startsWith('healthunit')) return 'tag tag-healthunit';
-  if (bodyId.startsWith('dnssab')) return 'tag tag-dnssab';
+  if (bodyId.startsWith('psdssab')) return 'tag tag-psdssab';
   return 'tag';
 }
 
@@ -188,18 +188,17 @@ const OFFICIAL_NAMES = {
   'healthunit': 'North Bay Parry Sound District Health Unit — Board of Health',
   'healthunit-finance': 'North Bay Parry Sound District Health Unit — Finance and Property Committee',
   'healthunit-personnel': 'North Bay Parry Sound District Health Unit — Personnel Policy, Employee/Labour Relations Committee',
-  dnssab: 'District of Nipissing Social Services Administration Board',
-  'dnssab-ndhc': 'Nipissing District Housing Corporation Board',
+  psdssab: 'District of Parry Sound Social Services Administration Board',
 };
 
 function officialName(meeting) {
   const id = String(meeting?.body_id || meeting?.board_id || 'council').toLowerCase();
   if (OFFICIAL_NAMES[id]) return OFFICIAL_NAMES[id];
-  // Other DNSSAB committees: "DNSSAB Community Services Committee" etc.
-  if (id.startsWith('dnssab-')) {
+  // Any PSDSSAB committee: "PSDSSAB Finance Committee" etc.
+  if (id.startsWith('psdssab-')) {
     const name = String(meeting?.board_name || meeting?.body || '')
-      .replace(/^DNSSAB:?\s*/i, '').replace(/\s+Meeting$/i, '');
-    return `District of Nipissing Social Services Administration Board — ${name}`;
+      .replace(/^PSDSSAB:?\s*/i, '').replace(/\s+Meeting$/i, '');
+    return `District of Parry Sound Social Services Administration Board — ${name}`;
   }
   return meeting?.board_name || meetingBodyLabel(meeting);
 }

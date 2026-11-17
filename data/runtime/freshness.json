@@ -1,53 +1,25 @@
 {
-  "checked": "2026-11-16",
+  "checked": "2026-11-17",
   "bodies": {
     "adjustment": {
       "last_meeting": "2026-10-06",
       "next_meeting": null,
-      "days_quiet": 41,
+      "days_quiet": 42,
       "limit_days": 150,
       "stale": false
     },
     "cemetery": {
       "last_meeting": "2026-05-20",
       "next_meeting": null,
-      "days_quiet": 180,
+      "days_quiet": 181,
       "limit_days": 400,
       "stale": false
     },
     "council": {
-      "last_meeting": "2026-10-20",
-      "next_meeting": "2026-11-17",
+      "last_meeting": "2026-11-17",
+      "next_meeting": "2026-12-01",
       "days_quiet": 0,
       "limit_days": 45,
-      "stale": false
-    },
-    "dnssab": {
-      "last_meeting": "2026-10-21",
-      "next_meeting": "2026-11-25",
-      "days_quiet": 0,
-      "limit_days": 90,
-      "stale": false
-    },
-    "dnssab-community-services-committee": {
-      "last_meeting": "2026-06-24",
-      "next_meeting": "2026-11-25",
-      "days_quiet": 0,
-      "limit_days": 365,
-      "stale": false
-    },
-    "dnssab-finance-and-administration-committee": {
-      "last_meeting": "2026-09-23",
-      "next_meeting": null,
-      "days_quiet": 54,
-      "limit_days": 365,
-      "stale": false
-    },
-    "dnssab-ndhc": {
-      "last_meeting": "2026-10-21",
-      "next_meeting": null,
-      "days_quiet": 26,
-      "limit_days": 120,
       "stale": false
     },
     "healthunit": {
@@ -60,14 +32,14 @@
     "healthunit-finance": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 40,
+      "days_quiet": 41,
       "limit_days": 365,
       "stale": false
     },
     "healthunit-personnel": {
       "last_meeting": "2026-06-24",
       "next_meeting": null,
-      "days_quiet": 145,
+      "days_quiet": 146,
       "limit_days": 365,
       "stale": false
     },
@@ -81,7 +53,7 @@
     "museum": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 40,
+      "days_quiet": 41,
       "limit_days": 120,
       "stale": false
     },
@@ -92,10 +64,17 @@
       "limit_days": 180,
       "stale": false
     },
+    "psdssab": {
+      "last_meeting": "2026-10-08",
+      "next_meeting": null,
+      "days_quiet": 40,
+      "limit_days": 90,
+      "stale": false
+    },
     "recreation": {
       "last_meeting": "2026-10-05",
       "next_meeting": null,
-      "days_quiet": 42,
+      "days_quiet": 43,
       "limit_days": 90,
       "stale": false
     }

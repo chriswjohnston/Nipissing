@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 joint_boards.py — shared plumbing for external joint boards (Health Unit,
-DNSSAB): bodies that Nipissing is represented on but does not run.
+PSDSSAB): bodies that Nipissing is represented on but does not run.
 
 Each committee is stored as its own entry in boards.json (so a committee and
 the main board meeting on the same day never collide), tied together by a

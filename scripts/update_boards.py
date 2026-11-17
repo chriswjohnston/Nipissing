@@ -746,7 +746,7 @@ def main() -> None:
     # before saving, so archived_* paths land in canonical data.
     for b in merged_payload["boards"]:
         if b.get("external"):
-            continue  # joint boards are mirrored by their own scripts (DNSSAB needs a session)
+            continue  # joint boards are mirrored by their own scripts
         for m in b.get("meetings", []):
             mirror_record(m, f"boards/{b['id']}")
 

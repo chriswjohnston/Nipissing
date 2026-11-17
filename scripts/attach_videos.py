@@ -22,7 +22,7 @@ Rules, in order, each only ever filling an EMPTY video_url:
                                                       held that day, else the day
                                                       before; skipped if more than
                                                       one meeting is open
-External boards (library, health unit, DNSSAB) are never matched — they are
+External boards (library, health unit, PSDSSAB) are never matched — they are
 not streamed on the township channel. Reads the cached video list only; the
 updaters refresh it earlier in the run.
 """
