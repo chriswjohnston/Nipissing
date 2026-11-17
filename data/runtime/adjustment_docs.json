@@ -1209,6 +1209,26 @@
       "date": "2024-03-19",
       "date_source": "filename+pdf",
       "archived": "files/archive/boards/adjustment/2024/Minutes-COA-March-19-2024__dd62f66a.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/09/Notice-of-Public-Hearing-Wood-Minor-Variance.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-09-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Wood-Minor-Variance__a4a8d2b0.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/12/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250219",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-12-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024__04df6b5f.pdf"
     }
   },
   "meta": {

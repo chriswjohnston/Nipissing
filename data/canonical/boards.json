@@ -468,7 +468,13 @@
           "agenda_url": null,
           "minutes_url": null,
           "package_url": null,
-          "extra_docs": [],
+          "extra_docs": [
+            {
+              "label": "Notice of Public Hearing Wood Minor Variance",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Notice-of-Public-Hearing-Wood-Minor-Variance.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Wood-Minor-Variance__a4a8d2b0.pdf"
+            }
+          ],
           "summary": null,
           "events": [],
           "cancelled": false,
@@ -477,7 +483,8 @@
           "is_future": false,
           "known_from": "recording",
           "all_agendas": true,
-          "video_url": "https://www.youtube.com/watch?v=k-EP3nz38LI"
+          "video_url": "https://www.youtube.com/watch?v=k-EP3nz38LI",
+          "recovered_from_wayback": true
         },
         {
           "date": "2024-07-16",
