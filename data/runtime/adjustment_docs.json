@@ -696,29 +696,49 @@
       "archived": "files/archive/boards/adjustment/2022/AGENDA-Feb-8-2022__7360ee71.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2023/09/AGENDA-September-19th-2023-COA.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "agenda",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2023-09-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2023/AGENDA-September-19th-2023-COA__84db2427.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-February-6-2024-COA.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "agenda",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2024-02-06",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-February-6-2024-COA__b1afa676.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-COA-September-19-2023.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "minutes",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2023-09-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2023/Minutes-COA-September-19-2023__cf4c22d0.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2024/03/AGENDA-March-19-2024-COA.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "agenda",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2024-03-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-March-19-2024-COA__0fe2f2da.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "agenda",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2024-05-14",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-May-14-2024-COA-1__03dba440.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf": {
       "status": "gone",
@@ -907,6 +927,288 @@
     "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-Package-November-17-2026.pdf": {
       "status": "not-coa",
       "checked": "2026-11-16"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2021/10/DOC714.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-15-2022.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-03-15",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-March-15-2022__bb968378.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/AGENDA-March-29-2022.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-03-29",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-March-29-2022__6a4dfd63.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/Thompson-MV-Notice-with-survey-sketch-85-Ruth-Haven-Drive.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2022-03-15",
+        "2022-03-14"
+      ],
+      "archived": "files/archive/boards/adjustment/2022/Thompson-MV-Notice-with-survey-sketch-85-Ruth-Haven-Drive__e730c605.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/03/publicnoticea202202-1.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/05/Minutes-COA-March-29-2022-.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-03-29",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/Minutes-COA-March-29-2022-__12680344.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/06/AGENDA-July-12-2022-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-07-12",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-July-12-2022-COA__19f067d6.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/06/CAO-PUBLIC-NOTICE-A2022-03.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2022-07-12",
+        "2022-07-11"
+      ],
+      "archived": "files/archive/boards/adjustment/2022/CAO-PUBLIC-NOTICE-A2022-03__04156906.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-August-16th-2022-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-08-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-August-16th-2022-COA__1449c633.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/AGENDA-October-4-2022.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-10-04",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-October-4-2022__702e58ed.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/Minutes-COA-February-8-2022.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-08-16",
+      "date_source": "pdf",
+      "archived": "files/archive/boards/adjustment/2022/Minutes-COA-February-8-2022__095ca491.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/Notice-of-Public-Hearing-Matthews-Consent.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2022-10-04"
+      ],
+      "archived": "files/archive/boards/adjustment/2022/Notice-of-Public-Hearing-Matthews-Consent__e1a1aec9.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/09/Notice-of-Public-Hearing-Watson-Consent-21-July-2022-002.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2022-07-21",
+        "2022-08-16"
+      ],
+      "archived": "files/archive/boards/adjustment/2022/Notice-of-Public-Hearing-Watson-Consent-21-July-2022-002__3a90309e.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/10/Minutes-COA-October-4-2022.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20221110",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-10-04",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/Minutes-COA-October-4-2022__ac6fa6a9.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/12/AGENDA-December-20-2022-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20221209",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-12-20",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/AGENDA-December-20-2022-COA__96fdf3cd.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/12/Minutes-COA-December-20-2022.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20230326",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2022-12-20",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2022/Minutes-COA-December-20-2022__03ba44c9.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2022/12/maclachlan.pdf": {
+      "kind": "extra",
+      "source": "wayback 20221209",
+      "checked": "2026-11-17",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/05/CAO-PUBLIC-NOTICE-A2023-01.pdf": {
+      "kind": "extra",
+      "source": "wayback 20230908",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2023-05-16"
+      ],
+      "archived": "files/archive/boards/adjustment/2023/CAO-PUBLIC-NOTICE-A2023-01__7937f678.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/05/Minutes-COA-May-16-2023.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20230908",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2023-05-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2023/Minutes-COA-May-16-2023__fd2883c9.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/05/Notice-of-Public-Hearing-Haufe-Consent-Final-1.pdf": {
+      "kind": "extra",
+      "source": "wayback 20230908",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2023-05-16",
+        "2023-05-01"
+      ],
+      "archived": "files/archive/boards/adjustment/2023/Notice-of-Public-Hearing-Haufe-Consent-Final-1__5f374934.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/12/Consent-Application-C2023-02-118-Chapmans-Landing-Road.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2023-12-19",
+        "2023-12-04"
+      ],
+      "archived": "files/archive/boards/adjustment/2023/Consent-Application-C2023-02-118-Chapmans-Landing-Road__9b94f04d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/AGENDA-December-19th-2023.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2023-12-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2023/AGENDA-December-19th-2023__d80f623e.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/Notice-of-Public-Hearing-Gazzola-1.pdf": {
+      "kind": "extra",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-02-06"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Gazzola-1__5e660e63.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/01/Notice-of-Public-Hearing-White.pdf": {
+      "kind": "extra",
+      "source": "wayback 20240227",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-02-06"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-White__8b823f3d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-COA-December-19-2023.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2023-12-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2023/Minutes-COA-December-19-2023__25be3cf1.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-COA-February-7-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2024-02-06",
+      "date_source": "pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-February-7-2024__da68c1c7.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/Notice-of-Public-Hearing-Schinkel-Consent-Final.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-03-19",
+        "2024-03-04"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Schinkel-Consent-Final__b6fcf461.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/03/Public-Notice-For-Minor-Variance-A2024-02.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-03-19"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Public-Notice-For-Minor-Variance-A2024-02__2142aec7.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/CAO-PUBLIC-NOTICE-A2024-03-1.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "candidates": [
+        "2024-05-14"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/CAO-PUBLIC-NOTICE-A2024-03-1__554fb03c.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-COA-March-19-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-17",
+      "status": "ok",
+      "date": "2024-03-19",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-March-19-2024__dd62f66a.pdf"
     }
   },
   "meta": {
