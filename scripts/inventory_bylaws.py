@@ -67,7 +67,7 @@ def numbers_in(text: str) -> List[str]:
 # By-laws of other bodies that number their own (the police board has its
 # own 2024-01, 2025-01): a file whose name or page names one of them is
 # never matched to a township by-law.
-OTHER_BODY = re.compile(r"\bPNC\b|detachment|police|library|DNSSAB|health\s*unit", re.I)
+OTHER_BODY = re.compile(r"\bPNC\b|detachment|police|library|DNSSAB|PSDSSAB|health\s*unit", re.I)
 
 
 def fetch_all(kind: str, fields: str) -> List[Dict[str, Any]]:

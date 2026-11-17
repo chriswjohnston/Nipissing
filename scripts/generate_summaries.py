@@ -121,7 +121,7 @@ def load_minutes_pdf(meeting: Dict[str, Any]) -> bytes:
 
 def minutes_web_page(meeting: Dict[str, Any]) -> str:
     """URL of a web-page version of the minutes, for sources whose PDFs we
-    cannot download (DNSSAB's eScribe portal refuses GitHub's servers but
+    cannot download (e.g. an eScribe portal that refuses GitHub's servers but
     serves its HTML minutes). Empty when a PDF route exists."""
     if meeting.get("minutes_archived"):
         return ""
@@ -477,7 +477,7 @@ def main() -> None:
         try:
             web = minutes_web_page(meeting)
             if web:
-                # No PDF route (DNSSAB): summarize the portal's web-page minutes.
+                # No PDF route (eScribe portals): summarize the portal's web-page minutes.
                 text = clean_source_text(fetch_html_text(web))
                 if looks_unusable(text):
                     print(f"Skipped: web-page minutes too short ({len(text)} chars) — {web}")

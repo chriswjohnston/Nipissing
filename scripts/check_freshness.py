@@ -34,8 +34,7 @@ LIMITS = {
     "adjustment": 150,
     "library": 120,
     "healthunit": 150,
-    "dnssab": 90,
-    "dnssab-ndhc": 120,
+    "psdssab": 90,
 }
 DEFAULT_LIMIT = 365   # committees of joint boards, anything new
 

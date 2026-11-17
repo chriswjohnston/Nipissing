@@ -70,7 +70,7 @@
           <button type="button" class="tab-btn" data-body="library" aria-pressed="false">Library Board</button>
           <button type="button" class="tab-btn" data-body="pnc" aria-pressed="false">OPP Detachment Board</button>
           <button type="button" class="tab-btn" data-body="healthunit" aria-pressed="false">Health Unit</button>
-          <button type="button" class="tab-btn" data-body="dnssab" aria-pressed="false">Social Services Board</button>
+          <button type="button" class="tab-btn" data-body="psdssab" aria-pressed="false">Social Services Board</button>
         </div>
       </div>
       <div class="year-row">
@@ -145,7 +145,7 @@ function bodyBadgeClass(bodyId){
   if(bodyId === 'pnc') return 'mb-pnc';
   if(bodyId === 'adjustment') return 'mb-adjustment';
   if(String(bodyId || '').startsWith('healthunit')) return 'mb-healthunit';
-  if(String(bodyId || '').startsWith('dnssab')) return 'mb-dnssab';
+  if(String(bodyId || '').startsWith('psdssab')) return 'mb-psdssab';
   return 'mb-council';
 }
 
@@ -228,7 +228,7 @@ function filteredPastMeetings(){
   let items = ALL_MEETINGS.filter(isPastMeeting);
 
   if(activeBody !== 'all'){
-    // Joint boards with committees (Health Unit, DNSSAB) filter by group.
+    // Joint boards with committees (Health Unit, PSDSSAB) filter by group.
     items = items.filter(m => (m.group || m.body_id || '').toLowerCase() === activeBody);
   }
 

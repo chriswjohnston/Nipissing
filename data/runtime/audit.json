@@ -228,41 +228,6 @@
         }
       }
     },
-    "dnssab": {
-      "meetings": 36,
-      "totals": {
-        "no_minutes": 1
-      },
-      "issues": {
-        "2024-07-24 Special": {
-          "no_minutes": true
-        }
-      }
-    },
-    "dnssab-community-services-committee": {
-      "meetings": 15,
-      "totals": {},
-      "issues": {}
-    },
-    "dnssab-finance-and-administration-committee": {
-      "meetings": 14,
-      "totals": {
-        "no_minutes": 2
-      },
-      "issues": {
-        "2024-09-25 Board": {
-          "no_minutes": true
-        },
-        "2024-05-22 Board": {
-          "no_minutes": true
-        }
-      }
-    },
-    "dnssab-ndhc": {
-      "meetings": 24,
-      "totals": {},
-      "issues": {}
-    },
     "healthunit": {
       "meetings": 23,
       "totals": {

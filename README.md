@@ -61,7 +61,7 @@ skipped and its stored data kept. In order:
 5. `generate_summaries` — meeting summaries
 6. `update_bylaws` — by-laws and resolutions
 7. `package_index`, `staff_reports`, `consolidate_bylaws` — read packages; cut each staff report out as its own PDF; build law texts
-8. `update_adjustment`, `update_boards`, `update_library`, `update_healthunit`, `update_dnssab` — committee and board records
+8. `update_adjustment`, `update_boards`, `update_library`, `update_healthunit`, `update_psdssab` — committee and board records
 9. `attach_videos` — YouTube recordings
 10. `doc_tidy`, `archive_plans`, `check_freshness`, `audit_site`, `build_sitemap`
 
