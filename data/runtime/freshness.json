@@ -1,17 +1,17 @@
 {
-  "checked": "2026-11-17",
+  "checked": "2026-11-18",
   "bodies": {
     "adjustment": {
       "last_meeting": "2026-10-06",
       "next_meeting": null,
-      "days_quiet": 42,
+      "days_quiet": 43,
       "limit_days": 150,
       "stale": false
     },
     "cemetery": {
       "last_meeting": "2026-05-20",
       "next_meeting": null,
-      "days_quiet": 181,
+      "days_quiet": 182,
       "limit_days": 400,
       "stale": false
     },
@@ -32,14 +32,14 @@
     "healthunit-finance": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 41,
+      "days_quiet": 42,
       "limit_days": 365,
       "stale": false
     },
     "healthunit-personnel": {
       "last_meeting": "2026-06-24",
       "next_meeting": null,
-      "days_quiet": 146,
+      "days_quiet": 147,
       "limit_days": 365,
       "stale": false
     },
@@ -53,7 +53,7 @@
     "museum": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 41,
+      "days_quiet": 42,
       "limit_days": 120,
       "stale": false
     },
@@ -67,14 +67,14 @@
     "psdssab": {
       "last_meeting": "2026-10-08",
       "next_meeting": null,
-      "days_quiet": 40,
+      "days_quiet": 41,
       "limit_days": 90,
       "stale": false
     },
     "recreation": {
       "last_meeting": "2026-10-05",
       "next_meeting": null,
-      "days_quiet": 43,
+      "days_quiet": 44,
       "limit_days": 90,
       "stale": false
     }

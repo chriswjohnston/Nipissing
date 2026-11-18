@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "source": "board pages",
   "boards": [
     {
@@ -455,6 +455,80 @@
           "video_url": "https://www.youtube.com/watch?v=uw92k0zn6XE"
         },
         {
+          "date": "2025-02-04",
+          "display_date": "Feb 4, 2025",
+          "year": 2025,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/AGENDA-February-4-2025-COA.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "extra_docs": [
+            {
+              "label": "Dobson Consent Notice of Public Hearing 4 February 2025",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Dobson-Consent-Notice-of-Public-Hearing-4-February-2025.pdf",
+              "archived": "files/archive/boards/adjustment/2025/Dobson-Consent-Notice-of-Public-Hearing-4-February-2025__946e34c1.pdf"
+            },
+            {
+              "label": "Holley Consent Notice of Public Hearing 4 February 2025",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Holley-Consent-Notice-of-Public-Hearing-4-February-2025.pdf",
+              "archived": "files/archive/boards/adjustment/2025/Holley-Consent-Notice-of-Public-Hearing-4-February-2025__af817a1d.pdf"
+            }
+          ],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "agenda_archived": "files/archive/boards/adjustment/2025/AGENDA-February-4-2025-COA__9d26e1c6.pdf",
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=Ld7VTu0L3Fg"
+        },
+        {
+          "date": "2024-12-17",
+          "display_date": "Dec 17, 2024",
+          "year": 2024,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/AGENDA-December-17-2024.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "extra_docs": [
+            {
+              "label": "Kotulak Consent Notice of Public Hearing 17 December 2024",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024__04df6b5f.pdf"
+            },
+            {
+              "label": "Marchant and Yemm Consent Notice of Public Hearing 17 December 2024 002",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Marchant-and-Yemm-Consent-Notice-of-Public-Hearing-17-December-2024-002.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Marchant-and-Yemm-Consent-Notice-of-Public-Hearing-17-December-2024-002__8fbd6230.pdf"
+            }
+          ],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": false,
+          "agenda_archived": "files/archive/boards/adjustment/2024/AGENDA-December-17-2024__2eba1cd4.pdf",
+          "recovered_from_wayback": true,
+          "all_agendas": true,
+          "video_url": "https://www.youtube.com/watch?v=Sd9R1Wx7hqE"
+        },
+        {
           "date": "2024-09-17",
           "display_date": "Sep 17, 2024",
           "year": 2024,
@@ -465,8 +539,8 @@
           "body": "Committee of Adjustment",
           "body_id": "adjustment",
           "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/AGENDA-September-17-2024-COA.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-September-17-2024.pdf",
           "package_url": null,
           "extra_docs": [
             {
@@ -484,7 +558,9 @@
           "known_from": "recording",
           "all_agendas": true,
           "video_url": "https://www.youtube.com/watch?v=k-EP3nz38LI",
-          "recovered_from_wayback": true
+          "recovered_from_wayback": true,
+          "agenda_archived": "files/archive/boards/adjustment/2024/AGENDA-September-17-2024-COA__4c75d5b2.pdf",
+          "minutes_archived": "files/archive/boards/adjustment/2024/Minutes-COA-September-17-2024__91d13125.pdf"
         },
         {
           "date": "2024-07-16",
@@ -497,10 +573,21 @@
           "body": "Committee of Adjustment",
           "body_id": "adjustment",
           "source_kind": "board",
-          "agenda_url": null,
-          "minutes_url": null,
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/AGENDA-July-16-2024-COA.pdf",
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-July-16-2024.pdf",
           "package_url": null,
-          "extra_docs": [],
+          "extra_docs": [
+            {
+              "label": "Notice of Public Hearing Bolwerk Consent 16 July 2024 003",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-16-July-2024-003.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bolwerk-Consent-16-July-2024-003__8db320e3.pdf"
+            },
+            {
+              "label": "Notice of Public Hearing Bolwerk Consent Lot Addition 16 July 2024 003",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-Lot-Addition-16-July-2024-003.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bolwerk-Consent-Lot-Addition-16-July-2024-003__439b498a.pdf"
+            }
+          ],
           "summary": null,
           "events": [],
           "cancelled": false,
@@ -509,7 +596,10 @@
           "is_future": false,
           "known_from": "recording",
           "all_agendas": true,
-          "video_url": "https://www.youtube.com/watch?v=zDx2VDXDKzo"
+          "video_url": "https://www.youtube.com/watch?v=zDx2VDXDKzo",
+          "agenda_archived": "files/archive/boards/adjustment/2024/AGENDA-July-16-2024-COA__c348a964.pdf",
+          "recovered_from_wayback": true,
+          "minutes_archived": "files/archive/boards/adjustment/2024/Minutes-COA-July-16-2024__0287efa1.pdf"
         },
         {
           "date": "2024-05-14",
@@ -523,13 +613,23 @@
           "body_id": "adjustment",
           "source_kind": "board",
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/AGENDA-May-14-2024-COA-1.pdf",
-          "minutes_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-COA-May-14-2024.pdf",
           "package_url": null,
           "extra_docs": [
             {
               "label": "CAO PUBLIC NOTICE A2024 03",
               "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/CAO-PUBLIC-NOTICE-A2024-03-1.pdf",
               "archived": "files/archive/boards/adjustment/2024/CAO-PUBLIC-NOTICE-A2024-03-1__554fb03c.pdf"
+            },
+            {
+              "label": "Notice of Public Hearing Bryant Consent 22 April 2024 PT",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Bryant-Consent-22-April-2024-PT.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bryant-Consent-22-April-2024-PT__abfb67ae.pdf"
+            },
+            {
+              "label": "Notice of Public Hearing Reid Consent 22 April 2024 PT",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Reid-Consent-22-April-2024-PT.pdf",
+              "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Reid-Consent-22-April-2024-PT__a96fc228.pdf"
             }
           ],
           "summary": null,
@@ -542,7 +642,8 @@
           "all_agendas": true,
           "video_url": "https://www.youtube.com/watch?v=97vtsVK1LZY",
           "agenda_archived": "files/archive/boards/adjustment/2024/AGENDA-May-14-2024-COA-1__03dba440.pdf",
-          "recovered_from_wayback": true
+          "recovered_from_wayback": true,
+          "minutes_archived": "files/archive/boards/adjustment/2024/Minutes-COA-May-14-2024__6dca404d.pdf"
         },
         {
           "date": "2024-03-19",
@@ -3641,7 +3742,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-17",
+      "members_checked": "2026-11-18",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"

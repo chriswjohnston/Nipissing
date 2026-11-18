@@ -740,11 +740,6 @@
       "date_source": "filename+pdf",
       "archived": "files/archive/boards/adjustment/2024/AGENDA-May-14-2024-COA-1__03dba440.pdf"
     },
-    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
-    },
     "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf": {
       "status": "gone",
       "checked": "2026-10-21",
@@ -1229,6 +1224,151 @@
         "2024-12-17"
       ],
       "archived": "files/archive/boards/adjustment/2024/Kotulak-Consent-Notice-of-Public-Hearing-17-December-2024__04df6b5f.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/09/A2023-02000.pdf": {
+      "kind": "extra",
+      "source": "wayback 20240227",
+      "checked": "2026-11-18",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Bryant-Consent-22-April-2024-PT.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2024-04-22",
+        "2024-05-14",
+        "2024-04-29"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bryant-Consent-22-April-2024-PT__abfb67ae.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/Notice-of-Public-Hearing-Reid-Consent-22-April-2024-PT.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2024-04-22",
+        "2024-05-14"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Reid-Consent-22-April-2024-PT__a96fc228.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-COA-May-14-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-05-14",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-May-14-2024__6dca404d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-16-July-2024-003.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2024-07-16"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bolwerk-Consent-16-July-2024-003__8db320e3.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/06/Notice-of-Public-Hearing-Bolwerk-Consent-Lot-Addition-16-July-2024-003.pdf": {
+      "kind": "extra",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2024-07-16"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Notice-of-Public-Hearing-Bolwerk-Consent-Lot-Addition-16-July-2024-003__439b498a.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/07/AGENDA-July-16-2024-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-07-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-July-16-2024-COA__c348a964.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/09/AGENDA-September-17-2024-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-09-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-September-17-2024-COA__4c75d5b2.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-July-16-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-07-16",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-July-16-2024__0287efa1.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-COA-September-17-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20241009",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-09-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-September-17-2024__91d13125.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/12/AGENDA-December-17-2024.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-12-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/AGENDA-December-17-2024__2eba1cd4.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/12/Marchant-and-Yemm-Consent-Notice-of-Public-Hearing-17-December-2024-002.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2024-12-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2024/Marchant-and-Yemm-Consent-Notice-of-Public-Hearing-17-December-2024-002__8fbd6230.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/01/AGENDA-February-4-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-02-04",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-February-4-2025-COA__9d26e1c6.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/01/Dobson-Consent-Notice-of-Public-Hearing-4-February-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-02-04",
+        "2025-01-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Dobson-Consent-Notice-of-Public-Hearing-4-February-2025__946e34c1.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/01/Holley-Consent-Notice-of-Public-Hearing-4-February-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-02-04",
+        "2025-01-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Holley-Consent-Notice-of-Public-Hearing-4-February-2025__af817a1d.pdf"
     }
   },
   "meta": {

@@ -1,18 +1,15 @@
 {
-  "checked": "2026-11-17",
+  "checked": "2026-11-18",
   "bodies": {
     "council": {
       "meetings": 213,
       "totals": {
-        "no_video": 5,
         "no_minutes": 8,
         "no_agenda": 16,
+        "no_video": 4,
         "no_summary": 14
       },
       "issues": {
-        "2026-11-17 Regular": {
-          "no_video": true
-        },
         "2025-10-21 Regular": {
           "no_minutes": true,
           "no_agenda": true,
@@ -126,11 +123,11 @@
       }
     },
     "adjustment": {
-      "meetings": 32,
+      "meetings": 34,
       "totals": {
-        "no_minutes": 10,
-        "no_agenda": 12,
-        "no_summary": 9
+        "no_minutes": 9,
+        "no_agenda": 10,
+        "no_summary": 12
       },
       "issues": {
         "2025-09-02 Board": {
@@ -153,16 +150,20 @@
           "no_minutes": true,
           "no_agenda": true
         },
+        "2025-02-04 Board": {
+          "no_minutes": true
+        },
+        "2024-12-17 Board": {
+          "no_minutes": true
+        },
         "2024-09-17 Board": {
-          "no_minutes": true,
-          "no_agenda": true
+          "no_summary": true
         },
         "2024-07-16 Board": {
-          "no_minutes": true,
-          "no_agenda": true
+          "no_summary": true
         },
         "2024-05-14 Board": {
-          "no_minutes": true
+          "no_summary": true
         },
         "2024-03-19 Board": {
           "no_summary": true

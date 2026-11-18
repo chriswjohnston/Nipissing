@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nipissing.news/</loc><lastmod>2026-11-17</lastmod><priority>1.0</priority></url>
-  <url><loc>https://nipissing.news/council.html</loc><lastmod>2026-11-17</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/laws.html</loc><lastmod>2026-11-17</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/decisions.html</loc><lastmod>2026-11-17</lastmod><priority>0.9</priority></url>
-  <url><loc>https://nipissing.news/finances.html</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://nipissing.news/terms.html</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://nipissing.news/</loc><lastmod>2026-11-18</lastmod><priority>1.0</priority></url>
+  <url><loc>https://nipissing.news/council.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/laws.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/decisions.html</loc><lastmod>2026-11-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://nipissing.news/finances.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://nipissing.news/terms.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://nipissing.news/about.html</loc><priority>0.5</priority></url>
   <url><loc>https://nipissing.news/law.html?id=minimum-maintenance-standards</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://nipissing.news/law.html?id=trailer-licensing</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
@@ -1570,6 +1570,8 @@
   <url><loc>https://nipissing.news/meeting-detail.html?date=2025-06-10&amp;body=adjustment</loc><lastmod>2025-06-10</lastmod><priority>0.4</priority></url>
   <url><loc>https://nipissing.news/meeting-detail.html?date=2025-05-13&amp;body=adjustment</loc><lastmod>2025-05-13</lastmod><priority>0.4</priority></url>
   <url><loc>https://nipissing.news/meeting-detail.html?date=2025-04-08&amp;body=adjustment</loc><lastmod>2025-04-08</lastmod><priority>0.4</priority></url>
+  <url><loc>https://nipissing.news/meeting-detail.html?date=2025-02-04&amp;body=adjustment</loc><lastmod>2025-02-04</lastmod><priority>0.4</priority></url>
+  <url><loc>https://nipissing.news/meeting-detail.html?date=2024-12-17&amp;body=adjustment</loc><lastmod>2024-12-17</lastmod><priority>0.4</priority></url>
   <url><loc>https://nipissing.news/meeting-detail.html?date=2024-09-17&amp;body=adjustment</loc><lastmod>2024-09-17</lastmod><priority>0.4</priority></url>
   <url><loc>https://nipissing.news/meeting-detail.html?date=2024-07-16&amp;body=adjustment</loc><lastmod>2024-07-16</lastmod><priority>0.4</priority></url>
   <url><loc>https://nipissing.news/meeting-detail.html?date=2024-05-14&amp;body=adjustment</loc><lastmod>2024-05-14</lastmod><priority>0.4</priority></url>
