@@ -741,14 +741,25 @@
       "archived": "files/archive/boards/adjustment/2024/AGENDA-May-14-2024-COA-1__03dba440.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-13-May-2025.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "extra",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-05-13",
+        "2025-04-29",
+        "2025-04-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Richards-Consent-Notice-of-Public-Hearing-13-May-2025__b7f57594.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-COA-July-15-2025.pdf": {
-      "status": "gone",
-      "checked": "2026-10-21",
-      "seen": ""
+      "kind": "minutes",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-07-15",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-July-15-2025__2e9679aa.pdf"
     },
     "https://nipissingtownship.com/wp-content/uploads/2018/11/OwnersConsentForm.pdf": {
       "kind": "extra",
@@ -1369,6 +1380,360 @@
         "2025-01-17"
       ],
       "archived": "files/archive/boards/adjustment/2025/Holley-Consent-Notice-of-Public-Hearing-4-February-2025__af817a1d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-1.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-11-18",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-2.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2027-12-31"
+      ],
+      "archived": "files/archive/boards/adjustment/2027/2026-39-Committee-of-Adjustment-2__2a3f6f84.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment.pdf": {
+      "kind": "extra",
+      "source": "media-index",
+      "checked": "2026-11-18",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-COA-December-17-2024.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20250219",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2024-12-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2024/Minutes-COA-December-17-2024__87421cff.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-COA-February-4-2025.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-02-04",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-February-4-2025__e423be6a.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/03/Public-Notice-website.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-04-08",
+        "2025-03-24"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Public-Notice-website__d6a6db3d.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-29-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-04-29",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-April-29-2025-COA__926a34bc.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/AGENDA-April-8-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-04-08",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-April-8-2025-COA__6f0f296f.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-13-May-2025-Final.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-05-13",
+        "2025-04-29",
+        "2025-04-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-13-May-2025-Final__e4c81a90.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-29-April-2025-Final.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-04-29",
+        "2025-04-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Marchant-Yemm-Jr.-Consent-Notice-of-Public-Hearing-29-April-2025-Final__3102b8cc.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/04/Richards-Consent-Notice-of-Public-Hearing-29-April-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-04-29",
+        "2025-04-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Richards-Consent-Notice-of-Public-Hearing-29-April-2025__a697f7f1.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/05/AGENDA-June-10-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-06-10",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-June-10-2025-COA__6b673039.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/05/AGENDA-May-13-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250523",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-05-13",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-May-13-2025-COA__28e5d211.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/05/Adams-Consent-Notice-of-Public-Hearing-June-10-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-06-10",
+        "2025-05-23"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Adams-Consent-Notice-of-Public-Hearing-June-10-2025__64965be8.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-COA-April-8-2025.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-04-08",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-April-8-2025__88157699.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-COA-May-13-2025-.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-05-13",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-May-13-2025-__fafd3990.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/AGENDA-July-15-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-07-15",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-July-15-2025-COA__40fb4e81.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/AGENDA-June-24-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-06-24",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-June-24-2025-COA__3a880d7a.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Notice-of-Public-Hearing-July-15-2025-1.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-07-15",
+        "2025-06-10",
+        "2025-06-27"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Adams-Consent-Notice-of-Public-Hearing-July-15-2025-1__ffa3a1ec.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Notice-of-Public-Hearing-June-24-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-06-24",
+        "2024-06-10",
+        "2025-05-23"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Adams-Consent-Notice-of-Public-Hearing-June-24-2025__a6d05652.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/Adams-Consent-Planning-Report-10-June-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-06-10"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Adams-Consent-Planning-Report-10-June-2025__b8188802.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/Aultman-Applications-Notice-of-Public-Hearing-15-July-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-07-15",
+        "2025-06-27"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Aultman-Applications-Notice-of-Public-Hearing-15-July-2025__16b61de3.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-COA-June-10-2025-1.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-06-10",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-June-10-2025-1__fefa9188.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/07/Attachment-2-Planning-Justification-Supplemental-Report.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-07-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Attachment-2-Planning-Justification-Supplemental-Report__4d3a18d4.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/07/Attachment-3-Adams-Consent-Planning-Report-15-July-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-07-15",
+        "2025-06-10",
+        "2025-07-07"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Attachment-3-Adams-Consent-Planning-Report-15-July-2025__88824915.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/07/Aultman-Consent-Planning-Report-15-July-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-07-15"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Aultman-Consent-Planning-Report-15-July-2025__60f8810b.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/08/AGENDA-September-2-2025-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-09-02",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/AGENDA-September-2-2025-COA__098414d5.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2025/08/Giesler-Consent-Notice-of-Public-Hearing-2-September-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-09-02",
+        "2025-08-18"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Giesler-Consent-Notice-of-Public-Hearing-2-September-2025__9dae2075.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/AGENDA-February-17-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2026-02-17",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-February-17-2026-COA__d6877ba2.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/AGENDA-February-3-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2026-02-03",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-February-3-2026-COA__a424c6d0.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Giesler-Consent-Planning-Report-2-September-2025.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2025-09-02"
+      ],
+      "archived": "files/archive/boards/adjustment/2025/Giesler-Consent-Planning-Report-2-September-2025__a0ec2dc6.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Magee-and-Cunningham-Consent-Planning-Report-17-February-2026__4a85bf6e.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "candidates": [
+        "2026-01-29",
+        "2026-02-17",
+        "2026-01-30"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026__fabbe7ed.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-COA-February-3-2026.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2026-02-03",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/Minutes-COA-February-3-2026__778dfc3c.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-COA-September-2-2025.pdf": {
+      "kind": "minutes",
+      "source": "wayback 20260518",
+      "checked": "2026-11-18",
+      "status": "ok",
+      "date": "2025-09-02",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2025/Minutes-COA-September-2-2025__6f62bccf.pdf"
     }
   },
   "meta": {

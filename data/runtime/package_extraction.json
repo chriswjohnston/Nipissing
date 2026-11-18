@@ -1976,5 +1976,49 @@
       "2026-38"
     ],
     "version": 2
+  },
+  "2026-11-17": {
+    "bylaws": {
+      "2026-39": {
+        "method": "ocr",
+        "pages": [
+          2,
+          2
+        ],
+        "pdf": "files/bylaws/2026-39.pdf",
+        "text": "files/bylaws/text/2026-39.txt"
+      },
+      "2026-40": {
+        "method": "ocr",
+        "pages": [
+          3,
+          3
+        ],
+        "pdf": "files/bylaws/2026-40.pdf",
+        "text": "files/bylaws/text/2026-40.txt"
+      },
+      "2026-41": {
+        "method": "ocr",
+        "pages": [
+          4,
+          4
+        ],
+        "pdf": "files/bylaws/2026-41.pdf",
+        "text": "files/bylaws/text/2026-41.txt"
+      }
+    },
+    "checked": "2026-11-18",
+    "missing": [
+      "2026-42"
+    ],
+    "package": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Agenda-Package-November-17-2026__569a57b3.pdf",
+    "status": "done",
+    "targets": [
+      "2026-39",
+      "2026-40",
+      "2026-41",
+      "2026-42"
+    ],
+    "version": 2
   }
 }

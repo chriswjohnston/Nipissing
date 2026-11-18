@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-18",
-  "site_pdfs_scanned": 542,
+  "site_pdfs_scanned": 547,
   "bylaws": {
     "1088": {
       "in_archive": true,
@@ -2898,12 +2898,8 @@
           "title": "2025-38 Appoint Committee of Adjustment",
           "uploaded": "2026-05-19",
           "in_media_library": true,
-          "found_on": [
-            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
-          ],
-          "link_texts": [
-            "2025-38 Appoint Committee of Adjustment"
-          ],
+          "found_on": [],
+          "link_texts": [],
           "numbers": [
             "2025-38"
           ]
@@ -3374,6 +3370,72 @@
     "2026-38": {
       "in_archive": true,
       "archive_title": "confirm the proceedings of Council at its meeting held on October 20, 2026",
+      "archive_pdf": null,
+      "archive_source": "minutes",
+      "site_files": []
+    },
+    "2026-39": {
+      "in_archive": true,
+      "archive_title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-2.pdf",
+      "archive_source": "minutes",
+      "site_files": [
+        {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-2.pdf",
+          "title": "2026-39 Committee of Adjustment",
+          "uploaded": "2026-11-18",
+          "in_media_library": true,
+          "found_on": [
+            "Committee of Adjustment | https://nipissingtownship.com/land-planning/committee-of-adjustment/"
+          ],
+          "link_texts": [
+            "2026-39 Appoint Committee of Adjustment"
+          ],
+          "numbers": [
+            "2026-39"
+          ]
+        },
+        {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-1.pdf",
+          "title": "2026-39 Committee of Adjustment",
+          "uploaded": "2026-11-18",
+          "in_media_library": true,
+          "found_on": [],
+          "link_texts": [],
+          "numbers": [
+            "2026-39"
+          ]
+        },
+        {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment.pdf",
+          "title": "2026-39 Committee of Adjustment",
+          "uploaded": "2026-11-18",
+          "in_media_library": true,
+          "found_on": [],
+          "link_texts": [],
+          "numbers": [
+            "2026-39"
+          ]
+        }
+      ]
+    },
+    "2026-40": {
+      "in_archive": true,
+      "archive_title": "appoint a Deputy Mayor",
+      "archive_pdf": null,
+      "archive_source": "minutes",
+      "site_files": []
+    },
+    "2026-41": {
+      "in_archive": true,
+      "archive_title": "appoint Fence Viewers for the Township of Nipissing",
+      "archive_pdf": null,
+      "archive_source": "minutes",
+      "site_files": []
+    },
+    "2026-42": {
+      "in_archive": true,
+      "archive_title": "confirm the proceedings of Council at its meeting held on November 17, 2026",
       "archive_pdf": null,
       "archive_source": "minutes",
       "site_files": []

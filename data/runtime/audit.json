@@ -2,14 +2,17 @@
   "checked": "2026-11-18",
   "bodies": {
     "council": {
-      "meetings": 213,
+      "meetings": 214,
       "totals": {
+        "no_summary": 15,
         "no_minutes": 8,
         "no_agenda": 16,
-        "no_video": 4,
-        "no_summary": 14
+        "no_video": 4
       },
       "issues": {
+        "2026-11-17 Regular": {
+          "no_summary": true
+        },
         "2025-10-21 Regular": {
           "no_minutes": true,
           "no_agenda": true,
@@ -123,38 +126,42 @@
       }
     },
     "adjustment": {
-      "meetings": 34,
+      "meetings": 36,
       "totals": {
-        "no_minutes": 9,
-        "no_agenda": 10,
-        "no_summary": 12
+        "no_summary": 19,
+        "no_minutes": 4,
+        "no_video": 2,
+        "no_agenda": 5
       },
       "issues": {
         "2025-09-02 Board": {
-          "no_minutes": true,
-          "no_agenda": true
+          "no_summary": true
         },
         "2025-07-15 Board": {
+          "no_summary": true
+        },
+        "2025-06-24 Board": {
           "no_minutes": true,
-          "no_agenda": true
+          "no_video": true
         },
         "2025-06-10 Board": {
-          "no_minutes": true,
-          "no_agenda": true
+          "no_summary": true
         },
         "2025-05-13 Board": {
+          "no_summary": true
+        },
+        "2025-04-29 Board": {
           "no_minutes": true,
-          "no_agenda": true
+          "no_video": true
         },
         "2025-04-08 Board": {
-          "no_minutes": true,
-          "no_agenda": true
+          "no_summary": true
         },
         "2025-02-04 Board": {
-          "no_minutes": true
+          "no_summary": true
         },
         "2024-12-17 Board": {
-          "no_minutes": true
+          "no_summary": true
         },
         "2024-09-17 Board": {
           "no_summary": true
@@ -418,8 +425,8 @@
     }
   },
   "bylaws": {
-    "total": 247,
-    "no_document": 134,
+    "total": 251,
+    "no_document": 135,
     "no_document_by_year": {
       "1088": [
         "1088"
@@ -569,7 +576,8 @@
         "2026-34",
         "2026-35",
         "2026-37",
-        "2026-38"
+        "2026-38",
+        "2026-42"
       ]
     }
   }
