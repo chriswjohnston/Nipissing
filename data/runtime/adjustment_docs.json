@@ -1857,6 +1857,19 @@
       "checked": "2026-11-19",
       "status": "undated",
       "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/AGENDA-December-1-2026-COA.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "date": "2026-12-01",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-December-1-2026-COA__0c8ecb7c.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-25-2026-Museum-Board.pdf": {
+      "status": "not-coa",
+      "checked": "2026-11-19"
     }
   },
   "meta": {

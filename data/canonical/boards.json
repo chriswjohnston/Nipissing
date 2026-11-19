@@ -6,6 +6,37 @@
       "id": "adjustment",
       "meetings": [
         {
+          "date": "2026-12-01",
+          "display_date": "Dec 1, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Committee of Adjustment",
+          "board_id": "adjustment",
+          "board_name": "Committee of Adjustment",
+          "body": "Committee of Adjustment",
+          "body_id": "adjustment",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/AGENDA-December-1-2026-COA.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "extra_docs": [
+            {
+              "label": "Public Notice: CAO PUBLIC NOTICE A2026 02",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/CAO-PUBLIC-NOTICE-A2026-02.pdf",
+              "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-02__85304e29.pdf"
+            }
+          ],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "agenda_archived": "files/archive/boards/adjustment/2026/AGENDA-December-1-2026-COA__0c8ecb7c.pdf",
+          "all_agendas": true,
+          "video_url": null
+        },
+        {
           "date": "2026-10-06",
           "display_date": "Oct 6, 2026",
           "year": 2026,
@@ -271,12 +302,12 @@
               "archived": "files/archive/boards/adjustment/2026/A2026-01-Decision-Morin-1__47f0aa13.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version)",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -3922,6 +3953,30 @@
       "id": "museum",
       "name": "Museum Board",
       "meetings": [
+        {
+          "date": "2026-11-25",
+          "display_date": "Nov 25, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Museum Board",
+          "board_id": "museum",
+          "board_name": "Museum Board",
+          "body": "Museum Board",
+          "body_id": "museum",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-25-2026-Museum-Board.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-November-25-2026-Museum-Board__581d5968.pdf"
+        },
         {
           "date": "2026-11-04",
           "display_date": "Nov 4, 2026",

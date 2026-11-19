@@ -123,7 +123,7 @@
       }
     },
     "adjustment": {
-      "meetings": 36,
+      "meetings": 37,
       "totals": {
         "duplicate_docs": 1,
         "no_minutes": 4,
@@ -236,7 +236,7 @@
       }
     },
     "museum": {
-      "meetings": 18,
+      "meetings": 19,
       "totals": {},
       "issues": {}
     },
