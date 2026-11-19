@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "site_pdfs_scanned": 547,
   "bylaws": {
     "1088": {
@@ -3422,14 +3422,14 @@
     "2026-40": {
       "in_archive": true,
       "archive_title": "appoint a Deputy Mayor",
-      "archive_pdf": null,
+      "archive_pdf": "files/bylaws/2026-40.pdf",
       "archive_source": "minutes",
       "site_files": []
     },
     "2026-41": {
       "in_archive": true,
       "archive_title": "appoint Fence Viewers for the Township of Nipissing",
-      "archive_pdf": null,
+      "archive_pdf": "files/bylaws/2026-41.pdf",
       "archive_source": "minutes",
       "site_files": []
     },

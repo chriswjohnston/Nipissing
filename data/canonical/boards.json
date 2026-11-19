@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "source": "board pages",
   "boards": [
     {
@@ -162,11 +162,6 @@
               "archived": "files/archive/boards/adjustment/2026/C2026-04-Michael-Public-Notice-1__6bc0589d.pdf"
             },
             {
-              "label": "Public Notice: CAO PUBLIC NOTICE A2026 01",
-              "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01-1.pdf",
-              "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01-1__1b161637.pdf"
-            },
-            {
               "label": "Planning Report: Michael Consent Planning Report 14 July 2026 002",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/Michael-Consent-Planning-Report-14-July-2026-002.pdf",
               "archived": "files/archive/boards/adjustment/2026/Michael-Consent-Planning-Report-14-July-2026-002__32a3579b.pdf"
@@ -277,6 +272,11 @@
             },
             {
               "label": "CAO PUBLIC NOTICE A2026 01",
+              "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
+              "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
+            },
+            {
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -1375,6 +1375,14 @@
         {
           "label": "2026-39 Appoint Committee of Adjustment",
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2026-39-Committee-of-Adjustment-2.pdf"
+        },
+        {
+          "label": "Public Notice: CAO PUBLIC NOTICE A2026 01",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01-1.pdf"
+        },
+        {
+          "label": "CAO PUBLIC NOTICE A2026 01",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01-1.pdf"
         }
       ],
       "name": "Committee of Adjustment",
@@ -3904,7 +3912,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-18",
+      "members_checked": "2026-11-19",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"

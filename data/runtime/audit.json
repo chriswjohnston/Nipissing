@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "bodies": {
     "council": {
       "meetings": 214,
@@ -128,12 +128,21 @@
     "adjustment": {
       "meetings": 36,
       "totals": {
+        "duplicate_docs": 1,
         "no_summary": 19,
         "no_minutes": 4,
         "no_video": 2,
         "no_agenda": 5
       },
       "issues": {
+        "2026-02-17 Board": {
+          "duplicate_docs": {
+            "count": 1,
+            "files": [
+              "township:cao-public-notice-a2026-01.pdf"
+            ]
+          }
+        },
         "2025-09-02 Board": {
           "no_summary": true
         },

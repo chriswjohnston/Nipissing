@@ -1734,10 +1734,133 @@
       "date": "2025-09-02",
       "date_source": "filename+pdf",
       "archived": "files/archive/boards/adjustment/2025/Minutes-COA-September-2-2025__6f62bccf.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Warman-Consent-Notice-of-Public-Hearing-16-January-2026.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-01-16",
+        "2026-02-03"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Warman-Consent-Notice-of-Public-Hearing-16-January-2026__0556791b.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/02/Warman-Consent-Planning-Report-3-February-2026.pdf": {
+      "kind": "extra",
+      "source": "wayback 20260518",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-02-03"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Warman-Consent-Planning-Report-3-February-2026__b3f28e79.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/A2026-01-Decision-Morin-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/CAO-PUBLIC-NOTICE-A2026-01-Morin-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01-Morin-1__35d46db1.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-01-29",
+        "2026-02-17",
+        "2026-01-30"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/Magee-and-Cunningham-Notice-of-Public-Hearing-29-January-2026-1__a3ad0eae.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/05/Signed-Decision-C2026-02-Magee-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/C2026-04-Michael-Public-Notice-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/C2026-04-Michael-Public-Notice.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01-1.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01-1__1b161637.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf": {
+      "kind": "extra",
+      "source": "live (unlinked)",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2026-02-17"
+      ],
+      "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2018/08/Application-Minor-Variance-11-19-14.pdf": {
+      "kind": "extra",
+      "source": "wayback 20210514",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2023/05/Notice-of-Public-Hearing-Haufe-Consent-Final.pdf": {
+      "kind": "extra",
+      "source": "wayback 20240706",
+      "checked": "2026-11-19",
+      "status": "ok",
+      "candidates": [
+        "2023-05-16",
+        "2023-05-01"
+      ],
+      "archived": "files/archive/boards/adjustment/2023/Notice-of-Public-Hearing-Haufe-Consent-Final__c6cd88df.pdf"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/04/Consent-Procedures.pdf": {
+      "kind": "extra",
+      "source": "wayback 20240706",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2024/08/Application-Minor-Variance-August-2024.pdf": {
+      "kind": "extra",
+      "source": "wayback 20250926",
+      "checked": "2026-11-19",
+      "status": "undated",
+      "candidates": []
     }
   },
   "meta": {
-    "wayback_checked": "2026-10-21",
+    "wayback_checked": "2026-11-19",
     "wayback_pages_checked": "2026-11-15",
     "snapshot_queue": [],
     "snapshots_seen": [
