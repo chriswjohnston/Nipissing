@@ -4,15 +4,12 @@
     "council": {
       "meetings": 214,
       "totals": {
-        "no_summary": 15,
         "no_minutes": 8,
         "no_agenda": 16,
-        "no_video": 4
+        "no_video": 4,
+        "no_summary": 14
       },
       "issues": {
-        "2026-11-17 Regular": {
-          "no_summary": true
-        },
         "2025-10-21 Regular": {
           "no_minutes": true,
           "no_agenda": true,
@@ -129,7 +126,6 @@
       "meetings": 36,
       "totals": {
         "duplicate_docs": 1,
-        "no_summary": 19,
         "no_minutes": 4,
         "no_video": 2,
         "no_agenda": 5
@@ -143,78 +139,23 @@
             ]
           }
         },
-        "2025-09-02 Board": {
-          "no_summary": true
-        },
-        "2025-07-15 Board": {
-          "no_summary": true
-        },
         "2025-06-24 Board": {
           "no_minutes": true,
           "no_video": true
-        },
-        "2025-06-10 Board": {
-          "no_summary": true
-        },
-        "2025-05-13 Board": {
-          "no_summary": true
         },
         "2025-04-29 Board": {
           "no_minutes": true,
           "no_video": true
         },
-        "2025-04-08 Board": {
-          "no_summary": true
-        },
-        "2025-02-04 Board": {
-          "no_summary": true
-        },
-        "2024-12-17 Board": {
-          "no_summary": true
-        },
-        "2024-09-17 Board": {
-          "no_summary": true
-        },
-        "2024-07-16 Board": {
-          "no_summary": true
-        },
-        "2024-05-14 Board": {
-          "no_summary": true
-        },
-        "2024-03-19 Board": {
-          "no_summary": true
-        },
-        "2024-02-06 Board": {
-          "no_summary": true
-        },
-        "2023-12-19 Board": {
-          "no_summary": true
-        },
-        "2023-09-19 Board": {
-          "no_summary": true
-        },
         "2023-05-16 Board": {
-          "no_agenda": true,
-          "no_summary": true
-        },
-        "2022-12-20 Board": {
-          "no_summary": true
+          "no_agenda": true
         },
         "2022-12-06 Board": {
           "no_minutes": true,
           "no_agenda": true
         },
-        "2022-10-04 Board": {
-          "no_summary": true
-        },
-        "2022-08-16 Board": {
-          "no_summary": true
-        },
         "2022-07-12 Board": {
           "no_minutes": true
-        },
-        "2022-03-29 Board": {
-          "no_summary": true
         },
         "2021-11-16 Board": {
           "no_agenda": true
@@ -317,101 +258,8 @@
     },
     "psdssab": {
       "meetings": 42,
-      "totals": {
-        "no_summary": 30
-      },
-      "issues": {
-        "2025-09-11 Board": {
-          "no_summary": true
-        },
-        "2025-08-14 Board": {
-          "no_summary": true
-        },
-        "2025-06-17 Special": {
-          "no_summary": true
-        },
-        "2025-06-12 Board": {
-          "no_summary": true
-        },
-        "2025-05-08 Board": {
-          "no_summary": true
-        },
-        "2025-04-10 Board": {
-          "no_summary": true
-        },
-        "2025-02-13 Board": {
-          "no_summary": true
-        },
-        "2025-01-09 Board": {
-          "no_summary": true
-        },
-        "2024-12-12 Board": {
-          "no_summary": true
-        },
-        "2024-11-14 Board": {
-          "no_summary": true
-        },
-        "2024-10-10 Board": {
-          "no_summary": true
-        },
-        "2024-09-12 Board": {
-          "no_summary": true
-        },
-        "2024-06-13 Board": {
-          "no_summary": true
-        },
-        "2024-05-09 Board": {
-          "no_summary": true
-        },
-        "2024-04-11 Board": {
-          "no_summary": true
-        },
-        "2024-03-14 Board": {
-          "no_summary": true
-        },
-        "2024-02-08 Board": {
-          "no_summary": true
-        },
-        "2024-01-11 Board": {
-          "no_summary": true
-        },
-        "2023-12-08 Board": {
-          "no_summary": true
-        },
-        "2023-11-09 Board": {
-          "no_summary": true
-        },
-        "2023-10-12 Board": {
-          "no_summary": true
-        },
-        "2023-09-14 Board": {
-          "no_summary": true
-        },
-        "2023-07-25 Special": {
-          "no_summary": true
-        },
-        "2023-07-13 Board": {
-          "no_summary": true
-        },
-        "2023-06-08 Board": {
-          "no_summary": true
-        },
-        "2023-05-11 Board": {
-          "no_summary": true
-        },
-        "2023-04-13 Board": {
-          "no_summary": true
-        },
-        "2023-03-09 Board": {
-          "no_summary": true
-        },
-        "2023-02-09 Board": {
-          "no_summary": true
-        },
-        "2023-01-12 Board": {
-          "no_summary": true
-        }
-      }
+      "totals": {},
+      "issues": {}
     },
     "recreation": {
       "meetings": 32,
