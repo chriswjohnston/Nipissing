@@ -27,10 +27,14 @@ What this does:
   library replaces in place (same Drive file, new content) keeps its earlier
   version as an extra document
 
-Dates: filenames are inconsistent ("04 Agenda April , 2026.pdf" has no day),
-so the date comes from the filename when it holds a full date, otherwise from
-the first page of the PDF ("Agenda for Monday, Sept 21, 2026"). A file whose
-date can't be found is logged and skipped; add it to MANUAL_DATES.
+Dates: filenames are inconsistent ("04 Agenda April , 2026.pdf" has no day,
+"signed Octminutes.pdf" has no date at all), so the date comes from the
+filename when it holds a full date, otherwise from the top of the first page
+("Agenda for Monday, Sept 21, 2026"; "Minutes for Monday Oct 19" with the year
+worked out from the weekday). Scanned PDFs with no text layer are OCR'd. The
+folder, not the filename, decides agenda vs minutes. A file whose date still
+can't be found is logged, listed on the site audit, and retried (it is never
+dropped); add it to MANUAL_DATES to settle it by hand.
 
 State: data/runtime/library_drive.json remembers every Drive file version
 already processed, so a normal run makes two folder listings and downloads
@@ -54,6 +58,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from archive import INREPO_MAX_BYTES, store_bytes_in_repo, store_bytes_to_release
+import package_extract  # OCR helpers (Tesseract)
 
 ROOT = Path(__file__).resolve().parents[1]
 BOARDS_FILE = ROOT / "data" / "canonical" / "boards.json"
@@ -80,7 +85,10 @@ DEFAULT_FOLDERS = {
 }
 
 # Drive file id -> "YYYY-MM-DD", for files whose date can't be detected.
-MANUAL_DATES: Dict[str, str] = {}
+MANUAL_DATES: Dict[str, str] = {
+    # "signed Octminutes.pdf" - scanned, signed Oct 19, 2026 board minutes.
+    "1tW7P0mAu3WLRnPCcObawew9F4HSDr38N": "2026-10-19",
+}
 
 # Drive file ids that are not meeting documents and should be ignored.
 IGNORE_FILE_IDS: set = set()
@@ -174,13 +182,12 @@ def drive_view_url(file_id: str) -> str:
 
 
 def classify(name: str, folder_kind: str) -> str:
-    n = (name or "").lower()
-    if "package" in n:
-        return "package"
-    if "minute" in n:
+    """The folder decides the kind; the filename only separates agenda
+    packages from plain agendas in the Agendas folder."""
+    if folder_kind == "minutes":
         return "minutes"
-    if "agenda" in n:
-        return "agenda"
+    if "package" in (name or "").lower():
+        return "package"
     return folder_kind
 
 
@@ -335,14 +342,68 @@ def download(f: Dict[str, Any]) -> Optional[bytes]:
     return data
 
 
-def first_page_text(data: bytes) -> str:
+def first_page_text(data: bytes) -> Tuple[str, str]:
+    """(text of page 1, method). Text layer first; OCR for scans."""
     try:
         import pymupdf as fitz  # pymupdf
         doc = fitz.open(stream=data, filetype="pdf")
-        return doc[0].get_text() if len(doc) else ""
+        if not len(doc):
+            return "", "none"
+        text = doc[0].get_text()
+        if len(text.strip()) >= 40:
+            return text, "text"
+        if not package_extract.have_tesseract():
+            return "", "none"
+        png = doc[0].get_pixmap(dpi=200, colorspace=fitz.csGRAY).tobytes("png")
+        return package_extract.ocr_png(png), "ocr"
     except Exception as e:
         print(f"  pdf text failed: {e}")
-        return ""
+        return "", "none"
+
+
+WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
+# "Monday Oct 19" / "Oct 19th" - a day and month with no year after it.
+LOOSE_RE = re.compile(
+    r"(?:\b(mon|tue|wed|thu|fri|sat|sun)[a-z]*\.?,?\s+)?"
+    r"\b(january|february|march|april|may|june|july|august|september|october|"
+    r"november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\.?"
+    r"\s+(\d{1,2})(?:st|nd|rd|th)?\b(?!\s*,?\s*\d{4})",
+    re.IGNORECASE,
+)
+
+
+def find_header_date(text: str, ref: Optional[date]) -> Optional[date]:
+    """Date from a title line that has no year ("Minutes for Monday Oct 19").
+    The year is the one, within a year either side of `ref` (when the file was
+    posted), whose weekday matches the weekday in the title; with no weekday,
+    the nearest date on or before `ref`."""
+    ref = ref or TODAY
+    for m in LOOSE_RE.finditer(text or ""):
+        wd, mon, day = m.group(1), MONTHS[m.group(2).lower()[:3]], int(m.group(3))
+        cands = []
+        for y in (ref.year - 1, ref.year, ref.year + 1):
+            try:
+                c = date(y, mon, day)
+            except ValueError:
+                continue
+            if wd and c.weekday() != WEEKDAYS[wd.lower()[:3]]:
+                continue
+            if plausible(c):
+                cands.append(c)
+        if wd and cands:
+            return min(cands, key=lambda c: abs((c - ref).days))
+        before = [c for c in cands if c <= ref]
+        if not wd and before:
+            return max(before)
+    return None
+
+
+def find_page_date(text: str, ref: Optional[date]) -> Optional[date]:
+    """Meeting date from the first page. The title is read before the body:
+    minutes mention the previous meeting's full date ("Sept 21, 2026") further
+    down, which must not win over a year-less title ("Monday Oct 19")."""
+    head = text[:250]
+    return find_date(head) or find_header_date(head, ref) or find_date(text[:3000])
 
 
 def version_of(f: Dict[str, Any]) -> str:
@@ -359,18 +420,28 @@ def wanted(f: Dict[str, Any]) -> bool:
     return mime == PDF_MIME or mime in GDOC_MIMES or name.lower().endswith(".pdf")
 
 
+def posted_on(f: Dict[str, Any]) -> Optional[date]:
+    for k in ("createdTime", "modifiedTime"):
+        try:
+            return date.fromisoformat((f.get(k) or "")[:10])
+        except ValueError:
+            continue
+    return None
+
+
 def resolve_date(f: Dict[str, Any], data: bytes) -> Tuple[Optional[date], str]:
     if f["id"] in MANUAL_DATES:
         return date.fromisoformat(MANUAL_DATES[f["id"]]), "manual"
     from_name = find_date(f.get("name", ""))
-    from_pdf = find_date(first_page_text(data)[:3000])
+    text, method = first_page_text(data)
+    from_pdf = find_page_date(text, posted_on(f))
     if from_name and from_pdf and from_name != from_pdf:
         print(f"  ! date mismatch for {f['name']}: filename {from_name}, "
               f"PDF {from_pdf} — using filename")
     if from_name:
         return from_name, "filename"
     if from_pdf:
-        return from_pdf, "pdf"
+        return from_pdf, "ocr" if method == "ocr" else "pdf"
     return None, "none"
 
 
@@ -406,7 +477,10 @@ def sync_drive(folders: Dict[str, str], state: Dict[str, Any]) -> int:
             entry = files_state.get(f["id"])
             if entry and entry.get("version") == ver:
                 done = bool(entry.get("archived"))
-                undated = entry.get("date") is None and f["id"] not in MANUAL_DATES
+                # Undated files are retried until OCR has had a go (the first
+                # runs predated OCR); after that they wait for MANUAL_DATES.
+                undated = (entry.get("date") is None and f["id"] not in MANUAL_DATES
+                           and (entry.get("ocr_tried") or not package_extract.have_tesseract()))
                 if done or undated:
                     # Already handled (or waiting on a MANUAL_DATES entry).
                     entry["last_seen"] = TODAY.isoformat()
@@ -422,8 +496,11 @@ def sync_drive(folders: Dict[str, str], state: Dict[str, Any]) -> int:
             if dt is None:
                 print(f"  ! no date found for {f['name']} ({f['id']}) — add to MANUAL_DATES")
                 files_state[f["id"]] = {
-                    "name": f.get("name"), "kind": kind, "version": ver, "date": None,
-                    "archived": None, "last_seen": TODAY.isoformat(),
+                    "name": f.get("name"), "kind": kind, "folder": folder_kind,
+                    "version": ver, "date": None, "archived": None,
+                    "created": f.get("createdTime"), "modified": f.get("modifiedTime"),
+                    "ocr_tried": package_extract.have_tesseract(),
+                    "last_seen": TODAY.isoformat(),
                 }
                 changed += 1
                 continue
