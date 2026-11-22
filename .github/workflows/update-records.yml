@@ -49,9 +49,13 @@ jobs:
             township_up=0
             echo "::warning title=Township website unreachable::Skipping update_meetings, update_bylaws, update_adjustment and update_boards this run; stored data kept. They resume automatically when the site is back."
           fi
+          # generate_summaries runs twice: early for council minutes, and again
+          # after the board updaters so a board's new minutes (library, health
+          # unit, ...) are summarized the same day, not on the next run. The
+          # second pass does nothing when every meeting already has a summary.
           for s in update_meetings import_documents financials financial_series recover_documents generate_summaries update_bylaws package_index staff_reports consolidate_bylaws \
                    update_adjustment update_boards update_library update_healthunit \
-                   update_psdssab attach_videos doc_tidy archive_plans check_freshness audit_site build_sitemap; do
+                   update_psdssab generate_summaries attach_videos doc_tidy archive_plans check_freshness audit_site build_sitemap; do
             case "$s" in
               update_meetings|financials|update_bylaws|update_adjustment|update_boards)
                 if [ "$township_up" = 0 ]; then echo "skipped $s (township site down)"; continue; fi ;;
