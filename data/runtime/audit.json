@@ -233,13 +233,9 @@
     "library": {
       "meetings": 21,
       "totals": {
-        "no_summary": 1,
         "no_minutes": 1
       },
       "issues": {
-        "2026-10-19 Board": {
-          "no_summary": true
-        },
         "2026-09-21 Board": {
           "no_minutes": true
         }
