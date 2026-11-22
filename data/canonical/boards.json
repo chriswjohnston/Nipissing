@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-22",
   "source": "board pages",
   "boards": [
     {
@@ -302,12 +302,12 @@
               "archived": "files/archive/boards/adjustment/2026/A2026-01-Decision-Morin-1__47f0aa13.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version)",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -3567,7 +3567,7 @@
           "source_kind": "board",
           "external": true,
           "agenda_url": null,
-          "minutes_url": null,
+          "minutes_url": "https://drive.google.com/file/d/1tW7P0mAu3WLRnPCcObawew9F4HSDr38N/view",
           "package_url": "https://drive.google.com/file/d/1JbrCAe8fWV1tDa59TGCAltJTrlivNvwW/view",
           "extra_docs": [],
           "summary": null,
@@ -3584,8 +3584,15 @@
               "name": "10 Agenda Package Oct 19, 2026.pdf",
               "posted": "2026-10-19T16:27:46.269Z",
               "modified": "2026-10-19T14:36:38.501Z"
+            },
+            "minutes": {
+              "id": "1tW7P0mAu3WLRnPCcObawew9F4HSDr38N",
+              "name": "signed Octminutes.pdf",
+              "posted": "2026-11-12T17:51:54.462Z",
+              "modified": "2026-10-27T19:59:37.878Z"
             }
-          }
+          },
+          "minutes_archived": "files/archive/boards/library/2026/signed_Octminutes__1tW7P0mAu3_88bd2341.pdf"
         },
         {
           "date": "2026-09-21",
@@ -3943,7 +3950,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-21",
+      "members_checked": "2026-11-22",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
