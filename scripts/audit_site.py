@@ -11,6 +11,8 @@ Read-only. Looks for, per body:
   * extra documents that repeat the meeting's own agenda/minutes/package;
   * archived copies referenced but missing from the repo;
   * meetings without a video, for bodies that stream;
+for the library: Drive files whose meeting date couldn't be worked out
+(they are kept and retried; add them to MANUAL_DATES in update_library.py);
 and for by-laws: no document at all.
 
 Writes data/runtime/audit.json and prints a summary.
@@ -108,6 +110,17 @@ def main() -> None:
             "no_minutes", "no_agenda", "no_summary", "no_video", "duplicate_docs",
             "extra_repeats_primary", "archive_file_missing")))
 
+    lib_state = ROOT / "data" / "runtime" / "library_drive.json"
+    undated = []
+    if lib_state.exists():
+        files = json.loads(lib_state.read_text(encoding="utf-8")).get("files", {})
+        undated = [{"id": fid, "name": e.get("name"), "folder": e.get("folder")}
+                   for fid, e in files.items() if not e.get("date")]
+    report["library_undated_files"] = undated
+    if undated:
+        print(f"\nlibrary: {len(undated)} Drive file(s) with no meeting date: "
+              + ", ".join(f"{u['name']} ({u['id']})" for u in undated))
+
     bylaws = load("bylaws.json")["bylaws"]
     nodoc = [b["number"] for b in bylaws if not (b.get("pdf_url") or b.get("extracted_pdf"))]
     by_year = defaultdict(list)
@@ -136,6 +149,11 @@ def write_step_summary(report: Dict[str, Any]) -> None:
         t = v["totals"]
         lines.append(f"| {body} | {v['meetings']} | " + " | ".join(str(t.get(c[0], 0) or "") for c in cols) + " |")
     b = report["bylaws"]
+    und = report.get("library_undated_files") or []
+    if und:
+        lines += ["", f"**Library: {len(und)} Drive file(s) with no meeting date** "
+                  "(add to `MANUAL_DATES` in `update_library.py`):", ""]
+        lines += [f"- {u['name']} (`{u['id']}`)" for u in und]
     lines += ["", f"By-laws: {b['total']} total, {b['no_document']} with no document.",
               "", "Details: `data/runtime/audit.json`"]
     with open(path, "a", encoding="utf-8") as f:
