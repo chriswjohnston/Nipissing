@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-22",
+  "checked": "2026-11-23",
   "bodies": {
     "adjustment": {
       "last_meeting": "2026-10-06",
@@ -11,7 +11,7 @@
     "cemetery": {
       "last_meeting": "2026-05-20",
       "next_meeting": null,
-      "days_quiet": 186,
+      "days_quiet": 187,
       "limit_days": 400,
       "stale": false
     },
@@ -32,14 +32,14 @@
     "healthunit-finance": {
       "last_meeting": "2026-10-07",
       "next_meeting": null,
-      "days_quiet": 46,
+      "days_quiet": 47,
       "limit_days": 365,
       "stale": false
     },
     "healthunit-personnel": {
       "last_meeting": "2026-06-24",
       "next_meeting": null,
-      "days_quiet": 151,
+      "days_quiet": 152,
       "limit_days": 365,
       "stale": false
     },
@@ -67,14 +67,14 @@
     "psdssab": {
       "last_meeting": "2026-10-08",
       "next_meeting": null,
-      "days_quiet": 45,
+      "days_quiet": 46,
       "limit_days": 90,
       "stale": false
     },
     "recreation": {
       "last_meeting": "2026-10-05",
       "next_meeting": null,
-      "days_quiet": 48,
+      "days_quiet": 49,
       "limit_days": 90,
       "stale": false
     }

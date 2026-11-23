@@ -1,6 +1,6 @@
 {
-  "checked": "2026-11-22",
-  "site_pdfs_scanned": 550,
+  "checked": "2026-11-23",
+  "site_pdfs_scanned": 553,
   "bylaws": {
     "1088": {
       "in_archive": true,
@@ -689,13 +689,13 @@
     "2021-50": {
       "in_archive": true,
       "archive_title": "Parking By-Law",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-50.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/11/2021-50-Parking-By-Law-Consolidated.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-50.pdf",
-          "title": "2021-50",
-          "uploaded": "2026-07-10",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2021-50-Parking-By-Law-Consolidated.pdf",
+          "title": "2021-50 Parking By-Law Consolidated",
+          "uploaded": "2026-11-22",
           "in_media_library": true,
           "found_on": [
             "By-Laws & Enforcement | https://nipissingtownship.com/by-law/by-laws/"
@@ -703,6 +703,17 @@
           "link_texts": [
             "2021-50"
           ],
+          "numbers": [
+            "2021-50"
+          ]
+        },
+        {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2021-50.pdf",
+          "title": "2021-50",
+          "uploaded": "2026-07-10",
+          "in_media_library": true,
+          "found_on": [],
+          "link_texts": [],
           "numbers": [
             "2021-50"
           ]
@@ -1023,13 +1034,13 @@
     "2022-34": {
       "in_archive": true,
       "archive_title": "Procedural",
-      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-34.pdf",
+      "archive_pdf": "https://nipissingtownship.com/wp-content/uploads/2026/11/2022-34-Procedural-By-Law-Consolidated.pdf",
       "archive_source": "bylaws_page",
       "site_files": [
         {
-          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-34.pdf",
-          "title": "2022-34",
-          "uploaded": "2026-07-10",
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2022-34-Procedural-By-Law-Consolidated.pdf",
+          "title": "2022-34 Procedural By-Law Consolidated",
+          "uploaded": "2026-11-23",
           "in_media_library": true,
           "found_on": [
             "By-Laws & Enforcement | https://nipissingtownship.com/by-law/by-laws/"
@@ -1037,6 +1048,17 @@
           "link_texts": [
             "2022-34"
           ],
+          "numbers": [
+            "2022-34"
+          ]
+        },
+        {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/07/2022-34.pdf",
+          "title": "2022-34",
+          "uploaded": "2026-07-10",
+          "in_media_library": true,
+          "found_on": [],
+          "link_texts": [],
           "numbers": [
             "2022-34"
           ]

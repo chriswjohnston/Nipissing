@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-22",
+  "checked": "2026-11-23",
   "bodies": {
     "council": {
       "meetings": 214,
@@ -264,8 +264,14 @@
     },
     "psdssab": {
       "meetings": 42,
-      "totals": {},
-      "issues": {}
+      "totals": {
+        "no_minutes": 1
+      },
+      "issues": {
+        "2026-10-08 Board": {
+          "no_minutes": true
+        }
+      }
     },
     "recreation": {
       "meetings": 32,

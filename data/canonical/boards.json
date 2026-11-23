@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-23",
   "source": "board pages",
   "boards": [
     {
@@ -302,12 +302,12 @@
               "archived": "files/archive/boards/adjustment/2026/A2026-01-Decision-Morin-1__47f0aa13.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -3950,7 +3950,7 @@
           "municipality": "Municipality of Powassan"
         }
       ],
-      "members_checked": "2026-11-22",
+      "members_checked": "2026-11-23",
       "drive_folders": {
         "agenda": "https://drive.google.com/drive/folders/1Z6dnutXqtE9px7DQC1Jt6zG4O0M1cK4n",
         "minutes": "https://drive.google.com/drive/folders/1ZGer-dtqzuCqskaGW_sbzwlD-A4cka2E"
@@ -3973,7 +3973,7 @@
           "source_kind": "board",
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-25-2026-Museum-Board.pdf",
           "minutes_url": null,
-          "package_url": null,
+          "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Museum-Package-Nov-25.pdf",
           "extra_docs": [],
           "summary": null,
           "events": [],
@@ -3982,7 +3982,8 @@
           "postponed": false,
           "is_future": true,
           "video_url": null,
-          "agenda_archived": "files/archive/boards/museum/2026/Agenda-November-25-2026-Museum-Board__581d5968.pdf"
+          "agenda_archived": "files/archive/boards/museum/2026/Agenda-November-25-2026-Museum-Board__581d5968.pdf",
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Package-Nov-25__50aee592.pdf"
         },
         {
           "date": "2026-11-04",
@@ -6281,7 +6282,7 @@
           "date": "2026-11-23",
           "display_date": "Nov 23, 2026",
           "year": 2026,
-          "is_future": true,
+          "is_future": false,
           "cancelled": true,
           "rescheduled": false,
           "postponed": false,
