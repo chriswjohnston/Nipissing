@@ -73,8 +73,8 @@
     },
     "recreation": {
       "last_meeting": "2026-10-05",
-      "next_meeting": null,
-      "days_quiet": 50,
+      "next_meeting": "2026-12-14",
+      "days_quiet": 0,
       "limit_days": 90,
       "stale": false
     }

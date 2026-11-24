@@ -302,12 +302,12 @@
               "archived": "files/archive/boards/adjustment/2026/A2026-01-Decision-Morin-1__47f0aa13.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -6278,6 +6278,30 @@
       "id": "recreation",
       "name": "Recreation Committee",
       "meetings": [
+        {
+          "date": "2026-12-14",
+          "display_date": "Dec 14, 2026",
+          "year": 2026,
+          "meeting_type": "Board",
+          "title": "Recreation Committee",
+          "board_id": "recreation",
+          "board_name": "Recreation Committee",
+          "body": "Recreation Committee",
+          "body_id": "recreation",
+          "source_kind": "board",
+          "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Recreation-Agenda-December-14-2026.pdf",
+          "minutes_url": null,
+          "package_url": null,
+          "extra_docs": [],
+          "summary": null,
+          "events": [],
+          "cancelled": false,
+          "rescheduled": false,
+          "postponed": false,
+          "is_future": true,
+          "video_url": null,
+          "agenda_archived": "files/archive/boards/recreation/2026/Recreation-Agenda-December-14-2026__ab3ad94d.pdf"
+        },
         {
           "date": "2026-11-23",
           "display_date": "Nov 23, 2026",
