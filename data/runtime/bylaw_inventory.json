@@ -1,6 +1,6 @@
 {
-  "checked": "2026-11-23",
-  "site_pdfs_scanned": 553,
+  "checked": "2026-11-24",
+  "site_pdfs_scanned": 555,
   "bylaws": {
     "1088": {
       "in_archive": true,
@@ -1038,6 +1038,21 @@
       "archive_source": "bylaws_page",
       "site_files": [
         {
+          "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2022-34-Procedural-By-Law-Consolidated-1.pdf",
+          "title": "2022-34 Procedural By-Law Consolidated",
+          "uploaded": "2026-11-24",
+          "in_media_library": true,
+          "found_on": [
+            "Mayor & Councillors | https://nipissingtownship.com/council/mayor-councillors/"
+          ],
+          "link_texts": [
+            "Procedural By-Law"
+          ],
+          "numbers": [
+            "2022-34"
+          ]
+        },
+        {
           "url": "https://nipissingtownship.com/wp-content/uploads/2026/11/2022-34-Procedural-By-Law-Consolidated.pdf",
           "title": "2022-34 Procedural By-Law Consolidated",
           "uploaded": "2026-11-23",
@@ -1068,12 +1083,8 @@
           "title": "2022-34 Procedural By-Law Consolidated",
           "uploaded": "2026-06-17",
           "in_media_library": true,
-          "found_on": [
-            "Mayor & Councillors | https://nipissingtownship.com/council/mayor-councillors/"
-          ],
-          "link_texts": [
-            "Procedural By-Law"
-          ],
+          "found_on": [],
+          "link_texts": [],
           "numbers": [
             "2022-34"
           ]
