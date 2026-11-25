@@ -1878,6 +1878,15 @@
     "https://nipissingtownship.com/wp-content/uploads/2026/11/Recreation-Agenda-December-14-2026.pdf": {
       "status": "not-coa",
       "checked": "2026-11-24"
+    },
+    "https://nipissingtownship.com/wp-content/uploads/2026/11/AGENDA-December-1-2026-COA-1.pdf": {
+      "kind": "agenda",
+      "source": "media-index",
+      "checked": "2026-11-25",
+      "status": "ok",
+      "date": "2026-12-01",
+      "date_source": "filename+pdf",
+      "archived": "files/archive/boards/adjustment/2026/AGENDA-December-1-2026-COA-1__3b83110a.pdf"
     }
   },
   "meta": {
