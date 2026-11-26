@@ -1,15 +1,18 @@
 {
-  "checked": "2026-11-25",
+  "checked": "2026-11-26",
   "bodies": {
     "council": {
       "meetings": 214,
       "totals": {
+        "no_video": 5,
         "no_minutes": 8,
         "no_agenda": 16,
-        "no_video": 4,
         "no_summary": 14
       },
       "issues": {
+        "2026-11-26 Special": {
+          "no_video": true
+        },
         "2025-10-21 Regular": {
           "no_minutes": true,
           "no_agenda": true,
