@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-11-26",
+  "last_updated": "2026-11-27",
   "current": {
     "id": "2026-2030",
     "label": "2026–2030 Council",
     "start": "2026-11-17",
-    "end": "2026-11-17",
+    "end": "2026-11-26",
     "first_meeting_of_next_term": null,
-    "total": 22,
-    "carried": 22,
+    "total": 25,
+    "carried": 25,
     "defeated": 0,
     "deferred": 0,
-    "meetings_counted": 1,
-    "last_meeting": "2026-11-17",
+    "meetings_counted": 2,
+    "last_meeting": "2026-11-26",
     "slot": "current"
   },
   "last": {
@@ -33,14 +33,14 @@
       "id": "2026-2030",
       "label": "2026–2030 Council",
       "start": "2026-11-17",
-      "end": "2026-11-17",
+      "end": "2026-11-26",
       "first_meeting_of_next_term": null,
-      "total": 22,
-      "carried": 22,
+      "total": 25,
+      "carried": 25,
       "defeated": 0,
       "deferred": 0,
-      "meetings_counted": 1,
-      "last_meeting": "2026-11-17",
+      "meetings_counted": 2,
+      "last_meeting": "2026-11-26",
       "slot": "current"
     },
     {
