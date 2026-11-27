@@ -302,12 +302,12 @@
               "archived": "files/archive/boards/adjustment/2026/A2026-01-Decision-Morin-1__47f0aa13.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/06/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__45298a92.pdf"
             },
             {
-              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
+              "label": "CAO PUBLIC NOTICE A2026 01 (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version (earlier version)",
               "url": "https://nipissingtownship.com/wp-content/uploads/2026/02/CAO-PUBLIC-NOTICE-A2026-01.pdf",
               "archived": "files/archive/boards/adjustment/2026/CAO-PUBLIC-NOTICE-A2026-01__4cd836b0.pdf"
             }
@@ -3972,10 +3972,10 @@
           "body_id": "museum",
           "source_kind": "board",
           "agenda_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Agenda-November-25-2026-Museum-Board.pdf",
-          "minutes_url": null,
+          "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Museum-Boad-Minutes-November-25-2026-docx.pdf",
           "package_url": "https://nipissingtownship.com/wp-content/uploads/2026/11/Museum-Package-Nov-25.pdf",
           "extra_docs": [],
-          "summary": null,
+          "summary": "# Museum Board Meeting Summary\n\n**Nov 25, 2026**\n\n## Key Decisions\n\n- **Approved** October 7, 2026 meeting minutes (Motion 2026-32)\n- **Approved** 2027 budget request of $21,035 in expenses and $3,900 in revenue to forward to Council (Motion 2026-33)\n- **Approved** museum opening date of June 23, 2027 and closing date of September 5, 2027 (Motion 2026-34)\n- **Defeated** proposal to open May 22–23 for a season-opening event before the regular June 23 opening (Motion 2026-35)\n- **Approved** 2027 workshop schedule: Ice Cream Making on July 8 and Air Dry Clay on July 24 (Motion 2026-36)\n- **Approved** Heritage Day 2027 event for Sunday, August 15, 2027 (Motion 2026-37)\n- **Approved** donation of gift shop cards to the Township Fire Department Senior Outreach Program (Motion 2026-38)\n\n## Main Topics\n\n- **2026 Financial Review**: The museum earned $437.86 from special events and workshops, with many supplies donated. The board reviewed 2025 and 2026 budgets to inform 2027 planning.\n\n- **2027 Budget Planning**: Discussed priorities including obtaining quotes for church window replacement, replacing outboard motor stands, installing a new A-frame museum sign with event highlights, and expanding candy variety based on visitor feedback. The brochure and advertising budget will be reallocated to a Collections Preservation account.\n\n- **Building Maintenance**: The cedar rail fence was removed and replaced with low concrete barrier blocks.\n\n- **2027 Season Schedule**: The board set opening and closing dates and approved two workshops and a Heritage Day event for the upcoming season.\n\n- **Artifact Database**: The museum has entered 1,040 records into the PastPerfect database, with ongoing work to add 1987 and 2019 artifacts.\n\n- **Future Programming**: The board discussed bringing back a Remembrance Day event and exploring Lost Soldier Projects from other communities as possible future initiatives.\n\n## Notable Items\n\n- 2027 museum season runs June 23 to September 5, 2027\n- 2027 budget request: $3,900 revenue, $21,035 expenses\n- Ice Cream Making workshop: Thursday, July 8, 2027, 2:30–3:00 p.m.\n- Air Dry Clay workshop: Saturday, July 24, 2027, 2:00–4:00 p.m.\n- Heritage Day event: Sunday, August 15, 2027\n- Church window replacement quotes needed for future budgeting\n- Brochure/advertising funds redirected to collections preservation\n\n---\n\n*Next regular meeting: Wednesday, February 3, 2027*",
           "events": [],
           "cancelled": false,
           "rescheduled": false,
@@ -3983,7 +3983,8 @@
           "is_future": false,
           "video_url": "https://www.youtube.com/watch?v=GkqnaG3wTdQ",
           "agenda_archived": "files/archive/boards/museum/2026/Agenda-November-25-2026-Museum-Board__581d5968.pdf",
-          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Package-Nov-25__50aee592.pdf"
+          "package_archived": "https://github.com/chriswjohnston/Nipissing/releases/download/document-archive/Museum-Package-Nov-25__50aee592.pdf",
+          "minutes_archived": "files/archive/boards/museum/2026/Museum-Boad-Minutes-November-25-2026-docx__e381d131.pdf"
         },
         {
           "date": "2026-11-04",
